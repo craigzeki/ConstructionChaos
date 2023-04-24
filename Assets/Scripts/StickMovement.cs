@@ -20,6 +20,7 @@ public class StickMovement : MonoBehaviour
 
     private Coroutine _walkLeft, _walkRight;
     private bool _isOnGround = false;
+    private bool _isActive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,9 @@ public class StickMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0)
+        if (Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
+
+        if ((Input.GetAxisRaw("Horizontal") != 0) && _isActive)
         {
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
@@ -54,7 +57,7 @@ public class StickMovement : MonoBehaviour
         }
 
         _isOnGround = Physics2D.OverlapCircle(_position.position, _positionRadius, _groundLayerMask);
-        if(_isOnGround && Input.GetKeyDown(KeyCode.Space))
+        if(_isOnGround && Input.GetKeyDown(KeyCode.Space) && _isActive)
         {
             _bodyRB.AddForce(Vector2.up * _jumpForce);
         }

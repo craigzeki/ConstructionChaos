@@ -9,20 +9,22 @@ public class Balance : MonoBehaviour
     [SerializeField] public float Force;
     private Rigidbody2D _rb;
 
+    private bool _isActive = true;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    private void Update()
     {
-        
-    }
+        if(Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
 
+    }
 
     void FixedUpdate()
     {
-        _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, TargetRotation, Force * Time.fixedDeltaTime));
+        
+        if(_isActive) _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, TargetRotation, Force * Time.fixedDeltaTime));
     }
 }

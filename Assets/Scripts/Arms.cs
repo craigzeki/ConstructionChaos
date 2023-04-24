@@ -13,16 +13,17 @@ public class Arms : MonoBehaviour
     private Vector3 _playerPos = Vector3.zero;
     private Vector3 _delta = Vector3.zero;
     private float _rotationZ = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    private bool _isActive = true;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
+    }
     void FixedUpdate()
     {
+        if (!_isActive) return;
+
         _playerPos.x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
         _playerPos.y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
         _playerPos.z = 0;

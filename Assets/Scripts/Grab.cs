@@ -8,16 +8,13 @@ public class Grab : MonoBehaviour
     [SerializeField] LayerMask _grabableLayerMask;
     private bool _hold = false;
     private FixedJoint2D _joint;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool _isActive = true;
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(_mouseButton))
+        if (Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
+
+        if(Input.GetKey(_mouseButton) && _isActive)
         {
             _hold = true;
         }
@@ -32,6 +29,7 @@ public class Grab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!_isActive) return;
         if ((1 << collision.gameObject.layer) != _grabableLayerMask) return;
         if (_hold && _joint == null)
         {
