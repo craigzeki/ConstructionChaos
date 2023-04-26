@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using static UnityEngine.UI.Image;
+using UnityEngine.InputSystem;
 
 public class StickMovement : MonoBehaviour
 {
@@ -17,28 +18,62 @@ public class StickMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _leftLegRB;
     [SerializeField] private Rigidbody2D _rightLegRB;
     [SerializeField] private Rigidbody2D _bodyRB;
+    [SerializeField] private float _verticalMinValue = 0.5f;
 
     [SerializeField] private Animator _anim;
 
     private Coroutine _walkLeft, _walkRight;
-    private bool _isOnGround = false;
-    private bool _isActive = true;
+    private bool _collapse = false;
 
-    // Start is called before the first frame update
-    void Start()
+    #region Inputs
+
+    private bool _jumpValue = false;
+    private float _moveHorizontalAxis = 0f;
+    private float _moveVerticalAxis = 0f;
+
+    public void Jump(InputAction.CallbackContext value)
     {
+        if (!value.performed) return;
 
-
+        _jumpValue = value.ReadValueAsButton();
+        Debug.Log("_jumpValue: " + _jumpValue.ToString());
+        
     }
+
+    public void Move(InputAction.CallbackContext value)
+    {
+        _moveHorizontalAxis = value.ReadValue<float>();
+        Debug.Log("_horizontalAxis: " + _moveHorizontalAxis.ToString());
+    }
+
+    public void Collapse(InputAction.CallbackContext value)
+    {
+        
+        _moveVerticalAxis = value.ReadValue<float>();
+        Debug.Log("_verticalAxis: " + _moveVerticalAxis.ToString());
+    }
+
+    #endregion
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
-
-        if ((Input.GetAxisRaw("Horizontal") != 0) && _isActive)
+        if(!Mathf.Approximately(_moveVerticalAxis, 0f))
         {
-            if (Input.GetAxisRaw("Horizontal") > 0)
+            bool newCollapse = _moveVerticalAxis > _verticalMinValue ? false : _moveVerticalAxis < (-_moveVerticalAxis) ? true : _collapse;
+            if (newCollapse != _collapse)
+            {
+                _collapse = newCollapse;
+                gameObject.BroadcastMessage("OnCollapse", _collapse);
+            }
+            Debug.Log("_collapse: " + _collapse.ToString());
+        }
+        //if (Input.GetKeyDown(KeyCode.E)) _collapse = !_collapse;
+
+        if (!Mathf.Approximately(_moveHorizontalAxis, 0f) && !_collapse)
+        {
+            if (_moveHorizontalAxis > 0)
             {
                 _anim.Play("WalkRight");
                 if (_walkLeft != null) StopCoroutine(_walkLeft);
@@ -59,11 +94,18 @@ public class StickMovement : MonoBehaviour
         }
 
         
-        if(IsOnGround() && Input.GetKeyDown(KeyCode.Space) && _isActive)
+        
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (IsOnGround() && !_collapse && _jumpValue)
         {
             _bodyRB.AddForce(Vector2.up * _jumpForce);
+            Debug.Log("Jumped");
+            _jumpValue= false;
         }
-
     }
 
     private bool IsOnGround()

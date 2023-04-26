@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Grab : MonoBehaviour
 {
-    [SerializeField] KeyCode _mouseButton;
+    //[SerializeField] KeyCode _mouseButton;
     [SerializeField] LayerMask _grabableLayerMask;
     private bool _hold = false;
     private FixedJoint2D _joint;
     private bool _isActive = true;
 
+    private bool _isGrabbing = false;
+    public void GrabButton(InputAction.CallbackContext value)
+    {
+        //if (!value.performed) return;
+        _isGrabbing = value.ReadValueAsButton();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
 
-        if(Input.GetKey(_mouseButton) && _isActive)
+        if(_isGrabbing && _isActive)
         {
             _hold = true;
         }
@@ -44,5 +51,10 @@ public class Grab : MonoBehaviour
                 // do nothing
             }
         }
+    }
+
+    public void OnCollapse(bool collapse)
+    {
+        _isActive = !collapse;
     }
 }

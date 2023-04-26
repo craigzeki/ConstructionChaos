@@ -16,15 +16,14 @@ public class Balance : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E)) _isActive = !_isActive;
-
-    }
-
     void FixedUpdate()
     {
         
         if(_isActive) _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, TargetRotation, Force * Time.fixedDeltaTime));
+    }
+
+    public void OnCollapse(bool collapse)
+    {
+        _isActive = !collapse;
     }
 }
