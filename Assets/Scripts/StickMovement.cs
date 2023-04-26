@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class StickMovement : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class StickMovement : MonoBehaviour
     [SerializeField] private float _jumpForce = 10f;
     [SerializeField] private float _positionRadius;
     [SerializeField] private LayerMask _groundLayerMask;
-    [SerializeField] private Transform _position;
+    [SerializeField] private List<Transform> _groundPositions;
     [SerializeField] private Rigidbody2D _leftLegRB;
     [SerializeField] private Rigidbody2D _rightLegRB;
     [SerializeField] private Rigidbody2D _bodyRB;
@@ -56,12 +58,24 @@ public class StickMovement : MonoBehaviour
             _anim.Play("Idle");
         }
 
-        _isOnGround = Physics2D.OverlapCircle(_position.position, _positionRadius, _groundLayerMask);
-        if(_isOnGround && Input.GetKeyDown(KeyCode.Space) && _isActive)
+        
+        if(IsOnGround() && Input.GetKeyDown(KeyCode.Space) && _isActive)
         {
             _bodyRB.AddForce(Vector2.up * _jumpForce);
         }
 
+    }
+
+    private bool IsOnGround()
+    {
+        bool isOnGround = false;
+
+        foreach (Transform t in _groundPositions)
+        {
+            isOnGround |= Physics2D.OverlapCircle(t.position, _positionRadius, _groundLayerMask);
+        }
+
+        return isOnGround;
     }
 
     IEnumerator MoveRight(float seconds)
@@ -79,4 +93,17 @@ public class StickMovement : MonoBehaviour
         _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Handles.color = Color.red;
+        foreach (Transform t in _groundPositions)
+        {
+            Handles.DrawWireDisc(t.position, new Vector3(0, 0, 1), _positionRadius);
+        }
+        
+        
+    }
+#endif
 }
