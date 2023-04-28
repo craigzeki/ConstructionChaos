@@ -18,6 +18,10 @@ public class MenuUIManager : MonoBehaviour
 
     [SerializeField] private TMP_InputField roomCodeInput;
 
+    [SerializeField] private Toggle localToggle;
+
+    private bool local = false;
+
     private float animationTime = 0.5f;
 
     private int playerCount = 4;
@@ -45,6 +49,9 @@ public class MenuUIManager : MonoBehaviour
 
         // Add a listener to the slider to update the player count text
         playerCountSlider.onValueChanged.AddListener(UpdatePlayerCountText);
+
+        // Add a listener to the toggle to update the local boolean
+        localToggle.onValueChanged.AddListener(UpdateToggle);
     }
 
     private void OnDisable()
@@ -84,7 +91,7 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(playerCountText.gameObject, false);
 
         // Start hosting the game
-        ConnectionHandler.Instance.HostGame(playerCount);
+        ConnectionHandler.Instance.HostGame(playerCount, local);
     }
 
     private void JoinButton()
@@ -102,7 +109,7 @@ public class MenuUIManager : MonoBehaviour
             AnimateElement(backButton.gameObject, false);
 
             // Join the game
-            ConnectionHandler.Instance.JoinGame(roomCodeInput.text);
+            ConnectionHandler.Instance.JoinGame(roomCodeInput.text, local);
         }
         else
         {
@@ -151,5 +158,10 @@ public class MenuUIManager : MonoBehaviour
     {
         playerCount = (int)value;
         playerCountText.text = "No. of Players: " + playerCount.ToString();
+    }
+
+    private void UpdateToggle(bool toggleVal)
+    {
+        local = toggleVal;
     }
 }
