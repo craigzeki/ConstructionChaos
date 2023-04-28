@@ -66,6 +66,9 @@ public class MenuUIManager : MonoBehaviour
 
         // Remove the listener from the slider
         playerCountSlider.onValueChanged.RemoveListener(UpdatePlayerCountText);
+
+        // Remove the listener from the toggle
+        localToggle.onValueChanged.RemoveListener(UpdateToggle);
     }
 
     /// <summary>

@@ -17,6 +17,8 @@ public class ConnectionHandler : MonoBehaviour
 {
     public static ConnectionHandler Instance;
 
+    [SerializeField] private NetworkTransport unityTransport, relayTransport;
+
     private void Awake()
     {
         if (Instance == null)
@@ -48,6 +50,8 @@ public class ConnectionHandler : MonoBehaviour
             //! The IP Address will be 127.0.0.1 if the device is not connected to a network
             // TODO: Test if this causes the game not to work and implemented a fix
 
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;
+
             // Set the connection data to the local IP address
             NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
 
@@ -76,6 +80,9 @@ public class ConnectionHandler : MonoBehaviour
         {
             // Convert the room code to an IP address
             string ip = CodeToIP(roomCode);
+
+            // 
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;
 
             // Set the connection data to the IP address
             NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
@@ -125,6 +132,8 @@ public class ConnectionHandler : MonoBehaviour
 
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
 
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;
+
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
             NetworkManager.Singleton.StartHost();
@@ -146,6 +155,8 @@ public class ConnectionHandler : MonoBehaviour
             JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(roomCode);
 
             RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
+
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;
 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
