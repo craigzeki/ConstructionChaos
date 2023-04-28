@@ -2437,7 +2437,7 @@ MonoBehaviour:
   titleText: {fileID: 1603460794}
   playerCountText: {fileID: 800915254}
   roomCodeInput: {fileID: 1371784715}
-  localToggle: {fileID: 0}
+  localToggle: {fileID: 1969192941}
 --- !u!1 &1969192939
 GameObject:
   m_ObjectHideFlags: 0
