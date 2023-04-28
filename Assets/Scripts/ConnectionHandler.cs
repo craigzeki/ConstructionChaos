@@ -17,7 +17,7 @@ public class ConnectionHandler : MonoBehaviour
 {
     public static ConnectionHandler Instance;
 
-    [SerializeField] private NetworkTransport unityTransport, relayTransport;
+    [SerializeField] private UnityTransport unityTransport, relayTransport;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class ConnectionHandler : MonoBehaviour
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;
 
             // Set the connection data to the local IP address
-            NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
+            unityTransport.ConnectionData.Address = ip;
 
             // Start the server
             NetworkManager.Singleton.StartHost();
@@ -85,7 +85,7 @@ public class ConnectionHandler : MonoBehaviour
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;
 
             // Set the connection data to the IP address
-            NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Address = ip;
+            unityTransport.ConnectionData.Address = ip;
 
             // Start the client
             NetworkManager.Singleton.StartClient();
@@ -134,7 +134,7 @@ public class ConnectionHandler : MonoBehaviour
 
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;
 
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+            relayTransport.SetRelayServerData(relayServerData);
 
             NetworkManager.Singleton.StartHost();
         }
@@ -158,7 +158,7 @@ public class ConnectionHandler : MonoBehaviour
 
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;
 
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+            relayTransport.SetRelayServerData(relayServerData);
 
             NetworkManager.Singleton.StartClient();
         }
