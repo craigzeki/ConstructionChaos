@@ -1,40 +1,112 @@
 \hypertarget{class_grab}{}\doxysection{Grab Class Reference}
 \label{class_grab}\index{Grab@{Grab}}
-Inheritance diagram for Grab\+:\begin{figure}[H]
+
+
+Inheritance diagram for Grab\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_grab}
+\includegraphics[width=163pt]{class_grab__inherit__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+
+
+Collaboration diagram for Grab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_grab__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_grab_a4e21dfd97c605f2a013ac3718b8368cc}{On\+Collapse}} (bool collapse)
+void \mbox{\hyperlink{class_grab_af04df7f3c014e2c6f926a992e8a1ae14}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_grab_a52a6fc4d04910799f6c020e4f3fa2fc6}{On\+Collision\+Enter2D}} (Collision2D collision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_grab_addff130e22279fab7b9a42df16abd5a2}\label{class_grab_addff130e22279fab7b9a42df16abd5a2}} 
+Layer\+Mask {\bfseries \+\_\+grabable\+Layer\+Mask}
+\item 
+\mbox{\Hypertarget{class_grab_a3891f99019c4d147b75e5678c3d9eb3b}\label{class_grab_a3891f99019c4d147b75e5678c3d9eb3b}} 
+bool {\bfseries \+\_\+hold} = false
+\item 
+\mbox{\Hypertarget{class_grab_ae3315aab5d8a5e2d6c0ffb5140bbfe86}\label{class_grab_ae3315aab5d8a5e2d6c0ffb5140bbfe86}} 
+Fixed\+Joint2D {\bfseries \+\_\+joint}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragdoll_acf111dd872e949009f7a99bb453139a9}{On\+Collapse}} (bool collapse)
 \begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}\label{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}} 
+bool {\bfseries \+\_\+is\+Active} = true
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_grab_a4e21dfd97c605f2a013ac3718b8368cc}\label{class_grab_a4e21dfd97c605f2a013ac3718b8368cc}} 
-\index{Grab@{Grab}!OnCollapse@{OnCollapse}}
-\index{OnCollapse@{OnCollapse}!Grab@{Grab}}
-\doxysubsubsection{\texorpdfstring{OnCollapse()}{OnCollapse()}}
-{\footnotesize\ttfamily void Grab.\+On\+Collapse (\begin{DoxyParamCaption}\item[{bool}]{collapse }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_grab_a52a6fc4d04910799f6c020e4f3fa2fc6}\label{class_grab_a52a6fc4d04910799f6c020e4f3fa2fc6}} 
+\index{Grab@{Grab}!OnCollisionEnter2D@{OnCollisionEnter2D}}
+\index{OnCollisionEnter2D@{OnCollisionEnter2D}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter2D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Grab.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
-
-Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em collapse} & True\+: collapsed False\+: restored from collapsed\\
-\hline
-\end{DoxyParams}
-
-
-Call using Broadcast\+Message
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062\ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_isActive\ =\ !collapse;}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_isActive)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//not\ active\ or\ collapsed}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((1\ <<\ collision.gameObject.layer)\ !=\ \_grabableLayerMask)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ item\ is\ not\ on\ the\ grabable\ layer}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_hold\ \&\&\ \_joint\ ==\ \textcolor{keyword}{null})\ \textcolor{comment}{//allowed\ to\ grab\ something\ and\ not\ already\ holding\ anything}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//get\ the\ colliding\ objects\ rigidbody\ and\ create\ a\ joint\ between\ us\ and\ it}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody2D\ rb\ =\ collision.transform.GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rb\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint\ =\ transform.gameObject.AddComponent(typeof(FixedJoint2D))\ as\ FixedJoint2D;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint.connectedBody\ =\ rb;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//no\ rigidbody\ so\ can't\ create\ a\ joint}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//could\ try\ and\ create\ a\ rigidbody\ first\ and\ then\ a\ joint}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//or\ could\ implement\ another\ method\ of\ grabing\ which\ doesn't\ use\ physics}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//for\ now....\ do\ nothing}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_grab_af04df7f3c014e2c6f926a992e8a1ae14}\label{class_grab_af04df7f3c014e2c6f926a992e8a1ae14}} 
+\index{Grab@{Grab}!Update@{Update}}
+\index{Update@{Update}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Grab.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//player\ is\ trying\ to\ grab,\ and\ is\ allowed\ to}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a8c237a31f3987263e6cd0a40baaddbd0}{IsGrabbing}}\ \&\&\ \_isActive)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ hold\ to\ true}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \_hold\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//player\ has\ let\ go,\ destroy\ the\ joint\ between\ player\ and\ item}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \_hold\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\_joint);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \_joint\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
 
 \end{DoxyCode}

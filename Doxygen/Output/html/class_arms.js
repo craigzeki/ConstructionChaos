@@ -1,4 +1,4 @@
 var class_arms =
 [
-    [ "OnCollapse", "class_arms.html#a94d25c4b213aca0e4eda4cd773534b33", null ]
+    [ "CalculateArmRotation", "class_arms.html#a27914140917932c82b716179c79c9d9c", null ]
 ];

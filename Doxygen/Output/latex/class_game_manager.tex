@@ -1,9 +1,21 @@
 \hypertarget{class_game_manager}{}\doxysection{Game\+Manager Class Reference}
 \label{class_game_manager}\index{GameManager@{GameManager}}
-Inheritance diagram for Game\+Manager\+:\begin{figure}[H]
+
+
+Inheritance diagram for Game\+Manager\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_game_manager}
+\includegraphics[width=163pt]{class_game_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_game_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -11,9 +23,35 @@ Inheritance diagram for Game\+Manager\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_game_manager_aef65eaec43866cf77565e68485439cec}{Toggle\+Action\+Map}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a44c79b205dec16bfe650e21259860c5b}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_ac2ac2248a468f8533bb891b14a244b7b}\label{class_game_manager_ac2ac2248a468f8533bb891b14a244b7b}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+menu\+Text}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}\label{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}} 
+\index{GameManager@{GameManager}!Start@{Start}}
+\index{Start@{Start}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.GAMEPLAY);}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_aef65eaec43866cf77565e68485439cec}\label{class_game_manager_aef65eaec43866cf77565e68485439cec}} 
 \index{GameManager@{GameManager}!ToggleActionMap@{ToggleActionMap}}
 \index{ToggleActionMap@{ToggleActionMap}!GameManager@{GameManager}}
@@ -32,5 +70,18 @@ void \mbox{\hyperlink{class_game_manager_aef65eaec43866cf77565e68485439cec}{Togg
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{CurrentActionMap}}\ +\ 1);}
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a44c79b205dec16bfe650e21259860c5b}\label{class_game_manager_a44c79b205dec16bfe650e21259860c5b}} 
+\index{GameManager@{GameManager}!Update@{Update}}
+\index{Update@{Update}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_menuText.text\ =\ \textcolor{stringliteral}{"{}South\ Button,\ Menu\ Action\ Map\ :\ Pressed\ =\ "{}}\ +\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}{MenuButtonPressed}}.ToString();}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
 
 \end{DoxyCode}

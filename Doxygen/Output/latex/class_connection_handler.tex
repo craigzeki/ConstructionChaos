@@ -1,9 +1,21 @@
 \hypertarget{class_connection_handler}{}\doxysection{Connection\+Handler Class Reference}
 \label{class_connection_handler}\index{ConnectionHandler@{ConnectionHandler}}
-Inheritance diagram for Connection\+Handler\+:\begin{figure}[H]
+
+
+Inheritance diagram for Connection\+Handler\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_connection_handler}
+\includegraphics[width=178pt]{class_connection_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Connection\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_connection_handler__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -19,9 +31,114 @@ async void \mbox{\hyperlink{class_connection_handler_ad80fdb9284b085c6b0d1aac555
 \mbox{\Hypertarget{class_connection_handler_ac4e5001ef822aeff3f14dada71410eba}\label{class_connection_handler_ac4e5001ef822aeff3f14dada71410eba}} 
 static \mbox{\hyperlink{class_connection_handler}{Connection\+Handler}} {\bfseries Instance}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connection_handler_a226e69502f8e3f5cbf68bad6d0f35285}{Awake}} ()
+\item 
+async Task \mbox{\hyperlink{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}{Unity\+Services\+Login}} ()
+\begin{DoxyCompactList}\small\item\em Logs into Unity Services Anonymously. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_connection_handler_abb3ad4b31b90a6bf82bfa4ecd6f37095}{Create\+Relay}} (int max\+Players)
+\begin{DoxyCompactList}\small\item\em Creates a relay server using the Unity Relay Service. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}{Join\+Relay}} (string room\+Code)
+\begin{DoxyCompactList}\small\item\em Joins a relay server using the Unity Relay Service. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}{IPto\+Code}} (string ip)
+\item 
+string \mbox{\hyperlink{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}{Code\+To\+IP}} (string code)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_connection_handler_a12e998a4cef92b0eb00f5c69faf58250}\label{class_connection_handler_a12e998a4cef92b0eb00f5c69faf58250}} 
+Unity\+Transport {\bfseries unity\+Transport}
+\item 
+\mbox{\Hypertarget{class_connection_handler_a1921c8405871cc319366552645afb45a}\label{class_connection_handler_a1921c8405871cc319366552645afb45a}} 
+Unity\+Transport {\bfseries relay\+Transport}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connection_handler_a226e69502f8e3f5cbf68bad6d0f35285}\label{class_connection_handler_a226e69502f8e3f5cbf68bad6d0f35285}} 
+\index{ConnectionHandler@{ConnectionHandler}!Awake@{Awake}}
+\index{Awake@{Awake}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}\label{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}} 
+\index{ConnectionHandler@{ConnectionHandler}!CodeToIP@{CodeToIP}}
+\index{CodeToIP@{CodeToIP}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{CodeToIP()}{CodeToIP()}}
+{\footnotesize\ttfamily string Connection\+Handler.\+Code\+To\+IP (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ code.Length;\ i\ +=\ 2)}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{keywordtype}{int}.Parse(code.Substring(i,\ 2),\ System.Globalization.NumberStyles.HexNumber).ToString();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ code.Length\ -\/\ 2)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ip;}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_abb3ad4b31b90a6bf82bfa4ecd6f37095}\label{class_connection_handler_abb3ad4b31b90a6bf82bfa4ecd6f37095}} 
+\index{ConnectionHandler@{ConnectionHandler}!CreateRelay@{CreateRelay}}
+\index{CreateRelay@{CreateRelay}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{CreateRelay()}{CreateRelay()}}
+{\footnotesize\ttfamily async void Connection\+Handler.\+Create\+Relay (\begin{DoxyParamCaption}\item[{int}]{max\+Players }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates a relay server using the Unity Relay Service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Players} & The maximum number of players allowed in the game\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Creating\ relay"{}});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ Allocation\ allocation\ =\ await\ RelayService.Instance.CreateAllocationAsync(maxPlayers\ -\/\ 1);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ await\ RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(allocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ relayTransport;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ relayTransport.SetRelayServerData(relayServerData);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartHost();}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (RelayServiceException\ e)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ print(e.Message);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}\label{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}} 
 \index{ConnectionHandler@{ConnectionHandler}!HostGame@{HostGame}}
 \index{HostGame@{HostGame}!ConnectionHandler@{ConnectionHandler}}
@@ -71,10 +188,29 @@ The IP Address will be 127.\+0.\+0.\+1 if the device is not connected to a netwo
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ await\ UnityServicesLogin();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ await\ \mbox{\hyperlink{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}{UnityServicesLogin}}();}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ CreateRelay(maxPlayers);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_abb3ad4b31b90a6bf82bfa4ecd6f37095}{CreateRelay}}(maxPlayers);}
 \DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}\label{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}} 
+\index{ConnectionHandler@{ConnectionHandler}!IPtoCode@{IPtoCode}}
+\index{IPtoCode@{IPtoCode}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{IPtoCode()}{IPtoCode()}}
+{\footnotesize\ttfamily string Connection\+Handler.\+IPto\+Code (\begin{DoxyParamCaption}\item[{string}]{ip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ ipSplit\ =\ ip.Split(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ code\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ s\ \textcolor{keywordflow}{in}\ ipSplit)}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ code\ +=\ \textcolor{keywordtype}{int}.Parse(s).ToString(\textcolor{stringliteral}{"{}X2"{}});}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}\label{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}} 
@@ -112,9 +248,72 @@ Joins the game using the Unity Relay Service and Netcode for Game\+Objects.
 \DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ await\ UnityServicesLogin();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ await\ \mbox{\hyperlink{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}{UnityServicesLogin}}();}
 \DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ JoinRelay(roomCode);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}{JoinRelay}}(roomCode);}
 \DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}\label{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}} 
+\index{ConnectionHandler@{ConnectionHandler}!JoinRelay@{JoinRelay}}
+\index{JoinRelay@{JoinRelay}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{JoinRelay()}{JoinRelay()}}
+{\footnotesize\ttfamily async void Connection\+Handler.\+Join\+Relay (\begin{DoxyParamCaption}\item[{string}]{room\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Joins a relay server using the Unity Relay Service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Code} & The room code to join\\
+\hline
+\end{DoxyParams}
+More error handling is needed here to catch the error when the room code is invalid
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ JoinAllocation\ joinAllocation\ =\ await\ RelayService.Instance.JoinAllocationAsync(roomCode);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(joinAllocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ relayTransport;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ relayTransport.SetRelayServerData(relayServerData);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartClient();}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (RelayServiceException\ e)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ print(e.Message);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}\label{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}} 
+\index{ConnectionHandler@{ConnectionHandler}!UnityServicesLogin@{UnityServicesLogin}}
+\index{UnityServicesLogin@{UnityServicesLogin}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{UnityServicesLogin()}{UnityServicesLogin()}}
+{\footnotesize\ttfamily async Task Connection\+Handler.\+Unity\+Services\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Logs into Unity Services Anonymously. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ await\ UnityServices.InitializeAsync();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ AuthenticationService.Instance.SignedIn\ +=\ ()\ =>}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ has\ successfully\ signed\ in\ anonymously}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Signed\ in\ anonymously"{}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ await\ AuthenticationService.Instance.SignInAnonymouslyAsync();}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
 
 \end{DoxyCode}

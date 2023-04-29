@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('class_input_handler.html',''); initRes
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_input_handler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">InputHandler Class Reference</div></div>
 </div><!--header-->
@@ -101,9 +104,21 @@ $(document).ready(function(){initNavTree('class_input_handler.html',''); initRes
 <div class="dynheader">
 Inheritance diagram for InputHandler:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_input_handler.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_input_handler__inherit__graph.png" border="0" usemap="#a_input_handler_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_input_handler_inherit__map" id="a_input_handler_inherit__map">
+<area shape="rect" title=" " alt="" coords="13,79,108,104"/>
+<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for InputHandler:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_input_handler__coll__graph.png" border="0" usemap="#a_input_handler_coll__map" alt="Collaboration graph"/></div>
+<map name="a_input_handler_coll__map" id="a_input_handler_coll__map">
+<area shape="rect" title=" " alt="" coords="13,80,108,105"/>
+<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -168,6 +183,77 @@ Properties</h2></td></tr>
 <tr class="memitem:a5c1aadbd45929f5cadbe665d4d24dd1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#a5c1aadbd45929f5cadbe665d4d24dd1e">CurrentActionMap</a><code> [get]</code></td></tr>
 <tr class="memdesc:a5c1aadbd45929f5cadbe665d4d24dd1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which Action Map is active.  <br /></td></tr>
 <tr class="separator:a5c1aadbd45929f5cadbe665d4d24dd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aab3519657c609d718dc11a5094746276"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#aab3519657c609d718dc11a5094746276">OnEnable</a> ()</td></tr>
+<tr class="separator:aab3519657c609d718dc11a5094746276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3623f026bd72d365e8c830948279cabd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#a3623f026bd72d365e8c830948279cabd">SetJump</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:a3623f026bd72d365e8c830948279cabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a button press and sets whether the user is trying to jump.  <br /></td></tr>
+<tr class="separator:a3623f026bd72d365e8c830948279cabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155de69040f466f59d93318e22886936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#a155de69040f466f59d93318e22886936">SetMovePlayer</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:a155de69040f466f59d93318e22886936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an axis input for left right movement and sets the intended direction.  <br /></td></tr>
+<tr class="separator:a155de69040f466f59d93318e22886936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b528090df577ae5047270bf2919e0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#a88b528090df577ae5047270bf2919e0c">SetCollapse</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:a88b528090df577ae5047270bf2919e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a button press and sets whether the user is trying to collapse.  <br /></td></tr>
+<tr class="separator:a88b528090df577ae5047270bf2919e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe0d77feb1856fd3f8f91287a515085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#affe0d77feb1856fd3f8f91287a515085">SetMouseMoveArms</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:affe0d77feb1856fd3f8f91287a515085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the mouse input and sets a rotation angle for the arms to target towards.  <br /></td></tr>
+<tr class="separator:affe0d77feb1856fd3f8f91287a515085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3eb7dc1a98627db6aee62f017c19dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#aaa3eb7dc1a98627db6aee62f017c19dc">SetStickMoveArms</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:aaa3eb7dc1a98627db6aee62f017c19dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the gamepad stick input and sets a rotation angle for the arms to target towards.  <br /></td></tr>
+<tr class="separator:aaa3eb7dc1a98627db6aee62f017c19dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a600f170ca604cc417b406368d184be3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#a600f170ca604cc417b406368d184be3f">SetLeftGrabButton</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:a600f170ca604cc417b406368d184be3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a button press and sets whether the user is trying to grab with left hand.  <br /></td></tr>
+<tr class="separator:a600f170ca604cc417b406368d184be3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70634e44fb25b23f151f47bd6fa3c711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#a70634e44fb25b23f151f47bd6fa3c711">SetRightGrabButton</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:a70634e44fb25b23f151f47bd6fa3c711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a button press and sets whether the user is trying to grab with right hand.  <br /></td></tr>
+<tr class="separator:a70634e44fb25b23f151f47bd6fa3c711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9f2f25967e639f7eb431381d84e5bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_handler.html#afa9f2f25967e639f7eb431381d84e5bf">SetMenuButtonPressed</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="memdesc:afa9f2f25967e639f7eb431381d84e5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a button press and sets whether the user is trying to do something on menu.  <br /></td></tr>
+<tr class="separator:afa9f2f25967e639f7eb431381d84e5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a801189a200cf4febd66f54c3f2d28c71"><td class="memItemLeft" align="right" valign="top"><a id="a801189a200cf4febd66f54c3f2d28c71" name="a801189a200cf4febd66f54c3f2d28c71"></a>
+Controls&#160;</td><td class="memItemRight" valign="bottom"><b>_controls</b></td></tr>
+<tr class="separator:a801189a200cf4febd66f54c3f2d28c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6611400bc6b4c5230e7340438361ad"><td class="memItemLeft" align="right" valign="top"><a id="acd6611400bc6b4c5230e7340438361ad" name="acd6611400bc6b4c5230e7340438361ad"></a>
+<a class="el" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_currentActionMap</b></td></tr>
+<tr class="separator:acd6611400bc6b4c5230e7340438361ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad07bfbdfcf74ef63a5a707464065de7"><td class="memItemLeft" align="right" valign="top"><a id="aad07bfbdfcf74ef63a5a707464065de7" name="aad07bfbdfcf74ef63a5a707464065de7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_jumpValue</b> = false</td></tr>
+<tr class="separator:aad07bfbdfcf74ef63a5a707464065de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8777b469ecf14ab909df882c38ddfaef"><td class="memItemLeft" align="right" valign="top"><a id="a8777b469ecf14ab909df882c38ddfaef" name="a8777b469ecf14ab909df882c38ddfaef"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_moveHorizontalAxis</b> = 0f</td></tr>
+<tr class="separator:a8777b469ecf14ab909df882c38ddfaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab21e34688714397701e2efc76483c9ce"><td class="memItemLeft" align="right" valign="top"><a id="ab21e34688714397701e2efc76483c9ce" name="ab21e34688714397701e2efc76483c9ce"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_moveVerticalAxis</b> = 0f</td></tr>
+<tr class="separator:ab21e34688714397701e2efc76483c9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57e1dce2e4a5615dd3390aaa4b00ec1"><td class="memItemLeft" align="right" valign="top"><a id="ac57e1dce2e4a5615dd3390aaa4b00ec1" name="ac57e1dce2e4a5615dd3390aaa4b00ec1"></a>
+Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>_armsControllerInput</b></td></tr>
+<tr class="separator:ac57e1dce2e4a5615dd3390aaa4b00ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dddadc6504ce7aea6764662a819f614"><td class="memItemLeft" align="right" valign="top"><a id="a8dddadc6504ce7aea6764662a819f614" name="a8dddadc6504ce7aea6764662a819f614"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isMouseController</b> = false</td></tr>
+<tr class="separator:a8dddadc6504ce7aea6764662a819f614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f53566c06ef12b07edefa869086703"><td class="memItemLeft" align="right" valign="top"><a id="aa4f53566c06ef12b07edefa869086703" name="aa4f53566c06ef12b07edefa869086703"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_armsStickReleased</b> = true</td></tr>
+<tr class="separator:aa4f53566c06ef12b07edefa869086703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe567572e6fe0727517264bd72c0a05"><td class="memItemLeft" align="right" valign="top"><a id="afbe567572e6fe0727517264bd72c0a05" name="afbe567572e6fe0727517264bd72c0a05"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isGrabbingLeft</b> = false</td></tr>
+<tr class="separator:afbe567572e6fe0727517264bd72c0a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195b884b96700f91f97bb9f381bfeabc"><td class="memItemLeft" align="right" valign="top"><a id="a195b884b96700f91f97bb9f381bfeabc" name="a195b884b96700f91f97bb9f381bfeabc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isGrabbingRight</b> = false</td></tr>
+<tr class="separator:a195b884b96700f91f97bb9f381bfeabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409ae6b7b7d5b0554bd688e1e3560081"><td class="memItemLeft" align="right" valign="top"><a id="a409ae6b7b7d5b0554bd688e1e3560081" name="a409ae6b7b7d5b0554bd688e1e3560081"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_menuButtonPressed</b> = false</td></tr>
+<tr class="separator:a409ae6b7b7d5b0554bd688e1e3560081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a9a141a1f6d4d18f906a4d640d080bd15"><td class="memItemLeft" align="right" valign="top"><a id="a9a141a1f6d4d18f906a4d640d080bd15" name="a9a141a1f6d4d18f906a4d640d080bd15"></a>
+static <a class="el" href="class_input_handler.html">InputHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b></td></tr>
+<tr class="separator:a9a141a1f6d4d18f906a4d640d080bd15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a273ad6324766f575688af6286e5c76aa" name="a273ad6324766f575688af6286e5c76aa"></a>
@@ -193,6 +279,379 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aab3519657c609d718dc11a5094746276" name="aab3519657c609d718dc11a5094746276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3519657c609d718dc11a5094746276">&#9670;&#160;</a></span>OnEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.OnEnable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>        _controls = <span class="keyword">new</span> Controls();</div>
+<div class="line"><span class="lineno">  101</span>        _currentActionMap = <a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.UNKNOWN;</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>        _controls.Gameplay.Jump.performed += <a class="code hl_function" href="class_input_handler.html#a3623f026bd72d365e8c830948279cabd">SetJump</a>;</div>
+<div class="line"><span class="lineno">  104</span>        _controls.Gameplay.Jump.canceled += <a class="code hl_function" href="class_input_handler.html#a3623f026bd72d365e8c830948279cabd">SetJump</a>;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>        _controls.Gameplay.MovePlayer.performed += <a class="code hl_function" href="class_input_handler.html#a155de69040f466f59d93318e22886936">SetMovePlayer</a>;</div>
+<div class="line"><span class="lineno">  107</span>        _controls.Gameplay.MovePlayer.canceled += <a class="code hl_function" href="class_input_handler.html#a155de69040f466f59d93318e22886936">SetMovePlayer</a>;</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>        _controls.Gameplay.Collapse.performed += <a class="code hl_function" href="class_input_handler.html#a88b528090df577ae5047270bf2919e0c">SetCollapse</a>;</div>
+<div class="line"><span class="lineno">  110</span>        _controls.Gameplay.Collapse.canceled += <a class="code hl_function" href="class_input_handler.html#a88b528090df577ae5047270bf2919e0c">SetCollapse</a>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>        _controls.Gameplay.MouseMoveArms.performed += <a class="code hl_function" href="class_input_handler.html#affe0d77feb1856fd3f8f91287a515085">SetMouseMoveArms</a>;</div>
+<div class="line"><span class="lineno">  113</span>        _controls.Gameplay.MouseMoveArms.canceled += <a class="code hl_function" href="class_input_handler.html#affe0d77feb1856fd3f8f91287a515085">SetMouseMoveArms</a>;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>        _controls.Gameplay.StickMoveArms.performed += <a class="code hl_function" href="class_input_handler.html#aaa3eb7dc1a98627db6aee62f017c19dc">SetStickMoveArms</a>;</div>
+<div class="line"><span class="lineno">  116</span>        _controls.Gameplay.StickMoveArms.canceled += <a class="code hl_function" href="class_input_handler.html#aaa3eb7dc1a98627db6aee62f017c19dc">SetStickMoveArms</a>;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>        _controls.Gameplay.GrabLeftHand.performed += <a class="code hl_function" href="class_input_handler.html#a600f170ca604cc417b406368d184be3f">SetLeftGrabButton</a>;</div>
+<div class="line"><span class="lineno">  119</span>        _controls.Gameplay.GrabLeftHand.canceled += <a class="code hl_function" href="class_input_handler.html#a600f170ca604cc417b406368d184be3f">SetLeftGrabButton</a>;</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>        _controls.Gameplay.GrabRightHand.performed += <a class="code hl_function" href="class_input_handler.html#a70634e44fb25b23f151f47bd6fa3c711">SetRightGrabButton</a>;</div>
+<div class="line"><span class="lineno">  122</span>        _controls.Gameplay.GrabRightHand.canceled += <a class="code hl_function" href="class_input_handler.html#a70634e44fb25b23f151f47bd6fa3c711">SetRightGrabButton</a>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>        _controls.Menu.DoIt.performed += <a class="code hl_function" href="class_input_handler.html#afa9f2f25967e639f7eb431381d84e5bf">SetMenuButtonPressed</a>;</div>
+<div class="line"><span class="lineno">  125</span>        _controls.Menu.DoIt.canceled += <a class="code hl_function" href="class_input_handler.html#afa9f2f25967e639f7eb431381d84e5bf">SetMenuButtonPressed</a>;</div>
+<div class="line"><span class="lineno">  126</span>        </div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="ttc" id="aclass_input_handler_html_a155de69040f466f59d93318e22886936"><div class="ttname"><a href="class_input_handler.html#a155de69040f466f59d93318e22886936">InputHandler.SetMovePlayer</a></div><div class="ttdeci">void SetMovePlayer(InputAction.CallbackContext value)</div><div class="ttdoc">Processes an axis input for left right movement and sets the intended direction.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:145</div></div>
+<div class="ttc" id="aclass_input_handler_html_a273ad6324766f575688af6286e5c76aa"><div class="ttname"><a href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">InputHandler.ControlActionMaps</a></div><div class="ttdeci">ControlActionMaps</div><div class="ttdoc">Enum to represent each Action Map.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:12</div></div>
+<div class="ttc" id="aclass_input_handler_html_a3623f026bd72d365e8c830948279cabd"><div class="ttname"><a href="class_input_handler.html#a3623f026bd72d365e8c830948279cabd">InputHandler.SetJump</a></div><div class="ttdeci">void SetJump(InputAction.CallbackContext value)</div><div class="ttdoc">Processes a button press and sets whether the user is trying to jump.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:135</div></div>
+<div class="ttc" id="aclass_input_handler_html_a600f170ca604cc417b406368d184be3f"><div class="ttname"><a href="class_input_handler.html#a600f170ca604cc417b406368d184be3f">InputHandler.SetLeftGrabButton</a></div><div class="ttdeci">void SetLeftGrabButton(InputAction.CallbackContext value)</div><div class="ttdoc">Processes a button press and sets whether the user is trying to grab with left hand.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:190</div></div>
+<div class="ttc" id="aclass_input_handler_html_a70634e44fb25b23f151f47bd6fa3c711"><div class="ttname"><a href="class_input_handler.html#a70634e44fb25b23f151f47bd6fa3c711">InputHandler.SetRightGrabButton</a></div><div class="ttdeci">void SetRightGrabButton(InputAction.CallbackContext value)</div><div class="ttdoc">Processes a button press and sets whether the user is trying to grab with right hand.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:200</div></div>
+<div class="ttc" id="aclass_input_handler_html_a88b528090df577ae5047270bf2919e0c"><div class="ttname"><a href="class_input_handler.html#a88b528090df577ae5047270bf2919e0c">InputHandler.SetCollapse</a></div><div class="ttdeci">void SetCollapse(InputAction.CallbackContext value)</div><div class="ttdoc">Processes a button press and sets whether the user is trying to collapse.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:155</div></div>
+<div class="ttc" id="aclass_input_handler_html_aaa3eb7dc1a98627db6aee62f017c19dc"><div class="ttname"><a href="class_input_handler.html#aaa3eb7dc1a98627db6aee62f017c19dc">InputHandler.SetStickMoveArms</a></div><div class="ttdeci">void SetStickMoveArms(InputAction.CallbackContext value)</div><div class="ttdoc">Processes the gamepad stick input and sets a rotation angle for the arms to target towards.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:177</div></div>
+<div class="ttc" id="aclass_input_handler_html_afa9f2f25967e639f7eb431381d84e5bf"><div class="ttname"><a href="class_input_handler.html#afa9f2f25967e639f7eb431381d84e5bf">InputHandler.SetMenuButtonPressed</a></div><div class="ttdeci">void SetMenuButtonPressed(InputAction.CallbackContext value)</div><div class="ttdoc">Processes a button press and sets whether the user is trying to do something on menu.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:210</div></div>
+<div class="ttc" id="aclass_input_handler_html_affe0d77feb1856fd3f8f91287a515085"><div class="ttname"><a href="class_input_handler.html#affe0d77feb1856fd3f8f91287a515085">InputHandler.SetMouseMoveArms</a></div><div class="ttdeci">void SetMouseMoveArms(InputAction.CallbackContext value)</div><div class="ttdoc">Processes the mouse input and sets a rotation angle for the arms to target towards.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:166</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a88b528090df577ae5047270bf2919e0c" name="a88b528090df577ae5047270bf2919e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b528090df577ae5047270bf2919e0c">&#9670;&#160;</a></span>SetCollapse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetCollapse </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes a button press and sets whether the user is trying to collapse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>    {</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>        _moveVerticalAxis = value.ReadValue&lt;<span class="keywordtype">float</span>&gt;();</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3623f026bd72d365e8c830948279cabd" name="a3623f026bd72d365e8c830948279cabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3623f026bd72d365e8c830948279cabd">&#9670;&#160;</a></span>SetJump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetJump </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes a button press and sets whether the user is trying to jump. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>    {</div>
+<div class="line"><span class="lineno">  137</span>        _jumpValue = value.ReadValueAsButton();</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a600f170ca604cc417b406368d184be3f" name="a600f170ca604cc417b406368d184be3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600f170ca604cc417b406368d184be3f">&#9670;&#160;</a></span>SetLeftGrabButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetLeftGrabButton </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes a button press and sets whether the user is trying to grab with left hand. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>        _isGrabbingLeft = value.ReadValueAsButton();</div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa9f2f25967e639f7eb431381d84e5bf" name="afa9f2f25967e639f7eb431381d84e5bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9f2f25967e639f7eb431381d84e5bf">&#9670;&#160;</a></span>SetMenuButtonPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetMenuButtonPressed </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes a button press and sets whether the user is trying to do something on menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System<br  />
+Only for testing enabling of different Action Maps</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>    {</div>
+<div class="line"><span class="lineno">  212</span>        _menuButtonPressed = value.ReadValueAsButton();</div>
+<div class="line"><span class="lineno">  213</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="affe0d77feb1856fd3f8f91287a515085" name="affe0d77feb1856fd3f8f91287a515085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe0d77feb1856fd3f8f91287a515085">&#9670;&#160;</a></span>SetMouseMoveArms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetMouseMoveArms </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes the mouse input and sets a rotation angle for the arms to target towards. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>    {</div>
+<div class="line"><span class="lineno">  168</span>        _armsControllerInput = value.ReadValue&lt;Vector2&gt;();</div>
+<div class="line"><span class="lineno">  169</span>        _isMouseController = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a155de69040f466f59d93318e22886936" name="a155de69040f466f59d93318e22886936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a155de69040f466f59d93318e22886936">&#9670;&#160;</a></span>SetMovePlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetMovePlayer </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes an axis input for left right movement and sets the intended direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>        _moveHorizontalAxis = value.ReadValue&lt;<span class="keywordtype">float</span>&gt;();</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a70634e44fb25b23f151f47bd6fa3c711" name="a70634e44fb25b23f151f47bd6fa3c711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70634e44fb25b23f151f47bd6fa3c711">&#9670;&#160;</a></span>SetRightGrabButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetRightGrabButton </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes a button press and sets whether the user is trying to grab with right hand. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>    {</div>
+<div class="line"><span class="lineno">  202</span>        _isGrabbingRight = value.ReadValueAsButton();</div>
+<div class="line"><span class="lineno">  203</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaa3eb7dc1a98627db6aee62f017c19dc" name="aaa3eb7dc1a98627db6aee62f017c19dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3eb7dc1a98627db6aee62f017c19dc">&#9670;&#160;</a></span>SetStickMoveArms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputHandler.SetStickMoveArms </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes the gamepad stick input and sets a rotation angle for the arms to target towards. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The InputAction CallbackContext passed from the Input System</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only use to link to the Input System</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>    {</div>
+<div class="line"><span class="lineno">  179</span>        _armsControllerInput = value.ReadValue&lt;Vector2&gt;();</div>
+<div class="line"><span class="lineno">  180</span>        _isMouseController = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  181</span>        _armsStickReleased = Mathf.Approximately(_armsControllerInput.x, 0f) &amp;&amp; Mathf.Approximately(_armsControllerInput.y, 0f);</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ae2fb193ca436d6eed3654f6f6a1305b3" name="ae2fb193ca436d6eed3654f6f6a1305b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2fb193ca436d6eed3654f6f6a1305b3">&#9670;&#160;</a></span>SwitchActionMap()</h2>
 
@@ -234,7 +693,6 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  235</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  236</span>        }</div>
 <div class="line"><span class="lineno">  237</span>    }</div>
-<div class="ttc" id="aclass_input_handler_html_a273ad6324766f575688af6286e5c76aa"><div class="ttname"><a href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">InputHandler.ControlActionMaps</a></div><div class="ttdeci">ControlActionMaps</div><div class="ttdoc">Enum to represent each Action Map.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:12</div></div>
 </div><!-- fragment -->
 </div>
 </div>

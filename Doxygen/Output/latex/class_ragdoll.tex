@@ -1,0 +1,68 @@
+\hypertarget{class_ragdoll}{}\doxysection{Ragdoll Class Reference}
+\label{class_ragdoll}\index{Ragdoll@{Ragdoll}}
+
+
+Base class for all \mbox{\hyperlink{class_ragdoll}{Ragdoll}} behaviour.  
+
+
+
+
+Inheritance diagram for Ragdoll\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{class_ragdoll__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragdoll\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_ragdoll__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragdoll_acf111dd872e949009f7a99bb453139a9}{On\+Collapse}} (bool collapse)
+\begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}\label{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}} 
+bool {\bfseries \+\_\+is\+Active} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all \mbox{\hyperlink{class_ragdoll}{Ragdoll}} behaviour. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ragdoll_acf111dd872e949009f7a99bb453139a9}\label{class_ragdoll_acf111dd872e949009f7a99bb453139a9}} 
+\index{Ragdoll@{Ragdoll}!OnCollapse@{OnCollapse}}
+\index{OnCollapse@{OnCollapse}!Ragdoll@{Ragdoll}}
+\doxysubsubsection{\texorpdfstring{OnCollapse()}{OnCollapse()}}
+{\footnotesize\ttfamily void Ragdoll.\+On\+Collapse (\begin{DoxyParamCaption}\item[{bool}]{collapse }\end{DoxyParamCaption})}
+
+
+
+Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collapse} & True\+: collapsed False\+: restored from collapsed\\
+\hline
+\end{DoxyParams}
+
+
+Call using Broadcast\+Message
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \_isActive\ =\ !collapse;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+
+\end{DoxyCode}

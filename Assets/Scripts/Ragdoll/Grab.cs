@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Grab : MonoBehaviour
+public class Grab : Ragdoll
 {
     //[SerializeField] KeyCode _mouseButton;
     [SerializeField] LayerMask _grabableLayerMask;
     private bool _hold = false;
     private FixedJoint2D _joint;
-    private bool _isActive = true;
+    
 
 
     void Update()
@@ -53,13 +53,5 @@ public class Grab : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly
-    /// </summary>
-    /// <param name="collapse">True: collapsed   False: restored from collapsed</param>
-    /// <remarks>Call using BroadcastMessage</remarks>
-    public void OnCollapse(bool collapse)
-    {
-        _isActive = !collapse;
-    }
+    
 }

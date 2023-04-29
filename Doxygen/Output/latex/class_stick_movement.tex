@@ -1,8 +1,252 @@
 \hypertarget{class_stick_movement}{}\doxysection{Stick\+Movement Class Reference}
 \label{class_stick_movement}\index{StickMovement@{StickMovement}}
-Inheritance diagram for Stick\+Movement\+:\begin{figure}[H]
+
+
+Inheritance diagram for Stick\+Movement\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_stick_movement}
+\includegraphics[width=163pt]{class_stick_movement__inherit__graph}
 \end{center}
 \end{figure}
+
+
+Collaboration diagram for Stick\+Movement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_stick_movement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_stick_movement_ab84fb18133660f3afafc860a738650b2}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_stick_movement_afb8a17bace38c3a570a013e9c727f876}{Fixed\+Update}} ()
+\item 
+bool \mbox{\hyperlink{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}{Is\+On\+Ground}} ()
+\begin{DoxyCompactList}\small\item\em Check if the user is contacting the ground. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}{Move\+Right}} (float seconds)
+\begin{DoxyCompactList}\small\item\em Move the legs using force -\/ leg angles are changed in the animator. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}{Move\+Left}} (float seconds)
+\begin{DoxyCompactList}\small\item\em Move the legs using force -\/ leg angles are changed in the animator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a66fb6dc23b14f22c26cc3e4da6061f8c}\label{class_stick_movement_a66fb6dc23b14f22c26cc3e4da6061f8c}} 
+float {\bfseries \+\_\+speed} = 1.\+5f
+\item 
+\mbox{\Hypertarget{class_stick_movement_abed942d3176dc3cec61ef06543762448}\label{class_stick_movement_abed942d3176dc3cec61ef06543762448}} 
+float {\bfseries \+\_\+step\+Wait} = 0.\+5f
+\item 
+\mbox{\Hypertarget{class_stick_movement_a88c6b3c426ee3225b996111b73a3486b}\label{class_stick_movement_a88c6b3c426ee3225b996111b73a3486b}} 
+float {\bfseries \+\_\+jump\+Force} = 10f
+\item 
+\mbox{\Hypertarget{class_stick_movement_a9bc8c4ca856758a9a3dea0627e193ac7}\label{class_stick_movement_a9bc8c4ca856758a9a3dea0627e193ac7}} 
+float {\bfseries \+\_\+position\+Radius}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a1cb0a23c4cb757a8677def96247dd94e}\label{class_stick_movement_a1cb0a23c4cb757a8677def96247dd94e}} 
+Layer\+Mask {\bfseries \+\_\+ground\+Layer\+Mask}
+\item 
+\mbox{\Hypertarget{class_stick_movement_adad3b29f2e1f65349f1ddf586e47ddc8}\label{class_stick_movement_adad3b29f2e1f65349f1ddf586e47ddc8}} 
+List$<$ Transform $>$ {\bfseries \+\_\+ground\+Positions}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a5023dcfdba40ddeea504dfae6c5aac93}\label{class_stick_movement_a5023dcfdba40ddeea504dfae6c5aac93}} 
+Rigidbody2D {\bfseries \+\_\+left\+Leg\+RB}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a0ed658e16ef7201b2a594c35b783d23a}\label{class_stick_movement_a0ed658e16ef7201b2a594c35b783d23a}} 
+Rigidbody2D {\bfseries \+\_\+right\+Leg\+RB}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a7f386ad9277e40a8e8920ff1f4d4d620}\label{class_stick_movement_a7f386ad9277e40a8e8920ff1f4d4d620}} 
+Rigidbody2D {\bfseries \+\_\+body\+RB}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a29f55f6af85e27958c7ce72d0c853c50}\label{class_stick_movement_a29f55f6af85e27958c7ce72d0c853c50}} 
+float {\bfseries \+\_\+vertical\+Min\+Value} = 0.\+5f
+\item 
+\mbox{\Hypertarget{class_stick_movement_aa474169d34568c94bbae1dff9d11885e}\label{class_stick_movement_aa474169d34568c94bbae1dff9d11885e}} 
+uint {\bfseries \+\_\+time\+Between\+Jumps\+In\+Physics\+Frames} = 5
+\item 
+\mbox{\Hypertarget{class_stick_movement_aadf7b944f82df4806c8c2af19e0ba95a}\label{class_stick_movement_aadf7b944f82df4806c8c2af19e0ba95a}} 
+Animator {\bfseries \+\_\+anim}
+\item 
+\mbox{\Hypertarget{class_stick_movement_ad7ba6b8341ad1bf27a4f3c8e61d3ffcf}\label{class_stick_movement_ad7ba6b8341ad1bf27a4f3c8e61d3ffcf}} 
+Coroutine {\bfseries \+\_\+walk\+Left}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a7efe20245698510895206c699972522d}\label{class_stick_movement_a7efe20245698510895206c699972522d}} 
+Coroutine {\bfseries \+\_\+walk\+Right}
+\item 
+\mbox{\Hypertarget{class_stick_movement_a28934b54aed252375af11eb1bbc108ec}\label{class_stick_movement_a28934b54aed252375af11eb1bbc108ec}} 
+bool {\bfseries \+\_\+collapse} = false
+\item 
+\mbox{\Hypertarget{class_stick_movement_ae9e7b56987dd2e211d1eb252d033a8ab}\label{class_stick_movement_ae9e7b56987dd2e211d1eb252d033a8ab}} 
+uint {\bfseries \+\_\+frames\+To\+Next\+Jump} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stick_movement_afb8a17bace38c3a570a013e9c727f876}\label{class_stick_movement_afb8a17bace38c3a570a013e9c727f876}} 
+\index{StickMovement@{StickMovement}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Stick\+Movement.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_framesToNextJump\ >\ 0)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump-\/-\/;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ user\ can\ and\ is\ requesting\ to\ jump}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}{IsOnGround}}()\ \&\&\ !\_collapse\ \&\&\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ad41291ac5f2d9e533eea80aa34a22a71}{JumpValue}})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//do\ jump}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_bodyRB.AddForce(Vector2.up\ *\ \_jumpForce);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Jumped"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_jumpValue=\ false;}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump\ =\ \_timeBetweenJumpsInPhysicsFrames;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}\label{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}} 
+\index{StickMovement@{StickMovement}!IsOnGround@{IsOnGround}}
+\index{IsOnGround@{IsOnGround}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{IsOnGround()}{IsOnGround()}}
+{\footnotesize\ttfamily bool Stick\+Movement.\+Is\+On\+Ground (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check if the user is contacting the ground. 
+
+\begin{DoxyReturn}{Returns}
+True\+: Player is on the ground~\newline
+False\+: Player is not on the ground
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOnGround\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ each\ ground\ point,\ if\ any\ are\ contacting\ the\ ground,\ set\ isOnGround\ =\ true}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ \_groundPositions)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ isOnGround\ |=\ Physics2D.OverlapCircle(t.position,\ \_positionRadius,\ \_groundLayerMask);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isOnGround;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}\label{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}} 
+\index{StickMovement@{StickMovement}!MoveLeft@{MoveLeft}}
+\index{MoveLeft@{MoveLeft}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{MoveLeft()}{MoveLeft()}}
+{\footnotesize\ttfamily IEnumerator Stick\+Movement.\+Move\+Left (\begin{DoxyParamCaption}\item[{float}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Move the legs using force -\/ leg angles are changed in the animator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & time between moving each leg\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}\label{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}} 
+\index{StickMovement@{StickMovement}!MoveRight@{MoveRight}}
+\index{MoveRight@{MoveRight}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{MoveRight()}{MoveRight()}}
+{\footnotesize\ttfamily IEnumerator Stick\+Movement.\+Move\+Right (\begin{DoxyParamCaption}\item[{float}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Move the legs using force -\/ leg angles are changed in the animator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & time between moving each leg\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stick_movement_ab84fb18133660f3afafc860a738650b2}\label{class_stick_movement_ab84fb18133660f3afafc860a738650b2}} 
+\index{StickMovement@{StickMovement}!Update@{Update}}
+\index{Update@{Update}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Stick\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ user\ is\ pressing\ up\ or\ down}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Mathf.Approximately(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a643fde3ff630bd1d0a9b4be8f2790b3c}{MoveVerticalAxis}},\ 0f))}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ the\ axis\ input\ is\ above\ a\ tolerance\ to\ try\ and\ reject\ unintentional\ up\ /\ down\ movement}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ newCollapse\ =\ InputHandler.Instance.MoveVerticalAxis\ >=\ \_verticalMinValue\ ?\ false\ :\ InputHandler.Instance.MoveVerticalAxis\ <=\ (-\/\_verticalMinValue)\ ?\ \textcolor{keyword}{true}\ :\ \_collapse;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newCollapse\ !=\ \_collapse)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//collapse\ the\ player\ and\ send\ a\ message\ to\ all\ the\ body\ parts\ to\ do\ the\ same}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_collapse\ =\ newCollapse;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.BroadcastMessage(\textcolor{stringliteral}{"{}OnCollapse"{}},\ \_collapse);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_collapse:\ "{}}\ +\ \_collapse.ToString());}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ the\ user\ is\ inputting\ horizontal\ movement}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Mathf.Approximately(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{MoveHorizontalAxis}},\ 0f)\ \&\&\ !\_collapse)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{MoveHorizontalAxis}}\ >\ 0)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ right}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkRight"{}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkRight\ =\ StartCoroutine(\mbox{\hyperlink{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}{MoveRight}}(\_stepWait));}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ left}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkLeft"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkLeft\ =\ StartCoroutine(\mbox{\hyperlink{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}{MoveLeft}}(\_stepWait));}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//idle}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}

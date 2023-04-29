@@ -1,0 +1,5 @@
+<map id="Arms" name="Arms">
+<area shape="rect" id="node1" title=" " alt="" coords="34,152,87,177"/>
+<area shape="rect" id="node2" href="$class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="28,79,93,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,116,31"/>
+</map>

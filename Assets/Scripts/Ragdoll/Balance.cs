@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Balance : MonoBehaviour
+public class Balance : Ragdoll
 {
     [SerializeField] public float TargetRotation;
     [SerializeField] public float Force;
     private Rigidbody2D _rb;
 
-    private bool _isActive = true;
+    
 
     private void Awake()
     {
@@ -22,13 +22,5 @@ public class Balance : MonoBehaviour
         if(_isActive) _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, TargetRotation, Force * Time.fixedDeltaTime));
     }
 
-    /// <summary>
-    /// Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly
-    /// </summary>
-    /// <param name="collapse">True: collapsed   False: restored from collapsed</param>
-    /// <remarks>Call using BroadcastMessage</remarks>
-    public void OnCollapse(bool collapse)
-    {
-        _isActive = !collapse;
-    }
+    
 }

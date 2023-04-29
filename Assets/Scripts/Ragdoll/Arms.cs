@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Arms : MonoBehaviour
+public class Arms : Ragdoll
 {
     [SerializeField] private float _speed = 300f;
     [SerializeField] private Rigidbody2D _rb;
@@ -14,8 +14,6 @@ public class Arms : MonoBehaviour
     private Vector3 _controllerPos = Vector3.zero;
     private Vector3 _delta = Vector3.zero;
     private float _rotationZ = 0f;
-
-    private bool _isActive = true;
 
     /// <summary>
     /// Calculates the arm rotation value based on which controller is active
@@ -56,17 +54,6 @@ public class Arms : MonoBehaviour
             _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));
         }
         
-    }
-
-
-    /// <summary>
-    /// Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly
-    /// </summary>
-    /// <param name="collapse">True: collapsed   False: restored from collapsed</param>
-    /// <remarks>Call using BroadcastMessage</remarks>
-    public void OnCollapse(bool collapse)
-    {
-        _isActive = !collapse;
     }
 }
 

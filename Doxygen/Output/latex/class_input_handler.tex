@@ -1,9 +1,21 @@
 \hypertarget{class_input_handler}{}\doxysection{Input\+Handler Class Reference}
 \label{class_input_handler}\index{InputHandler@{InputHandler}}
-Inheritance diagram for Input\+Handler\+:\begin{figure}[H]
+
+
+Inheritance diagram for Input\+Handler\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_input_handler}
+\includegraphics[width=163pt]{class_input_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Input\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_input_handler__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -57,6 +69,69 @@ bool \mbox{\hyperlink{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}{Men
  True if the \textquotesingle{}Do\+It\textquotesingle{} button is pressed. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}} \mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{Current\+Action\+Map}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Which Action Map is active. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_input_handler_aab3519657c609d718dc11a5094746276}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_input_handler_a3623f026bd72d365e8c830948279cabd}{Set\+Jump}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes a button press and sets whether the user is trying to jump. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_a155de69040f466f59d93318e22886936}{Set\+Move\+Player}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes an axis input for left right movement and sets the intended direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_a88b528090df577ae5047270bf2919e0c}{Set\+Collapse}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes a button press and sets whether the user is trying to collapse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_affe0d77feb1856fd3f8f91287a515085}{Set\+Mouse\+Move\+Arms}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes the mouse input and sets a rotation angle for the arms to target towards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_aaa3eb7dc1a98627db6aee62f017c19dc}{Set\+Stick\+Move\+Arms}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes the gamepad stick input and sets a rotation angle for the arms to target towards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_a600f170ca604cc417b406368d184be3f}{Set\+Left\+Grab\+Button}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes a button press and sets whether the user is trying to grab with left hand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_a70634e44fb25b23f151f47bd6fa3c711}{Set\+Right\+Grab\+Button}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes a button press and sets whether the user is trying to grab with right hand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_handler_afa9f2f25967e639f7eb431381d84e5bf}{Set\+Menu\+Button\+Pressed}} (Input\+Action.\+Callback\+Context value)
+\begin{DoxyCompactList}\small\item\em Processes a button press and sets whether the user is trying to do something on menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_input_handler_a801189a200cf4febd66f54c3f2d28c71}\label{class_input_handler_a801189a200cf4febd66f54c3f2d28c71}} 
+Controls {\bfseries \+\_\+controls}
+\item 
+\mbox{\Hypertarget{class_input_handler_acd6611400bc6b4c5230e7340438361ad}\label{class_input_handler_acd6611400bc6b4c5230e7340438361ad}} 
+\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}} {\bfseries \+\_\+current\+Action\+Map}
+\item 
+\mbox{\Hypertarget{class_input_handler_aad07bfbdfcf74ef63a5a707464065de7}\label{class_input_handler_aad07bfbdfcf74ef63a5a707464065de7}} 
+bool {\bfseries \+\_\+jump\+Value} = false
+\item 
+\mbox{\Hypertarget{class_input_handler_a8777b469ecf14ab909df882c38ddfaef}\label{class_input_handler_a8777b469ecf14ab909df882c38ddfaef}} 
+float {\bfseries \+\_\+move\+Horizontal\+Axis} = 0f
+\item 
+\mbox{\Hypertarget{class_input_handler_ab21e34688714397701e2efc76483c9ce}\label{class_input_handler_ab21e34688714397701e2efc76483c9ce}} 
+float {\bfseries \+\_\+move\+Vertical\+Axis} = 0f
+\item 
+\mbox{\Hypertarget{class_input_handler_ac57e1dce2e4a5615dd3390aaa4b00ec1}\label{class_input_handler_ac57e1dce2e4a5615dd3390aaa4b00ec1}} 
+Vector2 {\bfseries \+\_\+arms\+Controller\+Input}
+\item 
+\mbox{\Hypertarget{class_input_handler_a8dddadc6504ce7aea6764662a819f614}\label{class_input_handler_a8dddadc6504ce7aea6764662a819f614}} 
+bool {\bfseries \+\_\+is\+Mouse\+Controller} = false
+\item 
+\mbox{\Hypertarget{class_input_handler_aa4f53566c06ef12b07edefa869086703}\label{class_input_handler_aa4f53566c06ef12b07edefa869086703}} 
+bool {\bfseries \+\_\+arms\+Stick\+Released} = true
+\item 
+\mbox{\Hypertarget{class_input_handler_afbe567572e6fe0727517264bd72c0a05}\label{class_input_handler_afbe567572e6fe0727517264bd72c0a05}} 
+bool {\bfseries \+\_\+is\+Grabbing\+Left} = false
+\item 
+\mbox{\Hypertarget{class_input_handler_a195b884b96700f91f97bb9f381bfeabc}\label{class_input_handler_a195b884b96700f91f97bb9f381bfeabc}} 
+bool {\bfseries \+\_\+is\+Grabbing\+Right} = false
+\item 
+\mbox{\Hypertarget{class_input_handler_a409ae6b7b7d5b0554bd688e1e3560081}\label{class_input_handler_a409ae6b7b7d5b0554bd688e1e3560081}} 
+bool {\bfseries \+\_\+menu\+Button\+Pressed} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_input_handler_a9a141a1f6d4d18f906a4d640d080bd15}\label{class_input_handler_a9a141a1f6d4d18f906a4d640d080bd15}} 
+static \mbox{\hyperlink{class_input_handler}{Input\+Handler}} {\bfseries instance}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Enumeration Documentation}
@@ -83,6 +158,243 @@ Enum to represent each Action Map.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_handler_aab3519657c609d718dc11a5094746276}\label{class_input_handler_aab3519657c609d718dc11a5094746276}} 
+\index{InputHandler@{InputHandler}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Input\+Handler.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \_controls\ =\ \textcolor{keyword}{new}\ Controls();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.UNKNOWN;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.performed\ +=\ \mbox{\hyperlink{class_input_handler_a3623f026bd72d365e8c830948279cabd}{SetJump}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.canceled\ +=\ \mbox{\hyperlink{class_input_handler_a3623f026bd72d365e8c830948279cabd}{SetJump}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.performed\ +=\ \mbox{\hyperlink{class_input_handler_a155de69040f466f59d93318e22886936}{SetMovePlayer}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.canceled\ +=\ \mbox{\hyperlink{class_input_handler_a155de69040f466f59d93318e22886936}{SetMovePlayer}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.performed\ +=\ \mbox{\hyperlink{class_input_handler_a88b528090df577ae5047270bf2919e0c}{SetCollapse}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.canceled\ +=\ \mbox{\hyperlink{class_input_handler_a88b528090df577ae5047270bf2919e0c}{SetCollapse}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.performed\ +=\ \mbox{\hyperlink{class_input_handler_affe0d77feb1856fd3f8f91287a515085}{SetMouseMoveArms}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.canceled\ +=\ \mbox{\hyperlink{class_input_handler_affe0d77feb1856fd3f8f91287a515085}{SetMouseMoveArms}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.performed\ +=\ \mbox{\hyperlink{class_input_handler_aaa3eb7dc1a98627db6aee62f017c19dc}{SetStickMoveArms}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.canceled\ +=\ \mbox{\hyperlink{class_input_handler_aaa3eb7dc1a98627db6aee62f017c19dc}{SetStickMoveArms}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.performed\ +=\ \mbox{\hyperlink{class_input_handler_a600f170ca604cc417b406368d184be3f}{SetLeftGrabButton}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.canceled\ +=\ \mbox{\hyperlink{class_input_handler_a600f170ca604cc417b406368d184be3f}{SetLeftGrabButton}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.performed\ +=\ \mbox{\hyperlink{class_input_handler_a70634e44fb25b23f151f47bd6fa3c711}{SetRightGrabButton}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.canceled\ +=\ \mbox{\hyperlink{class_input_handler_a70634e44fb25b23f151f47bd6fa3c711}{SetRightGrabButton}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.performed\ +=\ \mbox{\hyperlink{class_input_handler_afa9f2f25967e639f7eb431381d84e5bf}{SetMenuButtonPressed}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.canceled\ +=\ \mbox{\hyperlink{class_input_handler_afa9f2f25967e639f7eb431381d84e5bf}{SetMenuButtonPressed}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a88b528090df577ae5047270bf2919e0c}\label{class_input_handler_a88b528090df577ae5047270bf2919e0c}} 
+\index{InputHandler@{InputHandler}!SetCollapse@{SetCollapse}}
+\index{SetCollapse@{SetCollapse}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetCollapse()}{SetCollapse()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Collapse (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a button press and sets whether the user is trying to collapse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \_moveVerticalAxis\ =\ value.ReadValue<\textcolor{keywordtype}{float}>();}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a3623f026bd72d365e8c830948279cabd}\label{class_input_handler_a3623f026bd72d365e8c830948279cabd}} 
+\index{InputHandler@{InputHandler}!SetJump@{SetJump}}
+\index{SetJump@{SetJump}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetJump()}{SetJump()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Jump (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a button press and sets whether the user is trying to jump. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \_jumpValue\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a600f170ca604cc417b406368d184be3f}\label{class_input_handler_a600f170ca604cc417b406368d184be3f}} 
+\index{InputHandler@{InputHandler}!SetLeftGrabButton@{SetLeftGrabButton}}
+\index{SetLeftGrabButton@{SetLeftGrabButton}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetLeftGrabButton()}{SetLeftGrabButton()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Left\+Grab\+Button (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a button press and sets whether the user is trying to grab with left hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \_isGrabbingLeft\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_afa9f2f25967e639f7eb431381d84e5bf}\label{class_input_handler_afa9f2f25967e639f7eb431381d84e5bf}} 
+\index{InputHandler@{InputHandler}!SetMenuButtonPressed@{SetMenuButtonPressed}}
+\index{SetMenuButtonPressed@{SetMenuButtonPressed}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetMenuButtonPressed()}{SetMenuButtonPressed()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Menu\+Button\+Pressed (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a button press and sets whether the user is trying to do something on menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System~\newline
+Only for testing enabling of different Action Maps
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00211\ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \_menuButtonPressed\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_affe0d77feb1856fd3f8f91287a515085}\label{class_input_handler_affe0d77feb1856fd3f8f91287a515085}} 
+\index{InputHandler@{InputHandler}!SetMouseMoveArms@{SetMouseMoveArms}}
+\index{SetMouseMoveArms@{SetMouseMoveArms}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetMouseMoveArms()}{SetMouseMoveArms()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Mouse\+Move\+Arms (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes the mouse input and sets a rotation angle for the arms to target towards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \_armsControllerInput\ =\ value.ReadValue<Vector2>();}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \_isMouseController\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a155de69040f466f59d93318e22886936}\label{class_input_handler_a155de69040f466f59d93318e22886936}} 
+\index{InputHandler@{InputHandler}!SetMovePlayer@{SetMovePlayer}}
+\index{SetMovePlayer@{SetMovePlayer}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetMovePlayer()}{SetMovePlayer()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Move\+Player (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes an axis input for left right movement and sets the intended direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \_moveHorizontalAxis\ =\ value.ReadValue<\textcolor{keywordtype}{float}>();}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a70634e44fb25b23f151f47bd6fa3c711}\label{class_input_handler_a70634e44fb25b23f151f47bd6fa3c711}} 
+\index{InputHandler@{InputHandler}!SetRightGrabButton@{SetRightGrabButton}}
+\index{SetRightGrabButton@{SetRightGrabButton}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetRightGrabButton()}{SetRightGrabButton()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Right\+Grab\+Button (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a button press and sets whether the user is trying to grab with right hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \_isGrabbingRight\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_aaa3eb7dc1a98627db6aee62f017c19dc}\label{class_input_handler_aaa3eb7dc1a98627db6aee62f017c19dc}} 
+\index{InputHandler@{InputHandler}!SetStickMoveArms@{SetStickMoveArms}}
+\index{SetStickMoveArms@{SetStickMoveArms}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SetStickMoveArms()}{SetStickMoveArms()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Set\+Stick\+Move\+Arms (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes the gamepad stick input and sets a rotation angle for the arms to target towards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Input\+Action Callback\+Context passed from the Input System\\
+\hline
+\end{DoxyParams}
+
+
+Only use to link to the Input System
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \_armsControllerInput\ =\ value.ReadValue<Vector2>();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \_isMouseController\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \_armsStickReleased\ =\ Mathf.Approximately(\_armsControllerInput.x,\ 0f)\ \&\&\ Mathf.Approximately(\_armsControllerInput.y,\ 0f);}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}\label{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}} 
 \index{InputHandler@{InputHandler}!SwitchActionMap@{SwitchActionMap}}
 \index{SwitchActionMap@{SwitchActionMap}!InputHandler@{InputHandler}}

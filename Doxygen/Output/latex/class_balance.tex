@@ -1,16 +1,25 @@
 \hypertarget{class_balance}{}\doxysection{Balance Class Reference}
 \label{class_balance}\index{Balance@{Balance}}
-Inheritance diagram for Balance\+:\begin{figure}[H]
+
+
+Inheritance diagram for Balance\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_balance}
+\includegraphics[width=163pt]{class_balance__inherit__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_balance_a8c928550276e12bf7f17004ba67f5f14}{On\+Collapse}} (bool collapse)
-\begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+Collaboration diagram for Balance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_balance__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,30 +29,58 @@ float {\bfseries Target\+Rotation}
 \mbox{\Hypertarget{class_balance_a855e2b50c4e23099d79e015a720b3a6e}\label{class_balance_a855e2b50c4e23099d79e015a720b3a6e}} 
 float {\bfseries Force}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_balance_a57f9dcd6a5a024a5a68344bb93759ddb}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_balance_ac47b993db61122f2a95b1a15adafa4a4}{Fixed\+Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_balance_a55026d457c673deb4d4d67957e79c8b1}\label{class_balance_a55026d457c673deb4d4d67957e79c8b1}} 
+Rigidbody2D {\bfseries \+\_\+rb}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragdoll_acf111dd872e949009f7a99bb453139a9}{On\+Collapse}} (bool collapse)
+\begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}\label{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}} 
+bool {\bfseries \+\_\+is\+Active} = true
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_balance_a8c928550276e12bf7f17004ba67f5f14}\label{class_balance_a8c928550276e12bf7f17004ba67f5f14}} 
-\index{Balance@{Balance}!OnCollapse@{OnCollapse}}
-\index{OnCollapse@{OnCollapse}!Balance@{Balance}}
-\doxysubsubsection{\texorpdfstring{OnCollapse()}{OnCollapse()}}
-{\footnotesize\ttfamily void Balance.\+On\+Collapse (\begin{DoxyParamCaption}\item[{bool}]{collapse }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_balance_a57f9dcd6a5a024a5a68344bb93759ddb}\label{class_balance_a57f9dcd6a5a024a5a68344bb93759ddb}} 
+\index{Balance@{Balance}!Awake@{Awake}}
+\index{Awake@{Awake}!Balance@{Balance}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Balance.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
-
-Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em collapse} & True\+: collapsed False\+: restored from collapsed\\
-\hline
-\end{DoxyParams}
-
-
-Call using Broadcast\+Message
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \_isActive\ =\ !collapse;}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \_rb\ =\ GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_balance_ac47b993db61122f2a95b1a15adafa4a4}\label{class_balance_ac47b993db61122f2a95b1a15adafa4a4}} 
+\index{Balance@{Balance}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!Balance@{Balance}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Balance.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//mvoe\ the\ body\ part\ towards\ its\ rotation\ with\ force}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_isActive)\ \_rb.MoveRotation(Mathf.LerpAngle(\_rb.rotation,\ TargetRotation,\ Force\ *\ Time.fixedDeltaTime));}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
 
 \end{DoxyCode}

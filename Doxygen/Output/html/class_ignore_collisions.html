@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('class_ignore_collisions.html',''); ini
 
 <div class="header">
   <div class="summary">
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_ignore_collisions-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">IgnoreCollisions Class Reference</div></div>
 </div><!--header-->
@@ -98,9 +99,99 @@ $(document).ready(function(){initNavTree('class_ignore_collisions.html',''); ini
 <div class="dynheader">
 Inheritance diagram for IgnoreCollisions:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_ignore_collisions.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_ignore_collisions__inherit__graph.png" border="0" usemap="#a_ignore_collisions_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_ignore_collisions_inherit__map" id="a_ignore_collisions_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,79,119,104"/>
+<area shape="rect" title=" " alt="" coords="7,5,117,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for IgnoreCollisions:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ignore_collisions__coll__graph.png" border="0" usemap="#a_ignore_collisions_coll__map" alt="Collaboration graph"/></div>
+<map name="a_ignore_collisions_coll__map" id="a_ignore_collisions_coll__map">
+<area shape="rect" title=" " alt="" coords="5,79,119,104"/>
+<area shape="rect" title=" " alt="" coords="7,5,117,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af00517b191535705a9869ac58bea834d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ignore_collisions.html#af00517b191535705a9869ac58bea834d">Awake</a> ()</td></tr>
+<tr class="separator:af00517b191535705a9869ac58bea834d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae233e8f1794927243fc12e6c8a8ccde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ignore_collisions.html#aae233e8f1794927243fc12e6c8a8ccde">OnCollisionEnter2D</a> (Collision2D collision)</td></tr>
+<tr class="separator:aae233e8f1794927243fc12e6c8a8ccde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af00517b191535705a9869ac58bea834d" name="af00517b191535705a9869ac58bea834d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00517b191535705a9869ac58bea834d">&#9670;&#160;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IgnoreCollisions.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">    9</span>    {</div>
+<div class="line"><span class="lineno">   10</span>        <span class="comment">//get all our children colliders and setup physics to ignore collisions between them</span></div>
+<div class="line"><span class="lineno">   11</span>        var colliders = GetComponentsInChildren&lt;Collider2D&gt;();</div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; colliders.Length; i++)</div>
+<div class="line"><span class="lineno">   13</span>        {</div>
+<div class="line"><span class="lineno">   14</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = i+1; k &lt; colliders.Length; k++)</div>
+<div class="line"><span class="lineno">   15</span>            {</div>
+<div class="line"><span class="lineno">   16</span>                Physics2D.IgnoreCollision(colliders[i], colliders[k]);</div>
+<div class="line"><span class="lineno">   17</span>            }</div>
+<div class="line"><span class="lineno">   18</span>        }</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aae233e8f1794927243fc12e6c8a8ccde" name="aae233e8f1794927243fc12e6c8a8ccde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae233e8f1794927243fc12e6c8a8ccde">&#9670;&#160;</a></span>OnCollisionEnter2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IgnoreCollisions.OnCollisionEnter2D </td>
+          <td>(</td>
+          <td class="paramtype">Collision2D&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span>(collision.gameObject.tag == <span class="stringliteral">&quot;Player&quot;</span>)</div>
+<div class="line"><span class="lineno">   24</span>        {</div>
+<div class="line"><span class="lineno">   25</span>            <span class="comment">//if anything else has been added to the player object during runtime, detect this and also ignore</span></div>
+<div class="line"><span class="lineno">   26</span>            Physics2D.IgnoreCollision(this.gameObject.GetComponent&lt;Collider2D&gt;(), collision.gameObject.GetComponent&lt;Collider2D&gt;());</div>
+<div class="line"><span class="lineno">   27</span>        }</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

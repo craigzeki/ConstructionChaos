@@ -1,8 +1,193 @@
 \hypertarget{class_goal_zone}{}\doxysection{Goal\+Zone Class Reference}
 \label{class_goal_zone}\index{GoalZone@{GoalZone}}
-Inheritance diagram for Goal\+Zone\+:\begin{figure}[H]
+
+
+Inheritance diagram for Goal\+Zone\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_goal_zone}
+\includegraphics[width=163pt]{class_goal_zone__inherit__graph}
 \end{center}
 \end{figure}
+
+
+Collaboration diagram for Goal\+Zone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_goal_zone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_goal_zone_a921b8a8055344b879d6ce5e28a5a4c92}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_goal_zone_a690d76288499d14ef15dc232498f1a46}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\item 
+void \mbox{\hyperlink{class_goal_zone_ab92171b5d16537c55fdcb9de90e5d17a}{On\+Trigger\+Exit2D}} (Collider2D collision)
+\item 
+void \mbox{\hyperlink{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}{Check\+Win\+Condition}} ()
+\begin{DoxyCompactList}\small\item\em Checks to see if all win conditions are met\+:~\newline
+ \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}{Do\+Countdown}} ()
+\begin{DoxyCompactList}\small\item\em Runs the countdown and triggers the win condition if countdown completes~\newline
+ {\itshape Start as a coroutine} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_goal_zone_a03ef1104cd33e5ebf1d0a5e7f0a0f626}\label{class_goal_zone_a03ef1104cd33e5ebf1d0a5e7f0a0f626}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+crates\+Text}
+\item 
+\mbox{\Hypertarget{class_goal_zone_aa238711e1ed7655c5ed42423965bf5dd}\label{class_goal_zone_aa238711e1ed7655c5ed42423965bf5dd}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+countdown\+Text}
+\item 
+\mbox{\Hypertarget{class_goal_zone_aec3a6680bbc439e084a35766836b3252}\label{class_goal_zone_aec3a6680bbc439e084a35766836b3252}} 
+uint {\bfseries \+\_\+num\+Of\+Crates\+Required} = 3
+\item 
+\mbox{\Hypertarget{class_goal_zone_a2ee88dec5b5169330bb69b4b0c8069f5}\label{class_goal_zone_a2ee88dec5b5169330bb69b4b0c8069f5}} 
+uint {\bfseries \+\_\+countdown\+Timer\+Start} = 3
+\item 
+\mbox{\Hypertarget{class_goal_zone_a1e11726e8df6e6da87283fff1102b4bd}\label{class_goal_zone_a1e11726e8df6e6da87283fff1102b4bd}} 
+uint {\bfseries \+\_\+num\+Of\+Crates} = 0
+\item 
+\mbox{\Hypertarget{class_goal_zone_a4ca55d6d78f153a52ceb7ac5cfa7d595}\label{class_goal_zone_a4ca55d6d78f153a52ceb7ac5cfa7d595}} 
+int {\bfseries \+\_\+countdown\+Timer} = 0
+\item 
+\mbox{\Hypertarget{class_goal_zone_aad3f17112c5367691ca390c0177d985d}\label{class_goal_zone_aad3f17112c5367691ca390c0177d985d}} 
+Coroutine {\bfseries \+\_\+countdown\+Coroutine}
+\item 
+\mbox{\Hypertarget{class_goal_zone_a4e5cc983059d7a980626d4c9b767f771}\label{class_goal_zone_a4e5cc983059d7a980626d4c9b767f771}} 
+bool {\bfseries \+\_\+win} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_goal_zone_a921b8a8055344b879d6ce5e28a5a4c92}\label{class_goal_zone_a921b8a8055344b879d6ce5e28a5a4c92}} 
+\index{GoalZone@{GoalZone}!Awake@{Awake}}
+\index{Awake@{Awake}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ goal\ countdown\ timer\ and\ set\ it\ to\ its\ value\ reeady\ for\ countdown}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ the\ crate\ counter}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cratesText\ !=\ \textcolor{keyword}{null})\ \_cratesText.text\ =\ \_numOfCrates.ToString(\textcolor{stringliteral}{"{}00"{}})\ +\ \textcolor{stringliteral}{"{}\ of\ "{}}\ +\ \_numOfCratesRequired.ToString(\textcolor{stringliteral}{"{}00"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}\label{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}} 
+\index{GoalZone@{GoalZone}!CheckWinCondition@{CheckWinCondition}}
+\index{CheckWinCondition@{CheckWinCondition}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{CheckWinCondition()}{CheckWinCondition()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+Check\+Win\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks to see if all win conditions are met\+:~\newline
+ 
+
+
+\begin{DoxyEnumerate}
+\item Required number of crates present in the area~\newline
+
+\item Countdown timer has reached zero 
+\end{DoxyEnumerate}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_win)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//already\ won\ -\/\ don't\ bother}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cratesText\ !=\ \textcolor{keyword}{null})\ \_cratesText.text\ =\ \_numOfCrates.ToString(\textcolor{stringliteral}{"{}00"{}})\ +\ \textcolor{stringliteral}{"{}\ of\ "{}}\ +\ \_numOfCratesRequired.ToString(\textcolor{stringliteral}{"{}00"{}});\ \textcolor{comment}{//update\ the\ crates\ UI\ text}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_numOfCrates\ >=\ \_numOfCratesRequired)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//total\ number\ of\ crates\ criteria\ met}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//start\ the\ countdown\ timer}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_countdownCoroutine);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ StartCoroutine(\mbox{\hyperlink{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}{DoCountdown}}());}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//not\ enough\ crates\ yet,\ stop\ countdown\ if\ it\ was\ previously\ running\ (crate\ has\ been\ removed)}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_countdownCoroutine);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ countdown\ timer}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}\label{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}} 
+\index{GoalZone@{GoalZone}!DoCountdown@{DoCountdown}}
+\index{DoCountdown@{DoCountdown}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{DoCountdown()}{DoCountdown()}}
+{\footnotesize\ttfamily IEnumerator Goal\+Zone.\+Do\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs the countdown and triggers the win condition if countdown completes~\newline
+ {\itshape Start as a coroutine} 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\_countdownTimer\ >\ -\/1)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \_countdownTimer.ToString();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTimer-\/-\/;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \textcolor{stringliteral}{"{}WIN"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \_win\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_a690d76288499d14ef15dc232498f1a46}\label{class_goal_zone_a690d76288499d14ef15dc232498f1a46}} 
+\index{GoalZone@{GoalZone}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ crate\ has\ entered\ the\ area,\ increment\ the\ number\ of\ crates\ for\ the\ UI\ to\ update\ and\ check\ if\ the\ win\ conditions\ are\ met}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Crate"{}})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_numOfCrates++;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}{CheckWinCondition}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_ab92171b5d16537c55fdcb9de90e5d17a}\label{class_goal_zone_ab92171b5d16537c55fdcb9de90e5d17a}} 
+\index{GoalZone@{GoalZone}!OnTriggerExit2D@{OnTriggerExit2D}}
+\index{OnTriggerExit2D@{OnTriggerExit2D}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{OnTriggerExit2D()}{OnTriggerExit2D()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+On\+Trigger\+Exit2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Crate"{}})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//a\ crate\ has\ been\ removed\ from\ the\ area,\ reduce\ the\ number\ of\ crates}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \_numOfCrates-\/-\/;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//update\ the\ UI\ and\ check\ the\ win\ conditions}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}{CheckWinCondition}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
