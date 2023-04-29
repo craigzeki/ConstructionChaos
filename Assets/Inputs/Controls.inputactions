@@ -269,6 +269,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Menu",
+            "id": "2740559f-e910-4a32-ad62-ec322931ac87",
+            "actions": [
+                {
+                    "name": "DoIt",
+                    "type": "Button",
+                    "id": "69ddf5f9-a48d-4d16-80aa-4f0bd1018c57",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7899d9f8-5cb2-45fb-a829-6eb2760e08b5",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "DoIt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87ae829b-400b-499d-8e0f-d276e24504e8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "DoIt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

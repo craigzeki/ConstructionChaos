@@ -7,6 +7,7 @@ public class IgnoreCollisions : MonoBehaviour
     
     void Awake()
     {
+        //get all our children colliders and setup physics to ignore collisions between them
         var colliders = GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -21,6 +22,7 @@ public class IgnoreCollisions : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            //if anything else has been added to the player object during runtime, detect this and also ignore
             Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
         }
     }

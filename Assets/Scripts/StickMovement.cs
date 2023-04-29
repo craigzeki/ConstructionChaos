@@ -19,68 +19,89 @@ public class StickMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rightLegRB;
     [SerializeField] private Rigidbody2D _bodyRB;
     [SerializeField] private float _verticalMinValue = 0.5f;
+    [SerializeField] private uint _timeBetweenJumpsInPhysicsFrames = 5; //required to prevent compunded jumps
 
     [SerializeField] private Animator _anim;
 
     private Coroutine _walkLeft, _walkRight;
     private bool _collapse = false;
+    private uint _framesToNextJump = 0;
 
-    #region Inputs
+    //#region Inputs
 
-    private bool _jumpValue = false;
-    private float _moveHorizontalAxis = 0f;
-    private float _moveVerticalAxis = 0f;
+    //private bool _jumpValue = false;
+    //private float _moveHorizontalAxis = 0f;
+    //private float _moveVerticalAxis = 0f;
 
-    public void Jump(InputAction.CallbackContext value)
-    {
-        if (!value.performed) return;
+    ///// <summary>
+    ///// Processes a button press and sets whether the user is trying to jump
+    ///// </summary>
+    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    ///// <remarks>Only use to link to the Input System</remarks>
+    //public void Jump(InputAction.CallbackContext value)
+    //{
+    //    if (!value.performed) return;
 
-        _jumpValue = value.ReadValueAsButton();
-        Debug.Log("_jumpValue: " + _jumpValue.ToString());
+    //    _jumpValue = value.ReadValueAsButton();
+    //    Debug.Log("STICK MOVEMENT _jumpValue: " + _jumpValue.ToString());
         
-    }
+    //}
 
-    public void Move(InputAction.CallbackContext value)
-    {
-        _moveHorizontalAxis = value.ReadValue<float>();
-        Debug.Log("_horizontalAxis: " + _moveHorizontalAxis.ToString());
-    }
+    ///// <summary>
+    ///// Processes an axis input for left right movement and sets the intended direction
+    ///// </summary>
+    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    ///// <remarks>Only use to link to the Input System</remarks>
+    //public void Move(InputAction.CallbackContext value)
+    //{
+    //    _moveHorizontalAxis = value.ReadValue<float>();
+    //    Debug.Log("STICK MOVEMENT _horizontalAxis: " + _moveHorizontalAxis.ToString());
+    //}
 
-    public void Collapse(InputAction.CallbackContext value)
-    {
+    ///// <summary>
+    ///// Processes a button press and sets whether the user is trying to collapse
+    ///// </summary>
+    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    ///// <remarks>Only use to link to the Input System</remarks>
+    //public void Collapse(InputAction.CallbackContext value)
+    //{
         
-        _moveVerticalAxis = value.ReadValue<float>();
-        Debug.Log("_verticalAxis: " + _moveVerticalAxis.ToString());
-    }
+    //    _moveVerticalAxis = value.ReadValue<float>();
+    //    Debug.Log("STICK MOVEMENT _verticalAxis: " + _moveVerticalAxis.ToString());
+    //}
 
-    #endregion
-
+    //#endregion
 
     // Update is called once per frame
     void Update()
     {
-        if(!Mathf.Approximately(_moveVerticalAxis, 0f))
+        //check if user is pressing up or down
+        if(!Mathf.Approximately(InputHandler.Instance.MoveVerticalAxis, 0f))
         {
-            bool newCollapse = _moveVerticalAxis > _verticalMinValue ? false : _moveVerticalAxis < (-_moveVerticalAxis) ? true : _collapse;
+            //check if the axis input is above a tolerance to try and reject unintentional up / down movement
+            bool newCollapse = InputHandler.Instance.MoveVerticalAxis >= _verticalMinValue ? false : InputHandler.Instance.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
             if (newCollapse != _collapse)
             {
+                //collapse the player and send a message to all the body parts to do the same
                 _collapse = newCollapse;
                 gameObject.BroadcastMessage("OnCollapse", _collapse);
             }
             Debug.Log("_collapse: " + _collapse.ToString());
         }
-        //if (Input.GetKeyDown(KeyCode.E)) _collapse = !_collapse;
-
-        if (!Mathf.Approximately(_moveHorizontalAxis, 0f) && !_collapse)
+        
+        //check if the user is inputting horizontal movement
+        if (!Mathf.Approximately(InputHandler.Instance.MoveHorizontalAxis, 0f) && !_collapse)
         {
-            if (_moveHorizontalAxis > 0)
+            if (InputHandler.Instance.MoveHorizontalAxis > 0)
             {
+                //move right
                 _anim.Play("WalkRight");
                 if (_walkLeft != null) StopCoroutine(_walkLeft);
                 _walkRight = StartCoroutine(MoveRight(_stepWait));
             }
             else
             {
+                //move left
                 _anim.Play("WalkLeft");
                 if (_walkRight != null) StopCoroutine(_walkRight);
                 _walkLeft = StartCoroutine(MoveLeft(_stepWait));
@@ -88,30 +109,43 @@ public class StickMovement : MonoBehaviour
         }
         else
         {
+            //idle
             if (_walkLeft != null) StopCoroutine(_walkLeft);
             if (_walkRight != null) StopCoroutine(_walkRight);
             _anim.Play("Idle");
         }
-
-        
-        
-
     }
 
     private void FixedUpdate()
     {
-        if (IsOnGround() && !_collapse && _jumpValue)
+        if (_framesToNextJump > 0)
         {
-            _bodyRB.AddForce(Vector2.up * _jumpForce);
-            Debug.Log("Jumped");
-            _jumpValue= false;
+            _framesToNextJump--;
         }
+        else
+        {
+            //check if user can and is requesting to jump
+            if (IsOnGround() && !_collapse && InputHandler.Instance.JumpValue)
+            {
+                //do jump
+                _bodyRB.AddForce(Vector2.up * _jumpForce);
+                Debug.Log("Jumped");
+                //_jumpValue= false;
+            }
+            _framesToNextJump = _timeBetweenJumpsInPhysicsFrames;
+        }
+        
     }
 
+    /// <summary>
+    /// Check if the user is contacting the ground
+    /// </summary>
+    /// <returns>True: Player is on the ground<br/>False: Player is not on the ground</returns>
     private bool IsOnGround()
     {
         bool isOnGround = false;
 
+        //check each ground point, if any are contacting the ground, set isOnGround = true
         foreach (Transform t in _groundPositions)
         {
             isOnGround |= Physics2D.OverlapCircle(t.position, _positionRadius, _groundLayerMask);
@@ -120,6 +154,11 @@ public class StickMovement : MonoBehaviour
         return isOnGround;
     }
 
+    /// <summary>
+    /// Move the legs using force - leg angles are changed in the animator
+    /// </summary>
+    /// <param name="seconds">time between moving each leg</param>
+    /// <returns></returns>
     IEnumerator MoveRight(float seconds)
     {
         _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.deltaTime);
@@ -127,7 +166,12 @@ public class StickMovement : MonoBehaviour
         _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
     }
-    
+
+    /// <summary>
+    /// Move the legs using force - leg angles are changed in the animator
+    /// </summary>
+    /// <param name="seconds">time between moving each leg</param>
+    /// <returns></returns>
     IEnumerator MoveLeft(float seconds)
     {
         _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.deltaTime);
@@ -137,6 +181,7 @@ public class StickMovement : MonoBehaviour
     }
 
 #if UNITY_EDITOR
+    //if we are in the editor draw the gizmos for the ground contact points
     private void OnDrawGizmos()
     {
         Handles.color = Color.red;
