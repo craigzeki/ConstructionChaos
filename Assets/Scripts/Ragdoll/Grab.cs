@@ -12,21 +12,6 @@ public class Grab : MonoBehaviour
     private bool _isActive = true;
 
 
-
-    //#region Inputs
-    //private bool _isGrabbing = false;
-    ///// <summary>
-    ///// Processes a button press and sets whether the user is trying to grab
-    ///// </summary>
-    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
-    ///// <remarks>Only use to link to the Input System</remarks>
-    //public void GrabButton(InputAction.CallbackContext value)
-    //{
-    //    //if (!value.performed) return;
-    //    _isGrabbing = value.ReadValueAsButton();
-    //}
-    //#endregion
-
     void Update()
     {
         //player is trying to grab, and is allowed to

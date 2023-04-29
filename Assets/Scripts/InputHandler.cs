@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
+    /// <summary>
+    /// Enum to represent each Action Map
+    /// </summary>
     public enum ControlActionMaps
     {
         UNKNOWN = 0,
@@ -36,16 +39,60 @@ public class InputHandler : MonoBehaviour
             return instance;
         }
     }
+
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// True if jump button pressed
+    /// </summary>
     public bool JumpValue { get => _jumpValue;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// -1 to 1 based on horizontal input representing player movement
+    /// </summary>
     public float MoveHorizontalAxis { get => _moveHorizontalAxis;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// -1 to 1 based on vertical input representing player movement
+    /// </summary>
     public float MoveVerticalAxis { get => _moveVerticalAxis;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// 2D array representing horizontal and vertical axis for arms movement
+    /// </summary>
     public Vector2 ArmsControllerInput { get => _armsControllerInput;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// Boolean flag indicating if last input was from a mouse controller
+    /// </summary>
     public bool IsMouseController { get => _isMouseController;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// True if the gamepad stick controlling the arms centred
+    /// </summary>
     public bool ArmsStickReleased { get => _armsStickReleased;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// True if left hand grab button is pressed
+    /// </summary>
     public bool IsGrabbingLeft { get => _isGrabbingLeft;  }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// True of the right hand grab button is pressed
+    /// </summary>
     public bool IsGrabbingRight { get => _isGrabbingRight; }
+    /// <summary>
+    /// Action Map: Gameplay<br/>
+    /// True if either grab button is pressed
+    /// </summary>
     public bool IsGrabbing { get => _isGrabbingLeft || _isGrabbingRight; }
+    /// <summary>
+    /// Action Map: Menu<br/>
+    /// True if the 'DoIt' button is pressed
+    /// </summary>
     public bool MenuButtonPressed { get => _menuButtonPressed; }
+    /// <summary>
+    /// Which Action Map is active
+    /// </summary>
     public ControlActionMaps CurrentActionMap { get => _currentActionMap; }
 
     private void OnEnable()
@@ -76,6 +123,7 @@ public class InputHandler : MonoBehaviour
 
         _controls.Menu.DoIt.performed += SetMenuButtonPressed;
         _controls.Menu.DoIt.canceled += SetMenuButtonPressed;
+        
 
     }
 

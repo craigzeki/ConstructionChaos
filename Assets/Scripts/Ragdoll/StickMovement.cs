@@ -27,52 +27,6 @@ public class StickMovement : MonoBehaviour
     private bool _collapse = false;
     private uint _framesToNextJump = 0;
 
-    //#region Inputs
-
-    //private bool _jumpValue = false;
-    //private float _moveHorizontalAxis = 0f;
-    //private float _moveVerticalAxis = 0f;
-
-    ///// <summary>
-    ///// Processes a button press and sets whether the user is trying to jump
-    ///// </summary>
-    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
-    ///// <remarks>Only use to link to the Input System</remarks>
-    //public void Jump(InputAction.CallbackContext value)
-    //{
-    //    if (!value.performed) return;
-
-    //    _jumpValue = value.ReadValueAsButton();
-    //    Debug.Log("STICK MOVEMENT _jumpValue: " + _jumpValue.ToString());
-        
-    //}
-
-    ///// <summary>
-    ///// Processes an axis input for left right movement and sets the intended direction
-    ///// </summary>
-    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
-    ///// <remarks>Only use to link to the Input System</remarks>
-    //public void Move(InputAction.CallbackContext value)
-    //{
-    //    _moveHorizontalAxis = value.ReadValue<float>();
-    //    Debug.Log("STICK MOVEMENT _horizontalAxis: " + _moveHorizontalAxis.ToString());
-    //}
-
-    ///// <summary>
-    ///// Processes a button press and sets whether the user is trying to collapse
-    ///// </summary>
-    ///// <param name="value">The InputAction CallbackContext passed from the Input System</param>
-    ///// <remarks>Only use to link to the Input System</remarks>
-    //public void Collapse(InputAction.CallbackContext value)
-    //{
-        
-    //    _moveVerticalAxis = value.ReadValue<float>();
-    //    Debug.Log("STICK MOVEMENT _verticalAxis: " + _moveVerticalAxis.ToString());
-    //}
-
-    //#endregion
-
-    // Update is called once per frame
     void Update()
     {
         //check if user is pressing up or down
