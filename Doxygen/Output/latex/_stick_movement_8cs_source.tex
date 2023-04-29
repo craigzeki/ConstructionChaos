@@ -1,0 +1,142 @@
+\hypertarget{_stick_movement_8cs_source}{}\doxysection{Stick\+Movement.\+cs}
+\label{_stick_movement_8cs_source}\index{E:/Projects/Github/RagTest/Assets/Scripts/Ragdoll/StickMovement.cs@{E:/Projects/Github/RagTest/Assets/Scripts/Ragdoll/StickMovement.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }UnityEngine.InputSystem;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00010}\mbox{\hyperlink{class_stick_movement}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_stick_movement}{StickMovement}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00012}00012\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \_speed\ =\ 1.5f;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00013}00013\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \_stepWait\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00014}00014\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \_jumpForce\ =\ 10f;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00015}00015\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \_positionRadius;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00016}00016\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ LayerMask\ \_groundLayerMask;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00017}00017\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ List<Transform>\ \_groundPositions;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00018}00018\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ Rigidbody2D\ \_leftLegRB;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00019}00019\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ Rigidbody2D\ \_rightLegRB;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00020}00020\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ Rigidbody2D\ \_bodyRB;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00021}00021\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \_verticalMinValue\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00022}00022\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ uint\ \_timeBetweenJumpsInPhysicsFrames\ =\ 5;\ \textcolor{comment}{//required\ to\ prevent\ compunded\ jumps}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00024}00024\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ Animator\ \_anim;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ Coroutine\ \_walkLeft,\ \_walkRight;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_collapse\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ uint\ \_framesToNextJump\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ Update()}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ user\ is\ pressing\ up\ or\ down}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Mathf.Approximately(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a643fde3ff630bd1d0a9b4be8f2790b3c}{MoveVerticalAxis}},\ 0f))}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ the\ axis\ input\ is\ above\ a\ tolerance\ to\ try\ and\ reject\ unintentional\ up\ /\ down\ movement}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ newCollapse\ =\ InputHandler.Instance.MoveVerticalAxis\ >=\ \_verticalMinValue\ ?\ false\ :\ InputHandler.Instance.MoveVerticalAxis\ <=\ (-\/\_verticalMinValue)\ ?\ \textcolor{keyword}{true}\ :\ \_collapse;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newCollapse\ !=\ \_collapse)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//collapse\ the\ player\ and\ send\ a\ message\ to\ all\ the\ body\ parts\ to\ do\ the\ same}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_collapse\ =\ newCollapse;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.BroadcastMessage(\textcolor{stringliteral}{"{}OnCollapse"{}},\ \_collapse);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_collapse:\ "{}}\ +\ \_collapse.ToString());}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ the\ user\ is\ inputting\ horizontal\ movement}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Mathf.Approximately(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{MoveHorizontalAxis}},\ 0f)\ \&\&\ !\_collapse)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{MoveHorizontalAxis}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ right}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkRight"{}});}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkRight\ =\ StartCoroutine(MoveRight(\_stepWait));}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ left}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkLeft"{}});}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkLeft\ =\ StartCoroutine(MoveLeft(\_stepWait));}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//idle}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ FixedUpdate()}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_framesToNextJump\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ user\ can\ and\ is\ requesting\ to\ jump}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsOnGround()\ \&\&\ !\_collapse\ \&\&\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ad41291ac5f2d9e533eea80aa34a22a71}{JumpValue}})}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//do\ jump}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_bodyRB.AddForce(Vector2.up\ *\ \_jumpForce);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Jumped"{}});}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_jumpValue=\ false;}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump\ =\ \_timeBetweenJumpsInPhysicsFrames;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ IsOnGround()}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00099}00099\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOnGround\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ each\ ground\ point,\ if\ any\ are\ contacting\ the\ ground,\ set\ isOnGround\ =\ true}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ \_groundPositions)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ isOnGround\ |=\ Physics2D.OverlapCircle(t.position,\ \_positionRadius,\ \_groundLayerMask);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isOnGround;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00116}00116\ \ \ \ \ IEnumerator\ MoveRight(\textcolor{keywordtype}{float}\ seconds)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00117}00117\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00122}00122\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00129}00129\ \ \ \ \ IEnumerator\ MoveLeft(\textcolor{keywordtype}{float}\ seconds)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00130}00130\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00137}00137\ \textcolor{preprocessor}{\#if\ UNITY\_EDITOR}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//if\ we\ are\ in\ the\ editor\ draw\ the\ gizmos\ for\ the\ ground\ contact\ points}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnDrawGizmos()}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00140}00140\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ Handles.color\ =\ Color.red;}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ \_groundPositions)}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ Handles.DrawWireDisc(t.position,\ \textcolor{keyword}{new}\ Vector3(0,\ 0,\ 1),\ \_positionRadius);}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00149}00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_stick_movement_8cs_source_l00150}00150\ \}}
+
+\end{DoxyCode}

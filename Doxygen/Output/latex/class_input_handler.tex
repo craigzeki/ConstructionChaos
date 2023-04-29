@@ -1,0 +1,385 @@
+\hypertarget{class_input_handler}{}\doxysection{Input\+Handler Class Reference}
+\label{class_input_handler}\index{InputHandler@{InputHandler}}
+Inheritance diagram for Input\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_input_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}} \{ {\bfseries UNKNOWN} = 0
+, {\bfseries GAMEPLAY}
+, {\bfseries MENU}
+, {\bfseries NUM\+\_\+\+OF\+\_\+\+ACTIONMAPS}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to represent each Action Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{Switch\+Action\+Map}} (\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}} \+\_\+map)
+\begin{DoxyCompactList}\small\item\em Change the controller action map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_input_handler}{Input\+Handler}} \mbox{\hyperlink{class_input_handler_a332543e38b607ffaf9eca58fd37f04e4}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_input_handler_ad41291ac5f2d9e533eea80aa34a22a71}{Jump\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if jump button pressed. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{Move\+Horizontal\+Axis}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ -\/1 to 1 based on horizontal input representing player movement. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_input_handler_a643fde3ff630bd1d0a9b4be8f2790b3c}{Move\+Vertical\+Axis}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ -\/1 to 1 based on vertical input representing player movement. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}{Arms\+Controller\+Input}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ 2D array representing horizontal and vertical axis for arms movement. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_handler_ac6b6a96da9785b6c6aaed165ae4e7f39}{Is\+Mouse\+Controller}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ Boolean flag indicating if last input was from a mouse controller. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_handler_a86ea5a56ceffee640cb9dd1adfe38f8a}{Arms\+Stick\+Released}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if the gamepad stick controlling the arms centred. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_handler_a07ac17ad7d85a275eab12a214074b185}{Is\+Grabbing\+Left}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if left hand grab button is pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_handler_ad5263a6a291c35dd31103fb293b45e9b}{Is\+Grabbing\+Right}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True of the right hand grab button is pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_handler_a8c237a31f3987263e6cd0a40baaddbd0}{Is\+Grabbing}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if either grab button is pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}{Menu\+Button\+Pressed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Menu~\newline
+ True if the \textquotesingle{}Do\+It\textquotesingle{} button is pressed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}} \mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{Current\+Action\+Map}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Which Action Map is active. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_input_handler_a273ad6324766f575688af6286e5c76aa}\label{class_input_handler_a273ad6324766f575688af6286e5c76aa}} 
+\index{InputHandler@{InputHandler}!ControlActionMaps@{ControlActionMaps}}
+\index{ControlActionMaps@{ControlActionMaps}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{ControlActionMaps}{ControlActionMaps}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Input\+Handler.\+Control\+Action\+Maps}}}
+
+
+
+Enum to represent each Action Map. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ GAMEPLAY,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ MENU,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ NUM\_OF\_ACTIONMAPS}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}\label{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}} 
+\index{InputHandler@{InputHandler}!SwitchActionMap@{SwitchActionMap}}
+\index{SwitchActionMap@{SwitchActionMap}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{SwitchActionMap()}{SwitchActionMap()}}
+{\footnotesize\ttfamily void Input\+Handler.\+Switch\+Action\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}}}]{\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+Change the controller action map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+map} & The controller action map to change to\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00219}{219}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00220\ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\_map)}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.GAMEPLAY:}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Menu.Disable();}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Gameplay.Enable();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \_map;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.MENU:}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Gameplay.Disable();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Menu.Enable();}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \_map;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.NUM\_OF\_ACTIONMAPS:}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}\label{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}} 
+\index{InputHandler@{InputHandler}!ArmsControllerInput@{ArmsControllerInput}}
+\index{ArmsControllerInput@{ArmsControllerInput}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{ArmsControllerInput}{ArmsControllerInput}}
+{\footnotesize\ttfamily Vector2 Input\+Handler.\+Arms\+Controller\+Input\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ 2D array representing horizontal and vertical axis for arms movement. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \{\ \textcolor{keyword}{get}\ =>\ \_armsControllerInput;\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a86ea5a56ceffee640cb9dd1adfe38f8a}\label{class_input_handler_a86ea5a56ceffee640cb9dd1adfe38f8a}} 
+\index{InputHandler@{InputHandler}!ArmsStickReleased@{ArmsStickReleased}}
+\index{ArmsStickReleased@{ArmsStickReleased}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{ArmsStickReleased}{ArmsStickReleased}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Arms\+Stick\+Released\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ True if the gamepad stick controlling the arms centred. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \{\ \textcolor{keyword}{get}\ =>\ \_armsStickReleased;\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}\label{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}} 
+\index{InputHandler@{InputHandler}!CurrentActionMap@{CurrentActionMap}}
+\index{CurrentActionMap@{CurrentActionMap}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{CurrentActionMap}{CurrentActionMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{Control\+Action\+Maps}} Input\+Handler.\+Current\+Action\+Map\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Which Action Map is active. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00096}{96}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \{\ \textcolor{keyword}{get}\ =>\ \_currentActionMap;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a332543e38b607ffaf9eca58fd37f04e4}\label{class_input_handler_a332543e38b607ffaf9eca58fd37f04e4}} 
+\index{InputHandler@{InputHandler}!Instance@{Instance}}
+\index{Instance@{Instance}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input_handler}{Input\+Handler}} Input\+Handler.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ ==\ \textcolor{keyword}{null})\ instance\ =\ FindObjectOfType<InputHandler>();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a8c237a31f3987263e6cd0a40baaddbd0}\label{class_input_handler_a8c237a31f3987263e6cd0a40baaddbd0}} 
+\index{InputHandler@{InputHandler}!IsGrabbing@{IsGrabbing}}
+\index{IsGrabbing@{IsGrabbing}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsGrabbing}{IsGrabbing}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Is\+Grabbing\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ True if either grab button is pressed. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00087}{87}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \{\ \textcolor{keyword}{get}\ =>\ \_isGrabbingLeft\ ||\ \_isGrabbingRight;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a07ac17ad7d85a275eab12a214074b185}\label{class_input_handler_a07ac17ad7d85a275eab12a214074b185}} 
+\index{InputHandler@{InputHandler}!IsGrabbingLeft@{IsGrabbingLeft}}
+\index{IsGrabbingLeft@{IsGrabbingLeft}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsGrabbingLeft}{IsGrabbingLeft}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Is\+Grabbing\+Left\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ True if left hand grab button is pressed. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{\ \textcolor{keyword}{get}\ =>\ \_isGrabbingLeft;\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_ad5263a6a291c35dd31103fb293b45e9b}\label{class_input_handler_ad5263a6a291c35dd31103fb293b45e9b}} 
+\index{InputHandler@{InputHandler}!IsGrabbingRight@{IsGrabbingRight}}
+\index{IsGrabbingRight@{IsGrabbingRight}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsGrabbingRight}{IsGrabbingRight}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Is\+Grabbing\+Right\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ True of the right hand grab button is pressed. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{\ \textcolor{keyword}{get}\ =>\ \_isGrabbingRight;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_ac6b6a96da9785b6c6aaed165ae4e7f39}\label{class_input_handler_ac6b6a96da9785b6c6aaed165ae4e7f39}} 
+\index{InputHandler@{InputHandler}!IsMouseController@{IsMouseController}}
+\index{IsMouseController@{IsMouseController}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsMouseController}{IsMouseController}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Is\+Mouse\+Controller\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ Boolean flag indicating if last input was from a mouse controller. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{\ \textcolor{keyword}{get}\ =>\ \_isMouseController;\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_ad41291ac5f2d9e533eea80aa34a22a71}\label{class_input_handler_ad41291ac5f2d9e533eea80aa34a22a71}} 
+\index{InputHandler@{InputHandler}!JumpValue@{JumpValue}}
+\index{JumpValue@{JumpValue}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{JumpValue}{JumpValue}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Jump\+Value\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ True if jump button pressed. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\ \textcolor{keyword}{get}\ =>\ \_jumpValue;\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}\label{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}} 
+\index{InputHandler@{InputHandler}!MenuButtonPressed@{MenuButtonPressed}}
+\index{MenuButtonPressed@{MenuButtonPressed}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{MenuButtonPressed}{MenuButtonPressed}}
+{\footnotesize\ttfamily bool Input\+Handler.\+Menu\+Button\+Pressed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Menu~\newline
+ True if the \textquotesingle{}Do\+It\textquotesingle{} button is pressed. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00092}{92}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \{\ \textcolor{keyword}{get}\ =>\ \_menuButtonPressed;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}\label{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}} 
+\index{InputHandler@{InputHandler}!MoveHorizontalAxis@{MoveHorizontalAxis}}
+\index{MoveHorizontalAxis@{MoveHorizontalAxis}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{MoveHorizontalAxis}{MoveHorizontalAxis}}
+{\footnotesize\ttfamily float Input\+Handler.\+Move\+Horizontal\+Axis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ -\/1 to 1 based on horizontal input representing player movement. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{\ \textcolor{keyword}{get}\ =>\ \_moveHorizontalAxis;\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_input_handler_a643fde3ff630bd1d0a9b4be8f2790b3c}\label{class_input_handler_a643fde3ff630bd1d0a9b4be8f2790b3c}} 
+\index{InputHandler@{InputHandler}!MoveVerticalAxis@{MoveVerticalAxis}}
+\index{MoveVerticalAxis@{MoveVerticalAxis}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{MoveVerticalAxis}{MoveVerticalAxis}}
+{\footnotesize\ttfamily float Input\+Handler.\+Move\+Vertical\+Axis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Action Map\+: Gameplay~\newline
+ -\/1 to 1 based on vertical input representing player movement. 
+
+
+
+Definition at line \mbox{\hyperlink{_input_handler_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_input_handler_8cs_source}{Input\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \{\ \textcolor{keyword}{get}\ =>\ \_moveVerticalAxis;\ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Projects/\+Github/\+Rag\+Test/\+Assets/\+Scripts/Input\+Handler.\+cs\end{DoxyCompactItemize}

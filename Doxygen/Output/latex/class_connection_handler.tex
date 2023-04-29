@@ -1,0 +1,152 @@
+\hypertarget{class_connection_handler}{}\doxysection{Connection\+Handler Class Reference}
+\label{class_connection_handler}\index{ConnectionHandler@{ConnectionHandler}}
+Inheritance diagram for Connection\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_connection_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async void \mbox{\hyperlink{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}{Host\+Game}} (int max\+Players, bool local=false)
+\begin{DoxyCompactList}\small\item\em Hosts the game using the Unity Relay Service and Netcode for Game\+Objects. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}{Join\+Game}} (string room\+Code, bool local=false)
+\begin{DoxyCompactList}\small\item\em Joins the game using the Unity Relay Service and Netcode for Game\+Objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_connection_handler}{Connection\+Handler}} \mbox{\hyperlink{class_connection_handler_ac4e5001ef822aeff3f14dada71410eba}{Instance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_connection_handler_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_connection_handler_8cs_source}{Connection\+Handler.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}\label{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}} 
+\index{ConnectionHandler@{ConnectionHandler}!HostGame@{HostGame}}
+\index{HostGame@{HostGame}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{HostGame()}{HostGame()}}
+{\footnotesize\ttfamily async void Connection\+Handler.\+Host\+Game (\begin{DoxyParamCaption}\item[{int}]{max\+Players,  }\item[{bool}]{local = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Hosts the game using the Unity Relay Service and Netcode for Game\+Objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Players} & The maximum number of players allowed in the game\\
+\hline
+\end{DoxyParams}
+The IP Address will be 127.\+0.\+0.\+1 if the device is not connected to a network
+
+Definition at line \mbox{\hyperlink{_connection_handler_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_connection_handler_8cs_source}{Connection\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ =\ Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(address\ =>\ address.AddressFamily\ ==\ AddressFamily.InterNetwork).ToString();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Error\ getting\ IP\ address"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Display\ an\ error\ message\ to\ the\ user}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Test\ if\ this\ causes\ the\ game\ not\ to\ work\ and\ implemented\ a\ fix}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ unityTransport;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ local\ IP\ address}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ unityTransport.ConnectionData.Address\ =\ ip;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ server}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartHost();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ the\ room\ code\ to\ the\ user}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ IPtoCode(ip);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ await\ UnityServicesLogin();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ CreateRelay(maxPlayers);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}\label{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}} 
+\index{ConnectionHandler@{ConnectionHandler}!JoinGame@{JoinGame}}
+\index{JoinGame@{JoinGame}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{JoinGame()}{JoinGame()}}
+{\footnotesize\ttfamily async void Connection\+Handler.\+Join\+Game (\begin{DoxyParamCaption}\item[{string}]{room\+Code,  }\item[{bool}]{local = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Joins the game using the Unity Relay Service and Netcode for Game\+Objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Code} & The room code to join\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_connection_handler_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_connection_handler_8cs_source}{Connection\+Handler.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ room\ code\ to\ an\ IP\ address}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ CodeToIP(roomCode);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ unityTransport;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ IP\ address}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ unityTransport.ConnectionData.Address\ =\ ip;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ client}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartClient();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ await\ UnityServicesLogin();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ JoinRelay(roomCode);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_connection_handler_ac4e5001ef822aeff3f14dada71410eba}\label{class_connection_handler_ac4e5001ef822aeff3f14dada71410eba}} 
+\index{ConnectionHandler@{ConnectionHandler}!Instance@{Instance}}
+\index{Instance@{Instance}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_connection_handler}{Connection\+Handler}} Connection\+Handler.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_connection_handler_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_connection_handler_8cs_source}{Connection\+Handler.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Projects/\+Github/\+Rag\+Test/\+Assets/\+Scripts/Connection\+Handler.\+cs\end{DoxyCompactItemize}

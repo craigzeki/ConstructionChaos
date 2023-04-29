@@ -1,0 +1,98 @@
+\hypertarget{_goal_zone_8cs_source}{}\doxysection{Goal\+Zone.\+cs}
+\label{_goal_zone_8cs_source}\index{E:/Projects/Github/RagTest/Assets/Scripts/GoalZone.cs@{E:/Projects/Github/RagTest/Assets/Scripts/GoalZone.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00006}00006\ [RequireComponent(typeof(BoxCollider2D))]}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00007}\mbox{\hyperlink{class_goal_zone}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_goal_zone}{GoalZone}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00009}00009\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ TextMeshProUGUI\ \_cratesText;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00010}00010\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ TextMeshProUGUI\ \_countdownText;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00011}00011\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ uint\ \_numOfCratesRequired\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00012}00012\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ uint\ \_countdownTimerStart\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ uint\ \_numOfCrates\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \_countdownTimer\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ Coroutine\ \_countdownCoroutine;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_win\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00018}00018\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ goal\ countdown\ timer\ and\ set\ it\ to\ its\ value\ reeady\ for\ countdown}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ the\ crate\ counter}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cratesText\ !=\ \textcolor{keyword}{null})\ \_cratesText.text\ =\ \_numOfCrates.ToString(\textcolor{stringliteral}{"{}00"{}})\ +\ \textcolor{stringliteral}{"{}\ of\ "{}}\ +\ \_numOfCratesRequired.ToString(\textcolor{stringliteral}{"{}00"{}});}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnTriggerEnter2D(Collider2D\ collision)}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ crate\ has\ entered\ the\ area,\ increment\ the\ number\ of\ crates\ for\ the\ UI\ to\ update\ and\ check\ if\ the\ win\ conditions\ are\ met}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Crate"{}})}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_numOfCrates++;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ CheckWinCondition();}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnTriggerExit2D(Collider2D\ collision)}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Crate"{}})}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//a\ crate\ has\ been\ removed\ from\ the\ area,\ reduce\ the\ number\ of\ crates}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \_numOfCrates-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//update\ the\ UI\ and\ check\ the\ win\ conditions}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ CheckWinCondition();}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ CheckWinCondition()}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_win)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//already\ won\ -\/\ don't\ bother}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cratesText\ !=\ \textcolor{keyword}{null})\ \_cratesText.text\ =\ \_numOfCrates.ToString(\textcolor{stringliteral}{"{}00"{}})\ +\ \textcolor{stringliteral}{"{}\ of\ "{}}\ +\ \_numOfCratesRequired.ToString(\textcolor{stringliteral}{"{}00"{}});\ \textcolor{comment}{//update\ the\ crates\ UI\ text}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_numOfCrates\ >=\ \_numOfCratesRequired)}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//total\ number\ of\ crates\ criteria\ met}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//start\ the\ countdown\ timer}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_countdownCoroutine);}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ StartCoroutine(DoCountdown());}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//not\ enough\ crates\ yet,\ stop\ countdown\ if\ it\ was\ previously\ running\ (crate\ has\ been\ removed)}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_countdownCoroutine);}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ countdown\ timer}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00083}00083\ \ \ \ \ IEnumerator\ DoCountdown()}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00084}00084\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\_countdownTimer\ >\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \_countdownTimer.ToString();}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTimer-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \textcolor{stringliteral}{"{}WIN"{}};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \_win\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00101}00101\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_goal_zone_8cs_source_l00102}00102\ \}}
+
+\end{DoxyCode}

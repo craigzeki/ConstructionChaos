@@ -1,0 +1,56 @@
+\hypertarget{class_grab}{}\doxysection{Grab Class Reference}
+\label{class_grab}\index{Grab@{Grab}}
+Inheritance diagram for Grab\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_grab}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_grab_a4e21dfd97c605f2a013ac3718b8368cc}{On\+Collapse}} (bool collapse)
+\begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_grab_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_grab_8cs_source}{Grab.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_grab_a4e21dfd97c605f2a013ac3718b8368cc}\label{class_grab_a4e21dfd97c605f2a013ac3718b8368cc}} 
+\index{Grab@{Grab}!OnCollapse@{OnCollapse}}
+\index{OnCollapse@{OnCollapse}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{OnCollapse()}{OnCollapse()}}
+{\footnotesize\ttfamily void Grab.\+On\+Collapse (\begin{DoxyParamCaption}\item[{bool}]{collapse }\end{DoxyParamCaption})}
+
+
+
+Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collapse} & True\+: collapsed False\+: restored from collapsed\\
+\hline
+\end{DoxyParams}
+
+
+Call using Broadcast\+Message
+
+Definition at line \mbox{\hyperlink{_grab_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_grab_8cs_source}{Grab.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_isActive\ =\ !collapse;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Projects/\+Github/\+Rag\+Test/\+Assets/\+Scripts/\+Ragdoll/Grab.\+cs\end{DoxyCompactItemize}

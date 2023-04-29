@@ -1,0 +1,182 @@
+\hypertarget{_connection_handler_8cs_source}{}\doxysection{Connection\+Handler.\+cs}
+\label{_connection_handler_8cs_source}\index{E:/Projects/Github/RagTest/Assets/Scripts/ConnectionHandler.cs@{E:/Projects/Github/RagTest/Assets/Scripts/ConnectionHandler.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Net;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Net.Sockets;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Unity.Services.Core;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Unity.Services.Authentication;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Unity.Services.Relay;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Unity.Services.Relay.Models;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }Unity.Networking.Transport.Relay;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }Unity.Netcode;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00013}00013\ \textcolor{keyword}{using\ }Unity.Netcode.Transports.UTP;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00014}00014\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00016}\mbox{\hyperlink{class_connection_handler}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}\ Instance;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00020}00020\ \ \ \ \ [SerializeField]\ \textcolor{keyword}{private}\ UnityTransport\ unityTransport,\ relayTransport;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00034}\mbox{\hyperlink{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_handler_a00b6ffa4c052a6828857c1fe00038be2}{HostGame}}(\textcolor{keywordtype}{int}\ maxPlayers,\ \textcolor{keywordtype}{bool}\ local\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ =\ Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(address\ =>\ address.AddressFamily\ ==\ AddressFamily.InterNetwork).ToString();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Error\ getting\ IP\ address"{}});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Display\ an\ error\ message\ to\ the\ user}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Test\ if\ this\ causes\ the\ game\ not\ to\ work\ and\ implemented\ a\ fix}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ unityTransport;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ local\ IP\ address}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ unityTransport.ConnectionData.Address\ =\ ip;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ server}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartHost();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ the\ room\ code\ to\ the\ user}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ IPtoCode(ip);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ await\ UnityServicesLogin();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ CreateRelay(maxPlayers);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00077}\mbox{\hyperlink{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}{JoinGame}}(\textcolor{keywordtype}{string}\ roomCode,\ \textcolor{keywordtype}{bool}\ local\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ room\ code\ to\ an\ IP\ address}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ CodeToIP(roomCode);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ unityTransport;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ IP\ address}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ unityTransport.ConnectionData.Address\ =\ ip;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ client}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartClient();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ await\ UnityServicesLogin();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ JoinRelay(roomCode);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{private}\ async\ Task\ UnityServicesLogin()}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00105}00105\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ await\ UnityServices.InitializeAsync();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ AuthenticationService.Instance.SignedIn\ +=\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ has\ successfully\ signed\ in\ anonymously}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Signed\ in\ anonymously"{}});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ await\ AuthenticationService.Instance.SignInAnonymouslyAsync();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00122}00122\ \ \ \ \ \textcolor{keyword}{private}\ async\ \textcolor{keywordtype}{void}\ CreateRelay(\textcolor{keywordtype}{int}\ maxPlayers)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Creating\ relay"{}});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ Allocation\ allocation\ =\ await\ RelayService.Instance.CreateAllocationAsync(maxPlayers\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ await\ RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(allocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ relayTransport;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ relayTransport.SetRelayServerData(relayServerData);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartHost();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (RelayServiceException\ e)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ print(e.Message);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00151}00151\ \ \ \ \ \textcolor{keyword}{private}\ async\ \textcolor{keywordtype}{void}\ JoinRelay(\textcolor{keywordtype}{string}\ roomCode)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00152}00152\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ JoinAllocation\ joinAllocation\ =\ await\ RelayService.Instance.JoinAllocationAsync(roomCode);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(joinAllocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ relayTransport;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ relayTransport.SetRelayServerData(relayServerData);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartClient();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (RelayServiceException\ e)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ print(e.Message);}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{string}\ IPtoCode(\textcolor{keywordtype}{string}\ ip)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00173}00173\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ ipSplit\ =\ ip.Split(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ code\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ s\ \textcolor{keywordflow}{in}\ ipSplit)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ code\ +=\ \textcolor{keywordtype}{int}.Parse(s).ToString(\textcolor{stringliteral}{"{}X2"{}});}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00183}00183\ \ \ \ \ \textcolor{keywordtype}{string}\ CodeToIP(\textcolor{keywordtype}{string}\ code)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00184}00184\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ code.Length;\ i\ +=\ 2)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{keywordtype}{int}.Parse(code.Substring(i,\ 2),\ System.Globalization.NumberStyles.HexNumber).ToString();}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ code.Length\ -\/\ 2)}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ip;}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_connection_handler_8cs_source_l00197}00197\ \}}
+
+\end{DoxyCode}
