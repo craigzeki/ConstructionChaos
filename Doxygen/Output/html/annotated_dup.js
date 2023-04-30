@@ -9,7 +9,9 @@ var annotated_dup =
     [ "IgnoreCollisions", "class_ignore_collisions.html", null ],
     [ "InputHandler", "class_input_handler.html", "class_input_handler" ],
     [ "MenuUIManager", "class_menu_u_i_manager.html", "class_menu_u_i_manager" ],
-    [ "ObjectiveManager", "class_objective_manager.html", null ],
+    [ "Objective", "class_objective.html", "class_objective" ],
+    [ "ObjectiveManager", "class_objective_manager.html", "class_objective_manager" ],
+    [ "ObjectiveText", "class_objective_text.html", null ],
     [ "Ragdoll", "class_ragdoll.html", "class_ragdoll" ],
     [ "StickMovement", "class_stick_movement.html", "class_stick_movement" ]
 ];

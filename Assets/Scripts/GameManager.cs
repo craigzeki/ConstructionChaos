@@ -6,10 +6,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _menuText;
+    [SerializeField] ObjectiveText _objectiveText;
+
+    private string _objectiveString;
 
     private void Start()
     {
+        
         InputHandler.Instance.SwitchActionMap(InputHandler.ControlActionMaps.GAMEPLAY);
+        _objectiveString = ObjectiveManager.Instance.GetObjective(1).ObjectiveString;
+        if (_objectiveText != null) _objectiveText.SetObjective(_objectiveString);
     }
     // Update is called once per frame
     void Update()
@@ -22,10 +28,12 @@ public class GameManager : MonoBehaviour
         if(InputHandler.Instance.CurrentActionMap + 1 >= InputHandler.ControlActionMaps.NUM_OF_ACTIONMAPS)
         {
             InputHandler.Instance.SwitchActionMap(InputHandler.ControlActionMaps.GAMEPLAY);
+            if (_objectiveText != null) _objectiveText.SetObjective(_objectiveString);
         }
         else
         {
             InputHandler.Instance.SwitchActionMap(InputHandler.Instance.CurrentActionMap + 1);
+            if (_objectiveText != null) _objectiveText.ResetObjective();
         }
     }
 }

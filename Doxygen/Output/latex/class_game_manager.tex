@@ -15,7 +15,7 @@ Collaboration diagram for Game\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_game_manager__coll__graph}
+\includegraphics[width=219pt]{class_game_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -35,6 +35,12 @@ void \mbox{\hyperlink{class_game_manager_a44c79b205dec16bfe650e21259860c5b}{Upda
 \item 
 \mbox{\Hypertarget{class_game_manager_ac2ac2248a468f8533bb891b14a244b7b}\label{class_game_manager_ac2ac2248a468f8533bb891b14a244b7b}} 
 Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+menu\+Text}
+\item 
+\mbox{\Hypertarget{class_game_manager_ad0b8e24488c56ef81881a42fb75b5894}\label{class_game_manager_ad0b8e24488c56ef81881a42fb75b5894}} 
+\mbox{\hyperlink{class_objective_text}{Objective\+Text}} {\bfseries \+\_\+objective\+Text}
+\item 
+\mbox{\Hypertarget{class_game_manager_af13f57a2eb9d4c0897664882f94f0e94}\label{class_game_manager_af13f57a2eb9d4c0897664882f94f0e94}} 
+string {\bfseries \+\_\+objective\+String}
 \end{DoxyCompactItemize}
 
 
@@ -47,9 +53,12 @@ Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+menu\+Text}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00011\ \ \ \ \ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.GAMEPLAY);}
-\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.GAMEPLAY);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_objectiveString\ =\ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.GetObjective(1).ObjectiveString;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_objectiveText\ !=\ \textcolor{keyword}{null})\ \_objectiveText.SetObjective(\_objectiveString);}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_aef65eaec43866cf77565e68485439cec}\label{class_game_manager_aef65eaec43866cf77565e68485439cec}} 
@@ -60,16 +69,18 @@ Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+menu\+Text}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{CurrentActionMap}}\ +\ 1\ >=\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.NUM\_OF\_ACTIONMAPS)}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.GAMEPLAY);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{CurrentActionMap}}\ +\ 1);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{CurrentActionMap}}\ +\ 1\ >=\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.NUM\_OF\_ACTIONMAPS)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.\mbox{\hyperlink{class_input_handler_a273ad6324766f575688af6286e5c76aa}{ControlActionMaps}}.GAMEPLAY);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_objectiveText\ !=\ \textcolor{keyword}{null})\ \_objectiveText.SetObjective(\_objectiveString);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ae2fb193ca436d6eed3654f6f6a1305b3}{SwitchActionMap}}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a5c1aadbd45929f5cadbe665d4d24dd1e}{CurrentActionMap}}\ +\ 1);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_objectiveText\ !=\ \textcolor{keyword}{null})\ \_objectiveText.ResetObjective();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_a44c79b205dec16bfe650e21259860c5b}\label{class_game_manager_a44c79b205dec16bfe650e21259860c5b}} 
@@ -80,8 +91,8 @@ Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+menu\+Text}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_menuText.text\ =\ \textcolor{stringliteral}{"{}South\ Button,\ Menu\ Action\ Map\ :\ Pressed\ =\ "{}}\ +\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}{MenuButtonPressed}}.ToString();}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_menuText.text\ =\ \textcolor{stringliteral}{"{}South\ Button,\ Menu\ Action\ Map\ :\ Pressed\ =\ "{}}\ +\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a33054e4c1ac7b5c7c96ba27c16fdeb15}{MenuButtonPressed}}.ToString();}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
 
 \end{DoxyCode}

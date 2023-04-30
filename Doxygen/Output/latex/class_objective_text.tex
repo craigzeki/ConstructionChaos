@@ -1,0 +1,187 @@
+\hypertarget{class_objective_text}{}\doxysection{Objective\+Text Class Reference}
+\label{class_objective_text}\index{ObjectiveText@{ObjectiveText}}
+
+
+Inheritance diagram for Objective\+Text\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_objective_text__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Objective\+Text\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_objective_text__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_objective_text_a0f4081be0f77c054ffca89df8fab35e5}{Set\+Objective}} (string objective)
+\item 
+void \mbox{\hyperlink{class_objective_text_a33c8b945bb5c4eed332009471eb4136f}{Reset\+Objective}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_objective_text_a0aba7b1677a7bdb70ac3d958cbc98864}{Awake}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_objective_text_aaf13f13f2eec57ec1af55afccc8d8b76}{Trigger\+Anim}} (Rect\+Transform rect\+Transform, float delay)
+\item 
+void \mbox{\hyperlink{class_objective_text_acdaea369d3f737667cf456a82945f39b}{Do\+Anim}} (Rect\+Transform rect\+Transform)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_text_ad01959b7e07634ef72a63a9577024093}\label{class_objective_text_ad01959b7e07634ef72a63a9577024093}} 
+float {\bfseries \+\_\+screen\+Width\+Factor} = 0.\+8f
+\item 
+\mbox{\Hypertarget{class_objective_text_a29f2fb0a29579fa28ff400e24ce55c27}\label{class_objective_text_a29f2fb0a29579fa28ff400e24ce55c27}} 
+float {\bfseries \+\_\+screen\+Height\+Factor} = 0.\+2f
+\item 
+\mbox{\Hypertarget{class_objective_text_ad561db8e91dbf61c2c6be6040fde183f}\label{class_objective_text_ad561db8e91dbf61c2c6be6040fde183f}} 
+float {\bfseries \+\_\+time\+Before\+Shrink} = 2f
+\item 
+\mbox{\Hypertarget{class_objective_text_a4537ccc64e3864b575e1264911c9bbbf}\label{class_objective_text_a4537ccc64e3864b575e1264911c9bbbf}} 
+float {\bfseries \+\_\+time\+To\+Animate} = 1f
+\item 
+\mbox{\Hypertarget{class_objective_text_ac2bf7e5f6af1d6cfc897e3540dc5cbb6}\label{class_objective_text_ac2bf7e5f6af1d6cfc897e3540dc5cbb6}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+objective\+Text}
+\item 
+\mbox{\Hypertarget{class_objective_text_a6a3c0436219ff99c21f911a91f6705c3}\label{class_objective_text_a6a3c0436219ff99c21f911a91f6705c3}} 
+Rect\+Transform {\bfseries \+\_\+rect\+Transform}
+\item 
+\mbox{\Hypertarget{class_objective_text_a7e8cbcd0f4627005e1dddfed7ee98d37}\label{class_objective_text_a7e8cbcd0f4627005e1dddfed7ee98d37}} 
+Coroutine {\bfseries \+\_\+trigger\+Anim\+Coroutine}
+\item 
+\mbox{\Hypertarget{class_objective_text_a051dd2a7e550dbeed694a01d3fc1f8b1}\label{class_objective_text_a051dd2a7e550dbeed694a01d3fc1f8b1}} 
+Vector2 {\bfseries \+\_\+original\+Size}
+\item 
+\mbox{\Hypertarget{class_objective_text_a609096a2beadb747d44693eac2358c0c}\label{class_objective_text_a609096a2beadb747d44693eac2358c0c}} 
+Vector3 {\bfseries \+\_\+original\+Position}
+\item 
+\mbox{\Hypertarget{class_objective_text_a82db77fef78562284e4eb3bde8c7045f}\label{class_objective_text_a82db77fef78562284e4eb3bde8c7045f}} 
+Vector2 {\bfseries \+\_\+centre\+Size}
+\item 
+\mbox{\Hypertarget{class_objective_text_a9cf89441aeb9506d7ada786ef9b7ad37}\label{class_objective_text_a9cf89441aeb9506d7ada786ef9b7ad37}} 
+Vector3 {\bfseries \+\_\+centre\+Position}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_objective_text_a0aba7b1677a7bdb70ac3d958cbc98864}\label{class_objective_text_a0aba7b1677a7bdb70ac3d958cbc98864}} 
+\index{ObjectiveText@{ObjectiveText}!Awake@{Awake}}
+\index{Awake@{Awake}!ObjectiveText@{ObjectiveText}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Objective\+Text.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_objectiveText\ =\ GetComponent<TextMeshProUGUI>();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \_rectTransform\ =\ GetComponent<RectTransform>();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//calculate\ centre\ of\ the\ screen\ and\ add\ any\ padding}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \_centreSize\ =\ \textcolor{keyword}{new}\ Vector2(Screen.width\ *\ \_screenWidthFactor,\ Screen.height\ *\ \_screenHeightFactor);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_centrePosition\ =\ \textcolor{keyword}{new}\ Vector3((Screen.width\ /\ 2f)\ -\/\ (\_centreSize.x\ /\ 2f),\ (Screen.height\ /\ 2)\ -\/\ (\_centreSize.y\ /\ 2f),\ 0);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_rectTransform\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \_originalPosition\ =\ \_rectTransform.position;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_originalSize\ =\ \_rectTransform.sizeDelta;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ the\ text\ to\ the\ centre\ of\ the\ screen}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.position\ =\ \_centrePosition;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,\ \_centreSize.x);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,\ \_centreSize.y);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ until\ requested}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_text_acdaea369d3f737667cf456a82945f39b}\label{class_objective_text_acdaea369d3f737667cf456a82945f39b}} 
+\index{ObjectiveText@{ObjectiveText}!DoAnim@{DoAnim}}
+\index{DoAnim@{DoAnim}!ObjectiveText@{ObjectiveText}}
+\doxysubsubsection{\texorpdfstring{DoAnim()}{DoAnim()}}
+{\footnotesize\ttfamily void Objective\+Text.\+Do\+Anim (\begin{DoxyParamCaption}\item[{Rect\+Transform}]{rect\+Transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rectTransform\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//shrink\ and\ move}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ LeanTween.size(rectTransform,\ \_originalSize,\ \_timeToAnimate).setEaseOutBack();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ LeanTween.move(rectTransform,\ \_originalPosition,\ \_timeToAnimate).setEaseInOutQuad();}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_text_a33c8b945bb5c4eed332009471eb4136f}\label{class_objective_text_a33c8b945bb5c4eed332009471eb4136f}} 
+\index{ObjectiveText@{ObjectiveText}!ResetObjective@{ResetObjective}}
+\index{ResetObjective@{ResetObjective}!ObjectiveText@{ObjectiveText}}
+\doxysubsubsection{\texorpdfstring{ResetObjective()}{ResetObjective()}}
+{\footnotesize\ttfamily void Objective\+Text.\+Reset\+Objective (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_rectTransform\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ back\ to\ the\ centre\ of\ the\ screen\ and\ disable}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,\ \_centreSize.x);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,\ \_centreSize.y);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.position\ =\ \_centrePosition;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \_rectTransform.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_text_a0f4081be0f77c054ffca89df8fab35e5}\label{class_objective_text_a0f4081be0f77c054ffca89df8fab35e5}} 
+\index{ObjectiveText@{ObjectiveText}!SetObjective@{SetObjective}}
+\index{SetObjective@{SetObjective}!ObjectiveText@{ObjectiveText}}
+\doxysubsubsection{\texorpdfstring{SetObjective()}{SetObjective()}}
+{\footnotesize\ttfamily void Objective\+Text.\+Set\+Objective (\begin{DoxyParamCaption}\item[{string}]{objective }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ the\ text\ and\ show}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_objectiveText.text\ =\ objective\ !=\ \textcolor{keyword}{null}\ ?\ objective\ :\ \textcolor{stringliteral}{"{}No\ Objective"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_rectTransform.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//stop\ any\ running\ coroutine\ and\ start\ again}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_triggerAnimCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_triggerAnimCoroutine);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_triggerAnimCoroutine\ =\ StartCoroutine(TriggerAnim(\_rectTransform,\ \_timeBeforeShrink));}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_text_aaf13f13f2eec57ec1af55afccc8d8b76}\label{class_objective_text_aaf13f13f2eec57ec1af55afccc8d8b76}} 
+\index{ObjectiveText@{ObjectiveText}!TriggerAnim@{TriggerAnim}}
+\index{TriggerAnim@{TriggerAnim}!ObjectiveText@{ObjectiveText}}
+\doxysubsubsection{\texorpdfstring{TriggerAnim()}{TriggerAnim()}}
+{\footnotesize\ttfamily IEnumerator Objective\+Text.\+Trigger\+Anim (\begin{DoxyParamCaption}\item[{Rect\+Transform}]{rect\+Transform,  }\item[{float}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rectTransform\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//show\ the\ text\ in\ the\ centre\ of\ the\ screen\ for\ a\ period\ of\ time}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(delay);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//animate\ the\ text}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ DoAnim(rectTransform);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//indicate\ the\ coroutune\ is\ done}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \_triggerAnimCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}

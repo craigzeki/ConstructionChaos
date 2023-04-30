@@ -112,8 +112,9 @@ Collaboration diagram for GameManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_manager__coll__graph.png" border="0" usemap="#a_game_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_game_manager_coll__map" id="a_game_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="7,79,114,104"/>
+<area shape="rect" title=" " alt="" coords="13,168,119,193"/>
 <area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" href="class_objective_text.html" title=" " alt="" coords="83,80,183,105"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -134,6 +135,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ac2ac2248a468f8533bb891b14a244b7b"><td class="memItemLeft" align="right" valign="top"><a id="ac2ac2248a468f8533bb891b14a244b7b" name="ac2ac2248a468f8533bb891b14a244b7b"></a>
 TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><b>_menuText</b></td></tr>
 <tr class="separator:ac2ac2248a468f8533bb891b14a244b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b8e24488c56ef81881a42fb75b5894"><td class="memItemLeft" align="right" valign="top"><a id="ad0b8e24488c56ef81881a42fb75b5894" name="ad0b8e24488c56ef81881a42fb75b5894"></a>
+<a class="el" href="class_objective_text.html">ObjectiveText</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveText</b></td></tr>
+<tr class="separator:ad0b8e24488c56ef81881a42fb75b5894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13f57a2eb9d4c0897664882f94f0e94"><td class="memItemLeft" align="right" valign="top"><a id="af13f57a2eb9d4c0897664882f94f0e94" name="af13f57a2eb9d4c0897664882f94f0e94"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveString</b></td></tr>
+<tr class="separator:af13f57a2eb9d4c0897664882f94f0e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5ccfacd027ad08eeb4ff1f25a7f59c98" name="a5ccfacd027ad08eeb4ff1f25a7f59c98"></a>
@@ -158,12 +165,16 @@ TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><b>_menuText<
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   11</span>    {</div>
-<div class="line"><span class="lineno">   12</span>        <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_function" href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">SwitchActionMap</a>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.<a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.GAMEPLAY);</div>
-<div class="line"><span class="lineno">   13</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>        </div>
+<div class="line"><span class="lineno">   16</span>        <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_function" href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">SwitchActionMap</a>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.<a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.GAMEPLAY);</div>
+<div class="line"><span class="lineno">   17</span>        _objectiveString = <a class="code hl_class" href="class_objective_manager.html">ObjectiveManager</a>.Instance.GetObjective(1).ObjectiveString;</div>
+<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">if</span> (_objectiveText != <span class="keyword">null</span>) _objectiveText.SetObjective(_objectiveString);</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
 <div class="ttc" id="aclass_input_handler_html"><div class="ttname"><a href="class_input_handler.html">InputHandler</a></div><div class="ttdef"><b>Definition:</b> InputHandler.cs:7</div></div>
 <div class="ttc" id="aclass_input_handler_html_a273ad6324766f575688af6286e5c76aa"><div class="ttname"><a href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">InputHandler.ControlActionMaps</a></div><div class="ttdeci">ControlActionMaps</div><div class="ttdoc">Enum to represent each Action Map.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:12</div></div>
 <div class="ttc" id="aclass_input_handler_html_ae2fb193ca436d6eed3654f6f6a1305b3"><div class="ttname"><a href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">InputHandler.SwitchActionMap</a></div><div class="ttdeci">void SwitchActionMap(ControlActionMaps _map)</div><div class="ttdoc">Change the controller action map.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:219</div></div>
+<div class="ttc" id="aclass_objective_manager_html"><div class="ttname"><a href="class_objective_manager.html">ObjectiveManager</a></div><div class="ttdoc">Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:14</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -181,16 +192,18 @@ TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><b>_menuText<
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_property" href="class_input_handler.html#a5c1aadbd45929f5cadbe665d4d24dd1e">CurrentActionMap</a> + 1 &gt;= <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.<a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.NUM_OF_ACTIONMAPS)</div>
-<div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_function" href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">SwitchActionMap</a>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.<a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.GAMEPLAY);</div>
-<div class="line"><span class="lineno">   25</span>        }</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   27</span>        {</div>
-<div class="line"><span class="lineno">   28</span>            <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_function" href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">SwitchActionMap</a>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_property" href="class_input_handler.html#a5c1aadbd45929f5cadbe665d4d24dd1e">CurrentActionMap</a> + 1);</div>
-<div class="line"><span class="lineno">   29</span>        }</div>
-<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">if</span>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_property" href="class_input_handler.html#a5c1aadbd45929f5cadbe665d4d24dd1e">CurrentActionMap</a> + 1 &gt;= <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.<a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.NUM_OF_ACTIONMAPS)</div>
+<div class="line"><span class="lineno">   29</span>        {</div>
+<div class="line"><span class="lineno">   30</span>            <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_function" href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">SwitchActionMap</a>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.<a class="code hl_enumeration" href="class_input_handler.html#a273ad6324766f575688af6286e5c76aa">ControlActionMaps</a>.GAMEPLAY);</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">if</span> (_objectiveText != <span class="keyword">null</span>) _objectiveText.SetObjective(_objectiveString);</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_function" href="class_input_handler.html#ae2fb193ca436d6eed3654f6f6a1305b3">SwitchActionMap</a>(<a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_property" href="class_input_handler.html#a5c1aadbd45929f5cadbe665d4d24dd1e">CurrentActionMap</a> + 1);</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">if</span> (_objectiveText != <span class="keyword">null</span>) _objectiveText.ResetObjective();</div>
+<div class="line"><span class="lineno">   37</span>        }</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
 <div class="ttc" id="aclass_input_handler_html_a5c1aadbd45929f5cadbe665d4d24dd1e"><div class="ttname"><a href="class_input_handler.html#a5c1aadbd45929f5cadbe665d4d24dd1e">InputHandler.CurrentActionMap</a></div><div class="ttdeci">ControlActionMaps CurrentActionMap</div><div class="ttdoc">Which Action Map is active.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:96</div></div>
 </div><!-- fragment -->
 </div>
@@ -217,9 +230,9 @@ TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><b>_menuText<
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
-<div class="line"><span class="lineno">   17</span>        _menuText.text = <span class="stringliteral">&quot;South Button, Menu Action Map : Pressed = &quot;</span> + <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_property" href="class_input_handler.html#a33054e4c1ac7b5c7c96ba27c16fdeb15">MenuButtonPressed</a>.ToString();</div>
-<div class="line"><span class="lineno">   18</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        _menuText.text = <span class="stringliteral">&quot;South Button, Menu Action Map : Pressed = &quot;</span> + <a class="code hl_class" href="class_input_handler.html">InputHandler</a>.Instance.<a class="code hl_property" href="class_input_handler.html#a33054e4c1ac7b5c7c96ba27c16fdeb15">MenuButtonPressed</a>.ToString();</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
 <div class="ttc" id="aclass_input_handler_html_a33054e4c1ac7b5c7c96ba27c16fdeb15"><div class="ttname"><a href="class_input_handler.html#a33054e4c1ac7b5c7c96ba27c16fdeb15">InputHandler.MenuButtonPressed</a></div><div class="ttdeci">bool MenuButtonPressed</div><div class="ttdoc">Action Map: Menu  True if the 'DoIt' button is pressed.</div><div class="ttdef"><b>Definition:</b> InputHandler.cs:92</div></div>
 </div><!-- fragment -->
 </div>

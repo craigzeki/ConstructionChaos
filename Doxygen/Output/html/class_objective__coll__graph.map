@@ -1,0 +1,5 @@
+<map id="Objective" name="Objective">
+<area shape="rect" id="node1" title="Container for storing objective information." alt="" coords="31,212,105,237"/>
+<area shape="rect" id="node2" href="$class_objective_manager.html" title="Runs server side only. &#160;Creates random objectives and assigns them to players. &#160;Provides an event dri..." alt="" coords="5,80,131,105"/>
+<area shape="rect" id="node3" title=" " alt="" coords="13,5,123,31"/>
+</map>
