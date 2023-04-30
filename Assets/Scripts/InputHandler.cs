@@ -218,21 +218,29 @@ public class InputHandler : MonoBehaviour
     /// <param name="_map">The controller action map to change to</param>
     public void SwitchActionMap(ControlActionMaps _map)
     {
+        if (_map == _currentActionMap) return;
+
+        // If the map is unknown or the number of action maps, do nothing
+        if (_map == ControlActionMaps.UNKNOWN) return;
+        if (_map == ControlActionMaps.NUM_OF_ACTIONMAPS) return;
+
+        // Disable all action maps
+        _controls.Disable();
+
+        // Enable the action map passed in
         switch (_map)
         {
             case ControlActionMaps.GAMEPLAY:
-                _controls.Menu.Disable();
                 _controls.Gameplay.Enable();
-                _currentActionMap = _map;
                 break;
             case ControlActionMaps.MENU:
-                _controls.Gameplay.Disable();
                 _controls.Menu.Enable();
-                _currentActionMap = _map;
                 break;
-            case ControlActionMaps.NUM_OF_ACTIONMAPS:
             default:
                 break;
         }
+
+        // Update the current action map
+        _currentActionMap = _map;
     }
 }
