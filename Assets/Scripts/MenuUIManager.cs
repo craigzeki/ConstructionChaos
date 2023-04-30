@@ -144,13 +144,21 @@ public class MenuUIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Animates the given GameObject in or out
+    /// Animates the given GameObject in or out, and optionally disables it after the animation
     /// </summary>
     /// <param name="gameObject">The GameObject to animate</param>
     /// <param name="animateIn">True to animate in, false to animate out</param>
-    private void AnimateElement(GameObject gameObject, bool animateIn)
+    /// <param name="disableAfter">True to disable the GameObject after the animation</param>
+    private void AnimateElement(GameObject gameObject, bool animateIn, bool disableAfter = false)
     {
-        LeanTween.scale(gameObject, animateIn ? Vector3.one : Vector3.zero, animationTime).setEase(animateIn ? LeanTweenType.easeOutBack : LeanTweenType.easeInBack);
+        gameObject.transform.localScale = animateIn ? Vector3.zero : Vector3.one;
+        gameObject.SetActive(true);
+
+        LeanTween.scale(gameObject, animateIn ? Vector3.one : Vector3.zero, animationTime).setEase(animateIn ? LeanTweenType.easeOutBack : LeanTweenType.easeInBack).setOnComplete(() =>
+        {
+            if (disableAfter)
+                gameObject.SetActive(false);
+        });
     }
 
     /// <summary>
