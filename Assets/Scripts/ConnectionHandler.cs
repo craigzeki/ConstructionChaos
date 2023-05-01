@@ -12,12 +12,15 @@ using Unity.Networking.Transport.Relay;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConnectionHandler : MonoBehaviour
 {
     public static ConnectionHandler Instance;
 
     [SerializeField] private UnityTransport unityTransport, relayTransport;
+
+    [SerializeField] private FollowCam followCam;
 
     private void Awake()
     {
@@ -55,12 +58,19 @@ public class ConnectionHandler : MonoBehaviour
             // Set the connection data to the local IP address
             unityTransport.ConnectionData.Address = ip;
 
-            // Start the server
-            NetworkManager.Singleton.StartHost();
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
 
-            // Display the room code to the user
-            string roomCode = IPtoCode(ip);
-            MenuUIManager.Instance.SetRoomCode(roomCode);
+            loadScene.completed += (AsyncOperation op) =>
+            {
+                // Start the server
+                NetworkManager.Singleton.StartHost();
+
+                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+
+                // Display the room code to the user
+                string roomCode = IPtoCode(ip);
+                MenuUIManager.Instance.SetRoomCode(roomCode);
+            };
 
             return;
         }
@@ -87,8 +97,15 @@ public class ConnectionHandler : MonoBehaviour
             // Set the connection data to the IP address
             unityTransport.ConnectionData.Address = ip;
 
-            // Start the client
-            NetworkManager.Singleton.StartClient();
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+
+            loadScene.completed += (AsyncOperation op) =>
+            {
+                // Start the client
+                NetworkManager.Singleton.StartClient();
+
+                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+            };
 
             return;
         }
@@ -136,7 +153,14 @@ public class ConnectionHandler : MonoBehaviour
 
             relayTransport.SetRelayServerData(relayServerData);
 
-            NetworkManager.Singleton.StartHost();
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+
+            loadScene.completed += (AsyncOperation op) =>
+            {
+                NetworkManager.Singleton.StartHost();
+
+                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+            };
         }
         catch (RelayServiceException e)
         {
@@ -160,7 +184,14 @@ public class ConnectionHandler : MonoBehaviour
 
             relayTransport.SetRelayServerData(relayServerData);
 
-            NetworkManager.Singleton.StartClient();
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+
+            loadScene.completed += (AsyncOperation op) =>
+            {
+                NetworkManager.Singleton.StartClient();
+
+                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+            };
         }
         catch (RelayServiceException e)
         {

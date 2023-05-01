@@ -89,9 +89,11 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(hostButton.gameObject, false);
         AnimateElement(joinButton.gameObject, false);
 
-        // Animate the player count slider and text out
+        // Animate out the player count slider, player count text, the local toggle and the room code input
         AnimateElement(playerCountSlider.gameObject, false);
         AnimateElement(playerCountText.gameObject, false);
+        AnimateElement(localToggle.gameObject, false);
+        AnimateElement(roomCodeInput.gameObject, false);
 
         // Start hosting the game
         ConnectionHandler.Instance.HostGame(playerCount, local);

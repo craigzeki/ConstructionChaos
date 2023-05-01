@@ -15,7 +15,7 @@ public class ObjectiveManager : MonoBehaviour
 	/// <summary>
 	/// List of possible objects that can be used in defining an objective
 	/// </summary>
-	private List<ObjectiveObject> _objectiveObjects = new List<ObjectiveObject>();
+	[SerializeField] private List<ObjectiveObject> _objectiveObjects = new List<ObjectiveObject>();
 
 	/// <summary>
 	/// List of objectives that have been assigned to players
