@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ee1a1274b464eaeb16d702d11a9630, type: 3}
+  m_Name: SWING
+  m_EditorClassIdentifier: 
+  friendlyString: Swing on <COLOUR> <OBJECT> <CONDITION>
+  possibleConditions:
+  - {fileID: 11400000, guid: 36886ff6508184858a720125152fad62, type: 2}
