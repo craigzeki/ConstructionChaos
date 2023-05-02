@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PURPLE
   m_EditorClassIdentifier: 
   friendlyString: a purple
-  colour: {r: 1, g: 0, b: 1, a: 0}
+  colour: {r: 1, g: 0, b: 1, a: 1}

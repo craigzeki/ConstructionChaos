@@ -4810,6 +4810,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 712350647}
     m_Modifications:
+    - target: {fileID: -7435603692812850242, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: objectiveColour
+      value: 
+      objectReference: {fileID: 11400000, guid: 707b8c6fb706b498d816e537e26e4902, type: 2}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate

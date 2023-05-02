@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RED
   m_EditorClassIdentifier: 
   friendlyString: a red
-  colour: {r: 1, g: 0, b: 0, a: 0}
+  colour: {r: 1, g: 0, b: 0, a: 1}

@@ -18,22 +18,24 @@ public class ObjectiveObjectInstance : MonoBehaviour
     /// <summary>
     /// The colour of the objective object.
     /// </summary>
+    [SerializeField]
+    [Dropdown("objectiveObject.PossibleColours")]
     private ObjectiveColour objectiveColour;
     public ObjectiveColour ObjectiveColour => objectiveColour;
 
     private void Awake()
     {
         // The object should be an actual colour, not any coloured
-        do
+        while ((objectiveColour?.FriendlyString == "any coloured") || (objectiveColour == null))
         {
             // Pick a random colour from the list of possible colours and assign it to the objective colour
             objectiveColour = objectiveObject.PossibleColours[Random.Range(0, objectiveObject.PossibleColours.Count)];
         }
-        while (objectiveColour.FriendlyString == "any coloured");
+        
 
         // Set the colour of the object to the colour of the objective colour
         //! This is temporary, will need to be adapted for different types of objects
-        GetComponent<Renderer>().material.color = objectiveColour.Colour;
+        GetComponent<SpriteRenderer>().color = objectiveColour.Colour;
 
         // TODO: Tell the objective manager that this object exists
 
