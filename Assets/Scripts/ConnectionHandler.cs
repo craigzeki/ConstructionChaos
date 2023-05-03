@@ -65,7 +65,7 @@ public class ConnectionHandler : MonoBehaviour
                 // Start the server
                 NetworkManager.Singleton.StartHost();
 
-                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
 
                 // Display the room code to the user
                 string roomCode = IPtoCode(ip);
@@ -104,7 +104,7 @@ public class ConnectionHandler : MonoBehaviour
                 // Start the client
                 NetworkManager.Singleton.StartClient();
 
-                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
             };
 
             return;
@@ -159,7 +159,7 @@ public class ConnectionHandler : MonoBehaviour
             {
                 NetworkManager.Singleton.StartHost();
 
-                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
             };
         }
         catch (RelayServiceException e)
@@ -190,7 +190,7 @@ public class ConnectionHandler : MonoBehaviour
             {
                 NetworkManager.Singleton.StartClient();
 
-                followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
+                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
             };
         }
         catch (RelayServiceException e)
