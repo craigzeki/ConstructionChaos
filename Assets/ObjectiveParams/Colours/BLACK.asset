@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BLACK
   m_EditorClassIdentifier: 
   friendlyString: a black
-  colour: {r: 0, g: 0, b: 0, a: 1}
+  colour: {r: 0.254717, g: 0.25111252, b: 0.25111252, a: 1}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -95,6 +96,15 @@ public class InputHandler : MonoBehaviour
     /// </summary>
     public ControlActionMaps CurrentActionMap { get => _currentActionMap; }
 
+    public event EventHandler<bool> JumpPerformed;
+    public event EventHandler<float> PlayerMovePerformed;
+    public event EventHandler<float> CollapsePerformed;
+    public event EventHandler<Vector2> MouseMoveArmsPerformed;
+    public event EventHandler<Vector2> StickMoveArmsPerformed;
+    public event EventHandler<bool> GrabLeftHandPerformed;
+    public event EventHandler<bool> GrabRightHandPerformed;
+    public event EventHandler<bool> DoItPerformed;
+
     private void OnEnable()
     {
         _controls = new Controls();
@@ -135,6 +145,7 @@ public class InputHandler : MonoBehaviour
     private void SetJump(InputAction.CallbackContext value)
     {
         _jumpValue = value.ReadValueAsButton();
+        JumpPerformed?.Invoke(this, _jumpValue);
     }
 
     /// <summary>
@@ -145,6 +156,7 @@ public class InputHandler : MonoBehaviour
     private void SetMovePlayer(InputAction.CallbackContext value)
     {
         _moveHorizontalAxis = value.ReadValue<float>();
+        PlayerMovePerformed?.Invoke(this, _moveHorizontalAxis);
     }
 
     /// <summary>
@@ -156,6 +168,7 @@ public class InputHandler : MonoBehaviour
     {
 
         _moveVerticalAxis = value.ReadValue<float>();
+        CollapsePerformed?.Invoke(this, _moveVerticalAxis);
     }
 
     /// <summary>
@@ -167,6 +180,7 @@ public class InputHandler : MonoBehaviour
     {
         _armsControllerInput = value.ReadValue<Vector2>();
         _isMouseController = true;
+        MouseMoveArmsPerformed?.Invoke(this, _armsControllerInput);
     }
 
     /// <summary>
@@ -179,6 +193,7 @@ public class InputHandler : MonoBehaviour
         _armsControllerInput = value.ReadValue<Vector2>();
         _isMouseController = false;
         _armsStickReleased = Mathf.Approximately(_armsControllerInput.x, 0f) && Mathf.Approximately(_armsControllerInput.y, 0f);
+        StickMoveArmsPerformed.Invoke(this, _armsControllerInput);
     }
 
 
@@ -190,6 +205,7 @@ public class InputHandler : MonoBehaviour
     private void SetLeftGrabButton(InputAction.CallbackContext value)
     {
         _isGrabbingLeft = value.ReadValueAsButton();
+        GrabLeftHandPerformed?.Invoke(this, _isGrabbingLeft);
     }
 
     /// <summary>
@@ -200,6 +216,7 @@ public class InputHandler : MonoBehaviour
     private void SetRightGrabButton(InputAction.CallbackContext value)
     {
         _isGrabbingRight = value.ReadValueAsButton();
+        GrabRightHandPerformed?.Invoke(this, _isGrabbingRight);
     }
 
     /// <summary>
@@ -210,6 +227,7 @@ public class InputHandler : MonoBehaviour
     private void SetMenuButtonPressed(InputAction.CallbackContext value)
     {
         _menuButtonPressed = value.ReadValueAsButton();
+        DoItPerformed?.Invoke(this, _menuButtonPressed);
     }
 
     /// <summary>
