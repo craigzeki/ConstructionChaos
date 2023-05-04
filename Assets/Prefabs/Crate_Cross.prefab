@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7435603692812850242, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: objectiveColour
+      value: 
+      objectReference: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate_Cross
