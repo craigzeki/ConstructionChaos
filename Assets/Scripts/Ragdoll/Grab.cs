@@ -12,10 +12,10 @@ public class Grab : Ragdoll
     
 
 
-    void Update()
+    void FixedUpdate()
     {
         //player is trying to grab, and is allowed to
-        if(InputHandler.Instance.IsGrabbing && _isActive)
+        if((_characterInputHandler._characterInputData.IsGrabbingLeft || _characterInputHandler._characterInputData.IsGrabbingRight) && _isActive)
         {
             //set hold to true
             _hold = true;

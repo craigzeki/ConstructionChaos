@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   TargetRotation: 0
   Force: 150
 --- !u!1 &697379444840098464
@@ -300,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   TargetRotation: 0
   Force: 10
 --- !u!1 &697379445068936190
@@ -463,6 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 300
   _rb: {fileID: 697379445068936191}
 --- !u!1 &697379445209660820
@@ -626,6 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   TargetRotation: 180
   Force: 150
 --- !u!1 &697379445325547767
@@ -790,6 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 300
   _rb: {fileID: 697379445325547771}
 --- !u!1 &697379445442233658
@@ -984,6 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   TargetRotation: 180
   Force: 150
 --- !u!1 &697379445771318549
@@ -1148,6 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   TargetRotation: 90
   Force: 150
 --- !u!1 &697379445836211693
@@ -1311,6 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 300
   _rb: {fileID: 697379445836211694}
 --- !u!1 &697379446066525419
@@ -1325,6 +1333,7 @@ GameObject:
   - component: {fileID: 697379446066525421}
   - component: {fileID: 697379446066525422}
   - component: {fileID: 697379446066525423}
+  - component: {fileID: 7843728220353075219}
   m_Layer: 0
   m_Name: RealSpriteDude
   m_TagString: Player
@@ -1403,6 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9199a96f9b1034d9c6a70f45ca4643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 1.5
   _stepWait: 0.5
   _jumpForce: 6000
@@ -1419,6 +1429,19 @@ MonoBehaviour:
   _verticalMinValue: 1
   _timeBetweenJumpsInPhysicsFrames: 5
   _anim: {fileID: 697379446066525422}
+--- !u!114 &7843728220353075219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697379446066525419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d41be4ca6ca4049b3bbd89eb4c9d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useInputHandlerEvents: 1
 --- !u!1 &697379446087722130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ce17a5317d2dc4ca5481846f16927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1638,6 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ce17a5317d2dc4ca5481846f16927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1887,6 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   TargetRotation: 270
   Force: 150
 --- !u!1 &697379446717627697
@@ -2051,6 +2077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 300
   _rb: {fileID: 697379446717627701}
 --- !u!1 &4770483709911751432
@@ -2245,6 +2272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 300
   _rb: {fileID: 741921768397403131}
 --- !u!1 &7557321123221306816
@@ -2408,5 +2436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterInputHandler: {fileID: 7843728220353075219}
   _speed: 300
   _rb: {fileID: 8320874528366029769}

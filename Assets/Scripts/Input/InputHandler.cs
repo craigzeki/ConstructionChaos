@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+/// <summary>
+/// Creates an instance of the input system and listens for actions<br/>
+/// InputHandler must be scheduled before all other movement scripts, including CharacterInputHandler
+/// </summary>
 public class InputHandler : MonoBehaviour
 {
     /// <summary>
@@ -31,6 +36,9 @@ public class InputHandler : MonoBehaviour
     private bool _isGrabbingRight = false;
     private bool _menuButtonPressed = false;
 
+    private CharacterInputData _characterInputData = new CharacterInputData();
+
+    public event EventHandler<CharacterInputData> CharacterInputDataChanged;
 
     public static InputHandler Instance
     {
@@ -135,6 +143,26 @@ public class InputHandler : MonoBehaviour
         _controls.Menu.DoIt.canceled += SetMenuButtonPressed;
         
 
+    }
+
+
+    /// <summary>
+    /// FixedUpdate will be used to send out the input data to the server as the player movement occurs during FixedUpdate
+    /// It will also provide a framerate independant schedule for  the data
+    /// </summary>
+    private void FixedUpdate()
+    {
+        _characterInputData.ArmsMovementData.ArmsStickReleased = _armsStickReleased;
+        _characterInputData.ArmsMovementData.ArmsControllerInput = _armsControllerInput;
+        _characterInputData.ArmsMovementData.IsMouseController = _isMouseController;
+        _characterInputData.IsGrabbingLeft = _isGrabbingLeft;
+        _characterInputData.IsGrabbingRight = _isGrabbingRight;
+        _characterInputData.JumpValue = _jumpValue;
+        _characterInputData.MoveVerticalAxis = _moveVerticalAxis;
+        _characterInputData.MoveHorizontalAxis = _moveHorizontalAxis;
+
+        CharacterInputDataChanged?.Invoke(this, _characterInputData);
+        //TODO: Send to Server - or do this within the Character movement script (StickMovement, etc)?
     }
 
     /// <summary>

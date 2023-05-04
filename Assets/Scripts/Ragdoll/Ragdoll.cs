@@ -7,8 +7,16 @@ using UnityEngine;
 /// </summary>
 public class Ragdoll : MonoBehaviour
 {
-    protected bool _isActive = true;
+    /// <summary>
+    /// A reference to this characters input handler, usually found on the parent of the player character prefab
+    /// </summary>
+    [SerializeField, Tooltip("A reference to this characters input handler, usually found on the character parent object.")] protected CharacterInputHandler _characterInputHandler;
 
+    /// <summary>
+    /// Is the ragdoll 'active' - if not, it is collapsed
+    /// </summary>
+    protected bool _isActive = true;
+    
     /// <summary>
     /// Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly
     /// </summary>
@@ -18,4 +26,6 @@ public class Ragdoll : MonoBehaviour
     {
         _isActive = !collapse;
     }
+
+
 }

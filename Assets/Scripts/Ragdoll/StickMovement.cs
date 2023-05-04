@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StickMovement : MonoBehaviour
+public class StickMovement : Ragdoll
 {
     [SerializeField] private float _speed = 1.5f;
     [SerializeField] private float _stepWait = 0.5f;
@@ -29,11 +30,12 @@ public class StickMovement : MonoBehaviour
 
     void Update()
     {
+        
         //check if user is pressing up or down
-        if(!Mathf.Approximately(InputHandler.Instance.MoveVerticalAxis, 0f))
+        if(!Mathf.Approximately(_characterInputHandler._characterInputData.MoveVerticalAxis, 0f))
         {
             //check if the axis input is above a tolerance to try and reject unintentional up / down movement
-            bool newCollapse = InputHandler.Instance.MoveVerticalAxis >= _verticalMinValue ? false : InputHandler.Instance.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
+            bool newCollapse = _characterInputHandler._characterInputData.MoveVerticalAxis >= _verticalMinValue ? false : _characterInputHandler._characterInputData.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
             if (newCollapse != _collapse)
             {
                 //collapse the player and send a message to all the body parts to do the same
@@ -44,9 +46,9 @@ public class StickMovement : MonoBehaviour
         }
         
         //check if the user is inputting horizontal movement
-        if (!Mathf.Approximately(InputHandler.Instance.MoveHorizontalAxis, 0f) && !_collapse)
+        if (!Mathf.Approximately(_characterInputHandler._characterInputData.MoveHorizontalAxis, 0f) && !_collapse)
         {
-            if (InputHandler.Instance.MoveHorizontalAxis > 0)
+            if (_characterInputHandler._characterInputData.MoveHorizontalAxis > 0)
             {
                 //move right
                 _anim.Play("WalkRight");
@@ -79,7 +81,7 @@ public class StickMovement : MonoBehaviour
         else
         {
             //check if user can and is requesting to jump
-            if (IsOnGround() && !_collapse && InputHandler.Instance.JumpValue)
+            if (IsOnGround() && !_collapse && _characterInputHandler._characterInputData.JumpValue)
             {
                 //do jump
                 _bodyRB.AddForce(Vector2.up * _jumpForce);
