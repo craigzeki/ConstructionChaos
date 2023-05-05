@@ -15,7 +15,7 @@ public class Grab : Ragdoll
     void FixedUpdate()
     {
         //player is trying to grab, and is allowed to
-        if((_characterInputHandler._characterInputData.IsGrabbingLeft || _characterInputHandler._characterInputData.IsGrabbingRight) && _isActive)
+        if((CharacterInputHandler._characterInputData.IsGrabbingLeft || CharacterInputHandler._characterInputData.IsGrabbingRight) && _isActive)
         {
             //set hold to true
             _hold = true;

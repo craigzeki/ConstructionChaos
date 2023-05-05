@@ -10,7 +10,7 @@ public class Ragdoll : MonoBehaviour
     /// <summary>
     /// A reference to this characters input handler, usually found on the parent of the player character prefab
     /// </summary>
-    [SerializeField, Tooltip("A reference to this characters input handler, usually found on the character parent object.")] protected CharacterInputHandler _characterInputHandler;
+    [SerializeField, Tooltip("A reference to this characters input handler, usually found on the character parent object.")] public CharacterInputHandler CharacterInputHandler;
 
     /// <summary>
     /// Is the ragdoll 'active' - if not, it is collapsed

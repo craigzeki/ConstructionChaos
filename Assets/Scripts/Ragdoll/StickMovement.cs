@@ -28,14 +28,24 @@ public class StickMovement : Ragdoll
     private bool _collapse = false;
     private uint _framesToNextJump = 0;
 
+    private void Awake()
+    {
+        Ragdoll[] ragdolls = GetComponentsInChildren<Ragdoll>();
+
+        for (int i = 1; i < ragdolls.Length; i++)
+        {
+            ragdolls[i].CharacterInputHandler = CharacterInputHandler;
+        }
+    }
+
     void Update()
     {
         
         //check if user is pressing up or down
-        if(!Mathf.Approximately(_characterInputHandler._characterInputData.MoveVerticalAxis, 0f))
+        if(!Mathf.Approximately(CharacterInputHandler._characterInputData.MoveVerticalAxis, 0f))
         {
             //check if the axis input is above a tolerance to try and reject unintentional up / down movement
-            bool newCollapse = _characterInputHandler._characterInputData.MoveVerticalAxis >= _verticalMinValue ? false : _characterInputHandler._characterInputData.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
+            bool newCollapse = CharacterInputHandler._characterInputData.MoveVerticalAxis >= _verticalMinValue ? false : CharacterInputHandler._characterInputData.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
             if (newCollapse != _collapse)
             {
                 //collapse the player and send a message to all the body parts to do the same
@@ -46,9 +56,9 @@ public class StickMovement : Ragdoll
         }
         
         //check if the user is inputting horizontal movement
-        if (!Mathf.Approximately(_characterInputHandler._characterInputData.MoveHorizontalAxis, 0f) && !_collapse)
+        if (!Mathf.Approximately(CharacterInputHandler._characterInputData.MoveHorizontalAxis, 0f) && !_collapse)
         {
-            if (_characterInputHandler._characterInputData.MoveHorizontalAxis > 0)
+            if (CharacterInputHandler._characterInputData.MoveHorizontalAxis > 0)
             {
                 //move right
                 _anim.Play("WalkRight");
@@ -81,7 +91,7 @@ public class StickMovement : Ragdoll
         else
         {
             //check if user can and is requesting to jump
-            if (IsOnGround() && !_collapse && _characterInputHandler._characterInputData.JumpValue)
+            if (IsOnGround() && !_collapse && CharacterInputHandler._characterInputData.JumpValue)
             {
                 //do jump
                 _bodyRB.AddForce(Vector2.up * _jumpForce);

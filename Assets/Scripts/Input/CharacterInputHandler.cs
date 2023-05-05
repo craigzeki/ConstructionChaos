@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class CharacterInputHandler : MonoBehaviour
 {
-    [SerializeField] private bool _useInputHandlerEvents = false;
+    public bool UseInputHandlerEvents = true;
 
     /// <summary>
     /// Storage for the input data
@@ -18,37 +18,23 @@ public class CharacterInputHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        InputHandler.Instance.CharacterInputDataChanged += OnInputDataChanged;    
+        ClientInputHandler.Instance.CharacterInputDataChanged += OnInputDataChanged;    
     }
 
     private void OnDisable()
     {
-        if (InputHandler.Instance == null) return;
-        InputHandler.Instance.CharacterInputDataChanged -= OnInputDataChanged;
+        if (ClientInputHandler.Instance == null) return;
+        ClientInputHandler.Instance.CharacterInputDataChanged -= OnInputDataChanged;
     }
 
     protected virtual void OnInputDataChanged(object sender, CharacterInputData characterInputData)
     {
-        if ((characterInputData != null) && (_useInputHandlerEvents)) _characterInputData = characterInputData;
+        if (!UseInputHandlerEvents) return;
+        _characterInputData = characterInputData;
     }
 
-    private void FixedUpdate()
+    public void UpdateInputData(CharacterInputData characterInputData)
     {
-        if (_useInputHandlerEvents) return;
-        //Data used by movement scrripts in FixedUpdate
-        _characterInputData.JumpValue = InputHandler.Instance.JumpValue;
-        _characterInputData.ArmsMovementData.ArmsStickReleased = InputHandler.Instance.ArmsStickReleased;
-        _characterInputData.ArmsMovementData.ArmsControllerInput = InputHandler.Instance.ArmsControllerInput;
-        _characterInputData.ArmsMovementData.IsMouseController = InputHandler.Instance.IsMouseController;
-        _characterInputData.IsGrabbingLeft = InputHandler.Instance.IsGrabbingLeft;
-        _characterInputData.IsGrabbingRight = InputHandler.Instance.IsGrabbingRight;
-
-    }
-
-    void Update()
-    {
-        if (_useInputHandlerEvents) return;
-        _characterInputData.MoveVerticalAxis = InputHandler.Instance.MoveVerticalAxis;
-        _characterInputData.MoveHorizontalAxis = InputHandler.Instance.MoveHorizontalAxis;
+        _characterInputData = characterInputData;
     }
 }

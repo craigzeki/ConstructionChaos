@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ using UnityEngine.InputSystem;
 /// Creates an instance of the input system and listens for actions<br/>
 /// InputHandler must be scheduled before all other movement scripts, including CharacterInputHandler
 /// </summary>
-public class InputHandler : MonoBehaviour
+public class ClientInputHandler : NetworkBehaviour
 {
     /// <summary>
     /// Enum to represent each Action Map
@@ -22,96 +23,35 @@ public class InputHandler : MonoBehaviour
         NUM_OF_ACTIONMAPS
     }
 
-    private static InputHandler instance;
+    private static ClientInputHandler s_instance;
     private Controls _controls;
     private ControlActionMaps _currentActionMap;
 
-    private bool _jumpValue = false;
-    private float _moveHorizontalAxis = 0f;
-    private float _moveVerticalAxis = 0f;
-    private Vector2 _armsControllerInput;
-    private bool _isMouseController = false;
-    private bool _armsStickReleased = true;
-    private bool _isGrabbingLeft = false;
-    private bool _isGrabbingRight = false;
     private bool _menuButtonPressed = false;
 
     private CharacterInputData _characterInputData = new CharacterInputData();
 
     public event EventHandler<CharacterInputData> CharacterInputDataChanged;
 
-    public static InputHandler Instance
+    public static ClientInputHandler Instance
     {
         get
         {
-            if (instance == null) instance = FindObjectOfType<InputHandler>();
-            return instance;
+            if (s_instance == null) s_instance = FindObjectOfType<ClientInputHandler>();
+            return s_instance;
         }
     }
 
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// True if jump button pressed
-    /// </summary>
-    public bool JumpValue { get => _jumpValue;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// -1 to 1 based on horizontal input representing player movement
-    /// </summary>
-    public float MoveHorizontalAxis { get => _moveHorizontalAxis;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// -1 to 1 based on vertical input representing player movement
-    /// </summary>
-    public float MoveVerticalAxis { get => _moveVerticalAxis;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// 2D array representing horizontal and vertical axis for arms movement
-    /// </summary>
-    public Vector2 ArmsControllerInput { get => _armsControllerInput;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// Boolean flag indicating if last input was from a mouse controller
-    /// </summary>
-    public bool IsMouseController { get => _isMouseController;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// True if the gamepad stick controlling the arms centred
-    /// </summary>
-    public bool ArmsStickReleased { get => _armsStickReleased;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// True if left hand grab button is pressed
-    /// </summary>
-    public bool IsGrabbingLeft { get => _isGrabbingLeft;  }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// True of the right hand grab button is pressed
-    /// </summary>
-    public bool IsGrabbingRight { get => _isGrabbingRight; }
-    /// <summary>
-    /// Action Map: Gameplay<br/>
-    /// True if either grab button is pressed
-    /// </summary>
-    public bool IsGrabbing { get => _isGrabbingLeft || _isGrabbingRight; }
     /// <summary>
     /// Action Map: Menu<br/>
     /// True if the 'DoIt' button is pressed
     /// </summary>
     public bool MenuButtonPressed { get => _menuButtonPressed; }
+
     /// <summary>
     /// Which Action Map is active
     /// </summary>
     public ControlActionMaps CurrentActionMap { get => _currentActionMap; }
-
-    public event EventHandler<bool> JumpPerformed;
-    public event EventHandler<float> PlayerMovePerformed;
-    public event EventHandler<float> CollapsePerformed;
-    public event EventHandler<Vector2> MouseMoveArmsPerformed;
-    public event EventHandler<Vector2> StickMoveArmsPerformed;
-    public event EventHandler<bool> GrabLeftHandPerformed;
-    public event EventHandler<bool> GrabRightHandPerformed;
-    public event EventHandler<bool> DoItPerformed;
 
     private void OnEnable()
     {
@@ -141,8 +81,6 @@ public class InputHandler : MonoBehaviour
 
         _controls.Menu.DoIt.performed += SetMenuButtonPressed;
         _controls.Menu.DoIt.canceled += SetMenuButtonPressed;
-        
-
     }
 
 
@@ -152,17 +90,11 @@ public class InputHandler : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        _characterInputData.ArmsMovementData.ArmsStickReleased = _armsStickReleased;
-        _characterInputData.ArmsMovementData.ArmsControllerInput = _armsControllerInput;
-        _characterInputData.ArmsMovementData.IsMouseController = _isMouseController;
-        _characterInputData.IsGrabbingLeft = _isGrabbingLeft;
-        _characterInputData.IsGrabbingRight = _isGrabbingRight;
-        _characterInputData.JumpValue = _jumpValue;
-        _characterInputData.MoveVerticalAxis = _moveVerticalAxis;
-        _characterInputData.MoveHorizontalAxis = _moveHorizontalAxis;
-
+        // Invoke the event to notify any listeners that the input data has changed, this is for single player only
         CharacterInputDataChanged?.Invoke(this, _characterInputData);
-        //TODO: Send to Server - or do this within the Character movement script (StickMovement, etc)?
+
+        // Send the input data to the server
+       if (ServerInputHandler.Instance != null) ServerInputHandler.Instance.UpdateInputDataServerRpc(_characterInputData);
     }
 
     /// <summary>
@@ -172,8 +104,7 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetJump(InputAction.CallbackContext value)
     {
-        _jumpValue = value.ReadValueAsButton();
-        JumpPerformed?.Invoke(this, _jumpValue);
+        _characterInputData.JumpValue = value.ReadValueAsButton();
     }
 
     /// <summary>
@@ -183,8 +114,7 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetMovePlayer(InputAction.CallbackContext value)
     {
-        _moveHorizontalAxis = value.ReadValue<float>();
-        PlayerMovePerformed?.Invoke(this, _moveHorizontalAxis);
+        _characterInputData.MoveHorizontalAxis = value.ReadValue<float>();
     }
 
     /// <summary>
@@ -195,8 +125,7 @@ public class InputHandler : MonoBehaviour
     private void SetCollapse(InputAction.CallbackContext value)
     {
 
-        _moveVerticalAxis = value.ReadValue<float>();
-        CollapsePerformed?.Invoke(this, _moveVerticalAxis);
+        _characterInputData.MoveVerticalAxis = value.ReadValue<float>();
     }
 
     /// <summary>
@@ -206,9 +135,8 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetMouseMoveArms(InputAction.CallbackContext value)
     {
-        _armsControllerInput = value.ReadValue<Vector2>();
-        _isMouseController = true;
-        MouseMoveArmsPerformed?.Invoke(this, _armsControllerInput);
+        _characterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
+        _characterInputData.ArmsMovementData.IsMouseController = true;
     }
 
     /// <summary>
@@ -218,10 +146,9 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetStickMoveArms(InputAction.CallbackContext value)
     {
-        _armsControllerInput = value.ReadValue<Vector2>();
-        _isMouseController = false;
-        _armsStickReleased = Mathf.Approximately(_armsControllerInput.x, 0f) && Mathf.Approximately(_armsControllerInput.y, 0f);
-        StickMoveArmsPerformed.Invoke(this, _armsControllerInput);
+        _characterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
+        _characterInputData.ArmsMovementData.IsMouseController = false;
+        _characterInputData.ArmsMovementData.ArmsStickReleased = Mathf.Approximately(_characterInputData.ArmsMovementData.ArmsControllerInput.x, 0f) && Mathf.Approximately(_characterInputData.ArmsMovementData.ArmsControllerInput.y, 0f);
     }
 
 
@@ -232,8 +159,7 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetLeftGrabButton(InputAction.CallbackContext value)
     {
-        _isGrabbingLeft = value.ReadValueAsButton();
-        GrabLeftHandPerformed?.Invoke(this, _isGrabbingLeft);
+        _characterInputData.IsGrabbingLeft = value.ReadValueAsButton();
     }
 
     /// <summary>
@@ -243,8 +169,7 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetRightGrabButton(InputAction.CallbackContext value)
     {
-        _isGrabbingRight = value.ReadValueAsButton();
-        GrabRightHandPerformed?.Invoke(this, _isGrabbingRight);
+        _characterInputData.IsGrabbingRight = value.ReadValueAsButton();
     }
 
     /// <summary>
@@ -255,7 +180,6 @@ public class InputHandler : MonoBehaviour
     private void SetMenuButtonPressed(InputAction.CallbackContext value)
     {
         _menuButtonPressed = value.ReadValueAsButton();
-        DoItPerformed?.Invoke(this, _menuButtonPressed);
     }
 
     /// <summary>

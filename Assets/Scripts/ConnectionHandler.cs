@@ -22,6 +22,8 @@ public class ConnectionHandler : MonoBehaviour
 
     [SerializeField] private FollowCam followCam;
 
+    [SerializeField] private GameObject _serverInputHandlerObject;
+
     private void Awake()
     {
         if (Instance == null)
@@ -58,10 +60,12 @@ public class ConnectionHandler : MonoBehaviour
             // Set the connection data to the local IP address
             unityTransport.ConnectionData.Address = ip;
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
 
             loadScene.completed += (AsyncOperation op) =>
             {
+                GameObject.Instantiate(_serverInputHandlerObject);
+
                 // Start the server
                 NetworkManager.Singleton.StartHost();
 
@@ -97,7 +101,7 @@ public class ConnectionHandler : MonoBehaviour
             // Set the connection data to the IP address
             unityTransport.ConnectionData.Address = ip;
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
 
             loadScene.completed += (AsyncOperation op) =>
             {
@@ -153,10 +157,12 @@ public class ConnectionHandler : MonoBehaviour
 
             relayTransport.SetRelayServerData(relayServerData);
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
 
             loadScene.completed += (AsyncOperation op) =>
             {
+                GameObject.Instantiate(_serverInputHandlerObject);
+
                 NetworkManager.Singleton.StartHost();
 
                 //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
@@ -184,7 +190,7 @@ public class ConnectionHandler : MonoBehaviour
 
             relayTransport.SetRelayServerData(relayServerData);
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("RagTest", LoadSceneMode.Additive);
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
 
             loadScene.completed += (AsyncOperation op) =>
             {
