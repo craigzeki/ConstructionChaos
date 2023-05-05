@@ -35,7 +35,7 @@ public class ServerInputHandler : NetworkBehaviour
         _characterInputHandlers.Remove(clientId);
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership =false)]
     public void UpdateInputDataServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
     {
         if (!_characterInputHandlers.ContainsKey(serverRpcParams.Receive.SenderClientId)) return;
