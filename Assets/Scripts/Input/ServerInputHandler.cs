@@ -22,6 +22,7 @@ public class ServerInputHandler : NetworkBehaviour
 
     public void AddPlayer(ulong clientId, GameObject playerObject)
     {
+        if (!IsServer) return;
         if (_characterInputHandlers.ContainsKey(clientId)) return;
         var characterInputHandler = playerObject.GetComponent<CharacterInputHandler>();
         _characterInputHandlers.Add(clientId, characterInputHandler);
@@ -29,6 +30,7 @@ public class ServerInputHandler : NetworkBehaviour
 
     public void RemovePlayer(ulong clientId)
     {
+        if (!IsServer) return;
         if (!_characterInputHandlers.ContainsKey(clientId)) return;
         _characterInputHandlers.Remove(clientId);
     }

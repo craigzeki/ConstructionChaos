@@ -8,9 +8,11 @@ public class NetPlayer : NetworkBehaviour
 {
     public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
+        if (!IsServer) return;
         ServerInputHandler.Instance.AddPlayer(OwnerClientId, gameObject);
         GetComponent<CharacterInputHandler>().UseInputHandlerEvents = false;
-        base.OnNetworkSpawn();
+        
     }
 
     public override void OnNetworkDespawn()

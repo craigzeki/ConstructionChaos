@@ -105,6 +105,7 @@ public class ConnectionHandler : MonoBehaviour
 
             loadScene.completed += (AsyncOperation op) =>
             {
+                GameObject.Instantiate(_serverInputHandlerObject);
                 // Start the client
                 NetworkManager.Singleton.StartClient();
 
@@ -194,6 +195,7 @@ public class ConnectionHandler : MonoBehaviour
 
             loadScene.completed += (AsyncOperation op) =>
             {
+                GameObject.Instantiate(_serverInputHandlerObject);
                 NetworkManager.Singleton.StartClient();
 
                 //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));

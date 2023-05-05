@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _menuText.text = "South Button, Menu Action Map : Pressed = " + ClientInputHandler.Instance.MenuButtonPressed.ToString();
+        if(_menuText != null) _menuText.text = "South Button, Menu Action Map : Pressed = " + ClientInputHandler.Instance.MenuButtonPressed.ToString();
     }
 
     public void ToggleActionMap()
