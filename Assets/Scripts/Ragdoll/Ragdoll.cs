@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
 /// Base class for all Ragdoll behaviour
 /// </summary>
-public class Ragdoll : MonoBehaviour
+public class Ragdoll : NetworkBehaviour
 {
     /// <summary>
     /// A reference to this characters input handler, usually found on the parent of the player character prefab
@@ -26,6 +27,4 @@ public class Ragdoll : MonoBehaviour
     {
         _isActive = !collapse;
     }
-
-
 }

@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.Netcode;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,6 +33,7 @@ public class StickMovement : Ragdoll
 
     private void Awake()
     {
+        // Get all the ragdoll parts and set the input handler
         Ragdoll[] ragdolls = GetComponentsInChildren<Ragdoll>();
 
         for (int i = 1; i < ragdolls.Length; i++)
@@ -40,34 +44,63 @@ public class StickMovement : Ragdoll
 
     void Update()
     {
-        
-        //check if user is pressing up or down
-        if(!Mathf.Approximately(CharacterInputHandler._characterInputData.MoveVerticalAxis, 0f))
+        print($"StickMovement.cs Update(), IsLocalPlayer: {IsLocalPlayer}, IsServer: {IsServer}, IsClient: {IsClient}, IsOwner: {IsOwner}");
+
+        if (!IsOwner) return;
+
+        if (IsServer)
+            HandleMovement(CharacterInputHandler.CharacterInputData);
+        else
+            HandleMovementServerRpc(CharacterInputHandler.CharacterInputData);
+    }
+
+    private void FixedUpdate()
+    {
+        if (!IsOwner) return;
+
+        if (IsServer)
+            HandleJump(CharacterInputHandler.CharacterInputData);
+        else
+            HandleJumpServerRpc(CharacterInputHandler.CharacterInputData);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void HandleMovementServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
+    {
+        print("HandleMovementServerRpc()");
+        HandleMovement(characterInputData);
+    }
+
+    private void HandleMovement(CharacterInputData characterInputData)
+    {
+        print("Handling Movement");
+        // Check if user is pressing up or down
+        if(!Mathf.Approximately(characterInputData.MoveVerticalAxis, 0f))
         {
-            //check if the axis input is above a tolerance to try and reject unintentional up / down movement
-            bool newCollapse = CharacterInputHandler._characterInputData.MoveVerticalAxis >= _verticalMinValue ? false : CharacterInputHandler._characterInputData.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
+            // Check if the axis input is above a tolerance to try and reject unintentional up / down movement
+            bool newCollapse = characterInputData.MoveVerticalAxis >= _verticalMinValue ? false : characterInputData.MoveVerticalAxis <= (-_verticalMinValue) ? true : _collapse;
             if (newCollapse != _collapse)
             {
-                //collapse the player and send a message to all the body parts to do the same
+                // Collapse the player and send a message to all the body parts to do the same
                 _collapse = newCollapse;
                 gameObject.BroadcastMessage("OnCollapse", _collapse);
             }
             Debug.Log("_collapse: " + _collapse.ToString());
         }
         
-        //check if the user is inputting horizontal movement
-        if (!Mathf.Approximately(CharacterInputHandler._characterInputData.MoveHorizontalAxis, 0f) && !_collapse)
+        // Check if the user is inputting horizontal movement
+        if (!Mathf.Approximately(characterInputData.MoveHorizontalAxis, 0f) && !_collapse)
         {
-            if (CharacterInputHandler._characterInputData.MoveHorizontalAxis > 0)
+            if (characterInputData.MoveHorizontalAxis > 0)
             {
-                //move right
+                // Move right
                 _anim.Play("WalkRight");
                 if (_walkLeft != null) StopCoroutine(_walkLeft);
                 _walkRight = StartCoroutine(MoveRight(_stepWait));
             }
             else
             {
-                //move left
+                // Move left
                 _anim.Play("WalkLeft");
                 if (_walkRight != null) StopCoroutine(_walkRight);
                 _walkLeft = StartCoroutine(MoveLeft(_stepWait));
@@ -75,14 +108,20 @@ public class StickMovement : Ragdoll
         }
         else
         {
-            //idle
+            // Idle
             if (_walkLeft != null) StopCoroutine(_walkLeft);
             if (_walkRight != null) StopCoroutine(_walkRight);
             _anim.Play("Idle");
         }
     }
 
-    private void FixedUpdate()
+    [ServerRpc(RequireOwnership = false)]
+    private void HandleJumpServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
+    {
+        HandleJump(characterInputData);
+    }
+
+    private void HandleJump(CharacterInputData characterInputData)
     {
         if (_framesToNextJump > 0)
         {
@@ -90,17 +129,16 @@ public class StickMovement : Ragdoll
         }
         else
         {
-            //check if user can and is requesting to jump
-            if (IsOnGround() && !_collapse && CharacterInputHandler._characterInputData.JumpValue)
+            // Check if user can and is requesting to jump
+            if (IsOnGround() && !_collapse && characterInputData.JumpValue)
             {
-                //do jump
+                // Do jump
                 _bodyRB.AddForce(Vector2.up * _jumpForce);
                 Debug.Log("Jumped");
                 //_jumpValue= false;
             }
             _framesToNextJump = _timeBetweenJumpsInPhysicsFrames;
         }
-        
     }
 
     /// <summary>
@@ -111,7 +149,7 @@ public class StickMovement : Ragdoll
     {
         bool isOnGround = false;
 
-        //check each ground point, if any are contacting the ground, set isOnGround = true
+        // Check each ground point, if any are contacting the ground, set isOnGround = true
         foreach (Transform t in _groundPositions)
         {
             isOnGround |= Physics2D.OverlapCircle(t.position, _positionRadius, _groundLayerMask);
@@ -155,8 +193,6 @@ public class StickMovement : Ragdoll
         {
             Handles.DrawWireDisc(t.position, new Vector3(0, 0, 1), _positionRadius);
         }
-        
-        
     }
 #endif
 }

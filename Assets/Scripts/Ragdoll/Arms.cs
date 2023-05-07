@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,10 +21,10 @@ public class Arms : Ragdoll
     /// </summary>
     private void CalculateArmRotation()
     {
-        if(CharacterInputHandler._characterInputData.ArmsMovementData.IsMouseController)
+        if(CharacterInputHandler.CharacterInputData.ArmsMovementData.IsMouseController)
         {
-            _controllerPos.x = Camera.main.ScreenToWorldPoint(CharacterInputHandler._characterInputData.ArmsMovementData.ArmsControllerInput).x;
-            _controllerPos.y = Camera.main.ScreenToWorldPoint(CharacterInputHandler._characterInputData.ArmsMovementData.ArmsControllerInput).y;
+            _controllerPos.x = Camera.main.ScreenToWorldPoint(CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput).x;
+            _controllerPos.y = Camera.main.ScreenToWorldPoint(CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput).y;
             _controllerPos.z = 0;
 
             _delta = _controllerPos - transform.position;
@@ -32,28 +33,44 @@ public class Arms : Ragdoll
         }
         else
         {
-            _rotationZ = Mathf.Atan2(CharacterInputHandler._characterInputData.ArmsMovementData.ArmsControllerInput.x, -CharacterInputHandler._characterInputData.ArmsMovementData.ArmsControllerInput.y) * Mathf.Rad2Deg;
+            _rotationZ = Mathf.Atan2(CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput.x, -CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput.y) * Mathf.Rad2Deg;
         }
     }
 
     void FixedUpdate()
     {
-        //not active / collapsed
+        if (!IsOwner) return;
+
+        // Not active / collapsed
         if (!_isActive) return;
 
+        if (IsServer)
+            HandleArms(CharacterInputHandler.CharacterInputData);
+        else
+            HandleArmsServerRpc(CharacterInputHandler.CharacterInputData);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void HandleArmsServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
+    {
+        HandleArms(characterInputData);
+    }
+
+    private void HandleArms(CharacterInputData characterInputData)
+    {
         CalculateArmRotation();
-        //if player is trying to grab and is a mouse controller
-        if((CharacterInputHandler._characterInputData.IsGrabbingLeft || CharacterInputHandler._characterInputData.IsGrabbingRight) && CharacterInputHandler._characterInputData.ArmsMovementData.IsMouseController)
+
+        // If player is trying to grab and is a mouse controller
+        if((characterInputData.IsGrabbingLeft || characterInputData.IsGrabbingRight) && characterInputData.ArmsMovementData.IsMouseController)
         {
-            //move the amrs
+            // Move the amrs
             _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));
         }
-        else if(!CharacterInputHandler._characterInputData.ArmsMovementData.IsMouseController && !CharacterInputHandler._characterInputData.ArmsMovementData.ArmsStickReleased)
+        else if(characterInputData.ArmsMovementData.IsMouseController && characterInputData.ArmsMovementData.ArmsStickReleased)
         {
-            //player is trying to move arms using gamepad, move the arms (no reliance on grab to move
+            // Player is trying to move arms using gamepad, move the arms (no reliance on grab to move
             _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));
         }
-        
     }
 }
 

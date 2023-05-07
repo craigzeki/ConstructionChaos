@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3688923362050671506, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 951099334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncScaleX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncScaleY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncScaleZ
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncPositionZ
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncRotAngleX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncRotAngleY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3302851571061422871, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.32

@@ -1,40 +1,204 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 /// <summary>
-/// Gets the inputs either via event or directly - can be further tweaked to become the server side input handler<br/>
-/// CharacterInputHandler must be scheduled to execute before all movement scripts but after InputHandler.
+/// This class must be attached to each instance of the player<br/>
+/// It handles the input from the player and sends it to the server
 /// </summary>
-public class CharacterInputHandler : MonoBehaviour
+public class CharacterInputHandler : NetworkBehaviour
 {
-    public bool UseInputHandlerEvents = true;
+    /// <summary>
+    /// Enum to represent each Action Map
+    /// </summary>
+    public enum ControlActionMaps
+    {
+        UNKNOWN = 0,
+        GAMEPLAY,
+        MENU,
+        NUM_OF_ACTIONMAPS
+    }
+
+    private Controls _controls;
+    private ControlActionMaps _currentActionMap;
+
+    private bool _menuButtonPressed = false;
+
+    public CharacterInputData CharacterInputData = new CharacterInputData();
 
     /// <summary>
-    /// Storage for the input data
+    /// Action Map: Menu<br/>
+    /// True if the 'DoIt' button is pressed
     /// </summary>
-    public CharacterInputData _characterInputData { get; private set; } = new CharacterInputData();
+    public bool MenuButtonPressed { get => _menuButtonPressed; }
+
+    /// <summary>
+    /// Which Action Map is active
+    /// </summary>
+    public ControlActionMaps CurrentActionMap { get => _currentActionMap; }
 
     private void OnEnable()
     {
-        ClientInputHandler.Instance.CharacterInputDataChanged += OnInputDataChanged;    
+        StartCoroutine(WaitToEnable());
     }
 
-    private void OnDisable()
+    /// <summary>
+    /// Waits for one frame before subscribing to the events<br/>
+    /// This is to ensure that the network object has been spawned correctly first
+    /// </summary>
+    private IEnumerator WaitToEnable()
     {
-        if (ClientInputHandler.Instance == null) return;
-        ClientInputHandler.Instance.CharacterInputDataChanged -= OnInputDataChanged;
+        yield return null;
+
+        if (!IsOwner) yield break;
+
+        _controls = new Controls();
+        _currentActionMap = ControlActionMaps.UNKNOWN;
+        SwitchActionMap(ControlActionMaps.GAMEPLAY);
+
+        _controls.Gameplay.Jump.performed += SetJump;
+        _controls.Gameplay.Jump.canceled += SetJump;
+
+        _controls.Gameplay.MovePlayer.performed += SetMovePlayer;
+        _controls.Gameplay.MovePlayer.canceled += SetMovePlayer;
+
+        _controls.Gameplay.Collapse.performed += SetCollapse;
+        _controls.Gameplay.Collapse.canceled += SetCollapse;
+
+        _controls.Gameplay.MouseMoveArms.performed += SetMouseMoveArms;
+        _controls.Gameplay.MouseMoveArms.canceled += SetMouseMoveArms;
+
+        _controls.Gameplay.StickMoveArms.performed += SetStickMoveArms;
+        _controls.Gameplay.StickMoveArms.canceled += SetStickMoveArms;
+
+        _controls.Gameplay.GrabLeftHand.performed += SetLeftGrabButton;
+        _controls.Gameplay.GrabLeftHand.canceled += SetLeftGrabButton;
+
+        _controls.Gameplay.GrabRightHand.performed += SetRightGrabButton;
+        _controls.Gameplay.GrabRightHand.canceled += SetRightGrabButton;
+
+        _controls.Menu.DoIt.performed += SetMenuButtonPressed;
+        _controls.Menu.DoIt.canceled += SetMenuButtonPressed;
     }
 
-    protected virtual void OnInputDataChanged(object sender, CharacterInputData characterInputData)
+    /// <summary>
+    /// Processes a button press and sets whether the user is trying to jump
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetJump(InputAction.CallbackContext value)
     {
-        if (!UseInputHandlerEvents) return;
-        _characterInputData = characterInputData;
+        CharacterInputData.JumpValue = value.ReadValueAsButton();
     }
 
-    public void UpdateInputData(CharacterInputData characterInputData)
+    /// <summary>
+    /// Processes an axis input for left right movement and sets the intended direction
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetMovePlayer(InputAction.CallbackContext value)
     {
-        _characterInputData = characterInputData;
+        CharacterInputData.MoveHorizontalAxis = value.ReadValue<float>();
+    }
+
+    /// <summary>
+    /// Processes a button press and sets whether the user is trying to collapse
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetCollapse(InputAction.CallbackContext value)
+    {
+
+        CharacterInputData.MoveVerticalAxis = value.ReadValue<float>();
+    }
+
+    /// <summary>
+    /// Processes the mouse input and sets a rotation angle for the arms to target towards
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetMouseMoveArms(InputAction.CallbackContext value)
+    {
+        CharacterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
+        CharacterInputData.ArmsMovementData.IsMouseController = true;
+    }
+
+    /// <summary>
+    /// Processes the gamepad stick input and sets a rotation angle for the arms to target towards
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetStickMoveArms(InputAction.CallbackContext value)
+    {
+        CharacterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
+        CharacterInputData.ArmsMovementData.IsMouseController = false;
+        CharacterInputData.ArmsMovementData.ArmsStickReleased = Mathf.Approximately(CharacterInputData.ArmsMovementData.ArmsControllerInput.x, 0f) && Mathf.Approximately(CharacterInputData.ArmsMovementData.ArmsControllerInput.y, 0f);
+    }
+
+
+    /// <summary>
+    /// Processes a button press and sets whether the user is trying to grab with left hand
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetLeftGrabButton(InputAction.CallbackContext value)
+    {
+        CharacterInputData.IsGrabbingLeft = value.ReadValueAsButton();
+    }
+
+    /// <summary>
+    /// Processes a button press and sets whether the user is trying to grab with right hand
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System</remarks>
+    private void SetRightGrabButton(InputAction.CallbackContext value)
+    {
+        CharacterInputData.IsGrabbingRight = value.ReadValueAsButton();
+    }
+
+    /// <summary>
+    /// Processes a button press and sets whether the user is trying to do something on menu
+    /// </summary>
+    /// <param name="value">The InputAction CallbackContext passed from the Input System</param>
+    /// <remarks>Only use to link to the Input System<br/>Only for testing enabling of different Action Maps</remarks>
+    private void SetMenuButtonPressed(InputAction.CallbackContext value)
+    {
+        _menuButtonPressed = value.ReadValueAsButton();
+    }
+
+    /// <summary>
+    /// Change the controller action map
+    /// </summary>
+    /// <param name="_map">The controller action map to change to</param>
+    public void SwitchActionMap(ControlActionMaps _map)
+    {
+        if (_map == _currentActionMap) return;
+
+        // If the map is unknown or the number of action maps, do nothing
+        if (_map == ControlActionMaps.UNKNOWN) return;
+        if (_map == ControlActionMaps.NUM_OF_ACTIONMAPS) return;
+
+        // Disable all action maps
+        _controls.Disable();
+
+        // Enable the action map passed in
+        switch (_map)
+        {
+            case ControlActionMaps.GAMEPLAY:
+                _controls.Gameplay.Enable();
+                break;
+            case ControlActionMaps.MENU:
+                _controls.Menu.Enable();
+                break;
+            default:
+                break;
+        }
+
+        // Update the current action map
+        _currentActionMap = _map;
     }
 }

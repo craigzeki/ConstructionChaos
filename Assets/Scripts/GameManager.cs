@@ -13,27 +13,29 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         
-        ClientInputHandler.Instance.SwitchActionMap(ClientInputHandler.ControlActionMaps.GAMEPLAY);
+        //CharacterInputHandler.Instance.SwitchActionMap(CharacterInputHandler.ControlActionMaps.GAMEPLAY);
         _objectiveString = ObjectiveManager.Instance.GetObjective(1).ObjectiveString;
         if (_objectiveText != null) _objectiveText.SetObjective(_objectiveString);
     }
     // Update is called once per frame
     void Update()
     {
-        if(_menuText != null) _menuText.text = "South Button, Menu Action Map : Pressed = " + ClientInputHandler.Instance.MenuButtonPressed.ToString();
+        //if(_menuText != null) _menuText.text = "South Button, Menu Action Map : Pressed = " + CharacterInputHandler.Instance.MenuButtonPressed.ToString();
     }
 
     public void ToggleActionMap()
     {
-        if(ClientInputHandler.Instance.CurrentActionMap + 1 >= ClientInputHandler.ControlActionMaps.NUM_OF_ACTIONMAPS)
+        /*
+        if(CharacterInputHandler.Instance.CurrentActionMap + 1 >= CharacterInputHandler.ControlActionMaps.NUM_OF_ACTIONMAPS)
         {
-            ClientInputHandler.Instance.SwitchActionMap(ClientInputHandler.ControlActionMaps.GAMEPLAY);
+            CharacterInputHandler.Instance.SwitchActionMap(CharacterInputHandler.ControlActionMaps.GAMEPLAY);
             if (_objectiveText != null) _objectiveText.SetObjective(_objectiveString);
         }
         else
         {
-            ClientInputHandler.Instance.SwitchActionMap(ClientInputHandler.Instance.CurrentActionMap + 1);
+            CharacterInputHandler.Instance.SwitchActionMap(CharacterInputHandler.Instance.CurrentActionMap + 1);
             if (_objectiveText != null) _objectiveText.ResetObjective();
         }
+        */
     }
 }

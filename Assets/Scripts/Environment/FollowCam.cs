@@ -5,7 +5,14 @@ using Cinemachine;
 
 public class FollowCam : MonoBehaviour
 {
+    public static FollowCam Instance { get; private set; }
+
     [SerializeField] private CinemachineVirtualCamera vcam;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void SetFollowTarget(Transform target)
     {

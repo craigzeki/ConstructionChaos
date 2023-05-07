@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -18,11 +16,9 @@ public class ConnectionHandler : MonoBehaviour
 {
     public static ConnectionHandler Instance;
 
-    [SerializeField] private UnityTransport unityTransport, relayTransport;
+    [SerializeField] private UnityTransport _unityTransport, _relayTransport;
 
-    [SerializeField] private FollowCam followCam;
-
-    [SerializeField] private GameObject _serverInputHandlerObject;
+    [SerializeField] private int _maxNoOfPlayers = 6;
 
     private void Awake()
     {
@@ -36,10 +32,11 @@ public class ConnectionHandler : MonoBehaviour
     /// Hosts the game using the Unity Relay Service and Netcode for GameObjects
     /// </summary>
     /// <param name="maxPlayers">The maximum number of players allowed in the game</param>
-    public async void HostGame(int maxPlayers, bool local = false)
+    public async void HostGame(bool local = false)
     {
         if (local)
         {
+            // Try to get the local IP address
             string ip = "";
             try
             {
@@ -52,36 +49,24 @@ public class ConnectionHandler : MonoBehaviour
                 return;
             }
 
-            //! The IP Address will be 127.0.0.1 if the device is not connected to a network
-            // TODO: Test if this causes the game not to work and implemented a fix
-
-            NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;
+            // Change the network transport to the Unity Transport
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _unityTransport;
 
             // Set the connection data to the local IP address
-            unityTransport.ConnectionData.Address = ip;
+            _unityTransport.ConnectionData.Address = ip;
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
+            // Display the room code to the user
+            string roomCode = IPtoCode(ip);
+            MenuUIManager.Instance.SetRoomCode(roomCode);
 
-            loadScene.completed += (AsyncOperation op) =>
-            {
-                GameObject.Instantiate(_serverInputHandlerObject);
-
-                // Start the server
-                NetworkManager.Singleton.StartHost();
-
-                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
-
-                // Display the room code to the user
-                string roomCode = IPtoCode(ip);
-                MenuUIManager.Instance.SetRoomCode(roomCode);
-            };
+            StartNetwork(true);
 
             return;
         }
 
         await UnityServicesLogin();
 
-        CreateRelay(maxPlayers);
+        CreateRelay();
     }
 
     /// <summary>
@@ -95,22 +80,13 @@ public class ConnectionHandler : MonoBehaviour
             // Convert the room code to an IP address
             string ip = CodeToIP(roomCode);
 
-            // 
-            NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;
+            // Change the network transport to the Unity Transport
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _unityTransport;
 
             // Set the connection data to the IP address
-            unityTransport.ConnectionData.Address = ip;
+            _unityTransport.ConnectionData.Address = ip;
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
-
-            loadScene.completed += (AsyncOperation op) =>
-            {
-                GameObject.Instantiate(_serverInputHandlerObject);
-                // Start the client
-                NetworkManager.Singleton.StartClient();
-
-                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
-            };
+            StartNetwork(false);
 
             return;
         }
@@ -140,13 +116,12 @@ public class ConnectionHandler : MonoBehaviour
     /// <summary>
     /// Creates a relay server using the Unity Relay Service
     /// </summary>
-    /// <param name="maxPlayers">The maximum number of players allowed in the game</param>
-    private async void CreateRelay(int maxPlayers)
+    private async void CreateRelay()
     {
         print("Creating relay");
         try
         {
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxPlayers - 1);
+            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(_maxNoOfPlayers - 1);
 
             string roomCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
@@ -154,20 +129,11 @@ public class ConnectionHandler : MonoBehaviour
 
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
 
-            NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;
 
-            relayTransport.SetRelayServerData(relayServerData);
+            _relayTransport.SetRelayServerData(relayServerData);
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
-
-            loadScene.completed += (AsyncOperation op) =>
-            {
-                GameObject.Instantiate(_serverInputHandlerObject);
-
-                NetworkManager.Singleton.StartHost();
-
-                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
-            };
+            StartNetwork(true);
         }
         catch (RelayServiceException e)
         {
@@ -187,19 +153,11 @@ public class ConnectionHandler : MonoBehaviour
 
             RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
 
-            NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;
+            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;
 
-            relayTransport.SetRelayServerData(relayServerData);
+            _relayTransport.SetRelayServerData(relayServerData);
 
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync("LobbyEnv", LoadSceneMode.Additive);
-
-            loadScene.completed += (AsyncOperation op) =>
-            {
-                GameObject.Instantiate(_serverInputHandlerObject);
-                NetworkManager.Singleton.StartClient();
-
-                //followCam.SetFollowTarget(NetworkManager.Singleton.ConnectedClients[NetworkManager.Singleton.LocalClientId].PlayerObject.transform.GetChild(0));
-            };
+            StartNetwork(false);
         }
         catch (RelayServiceException e)
         {
@@ -208,6 +166,27 @@ public class ConnectionHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts the network using Netcode for GameObjects
+    /// </summary>
+    /// <param name="isHost">Whether the device is the host or not</param>
+    private void StartNetwork(bool isHost)
+    {
+        AsyncOperation loadLobbyScene = SceneManager.LoadSceneAsync(SceneNames.LobbyEnvironment);
+
+        loadLobbyScene.completed += (AsyncOperation op) =>
+        {
+            if (isHost)
+                NetworkManager.Singleton.StartHost();
+            else
+                NetworkManager.Singleton.StartClient();
+        };
+    }
+
+    /// <summary>
+    /// Converts an IP address to a room code by converting each part to hex and concatenating them
+    /// </summary>
+    /// <returns>A string containing the room code</returns>
     string IPtoCode(string ip)
     {
         string[] ipSplit = ip.Split('.');
@@ -219,6 +198,10 @@ public class ConnectionHandler : MonoBehaviour
         return code;
     }
 
+    /// <summary>
+    /// Converts a room code to an IP address by converting each hex value to an integer and concatenating them
+    /// </summary>
+    /// <returns>A string containing the IP address</returns>
     string CodeToIP(string code)
     {
         string ip = "";

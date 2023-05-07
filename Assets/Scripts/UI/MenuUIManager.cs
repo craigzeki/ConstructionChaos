@@ -10,23 +10,19 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private Button hostButton, joinButton, backButton;
+    [SerializeField] private Button _hostButton, _joinButton, _backButton;
 
-    [SerializeField] private Slider playerCountSlider;
+    [SerializeField] private TextMeshProUGUI _titleText;
 
-    [SerializeField] private TextMeshProUGUI titleText, playerCountText;
+    [SerializeField] private TMP_InputField _roomCodeInput;
 
-    [SerializeField] private TMP_InputField roomCodeInput;
+    [SerializeField] private Toggle _localToggle;
 
-    [SerializeField] private Toggle localToggle;
+    private bool _local = false;
 
-    private bool local = false;
+    private float _animationTime = 0.5f;
 
-    private float animationTime = 0.5f;
-
-    private int playerCount = 4;
-
-    private bool joinMenuOpen = false;
+    private bool _joinMenuOpen = false;
 
     private void Awake()
     {
@@ -40,35 +36,29 @@ public class MenuUIManager : MonoBehaviour
     void Start()
     {
         // Add listeners to the buttons
-        hostButton.onClick.AddListener(HostButton);
-        joinButton.onClick.AddListener(JoinButton);
-        backButton.onClick.AddListener(BackButton);
+        _hostButton.onClick.AddListener(HostButton);
+        _joinButton.onClick.AddListener(JoinButton);
+        _backButton.onClick.AddListener(BackButton);
 
         // Add a listener to the input field to make sure the input is always uppercase
-        roomCodeInput.onValidateInput += delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
-
-        // Add a listener to the slider to update the player count text
-        playerCountSlider.onValueChanged.AddListener(UpdatePlayerCountText);
+        _roomCodeInput.onValidateInput += delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
 
         // Add a listener to the toggle to update the local boolean
-        localToggle.onValueChanged.AddListener(UpdateToggle);
+        _localToggle.onValueChanged.AddListener(UpdateToggle);
     }
 
     private void OnDisable()
     {
         // Remove listeners from the buttons
-        hostButton.onClick.RemoveListener(HostButton);
-        joinButton.onClick.RemoveListener(JoinButton);
-        backButton.onClick.RemoveListener(BackButton);
+        _hostButton.onClick.RemoveListener(HostButton);
+        _joinButton.onClick.RemoveListener(JoinButton);
+        _backButton.onClick.RemoveListener(BackButton);
 
         // Remove the listener from the input field
-        roomCodeInput.onValidateInput -= delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
-
-        // Remove the listener from the slider
-        playerCountSlider.onValueChanged.RemoveListener(UpdatePlayerCountText);
+        _roomCodeInput.onValidateInput -= delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
 
         // Remove the listener from the toggle
-        localToggle.onValueChanged.RemoveListener(UpdateToggle);
+        _localToggle.onValueChanged.RemoveListener(UpdateToggle);
     }
 
     /// <summary>
@@ -77,72 +67,85 @@ public class MenuUIManager : MonoBehaviour
     /// <param name="roomCode">The room code to display</param>
     public void SetRoomCode(string roomCode)
     {
-        titleText.text = "Room Code: " + roomCode;
+        _titleText.text = "Room Code: " + roomCode;
     }
 
+    /// <summary>
+    /// Starts hosting the game
+    /// </summary>
+    /// <remarks>Called by pressing the host button</remarks>
     private void HostButton()
     {
-        if (LeanTween.isTweening(hostButton.gameObject))
+        if (LeanTween.isTweening(_hostButton.gameObject))
             return;
         
-        // Animate the host and join buttons out
-        AnimateElement(hostButton.gameObject, false);
-        AnimateElement(joinButton.gameObject, false);
-
-        // Animate out the player count slider, player count text, the local toggle and the room code input
-        AnimateElement(playerCountSlider.gameObject, false);
-        AnimateElement(playerCountText.gameObject, false);
-        AnimateElement(localToggle.gameObject, false);
-        AnimateElement(roomCodeInput.gameObject, false);
+        // Animate everything out except the title text
+        AnimateElement(_hostButton.gameObject, false);
+        AnimateElement(_joinButton.gameObject, false);
+        AnimateElement(_localToggle.gameObject, false);
+        AnimateElement(_roomCodeInput.gameObject, false);
 
         // Start hosting the game
-        ConnectionHandler.Instance.HostGame(playerCount, local);
+        ConnectionHandler.Instance.HostGame(_local);
     }
 
+    /// <summary>
+    /// Opens the join menu or joins the game
+    /// </summary>
+    /// <remarks>Called by pressing the join button</remarks>
     private void JoinButton()
     {
-        if (LeanTween.isTweening(joinButton.gameObject))
+        if (LeanTween.isTweening(_joinButton.gameObject))
             return;
 
-        if (LeanTween.isTweening(backButton.gameObject))
+        if (LeanTween.isTweening(_backButton.gameObject))
             return;
         
-        if (joinMenuOpen)
+        if (_joinMenuOpen)
         {
-            // Animate out the join button and the back button
-            AnimateElement(joinButton.gameObject, false);
-            AnimateElement(backButton.gameObject, false);
+            // Animate everything out
+            AnimateElement(_joinButton.gameObject, false);
+            AnimateElement(_backButton.gameObject, false);
+            AnimateElement(_roomCodeInput.gameObject, false);
+            AnimateElement(_localToggle.gameObject, false);
+            AnimateElement(_titleText.gameObject, false);
+
+            // TODO: The UI will need to be updated if the room code is invalid
 
             // Join the game
-            ConnectionHandler.Instance.JoinGame(roomCodeInput.text, local);
+            ConnectionHandler.Instance.JoinGame(_roomCodeInput.text, _local);
         }
         else
         {
-            joinMenuOpen = true;
+            _joinMenuOpen = true;
 
             // Animate out the host button
-            AnimateElement(hostButton.gameObject, false);
+            AnimateElement(_hostButton.gameObject, false);
 
             // Animate in the room code input and the back button
-            AnimateElement(roomCodeInput.gameObject, true);
-            AnimateElement(backButton.gameObject, true);
+            AnimateElement(_roomCodeInput.gameObject, true);
+            AnimateElement(_backButton.gameObject, true);
         }
     }
 
+    /// <summary>
+    /// Closes the join menu
+    /// </summary>
+    /// <remarks>Called by pressing the back button</remarks>
     private void BackButton()
     {
-        if (LeanTween.isTweening(backButton.gameObject))
+        if (LeanTween.isTweening(_backButton.gameObject))
             return;
         
         // Animate out the room code input
-        AnimateElement(roomCodeInput.gameObject, false);
+        AnimateElement(_roomCodeInput.gameObject, false);
 
         // Animate in the host and join buttons
-        AnimateElement(hostButton.gameObject, true);
-        AnimateElement(joinButton.gameObject, true);
+        AnimateElement(_hostButton.gameObject, true);
+        AnimateElement(_joinButton.gameObject, true);
 
         // Reset the join menu open flag
-        joinMenuOpen = false;
+        _joinMenuOpen = false;
     }
 
     /// <summary>
@@ -151,12 +154,17 @@ public class MenuUIManager : MonoBehaviour
     /// <param name="gameObject">The GameObject to animate</param>
     /// <param name="animateIn">True to animate in, false to animate out</param>
     /// <param name="disableAfter">True to disable the GameObject after the animation</param>
-    private void AnimateElement(GameObject gameObject, bool animateIn, bool disableAfter = false)
+    private void AnimateElement(GameObject gameObject, bool animateIn, bool disableAfter = true)
     {
+        if (!gameObject.activeSelf && !animateIn) return;
+        if (gameObject.activeSelf && animateIn) return;
+
+        if (animateIn) disableAfter = false;
+
         gameObject.transform.localScale = animateIn ? Vector3.zero : Vector3.one;
         gameObject.SetActive(true);
 
-        LeanTween.scale(gameObject, animateIn ? Vector3.one : Vector3.zero, animationTime).setEase(animateIn ? LeanTweenType.easeOutBack : LeanTweenType.easeInBack).setOnComplete(() =>
+        LeanTween.scale(gameObject, animateIn ? Vector3.one : Vector3.zero, _animationTime).setEase(animateIn ? LeanTweenType.easeOutBack : LeanTweenType.easeInBack).setOnComplete(() =>
         {
             if (disableAfter)
                 gameObject.SetActive(false);
@@ -164,17 +172,11 @@ public class MenuUIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Update the player count text to show the current value of the slider
+    /// Updates the local boolean when the toggle is changed
     /// </summary>
-    /// <param name="value">The value of the slider</param>
-    private void UpdatePlayerCountText(float value)
-    {
-        playerCount = (int)value;
-        playerCountText.text = "No. of Players: " + playerCount.ToString();
-    }
-
+    /// <param name="toggleVal">The new value of the toggle</param>
     private void UpdateToggle(bool toggleVal)
     {
-        local = toggleVal;
+        _local = toggleVal;
     }
 }

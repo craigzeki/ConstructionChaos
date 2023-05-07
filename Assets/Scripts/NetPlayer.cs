@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterInputHandler))]
+[RequireComponent(typeof(OLDCharacterInputHandler))]
 public class NetPlayer : NetworkBehaviour
 {
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        if (!IsServer) return;
-        ServerInputHandler.Instance.AddPlayer(OwnerClientId, gameObject);
-        GetComponent<CharacterInputHandler>().UseInputHandlerEvents = false;
-        
-    }
 
-    public override void OnNetworkDespawn()
-    {
-        ServerInputHandler.Instance.RemovePlayer(OwnerClientId);
-        base.OnNetworkDespawn();
+        if (IsLocalPlayer)
+        {
+            // Set the camera to follow the player's head
+            FollowCam.Instance.SetFollowTarget(transform.GetChild(0));
+        }
     }
 }

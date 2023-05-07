@@ -760,9 +760,11 @@ GameObject:
   - component: {fileID: 5808222031482737025}
   - component: {fileID: 5808222031482737024}
   - component: {fileID: 5808222031482737029}
-  - component: {fileID: 5808222031482737030}
+  - component: {fileID: -2620139986288455078}
   - component: {fileID: 8422145414990544937}
   - component: {fileID: -9142643144001391287}
+  - component: {fileID: -6222109441686497915}
+  - component: {fileID: -8798100150719738577}
   m_Layer: 0
   m_Name: RealNetSpriteDude
   m_TagString: Player
@@ -841,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9199a96f9b1034d9c6a70f45ca4643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterInputHandler: {fileID: 8422145414990544937}
+  CharacterInputHandler: {fileID: -8798100150719738577}
   _speed: 1.5
   _stepWait: 0.5
   _jumpForce: 6000
@@ -874,7 +876,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &5808222031482737030
+--- !u!114 &-2620139986288455078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -913,6 +915,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4865a8252b5432a92f2b0b6e429b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6222109441686497915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031482737028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f9de3e9d1e74fd4a84870e626689a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8798100150719738577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031482737028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158caac430fda2140b807a93ea0efbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterInputData:
+    ArmsMovementData:
+      ArmsControllerInput: {x: 0, y: 0}
+      IsMouseController: 0
+      ArmsStickReleased: 0
+    JumpValue: 0
+    MoveHorizontalAxis: 0
+    MoveVerticalAxis: 0
+    IsGrabbingLeft: 0
+    IsGrabbingRight: 0
 --- !u!1 &5808222031901579358
 GameObject:
   m_ObjectHideFlags: 0

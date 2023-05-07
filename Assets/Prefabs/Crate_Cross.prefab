@@ -11,6 +11,34 @@ PrefabInstance:
       propertyPath: objectiveColour
       value: 
       objectReference: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+    - target: {fileID: -3688923362050671506, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 951099334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncScaleX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncScaleY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncScaleZ
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncPositionZ
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncRotAngleX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: SyncRotAngleY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate_Cross
