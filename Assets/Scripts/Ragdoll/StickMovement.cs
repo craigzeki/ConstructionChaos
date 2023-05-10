@@ -42,26 +42,38 @@ public class StickMovement : Ragdoll
         }
     }
 
+    void Update()
+    {
+        print($"StickMovement.cs Update(), IsLocalPlayer: {IsLocalPlayer}, IsServer: {IsServer}, IsClient: {IsClient}, IsOwner: {IsOwner}");
+
+        if (!IsOwner) return;
+
+        if (IsServer)
+            HandleMovement(CharacterInputHandler.CharacterInputData);
+        else
+            HandleMovementServerRpc(CharacterInputHandler.CharacterInputData);
+    }
+
     private void FixedUpdate()
     {
         if (!IsOwner) return;
 
         if (IsServer)
-            HandleMovementAndJump(CharacterInputHandler.CharacterInputData);
+            HandleJump(CharacterInputHandler.CharacterInputData);
         else
-            HandleMovementAndJumpServerRpc(CharacterInputHandler.CharacterInputData);
+            HandleJumpServerRpc(CharacterInputHandler.CharacterInputData);
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void HandleMovementAndJumpServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
+    private void HandleMovementServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
     {
         print("HandleMovementServerRpc()");
-        HandleMovementAndJump(characterInputData);
+        HandleMovement(characterInputData);
     }
 
-    private void HandleMovementAndJump(CharacterInputData characterInputData)
+    private void HandleMovement(CharacterInputData characterInputData)
     {
-        // Handle Movement
+        print("Handling Movement");
         // Check if user is pressing up or down
         if(!Mathf.Approximately(characterInputData.MoveVerticalAxis, 0f))
         {
@@ -101,8 +113,16 @@ public class StickMovement : Ragdoll
             if (_walkRight != null) StopCoroutine(_walkRight);
             _anim.Play("Idle");
         }
+    }
 
-        // Handle jumping
+    [ServerRpc(RequireOwnership = false)]
+    private void HandleJumpServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
+    {
+        HandleJump(characterInputData);
+    }
+
+    private void HandleJump(CharacterInputData characterInputData)
+    {
         if (_framesToNextJump > 0)
         {
             _framesToNextJump--;
