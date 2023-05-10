@@ -19,12 +19,12 @@ public class Arms : Ragdoll
     /// <summary>
     /// Calculates the arm rotation value based on which controller is active
     /// </summary>
-    private void CalculateArmRotation()
+    private void CalculateArmRotation(CharacterInputData characterInputData)
     {
-        if(CharacterInputHandler.CharacterInputData.ArmsMovementData.IsMouseController)
+        if(characterInputData.ArmsMovementData.IsMouseController)
         {
-            _controllerPos.x = Camera.main.ScreenToWorldPoint(CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput).x;
-            _controllerPos.y = Camera.main.ScreenToWorldPoint(CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput).y;
+            _controllerPos.x = Camera.main.ScreenToWorldPoint(characterInputData.ArmsMovementData.ArmsControllerInput).x;
+            _controllerPos.y = Camera.main.ScreenToWorldPoint(characterInputData.ArmsMovementData.ArmsControllerInput).y;
             _controllerPos.z = 0;
 
             _delta = _controllerPos - transform.position;
@@ -33,7 +33,7 @@ public class Arms : Ragdoll
         }
         else
         {
-            _rotationZ = Mathf.Atan2(CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput.x, -CharacterInputHandler.CharacterInputData.ArmsMovementData.ArmsControllerInput.y) * Mathf.Rad2Deg;
+            _rotationZ = Mathf.Atan2(characterInputData.ArmsMovementData.ArmsControllerInput.x, -characterInputData.ArmsMovementData.ArmsControllerInput.y) * Mathf.Rad2Deg;
         }
     }
 
@@ -58,7 +58,7 @@ public class Arms : Ragdoll
 
     private void HandleArms(CharacterInputData characterInputData)
     {
-        CalculateArmRotation();
+        CalculateArmRotation(characterInputData);
 
         // If player is trying to grab and is a mouse controller
         if((characterInputData.IsGrabbingLeft || characterInputData.IsGrabbingRight) && characterInputData.ArmsMovementData.IsMouseController)

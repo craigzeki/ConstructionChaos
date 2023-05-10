@@ -47,7 +47,7 @@ public class Grab : Ragdoll
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
         if (!IsServer) return;
         if (!_isActive) return; // Not active or collapsed
         if ((1 << collision.gameObject.layer) != _grabableLayerMask) return; // Item is not on the grabable layer
