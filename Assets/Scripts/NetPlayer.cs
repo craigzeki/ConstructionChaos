@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(OLDCharacterInputHandler))]
 public class NetPlayer : NetworkBehaviour
 {
+    private string _objectiveString = "";
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -15,5 +17,17 @@ public class NetPlayer : NetworkBehaviour
             // Set the camera to follow the player's head
             FollowCam.Instance.SetFollowTarget(transform.GetChild(0));
         }
+
+        if (IsServer)
+        {
+            // TODO: Register myself with the Objective Manager
+            //ObjectiveManager.Instance.RegisterPlayer(OwnerClientId, this);
+        }
+    }
+
+    [ClientRpc]
+    public void SetObjectiveStringClientRpc(string newObjectiveString)
+    {
+        _objectiveString = newObjectiveString;
     }
 }
