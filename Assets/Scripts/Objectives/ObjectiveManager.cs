@@ -28,6 +28,13 @@ public class ObjectiveManager : MonoBehaviour
 	/// </summary>
 	[SerializeField] private List<Objective> _playerObjectives = new List<Objective>();
 
+	private List<(ulong, NetPlayer, Objective)> _players = new List<(ulong, NetPlayer, Objective)>();
+
+	/// <summary>
+	/// Dictionary which stores the connected players in order to send them their objectives
+	/// </summary>
+	//private Dictionary<ulong, NetPlayer> _players = new Dictionary<ulong, NetPlayer>();
+
 	private string _inverseString = "Don't ";
 
 	private string _anyActionString = "Do anything with";
@@ -67,7 +74,16 @@ public class ObjectiveManager : MonoBehaviour
 		_objectiveObjects.Clear();
 		_possibleObjectives.Clear();
 		_playerObjectives.Clear();
+		
 	}
+
+	public void RegisterPlayer(ulong clientId, NetPlayer netPlayer)
+	{
+		_players.Add((clientId, netPlayer, null));
+	}
+
+
+
 
 	/// <summary>
 	/// Registers the objectiveObjectInstance with the Objective Manager<br/>
