@@ -13,32 +13,38 @@ using UnityEngine;
 public class ObjectiveManager : MonoBehaviour
 {
 	/// <summary>
-	/// List of possible objects that can be used in defining an objective
+	/// Dictionary of ObjectiveObjectInstances and their corresponding qty that exist in the current scene<br/>
+	/// A dictionary was the best way to quickly check and ignore identical objects (e.g. two purple crates) from being added and instead tracks the duplicate by adding to the qty (int)
 	/// </summary>
-	[SerializeField] private List<ObjectiveObject> _objectiveObjects = new List<ObjectiveObject>();
+	[SerializeField] private Dictionary<ObjectiveObjectInstance, int> _objectiveObjects = new Dictionary<ObjectiveObjectInstance, int>();
+
+	/// <summary>
+	/// List of all possible objectives based on the objects in the scene
+	/// </summary>
+	[SerializeField] private List<Objective> _possibleObjectives = new List<Objective>();
 
 	/// <summary>
 	/// List of objectives that have been assigned to players
 	/// </summary>
-	[SerializeField] private List<Objective> _objectives = new List<Objective>();
+	[SerializeField] private List<Objective> _playerObjectives = new List<Objective>();
 
 	private string _inverseString = "Don't ";
 
-	private string anyActionString = "Do anything with";
+	private string _anyActionString = "Do anything with";
 
-	private string anyColourString = "any coloured";
+	private string _anyColourString = "any coloured";
 
-	private string anyObjectString = "object";
+	private string _anyObjectString = "object";
 
-	private string noConditionString = "";
+	private string _noConditionString = "";
 
-	private static ObjectiveManager instance;
+	private static ObjectiveManager _instance;
     public static ObjectiveManager Instance
 	{
 		get
 		{
-			if(instance == null) instance = FindObjectOfType<ObjectiveManager>();
-			return instance;
+			if(_instance == null) _instance = FindObjectOfType<ObjectiveManager>();
+			return _instance;
 		}
 	}
 
@@ -46,12 +52,36 @@ public class ObjectiveManager : MonoBehaviour
 	{
 		UnityEngine.Random.InitState((int)DateTime.Now.Ticks);
 
-		for(uint i = 1; i <= 6; i++)
-		{
-            Objective _temp = CreateRandomObjective(i);
-            _objectives.Add(_temp);
-        }
+		//for(uint i = 1; i <= 6; i++)
+		//{
+  //          Objective _temp = CreateRandomObjective(i);
+  //          _playerObjectives.Add(_temp);
+  //      }
     }
+
+	/// <summary>
+	/// Resets the ObjectiveManager to start a new level
+	/// </summary>
+	public void ResetObjectiveManager()
+	{
+		_objectiveObjects.Clear();
+		_possibleObjectives.Clear();
+		_playerObjectives.Clear();
+	}
+
+	/// <summary>
+	/// Registers the objectiveObjectInstance with the Objective Manager<br/>
+	/// This allows the Objective Manager to use this object when creating objectives
+	/// </summary>
+	/// <param name="objectiveObjectInstance"></param>
+	public void RegisterObject(ObjectiveObjectInstance objectiveObjectInstance)
+	{
+		if(!_objectiveObjects.TryAdd(objectiveObjectInstance, 1))
+		{
+			//objectiveObjectInstance already exists - add to the qty
+			_objectiveObjects[objectiveObjectInstance]++;
+		}
+	}
 
 	/// <summary>
 	/// Randomly selects an objective for the given player
@@ -68,7 +98,7 @@ public class ObjectiveManager : MonoBehaviour
 		bool inverse = UnityEngine.Random.Range((int)0,(int)2) == 0 ? false : true;
 
 		// Pick a random object
-		@object = _objectiveObjects[UnityEngine.Random.Range(0, _objectiveObjects.Count)];
+		@object = _objectiveObjects.ElementAt(UnityEngine.Random.Range(0, _objectiveObjects.Count)).Key.ObjectiveObject;
 
 		// Pick a random colour from the list of possible colours for the object
 		colour = @object.PossibleColours[UnityEngine.Random.Range(0, @object.PossibleColours.Count)];
@@ -98,7 +128,7 @@ public class ObjectiveManager : MonoBehaviour
 		str = objective.Action.FriendlyString;
 
 		// If the action is "Do anything with" then we don't need to add the colour, object or condition
-		if (str != anyActionString)
+		if (str != _anyActionString)
 		{
 			str = str.Replace("<COLOUR>", objective.Colour.FriendlyString);
 			str = str.Replace("<OBJECT>", objective.Object.FriendlyString);
@@ -121,10 +151,11 @@ public class ObjectiveManager : MonoBehaviour
 	/// <returns>Objective or null if the objective doesn't exist</returns>
 	public Objective GetObjective(uint player)
 	{
-		if((player >= 1) && (player <= 6))
-		{
-			return _objectives[(int)player - 1];
-		}
+		
+		//if((player >= 1) && (player <= 6))
+		//{
+		//	return _playerObjectives[(int)player - 1];
+		//}
 
 		return null;
 	}
@@ -141,13 +172,13 @@ public class ObjectiveManager : MonoBehaviour
 
 		if (objective == null) return false;
 
-		if (objective.Action.FriendlyString != anyActionString && objectiveToVerify.Action != objective.Action) return false;
+		if (objective.Action.FriendlyString != _anyActionString && objectiveToVerify.Action != objective.Action) return false;
 
-		if (objective.Colour.FriendlyString != anyColourString && objectiveToVerify.Colour != objective.Colour) return false;
+		if (objective.Colour.FriendlyString != _anyColourString && objectiveToVerify.Colour != objective.Colour) return false;
 
-		if (objective.Object.FriendlyString != anyObjectString && objectiveToVerify.Object != objective.Object) return false;
+		if (objective.Object.FriendlyString != _anyObjectString && objectiveToVerify.Object != objective.Object) return false;
 
-		if (objective.Condition.FriendlyString != noConditionString && objectiveToVerify.Condition != objective.Condition) return false;
+		if (objective.Condition.FriendlyString != _noConditionString && objectiveToVerify.Condition != objective.Condition) return false;
 
 		return true;
 	}

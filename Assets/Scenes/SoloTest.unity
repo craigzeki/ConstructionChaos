@@ -694,12 +694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed702442558628743bf7b08ea35dd562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObjects:
-  - {fileID: 11400000, guid: 335496ac5922a442496ea392ce41267e, type: 2}
-  - {fileID: 11400000, guid: 1a0757c8380624065b817383ee3dcad7, type: 2}
-  - {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  - {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
-  _objectives: []
+  _possibleObjectives: []
+  _playerObjectives: []
 --- !u!1 &324577458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 712350647}
     m_Modifications:
+    - target: {fileID: -7435603692812850242, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: objectiveColour
+      value: 
+      objectReference: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate (2)
@@ -2993,6 +2993,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158caac430fda2140b807a93ea0efbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterInputData:
+    ArmsMovementData:
+      ArmsControllerInput: {x: 0, y: 0}
+      IsMouseController: 0
+      ArmsStickReleased: 0
+    JumpValue: 0
+    MoveHorizontalAxis: 0
+    MoveVerticalAxis: 0
+    IsGrabbingLeft: 0
+    IsGrabbingRight: 0
 --- !u!114 &1437414472
 MonoBehaviour:
   m_ObjectHideFlags: 0

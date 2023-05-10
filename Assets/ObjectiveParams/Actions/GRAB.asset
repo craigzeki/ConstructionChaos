@@ -17,3 +17,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 36886ff6508184858a720125152fad62, type: 2}
   - {fileID: 11400000, guid: 545ad0fc80a0045b59776e7a53022aab, type: 2}
   - {fileID: 11400000, guid: 50a36de5ddcd04661983cb120214bd2b, type: 2}
+  _actionBehaviours:
+  - GuidAssignmentFailed: 0
+    GUID: 4790aba5609bdc74d857713728814d57
+    _typeNameAndAssembly: ActionGrab, Assembly-CSharp
+    _suppressLogs: 0

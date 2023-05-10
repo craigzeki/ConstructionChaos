@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     {
         
         //CharacterInputHandler.Instance.SwitchActionMap(CharacterInputHandler.ControlActionMaps.GAMEPLAY);
-        _objectiveString = ObjectiveManager.Instance.GetObjective(1).ObjectiveString;
+        //_objectiveString = ObjectiveManager.Instance.GetObjective(1).ObjectiveString;
+        _objectiveString = "Dummy Objective";
         if (_objectiveText != null) _objectiveText.SetObjective(_objectiveString);
     }
     // Update is called once per frame
