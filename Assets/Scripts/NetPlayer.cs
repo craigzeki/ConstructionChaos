@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-[RequireComponent(typeof(OLDCharacterInputHandler))]
+[RequireComponent(typeof(CharacterInputHandler))]
 public class NetPlayer : NetworkBehaviour
 {
     private string _objectiveString = "";

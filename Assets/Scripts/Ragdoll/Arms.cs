@@ -12,8 +12,8 @@ public class Arms : Ragdoll
     [SerializeField] private float _speed = 300f;
     [SerializeField] private Rigidbody2D _rb;
 
-    private Vector3 _controllerPos = Vector3.zero;
-    private Vector3 _delta = Vector3.zero;
+    private Vector2 _screenOrigin = new Vector2(Screen.width / 2, Screen.height / 2);
+    private Vector2 _delta = Vector2.zero;
     private float _rotationZ = 0f;
 
     /// <summary>
@@ -23,11 +23,8 @@ public class Arms : Ragdoll
     {
         if(characterInputData.ArmsMovementData.IsMouseController)
         {
-            _controllerPos.x = Camera.main.ScreenToWorldPoint(characterInputData.ArmsMovementData.ArmsControllerInput).x;
-            _controllerPos.y = Camera.main.ScreenToWorldPoint(characterInputData.ArmsMovementData.ArmsControllerInput).y;
-            _controllerPos.z = 0;
-
-            _delta = _controllerPos - transform.position;
+            //! This only works because the player is always in the center of the screen
+            _delta = characterInputData.ArmsMovementData.ArmsControllerInput - _screenOrigin;
 
             _rotationZ = Mathf.Atan2(_delta.x, -_delta.y) * Mathf.Rad2Deg;
         }
@@ -66,7 +63,7 @@ public class Arms : Ragdoll
             // Move the amrs
             _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));
         }
-        else if(characterInputData.ArmsMovementData.IsMouseController && characterInputData.ArmsMovementData.ArmsStickReleased)
+        else if(!characterInputData.ArmsMovementData.IsMouseController && !characterInputData.ArmsMovementData.ArmsStickReleased)
         {
             // Player is trying to move arms using gamepad, move the arms (no reliance on grab to move
             _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));

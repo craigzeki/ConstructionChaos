@@ -181,7 +181,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -213,6 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7223273230729471258}
+  - component: {fileID: 154417821701004819}
   m_Layer: 0
   m_Name: GroundPoint
   m_TagString: Untagged
@@ -235,6 +236,32 @@ Transform:
   m_Father: {fileID: 5808222032221110290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154417821701004819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946483490279636583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 0
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!1 &3591508854170261679
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +443,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -536,6 +563,8 @@ GameObject:
   - component: {fileID: 5808222031332944287}
   - component: {fileID: 5808222031332944256}
   - component: {fileID: 5808222031332944257}
+  - component: {fileID: 7703105428848278053}
+  - component: {fileID: 7639031154560843216}
   m_Layer: 0
   m_Name: HandPoint_R
   m_TagString: Player
@@ -573,7 +602,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.02
 --- !u!50 &5808222031332944287
 Rigidbody2D:
   serializedVersion: 4
@@ -635,6 +664,44 @@ MonoBehaviour:
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &7703105428848278053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031332944259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 0
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
+--- !u!114 &7639031154560843216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031332944259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5808222031478768125
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +715,8 @@ GameObject:
   - component: {fileID: 5808222031478768121}
   - component: {fileID: 5808222031478768122}
   - component: {fileID: 5808222031478768123}
+  - component: {fileID: 4773885092507461239}
+  - component: {fileID: 4549398798120052810}
   m_Layer: 0
   m_Name: HandPoint_L
   m_TagString: Player
@@ -685,7 +754,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.02
 --- !u!50 &5808222031478768121
 Rigidbody2D:
   serializedVersion: 4
@@ -747,6 +816,44 @@ MonoBehaviour:
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &4773885092507461239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031478768125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 0
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
+--- !u!114 &4549398798120052810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031478768125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5808222031482737028
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +868,6 @@ GameObject:
   - component: {fileID: 5808222031482737024}
   - component: {fileID: 5808222031482737029}
   - component: {fileID: -2620139986288455078}
-  - component: {fileID: 8422145414990544937}
   - component: {fileID: -9142643144001391287}
   - component: {fileID: -6222109441686497915}
   - component: {fileID: -8798100150719738577}
@@ -890,19 +996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 5808222031482737025}
---- !u!114 &8422145414990544937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5808222031482737028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d41be4ca6ca4049b3bbd89eb4c9d4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseInputHandlerEvents: 1
 --- !u!114 &-9142643144001391287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158caac430fda2140b807a93ea0efbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterInputData:
+  CharacterInputData:
     ArmsMovementData:
       ArmsControllerInput: {x: 0, y: 0}
       IsMouseController: 0
@@ -1131,7 +1224,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -1336,7 +1429,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -1540,7 +1633,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -1744,7 +1837,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -1949,7 +2042,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -2128,7 +2221,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -2332,7 +2425,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -2537,7 +2630,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -2741,7 +2834,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
@@ -2773,6 +2866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5808222033182072916}
+  - component: {fileID: 2138053348356360045}
   m_Layer: 0
   m_Name: GroundPoint
   m_TagString: Player
@@ -2795,6 +2889,32 @@ Transform:
   m_Father: {fileID: 5808222032865775737}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2138053348356360045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222033182072917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 0
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!1 &5808222033294503320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,7 +3097,7 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
   SyncScaleX: 0
