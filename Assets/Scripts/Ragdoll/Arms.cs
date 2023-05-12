@@ -36,7 +36,7 @@ public class Arms : Ragdoll
 
     void FixedUpdate()
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
 
         // Not active / collapsed
         if (!_isActive) return;

@@ -54,7 +54,7 @@ public class CharacterInputHandler : NetworkBehaviour
     {
         yield return null;
 
-        //if (!IsOwner) yield break;
+        if (!IsOwner) yield break;
 
         _controls = new Controls();
         _currentActionMap = ControlActionMaps.UNKNOWN;

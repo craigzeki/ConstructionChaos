@@ -13,7 +13,7 @@ public class Grab : Ragdoll
 
     void FixedUpdate()
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
 
         if (IsServer)
             HandleGrab(CharacterInputHandler.CharacterInputData);
