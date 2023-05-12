@@ -51,27 +51,17 @@ public class StickMovement : Ragdoll
         print($"StickMovement.cs Update(), IsLocalPlayer: {IsLocalPlayer}, IsServer: {IsServer}, IsClient: {IsClient}, IsOwner: {IsOwner}");
 
         if (!IsOwner) return;
-
-        if (IsServer)
-        {
-            _rpcDeltaTime = Time.deltaTime;
-            HandleMovement(CharacterInputHandler.CharacterInputData);
-        }
-            
-        else
-            HandleMovementServerRpc(CharacterInputHandler.CharacterInputData);
-
-
     }
 
     private void FixedUpdate()
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
 
         if (IsServer)
+        {
+            HandleMovement(CharacterInputHandler.CharacterInputData);
             HandleJump(CharacterInputHandler.CharacterInputData);
-        else
-            HandleJumpServerRpc(CharacterInputHandler.CharacterInputData);
+        }
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -178,9 +168,9 @@ public class StickMovement : Ragdoll
     /// <returns></returns>
     IEnumerator MoveRight(float seconds)
     {
-        _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * _rpcDeltaTime);
+        _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.fixedDeltaTime);
         yield return new WaitForSeconds(seconds);
-        _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * _rpcDeltaTime);
+        _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.fixedDeltaTime);
         yield return new WaitForSeconds(seconds);
     }
 
@@ -191,9 +181,9 @@ public class StickMovement : Ragdoll
     /// <returns></returns>
     IEnumerator MoveLeft(float seconds)
     {
-        _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * _rpcDeltaTime);
+        _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.fixedDeltaTime);
         yield return new WaitForSeconds(seconds);
-        _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * _rpcDeltaTime);
+        _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.fixedDeltaTime);
         yield return new WaitForSeconds(seconds);
     }
 

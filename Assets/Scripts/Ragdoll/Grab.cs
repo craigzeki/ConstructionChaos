@@ -17,8 +17,6 @@ public class Grab : Ragdoll
 
         if (IsServer)
             HandleGrab(CharacterInputHandler.CharacterInputData);
-        else
-            HandleGrabServerRpc(CharacterInputHandler.CharacterInputData);
     }
 
     [ServerRpc(RequireOwnership = false)]

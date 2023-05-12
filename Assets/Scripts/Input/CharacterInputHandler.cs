@@ -54,7 +54,7 @@ public class CharacterInputHandler : NetworkBehaviour
     {
         yield return null;
 
-        if (!IsOwner) yield break;
+        //if (!IsOwner) yield break;
 
         _controls = new Controls();
         _currentActionMap = ControlActionMaps.UNKNOWN;
@@ -83,6 +83,18 @@ public class CharacterInputHandler : NetworkBehaviour
 
         _controls.Menu.DoIt.performed += SetMenuButtonPressed;
         _controls.Menu.DoIt.canceled += SetMenuButtonPressed;
+    }
+
+    private void FixedUpdate()
+    {
+        if (!IsServer)
+            OverrideInputDataServerRpc(CharacterInputData);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void OverrideInputDataServerRpc(CharacterInputData inputData)
+    {
+        CharacterInputData = inputData;
     }
 
     /// <summary>

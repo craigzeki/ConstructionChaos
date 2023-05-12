@@ -43,8 +43,6 @@ public class Arms : Ragdoll
 
         if (IsServer)
             HandleArms(CharacterInputHandler.CharacterInputData);
-        else
-            HandleArmsServerRpc(CharacterInputHandler.CharacterInputData);
     }
 
     [ServerRpc(RequireOwnership = false)]
