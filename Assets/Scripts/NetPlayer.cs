@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterInputHandler))]
 public class NetPlayer : NetworkBehaviour
 {
-    private string _objectiveString = "";
+    [SerializeField] private string _objectiveString = "";
 
     public override void OnNetworkSpawn()
     {

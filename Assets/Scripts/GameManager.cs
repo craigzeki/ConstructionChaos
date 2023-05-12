@@ -7,8 +7,26 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _menuText;
     [SerializeField] ObjectiveText _objectiveText;
+    [SerializeField] private ulong _fakeClientId = 0x1122;
+    [SerializeField] private NetPlayer _dummyNetPlayer;
 
     private string _objectiveString;
+
+    private static GameManager _instance;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if(_instance == null) _instance = FindObjectOfType<GameManager>();
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _dummyNetPlayer = GetComponent<NetPlayer>();
+    }
 
     private void Start()
     {
@@ -38,5 +56,10 @@ public class GameManager : MonoBehaviour
             if (_objectiveText != null) _objectiveText.ResetObjective();
         }
         */
+    }
+
+    public void RegisterDummyPlayer()
+    {
+        ObjectiveManager.Instance.RegisterPlayer(_fakeClientId, _dummyNetPlayer);
     }
 }
