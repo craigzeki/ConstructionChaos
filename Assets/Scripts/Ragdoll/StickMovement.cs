@@ -55,7 +55,7 @@ public class StickMovement : Ragdoll
 
     private void FixedUpdate()
     {
-        //if (!IsOwner) return;
+        if (!IsOwner) return;
 
         if (IsServer)
         {
