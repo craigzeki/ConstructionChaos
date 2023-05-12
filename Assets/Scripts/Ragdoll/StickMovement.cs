@@ -79,6 +79,7 @@ public class StickMovement : Ragdoll
     {
         print("HandleMovementServerRpc()");
         _rpcDeltaTime = Time.time - _rpcLastTimestamp;
+        _rpcLastTimestamp = Time.time;
         HandleMovement(characterInputData);
         //CharacterInputHandler.CharacterInputData = characterInputData;
     }
