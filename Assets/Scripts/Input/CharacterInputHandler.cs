@@ -91,7 +91,7 @@ public class CharacterInputHandler : NetworkBehaviour
             OverrideInputDataServerRpc(CharacterInputData);
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [ServerRpc(RequireOwnership = true)]
     private void OverrideInputDataServerRpc(CharacterInputData inputData)
     {
         CharacterInputData = inputData;
