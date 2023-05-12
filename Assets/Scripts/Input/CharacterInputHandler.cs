@@ -87,11 +87,11 @@ public class CharacterInputHandler : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (!IsServer)
+        if (!IsServer && IsOwner)
             OverrideInputDataServerRpc(CharacterInputData);
     }
 
-    [ServerRpc(RequireOwnership = true)]
+    [ServerRpc]
     private void OverrideInputDataServerRpc(CharacterInputData inputData)
     {
         CharacterInputData = inputData;
