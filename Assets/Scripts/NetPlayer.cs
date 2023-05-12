@@ -21,7 +21,7 @@ public class NetPlayer : NetworkBehaviour
         if (IsServer)
         {
             // TODO: Register myself with the Objective Manager
-            //ObjectiveManager.Instance.RegisterPlayer(OwnerClientId, this);
+            ObjectiveManager.Instance.RegisterPlayer(OwnerClientId, this);
         }
     }
 

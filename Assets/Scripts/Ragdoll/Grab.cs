@@ -11,6 +11,11 @@ public class Grab : Ragdoll
     private bool _hold = false;
     private FixedJoint2D _joint;
 
+    protected override void Awake()
+    {
+        //do nothing - but prevents Ragdoll.Awake from running, which in turn prevents grab collider from detatching during break apart.
+    }
+
     void FixedUpdate()
     {
         //if (!IsOwner) return;

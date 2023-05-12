@@ -86,7 +86,7 @@ public class StickMovement : Ragdoll
             {
                 // Collapse the player and send a message to all the body parts to do the same
                 _collapse = newCollapse;
-                gameObject.BroadcastMessage("OnCollapse", _collapse);
+                gameObject.BroadcastMessage("OnCollapse", (_collapse, true));
             }
             Debug.Log("_collapse: " + _collapse.ToString());
         }
