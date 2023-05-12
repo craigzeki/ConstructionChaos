@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
 /// A colour that an objective object can be.
 /// </summary>
 [CreateAssetMenu(fileName = "ObjectiveColour", menuName = "ScriptableObjects/ObjectiveColour", order = 1)]
-public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>
+public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, INetworkSerializable
 {
     /// <summary>
     /// The friendly string of the colour.
@@ -69,5 +70,11 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>
             hashCode = (hashCode * 23) + (colour != null ? colour.GetHashCode() : 0);
             return hashCode;
         }
+    }
+
+    void INetworkSerializable.NetworkSerialize<T>(BufferSerializer<T> serializer)
+    {
+        serializer.SerializeValue(ref friendlyString);
+        serializer.SerializeValue(ref colour);
     }
 }

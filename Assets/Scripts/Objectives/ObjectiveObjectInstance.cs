@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TypeReferences;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
 /// An instance of an objective object.<br/>
 /// This is the object that will be placed in the world.
 /// </summary>
-public class ObjectiveObjectInstance : MonoBehaviour, IEquatable<ObjectiveObjectInstance>
+public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObjectInstance>
 {
     /// <summary>
     /// The objective object that this instance is based on.
@@ -22,34 +23,48 @@ public class ObjectiveObjectInstance : MonoBehaviour, IEquatable<ObjectiveObject
     /// </summary>
     [SerializeField]
     [Dropdown("objectiveObject.PossibleColours")]
-    private ObjectiveColour objectiveColour;
-    public ObjectiveColour ObjectiveColour => objectiveColour;
+    private ObjectiveColour _objectiveColour;
+    public ObjectiveColour ObjectiveColour => _objectiveColour;
+
+    public NetworkVariable<ObjectiveColour> NetworkObjectiveColour = new NetworkVariable<ObjectiveColour>();
 
     private void Awake()
     {
-        // The object should be an actual colour, not any coloured
-        while ((objectiveColour?.FriendlyString == "any coloured") || (objectiveColour == null))
-        {
-            // Pick a random colour from the list of possible colours and assign it to the objective colour
-            objectiveColour = objectiveObject.PossibleColours[UnityEngine.Random.Range(0, objectiveObject.PossibleColours.Count)];
-        }
+        //! Might need to move all of this logic into OnNetworkSpawn
+    }
 
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+        {
+            // The object should be an actual colour, not any coloured
+            while ((_objectiveColour?.FriendlyString == "any coloured") || (_objectiveColour == null))
+            {
+                // Pick a random colour from the list of possible colours and assign it to the objective colour
+                _objectiveColour = objectiveObject.PossibleColours[UnityEngine.Random.Range(0, objectiveObject.PossibleColours.Count)];
+            }
+
+            ObjectiveManager.Instance.RegisterObject(this);
+
+            // For each action, add the configured components to the gameObject
+            foreach (ObjectiveAction action in objectiveObject.PossibleActions)
+            {
+                foreach (TypeReference typeReference in action.ActionBehaviours)
+                {
+                    this.gameObject.AddComponent(typeReference);
+                }
+            }
+
+            NetworkObjectiveColour.Value = _objectiveColour;
+        }
+        else
+        {
+            _objectiveColour = NetworkObjectiveColour.Value;
+        }
 
         // Set the colour of the object to the colour of the objective colour
         //! This is temporary, will need to be adapted for different types of objects
-        GetComponent<SpriteRenderer>().color = objectiveColour.Colour;
-
-        // TODO: Tell the objective manager that this object exists
-        ObjectiveManager.Instance.RegisterObject(this);
-
-        // For each action, add the configured components to the gameObject
-        foreach (ObjectiveAction action in objectiveObject.PossibleActions)
-        {
-            foreach (TypeReference typeReference in action.ActionBehaviours)
-            {
-                this.gameObject.AddComponent(typeReference);
-            }
-        }
+        GetComponent<SpriteRenderer>().color = NetworkObjectiveColour.Value.Colour;
     }
 
     /// <summary>
@@ -59,8 +74,7 @@ public class ObjectiveObjectInstance : MonoBehaviour, IEquatable<ObjectiveObject
     /// <returns>True: ObjectiveObjectInsances contain identical parameters</returns>
     public bool Equals(ObjectiveObjectInstance other)
     {
-
-        return objectiveObject.Equals(other.objectiveObject) && objectiveColour.Equals(other.objectiveColour);
+        return objectiveObject.Equals(other.objectiveObject) && _objectiveColour.Equals(other._objectiveColour);
     }
 
     /// <summary>
@@ -92,9 +106,8 @@ public class ObjectiveObjectInstance : MonoBehaviour, IEquatable<ObjectiveObject
         {
             int hashCode = 17;
             hashCode = (hashCode * 23) + objectiveObject.GetHashCode();
-            hashCode = (hashCode * 23) + objectiveColour.GetHashCode();
+            hashCode = (hashCode * 23) + _objectiveColour.GetHashCode();
             return hashCode;
         }
     }
-
 }
