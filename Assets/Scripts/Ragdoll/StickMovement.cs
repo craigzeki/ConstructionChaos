@@ -30,6 +30,8 @@ public class StickMovement : Ragdoll
     private Coroutine _walkLeft, _walkRight;
     private bool _collapse = false;
     private uint _framesToNextJump = 0;
+    private float _rpcDeltaTime = 0;
+    private float _rpcLastTimestamp = 0;
 
     private void Awake()
     {
@@ -40,6 +42,8 @@ public class StickMovement : Ragdoll
         {
             ragdolls[i].CharacterInputHandler = CharacterInputHandler;
         }
+
+        _rpcLastTimestamp = Time.time;
     }
 
     void Update()
@@ -49,9 +53,15 @@ public class StickMovement : Ragdoll
         if (!IsOwner) return;
 
         if (IsServer)
+        {
+            _rpcDeltaTime = Time.deltaTime;
             HandleMovement(CharacterInputHandler.CharacterInputData);
+        }
+            
         else
             HandleMovementServerRpc(CharacterInputHandler.CharacterInputData);
+
+
     }
 
     private void FixedUpdate()
@@ -68,7 +78,9 @@ public class StickMovement : Ragdoll
     private void HandleMovementServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
     {
         print("HandleMovementServerRpc()");
+        _rpcDeltaTime = Time.time - _rpcLastTimestamp;
         HandleMovement(characterInputData);
+        //CharacterInputHandler.CharacterInputData = characterInputData;
     }
 
     private void HandleMovement(CharacterInputData characterInputData)
@@ -165,9 +177,9 @@ public class StickMovement : Ragdoll
     /// <returns></returns>
     IEnumerator MoveRight(float seconds)
     {
-        _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.deltaTime);
+        _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * _rpcDeltaTime);
         yield return new WaitForSeconds(seconds);
-        _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.deltaTime);
+        _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * _rpcDeltaTime);
         yield return new WaitForSeconds(seconds);
     }
 
@@ -178,9 +190,9 @@ public class StickMovement : Ragdoll
     /// <returns></returns>
     IEnumerator MoveLeft(float seconds)
     {
-        _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.deltaTime);
+        _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * _rpcDeltaTime);
         yield return new WaitForSeconds(seconds);
-        _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.deltaTime);
+        _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * _rpcDeltaTime);
         yield return new WaitForSeconds(seconds);
     }
 
