@@ -33,8 +33,10 @@ public class StickMovement : Ragdoll
     private float _rpcDeltaTime = 0;
     private float _rpcLastTimestamp = 0;
 
-    private void Awake()
+    protected override void Awake()
     {
+        //not calling base.Awake() as do not need the ragdoll effects, only access to set the collapse feature
+
         // Get all the ragdoll parts and set the input handler
         Ragdoll[] ragdolls = GetComponentsInChildren<Ragdoll>();
 

@@ -172,14 +172,18 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="isHost">Whether the device is the host or not</param>
     private void StartNetwork(bool isHost)
     {
+        GameManager.Instance.LoadLobby();
         AsyncOperation loadLobbyScene = SceneManager.LoadSceneAsync(SceneNames.LobbyEnvironment);
-
+        
         loadLobbyScene.completed += (AsyncOperation op) =>
         {
             if (isHost)
+            {
                 NetworkManager.Singleton.StartHost();
+                GameManager.Instance.LobbyLoaded();
+            }   
             else
-                NetworkManager.Singleton.StartClient();
+                NetworkManager.Singleton.StartClient(); 
         };
     }
 

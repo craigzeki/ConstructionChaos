@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using ZekstersLab.Helpers;
 
 /// <summary>
@@ -33,17 +35,11 @@ public class ObjectiveManager : MonoBehaviour
 	/// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
 	/// </summary>
-	private Dictionary<ulong, ObjectivePlayerData> _players = new Dictionary<ulong, ObjectivePlayerData>();
+	//private Dictionary<ulong, NetPlayerData> _players = new Dictionary<ulong, NetPlayerData>();
 
 	private string _inverseString = "Don't ";
 
 	private string _anyActionString = "Do anything with";
-
-	private string _anyColourString = "any coloured";
-
-	private string _anyObjectString = "object";
-
-	private string _noConditionString = "";
 
 	/// <summary>
 	/// Keeps track of the position in the _possibleObjectives list for the next one which hasn't been used.
@@ -65,6 +61,20 @@ public class ObjectiveManager : MonoBehaviour
 		UnityEngine.Random.InitState((int)DateTime.Now.Ticks);
     }
 
+	private void OnEnable()
+	{
+		if (GameManager.Instance == null) return;
+        GameManager.Instance.OnPlayerSpawned += OnPlayerSpawned;
+		GameManager.Instance.OnSceneLoaded += OnSceneLoaded;
+    }
+
+	private void OnDisable()
+	{
+        if (GameManager.Instance == null) return;
+        GameManager.Instance.OnPlayerSpawned -= OnPlayerSpawned;
+        GameManager.Instance.OnSceneLoaded -= OnSceneLoaded;
+    }
+
 	/// <summary>
 	/// Resets the ObjectiveManager to start a new round
 	/// </summary>
@@ -73,35 +83,31 @@ public class ObjectiveManager : MonoBehaviour
 		_objectiveObjects.Clear();
 		_possibleObjectives.Clear();
 		// clear the player data specific to a round
-		foreach(ulong clientId in _players.Keys)
+		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
 		{
-			_players[clientId].Objective = null;
+			GameManager.Instance.PlayerData[clientId].Objective = null;
 			// TODO add any other params that need clearing - objectives cleared this round? etc.
 		}
 		
 	}
 
-	/// <summary>
-	/// To be called once a player has spawned on the server.<br/>
-	/// Registers the player so that the ObjectiveManager knows about its NetPlayer<br/>
-	/// and can call it's ClientRPC.
-	/// </summary>
-	/// <param name="clientId">The network client ID of the player</param>
-	/// <param name="netPlayer">The players NetPlayer component</param>
-	/// <returns>True if successful, False if not sucessful</returns>
-	public bool RegisterPlayer(ulong clientId, NetPlayer netPlayer)
+    /// <summary>
+    /// Triggered by GameManager event once a player has spawned on the server.<br/>
+	/// Sets the player's objective to the next one on the possible objectives list.
+    /// </summary>
+    /// <param name="clientId">The network client ID of the player</param>
+    /// <returns>True if successful, False if out of objectives or clientId not found in PlayerData</returns>
+    public bool AssignPlayerObjective(ulong clientId)
 	{
-		if (netPlayer == null) return false;
+        if (_nextAvailableObjective >= _possibleObjectives.Count) return false;
 
-		ObjectivePlayerData objectivePlayerData = new ObjectivePlayerData(netPlayer);
+        if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out NetPlayerData playerData)) return false;
 
-		if (!_players.TryAdd(clientId, objectivePlayerData)) return false;
-		
-        AssignObjective(clientId);
-			
-        netPlayer.SetObjectiveStringClientRpc(objectivePlayerData.Objective.ObjectiveString);
-        
-		return true;
+        _playerObjectives.Add(_possibleObjectives[_nextAvailableObjective], clientId);
+        playerData.Objective = _possibleObjectives[_nextAvailableObjective];
+        _nextAvailableObjective++;
+
+        return true;
     }
 
 	/// <summary>
@@ -110,20 +116,15 @@ public class ObjectiveManager : MonoBehaviour
 	/// The player's ClientRPC will no longer be called to send new Objectives
 	/// </summary>
 	/// <param name="clientId">The clientId of the disconnecting player</param>
-	public bool UnRegisterPlayer(ulong clientId)
+	public void RemovePlayer(ulong clientId)
 	{
-		if (_players.TryGetValue(clientId, out ObjectivePlayerData objectivePlayerData))
+		if (GameManager.Instance.PlayerData.TryGetValue(clientId, out NetPlayerData objectivePlayerData))
 		{
             if (objectivePlayerData.Objective != null)
             {
                 _playerObjectives.Remove(objectivePlayerData.Objective);
             }
         }
-
-		if(!_players.Remove(clientId)) return false;
-
-		return true;
-		
 	}
 
     /// <summary>
@@ -134,23 +135,23 @@ public class ObjectiveManager : MonoBehaviour
     /// </summary>
     /// <param name="currentClientId">The new / current clientId</param>
     /// <param name="previousClientId">The old / previous clientId</param>
-    /// <param name="netPlayer">The player's NetPlayer component</param>
     /// <returns>True if successful, False if not sucessful</returns>
-    public bool ReRegisterPlayer(ulong currentClientId, ulong previousClientId, NetPlayer netPlayer)
+    public bool ReconnectPlayer(ulong currentClientId)
 	{
-		if(_players.Remove(previousClientId, out ObjectivePlayerData playerData))
+		if (!GameManager.Instance.PlayerData.TryGetValue(currentClientId, out NetPlayerData netPlayerData)) return false;
+
+		// If an old objective does not exist, create one. If it does, remap it. 
+		if (netPlayerData.Objective == null)
 		{
-			if(!_players.TryAdd(currentClientId, playerData)) return false;
+			AssignPlayerObjective(currentClientId);
 		}
 		else
 		{
-			if (!_players.TryAdd(currentClientId, new ObjectivePlayerData(netPlayer))) return false;
-			AssignObjective(currentClientId);
+			_playerObjectives.Add(netPlayerData.Objective, currentClientId);
 		}
 
-		// Send player their objective
-		if(_players.TryGetValue(currentClientId, out ObjectivePlayerData objectivePlayerData)) netPlayer.SetObjectiveStringClientRpc(objectivePlayerData.Objective.ObjectiveString);
-
+        netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);
+        
 		return true;
     }
 
@@ -180,19 +181,6 @@ public class ObjectiveManager : MonoBehaviour
 		}
 	}
 
-	private void AssignObjective(ulong clientId)
-	{
-		if(_nextAvailableObjective < _possibleObjectives.Count)
-		{
-			_playerObjectives.Add(_possibleObjectives[_nextAvailableObjective], clientId);
-			if(_players.TryGetValue(clientId, out ObjectivePlayerData playerData))
-			{
-				playerData.Objective = _possibleObjectives[_nextAvailableObjective];
-			}
-			_nextAvailableObjective++;
-		}
-	}
-
 	/// <summary>
 	/// Things to do once when a round starts
 	/// </summary>
@@ -204,38 +192,6 @@ public class ObjectiveManager : MonoBehaviour
 		//reset the next available objective counter
 		_nextAvailableObjective = 0;
 	}
-
-	/// <summary>
-	/// Randomly selects an objective for the given player
-	/// </summary>
-	/// <param name="player"></param>
-	/// <returns>Objective of type Objective, containing all the objective info</returns>
-	//private Objective CreateRandomObjective(uint player)
-	//{
-	//	ObjectiveColour colour;
-	//	ObjectiveObject @object;
-	//	ObjectiveAction action;
-	//	ObjectiveCondition condition;
-
-	//	bool inverse = UnityEngine.Random.Range((int)0,(int)2) == 0 ? false : true;
-
-	//	// Pick a random object
-	//	@object = _objectiveObjects.ElementAt(UnityEngine.Random.Range(0, _objectiveObjects.Count)).Key.ObjectiveObject;
-
-	//	// Pick a random colour from the list of possible colours for the object
-	//	colour = @object.PossibleColours[UnityEngine.Random.Range(0, @object.PossibleColours.Count)];
-
-	//	// Pick a random action from the list of possible actions for the object
-	//	action = @object.PossibleActions[UnityEngine.Random.Range(0, @object.PossibleActions.Count)];
-
-	//	// Pick a random condition from the list of possible conditions for the chosen action
-	//	condition = action.PossibleConditions[UnityEngine.Random.Range(0, action.PossibleConditions.Count)];
-
-	//	// Create the objective and return it
-	//	Objective newObjective = new Objective(action, colour, @object, condition, inverse, player);
-	//	return newObjective;
-
-	//}
 
 	/// <summary>
 	/// Creates a structred string which can be used to display the objective to the player
@@ -265,43 +221,30 @@ public class ObjectiveManager : MonoBehaviour
 
 		return str;
 	}
-
-	/// <summary>
-	/// Returns the objective for the given player
-	/// </summary>
-	/// <param name="player">The player to get the objective for</param>
-	/// <returns>Objective or null if the objective doesn't exist</returns>
-	public Objective GetObjective(uint player)
+	
+	private void OnPlayerSpawned(object sender, ulong clientId)
 	{
-		
-		//if((player >= 1) && (player <= 6))
-		//{
-		//	return _playerObjectives[(int)player - 1];
-		//}
-
-		return null;
+		AssignPlayerObjective(clientId);
 	}
 
-	/// <summary>
-	/// Verifies that the given objective matches the objective for the given player
-	/// </summary>
-	/// <param name="objectiveToVerify">The objective to verify</param>
-	/// <param name="player">The player to verify the objective for</param>
-	/// <returns>True if the objective matches, false if it doesn't</returns>
-	public bool VerifyObjective(Objective objectiveToVerify, uint player)
+	private void OnPlayerDisconnect(object sender, ulong clientId)
 	{
-		Objective objective = GetObjective(player);
+		RemovePlayer(clientId);
+	}
 
-		if (objective == null) return false;
+	private void OnPlayerReconnect(object sender, PlayerReconnectData playerReconnectData)
+	{
+		ReconnectPlayer(playerReconnectData.CurrentClientID);
+	}
 
-		if (objective.Action.FriendlyString != _anyActionString && objectiveToVerify.Action != objective.Action) return false;
-
-		if (objective.Colour.FriendlyString != _anyColourString && objectiveToVerify.Colour != objective.Colour) return false;
-
-		if (objective.Object.FriendlyString != _anyObjectString && objectiveToVerify.Object != objective.Object) return false;
-
-		if (objective.Condition.FriendlyString != _noConditionString && objectiveToVerify.Condition != objective.Condition) return false;
-
-		return true;
+	private void OnSceneLoaded(object sender, EventArgs e)
+	{
+		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
+		{
+			if(GameManager.Instance.PlayerData[clientId].Objective == null)
+			{
+				AssignPlayerObjective(clientId);
+			}
+		}
 	}
 }

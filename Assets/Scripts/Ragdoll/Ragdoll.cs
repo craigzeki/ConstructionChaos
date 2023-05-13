@@ -18,24 +18,36 @@ public class Ragdoll : NetworkBehaviour
     /// Is the ragdoll 'active' - if not, it is collapsed
     /// </summary>
     protected bool _isActive = true;
+
+    /// <summary>
+    /// Is the ragdoll 'broken'
+    /// </summary>
     protected bool _isBroken = false;
 
-    private Rigidbody2D _connectedRigidBody;
+    /// <summary>
+    /// Reference to this gameobjects hinge joint
+    /// </summary>
     private HingeJoint2D _hingeJoint;
-    private Rigidbody2D _rigidBody2D;
-    private Vector2 _connectedAnchor;
-    private Vector2 _anchorOrigin;
+
+    /// <summary>
+    /// Used to store the correct (original) rotation of the body part
+    /// </summary>
     private Quaternion _initialRotation;
+
+    /// <summary>
+    /// Used to store the correct (original) local position of the body part
+    /// </summary>
+    private Vector3 _originLocalPosition;
+
+    /// <summary>
+    /// Used to detect when the body part has returned to its original position
+    /// </summary>
     [SerializeField] private float _rejoinAnchorDistanceThreshold = 0.005f;
 
     protected virtual void Awake()
     {
-        _rigidBody2D = GetComponent<Rigidbody2D>();
-        if(TryGetComponent<HingeJoint2D>(out _hingeJoint))
-        {
-            _connectedRigidBody = _hingeJoint.connectedBody;
-        }
-        
+        _originLocalPosition = transform.position;
+        _hingeJoint = GetComponent<HingeJoint2D>();
         _initialRotation = transform.rotation;
     }
 
@@ -55,10 +67,6 @@ public class Ragdoll : NetworkBehaviour
             if (collapseInfo.breakApart)
             {
                 //disconnect joints and store previous connected rigidbody
-                //_connectedRigidBody = _hingeJoint.connectedBody;
-                //_connectedAnchor = _hingeJoint.connectedAnchor;
-                _anchorOrigin = _hingeJoint.anchor;
-                //Destroy(_hingeJoint);
                 _hingeJoint.enabled = false;
                 _isBroken = true;
             }
@@ -67,9 +75,6 @@ public class Ragdoll : NetworkBehaviour
         if (_isBroken && !collapseInfo.collapse)
         {
             //reconnect joints
-            _hingeJoint.connectedBody = _connectedRigidBody;
-            _hingeJoint.connectedAnchor = _connectedAnchor;
-            _hingeJoint.anchor = _anchorOrigin;
             StartCoroutine(WaitAndSetRotation());
             _hingeJoint.enabled = true;
             _isBroken = false;
@@ -77,17 +82,17 @@ public class Ragdoll : NetworkBehaviour
     }
 
     /// <summary>
-    /// Waits until the body part has moved back to its intended position, and then sets rotation.
+    /// Waits until the body part has moved back to its intended position, and then sets rotation.<br/>
+    /// Avoids limbs attatching in rotations outside of their joint rotation limits.
     /// </summary>
     /// <returns></returns>
     IEnumerator WaitAndSetRotation()
     {
-        while(Vector2.Distance(_connectedAnchor, _hingeJoint.connectedAnchor) > _rejoinAnchorDistanceThreshold)
+        while(Vector2.Distance(transform.localPosition, _originLocalPosition) > _rejoinAnchorDistanceThreshold)
         {
             yield return new WaitForEndOfFrame();
         }
-        _rigidBody2D.velocity = Vector2.zero;
-        _rigidBody2D.angularVelocity = 0f;
+
         transform.rotation = _initialRotation;
     }
 
