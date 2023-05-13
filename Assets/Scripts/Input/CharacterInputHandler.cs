@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using ZekstersLab.Helpers;
 
 /// <summary>
 /// This class must be attached to each instance of the player<br/>
@@ -124,7 +124,6 @@ public class CharacterInputHandler : NetworkBehaviour
     /// <remarks>Only use to link to the Input System</remarks>
     private void SetCollapse(InputAction.CallbackContext value)
     {
-
         CharacterInputData.MoveVerticalAxis = value.ReadValue<float>();
     }
 
@@ -148,9 +147,8 @@ public class CharacterInputHandler : NetworkBehaviour
     {
         CharacterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
         CharacterInputData.ArmsMovementData.IsMouseController = false;
-        CharacterInputData.ArmsMovementData.ArmsStickReleased = Mathf.Approximately(CharacterInputData.ArmsMovementData.ArmsControllerInput.x, 0f) && Mathf.Approximately(CharacterInputData.ArmsMovementData.ArmsControllerInput.y, 0f);
+        CharacterInputData.ArmsMovementData.ArmsStickReleased = CharacterInputData.ArmsMovementData.ArmsControllerInput.Vector2Approximately(Vector2.zero);
     }
-
 
     /// <summary>
     /// Processes a button press and sets whether the user is trying to grab with left hand

@@ -32,10 +32,11 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, IN
     /// <returns>True of False (Equal or Not Equal)</returns>
     public bool Equals(ObjectiveColour other)
     {
-        return (
-                (friendlyString.Equals(other.friendlyString)) &&
-                (colour.Equals(other.colour))
-                );
+        return
+        (
+            (friendlyString.Equals(other.friendlyString)) &&
+            (colour.Equals(other.colour))
+        );
     }
 
     /// <summary>
@@ -62,7 +63,7 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, IN
     /// </remarks>
     public override int GetHashCode()
     {
-        //unchecked allows overflows to occur and be truncated without throwing an exception
+        // unchecked allows overflows to occur and be truncated without throwing an exception
         unchecked
         {
             int hashCode = 17;

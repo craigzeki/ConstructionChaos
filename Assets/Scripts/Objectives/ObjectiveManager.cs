@@ -10,7 +10,7 @@ using ZekstersLab.Helpers;
 /// <summary>
 /// Runs server side only.<br/>
 /// Creates random objectives and assigns them to players.<br/>
-/// Provides an event driven system to allow players to report when an action has occured.<br/>
+/// Provides an event driven system to allow players to report when an action has occurred.<br/>
 /// Will report back to the player the status of their objective.<br/>
 /// </summary>
 public class ObjectiveManager : MonoBehaviour
@@ -31,11 +31,6 @@ public class ObjectiveManager : MonoBehaviour
 	/// during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID.
 	/// </summary>
 	[SerializeField] private Dictionary<Objective, ulong> _playerObjectives = new Dictionary<Objective, ulong>();
-
-	/// <summary>
-	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
-	/// </summary>
-	//private Dictionary<ulong, NetPlayerData> _players = new Dictionary<ulong, NetPlayerData>();
 
 	private string _inverseString = "Don't ";
 
@@ -82,13 +77,12 @@ public class ObjectiveManager : MonoBehaviour
 	{
 		_objectiveObjects.Clear();
 		_possibleObjectives.Clear();
-		// clear the player data specific to a round
+		// Clear the player data specific to a round
 		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
 		{
 			GameManager.Instance.PlayerData[clientId].Objective = null;
-			// TODO add any other params that need clearing - objectives cleared this round? etc.
+			// TODO: Add any other params that need clearing - objectives cleared this round? etc.
 		}
-		
 	}
 
     /// <summary>
@@ -112,7 +106,7 @@ public class ObjectiveManager : MonoBehaviour
 
 	/// <summary>
 	/// To be called if a player disconnects intentionally.<br/>
-	/// Removes the player from the ObjetciveManager<br/>
+	/// Removes the player from the ObjectiveManager<br/>
 	/// The player's ClientRPC will no longer be called to send new Objectives
 	/// </summary>
 	/// <param name="clientId">The clientId of the disconnecting player</param>
@@ -135,7 +129,7 @@ public class ObjectiveManager : MonoBehaviour
     /// </summary>
     /// <param name="currentClientId">The new / current clientId</param>
     /// <param name="previousClientId">The old / previous clientId</param>
-    /// <returns>True if successful, False if not sucessful</returns>
+    /// <returns>True if successful, False if not successful</returns>
     public bool ReconnectPlayer(ulong currentClientId)
 	{
 		if (!GameManager.Instance.PlayerData.TryGetValue(currentClientId, out NetPlayerData netPlayerData)) return false;
@@ -169,7 +163,7 @@ public class ObjectiveManager : MonoBehaviour
 		}
 		else
 		{
-			// first time adding this object type - create all possible objectives
+			// First time adding this object type - create all possible objectives
 			foreach(ObjectiveAction action in objectiveObjectInstance.ObjectiveObject.PossibleActions)
 			{
 				foreach(ObjectiveCondition condition in action.PossibleConditions)
@@ -189,7 +183,7 @@ public class ObjectiveManager : MonoBehaviour
 		// Shuffle the possible objectives
 		_possibleObjectives.Shuffle();
 
-		//reset the next available objective counter
+		// Reset the next available objective counter
 		_nextAvailableObjective = 0;
 	}
 

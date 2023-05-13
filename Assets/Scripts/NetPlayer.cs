@@ -8,7 +8,7 @@ using UnityEngine;
 public class NetPlayer : NetworkBehaviour
 {
     [SerializeField] private string _objectiveString = "";
-   //[SerializeField] private NetworkVariable<FixedString128Bytes> _networkObjectiveString = new NetworkVariable<FixedString128Bytes>();
+    //[SerializeField] private NetworkVariable<FixedString128Bytes> _networkObjectiveString = new NetworkVariable<FixedString128Bytes>();
 
     public override void OnNetworkSpawn()
     {

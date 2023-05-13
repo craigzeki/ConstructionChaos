@@ -30,8 +30,6 @@ public class StickMovement : Ragdoll
     private Coroutine _walkLeft, _walkRight;
     private bool _collapse = false;
     private uint _framesToNextJump = 0;
-    private float _rpcDeltaTime = 0;
-    private float _rpcLastTimestamp = 0;
 
     protected override void Awake()
     {
@@ -44,41 +42,20 @@ public class StickMovement : Ragdoll
         {
             ragdolls[i].CharacterInputHandler = CharacterInputHandler;
         }
-
-        _rpcLastTimestamp = Time.time;
-    }
-
-    void Update()
-    {
-        print($"StickMovement.cs Update(), IsLocalPlayer: {IsLocalPlayer}, IsServer: {IsServer}, IsClient: {IsClient}, IsOwner: {IsOwner}");
-
-        if (!IsOwner) return;
     }
 
     private void FixedUpdate()
     {
-        //if (!IsOwner) return;
-
         if (IsServer)
-        {
-            HandleMovement(CharacterInputHandler.CharacterInputData);
-            HandleJump(CharacterInputHandler.CharacterInputData);
-        }
+            HandleMovementAndJump(CharacterInputHandler.CharacterInputData);
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void HandleMovementServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
+    /// <summary>
+    /// Moves the player on the server
+    /// </summary>
+    private void HandleMovementAndJump(CharacterInputData characterInputData)
     {
-        print("HandleMovementServerRpc()");
-        _rpcDeltaTime = Time.time - _rpcLastTimestamp;
-        _rpcLastTimestamp = Time.time;
-        HandleMovement(characterInputData);
-        //CharacterInputHandler.CharacterInputData = characterInputData;
-    }
-
-    private void HandleMovement(CharacterInputData characterInputData)
-    {
-        print("Handling Movement");
+        // Handle movement
         // Check if user is pressing up or down
         if(!Mathf.Approximately(characterInputData.MoveVerticalAxis, 0f))
         {
@@ -118,16 +95,8 @@ public class StickMovement : Ragdoll
             if (_walkRight != null) StopCoroutine(_walkRight);
             _anim.Play("Idle");
         }
-    }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void HandleJumpServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
-    {
-        HandleJump(characterInputData);
-    }
-
-    private void HandleJump(CharacterInputData characterInputData)
-    {
+        // Handle jumping
         if (_framesToNextJump > 0)
         {
             _framesToNextJump--;

@@ -28,11 +28,6 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
 
     public NetworkVariable<ObjectiveColour> NetworkObjectiveColour = new NetworkVariable<ObjectiveColour>();
 
-    private void Awake()
-    {
-        //! Might need to move all of this logic into OnNetworkSpawn
-    }
-
     public override void OnNetworkSpawn()
     {
         if (IsServer)
@@ -63,7 +58,6 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         }
 
         // Set the colour of the object to the colour of the objective colour
-        //! This is temporary, will need to be adapted for different types of objects
         GetComponent<SpriteRenderer>().color = NetworkObjectiveColour.Value.Colour;
     }
 

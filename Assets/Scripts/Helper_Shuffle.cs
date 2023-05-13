@@ -1,9 +1,10 @@
-//Fisher-Yates shuffle by https://stackoverflow.com/a/1262619
+// Fisher-Yates shuffle by https://stackoverflow.com/a/1262619
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using UnityEngine;
 
 namespace ZekstersLab.Helpers
 {
@@ -12,14 +13,14 @@ namespace ZekstersLab.Helpers
     /// </summary>
     public static class ThreadSafeRandom
     {
-        [ThreadStatic] private static Random Local;
+        [ThreadStatic] private static System.Random s_local;
 
         /// <summary>
         /// Generates a new random number on a static thread
         /// </summary>
-        public static Random ThisThreadsRandom
+        public static System.Random ThisThreadsRandom
         {
-            get { return Local ??= new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId)); }
+            get { return s_local ??= new System.Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId)); }
         }
     }
 
@@ -35,9 +36,20 @@ namespace ZekstersLab.Helpers
             {
                 n--;
                 int k = ThreadSafeRandom.ThisThreadsRandom.Next(n + 1);
-                // use tuple to swap values efficiently
+                // Use tuple to swap values efficiently
                 (list[n], list[k]) = (list[k], list[n]);
             }
+        }
+
+        /// <summary>
+        /// Check if two vectors are approximately equal using Mathf.Approximately
+        /// </summary>
+        /// <param name="vector">The first vector</param>
+        /// <param name="other">The second vector</param>
+        /// <returns>True if the vectors are approximately equal, false otherwise</returns>
+        public static bool Vector2Approximately(this Vector2 vector, Vector2 other)
+        {
+            return Mathf.Approximately(vector.x, other.x) && Mathf.Approximately(vector.y, other.y);
         }
     }
 }

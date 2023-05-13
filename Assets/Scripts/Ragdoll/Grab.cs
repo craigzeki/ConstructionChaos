@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class Grab : Ragdoll
 {
-    //[SerializeField] KeyCode _mouseButton;
     [SerializeField] LayerMask _grabableLayerMask;
     private bool _hold = false;
     private FixedJoint2D _joint;
@@ -18,16 +17,8 @@ public class Grab : Ragdoll
 
     void FixedUpdate()
     {
-        //if (!IsOwner) return;
-
         if (IsServer)
             HandleGrab(CharacterInputHandler.CharacterInputData);
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    private void HandleGrabServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
-    {
-        HandleGrab(characterInputData);
     }
 
     private void HandleGrab(CharacterInputData characterInputData)
@@ -47,10 +38,8 @@ public class Grab : Ragdoll
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (!IsOwner) return;
         if (!IsServer) return;
         if (!_isActive) return; // Not active or collapsed
         if ((1 << collision.gameObject.layer) != _grabableLayerMask) return; // Item is not on the grabable layer
@@ -72,6 +61,4 @@ public class Grab : Ragdoll
             }
         }
     }
-
-    
 }

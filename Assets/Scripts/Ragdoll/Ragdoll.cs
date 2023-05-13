@@ -25,7 +25,7 @@ public class Ragdoll : NetworkBehaviour
     protected bool _isBroken = false;
 
     /// <summary>
-    /// Reference to this gameobjects hinge joint
+    /// Reference to this gameObject's hinge joint
     /// </summary>
     private HingeJoint2D _hingeJoint;
 
@@ -58,15 +58,14 @@ public class Ragdoll : NetworkBehaviour
     /// <remarks>Call using BroadcastMessage</remarks>
     public void OnCollapse((bool collapse, bool breakApart) collapseInfo)
     {
-
-        //original collapse
+        // Original collapse
         _isActive = !collapseInfo.collapse;
 
         if (_hingeJoint != null)
         {
             if (collapseInfo.breakApart)
             {
-                //disconnect joints and store previous connected rigidbody
+                // Disconnect joints and store previous connected rigidbody
                 _hingeJoint.enabled = false;
                 _isBroken = true;
             }
@@ -74,7 +73,7 @@ public class Ragdoll : NetworkBehaviour
 
         if (_isBroken && !collapseInfo.collapse)
         {
-            //reconnect joints
+            // Reconnect joints
             StartCoroutine(WaitAndSetRotation());
             _hingeJoint.enabled = true;
             _isBroken = false;
@@ -83,17 +82,13 @@ public class Ragdoll : NetworkBehaviour
 
     /// <summary>
     /// Waits until the body part has moved back to its intended position, and then sets rotation.<br/>
-    /// Avoids limbs attatching in rotations outside of their joint rotation limits.
+    /// Avoids limbs attaching in rotations outside of their joint rotation limits.
     /// </summary>
     /// <returns></returns>
     IEnumerator WaitAndSetRotation()
     {
-        while(Vector2.Distance(transform.localPosition, _originLocalPosition) > _rejoinAnchorDistanceThreshold)
-        {
-            yield return new WaitForEndOfFrame();
-        }
+        yield return new WaitUntil(() => Vector2.Distance(transform.localPosition, _originLocalPosition) < _rejoinAnchorDistanceThreshold);
 
         transform.rotation = _initialRotation;
     }
-
 }

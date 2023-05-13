@@ -36,19 +36,11 @@ public class Arms : Ragdoll
 
     void FixedUpdate()
     {
-        //if (!IsOwner) return;
-
         // Not active / collapsed
         if (!_isActive) return;
 
         if (IsServer)
             HandleArms(CharacterInputHandler.CharacterInputData);
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    private void HandleArmsServerRpc(CharacterInputData characterInputData, ServerRpcParams serverRpcParams = default)
-    {
-        HandleArms(characterInputData);
     }
 
     private void HandleArms(CharacterInputData characterInputData)
