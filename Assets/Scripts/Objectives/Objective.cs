@@ -66,7 +66,16 @@ public class Objective : IEquatable<Objective>
         this.@object = @object;
         this.condition = condition;
         this.inverse = inverse;
-        this.objectiveString = ObjectiveManager.Instance.CreateObjectiveString(this);
+        
+        if(condition == null)
+        {
+            this.objectiveString = "INVALID OBJECTIVE";
+        }
+        else
+        {
+            this.objectiveString = ObjectiveManager.Instance.CreateObjectiveString(this);
+        }
+        
     }
 
     /// <summary>

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class GoalZone : MonoBehaviour
+public class GoalZone : Zone
 {
     [SerializeField] private TextMeshProUGUI _cratesText;
     [SerializeField] private TextMeshProUGUI _countdownText;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
@@ -29,10 +30,26 @@ public class NetPlayer : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Callback which is called by the Client on the Server (automagically) once the Client has fully spawned and connected
+    /// </summary>
+    /// <param name="obj"></param>
     private void NetworkManager_OnClientConnectedCallback(ulong obj)
     {
         // Register with the Game Manager
         GameManager.Instance.RegisterNewPlayer(OwnerClientId, this);
+
+        // Send the ownerClientId to some objects which need it (to report to the objective system)
+        List<Ragdoll> ragdollObjects = GetComponentsInChildren<Ragdoll>().ToList<Ragdoll>();
+        ObjectiveActionReporter objectiveActionReporter = GetComponentInChildren<ObjectiveActionReporter>();
+        foreach (Ragdoll ragdoll in ragdollObjects)
+        {
+            ragdoll.ClientId = OwnerClientId;
+            ragdoll.ObjectiveActionReporter = objectiveActionReporter;
+        }
+
+        
+
     }
 
     //private void OnObjectiveStringChanged(FixedString128Bytes previous, FixedString128Bytes current)

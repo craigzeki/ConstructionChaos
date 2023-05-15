@@ -1,3 +1,4 @@
+using SolidUtilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,7 +47,15 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
             {
                 foreach (TypeReference typeReference in action.ActionBehaviours)
                 {
-                    this.gameObject.AddComponent(typeReference);
+
+                    if (typeReference.Type.IsSubclassOf(typeof(ObjectiveActionBehaviour)))
+                    {
+                        ObjectiveActionBehaviour component = this.gameObject.AddComponent(typeReference) as ObjectiveActionBehaviour;
+                        component.Conditions = action.PossibleConditions;
+                        component.Objective = new Objective(action, _objectiveColour, objectiveObject, null, false);
+                    }
+                    
+                    
                 }
             }
 

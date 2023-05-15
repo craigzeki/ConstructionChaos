@@ -216,29 +216,78 @@ public class ObjectiveManager : MonoBehaviour
 		return str;
 	}
 	
+	/// <summary>
+	/// Triggered when GameManager sends the OnPlayerSpawned event
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="clientId"></param>
 	private void OnPlayerSpawned(object sender, ulong clientId)
 	{
 		AssignPlayerObjective(clientId);
 	}
 
+
+	/// <summary>
+	/// Triggered when GameManager sends the OnPlayerDisconnect event
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="clientId"></param>
 	private void OnPlayerDisconnect(object sender, ulong clientId)
 	{
 		RemovePlayer(clientId);
 	}
 
+	/// <summary>
+	/// Triggered when GameManager sends the OnPlayerReconnect event
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="playerReconnectData"></param>
 	private void OnPlayerReconnect(object sender, PlayerReconnectData playerReconnectData)
 	{
 		ReconnectPlayer(playerReconnectData.CurrentClientID);
 	}
 
+	/// <summary>
+	/// Triggered when GameManager sends OnSceneLoaded event
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
 	private void OnSceneLoaded(object sender, EventArgs e)
 	{
+		// Assign each players objective
 		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
 		{
 			if(GameManager.Instance.PlayerData[clientId].Objective == null)
 			{
 				AssignPlayerObjective(clientId);
 			}
+		}
+	}
+
+	/// <summary>
+	/// Interface to allow objects to report objective actions occuring and have them checked
+	/// </summary>
+	/// <param name="objectiveOccured">The possible objective that occured</param>
+	/// <param name="playerClientId">The player Client ID that initiated the action</param>
+	public void ReportObjectiveAction(Objective objectiveOccured, ulong playerClientId)
+	{
+		// Check if the objective is one that is assigned to a player
+		if(_playerObjectives.TryGetValue(objectiveOccured, out ulong clientId))
+		{
+			// Check if the matching objective's assigned player is the same as the one performing the action
+			if (playerClientId != clientId) return;
+
+			// The objective that occured matches one of that is assigned to a player
+			// TODO increment player score, below is temporary for testing
+			GameManager.Instance.PlayerData[playerClientId].Score += 100;
+
+			// Remove this objective from the player list
+			_playerObjectives.Remove(objectiveOccured);
+
+			// Assign a new objective
+			AssignPlayerObjective(clientId);
+
+			GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective.ObjectiveString, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
 		}
 	}
 }

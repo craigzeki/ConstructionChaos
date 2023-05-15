@@ -19,10 +19,10 @@ public class IgnoreCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            // If anything else has been added to the player object during runtime, detect this and also ignore
-            Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
-        }
+        //if(collision.gameObject.tag == "Player")
+        //{
+        //    // If anything else has been added to the player object during runtime, detect this and also ignore
+        //    Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
+        //}
     }
 }

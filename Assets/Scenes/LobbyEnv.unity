@@ -2617,7 +2617,7 @@ GameObject:
   - component: {fileID: 1471702756}
   - component: {fileID: 1471702757}
   - component: {fileID: 1471702759}
-  - component: {fileID: 1471702758}
+  - component: {fileID: 1471702760}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -2693,22 +2693,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1471702758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471702755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc64da782c53f146bde9ce8f0846ab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cratesText: {fileID: 1464260659}
-  _countdownText: {fileID: 1820979484}
-  _numOfCratesRequired: 3
-  _countdownTimerStart: 3
 --- !u!61 &1471702759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2735,6 +2719,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1471702760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471702755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc64da782c53f146bde9ce8f0846ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cratesText: {fileID: 1353736490}
+  _countdownText: {fileID: 1820979484}
+  _numOfCratesRequired: 3
+  _countdownTimerStart: 3
 --- !u!1 &1497959542
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,8 +49,8 @@ public class Grab : Ragdoll
             Rigidbody2D rb = collision.transform.GetComponent<Rigidbody2D>();
             if(rb != null)
             {
-                _joint = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
-                _joint.connectedBody = rb;
+                _joint = collision.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
+                _joint.connectedBody = GetComponent<Rigidbody2D>();
             }
             else
             {

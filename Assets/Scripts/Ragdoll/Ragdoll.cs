@@ -1,3 +1,4 @@
+using SolidUtilities;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -9,6 +10,12 @@ using UnityEngine;
 /// </summary>
 public class Ragdoll : NetworkBehaviour
 {
+    [SerializeField]
+    [ReadOnly]
+    public ulong ClientId;
+
+    public ObjectiveActionReporter ObjectiveActionReporter;
+
     /// <summary>
     /// A reference to this characters input handler, usually found on the parent of the player character prefab
     /// </summary>

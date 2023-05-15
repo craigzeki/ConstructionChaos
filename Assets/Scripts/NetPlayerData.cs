@@ -15,10 +15,13 @@ public class NetPlayerData
     public Objective Objective = null;
 
     public ClientRpcParams ClientRpcParams = default;
+    public ulong ClientId;
+    public uint Score = 0;
 
     public NetPlayerData(ulong clientId, NetPlayer netPlayer)
     {
         NetPlayer = netPlayer;
+        ClientId = clientId;
         CreateRpcParams(clientId);
     }
 
@@ -26,6 +29,7 @@ public class NetPlayerData
     {
         NetPlayer = netPlayer;
         Objective = objective;
+        ClientId = clientId;
         CreateRpcParams(clientId);
     }
 

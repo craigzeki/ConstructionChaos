@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GRAB
   m_EditorClassIdentifier: 
   _friendlyString: Grab <COLOUR> <OBJECT> <CONDITION>
+  _requiredPerformanceTime: 3
   _possibleConditions:
   - {fileID: 11400000, guid: 50a36de5ddcd04661983cb120214bd2b, type: 2}
   _actionBehaviours:
