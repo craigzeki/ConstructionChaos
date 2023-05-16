@@ -7,7 +7,7 @@ public abstract class ObjectiveActionBehaviour : MonoBehaviour
 {
     [SerializeField][ReadOnly] public List<ObjectiveCondition> Conditions = new List<ObjectiveCondition>();
 
-    [SerializeField] [ReadOnly] private List<Zone.ZONE> _currentZones = new List<Zone.ZONE>();
+    [SerializeField] [ReadOnly] private List<Zone> _currentZones = new List<Zone>();
 
     public Objective Objective;
 
@@ -15,7 +15,7 @@ public abstract class ObjectiveActionBehaviour : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Zone>(out Zone zone))
         {
-            if (!_currentZones.Contains(zone.ZoneType)) _currentZones.Add(zone.ZoneType);
+            if (!_currentZones.Contains(zone)) _currentZones.Add(zone);
         }
     }
 
@@ -23,38 +23,45 @@ public abstract class ObjectiveActionBehaviour : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Zone>(out Zone zone))
         {
-            _currentZones.Remove(zone.ZoneType);
+            _currentZones.Remove(zone);
         }
     }
 
-    protected List<ObjectiveCondition> GetActiveConditions()
+    protected List<(ObjectiveCondition, Zone)> GetActiveConditions()
     {
-        List<ObjectiveCondition> validConditions = new List<ObjectiveCondition>();
+        List<(ObjectiveCondition, Zone)> validConditions = new List<(ObjectiveCondition, Zone)>();
 
         foreach(ObjectiveCondition condition in Conditions)
         {
-            
-            switch(condition.name)
+
+            if(condition.DuringCountdown && !condition.RequiresObjectToBeInZone)
             {
-                case "DURING_COUNTDOWN":
-                    // TODO detect countdown and add condition to list
-                    break;
-
-                case "WHEN_IN_GOAL":
-                    if(_currentZones.Contains(Zone.ZONE.GOAL_ZONE))
-                    {
-                        validConditions.Add(condition);
-                    }
-                    break;
-
-                case "NO_CONDITION":
-                    validConditions.Add(condition);
-                    break;
-
-                default:
-                    Debug.LogError("[ObjectiveActionBehaviour] : GetActiveConditions() - condition name '" + condition.name.ToString() + "' does not have a method!");
-                    break;
+                // TODO detect countdown (from gamemanager? / goalzone? etc) and check if active
+                // TODO and add to the validConditions list
             }
+            else if(!condition.DuringCountdown && condition.RequiresObjectToBeInZone)
+            {
+                foreach(Zone zone in _currentZones)
+                {
+                    if(zone.ZoneType == condition.RequiredZone) validConditions.Add((condition, zone));
+                }
+            }
+            else if(condition.DuringCountdown && condition.RequiresObjectToBeInZone)
+            {
+                // TODO detect countdown (from gamemanager? / goalzone? etc) and check if active
+                // TODO if not, break
+
+                foreach (Zone zone in _currentZones)
+                {
+                    if (zone.ZoneType == condition.RequiredZone) validConditions.Add((condition, zone));
+                }
+            }
+            else
+            {
+                // No condition required
+                validConditions.Add((condition, null));
+            }
+
         }
 
         return validConditions;

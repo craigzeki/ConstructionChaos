@@ -13,7 +13,7 @@ public class ObjectiveActionReporter : NetworkBehaviour
     private Vector3 _targetScale = Vector3.zero;
     private Vector3 _startScale = Vector3.zero;
 
-    private NetPlayerData _playerData;
+    private NetPlayerData playerData;
     private Coroutine _coroutine = null;
 
     private void Awake()
@@ -25,6 +25,13 @@ public class ObjectiveActionReporter : NetworkBehaviour
         _canvasRectTransform.localScale = Vector3.zero;
     }
 
+    /// <summary>
+    /// If the objective provided is the same as the player reference by clientId's objective<br/>
+    /// start the objective timer and return true, otherwise false.
+    /// </summary>
+    /// <param name="objective"></param>
+    /// <param name="clientId"></param>
+    /// <returns>True if objective matches / False otherwise</returns>
     public bool CheckAndStartActionObjective(Objective objective, ulong clientId)
     {
         if (objective == null) return false;
@@ -32,21 +39,21 @@ public class ObjectiveActionReporter : NetworkBehaviour
 
         if (IsServer)
         {
-            if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out _playerData)) return false;
+            if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out playerData)) return false;
 
-            if (!objective.Equals(_playerData.Objective)) return false;
+            if (!objective.Equals(playerData.Objective)) return false;
 
             if(!IsOwner)
             {
                 Debug.Log("Sending StartObjectiveTimer Request to ClientId: " + clientId.ToString());
                 // Objective macthes the players - start the required time countdown
-                StartObjectiveTimerClientRpc(_playerData.Objective.Action.RequiredPerformanceTime, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
+                StartObjectiveTimerClientRpc(playerData.Objective.Action.RequiredPerformanceTime, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
             }
-            else
-            {
+            
+            
                 Debug.Log("Starting StartObjectiveTimer on the Server");
-                _coroutine = StartCoroutine(StartObjectiveTimer(_playerData.Objective.Action.RequiredPerformanceTime));
-            }
+                _coroutine = StartCoroutine(StartObjectiveTimer(playerData.Objective.Action.RequiredPerformanceTime));
+            
             
             return true;
         }
@@ -60,50 +67,90 @@ public class ObjectiveActionReporter : NetworkBehaviour
         _coroutine = StartCoroutine(StartObjectiveTimer(duration));
     }
 
+    [ClientRpc]
+    private void CancelObjectiveTimerClientRpc(ClientRpcParams clientRpcParams = default)
+    {
+        Debug.Log("CancelObjectiveTimerClientRpc Called - clientId: " + OwnerClientId);
+        Debug.Log("CancelActionObjective");
+        StopCoroutine(_coroutine);
+        _coroutine = null;
+        //_canvasRectTransform.gameObject.SetActive(false);
+        _canvasRectTransform.localScale = Vector3.zero;
+    }
+
     IEnumerator StartObjectiveTimer(uint duration)
     {
-        if (_playerData == null) yield break;
-        if (_playerData.Objective == null) yield break;
-        if (_playerData.Objective.Action == null) yield break;
-        if (_canvasRectTransform == null) yield break;
-        if (_countdownText == null) yield break;
+        if(IsServer)
+        {
+            if (playerData == null) yield break;
+            if (playerData.Objective == null) yield break;
+            if (playerData.Objective.Action == null) yield break;
+        }
+        
+        if(IsOwner)
+        {
+            if (_canvasRectTransform == null) yield break;
+            if (_countdownText == null) yield break;
 
-        //_canvasRectTransform.gameObject.SetActive(true);
-        _canvasRectTransform.localScale = _startScale;
+            //_canvasRectTransform.gameObject.SetActive(true);
+            _canvasRectTransform.localScale = _startScale;
+        }
+        
 
         while (duration >= 1 )
         {
             Debug.Log("Duration: " + duration.ToString());
-            _countdownText.text = duration.ToString();
-            _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => { _canvasRectTransform.localScale = _startScale; });
+            if(IsOwner)
+            {
+                _countdownText.text = duration.ToString();
+                _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => { _canvasRectTransform.localScale = _startScale; });
+            }
+            
             yield return new WaitForSeconds(1);
             if(duration > 0) duration--;
         }
 
-        _countdownText.text = duration.ToString();
-        _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => { _canvasRectTransform.localScale = Vector3.zero; });
+        if(IsOwner)
+        {
+            _countdownText.text = duration.ToString();
+            _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => { _canvasRectTransform.localScale = Vector3.zero; });
+        }
+        
 
-        Debug.Log("Report Objective Complete to ObjectiveManager");
-        ObjectiveManager.Instance.ReportObjectiveAction(_playerData.Objective, _playerData.ClientId);
+        if(IsServer)
+        {
+            Debug.Log("Report Objective Complete to ObjectiveManager");
+            ObjectiveManager.Instance.ReportObjectiveAction(playerData.Objective, playerData.ClientId);
+        }
+        
 
         _coroutine = null;
     }
 
     public void CancelActionObjective(Objective objective, ulong clientId)
     {
-        if (objective == null) return;
-        if (_coroutine == null) return;
+        if(IsServer)
+        {
+            if (objective == null) return;
+            if (_coroutine == null) return;
 
-        if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out _playerData)) return;
+            if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out playerData)) return;
 
-        if (!objective.Equals(_playerData.Objective)) return;
+            if (!objective.Equals(playerData.Objective)) return;
 
-        // Objective macthes the players - stop the countdown
-        Debug.Log("CancelActionObjective");
-        StopCoroutine(_coroutine);
-        _coroutine = null;
-        //_canvasRectTransform.gameObject.SetActive(false);
-        _canvasRectTransform.localScale = Vector3.zero;
+            // Objective macthes the players - stop the countdown
+            Debug.Log("CancelActionObjective");
+            StopCoroutine(_coroutine);
+            CancelObjectiveTimerClientRpc(playerData.ClientRpcParams);
+            _coroutine = null;
+            //_canvasRectTransform.gameObject.SetActive(false);
+            if(IsOwner)
+            {
+                _canvasRectTransform.localScale = Vector3.zero;
+            }
+            
+        }
+        
     }
 
 }

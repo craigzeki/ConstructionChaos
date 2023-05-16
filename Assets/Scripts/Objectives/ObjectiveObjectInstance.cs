@@ -40,19 +40,24 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
                 _objectiveColour = objectiveObject.PossibleColours[UnityEngine.Random.Range(0, objectiveObject.PossibleColours.Count)];
             }
 
-            ObjectiveManager.Instance.RegisterObject(this);
+            // Removed for now, the ObjectManager was re-worked to use FindObjectOfType as it needed to get zones before objects
+            // and there was no easy way to do this if everything was self registering
+            //ObjectiveManager.Instance.RegisterObject(this);
 
             // For each action, add the configured components to the gameObject
             foreach (ObjectiveAction action in objectiveObject.PossibleActions)
             {
+                // For each action, add it as a component to the object
                 foreach (TypeReference typeReference in action.ActionBehaviours)
                 {
-
+                    // only add it if it inherits from ObjectActionBehaviour - this is required to be able to set parameters
                     if (typeReference.Type.IsSubclassOf(typeof(ObjectiveActionBehaviour)))
                     {
+
                         ObjectiveActionBehaviour component = this.gameObject.AddComponent(typeReference) as ObjectiveActionBehaviour;
                         component.Conditions = action.PossibleConditions;
-                        component.Objective = new Objective(action, _objectiveColour, objectiveObject, null, false);
+                        // Do not need to set the condition & zone as this will be set during action detection in the ObjectiveActionBehaviour
+                        component.Objective = new Objective(action, _objectiveColour, objectiveObject, null, null, false);
                     }
                     
                     

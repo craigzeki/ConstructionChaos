@@ -146,7 +146,10 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.PLAYING_LOBBY:
                 // TODO move the below to Playing_Round once some rounds are implemented
                 // Now that scene has loaded, inform the player of their objective
-                // Must wait until the scene was loaded so that the ObjectiveManager has initialized with objectives
+                // First reset the objective manager so that it will gather all zones / objects
+                // Need to consider doing this in the loading screen so that there is no hang to the player
+                
+
                 foreach(NetPlayerData netPlayerData in PlayerData.Values)
                 {
                     //setup clientRpc params to only send to specific client
@@ -263,6 +266,7 @@ public class GameManager : MonoBehaviour
 
     public void LobbyLoaded()
     {
+        ObjectiveManager.Instance.ResetObjectiveManager();
         OnSceneLoaded?.Invoke(this, EventArgs.Empty);
         DoStateTransition(GAMESTATE.PLAYING_LOBBY);
     }

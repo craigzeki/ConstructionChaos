@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fde6e9621eed4ed9ab84aa950bf7b35, type: 3}
-  m_Name: DURING_COUNTDOWN
+  m_Name: OVER
   m_EditorClassIdentifier: 
-  _friendlyString: during the countdown
-  _duringCountdown: 1
-  _requiresObjectToBeInZone: 0
-  _requiredZone: 0
+  _friendlyString: over <ZONE>
+  _duringCountdown: 0
+  _requiresObjectToBeInZone: 1
+  _requiredZone: 2
   _requiredZoneColour: {fileID: 0}

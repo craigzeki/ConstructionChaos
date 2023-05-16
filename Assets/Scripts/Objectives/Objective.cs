@@ -13,67 +13,76 @@ public class Objective : IEquatable<Objective>
 	/// Modifier indicating the objective is to avoid instead of do
 	/// </summary>
     [SerializeField]
-    private bool inverse;
-    public bool Inverse => inverse;
+    private bool _inverse;
+    public bool Inverse => _inverse;
 
     /// <summary>
     /// The required action
     /// </summary>
     [SerializeField]
-    private ObjectiveAction action;
-    public ObjectiveAction Action => action;
+    private ObjectiveAction _action;
+    public ObjectiveAction Action => _action;
 
     /// <summary>
     /// The required colour
     /// </summary>
     [SerializeField]
-    private ObjectiveColour colour;
-    public ObjectiveColour Colour => colour;
+    private ObjectiveColour _colour;
+    public ObjectiveColour Colour => _colour;
 
     /// <summary>
     /// The required object
     /// </summary>
     [SerializeField]
-    private ObjectiveObject @object;
-    public ObjectiveObject Object => @object;
+    private ObjectiveObject _object;
+    public ObjectiveObject Object => _object;
 
     /// <summary>
     /// The required condition
     /// </summary>
     [SerializeField]
-    private ObjectiveCondition condition;
-    public ObjectiveCondition Condition => condition;
+    private ObjectiveCondition _condition;
+    public ObjectiveCondition Condition => _condition;
 
 	/// <summary>
 	/// The generated string which is displayed to the player
 	/// </summary>
     [SerializeField]
-    private string objectiveString;
-    public string ObjectiveString => objectiveString;
+    private string _objectiveString;
+    public string ObjectiveString => _objectiveString;
+
+
+    /// <summary>
+    /// The zone (if any) required for the condition
+    /// </summary>
+    [SerializeField]
+    private Zone _zone;
+    public Zone Zone => _zone;
 
     /// <summary>
     /// Constructor for the objective class
     /// </summary>
     /// <param name="action">The required action</param>
     /// <param name="colour">The required colour</param>
-    /// <param name="object">The required object</param>
+    /// <param name="objObject">The required object</param>
     /// <param name="condition">The required condition</param>
     /// <param name="inverse">Modifier indicating the objective is to avoid instead of do</param>
-    public Objective(ObjectiveAction action, ObjectiveColour colour, ObjectiveObject @object, ObjectiveCondition condition, bool inverse)
+    public Objective(ObjectiveAction action, ObjectiveColour colour, ObjectiveObject objObject, ObjectiveCondition condition, Zone zone, bool inverse)
     {
-        this.action = action;
-        this.colour = colour;
-        this.@object = @object;
-        this.condition = condition;
-        this.inverse = inverse;
+        this._action = action;
+        this._colour = colour;
+        this._object = objObject;
+        this._condition = condition;
+        this._zone = zone;
+        this._inverse = inverse;
         
         if(condition == null)
         {
-            this.objectiveString = "INVALID OBJECTIVE";
+            this._objectiveString = "INVALID OBJECTIVE";
         }
         else
         {
-            this.objectiveString = ObjectiveManager.Instance.CreateObjectiveString(this);
+            this._objectiveString = ObjectiveManager.Instance.CreateObjectiveString(this);
         }
         
     }
@@ -85,13 +94,15 @@ public class Objective : IEquatable<Objective>
     /// <returns>True of False (Equal or Not Equal)</returns>
     public bool Equals(Objective other)
     {
+        if (other is null) return false;
         return (
-                action.Equals(other.action) &&
-                colour.Equals(other.colour) &&
-                @object.Equals(other.@object) &&
-                condition.Equals(other.condition) &&
-                inverse.Equals(other.inverse) &&
-                objectiveString.Equals(other.objectiveString)
+                (_action != null ? _action.Equals(other._action) : other._action == null) &&
+                (_colour != null ? _colour.Equals(other._colour) : other._colour == null) &&
+                (_object != null ? _object.Equals(other._object) : other._object == null) &&
+                (_condition != null ? _condition.Equals(other._condition) : other._condition == null) &&
+                _inverse.Equals(other._inverse) &&
+                _objectiveString.Equals(other._objectiveString) &&
+                (_zone != null ? _zone.Equals(other.Zone) : other.Zone == null)
                 );
     }
 
@@ -123,12 +134,13 @@ public class Objective : IEquatable<Objective>
         unchecked
         {
             int hashCode = 17;
-            hashCode = (hashCode * 23) + (action != null ? action.GetHashCode() : 0);
-            hashCode = (hashCode * 23) + (colour != null ? colour.GetHashCode() : 0);
-            hashCode = (hashCode * 23) + (@object != null ? @object.GetHashCode() : 0);
-            hashCode = (hashCode * 23) + (condition != null ? condition.GetHashCode() : 0);
-            hashCode = (hashCode * 23) + inverse.GetHashCode();
-            hashCode = (hashCode * 23) + (objectiveString != null ? objectiveString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_action != null ? _action.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_colour != null ? _colour.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_object != null ? _object.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_condition != null ? _condition.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + _inverse.GetHashCode();
+            hashCode = (hashCode * 23) + (_objectiveString != null ? _objectiveString.GetHashCode() : 0);
+            hashCode = (hashCode* 23) + (_zone != null ? _zone.GetHashCode() : 0);
             return hashCode;
         }
     }

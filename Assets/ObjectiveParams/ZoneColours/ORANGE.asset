@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fde6e9621eed4ed9ab84aa950bf7b35, type: 3}
-  m_Name: DURING_COUNTDOWN
+  m_Script: {fileID: 11500000, guid: d01b65ace6843ad42ad47d5c8ea12424, type: 3}
+  m_Name: ORANGE
   m_EditorClassIdentifier: 
-  _friendlyString: during the countdown
-  _duringCountdown: 1
-  _requiresObjectToBeInZone: 0
-  _requiredZone: 0
-  _requiredZoneColour: {fileID: 0}
+  friendlyString: orange
+  colour: {r: 1, g: 0.524459, b: 0, a: 1}

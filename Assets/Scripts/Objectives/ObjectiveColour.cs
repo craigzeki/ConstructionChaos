@@ -32,6 +32,7 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, IN
     /// <returns>True of False (Equal or Not Equal)</returns>
     public bool Equals(ObjectiveColour other)
     {
+        if (other is null) return false;
         return
         (
             (friendlyString.Equals(other.friendlyString)) &&

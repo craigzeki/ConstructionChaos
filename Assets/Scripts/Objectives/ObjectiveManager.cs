@@ -27,6 +27,11 @@ public class ObjectiveManager : MonoBehaviour
 	[SerializeField] private List<Objective> _possibleObjectives = new List<Objective>();
 
 	/// <summary>
+	/// List of all possible zones based on what is present in the scene
+	/// </summary>
+	[SerializeField] private Dictionary<Zone.ZONE, List<Zone>> _possibleZones = new Dictionary<Zone.ZONE, List<Zone>>();
+
+	/// <summary>
 	/// A dictionary which is hashed based on the objective - this allows very performant lookup of the assigned ClientID<br/>
 	/// during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID.
 	/// </summary>
@@ -77,13 +82,34 @@ public class ObjectiveManager : MonoBehaviour
 	{
 		_objectiveObjects.Clear();
 		_possibleObjectives.Clear();
+		_possibleZones.Clear();
 		// Clear the player data specific to a round
 		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
 		{
 			GameManager.Instance.PlayerData[clientId].Objective = null;
-			// TODO: Add any other params that need clearing - objectives cleared this round? etc.
+			// TODO: Add any other objective related params that need clearing - objectives cleared this round? etc.
 		}
-	}
+
+		// Get all the zones in the scene
+		List<Zone> zones = FindObjectsOfType<Zone>().ToList();
+		foreach(Zone zone in zones)
+		{
+			RegisterZone(zone);
+		}
+
+		// Get all the objectives in the scene
+		List<ObjectiveObjectInstance> objectiveObjectInstances = FindObjectsOfType<ObjectiveObjectInstance>().ToList();
+		foreach(ObjectiveObjectInstance objectiveObjectInstance in objectiveObjectInstances)
+		{
+			RegisterObject(objectiveObjectInstance);
+		}
+
+        // Shuffle the possible objectives
+        _possibleObjectives.Shuffle();
+
+        // Reset the next available objective counter
+        _nextAvailableObjective = 0;
+    }
 
     /// <summary>
     /// Triggered by GameManager event once a player has spawned on the server.<br/>
@@ -93,13 +119,19 @@ public class ObjectiveManager : MonoBehaviour
     /// <returns>True if successful, False if out of objectives or clientId not found in PlayerData</returns>
     public bool AssignPlayerObjective(ulong clientId)
 	{
-        if (_nextAvailableObjective >= _possibleObjectives.Count) return false;
-
         if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out NetPlayerData playerData)) return false;
 
-        _playerObjectives.Add(_possibleObjectives[_nextAvailableObjective], clientId);
-        playerData.Objective = _possibleObjectives[_nextAvailableObjective];
-        _nextAvailableObjective++;
+		if(_nextAvailableObjective < _possibleObjectives.Count)
+		{
+            _playerObjectives.Add(_possibleObjectives[_nextAvailableObjective], clientId);
+            playerData.Objective = _possibleObjectives[_nextAvailableObjective];
+            _nextAvailableObjective++;
+        }
+		else
+		{
+			playerData.Objective = null;
+		}
+        
 
         return true;
     }
@@ -168,23 +200,40 @@ public class ObjectiveManager : MonoBehaviour
 			{
 				foreach(ObjectiveCondition condition in action.PossibleConditions)
 				{
-					Objective newObjective = new Objective(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, false);
-                    _possibleObjectives.Add(newObjective);
+					Zone zone = null;
+					if(condition.RequiresObjectToBeInZone)
+					{
+						// Condition requires a zone, try and get a random one from the list stored in the dictionary
+						if(_possibleZones.TryGetValue(condition.RequiredZone, out List<Zone> zones))
+						{
+							//if(zones.Count > 0) zone = zones[UnityEngine.Random.Range((int)0, zones.Count)];
+							foreach(Zone possibleZone in zones)
+							{
+                                Objective newObjective = new Objective(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, false);
+                                _possibleObjectives.Add(newObjective);
+                            }
+						}
+					}
+					
 				}
 			}
 		}
 	}
 
-	/// <summary>
-	/// Things to do once when a round starts
-	/// </summary>
-	public void OnRoundStart()
-	{
-		// Shuffle the possible objectives
-		_possibleObjectives.Shuffle();
 
-		// Reset the next available objective counter
-		_nextAvailableObjective = 0;
+	public void RegisterZone(Zone zone)
+	{
+
+		if (_possibleZones.TryGetValue(zone.ZoneType, out List<Zone> zones))
+		{
+			if (!zones.Contains(zone)) zones.Add(zone);
+		}
+		else
+		{
+			List<Zone> newZones = new List<Zone>();
+			newZones.Add(zone);
+			_possibleZones.Add(zone.ZoneType, newZones);
+		}
 	}
 
 	/// <summary>
@@ -205,6 +254,10 @@ public class ObjectiveManager : MonoBehaviour
 			str = str.Replace("<COLOUR>", objective.Colour.FriendlyString);
 			str = str.Replace("<OBJECT>", objective.Object.FriendlyString);
 			str = str.Replace("<CONDITION>", objective.Condition.FriendlyString);
+			if(objective.Condition.RequiresObjectToBeInZone)
+			{
+				str = str.Replace("<ZONE>", objective.Zone.FriendlyString);
+			}
 		}
 		
 		if(objective.Inverse)
@@ -287,7 +340,7 @@ public class ObjectiveManager : MonoBehaviour
 			// Assign a new objective
 			AssignPlayerObjective(clientId);
 
-			GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective.ObjectiveString, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
+			GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective?.ObjectiveString, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
 		}
 	}
 }

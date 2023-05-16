@@ -17,7 +17,7 @@ public class ActionGrab : ObjectiveActionBehaviour
 
     private void Update()
     {
-        List<ObjectiveCondition> activeConditions = GetActiveConditions();
+        List<(ObjectiveCondition, Zone)> activeConditions = GetActiveConditions();
 
         // Create a copy of the previous joints
         _prevFixedJoint2Ds = new(_activeFixedJoint2Ds);
@@ -33,7 +33,7 @@ public class ActionGrab : ObjectiveActionBehaviour
             {
                 // Existing joint
                 // Check if it still meets conditions
-                if (activeConditions.Contains(_prevFixedJoint2Ds[fixedJoint2D].runningObjective.Condition))
+                if (activeConditions.Contains((_prevFixedJoint2Ds[fixedJoint2D].runningObjective.Condition, _prevFixedJoint2Ds[fixedJoint2D].runningObjective.Zone)))
                 {
                     // Still meets conditions
                     // Remove it from the prev List so that it doesn't get cancelled later
@@ -54,9 +54,10 @@ public class ActionGrab : ObjectiveActionBehaviour
                 // New joint - register action started
                 if (fixedJoint2D.connectedBody.gameObject.TryGetComponent<Ragdoll>(out Ragdoll ragdoll))
                 {
-                    foreach (ObjectiveCondition condition in activeConditions)
+                    foreach ((ObjectiveCondition condition, Zone zone) in activeConditions)
                     {
-                        Objective objective = new Objective(Objective.Action, Objective.Colour, Objective.Object, condition, Objective.Inverse);
+
+                        Objective objective = new Objective(Objective.Action, Objective.Colour, Objective.Object, condition, zone, Objective.Inverse);
                         if (ragdoll.ObjectiveActionReporter.CheckAndStartActionObjective(objective, ragdoll.ClientId))
                         {
                             // Add to the active list
