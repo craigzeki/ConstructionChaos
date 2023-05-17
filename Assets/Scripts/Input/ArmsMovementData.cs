@@ -17,6 +17,12 @@ public struct ArmsMovementData : INetworkSerializable
 
     /// <summary>
     /// Action Map: Gameplay<br/>
+    /// Float representing the rotation of the arms
+    /// </summary>
+    public float ArmRotation;
+
+    /// <summary>
+    /// Action Map: Gameplay<br/>
     /// Boolean flag indicating if last input was from a mouse controller
     /// </summary>
     public bool IsMouseController;
@@ -27,9 +33,10 @@ public struct ArmsMovementData : INetworkSerializable
     /// </summary>
     public bool ArmsStickReleased;
 
-    public ArmsMovementData(Vector2 armsControllerInput, bool isMouseController, bool armsStickReleased)
+    public ArmsMovementData(Vector2 armsControllerInput, float armRotation, bool isMouseController, bool armsStickReleased)
     {
         ArmsControllerInput = armsControllerInput;
+        ArmRotation = armRotation;
         IsMouseController = isMouseController;
         ArmsStickReleased = armsStickReleased;
     }
@@ -37,6 +44,7 @@ public struct ArmsMovementData : INetworkSerializable
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref ArmsControllerInput);
+        serializer.SerializeValue(ref ArmRotation);
         serializer.SerializeValue(ref IsMouseController);
         serializer.SerializeValue(ref ArmsStickReleased);
     }

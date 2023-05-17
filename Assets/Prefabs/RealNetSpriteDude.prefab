@@ -367,7 +367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946483490279636583}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0023, z: 0}
+  m_LocalPosition: {x: 0.0123, y: 0.0023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -954,6 +954,7 @@ MonoBehaviour:
   ObjectiveActionReporter: {fileID: 0}
   CharacterInputHandler: {fileID: 0}
   _rejoinAnchorDistanceThreshold: 0.005
+  _handType: 1
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1109,6 +1110,7 @@ MonoBehaviour:
   ObjectiveActionReporter: {fileID: 0}
   CharacterInputHandler: {fileID: 0}
   _rejoinAnchorDistanceThreshold: 0.005
+  _handType: 0
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1335,6 +1337,7 @@ MonoBehaviour:
   CharacterInputData:
     ArmsMovementData:
       ArmsControllerInput: {x: 0, y: 0}
+      ArmRotation: 0
       IsMouseController: 0
       ArmsStickReleased: 0
     JumpValue: 0
@@ -3210,7 +3213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5808222033182072917}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0023, z: 0}
+  m_LocalPosition: {x: -0.0123, y: 0.0023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

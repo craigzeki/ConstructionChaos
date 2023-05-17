@@ -27,6 +27,8 @@ public class CharacterInputHandler : NetworkBehaviour
     private ControlActionMaps _currentActionMap;
 
     private bool _menuButtonPressed = false;
+    Vector2 _screenOrigin = new Vector2(Screen.width / 2, Screen.height / 2);
+    Vector2 _delta = Vector2.zero;
 
     public CharacterInputData CharacterInputData = new CharacterInputData();
 
@@ -136,6 +138,7 @@ public class CharacterInputHandler : NetworkBehaviour
     {
         CharacterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
         CharacterInputData.ArmsMovementData.IsMouseController = true;
+        CalculateArmRotation();
     }
 
     /// <summary>
@@ -148,6 +151,25 @@ public class CharacterInputHandler : NetworkBehaviour
         CharacterInputData.ArmsMovementData.ArmsControllerInput = value.ReadValue<Vector2>();
         CharacterInputData.ArmsMovementData.IsMouseController = false;
         CharacterInputData.ArmsMovementData.ArmsStickReleased = CharacterInputData.ArmsMovementData.ArmsControllerInput.Vector2Approximately(Vector2.zero);
+        CalculateArmRotation();
+    }
+
+    /// <summary>
+    /// Calculates the arm rotation value based on which controller is active
+    /// </summary>
+    private void CalculateArmRotation()
+    {
+        if(CharacterInputData.ArmsMovementData.IsMouseController)
+        {
+            //! This only works because the player is always in the center of the screen
+            _delta = CharacterInputData.ArmsMovementData.ArmsControllerInput - _screenOrigin;
+
+            CharacterInputData.ArmsMovementData.ArmRotation = Mathf.Atan2(_delta.x, -_delta.y) * Mathf.Rad2Deg;
+        }
+        else
+        {
+            CharacterInputData.ArmsMovementData.ArmRotation = Mathf.Atan2(CharacterInputData.ArmsMovementData.ArmsControllerInput.x, -CharacterInputData.ArmsMovementData.ArmsControllerInput.y) * Mathf.Rad2Deg;
+        }
     }
 
     /// <summary>
