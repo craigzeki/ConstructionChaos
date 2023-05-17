@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['joingame_0',['JoinGame',['../class_connection_handler.html#ad80fdb9284b085c6b0d1aac5555104c8',1,'ConnectionHandler']]],
-  ['joinrelay_1',['JoinRelay',['../class_connection_handler.html#adb52e5b49c6d7adf0dda062e0934d7a2',1,'ConnectionHandler']]],
-  ['jumpvalue_2',['JumpValue',['../class_input_handler.html#ad41291ac5f2d9e533eea80aa34a22a71',1,'InputHandler']]]
+  ['handlemovementandjump_0',['HandleMovementAndJump',['../class_stick_movement.html#a046371064fa68f3d5d80c8539dde1f56',1,'StickMovement']]],
+  ['hostbutton_1',['HostButton',['../class_menu_u_i_manager.html#a7d68021f5c01426277ee24ade9ddf358',1,'MenuUIManager']]],
+  ['hostgame_2',['HostGame',['../class_connection_handler.html#ab17bd06b8b4e045de1dde01ab6807335',1,'ConnectionHandler']]]
 ];

@@ -4,7 +4,7 @@
 
 Runs server side only.~\newline
  Creates random objectives and assigns them to players.~\newline
- Provides an event driven system to allow players to report when an action has occured.~\newline
+ Provides an event driven system to allow players to report when an action has occurred.~\newline
  Will report back to the player the status of their objective.~\newline
   
 
@@ -20,61 +20,41 @@ Inheritance diagram for Objective\+Manager\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Objective\+Manager\+:\nopagebreak
+Collaboration diagram for Objective\+Manager\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=232pt]{class_objective_manager__coll__graph}
+\includegraphics[width=238pt]{class_objective_manager__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Object}} \{ \newline
-{\bfseries ANY\+\_\+\+OBJECT} = 0
-, {\bfseries CRATE}
-, {\bfseries BARREL}
-, {\bfseries CHAIN}
-, \newline
-{\bfseries NUM\+\_\+\+OF\+\_\+\+OBJECTS}
- \}
-\begin{DoxyCompactList}\small\item\em List of possible objects that can be used in defining an objective. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Colour}} \{ \newline
-{\bfseries ANY\+\_\+\+COLOUR} = 0
-, {\bfseries RED}
-, {\bfseries YELLOW}
-, {\bfseries BLUE}
-, \newline
-{\bfseries GREEN}
-, {\bfseries PURPLE}
-, {\bfseries BLACK}
-, {\bfseries WHITE}
-, \newline
-{\bfseries NUM\+\_\+\+OF\+\_\+\+COLOURS}
- \}
-\begin{DoxyCompactList}\small\item\em List of possible colours that can be used in defining an objective. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Action}} \{ \newline
-{\bfseries ANY\+\_\+\+ACTION} = 0
-, {\bfseries GRAB}
-, {\bfseries TOUCH}
-, {\bfseries SWING}
-, \newline
-{\bfseries NUM\+\_\+\+OF\+\_\+\+ACTIONS}
- \}
-\begin{DoxyCompactList}\small\item\em List of possible actions that can be used in defining an objective. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Conditions}} \{ {\bfseries NO\+\_\+\+CONDITION} = 0
-, {\bfseries DURING\+\_\+\+COUNTDOWN}
-, {\bfseries WHEN\+\_\+\+IN\+\_\+\+GOAL}
-, {\bfseries NUM\+\_\+\+OF\+\_\+\+CONDITIONS}
- \}
-\begin{DoxyCompactList}\small\item\em List of possible conditions that can be used in defining an objective. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}{Reset\+Objective\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Resets the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} to start a new round. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{Assign\+Player\+Objective}} (ulong client\+Id)
+\begin{DoxyCompactList}\small\item\em Triggered by \mbox{\hyperlink{class_game_manager}{Game\+Manager}} event once a player has spawned on the server.~\newline
+ Sets the player\textquotesingle{}s objective to the next one on the possible objectives list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}{Remove\+Player}} (ulong client\+Id)
+\begin{DoxyCompactList}\small\item\em To be called if a player disconnects intentionally.~\newline
+ Removes the player from the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}~\newline
+ The player\textquotesingle{}s Client\+RPC will no longer be called to send new Objectives. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_objective_manager_a00505f6e1b68931dd95c095570706733}{Reconnect\+Player}} (ulong current\+Client\+Id)
+\begin{DoxyCompactList}\small\item\em To be called if a player has rejoined following a disconnection.~\newline
+ This will re-\/register the player with the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}.~\newline
+ If the player\textquotesingle{}s old client\+ID is recognized, it will be replaced with the new one.~\newline
+ The player\textquotesingle{}s previous Objective\+Player\+Data will be retained, if not a new one will be created ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}{Register\+Object}} (\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} objective\+Object\+Instance)
+\begin{DoxyCompactList}\small\item\em Registers the objective\+Object\+Instance with the \mbox{\hyperlink{class_objective}{Objective}} Manager~\newline
+ This allows the \mbox{\hyperlink{class_objective}{Objective}} Manager to use this object when creating objectives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}{Register\+Zone}} (\mbox{\hyperlink{class_zone}{Zone}} zone)
+\begin{DoxyCompactList}\small\item\em Registers a zone into the possible\+Zones dictionary, only if unique. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}{Create\+Objective\+String}} (\mbox{\hyperlink{class_objective}{Objective}} objective)
 \begin{DoxyCompactList}\small\item\em Creates a structred string which can be used to display the objective to the player. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_objective}{Objective}} \mbox{\hyperlink{class_objective_manager_af421d4a74032b1f9afe42150a19397c0}{Get\+Objective}} (uint player)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}{Report\+Objective\+Action}} (\mbox{\hyperlink{class_objective}{Objective}} objective\+Occured, ulong player\+Client\+Id)
+\begin{DoxyCompactList}\small\item\em Interface to allow objects to report objective actions occuring and have them checked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -85,139 +65,100 @@ static \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} \mbox{\hyp
 \item 
 void \mbox{\hyperlink{class_objective_manager_aba091a8852240edf5798fbc092825144}{Awake}} ()
 \item 
-\mbox{\hyperlink{class_objective}{Objective}} \mbox{\hyperlink{class_objective_manager_a55d53693e1b4ac6ff300b4f6086ae454}{Create\+Random\+Objective}} (uint player)
-\begin{DoxyCompactList}\small\item\em Randomly selects an objective for the given player. \end{DoxyCompactList}\item 
-List$<$ int $>$ \mbox{\hyperlink{class_objective_manager_a924a9e4e0ed8e4658d42da63adec0b7e}{Lookup2\+DVertical}} (int index, bool\mbox{[},\mbox{]} lookup\+Array, bool match)
-\begin{DoxyCompactList}\small\item\em Provides all horizontal (rows) in the veritical (col) specified by index, which are true or false as specified by \textquotesingle{}match\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_objective_manager_a0655506a561db8a757844e099b89f520}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_objective_manager_a4ec5975b52dfcd6d4f33ec5aac40aff7}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{On\+Player\+Spawned}} (object sender, ulong client\+Id)
+\begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Spawned event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_objective_manager_a009c801b8ac08e51e649d1f2c4714b14}{On\+Player\+Disconnect}} (object sender, ulong client\+Id)
+\begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Disconnect event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_objective_manager_a1652acec1f6b135d923619bc929bdebe}{On\+Player\+Reconnect}} (object sender, \mbox{\hyperlink{class_player_reconnect_data}{Player\+Reconnect\+Data}} player\+Reconnect\+Data)
+\begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Reconnect event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}{On\+Scene\+Loaded}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends On\+Scene\+Loaded event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_objective_manager_a25d40c1f9bf2bb475ea54c7e0bfcc659}{\+\_\+colour\+Srings}}
-\begin{DoxyCompactList}\small\item\em String map of colours. \end{DoxyCompactList}\item 
-string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_objective_manager_aff47c912446ced5c1235aafe865404c4}{\+\_\+object\+Strings}}
-\begin{DoxyCompactList}\small\item\em String map of objects. \end{DoxyCompactList}\item 
-string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_objective_manager_a907801a398fc996b9767ec98e533e268}{\+\_\+action\+Strings}}
-\begin{DoxyCompactList}\small\item\em Defines the structure of the objetive sentance depending on the action. \end{DoxyCompactList}\item 
-string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_objective_manager_a6e05f4b5766296af27e4249c324fcd74}{\+\_\+condition\+Strings}}
-\begin{DoxyCompactList}\small\item\em String map of conditions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}\label{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}} 
+Dictionary$<$ \mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}}, int $>$ {\bfseries \+\_\+objective\+Objects} = new Dictionary$<$\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}}, int$>$()
+\begin{DoxyCompactList}\small\item\em Dictionary of Objective\+Object\+Instances and their corresponding qty that exist in the current scene~\newline
+ A dictionary was the best way to quickly check and ignore identical objects (e.\+g. two purple crates) from being added and instead tracks the duplicate by adding to the qty (int) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_manager_a65027ae111883976e9a022f86d3175f2}\label{class_objective_manager_a65027ae111883976e9a022f86d3175f2}} 
+List$<$ \mbox{\hyperlink{class_objective}{Objective}} $>$ {\bfseries \+\_\+possible\+Objectives} = new List$<$\mbox{\hyperlink{class_objective}{Objective}}$>$()
+\begin{DoxyCompactList}\small\item\em List of all possible objectives based on the objects in the scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_manager_a722a4a5300f7373feebde579e16350c3}\label{class_objective_manager_a722a4a5300f7373feebde579e16350c3}} 
+Dictionary$<$ Zone.\+ZONE, List$<$ \mbox{\hyperlink{class_zone}{Zone}} $>$ $>$ {\bfseries \+\_\+possible\+Zones} = new Dictionary$<$Zone.\+ZONE, List$<$\mbox{\hyperlink{class_zone}{Zone}}$>$$>$()
+\begin{DoxyCompactList}\small\item\em List of all possible zones based on what is present in the scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}\label{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}} 
+Dictionary$<$ \mbox{\hyperlink{class_objective}{Objective}}, ulong $>$ {\bfseries \+\_\+player\+Objectives} = new Dictionary$<$\mbox{\hyperlink{class_objective}{Objective}}, ulong$>$()
+\begin{DoxyCompactList}\small\item\em A dictionary which is hashed based on the objective -\/ this allows very performant lookup of the assigned Client\+ID~\newline
+ during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_manager_af6e9c14ad90215d4f74aab58639d17fc}\label{class_objective_manager_af6e9c14ad90215d4f74aab58639d17fc}} 
 string {\bfseries \+\_\+inverse\+String} = \char`\"{}Don\textquotesingle{}t \char`\"{}
 \item 
-bool\mbox{[},\mbox{]} \mbox{\hyperlink{class_objective_manager_ab38c87ae75be42f04d85791decfd7fdf}{\+\_\+colour\+To\+Object}}
-\begin{DoxyCompactList}\small\item\em Defines what colours each object can be. \end{DoxyCompactList}\item 
-bool\mbox{[},\mbox{]} \mbox{\hyperlink{class_objective_manager_aed6411b644d17040c5878d86cda9c4f9}{\+\_\+object\+To\+Action}}
-\begin{DoxyCompactList}\small\item\em Defines what actions can be made with which object. \end{DoxyCompactList}\item 
-bool\mbox{[},\mbox{]} \mbox{\hyperlink{class_objective_manager_a2ca4075b5f6e7fe649b9d1b073c2ab50}{\+\_\+condition\+To\+Action}}
+\mbox{\Hypertarget{class_objective_manager_a01a80df5ca83b47db193d3fc2bbd886c}\label{class_objective_manager_a01a80df5ca83b47db193d3fc2bbd886c}} 
+string {\bfseries \+\_\+any\+Action\+String} = \char`\"{}Do anything with\char`\"{}
 \item 
-\mbox{\Hypertarget{class_objective_manager_a60f7f1b6570cbd4a5538165b3320d72e}\label{class_objective_manager_a60f7f1b6570cbd4a5538165b3320d72e}} 
-List$<$ \mbox{\hyperlink{class_objective}{Objective}} $>$ {\bfseries \+\_\+objectives} = new List$<$\mbox{\hyperlink{class_objective}{Objective}}$>$()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}\label{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}} 
+int {\bfseries \+\_\+next\+Available\+Objective} = 0
+\begin{DoxyCompactList}\small\item\em Keeps track of the position in the \+\_\+possible\+Objectives list for the next one which hasn\textquotesingle{}t been used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_manager_a40534d84748fab29bff40c67943244a0}\label{class_objective_manager_a40534d84748fab29bff40c67943244a0}} 
-static \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} {\bfseries instance}
+\mbox{\Hypertarget{class_objective_manager_aec83951ad0b060f8cff8e14ba3998c30}\label{class_objective_manager_aec83951ad0b060f8cff8e14ba3998c30}} 
+static \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} {\bfseries \+\_\+instance}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Runs server side only.~\newline
  Creates random objectives and assigns them to players.~\newline
- Provides an event driven system to allow players to report when an action has occured.~\newline
+ Provides an event driven system to allow players to report when an action has occurred.~\newline
  Will report back to the player the status of their objective.~\newline
  
 
-\doxysubsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}\label{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}} 
-\index{ObjectiveManager@{ObjectiveManager}!ObjectiveAction@{ObjectiveAction}}
-\index{ObjectiveAction@{ObjectiveAction}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{ObjectiveAction}{ObjectiveAction}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Manager.\+Objective\+Action}}}
-
-
-
-List of possible actions that can be used in defining an objective. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00047\ \ \ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ ANY\_ACTION\ =\ 0,}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ GRAB,}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ TOUCH,}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ SWING,}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ NUM\_OF\_ACTIONS}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}\label{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}} 
-\index{ObjectiveManager@{ObjectiveManager}!ObjectiveColour@{ObjectiveColour}}
-\index{ObjectiveColour@{ObjectiveColour}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{ObjectiveColour}{ObjectiveColour}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Manager.\+Objective\+Colour}}}
-
-
-
-List of possible colours that can be used in defining an objective. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ANY\_COLOUR\ =\ 0,}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ RED,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ YELLOW,}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ BLUE,}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ GREEN,}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ PURPLE,}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ BLACK,}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ WHITE,}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ NUM\_OF\_COLOURS}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}\label{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}} 
-\index{ObjectiveManager@{ObjectiveManager}!ObjectiveConditions@{ObjectiveConditions}}
-\index{ObjectiveConditions@{ObjectiveConditions}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{ObjectiveConditions}{ObjectiveConditions}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Manager.\+Objective\+Conditions}}}
-
-
-
-List of possible conditions that can be used in defining an objective. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00059\ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ NO\_CONDITION\ =\ 0,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ DURING\_COUNTDOWN,}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ WHEN\_IN\_GOAL,}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ NUM\_OF\_CONDITIONS}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}\label{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}} 
-\index{ObjectiveManager@{ObjectiveManager}!ObjectiveObject@{ObjectiveObject}}
-\index{ObjectiveObject@{ObjectiveObject}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{ObjectiveObject}{ObjectiveObject}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Manager.\+Objective\+Object}}}
-
-
-
-List of possible objects that can be used in defining an objective. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ ANY\_OBJECT\ =\ 0,}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ CRATE,}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ BARREL,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CHAIN,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ NUM\_OF\_OBJECTS}
-\DoxyCodeLine{00025\ \ \ \ \ \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_objective_manager_a1251be92e8837460174e21319ba03401}\label{class_objective_manager_a1251be92e8837460174e21319ba03401}} 
+\index{ObjectiveManager@{ObjectiveManager}!AssignPlayerObjective@{AssignPlayerObjective}}
+\index{AssignPlayerObjective@{AssignPlayerObjective}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{AssignPlayerObjective()}{AssignPlayerObjective()}}
+{\footnotesize\ttfamily bool Objective\+Manager.\+Assign\+Player\+Objective (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})}
+
+
+
+Triggered by \mbox{\hyperlink{class_game_manager}{Game\+Manager}} event once a player has spawned on the server.~\newline
+ Sets the player\textquotesingle{}s objective to the next one on the possible objectives list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+Id} & The network client ID of the player\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, False if out of objectives or client\+Id not found in Player\+Data
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}\ <\ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Count)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Add(\mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}[\mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}],\ clientId);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}[\mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}];}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}++;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_aba091a8852240edf5798fbc092825144}\label{class_objective_manager_aba091a8852240edf5798fbc092825144}} 
 \index{ObjectiveManager@{ObjectiveManager}!Awake@{Awake}}
 \index{Awake@{Awake}!ObjectiveManager@{ObjectiveManager}}
@@ -226,17 +167,9 @@ List of possible objects that can be used in defining an objective.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00165\ \ \ \ \ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ UnityEngine.Random.InitState((\textcolor{keywordtype}{int})DateTime.Now.Ticks);}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(uint\ i\ =\ 1;\ i\ <=\ 6;\ i++)}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ \_temp\ =\ \mbox{\hyperlink{class_objective_manager_a55d53693e1b4ac6ff300b4f6086ae454}{CreateRandomObjective}}(i);}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_temp\ !=\ \textcolor{keyword}{null})\ \_objectives.Add(\_temp);}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00174\ }
-\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ UnityEngine.Random.InitState((\textcolor{keywordtype}{int})DateTime.Now.Ticks);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}\label{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}} 
@@ -259,290 +192,412 @@ The objective as a string
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00219\ \ \ \ \ \{}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ String.Empty;}
-\DoxyCodeLine{00221\ }
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ \textcolor{keywordtype}{string}.Empty;}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ str\ =\ \mbox{\hyperlink{class_objective_manager_a907801a398fc996b9767ec98e533e268}{\_actionStrings}}[(int)objective.Action];}
-\DoxyCodeLine{00224\ }
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ if\ (objective.Action\ !=\ \mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}.ANY\_ACTION) }
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ the\ objective\ is\ to\ do\ something\ specific,\ continue\ with\ string\ creation}}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<COLOUR>"{}},\ \mbox{\hyperlink{class_objective_manager_a25d40c1f9bf2bb475ea54c7e0bfcc659}{\_colourSrings}}[(\textcolor{keywordtype}{int})objective.Colour]);}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<OBJECT>"{}},\ \mbox{\hyperlink{class_objective_manager_aff47c912446ced5c1235aafe865404c4}{\_objectStrings}}[(\textcolor{keywordtype}{int})objective.Object]);}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<CONDITION>"{}},\ \mbox{\hyperlink{class_objective_manager_a6e05f4b5766296af27e4249c324fcd74}{\_conditionStrings}}[(\textcolor{keywordtype}{int})objective.Condition]);}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Inverse)}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//prepend\ the\ inverse\ string\ and\ force\ first\ letter\ of\ original\ string\ to\ be\ lower\ case}}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ \_inverseString\ +\ \textcolor{keywordtype}{char}.ToLower(str[0])\ +\ str[1..];}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00238\ }
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00248\ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ String.Empty;}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ str\ =\ objective.Action.FriendlyString;}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ action\ is\ "{}Do\ anything\ with"{}\ then\ we\ don't\ need\ to\ add\ the\ colour,\ object\ or\ condition}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ !=\ \_anyActionString)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<COLOUR>"{}},\ objective.Colour.FriendlyString);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<OBJECT>"{}},\ objective.Object.FriendlyString);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<CONDITION>"{}},\ objective.Condition.FriendlyString);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<ZONE>"{}},\ objective.Zone.FriendlyString);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Inverse)}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prepend\ the\ inverse\ string\ and\ force\ first\ letter\ of\ original\ string\ to\ be\ lower\ case}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ \_inverseString\ +\ \textcolor{keywordtype}{char}.ToLower(str[0])\ +\ str[1..];}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a4ec5975b52dfcd6d4f33ec5aac40aff7}\label{class_objective_manager_a4ec5975b52dfcd6d4f33ec5aac40aff7}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ GameManager.Instance.OnPlayerSpawned\ -\/=\ \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{OnPlayerSpawned}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ GameManager.Instance.OnSceneLoaded\ -\/=\ \mbox{\hyperlink{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}{OnSceneLoaded}};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a0655506a561db8a757844e099b89f520}\label{class_objective_manager_a0655506a561db8a757844e099b89f520}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ GameManager.Instance.OnPlayerSpawned\ +=\ \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{OnPlayerSpawned}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ GameManager.Instance.OnSceneLoaded\ +=\ \mbox{\hyperlink{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}{OnSceneLoaded}};}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a009c801b8ac08e51e649d1f2c4714b14}\label{class_objective_manager_a009c801b8ac08e51e649d1f2c4714b14}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnPlayerDisconnect@{OnPlayerDisconnect}}
+\index{OnPlayerDisconnect@{OnPlayerDisconnect}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerDisconnect()}{OnPlayerDisconnect()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Player\+Disconnect (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{ulong}]{client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Disconnect event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em client\+Id} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00292\ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}{RemovePlayer}}(clientId);}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a1652acec1f6b135d923619bc929bdebe}\label{class_objective_manager_a1652acec1f6b135d923619bc929bdebe}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnPlayerReconnect@{OnPlayerReconnect}}
+\index{OnPlayerReconnect@{OnPlayerReconnect}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerReconnect()}{OnPlayerReconnect()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Player\+Reconnect (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{\mbox{\hyperlink{class_player_reconnect_data}{Player\+Reconnect\+Data}}}]{player\+Reconnect\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Reconnect event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em player\+Reconnect\+Data} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00302\ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a00505f6e1b68931dd95c095570706733}{ReconnectPlayer}}(playerReconnectData.CurrentClientID);}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}\label{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnPlayerSpawned@{OnPlayerSpawned}}
+\index{OnPlayerSpawned@{OnPlayerSpawned}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerSpawned()}{OnPlayerSpawned()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Player\+Spawned (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{ulong}]{client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Spawned event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em client\+Id} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00281\ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}\label{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnSceneLoaded@{OnSceneLoaded}}
+\index{OnSceneLoaded@{OnSceneLoaded}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnSceneLoaded()}{OnSceneLoaded()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Scene\+Loaded (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends On\+Scene\+Loaded event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ each\ players\ objective}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Keys)}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a00505f6e1b68931dd95c095570706733}\label{class_objective_manager_a00505f6e1b68931dd95c095570706733}} 
+\index{ObjectiveManager@{ObjectiveManager}!ReconnectPlayer@{ReconnectPlayer}}
+\index{ReconnectPlayer@{ReconnectPlayer}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{ReconnectPlayer()}{ReconnectPlayer()}}
+{\footnotesize\ttfamily bool Objective\+Manager.\+Reconnect\+Player (\begin{DoxyParamCaption}\item[{ulong}]{current\+Client\+Id }\end{DoxyParamCaption})}
+
+
+
+To be called if a player has rejoined following a disconnection.~\newline
+ This will re-\/register the player with the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}.~\newline
+ If the player\textquotesingle{}s old client\+ID is recognized, it will be replaced with the new one.~\newline
+ The player\textquotesingle{}s previous Objective\+Player\+Data will be retained, if not a new one will be created ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Client\+Id} & The new / current client\+Id\\
+\hline
+{\em previous\+Client\+Id} & The old / previous client\+Id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, False if not successful
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(currentClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ netPlayerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ an\ old\ objective\ does\ not\ exist,\ create\ one.\ If\ it\ does,\ remap\ it.\ }}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (netPlayerData.Objective\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(currentClientId);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Add(netPlayerData.Objective,\ currentClientId);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString,\ netPlayerData.ClientRpcParams);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}\label{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}} 
+\index{ObjectiveManager@{ObjectiveManager}!RegisterObject@{RegisterObject}}
+\index{RegisterObject@{RegisterObject}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{RegisterObject()}{RegisterObject()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+Register\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}}}]{objective\+Object\+Instance }\end{DoxyParamCaption})}
+
+
+
+Registers the objective\+Object\+Instance with the \mbox{\hyperlink{class_objective}{Objective}} Manager~\newline
+ This allows the \mbox{\hyperlink{class_objective}{Objective}} Manager to use this object when creating objectives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective\+Object\+Instance} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.TryAdd(objectiveObjectInstance,\ 1))}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ objectiveObjectInstance\ already\ exists\ -\/\ add\ to\ the\ qty}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}[objectiveObjectInstance]++;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ time\ adding\ this\ object\ type\ -\/\ create\ all\ possible\ objectives}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_action}{ObjectiveAction}}\ action\ \textcolor{keywordflow}{in}\ objectiveObjectInstance.ObjectiveObject.PossibleActions)}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition\ \textcolor{keywordflow}{in}\ action.PossibleConditions)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zone}{Zone}}\ zone\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Condition\ requires\ a\ zone,\ try\ and\ get\ a\ random\ one\ from\ the\ list\ stored\ in\ the\ dictionary}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.TryGetValue(condition.RequiredZone,\ out\ List<Zone>\ zones))}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(zones.Count\ >\ 0)\ zone\ =\ zones[UnityEngine.Random.Range((int)0,\ zones.Count)];}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zone}{Zone}}\ possibleZone\ \textcolor{keywordflow}{in}\ zones)}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ newObjective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ objectiveObjectInstance.ObjectiveColour,\ objectiveObjectInstance.ObjectiveObject,\ condition,\ possibleZone,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Add(newObjective);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}\label{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}} 
+\index{ObjectiveManager@{ObjectiveManager}!RegisterZone@{RegisterZone}}
+\index{RegisterZone@{RegisterZone}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{RegisterZone()}{RegisterZone()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+Register\+Zone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zone}{Zone}}}]{zone }\end{DoxyParamCaption})}
+
+
+
+Registers a zone into the possible\+Zones dictionary, only if unique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone} & The \mbox{\hyperlink{class_zone}{Zone}} to register\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.TryGetValue(zone.ZoneType,\ out\ List<Zone>\ zones))}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!zones.Contains(zone))\ zones.Add(zone);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ List<Zone>\ newZones\ =\ \textcolor{keyword}{new}\ List<Zone>();}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ newZones.Add(zone);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.Add(zone.ZoneType,\ newZones);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00240\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_a55d53693e1b4ac6ff300b4f6086ae454}\label{class_objective_manager_a55d53693e1b4ac6ff300b4f6086ae454}} 
-\index{ObjectiveManager@{ObjectiveManager}!CreateRandomObjective@{CreateRandomObjective}}
-\index{CreateRandomObjective@{CreateRandomObjective}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{CreateRandomObjective()}{CreateRandomObjective()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_objective}{Objective}} Objective\+Manager.\+Create\+Random\+Objective (\begin{DoxyParamCaption}\item[{uint}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}\label{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}} 
+\index{ObjectiveManager@{ObjectiveManager}!RemovePlayer@{RemovePlayer}}
+\index{RemovePlayer@{RemovePlayer}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{RemovePlayer()}{RemovePlayer()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+Remove\+Player (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})}
 
 
 
-Randomly selects an objective for the given player. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em player} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_objective}{Objective}} of type \mbox{\hyperlink{class_objective}{Objective}}, containing all the objective info
-\end{DoxyReturn}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00183\ \ \ \ \ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{ObjectiveColour}}\ colour;}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{ObjectiveObject}}\ @object;}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}\ action;}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{ObjectiveConditions}}\ condition;}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ List<int>\ possibleObjects;}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ List<int>\ possibleColours;}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ List<int>\ possibleConditions;}
-\DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inverse\ =\ UnityEngine.Random.Range((\textcolor{keywordtype}{int})0,(\textcolor{keywordtype}{int})2)\ ==\ 0\ ?\ false\ :\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//pick\ a\ random\ action}}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ action\ =\ (\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}})UnityEngine.Random.Range((\textcolor{keywordtype}{int})\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}.ANY\_ACTION,\ (int)\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}.NUM\_OF\_ACTIONS);}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ possibleConditions\ =\ \mbox{\hyperlink{class_objective_manager_a924a9e4e0ed8e4658d42da63adec0b7e}{Lookup2DVertical}}((\textcolor{keywordtype}{int})action,\ \_conditionToAction,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (possibleConditions.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ condition\ =\ (\mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{ObjectiveConditions}})possibleConditions[UnityEngine.Random.Range(0,\ possibleConditions.Count)];}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ possibleObjects\ =\ \mbox{\hyperlink{class_objective_manager_a924a9e4e0ed8e4658d42da63adec0b7e}{Lookup2DVertical}}((\textcolor{keywordtype}{int})action,\ \mbox{\hyperlink{class_objective_manager_aed6411b644d17040c5878d86cda9c4f9}{\_objectToAction}},\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (possibleObjects.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ @\textcolor{keywordtype}{object}\ =\ (\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{ObjectiveObject}})possibleObjects[UnityEngine.Random.Range(0,\ possibleObjects.Count)];}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ possibleColours\ =\ \mbox{\hyperlink{class_objective_manager_a924a9e4e0ed8e4658d42da63adec0b7e}{Lookup2DVertical}}((\textcolor{keywordtype}{int})@\textcolor{keywordtype}{object},\ \mbox{\hyperlink{class_objective_manager_ab38c87ae75be42f04d85791decfd7fdf}{\_colourToObject}},\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(possibleColours.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ colour\ =\ (\mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{ObjectiveColour}})possibleColours[UnityEngine.Random.Range(0,\ possibleColours.Count)];}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00207\ }
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ newObjective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ colour,\ @\textcolor{keywordtype}{object},\ condition,\ inverse,\ player);}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newObjective;}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_af421d4a74032b1f9afe42150a19397c0}\label{class_objective_manager_af421d4a74032b1f9afe42150a19397c0}} 
-\index{ObjectiveManager@{ObjectiveManager}!GetObjective@{GetObjective}}
-\index{GetObjective@{GetObjective}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{GetObjective()}{GetObjective()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_objective}{Objective}} Objective\+Manager.\+Get\+Objective (\begin{DoxyParamCaption}\item[{uint}]{player }\end{DoxyParamCaption})}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00261\ \ \ \ \ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((player\ >=\ 1)\ \&\&\ (player\ <=\ 6))}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_objectives[(int)player\ -\/\ 1];}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00266\ }
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00268\ }
-\DoxyCodeLine{00269\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_a924a9e4e0ed8e4658d42da63adec0b7e}\label{class_objective_manager_a924a9e4e0ed8e4658d42da63adec0b7e}} 
-\index{ObjectiveManager@{ObjectiveManager}!Lookup2DVertical@{Lookup2DVertical}}
-\index{Lookup2DVertical@{Lookup2DVertical}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{Lookup2DVertical()}{Lookup2DVertical()}}
-{\footnotesize\ttfamily List$<$ int $>$ Objective\+Manager.\+Lookup2\+DVertical (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{bool}]{lookup\+Array\mbox{[},\mbox{]},  }\item[{bool}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Provides all horizontal (rows) in the veritical (col) specified by index, which are true or false as specified by \textquotesingle{}match\textquotesingle{}. 
+To be called if a player disconnects intentionally.~\newline
+ Removes the player from the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}~\newline
+ The player\textquotesingle{}s Client\+RPC will no longer be called to send new Objectives. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em index} & The column index\\
-\hline
-{\em lookup\+Array} & The lookup array\\
-\hline
-{\em match} & Match true or false\\
+{\em client\+Id} & The client\+Id of the disconnecting player\\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A list of integers representing the lookups which matched
-\end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00250\ \ \ \ \ \{}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ List<int>\ result\ =\ \textcolor{keyword}{new}\ List<int>();}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ lookupArray.GetLength(0);\ i++)}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lookupArray[i,index]\ ==\ match)\ result.Add(i);}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00256\ }
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
-\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ objectivePlayerData))}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objectivePlayerData.Objective\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Remove(objectivePlayerData.Objective);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}\label{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}} 
+\index{ObjectiveManager@{ObjectiveManager}!ReportObjectiveAction@{ReportObjectiveAction}}
+\index{ReportObjectiveAction@{ReportObjectiveAction}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{ReportObjectiveAction()}{ReportObjectiveAction()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+Report\+Objective\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective}{Objective}}}]{objective\+Occured,  }\item[{ulong}]{player\+Client\+Id }\end{DoxyParamCaption})}
 
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_objective_manager_a907801a398fc996b9767ec98e533e268}\label{class_objective_manager_a907801a398fc996b9767ec98e533e268}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_actionStrings@{\_actionStrings}}
-\index{\_actionStrings@{\_actionStrings}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_actionStrings}{\_actionStrings}}
-{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Objective\+Manager.\+\_\+action\+Strings\hspace{0.3cm}{\ttfamily [private]}}
 
-{\bfseries Initial value\+:}
+Interface to allow objects to report objective actions occuring and have them checked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective\+Occured} & The possible objective that occured\\
+\hline
+{\em player\+Client\+Id} & The player Client ID that initiated the action\\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[(int)\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}.NUM\_OF\_ACTIONS]}
-\DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Do\ anything"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Grab\ <COLOUR>\ <OBJECT>\ <CONDITION>"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Touch\ <COLOUR>\ <OBJECT>\ <CONDITION>"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Swing\ on\ <COLOUR>\ <OBJECT>\ <CONDITION>"{}}}
-\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ objective\ is\ one\ that\ is\ assigned\ to\ a\ player}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.TryGetValue(objectiveOccured,\ out\ ulong\ clientId))}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ matching\ objective's\ assigned\ player\ is\ the\ same\ as\ the\ one\ performing\ the\ action}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerClientId\ !=\ clientId)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ objective\ that\ occured\ matches\ one\ of\ that\ is\ assigned\ to\ a\ player}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ increment\ player\ score,\ below\ is\ temporary\ for\ testing}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[playerClientId].Score\ +=\ 100;}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ this\ objective\ from\ the\ player\ list}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Remove(objectiveOccured);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ a\ new\ objective}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].NetPlayer.SetObjectiveStringClientRpc(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective?.ObjectiveString,\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ClientRpcParams);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}\label{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}} 
+\index{ObjectiveManager@{ObjectiveManager}!ResetObjectiveManager@{ResetObjectiveManager}}
+\index{ResetObjectiveManager@{ResetObjectiveManager}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{ResetObjectiveManager()}{ResetObjectiveManager()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+Reset\+Objective\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-Defines the structure of the objetive sentance depending on the action. 
 
-\mbox{\Hypertarget{class_objective_manager_a25d40c1f9bf2bb475ea54c7e0bfcc659}\label{class_objective_manager_a25d40c1f9bf2bb475ea54c7e0bfcc659}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_colourSrings@{\_colourSrings}}
-\index{\_colourSrings@{\_colourSrings}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_colourSrings}{\_colourSrings}}
-{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Objective\+Manager.\+\_\+colour\+Srings\hspace{0.3cm}{\ttfamily [private]}}
+Resets the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} to start a new round. 
 
-{\bfseries Initial value\+:}
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[(int)\mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{ObjectiveColour}}.NUM\_OF\_COLOURS]}
-\DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}any\ coloured"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ red"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ yellow"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ blue"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ green"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ purple"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ black"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}a\ white"{}}}
-\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.Clear();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Clear();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.Clear();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ the\ player\ data\ specific\ to\ a\ round}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Keys)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Add\ any\ other\ objective\ related\ params\ that\ need\ clearing\ -\/\ objectives\ cleared\ this\ round?\ etc.}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ zones\ in\ the\ scene}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ List<Zone>\ zones\ =\ FindObjectsOfType<Zone>().ToList();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zone}{Zone}}\ zone\ \textcolor{keywordflow}{in}\ zones)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}{RegisterZone}}(zone);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ objectives\ in\ the\ scene}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ List<ObjectiveObjectInstance>\ objectiveObjectInstances\ =\ FindObjectsOfType<ObjectiveObjectInstance>().ToList();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance\ \textcolor{keywordflow}{in}\ objectiveObjectInstances)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}{RegisterObject}}(objectiveObjectInstance);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shuffle\ the\ possible\ objectives}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Shuffle();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ next\ available\ objective\ counter}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}\ =\ 0;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
 
 \end{DoxyCode}
-
-
-String map of colours. 
-
-\mbox{\Hypertarget{class_objective_manager_ab38c87ae75be42f04d85791decfd7fdf}\label{class_objective_manager_ab38c87ae75be42f04d85791decfd7fdf}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_colourToObject@{\_colourToObject}}
-\index{\_colourToObject@{\_colourToObject}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_colourToObject}{\_colourToObject}}
-{\footnotesize\ttfamily bool \mbox{[},\mbox{]} Objective\+Manager.\+\_\+colour\+To\+Object\hspace{0.3cm}{\ttfamily [private]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{bool}[(int)\mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{ObjectiveColour}}.NUM\_OF\_COLOURS,(\textcolor{keywordtype}{int})\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{ObjectiveObject}}.NUM\_OF\_OBJECTS]}
-\DoxyCodeLine{\ \ \ \ \{\ }
-\DoxyCodeLine{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{true},\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{true}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{false}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\}}
-\DoxyCodeLine{\ \ \ \ \}}
-
-\end{DoxyCode}
-
-
-Defines what colours each object can be. 
-
-\mbox{\Hypertarget{class_objective_manager_a6e05f4b5766296af27e4249c324fcd74}\label{class_objective_manager_a6e05f4b5766296af27e4249c324fcd74}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_conditionStrings@{\_conditionStrings}}
-\index{\_conditionStrings@{\_conditionStrings}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_conditionStrings}{\_conditionStrings}}
-{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Objective\+Manager.\+\_\+condition\+Strings\hspace{0.3cm}{\ttfamily [private]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[(int)\mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{ObjectiveConditions}}.NUM\_OF\_CONDITIONS]}
-\DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}during\ the\ goal\ countdown"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}when\ it\ is\ in\ the\ goal\ zone"{}}}
-\DoxyCodeLine{\ \ \ \ \}}
-
-\end{DoxyCode}
-
-
-String map of conditions. 
-
-\mbox{\Hypertarget{class_objective_manager_a2ca4075b5f6e7fe649b9d1b073c2ab50}\label{class_objective_manager_a2ca4075b5f6e7fe649b9d1b073c2ab50}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_conditionToAction@{\_conditionToAction}}
-\index{\_conditionToAction@{\_conditionToAction}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_conditionToAction}{\_conditionToAction}}
-{\footnotesize\ttfamily bool \mbox{[},\mbox{]} Objective\+Manager.\+\_\+condition\+To\+Action\hspace{0.3cm}{\ttfamily [private]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{bool}[(int)\mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{ObjectiveConditions}}.NUM\_OF\_CONDITIONS,\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}.NUM\_OF\_ACTIONS]}
-\DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{true},\ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true}\ \},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\ \},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\ \}}
-\DoxyCodeLine{\ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_aff47c912446ced5c1235aafe865404c4}\label{class_objective_manager_aff47c912446ced5c1235aafe865404c4}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_objectStrings@{\_objectStrings}}
-\index{\_objectStrings@{\_objectStrings}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_objectStrings}{\_objectStrings}}
-{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Objective\+Manager.\+\_\+object\+Strings\hspace{0.3cm}{\ttfamily [private]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[(int)\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{ObjectiveObject}}.NUM\_OF\_OBJECTS]}
-\DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}object"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}crate"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}barrel"{}},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}chain"{}}}
-\DoxyCodeLine{\ \ \ \ \}}
-
-\end{DoxyCode}
-
-
-String map of objects. 
-
-\mbox{\Hypertarget{class_objective_manager_aed6411b644d17040c5878d86cda9c4f9}\label{class_objective_manager_aed6411b644d17040c5878d86cda9c4f9}} 
-\index{ObjectiveManager@{ObjectiveManager}!\_objectToAction@{\_objectToAction}}
-\index{\_objectToAction@{\_objectToAction}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{\_objectToAction}{\_objectToAction}}
-{\footnotesize\ttfamily bool \mbox{[},\mbox{]} Objective\+Manager.\+\_\+object\+To\+Action\hspace{0.3cm}{\ttfamily [private]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{bool}[(int)\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{ObjectiveObject}}.NUM\_OF\_OBJECTS,\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{ObjectiveAction}}.NUM\_OF\_ACTIONS]}
-\DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{true},\ \ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true}\ \},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\ \},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{true},\ \ \ \textcolor{keyword}{false}\ \},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{false},\ \ \ \ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{false},\ \ \textcolor{keyword}{true}\ \}}
-\DoxyCodeLine{\ \ \ \ \}}
-
-\end{DoxyCode}
-
-
-Defines what actions can be made with which object. 
-
 
 
 \doxysubsection{Property Documentation}
@@ -554,12 +609,12 @@ Defines what actions can be made with which object.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00156\ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(instance\ ==\ \textcolor{keyword}{null})\ instance\ =\ FindObjectOfType<ObjectiveManager>();}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<ObjectiveManager>();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
 
 \end{DoxyCode}

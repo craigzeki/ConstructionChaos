@@ -36,17 +36,17 @@ void \mbox{\hyperlink{class_ignore_collisions_aae233e8f1794927243fc12e6c8a8ccde}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00009\ \ \ \ \ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{//get\ all\ our\ children\ colliders\ and\ setup\ physics\ to\ ignore\ collisions\ between\ them}}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ var\ colliders\ =\ GetComponentsInChildren<Collider2D>();}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ colliders.Length;\ i++)}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ i+1;\ k\ <\ colliders.Length;\ k++)}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Physics2D.IgnoreCollision(colliders[i],\ colliders[k]);}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ our\ children\ colliders\ and\ setup\ physics\ to\ ignore\ collisions\ between\ them}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ var\ colliders\ =\ GetComponentsInChildren<Collider2D>();}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ colliders.Length;\ i++)}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ i+1;\ k\ <\ colliders.Length;\ k++)}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Physics2D.IgnoreCollision(colliders[i],\ colliders[k]);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_ignore_collisions_aae233e8f1794927243fc12e6c8a8ccde}\label{class_ignore_collisions_aae233e8f1794927243fc12e6c8a8ccde}} 
@@ -57,12 +57,12 @@ void \mbox{\hyperlink{class_ignore_collisions_aae233e8f1794927243fc12e6c8a8ccde}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Player"{}})}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ anything\ else\ has\ been\ added\ to\ the\ player\ object\ during\ runtime,\ detect\ this\ and\ also\ ignore}}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(),\ collision.gameObject.GetComponent<Collider2D>());}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(collision.gameObject.tag\ ==\ "{}Player"{})}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ //\ If\ anything\ else\ has\ been\ added\ to\ the\ player\ object\ during\ runtime,\ detect\ this\ and\ also\ ignore}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(),\ collision.gameObject.GetComponent<Collider2D>());}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
 
 \end{DoxyCode}

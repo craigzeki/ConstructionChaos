@@ -2,20 +2,22 @@
 \label{class_goal_zone}\index{GoalZone@{GoalZone}}
 
 
-Inheritance diagram for Goal\+Zone\+:\nopagebreak
+Inheritance diagram for Goal\+Zone\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_goal_zone__inherit__graph}
+\includegraphics[width=282pt]{class_goal_zone__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Goal\+Zone\+:\nopagebreak
+Collaboration diagram for Goal\+Zone\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_goal_zone__coll__graph}
+\includegraphics[width=282pt]{class_goal_zone__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Private Member Functions}
@@ -59,6 +61,34 @@ Coroutine {\bfseries \+\_\+countdown\+Coroutine}
 \item 
 \mbox{\Hypertarget{class_goal_zone_a4e5cc983059d7a980626d4c9b767f771}\label{class_goal_zone_a4e5cc983059d7a980626d4c9b767f771}} 
 bool {\bfseries \+\_\+win} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_zone}{Zone}}}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ZONE} \+: int \{ {\bfseries NO\+\_\+\+ZONE} = 0
+, {\bfseries GOAL\+\_\+\+ZONE}
+, {\bfseries LOCATION\+\_\+\+ZONE}
+, {\bfseries NUM\+\_\+\+OF\+\_\+\+ZONES}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_zone}{Zone}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}} (\mbox{\hyperlink{class_zone}{Zone}} other)
+\begin{DoxyCompactList}\small\item\em Specific Equals opperation for \mbox{\hyperlink{class_zone}{Zone}}. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_zone_a24843f534acbdae9b199d48e1c09c6cf}{Equals}} (object other)
+\begin{DoxyCompactList}\small\item\em Override of Equals to provide correct equivalence check. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{Get\+Hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Override of Get\+Hash\+Code to provide correct hash for Dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{class_zone}{Zone}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}\label{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}} 
+string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_zone_a03032d486487f85182ec0d9c7877892b}\label{class_zone_a03032d486487f85182ec0d9c7877892b}} 
+ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 
 

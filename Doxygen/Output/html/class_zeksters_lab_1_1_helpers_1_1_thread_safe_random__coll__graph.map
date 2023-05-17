@@ -1,0 +1,4 @@
+<map id="ZekstersLab.Helpers.ThreadSafeRandom" name="ZekstersLab.Helpers.ThreadSafeRandom">
+<area shape="rect" id="node1" title="Generates a new random number on a static thread." alt="" coords="5,93,189,133"/>
+<area shape="rect" id="node2" title=" " alt="" coords="64,5,131,31"/>
+</map>

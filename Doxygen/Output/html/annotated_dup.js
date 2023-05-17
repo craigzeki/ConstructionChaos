@@ -1,17 +1,46 @@
 var annotated_dup =
 [
+    [ "ZekstersLab", "namespace_zeksters_lab.html", [
+      [ "Helpers", "namespace_zeksters_lab_1_1_helpers.html", [
+        [ "MyExtensions", "class_zeksters_lab_1_1_helpers_1_1_my_extensions.html", "class_zeksters_lab_1_1_helpers_1_1_my_extensions" ],
+        [ "ThreadSafeRandom", "class_zeksters_lab_1_1_helpers_1_1_thread_safe_random.html", "class_zeksters_lab_1_1_helpers_1_1_thread_safe_random" ]
+      ] ]
+    ] ],
+    [ "ActionGrab", "class_action_grab.html", null ],
+    [ "ActionSwing", "class_action_swing.html", null ],
     [ "Arms", "class_arms.html", "class_arms" ],
+    [ "ArmsMovementData", "struct_arms_movement_data.html", "struct_arms_movement_data" ],
     [ "Balance", "class_balance.html", null ],
+    [ "CharacterInputData", "struct_character_input_data.html", "struct_character_input_data" ],
+    [ "CharacterInputHandler", "class_character_input_handler.html", "class_character_input_handler" ],
     [ "ConnectionHandler", "class_connection_handler.html", "class_connection_handler" ],
-    [ "GameManager", "class_game_manager.html", null ],
+    [ "FollowCam", "class_follow_cam.html", null ],
+    [ "GameManager", "class_game_manager.html", "class_game_manager" ],
     [ "GoalZone", "class_goal_zone.html", "class_goal_zone" ],
     [ "Grab", "class_grab.html", null ],
     [ "IgnoreCollisions", "class_ignore_collisions.html", null ],
-    [ "InputHandler", "class_input_handler.html", "class_input_handler" ],
     [ "MenuUIManager", "class_menu_u_i_manager.html", "class_menu_u_i_manager" ],
+    [ "NetPlayer", "class_net_player.html", "class_net_player" ],
+    [ "NetPlayerData", "class_net_player_data.html", null ],
     [ "Objective", "class_objective.html", "class_objective" ],
+    [ "ObjectiveAction", "class_objective_action.html", "class_objective_action" ],
+    [ "ObjectiveActionBehaviour", "class_objective_action_behaviour.html", "class_objective_action_behaviour" ],
+    [ "ObjectiveActionReporter", "class_objective_action_reporter.html", "class_objective_action_reporter" ],
+    [ "ObjectiveColour", "class_objective_colour.html", "class_objective_colour" ],
+    [ "ObjectiveCondition", "class_objective_condition.html", "class_objective_condition" ],
     [ "ObjectiveManager", "class_objective_manager.html", "class_objective_manager" ],
+    [ "ObjectiveObject", "class_objective_object.html", "class_objective_object" ],
+    [ "ObjectiveObjectInstance", "class_objective_object_instance.html", "class_objective_object_instance" ],
     [ "ObjectiveText", "class_objective_text.html", null ],
+    [ "OLDCharacterInputHandler", "class_o_l_d_character_input_handler.html", "class_o_l_d_character_input_handler" ],
+    [ "OwnerNetworkAnimator", "class_owner_network_animator.html", "class_owner_network_animator" ],
+    [ "PlatformArranger", "class_platform_arranger.html", "class_platform_arranger" ],
+    [ "PlayerReconnectData", "class_player_reconnect_data.html", null ],
     [ "Ragdoll", "class_ragdoll.html", "class_ragdoll" ],
-    [ "StickMovement", "class_stick_movement.html", "class_stick_movement" ]
+    [ "SceneNames", "class_scene_names.html", null ],
+    [ "ScenePersist", "class_scene_persist.html", null ],
+    [ "ServerInputHandler", "class_server_input_handler.html", "class_server_input_handler" ],
+    [ "StickMovement", "class_stick_movement.html", "class_stick_movement" ],
+    [ "Zone", "class_zone.html", "class_zone" ],
+    [ "ZoneColour", "class_zone_colour.html", null ]
 ];

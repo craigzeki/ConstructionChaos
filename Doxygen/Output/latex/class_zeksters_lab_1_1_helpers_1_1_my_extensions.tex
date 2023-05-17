@@ -1,0 +1,67 @@
+\hypertarget{class_zeksters_lab_1_1_helpers_1_1_my_extensions}{}\doxysection{Zeksters\+Lab.\+Helpers.\+My\+Extensions Class Reference}
+\label{class_zeksters_lab_1_1_helpers_1_1_my_extensions}\index{ZekstersLab.Helpers.MyExtensions@{ZekstersLab.Helpers.MyExtensions}}
+
+
+Class to provide extensions to existing types.  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_zeksters_lab_1_1_helpers_1_1_my_extensions_a9e11886843cef05f3b5558ce4127eaba}{Shuffle$<$ T $>$}} (this IList$<$ T $>$ list)
+\item 
+static bool \mbox{\hyperlink{class_zeksters_lab_1_1_helpers_1_1_my_extensions_a63eddc2efe1c29054215e0e8589af82b}{Vector2\+Approximately}} (this Vector2 vector, Vector2 other)
+\begin{DoxyCompactList}\small\item\em Check if two vectors are approximately equal using Mathf.\+Approximately. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to provide extensions to existing types. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zeksters_lab_1_1_helpers_1_1_my_extensions_a9e11886843cef05f3b5558ce4127eaba}\label{class_zeksters_lab_1_1_helpers_1_1_my_extensions_a9e11886843cef05f3b5558ce4127eaba}} 
+\index{ZekstersLab.Helpers.MyExtensions@{ZekstersLab.Helpers.MyExtensions}!Shuffle$<$ T $>$@{Shuffle$<$ T $>$}}
+\index{Shuffle$<$ T $>$@{Shuffle$<$ T $>$}!ZekstersLab.Helpers.MyExtensions@{ZekstersLab.Helpers.MyExtensions}}
+\doxysubsubsection{\texorpdfstring{Shuffle$<$ T $>$()}{Shuffle< T >()}}
+{\footnotesize\ttfamily static void Zeksters\+Lab.\+Helpers.\+My\+Extensions.\+Shuffle$<$ T $>$ (\begin{DoxyParamCaption}\item[{this IList$<$ T $>$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ list.Count;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (n\ >\ 1)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n-\/-\/;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ ThreadSafeRandom.ThisThreadsRandom.Next(n\ +\ 1);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ tuple\ to\ swap\ values\ efficiently}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (list[n],\ list[k])\ =\ (list[k],\ list[n]);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_zeksters_lab_1_1_helpers_1_1_my_extensions_a63eddc2efe1c29054215e0e8589af82b}\label{class_zeksters_lab_1_1_helpers_1_1_my_extensions_a63eddc2efe1c29054215e0e8589af82b}} 
+\index{ZekstersLab.Helpers.MyExtensions@{ZekstersLab.Helpers.MyExtensions}!Vector2Approximately@{Vector2Approximately}}
+\index{Vector2Approximately@{Vector2Approximately}!ZekstersLab.Helpers.MyExtensions@{ZekstersLab.Helpers.MyExtensions}}
+\doxysubsubsection{\texorpdfstring{Vector2Approximately()}{Vector2Approximately()}}
+{\footnotesize\ttfamily static bool Zeksters\+Lab.\+Helpers.\+My\+Extensions.\+Vector2\+Approximately (\begin{DoxyParamCaption}\item[{this Vector2}]{vector,  }\item[{Vector2}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if two vectors are approximately equal using Mathf.\+Approximately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The first vector\\
+\hline
+{\em other} & The second vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vectors are approximately equal, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Approximately(vector.x,\ other.x)\ \&\&\ Mathf.Approximately(vector.y,\ other.y);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['controlactionmaps_0',['ControlActionMaps',['../class_input_handler.html#a273ad6324766f575688af6286e5c76aa',1,'InputHandler']]]
+  ['controlactionmaps_0',['ControlActionMaps',['../class_character_input_handler.html#ae81e60add6deed99b67faa3a96946713',1,'CharacterInputHandler']]]
 ];

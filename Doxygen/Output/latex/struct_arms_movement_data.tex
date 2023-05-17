@@ -1,0 +1,93 @@
+\hypertarget{struct_arms_movement_data}{}\doxysection{Arms\+Movement\+Data Struct Reference}
+\label{struct_arms_movement_data}\index{ArmsMovementData@{ArmsMovementData}}
+
+
+Container for \mbox{\hyperlink{class_arms}{Arms}} Movement Input Data.  
+
+
+
+
+Inheritance diagram for Arms\+Movement\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{struct_arms_movement_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arms\+Movement\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{struct_arms_movement_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_arms_movement_data_a161d46131bf312156758bc0227b9b035}{Arms\+Movement\+Data}} (Vector2 arms\+Controller\+Input, bool is\+Mouse\+Controller, bool arms\+Stick\+Released)
+\item 
+void \mbox{\hyperlink{struct_arms_movement_data_a3f1d7d1416ce94c36de1737643cfcd47}{Network\+Serialize$<$ T $>$}} (Buffer\+Serializer$<$ T $>$ serializer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}\label{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}} 
+Vector2 {\bfseries Arms\+Controller\+Input}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ 2D array representing horizontal and vertical axis for arms movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}\label{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}} 
+bool {\bfseries Is\+Mouse\+Controller}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ Boolean flag indicating if last input was from a mouse controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_arms_movement_data_a06f5f4b0ceec504d825c835530a876e2}\label{struct_arms_movement_data_a06f5f4b0ceec504d825c835530a876e2}} 
+bool {\bfseries Arms\+Stick\+Released}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if the gamepad stick controlling the arms centred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container for \mbox{\hyperlink{class_arms}{Arms}} Movement Input Data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_arms_movement_data_a161d46131bf312156758bc0227b9b035}\label{struct_arms_movement_data_a161d46131bf312156758bc0227b9b035}} 
+\index{ArmsMovementData@{ArmsMovementData}!ArmsMovementData@{ArmsMovementData}}
+\index{ArmsMovementData@{ArmsMovementData}!ArmsMovementData@{ArmsMovementData}}
+\doxysubsubsection{\texorpdfstring{ArmsMovementData()}{ArmsMovementData()}}
+{\footnotesize\ttfamily Arms\+Movement\+Data.\+Arms\+Movement\+Data (\begin{DoxyParamCaption}\item[{Vector2}]{arms\+Controller\+Input,  }\item[{bool}]{is\+Mouse\+Controller,  }\item[{bool}]{arms\+Stick\+Released }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}\ =\ armsControllerInput;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}{IsMouseController}}\ =\ isMouseController;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_arms_movement_data_a06f5f4b0ceec504d825c835530a876e2}{ArmsStickReleased}}\ =\ armsStickReleased;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_arms_movement_data_a3f1d7d1416ce94c36de1737643cfcd47}\label{struct_arms_movement_data_a3f1d7d1416ce94c36de1737643cfcd47}} 
+\index{ArmsMovementData@{ArmsMovementData}!NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}}
+\index{NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}!ArmsMovementData@{ArmsMovementData}}
+\doxysubsubsection{\texorpdfstring{NetworkSerialize$<$ T $>$()}{NetworkSerialize< T >()}}
+{\footnotesize\ttfamily void Arms\+Movement\+Data.\+Network\+Serialize$<$ T $>$ (\begin{DoxyParamCaption}\item[{Buffer\+Serializer$<$ T $>$}]{serializer }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em IReader\+Writer}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ IReaderWriter}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}{IsMouseController}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_arms_movement_data_a06f5f4b0ceec504d825c835530a876e2}{ArmsStickReleased}});}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}

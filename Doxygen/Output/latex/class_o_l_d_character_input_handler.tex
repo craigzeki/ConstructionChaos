@@ -1,0 +1,137 @@
+\hypertarget{class_o_l_d_character_input_handler}{}\doxysection{OLDCharacter\+Input\+Handler Class Reference}
+\label{class_o_l_d_character_input_handler}\index{OLDCharacterInputHandler@{OLDCharacterInputHandler}}
+
+
+Gets the inputs either via event or directly -\/ can be further tweaked to become the server side input handler~\newline
+ \mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} must be scheduled to execute before all movement scripts but after Input\+Handler.  
+
+
+
+
+Inheritance diagram for OLDCharacter\+Input\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_o_l_d_character_input_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for OLDCharacter\+Input\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_o_l_d_character_input_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_o_l_d_character_input_handler_ab1a6c599d746f8986044d734a0cb81ad}{Update\+Input\+Data}} (\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} character\+Input\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_o_l_d_character_input_handler_a21adc5ee57b5cb3812b506c1876a388d}\label{class_o_l_d_character_input_handler_a21adc5ee57b5cb3812b506c1876a388d}} 
+bool {\bfseries Use\+Input\+Handler\+Events} = true
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_o_l_d_character_input_handler_ad1782f8af7d7cde5eb402339a2293618}{On\+Input\+Data\+Changed}} (object sender, \mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} character\+Input\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} \mbox{\hyperlink{class_o_l_d_character_input_handler_a0b27d25b69dc588250a7e4da320db5ab}{\+\_\+character\+Input\+Data}} = new \mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}()\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Storage for the input data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_o_l_d_character_input_handler_addfbf111cfa749a2ae26917fcfbfd8e7}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_o_l_d_character_input_handler_a05bcedc440da1f4d50da097dc40dd569}{On\+Disable}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gets the inputs either via event or directly -\/ can be further tweaked to become the server side input handler~\newline
+ \mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} must be scheduled to execute before all movement scripts but after Input\+Handler. 
+
+THIS CLASS IS DEPRECATED -\/ USE \mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} INSTEAD
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_o_l_d_character_input_handler_a05bcedc440da1f4d50da097dc40dd569}\label{class_o_l_d_character_input_handler_a05bcedc440da1f4d50da097dc40dd569}} 
+\index{OLDCharacterInputHandler@{OLDCharacterInputHandler}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!OLDCharacterInputHandler@{OLDCharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void OLDCharacter\+Input\+Handler.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (ClientInputHandler.Instance\ ==\ null)\ return;}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ClientInputHandler.Instance.CharacterInputDataChanged\ -\/=\ OnInputDataChanged;}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_o_l_d_character_input_handler_addfbf111cfa749a2ae26917fcfbfd8e7}\label{class_o_l_d_character_input_handler_addfbf111cfa749a2ae26917fcfbfd8e7}} 
+\index{OLDCharacterInputHandler@{OLDCharacterInputHandler}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!OLDCharacterInputHandler@{OLDCharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void OLDCharacter\+Input\+Handler.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ClientInputHandler.Instance.CharacterInputDataChanged\ +=\ OnInputDataChanged;\ \ \ \ }}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_o_l_d_character_input_handler_ad1782f8af7d7cde5eb402339a2293618}\label{class_o_l_d_character_input_handler_ad1782f8af7d7cde5eb402339a2293618}} 
+\index{OLDCharacterInputHandler@{OLDCharacterInputHandler}!OnInputDataChanged@{OnInputDataChanged}}
+\index{OnInputDataChanged@{OnInputDataChanged}!OLDCharacterInputHandler@{OLDCharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnInputDataChanged()}{OnInputDataChanged()}}
+{\footnotesize\ttfamily virtual void OLDCharacter\+Input\+Handler.\+On\+Input\+Data\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}}]{character\+Input\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!UseInputHandlerEvents)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_o_l_d_character_input_handler_a0b27d25b69dc588250a7e4da320db5ab}{\_characterInputData}}\ =\ characterInputData;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_o_l_d_character_input_handler_ab1a6c599d746f8986044d734a0cb81ad}\label{class_o_l_d_character_input_handler_ab1a6c599d746f8986044d734a0cb81ad}} 
+\index{OLDCharacterInputHandler@{OLDCharacterInputHandler}!UpdateInputData@{UpdateInputData}}
+\index{UpdateInputData@{UpdateInputData}!OLDCharacterInputHandler@{OLDCharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateInputData()}{UpdateInputData()}}
+{\footnotesize\ttfamily void OLDCharacter\+Input\+Handler.\+Update\+Input\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}}]{character\+Input\+Data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_o_l_d_character_input_handler_a0b27d25b69dc588250a7e4da320db5ab}{\_characterInputData}}\ =\ characterInputData;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_o_l_d_character_input_handler_a0b27d25b69dc588250a7e4da320db5ab}\label{class_o_l_d_character_input_handler_a0b27d25b69dc588250a7e4da320db5ab}} 
+\index{OLDCharacterInputHandler@{OLDCharacterInputHandler}!\_characterInputData@{\_characterInputData}}
+\index{\_characterInputData@{\_characterInputData}!OLDCharacterInputHandler@{OLDCharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{\_characterInputData}{\_characterInputData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} OLDCharacter\+Input\+Handler.\+\_\+character\+Input\+Data = new \mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+Storage for the input data. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}();}
+
+\end{DoxyCode}

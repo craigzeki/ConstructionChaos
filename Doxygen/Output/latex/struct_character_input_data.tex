@@ -1,0 +1,97 @@
+\hypertarget{struct_character_input_data}{}\doxysection{Character\+Input\+Data Struct Reference}
+\label{struct_character_input_data}\index{CharacterInputData@{CharacterInputData}}
+
+
+Inheritance diagram for Character\+Input\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{struct_character_input_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Character\+Input\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{struct_character_input_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_character_input_data_a669604de151c6c3a925a4266b340f0cc}{Character\+Input\+Data}} (\mbox{\hyperlink{struct_arms_movement_data}{Arms\+Movement\+Data}} arms\+Movement\+Data, bool jump\+Value, float move\+Horizontal\+Axis, float move\+Vertical\+Axis, bool is\+Grabbing\+Left, bool is\+Grabbing\+Right)
+\item 
+void INetwork\+Serializable. \mbox{\hyperlink{struct_character_input_data_abdfeeae88c50b587bb6025241e74a9d2}{Network\+Serialize$<$ T $>$}} (Buffer\+Serializer$<$ T $>$ serializer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_character_input_data_aac2d78d2dc4d11485dfcb316ae340a13}\label{struct_character_input_data_aac2d78d2dc4d11485dfcb316ae340a13}} 
+\mbox{\hyperlink{struct_arms_movement_data}{Arms\+Movement\+Data}} {\bfseries Arms\+Movement\+Data}
+\item 
+\mbox{\Hypertarget{struct_character_input_data_a2df8e170322366799f463049c1503300}\label{struct_character_input_data_a2df8e170322366799f463049c1503300}} 
+bool {\bfseries Jump\+Value}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if jump pressed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_character_input_data_a61444ad8dc71e41e62e33034361ee614}\label{struct_character_input_data_a61444ad8dc71e41e62e33034361ee614}} 
+float {\bfseries Move\+Horizontal\+Axis}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ -\/1 to 1 based on horizontal input representing player movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_character_input_data_a5d375c26c82543e6b7549d381b35d3e3}\label{struct_character_input_data_a5d375c26c82543e6b7549d381b35d3e3}} 
+float {\bfseries Move\+Vertical\+Axis}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ -\/1 to 1 based on vertical input representing player movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}\label{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}} 
+bool {\bfseries Is\+Grabbing\+Left}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True if left hand grab button is pressed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}\label{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}} 
+bool {\bfseries Is\+Grabbing\+Right}
+\begin{DoxyCompactList}\small\item\em Action Map\+: Gameplay~\newline
+ True of the right hand grab button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_character_input_data_a669604de151c6c3a925a4266b340f0cc}\label{struct_character_input_data_a669604de151c6c3a925a4266b340f0cc}} 
+\index{CharacterInputData@{CharacterInputData}!CharacterInputData@{CharacterInputData}}
+\index{CharacterInputData@{CharacterInputData}!CharacterInputData@{CharacterInputData}}
+\doxysubsubsection{\texorpdfstring{CharacterInputData()}{CharacterInputData()}}
+{\footnotesize\ttfamily Character\+Input\+Data.\+Character\+Input\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_arms_movement_data}{Arms\+Movement\+Data}}}]{arms\+Movement\+Data,  }\item[{bool}]{jump\+Value,  }\item[{float}]{move\+Horizontal\+Axis,  }\item[{float}]{move\+Vertical\+Axis,  }\item[{bool}]{is\+Grabbing\+Left,  }\item[{bool}]{is\+Grabbing\+Right }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_arms_movement_data}{ArmsMovementData}}\ =\ armsMovementData;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data_a2df8e170322366799f463049c1503300}{JumpValue}}\ =\ jumpValue;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data_a61444ad8dc71e41e62e33034361ee614}{MoveHorizontalAxis}}\ =\ moveHorizontalAxis;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data_a5d375c26c82543e6b7549d381b35d3e3}{MoveVerticalAxis}}\ =\ moveVerticalAxis;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}{IsGrabbingLeft}}\ =\ isGrabbingLeft;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}{IsGrabbingRight}}\ =\ isGrabbingRight;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_character_input_data_abdfeeae88c50b587bb6025241e74a9d2}\label{struct_character_input_data_abdfeeae88c50b587bb6025241e74a9d2}} 
+\index{CharacterInputData@{CharacterInputData}!NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}}
+\index{NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}!CharacterInputData@{CharacterInputData}}
+\doxysubsubsection{\texorpdfstring{NetworkSerialize$<$ T $>$()}{NetworkSerialize< T >()}}
+{\footnotesize\ttfamily void INetwork\+Serializable. Character\+Input\+Data.\+Network\+Serialize$<$ T $>$ (\begin{DoxyParamCaption}\item[{Buffer\+Serializer$<$ T $>$}]{serializer }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_arms_movement_data}{ArmsMovementData}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_character_input_data_a2df8e170322366799f463049c1503300}{JumpValue}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_character_input_data_a61444ad8dc71e41e62e33034361ee614}{MoveHorizontalAxis}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_character_input_data_a5d375c26c82543e6b7549d381b35d3e3}{MoveVerticalAxis}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}{IsGrabbingLeft}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}{IsGrabbingRight}});}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}

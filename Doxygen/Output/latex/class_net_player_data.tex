@@ -1,0 +1,124 @@
+\hypertarget{class_net_player_data}{}\doxysection{Net\+Player\+Data Class Reference}
+\label{class_net_player_data}\index{NetPlayerData@{NetPlayerData}}
+
+
+Class to store objective data related to a player.  
+
+
+
+
+Collaboration diagram for Net\+Player\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_net_player_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_net_player_data_a870bd03ddba2ee1775720a3d423559b4}{Net\+Player\+Data}} (ulong client\+Id, \mbox{\hyperlink{class_net_player}{Net\+Player}} net\+Player)
+\item 
+\mbox{\hyperlink{class_net_player_data_a3cae3d987bc2335bc9b17596b5a496f7}{Net\+Player\+Data}} (ulong client\+Id, \mbox{\hyperlink{class_net_player}{Net\+Player}} net\+Player, \mbox{\hyperlink{class_objective}{Objective}} objective)
+\item 
+void \mbox{\hyperlink{class_net_player_data_a8fe5135af6b0463b7beab38c6b31be76}{Update\+Rpc\+Params}} (ulong client\+Id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_net_player_data_a05ffe03e86c5a6e8e1cf730b8ac5742b}\label{class_net_player_data_a05ffe03e86c5a6e8e1cf730b8ac5742b}} 
+\mbox{\hyperlink{class_net_player}{Net\+Player}} {\bfseries Net\+Player} = null
+\item 
+\mbox{\Hypertarget{class_net_player_data_a0c1fd56c8a4cae1c49a894e174583b9c}\label{class_net_player_data_a0c1fd56c8a4cae1c49a894e174583b9c}} 
+\mbox{\hyperlink{class_objective}{Objective}} {\bfseries Objective} = null
+\item 
+\mbox{\Hypertarget{class_net_player_data_a50b3c0fb1241a3e7d63020a10c47e0f0}\label{class_net_player_data_a50b3c0fb1241a3e7d63020a10c47e0f0}} 
+Client\+Rpc\+Params {\bfseries Client\+Rpc\+Params} = default
+\item 
+\mbox{\Hypertarget{class_net_player_data_aa04ebd8166dd85cd13104d42bbd704b1}\label{class_net_player_data_aa04ebd8166dd85cd13104d42bbd704b1}} 
+ulong {\bfseries Client\+Id}
+\item 
+\mbox{\Hypertarget{class_net_player_data_a64717c125b4b5df16c5c5ba4f25897b6}\label{class_net_player_data_a64717c125b4b5df16c5c5ba4f25897b6}} 
+uint {\bfseries Score} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_net_player_data_a839ba0a906094145b7b611bd25b40936}{Create\+Rpc\+Params}} (ulong client\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to store objective data related to a player. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_net_player_data_a870bd03ddba2ee1775720a3d423559b4}\label{class_net_player_data_a870bd03ddba2ee1775720a3d423559b4}} 
+\index{NetPlayerData@{NetPlayerData}!NetPlayerData@{NetPlayerData}}
+\index{NetPlayerData@{NetPlayerData}!NetPlayerData@{NetPlayerData}}
+\doxysubsubsection{\texorpdfstring{NetPlayerData()}{NetPlayerData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Net\+Player\+Data.\+Net\+Player\+Data (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id,  }\item[{\mbox{\hyperlink{class_net_player}{Net\+Player}}}]{net\+Player }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player}{NetPlayer}}\ =\ netPlayer;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ ClientId\ =\ clientId;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ CreateRpcParams(clientId);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_data_a3cae3d987bc2335bc9b17596b5a496f7}\label{class_net_player_data_a3cae3d987bc2335bc9b17596b5a496f7}} 
+\index{NetPlayerData@{NetPlayerData}!NetPlayerData@{NetPlayerData}}
+\index{NetPlayerData@{NetPlayerData}!NetPlayerData@{NetPlayerData}}
+\doxysubsubsection{\texorpdfstring{NetPlayerData()}{NetPlayerData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Net\+Player\+Data.\+Net\+Player\+Data (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id,  }\item[{\mbox{\hyperlink{class_net_player}{Net\+Player}}}]{net\+Player,  }\item[{\mbox{\hyperlink{class_objective}{Objective}}}]{objective }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player}{NetPlayer}}\ =\ netPlayer;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ =\ objective;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ClientId\ =\ clientId;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ CreateRpcParams(clientId);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_net_player_data_a839ba0a906094145b7b611bd25b40936}\label{class_net_player_data_a839ba0a906094145b7b611bd25b40936}} 
+\index{NetPlayerData@{NetPlayerData}!CreateRpcParams@{CreateRpcParams}}
+\index{CreateRpcParams@{CreateRpcParams}!NetPlayerData@{NetPlayerData}}
+\doxysubsubsection{\texorpdfstring{CreateRpcParams()}{CreateRpcParams()}}
+{\footnotesize\ttfamily void Net\+Player\+Data.\+Create\+Rpc\+Params (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ ClientRpcParams\ =\ \textcolor{keyword}{new}\ ClientRpcParams}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ Send\ =\ \textcolor{keyword}{new}\ ClientRpcSendParams}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TargetClientIds\ =\ \textcolor{keyword}{new}\ ulong[]\ \{\ clientId\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_data_a8fe5135af6b0463b7beab38c6b31be76}\label{class_net_player_data_a8fe5135af6b0463b7beab38c6b31be76}} 
+\index{NetPlayerData@{NetPlayerData}!UpdateRpcParams@{UpdateRpcParams}}
+\index{UpdateRpcParams@{UpdateRpcParams}!NetPlayerData@{NetPlayerData}}
+\doxysubsubsection{\texorpdfstring{UpdateRpcParams()}{UpdateRpcParams()}}
+{\footnotesize\ttfamily void Net\+Player\+Data.\+Update\+Rpc\+Params (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ ClientRpcParams.Send\ =\ \textcolor{keyword}{new}\ ClientRpcSendParams}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ TargetClientIds\ =\ \textcolor{keyword}{new}\ ulong[]\ \{\ clientId\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}

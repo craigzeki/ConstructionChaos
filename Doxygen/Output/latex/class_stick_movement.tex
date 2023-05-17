@@ -2,29 +2,40 @@
 \label{class_stick_movement}\index{StickMovement@{StickMovement}}
 
 
-Inheritance diagram for Stick\+Movement\+:\nopagebreak
+Inheritance diagram for Stick\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_stick_movement__inherit__graph}
+\includegraphics[width=174pt]{class_stick_movement__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Stick\+Movement\+:\nopagebreak
+Collaboration diagram for Stick\+Movement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_stick_movement__coll__graph}
+\includegraphics[width=350pt]{class_stick_movement__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_stick_movement_a7ef40d8fcea39120bd96eaa364610463}{Awake}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_ragdoll_a110adc2ea8abf45aed55ed08aca51e4d}{Awake}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_stick_movement_ab84fb18133660f3afafc860a738650b2}{Update}} ()
-\item 
 void \mbox{\hyperlink{class_stick_movement_afb8a17bace38c3a570a013e9c727f876}{Fixed\+Update}} ()
 \item 
+void \mbox{\hyperlink{class_stick_movement_a046371064fa68f3d5d80c8539dde1f56}{Handle\+Movement\+And\+Jump}} (\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} character\+Input\+Data)
+\begin{DoxyCompactList}\small\item\em Moves the player on the server. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}{Is\+On\+Ground}} ()
 \begin{DoxyCompactList}\small\item\em Check if the user is contacting the ground. \end{DoxyCompactList}\item 
 IEnumerator \mbox{\hyperlink{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}{Move\+Right}} (float seconds)
@@ -82,9 +93,61 @@ bool {\bfseries \+\_\+collapse} = false
 \mbox{\Hypertarget{class_stick_movement_ae9e7b56987dd2e211d1eb252d033a8ab}\label{class_stick_movement_ae9e7b56987dd2e211d1eb252d033a8ab}} 
 uint {\bfseries \+\_\+frames\+To\+Next\+Jump} = 0
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}{On\+Collapse}} ((bool collapse, bool break\+Apart) collapse\+Info)
+\begin{DoxyCompactList}\small\item\em Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}\label{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}} 
+ulong {\bfseries Client\+Id}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}\label{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}} 
+\mbox{\hyperlink{class_objective_action_reporter}{Objective\+Action\+Reporter}} {\bfseries Objective\+Action\+Reporter}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
+\mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
+\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}\label{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}} 
+bool {\bfseries \+\_\+is\+Active} = true
+\begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}active\textquotesingle{} -\/ if not, it is collapsed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}\label{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}} 
+bool {\bfseries \+\_\+is\+Broken} = false
+\begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}broken\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stick_movement_a7ef40d8fcea39120bd96eaa364610463}\label{class_stick_movement_a7ef40d8fcea39120bd96eaa364610463}} 
+\index{StickMovement@{StickMovement}!Awake@{Awake}}
+\index{Awake@{Awake}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily override void Stick\+Movement.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//not\ calling\ base.Awake()\ as\ do\ not\ need\ the\ ragdoll\ effects,\ only\ access\ to\ set\ the\ collapse\ feature}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ ragdoll\ parts\ and\ set\ the\ input\ handler}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll}{Ragdoll}}[]\ ragdolls\ =\ GetComponentsInChildren<Ragdoll>();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ ragdolls.Length;\ i++)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ ragdolls[i].\mbox{\hyperlink{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}{CharacterInputHandler}}\ =\ \mbox{\hyperlink{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}{CharacterInputHandler}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_stick_movement_afb8a17bace38c3a570a013e9c727f876}\label{class_stick_movement_afb8a17bace38c3a570a013e9c727f876}} 
 \index{StickMovement@{StickMovement}!FixedUpdate@{FixedUpdate}}
 \index{FixedUpdate@{FixedUpdate}!StickMovement@{StickMovement}}
@@ -93,25 +156,84 @@ uint {\bfseries \+\_\+frames\+To\+Next\+Jump} = 0
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00074\ \ \ \ \ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_framesToNextJump\ >\ 0)}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump-\/-\/;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ user\ can\ and\ is\ requesting\ to\ jump}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}{IsOnGround}}()\ \&\&\ !\_collapse\ \&\&\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ad41291ac5f2d9e533eea80aa34a22a71}{JumpValue}})}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//do\ jump}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_bodyRB.AddForce(Vector2.up\ *\ \_jumpForce);}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Jumped"{}});}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_jumpValue=\ false;}}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump\ =\ \_timeBetweenJumpsInPhysicsFrames;}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_stick_movement_a046371064fa68f3d5d80c8539dde1f56}{HandleMovementAndJump}}(\mbox{\hyperlink{class_character_input_handler}{CharacterInputHandler}}.CharacterInputData);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stick_movement_a046371064fa68f3d5d80c8539dde1f56}\label{class_stick_movement_a046371064fa68f3d5d80c8539dde1f56}} 
+\index{StickMovement@{StickMovement}!HandleMovementAndJump@{HandleMovementAndJump}}
+\index{HandleMovementAndJump@{HandleMovementAndJump}!StickMovement@{StickMovement}}
+\doxysubsubsection{\texorpdfstring{HandleMovementAndJump()}{HandleMovementAndJump()}}
+{\footnotesize\ttfamily void Stick\+Movement.\+Handle\+Movement\+And\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}}]{character\+Input\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Moves the player on the server. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ movement}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ user\ is\ pressing\ up\ or\ down}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Mathf.Approximately(characterInputData.\mbox{\hyperlink{struct_character_input_data_a5d375c26c82543e6b7549d381b35d3e3}{MoveVerticalAxis}},\ 0f))}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ axis\ input\ is\ above\ a\ tolerance\ to\ try\ and\ reject\ unintentional\ up\ /\ down\ movement}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ newCollapse\ =\ characterInputData.MoveVerticalAxis\ >=\ \_verticalMinValue\ ?\ false\ :\ characterInputData.MoveVerticalAxis\ <=\ (-\/\_verticalMinValue)\ ?\ \textcolor{keyword}{true}\ :\ \_collapse;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newCollapse\ !=\ \_collapse)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Collapse\ the\ player\ and\ send\ a\ message\ to\ all\ the\ body\ parts\ to\ do\ the\ same}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_collapse\ =\ newCollapse;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.BroadcastMessage(\textcolor{stringliteral}{"{}OnCollapse"{}},\ (\_collapse,\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_collapse:\ "{}}\ +\ \_collapse.ToString());}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ user\ is\ inputting\ horizontal\ movement}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Mathf.Approximately(characterInputData.\mbox{\hyperlink{struct_character_input_data_a61444ad8dc71e41e62e33034361ee614}{MoveHorizontalAxis}},\ 0f)\ \&\&\ !\_collapse)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (characterInputData.\mbox{\hyperlink{struct_character_input_data_a61444ad8dc71e41e62e33034361ee614}{MoveHorizontalAxis}}\ >\ 0)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ right}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkRight"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkRight\ =\ StartCoroutine(\mbox{\hyperlink{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}{MoveRight}}(\_stepWait));}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ left}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkLeft"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkLeft\ =\ StartCoroutine(\mbox{\hyperlink{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}{MoveLeft}}(\_stepWait));}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Idle}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}Idle"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ jumping}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_framesToNextJump\ >\ 0)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump-\/-\/;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ user\ can\ and\ is\ requesting\ to\ jump}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}{IsOnGround}}()\ \&\&\ !\_collapse\ \&\&\ characterInputData.\mbox{\hyperlink{struct_character_input_data_a2df8e170322366799f463049c1503300}{JumpValue}})}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ jump}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_bodyRB.AddForce(Vector2.up\ *\ \_jumpForce);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Jumped"{}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_jumpValue=\ false;}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \_framesToNextJump\ =\ \_timeBetweenJumpsInPhysicsFrames;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}\label{class_stick_movement_ad2e6c2b6073f49f998c437571dbb7e69}} 
@@ -130,17 +252,17 @@ False\+: Player is not on the ground
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00099\ \ \ \ \ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOnGround\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ each\ ground\ point,\ if\ any\ are\ contacting\ the\ ground,\ set\ isOnGround\ =\ true}}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ \_groundPositions)}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ isOnGround\ |=\ Physics2D.OverlapCircle(t.position,\ \_positionRadius,\ \_groundLayerMask);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isOnGround;}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOnGround\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ each\ ground\ point,\ if\ any\ are\ contacting\ the\ ground,\ set\ isOnGround\ =\ true}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ t\ \textcolor{keywordflow}{in}\ \_groundPositions)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ isOnGround\ |=\ Physics2D.OverlapCircle(t.position,\ \_positionRadius,\ \_groundLayerMask);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isOnGround;}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}\label{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}} 
@@ -163,12 +285,12 @@ Move the legs using force -\/ leg angles are changed in the animator.
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00130\ \ \ \ \ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
-\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.fixedDeltaTime);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.left\ *\ (\_speed\ *\ 1000)\ *\ Time.fixedDeltaTime);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}\label{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}} 
@@ -191,62 +313,11 @@ Move the legs using force -\/ leg angles are changed in the animator.
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00117\ \ \ \ \ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.deltaTime);}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
-\DoxyCodeLine{00122\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_stick_movement_ab84fb18133660f3afafc860a738650b2}\label{class_stick_movement_ab84fb18133660f3afafc860a738650b2}} 
-\index{StickMovement@{StickMovement}!Update@{Update}}
-\index{Update@{Update}!StickMovement@{StickMovement}}
-\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
-{\footnotesize\ttfamily void Stick\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ user\ is\ pressing\ up\ or\ down}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Mathf.Approximately(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a643fde3ff630bd1d0a9b4be8f2790b3c}{MoveVerticalAxis}},\ 0f))}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ the\ axis\ input\ is\ above\ a\ tolerance\ to\ try\ and\ reject\ unintentional\ up\ /\ down\ movement}}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ newCollapse\ =\ InputHandler.Instance.MoveVerticalAxis\ >=\ \_verticalMinValue\ ?\ false\ :\ InputHandler.Instance.MoveVerticalAxis\ <=\ (-\/\_verticalMinValue)\ ?\ \textcolor{keyword}{true}\ :\ \_collapse;}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newCollapse\ !=\ \_collapse)}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//collapse\ the\ player\ and\ send\ a\ message\ to\ all\ the\ body\ parts\ to\ do\ the\ same}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_collapse\ =\ newCollapse;}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.BroadcastMessage(\textcolor{stringliteral}{"{}OnCollapse"{}},\ \_collapse);}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_collapse:\ "{}}\ +\ \_collapse.ToString());}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ the\ user\ is\ inputting\ horizontal\ movement}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Mathf.Approximately(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{MoveHorizontalAxis}},\ 0f)\ \&\&\ !\_collapse)}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac26864383b255cf4cc6ec7393cb31b76}{MoveHorizontalAxis}}\ >\ 0)}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ right}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkRight"{}});}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkRight\ =\ StartCoroutine(\mbox{\hyperlink{class_stick_movement_ac2b37d327fcfc3141f92d54ece98c06d}{MoveRight}}(\_stepWait));}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ left}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}WalkLeft"{}});}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_walkLeft\ =\ StartCoroutine(\mbox{\hyperlink{class_stick_movement_a34744cfccf0c3817cc7f93a95289d68d}{MoveLeft}}(\_stepWait));}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//idle}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkLeft\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkLeft);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_walkRight\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_walkRight);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_anim.Play(\textcolor{stringliteral}{"{}Idle"{}});}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \_leftLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.fixedDeltaTime);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \_rightLegRB.AddForce(Vector2.right\ *\ (\_speed\ *\ 1000)\ *\ Time.fixedDeltaTime);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(seconds);}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
 
 \end{DoxyCode}

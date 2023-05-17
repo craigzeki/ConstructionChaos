@@ -1,0 +1,176 @@
+\hypertarget{class_zone}{}\doxysection{Zone Class Reference}
+\label{class_zone}\index{Zone@{Zone}}
+
+
+This class represents an interactible zone on the map.  
+
+
+
+
+Inheritance diagram for Zone\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_zone__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Zone\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_zone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ZONE} \+: int \{ {\bfseries NO\+\_\+\+ZONE} = 0
+, {\bfseries GOAL\+\_\+\+ZONE}
+, {\bfseries LOCATION\+\_\+\+ZONE}
+, {\bfseries NUM\+\_\+\+OF\+\_\+\+ZONES}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}} (\mbox{\hyperlink{class_zone}{Zone}} other)
+\begin{DoxyCompactList}\small\item\em Specific Equals opperation for \mbox{\hyperlink{class_zone}{Zone}}. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_zone_a24843f534acbdae9b199d48e1c09c6cf}{Equals}} (object other)
+\begin{DoxyCompactList}\small\item\em Override of Equals to provide correct equivalence check. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{Get\+Hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Override of Get\+Hash\+Code to provide correct hash for Dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}\label{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}} 
+string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_zone_a03032d486487f85182ec0d9c7877892b}\label{class_zone_a03032d486487f85182ec0d9c7877892b}} 
+ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}\label{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}} 
+string {\bfseries \+\_\+friendly\+String} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em The friendly string which is used to construct the objective string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_zone_a97e52bc33f234c1725ab84543bc8f619}\label{class_zone_a97e52bc33f234c1725ab84543bc8f619}} 
+ZONE {\bfseries \+\_\+zone\+Type} = ZONE.\+GOAL\+\_\+\+ZONE
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_zone}{Zone}} type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents an interactible zone on the map. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_zone_a06cee8c9eb7bafc728364003e0c47e49}\label{class_zone_a06cee8c9eb7bafc728364003e0c47e49}} 
+\index{Zone@{Zone}!ZONE@{ZONE}}
+\index{ZONE@{ZONE}!Zone@{Zone}}
+\doxysubsubsection{\texorpdfstring{ZONE}{ZONE}}
+{\footnotesize\ttfamily enum Zone.\+ZONE \+: int}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ NO\_ZONE\ =\ 0,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ GOAL\_ZONE,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ LOCATION\_ZONE,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ NUM\_OF\_ZONES}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_zone_a24843f534acbdae9b199d48e1c09c6cf}\label{class_zone_a24843f534acbdae9b199d48e1c09c6cf}} 
+\index{Zone@{Zone}!Equals@{Equals}}
+\index{Equals@{Equals}!Zone@{Zone}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override bool Zone.\+Equals (\begin{DoxyParamCaption}\item[{object}]{other }\end{DoxyParamCaption})}
+
+
+
+Override of Equals to provide correct equivalence check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Object to compare with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True of False (Equal or Not Equal)
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}}((\mbox{\hyperlink{class_zone}{Zone}})other);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_zone_a51609732cbcc3e053defb5adf2226243}\label{class_zone_a51609732cbcc3e053defb5adf2226243}} 
+\index{Zone@{Zone}!Equals@{Equals}}
+\index{Equals@{Equals}!Zone@{Zone}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Zone.\+Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zone}{Zone}}}]{other }\end{DoxyParamCaption})}
+
+
+
+Specific Equals opperation for \mbox{\hyperlink{class_zone}{Zone}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_zone}{Zone}} to compare with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True of False (Equal or Not Equal)
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}{\_friendlyString}}.Equals(other.FriendlyString))\ \&\&}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_zone_a97e52bc33f234c1725ab84543bc8f619}{\_zoneType}}\ ==\ other.ZoneType)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}\label{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}} 
+\index{Zone@{Zone}!GetHashCode@{GetHashCode}}
+\index{GetHashCode@{GetHashCode}!Zone@{Zone}}
+\doxysubsubsection{\texorpdfstring{GetHashCode()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Zone.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Override of Get\+Hash\+Code to provide correct hash for Dictionary. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
+ \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}{\_friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}{\_friendlyString}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 32)\ +\ \mbox{\hyperlink{class_zone_a97e52bc33f234c1725ab84543bc8f619}{\_zoneType}}.GetHashCode();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+
+\end{DoxyCode}

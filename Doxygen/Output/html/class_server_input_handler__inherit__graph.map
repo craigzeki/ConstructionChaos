@@ -1,0 +1,4 @@
+<map id="ServerInputHandler" name="ServerInputHandler">
+<area shape="rect" id="node1" title="Server side input handler on all clients but only runs on the server." alt="" coords="5,79,136,104"/>
+<area shape="rect" id="node2" title=" " alt="" coords="8,5,133,31"/>
+</map>

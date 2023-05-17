@@ -1,0 +1,53 @@
+\hypertarget{class_scene_persist}{}\doxysection{Scene\+Persist Class Reference}
+\label{class_scene_persist}\index{ScenePersist@{ScenePersist}}
+
+
+Makes the object persist between scenes.  
+
+
+
+
+Inheritance diagram for Scene\+Persist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_scene_persist__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene\+Persist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_scene_persist__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_persist_a2ac38c16d7955c8cf5e41dcfda269dcf}{Awake}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Makes the object persist between scenes. 
+
+This should be used for objects in the main scene as just the environment will be loaded in at runtime.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_persist_a2ac38c16d7955c8cf5e41dcfda269dcf}\label{class_scene_persist_a2ac38c16d7955c8cf5e41dcfda269dcf}} 
+\index{ScenePersist@{ScenePersist}!Awake@{Awake}}
+\index{Awake@{Awake}!ScenePersist@{ScenePersist}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Scene\+Persist.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ DontDestroyOnLoad(gameObject);}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+
+\end{DoxyCode}

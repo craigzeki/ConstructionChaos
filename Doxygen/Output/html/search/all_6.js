@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hostgame_0',['HostGame',['../class_connection_handler.html#a00b6ffa4c052a6828857c1fe00038be2',1,'ConnectionHandler']]]
+  ['followcam_0',['FollowCam',['../class_follow_cam.html',1,'']]],
+  ['friendlystring_1',['friendlyString',['../class_objective_colour.html#adf566aff771b1855a4382dd8d9f7fe9d',1,'ObjectiveColour.friendlyString()'],['../class_objective_object.html#a48cd35d9f871643c2436e372507ada88',1,'ObjectiveObject.friendlyString()']]]
 ];

@@ -91,7 +91,6 @@ $(document).ready(function(){initNavTree('class_objective_manager.html',''); ini
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -104,7 +103,7 @@ $(document).ready(function(){initNavTree('class_objective_manager.html',''); ini
 
 <p>Runs server side only.<br  />
  Creates random objectives and assigns them to players.<br  />
- Provides an event driven system to allow players to report when an action has occured.<br  />
+ Provides an event driven system to allow players to report when an action has occurred.<br  />
  Will report back to the player the status of their objective.<br  />
   
  <a href="class_objective_manager.html#details">More...</a></p>
@@ -127,61 +126,40 @@ Collaboration diagram for ObjectiveManager:</div>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a81d08fb6dcf1830d057af0c350b18ba7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveObject</a> { <br />
-&#160;&#160;<b>ANY_OBJECT</b> = 0
-, <b>CRATE</b>
-, <b>BARREL</b>
-, <b>CHAIN</b>
-, <br />
-&#160;&#160;<b>NUM_OF_OBJECTS</b>
-<br />
- }</td></tr>
-<tr class="memdesc:a81d08fb6dcf1830d057af0c350b18ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible objects that can be used in defining an objective.  <a href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">More...</a><br /></td></tr>
-<tr class="separator:a81d08fb6dcf1830d057af0c350b18ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55d1d15a1de31be4226357d7c1def345"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveColour</a> { <br />
-&#160;&#160;<b>ANY_COLOUR</b> = 0
-, <b>RED</b>
-, <b>YELLOW</b>
-, <b>BLUE</b>
-, <br />
-&#160;&#160;<b>GREEN</b>
-, <b>PURPLE</b>
-, <b>BLACK</b>
-, <b>WHITE</b>
-, <br />
-&#160;&#160;<b>NUM_OF_COLOURS</b>
-<br />
- }</td></tr>
-<tr class="memdesc:a55d1d15a1de31be4226357d7c1def345"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible colours that can be used in defining an objective.  <a href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">More...</a><br /></td></tr>
-<tr class="separator:a55d1d15a1de31be4226357d7c1def345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f04c0c097a24a72eafcdc4b45f1dde"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a> { <br />
-&#160;&#160;<b>ANY_ACTION</b> = 0
-, <b>GRAB</b>
-, <b>TOUCH</b>
-, <b>SWING</b>
-, <br />
-&#160;&#160;<b>NUM_OF_ACTIONS</b>
-<br />
- }</td></tr>
-<tr class="memdesc:a42f04c0c097a24a72eafcdc4b45f1dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible actions that can be used in defining an objective.  <a href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">More...</a><br /></td></tr>
-<tr class="separator:a42f04c0c097a24a72eafcdc4b45f1dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2117c87f37e1411914a0d9a9011d2ef2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveConditions</a> { <b>NO_CONDITION</b> = 0
-, <b>DURING_COUNTDOWN</b>
-, <b>WHEN_IN_GOAL</b>
-, <b>NUM_OF_CONDITIONS</b>
- }</td></tr>
-<tr class="memdesc:a2117c87f37e1411914a0d9a9011d2ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible conditions that can be used in defining an objective.  <a href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">More...</a><br /></td></tr>
-<tr class="separator:a2117c87f37e1411914a0d9a9011d2ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab7e37a8bff711016bb30f872aef5c5c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3">ResetObjectiveManager</a> ()</td></tr>
+<tr class="memdesc:ab7e37a8bff711016bb30f872aef5c5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a> to start a new round.  <br /></td></tr>
+<tr class="separator:ab7e37a8bff711016bb30f872aef5c5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1251be92e8837460174e21319ba03401"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a> (ulong clientId)</td></tr>
+<tr class="memdesc:a1251be92e8837460174e21319ba03401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered by <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> event once a player has spawned on the server.<br  />
+ Sets the player's objective to the next one on the possible objectives list.  <br /></td></tr>
+<tr class="separator:a1251be92e8837460174e21319ba03401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a290b41e8a4237ee6f51bdc61b2c760df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">RemovePlayer</a> (ulong clientId)</td></tr>
+<tr class="memdesc:a290b41e8a4237ee6f51bdc61b2c760df"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be called if a player disconnects intentionally.<br  />
+ Removes the player from the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a><br  />
+ The player's ClientRPC will no longer be called to send new Objectives.  <br /></td></tr>
+<tr class="separator:a290b41e8a4237ee6f51bdc61b2c760df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00505f6e1b68931dd95c095570706733"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ReconnectPlayer</a> (ulong currentClientId)</td></tr>
+<tr class="memdesc:a00505f6e1b68931dd95c095570706733"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be called if a player has rejoined following a disconnection.<br  />
+ This will re-register the player with the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a>.<br  />
+ If the player's old clientID is recognized, it will be replaced with the new one.<br  />
+ The player's previous ObjectivePlayerData will be retained, if not a new one will be created <br  />
+  <br /></td></tr>
+<tr class="separator:a00505f6e1b68931dd95c095570706733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3bdfd34cc63246f362db68b653aa20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">RegisterObject</a> (<a class="el" href="class_objective_object_instance.html">ObjectiveObjectInstance</a> objectiveObjectInstance)</td></tr>
+<tr class="memdesc:a1a3bdfd34cc63246f362db68b653aa20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the objectiveObjectInstance with the <a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a> Manager<br  />
+ This allows the <a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a> Manager to use this object when creating objectives.  <br /></td></tr>
+<tr class="separator:a1a3bdfd34cc63246f362db68b653aa20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a7fea8589bd79af92b8e7ac88cda9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">RegisterZone</a> (<a class="el" href="class_zone.html">Zone</a> zone)</td></tr>
+<tr class="memdesc:a76a7fea8589bd79af92b8e7ac88cda9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a zone into the possibleZones dictionary, only if unique.  <br /></td></tr>
+<tr class="separator:a76a7fea8589bd79af92b8e7ac88cda9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b5ef3531ff4a4b4e1d975a82bd986d7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a5b5ef3531ff4a4b4e1d975a82bd986d7">CreateObjectiveString</a> (<a class="el" href="class_objective.html">Objective</a> objective)</td></tr>
 <tr class="memdesc:a5b5ef3531ff4a4b4e1d975a82bd986d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a structred string which can be used to display the objective to the player.  <br /></td></tr>
 <tr class="separator:a5b5ef3531ff4a4b4e1d975a82bd986d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af421d4a74032b1f9afe42150a19397c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_objective.html">Objective</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#af421d4a74032b1f9afe42150a19397c0">GetObjective</a> (uint player)</td></tr>
-<tr class="separator:af421d4a74032b1f9afe42150a19397c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af84b0e292f39382cbeb22acca677ab9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b">ReportObjectiveAction</a> (<a class="el" href="class_objective.html">Objective</a> objectiveOccured, ulong playerClientId)</td></tr>
+<tr class="memdesc:af84b0e292f39382cbeb22acca677ab9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface to allow objects to report objective actions occuring and have them checked.  <br /></td></tr>
+<tr class="separator:af84b0e292f39382cbeb22acca677ab9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -192,151 +170,118 @@ Properties</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aba091a8852240edf5798fbc092825144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#aba091a8852240edf5798fbc092825144">Awake</a> ()</td></tr>
 <tr class="separator:aba091a8852240edf5798fbc092825144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55d53693e1b4ac6ff300b4f6086ae454"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_objective.html">Objective</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a55d53693e1b4ac6ff300b4f6086ae454">CreateRandomObjective</a> (uint player)</td></tr>
-<tr class="memdesc:a55d53693e1b4ac6ff300b4f6086ae454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly selects an objective for the given player.  <br /></td></tr>
-<tr class="separator:a55d53693e1b4ac6ff300b4f6086ae454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a924a9e4e0ed8e4658d42da63adec0b7e"><td class="memItemLeft" align="right" valign="top">List&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a924a9e4e0ed8e4658d42da63adec0b7e">Lookup2DVertical</a> (int index, bool[,] lookupArray, bool match)</td></tr>
-<tr class="memdesc:a924a9e4e0ed8e4658d42da63adec0b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides all horizontal (rows) in the veritical (col) specified by index, which are true or false as specified by 'match'.  <br /></td></tr>
-<tr class="separator:a924a9e4e0ed8e4658d42da63adec0b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0655506a561db8a757844e099b89f520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a0655506a561db8a757844e099b89f520">OnEnable</a> ()</td></tr>
+<tr class="separator:a0655506a561db8a757844e099b89f520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec5975b52dfcd6d4f33ec5aac40aff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a4ec5975b52dfcd6d4f33ec5aac40aff7">OnDisable</a> ()</td></tr>
+<tr class="separator:a4ec5975b52dfcd6d4f33ec5aac40aff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ab4b7937e9b578a0d87bd538e855c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a> (object sender, ulong clientId)</td></tr>
+<tr class="memdesc:a86ab4b7937e9b578a0d87bd538e855c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerSpawned event.  <br /></td></tr>
+<tr class="separator:a86ab4b7937e9b578a0d87bd538e855c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009c801b8ac08e51e649d1f2c4714b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a009c801b8ac08e51e649d1f2c4714b14">OnPlayerDisconnect</a> (object sender, ulong clientId)</td></tr>
+<tr class="memdesc:a009c801b8ac08e51e649d1f2c4714b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerDisconnect event.  <br /></td></tr>
+<tr class="separator:a009c801b8ac08e51e649d1f2c4714b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1652acec1f6b135d923619bc929bdebe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a1652acec1f6b135d923619bc929bdebe">OnPlayerReconnect</a> (object sender, <a class="el" href="class_player_reconnect_data.html">PlayerReconnectData</a> playerReconnectData)</td></tr>
+<tr class="memdesc:a1652acec1f6b135d923619bc929bdebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerReconnect event.  <br /></td></tr>
+<tr class="separator:a1652acec1f6b135d923619bc929bdebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8cedc57759aba9b98a4f9f74a49d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">OnSceneLoaded</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:abe8cedc57759aba9b98a4f9f74a49d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends OnSceneLoaded event.  <br /></td></tr>
+<tr class="separator:abe8cedc57759aba9b98a4f9f74a49d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a25d40c1f9bf2bb475ea54c7e0bfcc659"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a25d40c1f9bf2bb475ea54c7e0bfcc659">_colourSrings</a></td></tr>
-<tr class="memdesc:a25d40c1f9bf2bb475ea54c7e0bfcc659"><td class="mdescLeft">&#160;</td><td class="mdescRight">String map of colours.  <br /></td></tr>
-<tr class="separator:a25d40c1f9bf2bb475ea54c7e0bfcc659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff47c912446ced5c1235aafe865404c4"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#aff47c912446ced5c1235aafe865404c4">_objectStrings</a></td></tr>
-<tr class="memdesc:aff47c912446ced5c1235aafe865404c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">String map of objects.  <br /></td></tr>
-<tr class="separator:aff47c912446ced5c1235aafe865404c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a907801a398fc996b9767ec98e533e268"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a907801a398fc996b9767ec98e533e268">_actionStrings</a></td></tr>
-<tr class="memdesc:a907801a398fc996b9767ec98e533e268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the structure of the objetive sentance depending on the action.  <br /></td></tr>
-<tr class="separator:a907801a398fc996b9767ec98e533e268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e05f4b5766296af27e4249c324fcd74"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a6e05f4b5766296af27e4249c324fcd74">_conditionStrings</a></td></tr>
-<tr class="memdesc:a6e05f4b5766296af27e4249c324fcd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">String map of conditions.  <br /></td></tr>
-<tr class="separator:a6e05f4b5766296af27e4249c324fcd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24fcce2a0e3ed05e0d594b2feeace100"><td class="memItemLeft" align="right" valign="top"><a id="a24fcce2a0e3ed05e0d594b2feeace100" name="a24fcce2a0e3ed05e0d594b2feeace100"></a>
+Dictionary&lt; <a class="el" href="class_objective_object_instance.html">ObjectiveObjectInstance</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveObjects</b> = new Dictionary&lt;<a class="el" href="class_objective_object_instance.html">ObjectiveObjectInstance</a>, int&gt;()</td></tr>
+<tr class="memdesc:a24fcce2a0e3ed05e0d594b2feeace100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dictionary of ObjectiveObjectInstances and their corresponding qty that exist in the current scene<br  />
+ A dictionary was the best way to quickly check and ignore identical objects (e.g. two purple crates) from being added and instead tracks the duplicate by adding to the qty (int) <br /></td></tr>
+<tr class="separator:a24fcce2a0e3ed05e0d594b2feeace100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65027ae111883976e9a022f86d3175f2"><td class="memItemLeft" align="right" valign="top"><a id="a65027ae111883976e9a022f86d3175f2" name="a65027ae111883976e9a022f86d3175f2"></a>
+List&lt; <a class="el" href="class_objective.html">Objective</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_possibleObjectives</b> = new List&lt;<a class="el" href="class_objective.html">Objective</a>&gt;()</td></tr>
+<tr class="memdesc:a65027ae111883976e9a022f86d3175f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all possible objectives based on the objects in the scene. <br /></td></tr>
+<tr class="separator:a65027ae111883976e9a022f86d3175f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722a4a5300f7373feebde579e16350c3"><td class="memItemLeft" align="right" valign="top"><a id="a722a4a5300f7373feebde579e16350c3" name="a722a4a5300f7373feebde579e16350c3"></a>
+Dictionary&lt; Zone.ZONE, List&lt; <a class="el" href="class_zone.html">Zone</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_possibleZones</b> = new Dictionary&lt;Zone.ZONE, List&lt;<a class="el" href="class_zone.html">Zone</a>&gt;&gt;()</td></tr>
+<tr class="memdesc:a722a4a5300f7373feebde579e16350c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all possible zones based on what is present in the scene. <br /></td></tr>
+<tr class="separator:a722a4a5300f7373feebde579e16350c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53e2f60c4ce08cc3ca3a2f68564273d"><td class="memItemLeft" align="right" valign="top"><a id="ab53e2f60c4ce08cc3ca3a2f68564273d" name="ab53e2f60c4ce08cc3ca3a2f68564273d"></a>
+Dictionary&lt; <a class="el" href="class_objective.html">Objective</a>, ulong &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_playerObjectives</b> = new Dictionary&lt;<a class="el" href="class_objective.html">Objective</a>, ulong&gt;()</td></tr>
+<tr class="memdesc:ab53e2f60c4ce08cc3ca3a2f68564273d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which is hashed based on the objective - this allows very performant lookup of the assigned ClientID<br  />
+ during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID. <br /></td></tr>
+<tr class="separator:ab53e2f60c4ce08cc3ca3a2f68564273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6e9c14ad90215d4f74aab58639d17fc"><td class="memItemLeft" align="right" valign="top"><a id="af6e9c14ad90215d4f74aab58639d17fc" name="af6e9c14ad90215d4f74aab58639d17fc"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>_inverseString</b> = &quot;Don't &quot;</td></tr>
 <tr class="separator:af6e9c14ad90215d4f74aab58639d17fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab38c87ae75be42f04d85791decfd7fdf"><td class="memItemLeft" align="right" valign="top">bool[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#ab38c87ae75be42f04d85791decfd7fdf">_colourToObject</a></td></tr>
-<tr class="memdesc:ab38c87ae75be42f04d85791decfd7fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines what colours each object can be.  <br /></td></tr>
-<tr class="separator:ab38c87ae75be42f04d85791decfd7fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed6411b644d17040c5878d86cda9c4f9"><td class="memItemLeft" align="right" valign="top">bool[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#aed6411b644d17040c5878d86cda9c4f9">_objectToAction</a></td></tr>
-<tr class="memdesc:aed6411b644d17040c5878d86cda9c4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines what actions can be made with which object.  <br /></td></tr>
-<tr class="separator:aed6411b644d17040c5878d86cda9c4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca4075b5f6e7fe649b9d1b073c2ab50"><td class="memItemLeft" align="right" valign="top">bool[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a2ca4075b5f6e7fe649b9d1b073c2ab50">_conditionToAction</a></td></tr>
-<tr class="separator:a2ca4075b5f6e7fe649b9d1b073c2ab50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60f7f1b6570cbd4a5538165b3320d72e"><td class="memItemLeft" align="right" valign="top"><a id="a60f7f1b6570cbd4a5538165b3320d72e" name="a60f7f1b6570cbd4a5538165b3320d72e"></a>
-List&lt; <a class="el" href="class_objective.html">Objective</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_objectives</b> = new List&lt;<a class="el" href="class_objective.html">Objective</a>&gt;()</td></tr>
-<tr class="separator:a60f7f1b6570cbd4a5538165b3320d72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01a80df5ca83b47db193d3fc2bbd886c"><td class="memItemLeft" align="right" valign="top"><a id="a01a80df5ca83b47db193d3fc2bbd886c" name="a01a80df5ca83b47db193d3fc2bbd886c"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_anyActionString</b> = &quot;Do anything with&quot;</td></tr>
+<tr class="separator:a01a80df5ca83b47db193d3fc2bbd886c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc821e2ad773f49937f18fc461662df"><td class="memItemLeft" align="right" valign="top"><a id="a8fc821e2ad773f49937f18fc461662df" name="a8fc821e2ad773f49937f18fc461662df"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_nextAvailableObjective</b> = 0</td></tr>
+<tr class="memdesc:a8fc821e2ad773f49937f18fc461662df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of the position in the _possibleObjectives list for the next one which hasn't been used. <br /></td></tr>
+<tr class="separator:a8fc821e2ad773f49937f18fc461662df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a40534d84748fab29bff40c67943244a0"><td class="memItemLeft" align="right" valign="top"><a id="a40534d84748fab29bff40c67943244a0" name="a40534d84748fab29bff40c67943244a0"></a>
-static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b></td></tr>
-<tr class="separator:a40534d84748fab29bff40c67943244a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec83951ad0b060f8cff8e14ba3998c30"><td class="memItemLeft" align="right" valign="top"><a id="aec83951ad0b060f8cff8e14ba3998c30" name="aec83951ad0b060f8cff8e14ba3998c30"></a>
+static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_instance</b></td></tr>
+<tr class="separator:aec83951ad0b060f8cff8e14ba3998c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Runs server side only.<br  />
  Creates random objectives and assigns them to players.<br  />
- Provides an event driven system to allow players to report when an action has occured.<br  />
+ Provides an event driven system to allow players to report when an action has occurred.<br  />
  Will report back to the player the status of their objective.<br  />
  </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a42f04c0c097a24a72eafcdc4b45f1dde" name="a42f04c0c097a24a72eafcdc4b45f1dde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42f04c0c097a24a72eafcdc4b45f1dde">&#9670;&#160;</a></span>ObjectiveAction</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1251be92e8837460174e21319ba03401" name="a1251be92e8837460174e21319ba03401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1251be92e8837460174e21319ba03401">&#9670;&#160;</a></span>AssignPlayerObjective()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveManager.ObjectiveAction</a></td>
+          <td class="memname">bool ObjectiveManager.AssignPlayerObjective </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>clientId</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of possible actions that can be used in defining an objective. </p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>    {</div>
-<div class="line"><span class="lineno">   48</span>        ANY_ACTION = 0,</div>
-<div class="line"><span class="lineno">   49</span>        GRAB,</div>
-<div class="line"><span class="lineno">   50</span>        TOUCH,</div>
-<div class="line"><span class="lineno">   51</span>        SWING,</div>
-<div class="line"><span class="lineno">   52</span>        NUM_OF_ACTIONS</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
+<p>Triggered by <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> event once a player has spawned on the server.<br  />
+ Sets the player's objective to the next one on the possible objectives list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clientId</td><td>The network client ID of the player</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, False if out of objectives or clientId not found in PlayerData</dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>    {</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a> &lt; <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Count)</div>
+<div class="line"><span class="lineno">  125</span>        {</div>
+<div class="line"><span class="lineno">  126</span>            <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Add(<a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>[<a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a>], clientId);</div>
+<div class="line"><span class="lineno">  127</span>            playerData.Objective = <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>[<a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a>];</div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a>++;</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  131</span>        {</div>
+<div class="line"><span class="lineno">  132</span>            playerData.Objective = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+<div class="line"><span class="lineno">  134</span>        </div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:14</div></div>
+<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:36</div></div>
+<div class="ttc" id="aclass_net_player_data_html"><div class="ttname"><a href="class_net_player_data.html">NetPlayerData</a></div><div class="ttdoc">Class to store objective data related to a player.</div><div class="ttdef"><b>Definition:</b> NetPlayerData.cs:13</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a65027ae111883976e9a022f86d3175f2"><div class="ttname"><a href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">ObjectiveManager._possibleObjectives</a></div><div class="ttdeci">List&lt; Objective &gt; _possibleObjectives</div><div class="ttdoc">List of all possible objectives based on the objects in the scene.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:27</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a8fc821e2ad773f49937f18fc461662df"><div class="ttname"><a href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">ObjectiveManager._nextAvailableObjective</a></div><div class="ttdeci">int _nextAvailableObjective</div><div class="ttdoc">Keeps track of the position in the _possibleObjectives list for the next one which hasn't been used.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:47</div></div>
+<div class="ttc" id="aclass_objective_manager_html_ab53e2f60c4ce08cc3ca3a2f68564273d"><div class="ttname"><a href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">ObjectiveManager._playerObjectives</a></div><div class="ttdeci">Dictionary&lt; Objective, ulong &gt; _playerObjectives</div><div class="ttdoc">A dictionary which is hashed based on the objective - this allows very performant lookup of the assig...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:38</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a55d1d15a1de31be4226357d7c1def345" name="a55d1d15a1de31be4226357d7c1def345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55d1d15a1de31be4226357d7c1def345">&#9670;&#160;</a></span>ObjectiveColour</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveManager.ObjectiveColour</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of possible colours that can be used in defining an objective. </p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>        ANY_COLOUR = 0,</div>
-<div class="line"><span class="lineno">   33</span>        RED,</div>
-<div class="line"><span class="lineno">   34</span>        YELLOW,</div>
-<div class="line"><span class="lineno">   35</span>        BLUE,</div>
-<div class="line"><span class="lineno">   36</span>        GREEN,</div>
-<div class="line"><span class="lineno">   37</span>        PURPLE,</div>
-<div class="line"><span class="lineno">   38</span>        BLACK,</div>
-<div class="line"><span class="lineno">   39</span>        WHITE,</div>
-<div class="line"><span class="lineno">   40</span>        NUM_OF_COLOURS</div>
-<div class="line"><span class="lineno">   41</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a2117c87f37e1411914a0d9a9011d2ef2" name="a2117c87f37e1411914a0d9a9011d2ef2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2117c87f37e1411914a0d9a9011d2ef2">&#9670;&#160;</a></span>ObjectiveConditions</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveManager.ObjectiveConditions</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of possible conditions that can be used in defining an objective. </p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>    {</div>
-<div class="line"><span class="lineno">   60</span>        NO_CONDITION = 0,</div>
-<div class="line"><span class="lineno">   61</span>        DURING_COUNTDOWN,</div>
-<div class="line"><span class="lineno">   62</span>        WHEN_IN_GOAL,</div>
-<div class="line"><span class="lineno">   63</span>        NUM_OF_CONDITIONS</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a81d08fb6dcf1830d057af0c350b18ba7" name="a81d08fb6dcf1830d057af0c350b18ba7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d08fb6dcf1830d057af0c350b18ba7">&#9670;&#160;</a></span>ObjectiveObject</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveManager.ObjectiveObject</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of possible objects that can be used in defining an objective. </p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        ANY_OBJECT = 0,</div>
-<div class="line"><span class="lineno">   21</span>        CRATE,</div>
-<div class="line"><span class="lineno">   22</span>        BARREL,</div>
-<div class="line"><span class="lineno">   23</span>        CHAIN,</div>
-<div class="line"><span class="lineno">   24</span>        NUM_OF_OBJECTS</div>
-<div class="line"><span class="lineno">   25</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a id="aba091a8852240edf5798fbc092825144" name="aba091a8852240edf5798fbc092825144"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba091a8852240edf5798fbc092825144">&#9670;&#160;</a></span>Awake()</h2>
 
@@ -359,19 +304,9 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  165</span>    {</div>
-<div class="line"><span class="lineno">  166</span>        UnityEngine.Random.InitState((<span class="keywordtype">int</span>)DateTime.Now.Ticks);</div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">for</span>(uint i = 1; i &lt;= 6; i++)</div>
-<div class="line"><span class="lineno">  169</span>        {</div>
-<div class="line"><span class="lineno">  170</span>            <a class="code hl_class" href="class_objective.html">Objective</a> _temp = <a class="code hl_function" href="class_objective_manager.html#a55d53693e1b4ac6ff300b4f6086ae454">CreateRandomObjective</a>(i);</div>
-<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">if</span> (_temp != <span class="keyword">null</span>) _objectives.Add(_temp);</div>
-<div class="line"><span class="lineno">  172</span>        }</div>
-<div class="line"><span class="lineno">  173</span>        </div>
-<div class="line"><span class="lineno">  174</span> </div>
-<div class="line"><span class="lineno">  175</span>    }</div>
-<div class="ttc" id="aclass_objective_html"><div class="ttname"><a href="class_objective.html">Objective</a></div><div class="ttdoc">Container for storing objective information.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:277</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a55d53693e1b4ac6ff300b4f6086ae454"><div class="ttname"><a href="class_objective_manager.html#a55d53693e1b4ac6ff300b4f6086ae454">ObjectiveManager.CreateRandomObjective</a></div><div class="ttdeci">Objective CreateRandomObjective(uint player)</div><div class="ttdoc">Randomly selects an objective for the given player.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:182</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        UnityEngine.Random.InitState((<span class="keywordtype">int</span>)DateTime.Now.Ticks);</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,38 +334,37 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The objective as a string</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  219</span>    {</div>
-<div class="line"><span class="lineno">  220</span>        <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span> String.Empty;</div>
-<div class="line"><span class="lineno">  221</span> </div>
-<div class="line"><span class="lineno">  222</span>        <span class="keywordtype">string</span> str = <span class="keywordtype">string</span>.Empty;</div>
-<div class="line"><span class="lineno">  223</span>        str = <a class="code hl_variable" href="class_objective_manager.html#a907801a398fc996b9767ec98e533e268">_actionStrings</a>[(int)objective.Action];</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>        if (objective.Action != <a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>.ANY_ACTION)</div>
-<div class="line"><span class="lineno">  226</span>        {</div>
-<div class="line"><span class="lineno">  227</span>            <span class="comment">//If the objective is to do something specific, continue with string creation</span></div>
-<div class="line"><span class="lineno">  228</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;COLOUR&gt;&quot;</span>, <a class="code hl_variable" href="class_objective_manager.html#a25d40c1f9bf2bb475ea54c7e0bfcc659">_colourSrings</a>[(<span class="keywordtype">int</span>)objective.Colour]);</div>
-<div class="line"><span class="lineno">  229</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;OBJECT&gt;&quot;</span>, <a class="code hl_variable" href="class_objective_manager.html#aff47c912446ced5c1235aafe865404c4">_objectStrings</a>[(<span class="keywordtype">int</span>)objective.Object]);</div>
-<div class="line"><span class="lineno">  230</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;CONDITION&gt;&quot;</span>, <a class="code hl_variable" href="class_objective_manager.html#a6e05f4b5766296af27e4249c324fcd74">_conditionStrings</a>[(<span class="keywordtype">int</span>)objective.Condition]);</div>
-<div class="line"><span class="lineno">  231</span>        }</div>
-<div class="line"><span class="lineno">  232</span>        </div>
-<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">if</span>(objective.Inverse)</div>
-<div class="line"><span class="lineno">  234</span>        {</div>
-<div class="line"><span class="lineno">  235</span>            <span class="comment">//prepend the inverse string and force first letter of original string to be lower case</span></div>
-<div class="line"><span class="lineno">  236</span>            str = _inverseString + <span class="keywordtype">char</span>.ToLower(str[0]) + str[1..];</div>
-<div class="line"><span class="lineno">  237</span>        }</div>
-<div class="line"><span class="lineno">  238</span> </div>
-<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">return</span> str;</div>
-<div class="line"><span class="lineno">  240</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a25d40c1f9bf2bb475ea54c7e0bfcc659"><div class="ttname"><a href="class_objective_manager.html#a25d40c1f9bf2bb475ea54c7e0bfcc659">ObjectiveManager._colourSrings</a></div><div class="ttdeci">string[] _colourSrings</div><div class="ttdoc">String map of colours.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:69</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a42f04c0c097a24a72eafcdc4b45f1dde"><div class="ttname"><a href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveManager.ObjectiveAction</a></div><div class="ttdeci">ObjectiveAction</div><div class="ttdoc">List of possible actions that can be used in defining an objective.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:47</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a6e05f4b5766296af27e4249c324fcd74"><div class="ttname"><a href="class_objective_manager.html#a6e05f4b5766296af27e4249c324fcd74">ObjectiveManager._conditionStrings</a></div><div class="ttdeci">string[] _conditionStrings</div><div class="ttdoc">String map of conditions.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:106</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a907801a398fc996b9767ec98e533e268"><div class="ttname"><a href="class_objective_manager.html#a907801a398fc996b9767ec98e533e268">ObjectiveManager._actionStrings</a></div><div class="ttdeci">string[] _actionStrings</div><div class="ttdoc">Defines the structure of the objetive sentance depending on the action.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:95</div></div>
-<div class="ttc" id="aclass_objective_manager_html_aff47c912446ced5c1235aafe865404c4"><div class="ttname"><a href="class_objective_manager.html#aff47c912446ced5c1235aafe865404c4">ObjectiveManager._objectStrings</a></div><div class="ttdeci">string[] _objectStrings</div><div class="ttdoc">String map of objects.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:84</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>    {</div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span> String.Empty;</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>        <span class="keywordtype">string</span> str = <span class="keywordtype">string</span>.Empty;</div>
+<div class="line"><span class="lineno">  252</span>        str = objective.Action.FriendlyString;</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>        <span class="comment">// If the action is &quot;Do anything with&quot; then we don&#39;t need to add the colour, object or condition</span></div>
+<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">if</span> (str != _anyActionString)</div>
+<div class="line"><span class="lineno">  256</span>        {</div>
+<div class="line"><span class="lineno">  257</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;COLOUR&gt;&quot;</span>, objective.Colour.FriendlyString);</div>
+<div class="line"><span class="lineno">  258</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;OBJECT&gt;&quot;</span>, objective.Object.FriendlyString);</div>
+<div class="line"><span class="lineno">  259</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;CONDITION&gt;&quot;</span>, objective.Condition.FriendlyString);</div>
+<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">if</span>(objective.Condition.RequiresObjectToBeInZone)</div>
+<div class="line"><span class="lineno">  261</span>            {</div>
+<div class="line"><span class="lineno">  262</span>                str = str.Replace(<span class="stringliteral">&quot;&lt;ZONE&gt;&quot;</span>, objective.Zone.FriendlyString);</div>
+<div class="line"><span class="lineno">  263</span>            }</div>
+<div class="line"><span class="lineno">  264</span>        }</div>
+<div class="line"><span class="lineno">  265</span>        </div>
+<div class="line"><span class="lineno">  266</span>        <span class="keywordflow">if</span>(objective.Inverse)</div>
+<div class="line"><span class="lineno">  267</span>        {</div>
+<div class="line"><span class="lineno">  268</span>            <span class="comment">// Prepend the inverse string and force first letter of original string to be lower case</span></div>
+<div class="line"><span class="lineno">  269</span>            str = _inverseString + <span class="keywordtype">char</span>.ToLower(str[0]) + str[1..];</div>
+<div class="line"><span class="lineno">  270</span>        }</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">return</span> str;</div>
+<div class="line"><span class="lineno">  273</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a55d53693e1b4ac6ff300b4f6086ae454" name="a55d53693e1b4ac6ff300b4f6086ae454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55d53693e1b4ac6ff300b4f6086ae454">&#9670;&#160;</a></span>CreateRandomObjective()</h2>
+<a id="a4ec5975b52dfcd6d4f33ec5aac40aff7" name="a4ec5975b52dfcd6d4f33ec5aac40aff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec5975b52dfcd6d4f33ec5aac40aff7">&#9670;&#160;</a></span>OnDisable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,10 +373,9 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_objective.html">Objective</a> ObjectiveManager.CreateRandomObjective </td>
+          <td class="memname">void ObjectiveManager.OnDisable </td>
           <td>(</td>
-          <td class="paramtype">uint&#160;</td>
-          <td class="paramname"><em>player</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -452,82 +385,18 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Randomly selects an objective for the given player. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">player</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a> of type <a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a>, containing all the objective info</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
-<div class="line"><span class="lineno">  184</span>        <a class="code hl_enumeration" href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveColour</a> colour;</div>
-<div class="line"><span class="lineno">  185</span>        <a class="code hl_enumeration" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveObject</a> @object;</div>
-<div class="line"><span class="lineno">  186</span>        <a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a> action;</div>
-<div class="line"><span class="lineno">  187</span>        <a class="code hl_enumeration" href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveConditions</a> condition;</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>        List&lt;int&gt; possibleObjects;</div>
-<div class="line"><span class="lineno">  190</span>        List&lt;int&gt; possibleColours;</div>
-<div class="line"><span class="lineno">  191</span>        List&lt;int&gt; possibleConditions;</div>
-<div class="line"><span class="lineno">  192</span> </div>
-<div class="line"><span class="lineno">  193</span>        <span class="keywordtype">bool</span> inverse = UnityEngine.Random.Range((<span class="keywordtype">int</span>)0,(<span class="keywordtype">int</span>)2) == 0 ? false : <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>        <span class="comment">//pick a random action</span></div>
-<div class="line"><span class="lineno">  196</span>        action = (<a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>)UnityEngine.Random.Range((<span class="keywordtype">int</span>)<a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>.ANY_ACTION, (int)<a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>.NUM_OF_ACTIONS);</div>
-<div class="line"><span class="lineno">  197</span>        possibleConditions = <a class="code hl_function" href="class_objective_manager.html#a924a9e4e0ed8e4658d42da63adec0b7e">Lookup2DVertical</a>((<span class="keywordtype">int</span>)action, _conditionToAction, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">if</span> (possibleConditions.Count == 0) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  199</span>        condition = (<a class="code hl_enumeration" href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveConditions</a>)possibleConditions[UnityEngine.Random.Range(0, possibleConditions.Count)];</div>
-<div class="line"><span class="lineno">  200</span>        possibleObjects = <a class="code hl_function" href="class_objective_manager.html#a924a9e4e0ed8e4658d42da63adec0b7e">Lookup2DVertical</a>((<span class="keywordtype">int</span>)action, <a class="code hl_variable" href="class_objective_manager.html#aed6411b644d17040c5878d86cda9c4f9">_objectToAction</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">if</span> (possibleObjects.Count == 0) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  202</span>        @<span class="keywordtype">object</span> = (<a class="code hl_enumeration" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveObject</a>)possibleObjects[UnityEngine.Random.Range(0, possibleObjects.Count)];</div>
-<div class="line"><span class="lineno">  203</span>        possibleColours = <a class="code hl_function" href="class_objective_manager.html#a924a9e4e0ed8e4658d42da63adec0b7e">Lookup2DVertical</a>((<span class="keywordtype">int</span>)@<span class="keywordtype">object</span>, <a class="code hl_variable" href="class_objective_manager.html#ab38c87ae75be42f04d85791decfd7fdf">_colourToObject</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">if</span>(possibleColours.Count == 0) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  205</span>        colour = (<a class="code hl_enumeration" href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveColour</a>)possibleColours[UnityEngine.Random.Range(0, possibleColours.Count)];</div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>        <a class="code hl_class" href="class_objective.html">Objective</a> newObjective = <span class="keyword">new</span> <a class="code hl_class" href="class_objective.html">Objective</a>(action, colour, @<span class="keywordtype">object</span>, condition, inverse, player);</div>
-<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">return</span> newObjective;</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a2117c87f37e1411914a0d9a9011d2ef2"><div class="ttname"><a href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveManager.ObjectiveConditions</a></div><div class="ttdeci">ObjectiveConditions</div><div class="ttdoc">List of possible conditions that can be used in defining an objective.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:59</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a55d1d15a1de31be4226357d7c1def345"><div class="ttname"><a href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveManager.ObjectiveColour</a></div><div class="ttdeci">ObjectiveColour</div><div class="ttdoc">List of possible colours that can be used in defining an objective.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:31</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a81d08fb6dcf1830d057af0c350b18ba7"><div class="ttname"><a href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveManager.ObjectiveObject</a></div><div class="ttdeci">ObjectiveObject</div><div class="ttdoc">List of possible objects that can be used in defining an objective.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:19</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a924a9e4e0ed8e4658d42da63adec0b7e"><div class="ttname"><a href="class_objective_manager.html#a924a9e4e0ed8e4658d42da63adec0b7e">ObjectiveManager.Lookup2DVertical</a></div><div class="ttdeci">List&lt; int &gt; Lookup2DVertical(int index, bool[,] lookupArray, bool match)</div><div class="ttdoc">Provides all horizontal (rows) in the veritical (col) specified by index, which are true or false as ...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:249</div></div>
-<div class="ttc" id="aclass_objective_manager_html_ab38c87ae75be42f04d85791decfd7fdf"><div class="ttname"><a href="class_objective_manager.html#ab38c87ae75be42f04d85791decfd7fdf">ObjectiveManager._colourToObject</a></div><div class="ttdeci">bool[,] _colourToObject</div><div class="ttdoc">Defines what colours each object can be.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:118</div></div>
-<div class="ttc" id="aclass_objective_manager_html_aed6411b644d17040c5878d86cda9c4f9"><div class="ttname"><a href="class_objective_manager.html#aed6411b644d17040c5878d86cda9c4f9">ObjectiveManager._objectToAction</a></div><div class="ttdeci">bool[,] _objectToAction</div><div class="ttdoc">Defines what actions can be made with which object.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:134</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   74</span>        GameManager.Instance.OnPlayerSpawned -= <a class="code hl_function" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a>;</div>
+<div class="line"><span class="lineno">   75</span>        GameManager.Instance.OnSceneLoaded -= <a class="code hl_function" href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">OnSceneLoaded</a>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a86ab4b7937e9b578a0d87bd538e855c6"><div class="ttname"><a href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">ObjectiveManager.OnPlayerSpawned</a></div><div class="ttdeci">void OnPlayerSpawned(object sender, ulong clientId)</div><div class="ttdoc">Triggered when GameManager sends the OnPlayerSpawned event.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:280</div></div>
+<div class="ttc" id="aclass_objective_manager_html_abe8cedc57759aba9b98a4f9f74a49d32"><div class="ttname"><a href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">ObjectiveManager.OnSceneLoaded</a></div><div class="ttdeci">void OnSceneLoaded(object sender, EventArgs e)</div><div class="ttdoc">Triggered when GameManager sends OnSceneLoaded event.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:311</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="af421d4a74032b1f9afe42150a19397c0" name="af421d4a74032b1f9afe42150a19397c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af421d4a74032b1f9afe42150a19397c0">&#9670;&#160;</a></span>GetObjective()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_objective.html">Objective</a> ObjectiveManager.GetObjective </td>
-          <td>(</td>
-          <td class="paramtype">uint&#160;</td>
-          <td class="paramname"><em>player</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  261</span>    {</div>
-<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">if</span>((player &gt;= 1) &amp;&amp; (player &lt;= 6))</div>
-<div class="line"><span class="lineno">  263</span>        {</div>
-<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">return</span> _objectives[(int)player - 1];</div>
-<div class="line"><span class="lineno">  265</span>        }</div>
-<div class="line"><span class="lineno">  266</span> </div>
-<div class="line"><span class="lineno">  267</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  268</span> </div>
-<div class="line"><span class="lineno">  269</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a924a9e4e0ed8e4658d42da63adec0b7e" name="a924a9e4e0ed8e4658d42da63adec0b7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924a9e4e0ed8e4658d42da63adec0b7e">&#9670;&#160;</a></span>Lookup2DVertical()</h2>
+<a id="a0655506a561db8a757844e099b89f520" name="a0655506a561db8a757844e099b89f520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0655506a561db8a757844e099b89f520">&#9670;&#160;</a></span>OnEnable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,22 +405,46 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt; int &gt; ObjectiveManager.Lookup2DVertical </td>
+          <td class="memname">void ObjectiveManager.OnEnable </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   67</span>        GameManager.Instance.OnPlayerSpawned += <a class="code hl_function" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a>;</div>
+<div class="line"><span class="lineno">   68</span>        GameManager.Instance.OnSceneLoaded += <a class="code hl_function" href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">OnSceneLoaded</a>;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a009c801b8ac08e51e649d1f2c4714b14" name="a009c801b8ac08e51e649d1f2c4714b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a009c801b8ac08e51e649d1f2c4714b14">&#9670;&#160;</a></span>OnPlayerDisconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectiveManager.OnPlayerDisconnect </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>lookupArray</em>[,], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>match</em>&#160;</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>clientId</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -566,31 +459,23 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
 </table>
 </div><div class="memdoc">
 
-<p>Provides all horizontal (rows) in the veritical (col) specified by index, which are true or false as specified by 'match'. </p>
+<p>Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerDisconnect event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The column index</td></tr>
-    <tr><td class="paramname">lookupArray</td><td>The lookup array</td></tr>
-    <tr><td class="paramname">match</td><td>Match true or false</td></tr>
+    <tr><td class="paramname">sender</td><td></td></tr>
+    <tr><td class="paramname">clientId</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A list of integers representing the lookups which matched</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  250</span>    {</div>
-<div class="line"><span class="lineno">  251</span>        List&lt;int&gt; result = <span class="keyword">new</span> List&lt;int&gt;();</div>
-<div class="line"><span class="lineno">  252</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; lookupArray.GetLength(0); i++)</div>
-<div class="line"><span class="lineno">  253</span>        {</div>
-<div class="line"><span class="lineno">  254</span>            <span class="keywordflow">if</span> (lookupArray[i,index] == match) result.Add(i);</div>
-<div class="line"><span class="lineno">  255</span>        }</div>
-<div class="line"><span class="lineno">  256</span> </div>
-<div class="line"><span class="lineno">  257</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  258</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  292</span>    {</div>
+<div class="line"><span class="lineno">  293</span>        <a class="code hl_function" href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">RemovePlayer</a>(clientId);</div>
+<div class="line"><span class="lineno">  294</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a290b41e8a4237ee6f51bdc61b2c760df"><div class="ttname"><a href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">ObjectiveManager.RemovePlayer</a></div><div class="ttdeci">void RemovePlayer(ulong clientId)</div><div class="ttdoc">To be called if a player disconnects intentionally.  Removes the player from the ObjectiveManager  Th...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:145</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a907801a398fc996b9767ec98e533e268" name="a907801a398fc996b9767ec98e533e268"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a907801a398fc996b9767ec98e533e268">&#9670;&#160;</a></span>_actionStrings</h2>
+<a id="a1652acec1f6b135d923619bc929bdebe" name="a1652acec1f6b135d923619bc929bdebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1652acec1f6b135d923619bc929bdebe">&#9670;&#160;</a></span>OnPlayerReconnect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +484,21 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string [] ObjectiveManager._actionStrings</td>
+          <td class="memname">void ObjectiveManager.OnPlayerReconnect </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_player_reconnect_data.html">PlayerReconnectData</a>&#160;</td>
+          <td class="paramname"><em>playerReconnectData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -608,20 +507,24 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">string</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>.NUM_OF_ACTIONS]</div>
-<div class="line">    {</div>
-<div class="line">            <span class="stringliteral">&quot;Do anything&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;Grab &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;&quot;</span>,</div>
-<div class="line">                <span class="stringliteral">&quot;Touch &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;&quot;</span>,</div>
-<div class="line">                <span class="stringliteral">&quot;Swing on &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;&quot;</span></div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>Defines the structure of the objetive sentance depending on the action. </p>
 
+<p>Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerReconnect event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td></td></tr>
+    <tr><td class="paramname">playerReconnectData</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>    {</div>
+<div class="line"><span class="lineno">  303</span>        <a class="code hl_function" href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ReconnectPlayer</a>(playerReconnectData.CurrentClientID);</div>
+<div class="line"><span class="lineno">  304</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a00505f6e1b68931dd95c095570706733"><div class="ttname"><a href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ObjectiveManager.ReconnectPlayer</a></div><div class="ttdeci">bool ReconnectPlayer(ulong currentClientId)</div><div class="ttdoc">To be called if a player has rejoined following a disconnection.  This will re-register the player wi...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:165</div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a25d40c1f9bf2bb475ea54c7e0bfcc659" name="a25d40c1f9bf2bb475ea54c7e0bfcc659"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25d40c1f9bf2bb475ea54c7e0bfcc659">&#9670;&#160;</a></span>_colourSrings</h2>
+<a id="a86ab4b7937e9b578a0d87bd538e855c6" name="a86ab4b7937e9b578a0d87bd538e855c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ab4b7937e9b578a0d87bd538e855c6">&#9670;&#160;</a></span>OnPlayerSpawned()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -630,7 +533,21 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string [] ObjectiveManager._colourSrings</td>
+          <td class="memname">void ObjectiveManager.OnPlayerSpawned </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>clientId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -639,24 +556,24 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">string</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveColour</a>.NUM_OF_COLOURS]</div>
-<div class="line">    {</div>
-<div class="line">                <span class="stringliteral">&quot;any coloured&quot;</span>,</div>
-<div class="line">                        <span class="stringliteral">&quot;a red&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;a yellow&quot;</span>,</div>
-<div class="line">                        <span class="stringliteral">&quot;a blue&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;a green&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;a purple&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;a black&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;a white&quot;</span></div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>String map of colours. </p>
 
+<p>Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerSpawned event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td></td></tr>
+    <tr><td class="paramname">clientId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>    {</div>
+<div class="line"><span class="lineno">  282</span>        <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
+<div class="line"><span class="lineno">  283</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a1251be92e8837460174e21319ba03401"><div class="ttname"><a href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">ObjectiveManager.AssignPlayerObjective</a></div><div class="ttdeci">bool AssignPlayerObjective(ulong clientId)</div><div class="ttdoc">Triggered by GameManager event once a player has spawned on the server.  Sets the player's objective ...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:120</div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="ab38c87ae75be42f04d85791decfd7fdf" name="ab38c87ae75be42f04d85791decfd7fdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab38c87ae75be42f04d85791decfd7fdf">&#9670;&#160;</a></span>_colourToObject</h2>
+<a id="abe8cedc57759aba9b98a4f9f74a49d32" name="abe8cedc57759aba9b98a4f9f74a49d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe8cedc57759aba9b98a4f9f74a49d32">&#9670;&#160;</a></span>OnSceneLoaded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -665,7 +582,21 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool [,] ObjectiveManager._colourToObject</td>
+          <td class="memname">void ObjectiveManager.OnSceneLoaded </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -674,143 +605,326 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">bool</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a55d1d15a1de31be4226357d7c1def345">ObjectiveColour</a>.NUM_OF_COLOURS,(<span class="keywordtype">int</span>)<a class="code hl_enumeration" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveObject</a>.NUM_OF_OBJECTS]</div>
-<div class="line">    { </div>
-<div class="line">        </div>
-<div class="line">                {<span class="keyword">true</span>,          <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">true</span>},</div>
-<div class="line">                        {<span class="keyword">false</span>,         <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">false</span>},</div>
-<div class="line">                    {<span class="keyword">false</span>,         <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">false</span>},</div>
-<div class="line">                        {<span class="keyword">false</span>,         <span class="keyword">false</span>,  <span class="keyword">true</span>,   <span class="keyword">false</span>},</div>
-<div class="line">                    {<span class="keyword">false</span>,         <span class="keyword">false</span>,  <span class="keyword">true</span>,   <span class="keyword">false</span>},</div>
-<div class="line">                    {<span class="keyword">false</span>,         <span class="keyword">true</span>,   <span class="keyword">false</span>,  <span class="keyword">true</span>},</div>
-<div class="line">                    {<span class="keyword">false</span>,         <span class="keyword">true</span>,   <span class="keyword">false</span>,  <span class="keyword">false</span>},</div>
-<div class="line">                    {<span class="keyword">false</span>,         <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">false</span>}</div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>Defines what colours each object can be. </p>
 
+<p>Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends OnSceneLoaded event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td></td></tr>
+    <tr><td class="paramname">e</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>    {</div>
+<div class="line"><span class="lineno">  313</span>        <span class="comment">// Assign each players objective</span></div>
+<div class="line"><span class="lineno">  314</span>        <span class="keywordflow">foreach</span>(ulong clientId <span class="keywordflow">in</span> <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Keys)</div>
+<div class="line"><span class="lineno">  315</span>        {</div>
+<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">if</span>(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  317</span>            {</div>
+<div class="line"><span class="lineno">  318</span>                <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
+<div class="line"><span class="lineno">  319</span>            }</div>
+<div class="line"><span class="lineno">  320</span>        }</div>
+<div class="line"><span class="lineno">  321</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a6e05f4b5766296af27e4249c324fcd74" name="a6e05f4b5766296af27e4249c324fcd74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e05f4b5766296af27e4249c324fcd74">&#9670;&#160;</a></span>_conditionStrings</h2>
+<a id="a00505f6e1b68931dd95c095570706733" name="a00505f6e1b68931dd95c095570706733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00505f6e1b68931dd95c095570706733">&#9670;&#160;</a></span>ReconnectPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string [] ObjectiveManager._conditionStrings</td>
+          <td class="memname">bool ObjectiveManager.ReconnectPlayer </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>currentClientId</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">string</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveConditions</a>.NUM_OF_CONDITIONS]</div>
-<div class="line">    {</div>
-<div class="line">                    <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line">                <span class="stringliteral">&quot;during the goal countdown&quot;</span>,</div>
-<div class="line">                    <span class="stringliteral">&quot;when it is in the goal zone&quot;</span></div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>String map of conditions. </p>
 
+<p>To be called if a player has rejoined following a disconnection.<br  />
+ This will re-register the player with the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a>.<br  />
+ If the player's old clientID is recognized, it will be replaced with the new one.<br  />
+ The player's previous ObjectivePlayerData will be retained, if not a new one will be created <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentClientId</td><td>The new / current clientId</td></tr>
+    <tr><td class="paramname">previousClientId</td><td>The old / previous clientId</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, False if not successful</dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(currentClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> netPlayerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        <span class="comment">// If an old objective does not exist, create one. If it does, remap it. </span></div>
+<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">if</span> (netPlayerData.Objective == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  171</span>        {</div>
+<div class="line"><span class="lineno">  172</span>            <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(currentClientId);</div>
+<div class="line"><span class="lineno">  173</span>        }</div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  175</span>        {</div>
+<div class="line"><span class="lineno">  176</span>            <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Add(netPlayerData.Objective, currentClientId);</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>        netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  180</span>        </div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a2ca4075b5f6e7fe649b9d1b073c2ab50" name="a2ca4075b5f6e7fe649b9d1b073c2ab50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ca4075b5f6e7fe649b9d1b073c2ab50">&#9670;&#160;</a></span>_conditionToAction</h2>
+<a id="a1a3bdfd34cc63246f362db68b653aa20" name="a1a3bdfd34cc63246f362db68b653aa20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3bdfd34cc63246f362db68b653aa20">&#9670;&#160;</a></span>RegisterObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool [,] ObjectiveManager._conditionToAction</td>
+          <td class="memname">void ObjectiveManager.RegisterObject </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_objective_object_instance.html">ObjectiveObjectInstance</a>&#160;</td>
+          <td class="paramname"><em>objectiveObjectInstance</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">bool</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a2117c87f37e1411914a0d9a9011d2ef2">ObjectiveConditions</a>.NUM_OF_CONDITIONS, (<span class="keywordtype">int</span>)<a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>.NUM_OF_ACTIONS]</div>
-<div class="line">    {</div>
-<div class="line">        </div>
-<div class="line">                {<span class="keyword">true</span>,      <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">true</span> },</div>
-<div class="line">            {<span class="keyword">false</span>,     <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">false</span> },</div>
-<div class="line">                {<span class="keyword">false</span>,     <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">false</span> }</div>
-<div class="line">    }</div>
+
+<p>Registers the objectiveObjectInstance with the <a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a> Manager<br  />
+ This allows the <a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a> Manager to use this object when creating objectives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectiveObjectInstance</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>    {</div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.TryAdd(objectiveObjectInstance, 1))</div>
+<div class="line"><span class="lineno">  192</span>        {</div>
+<div class="line"><span class="lineno">  193</span>            <span class="comment">// objectiveObjectInstance already exists - add to the qty</span></div>
+<div class="line"><span class="lineno">  194</span>            <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>[objectiveObjectInstance]++;</div>
+<div class="line"><span class="lineno">  195</span>        }</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  197</span>        {</div>
+<div class="line"><span class="lineno">  198</span>            <span class="comment">// First time adding this object type - create all possible objectives</span></div>
+<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_action.html">ObjectiveAction</a> action <span class="keywordflow">in</span> objectiveObjectInstance.ObjectiveObject.PossibleActions)</div>
+<div class="line"><span class="lineno">  200</span>            {</div>
+<div class="line"><span class="lineno">  201</span>                <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_condition.html">ObjectiveCondition</a> condition <span class="keywordflow">in</span> action.PossibleConditions)</div>
+<div class="line"><span class="lineno">  202</span>                {</div>
+<div class="line"><span class="lineno">  203</span>                    <a class="code hl_class" href="class_zone.html">Zone</a> zone = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  204</span>                    <span class="keywordflow">if</span>(condition.RequiresObjectToBeInZone)</div>
+<div class="line"><span class="lineno">  205</span>                    {</div>
+<div class="line"><span class="lineno">  206</span>                        <span class="comment">// Condition requires a zone, try and get a random one from the list stored in the dictionary</span></div>
+<div class="line"><span class="lineno">  207</span>                        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.TryGetValue(condition.RequiredZone, out List&lt;Zone&gt; zones))</div>
+<div class="line"><span class="lineno">  208</span>                        {</div>
+<div class="line"><span class="lineno">  209</span>                            <span class="comment">//if(zones.Count &gt; 0) zone = zones[UnityEngine.Random.Range((int)0, zones.Count)];</span></div>
+<div class="line"><span class="lineno">  210</span>                            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_zone.html">Zone</a> possibleZone <span class="keywordflow">in</span> zones)</div>
+<div class="line"><span class="lineno">  211</span>                            {</div>
+<div class="line"><span class="lineno">  212</span>                                <a class="code hl_class" href="class_objective.html">Objective</a> newObjective = <span class="keyword">new</span> <a class="code hl_class" href="class_objective.html">Objective</a>(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  213</span>                                <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Add(newObjective);</div>
+<div class="line"><span class="lineno">  214</span>                            }</div>
+<div class="line"><span class="lineno">  215</span>                        }</div>
+<div class="line"><span class="lineno">  216</span>                    }</div>
+<div class="line"><span class="lineno">  217</span>                    </div>
+<div class="line"><span class="lineno">  218</span>                }</div>
+<div class="line"><span class="lineno">  219</span>            }</div>
+<div class="line"><span class="lineno">  220</span>        }</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="ttc" id="aclass_objective_action_html"><div class="ttname"><a href="class_objective_action.html">ObjectiveAction</a></div><div class="ttdoc">An action that can be performed on an objective object.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:13</div></div>
+<div class="ttc" id="aclass_objective_condition_html"><div class="ttname"><a href="class_objective_condition.html">ObjectiveCondition</a></div><div class="ttdoc">A condition that an objective action can have.</div><div class="ttdef"><b>Definition:</b> ObjectiveCondition.cs:13</div></div>
+<div class="ttc" id="aclass_objective_html"><div class="ttname"><a href="class_objective.html">Objective</a></div><div class="ttdoc">Container for storing objective information.</div><div class="ttdef"><b>Definition:</b> Objective.cs:11</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a24fcce2a0e3ed05e0d594b2feeace100"><div class="ttname"><a href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">ObjectiveManager._objectiveObjects</a></div><div class="ttdeci">Dictionary&lt; ObjectiveObjectInstance, int &gt; _objectiveObjects</div><div class="ttdoc">Dictionary of ObjectiveObjectInstances and their corresponding qty that exist in the current scene  A...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:22</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a722a4a5300f7373feebde579e16350c3"><div class="ttname"><a href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">ObjectiveManager._possibleZones</a></div><div class="ttdeci">Dictionary&lt; Zone.ZONE, List&lt; Zone &gt; &gt; _possibleZones</div><div class="ttdoc">List of all possible zones based on what is present in the scene.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:32</div></div>
+<div class="ttc" id="aclass_zone_html"><div class="ttname"><a href="class_zone.html">Zone</a></div><div class="ttdoc">This class represents an interactible zone on the map.</div><div class="ttdef"><b>Definition:</b> Zone.cs:10</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aff47c912446ced5c1235aafe865404c4" name="aff47c912446ced5c1235aafe865404c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff47c912446ced5c1235aafe865404c4">&#9670;&#160;</a></span>_objectStrings</h2>
+<a id="a76a7fea8589bd79af92b8e7ac88cda9d" name="a76a7fea8589bd79af92b8e7ac88cda9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a7fea8589bd79af92b8e7ac88cda9d">&#9670;&#160;</a></span>RegisterZone()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string [] ObjectiveManager._objectStrings</td>
+          <td class="memname">void ObjectiveManager.RegisterZone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_zone.html">Zone</a>&#160;</td>
+          <td class="paramname"><em>zone</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">string</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveObject</a>.NUM_OF_OBJECTS]</div>
-<div class="line">    {</div>
-<div class="line">            <span class="stringliteral">&quot;object&quot;</span>,</div>
-<div class="line">                <span class="stringliteral">&quot;crate&quot;</span>,</div>
-<div class="line">                <span class="stringliteral">&quot;barrel&quot;</span>,</div>
-<div class="line">                <span class="stringliteral">&quot;chain&quot;</span></div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>String map of objects. </p>
 
+<p>Registers a zone into the possibleZones dictionary, only if unique. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zone</td><td>The <a class="el" href="class_zone.html" title="This class represents an interactible zone on the map.">Zone</a> to register</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  228</span>    {</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.TryGetValue(zone.ZoneType, out List&lt;Zone&gt; zones))</div>
+<div class="line"><span class="lineno">  231</span>        {</div>
+<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">if</span> (!zones.Contains(zone)) zones.Add(zone);</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  235</span>        {</div>
+<div class="line"><span class="lineno">  236</span>            List&lt;Zone&gt; newZones = <span class="keyword">new</span> List&lt;Zone&gt;();</div>
+<div class="line"><span class="lineno">  237</span>            newZones.Add(zone);</div>
+<div class="line"><span class="lineno">  238</span>            <a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.Add(zone.ZoneType, newZones);</div>
+<div class="line"><span class="lineno">  239</span>        }</div>
+<div class="line"><span class="lineno">  240</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="aed6411b644d17040c5878d86cda9c4f9" name="aed6411b644d17040c5878d86cda9c4f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed6411b644d17040c5878d86cda9c4f9">&#9670;&#160;</a></span>_objectToAction</h2>
+<a id="a290b41e8a4237ee6f51bdc61b2c760df" name="a290b41e8a4237ee6f51bdc61b2c760df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a290b41e8a4237ee6f51bdc61b2c760df">&#9670;&#160;</a></span>RemovePlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool [,] ObjectiveManager._objectToAction</td>
+          <td class="memname">void ObjectiveManager.RemovePlayer </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>clientId</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> <span class="keywordtype">bool</span>[(int)<a class="code hl_enumeration" href="class_objective_manager.html#a81d08fb6dcf1830d057af0c350b18ba7">ObjectiveObject</a>.NUM_OF_OBJECTS, (<span class="keywordtype">int</span>)<a class="code hl_enumeration" href="class_objective_manager.html#a42f04c0c097a24a72eafcdc4b45f1dde">ObjectiveAction</a>.NUM_OF_ACTIONS]</div>
-<div class="line">    {</div>
-<div class="line">        </div>
-<div class="line">            {<span class="keyword">true</span>,      <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">true</span> },</div>
-<div class="line">                {<span class="keyword">false</span>,     <span class="keyword">true</span>,   <span class="keyword">true</span>,   <span class="keyword">false</span> },</div>
-<div class="line">                {<span class="keyword">false</span>,     <span class="keyword">false</span>,  <span class="keyword">true</span>,   <span class="keyword">false</span> },</div>
-<div class="line">                {<span class="keyword">false</span>,     <span class="keyword">false</span>,  <span class="keyword">false</span>,  <span class="keyword">true</span> }</div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>Defines what actions can be made with which object. </p>
 
+<p>To be called if a player disconnects intentionally.<br  />
+ Removes the player from the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a><br  />
+ The player's ClientRPC will no longer be called to send new Objectives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clientId</td><td>The clientId of the disconnecting player</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> objectivePlayerData))</div>
+<div class="line"><span class="lineno">  148</span>        {</div>
+<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">if</span> (objectivePlayerData.Objective != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  150</span>            {</div>
+<div class="line"><span class="lineno">  151</span>                <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Remove(objectivePlayerData.Objective);</div>
+<div class="line"><span class="lineno">  152</span>            }</div>
+<div class="line"><span class="lineno">  153</span>        }</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af84b0e292f39382cbeb22acca677ab9b" name="af84b0e292f39382cbeb22acca677ab9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af84b0e292f39382cbeb22acca677ab9b">&#9670;&#160;</a></span>ReportObjectiveAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectiveManager.ReportObjectiveAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_objective.html">Objective</a>&#160;</td>
+          <td class="paramname"><em>objectiveOccured</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>playerClientId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface to allow objects to report objective actions occuring and have them checked. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectiveOccured</td><td>The possible objective that occured</td></tr>
+    <tr><td class="paramname">playerClientId</td><td>The player Client ID that initiated the action</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>    {</div>
+<div class="line"><span class="lineno">  330</span>        <span class="comment">// Check if the objective is one that is assigned to a player</span></div>
+<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.TryGetValue(objectiveOccured, out ulong clientId))</div>
+<div class="line"><span class="lineno">  332</span>        {</div>
+<div class="line"><span class="lineno">  333</span>            <span class="comment">// Check if the matching objective&#39;s assigned player is the same as the one performing the action</span></div>
+<div class="line"><span class="lineno">  334</span>            <span class="keywordflow">if</span> (playerClientId != clientId) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  335</span> </div>
+<div class="line"><span class="lineno">  336</span>            <span class="comment">// The objective that occured matches one of that is assigned to a player</span></div>
+<div class="line"><span class="lineno">  337</span>            <span class="comment">// TODO increment player score, below is temporary for testing</span></div>
+<div class="line"><span class="lineno">  338</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[playerClientId].Score += 100;</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>            <span class="comment">// Remove this objective from the player list</span></div>
+<div class="line"><span class="lineno">  341</span>            <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Remove(objectiveOccured);</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>            <span class="comment">// Assign a new objective</span></div>
+<div class="line"><span class="lineno">  344</span>            <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
+<div class="line"><span class="lineno">  345</span> </div>
+<div class="line"><span class="lineno">  346</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].NetPlayer.SetObjectiveStringClientRpc(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective?.ObjectiveString, <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ClientRpcParams);</div>
+<div class="line"><span class="lineno">  347</span>        }</div>
+<div class="line"><span class="lineno">  348</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab7e37a8bff711016bb30f872aef5c5c3" name="ab7e37a8bff711016bb30f872aef5c5c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e37a8bff711016bb30f872aef5c5c3">&#9670;&#160;</a></span>ResetObjectiveManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectiveManager.ResetObjectiveManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a> to start a new round. </p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.Clear();</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Clear();</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.Clear();</div>
+<div class="line"><span class="lineno">   86</span>        <span class="comment">// Clear the player data specific to a round</span></div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">foreach</span>(ulong clientId <span class="keywordflow">in</span> <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Keys)</div>
+<div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   90</span>            <span class="comment">// TODO: Add any other objective related params that need clearing - objectives cleared this round? etc.</span></div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>        <span class="comment">// Get all the zones in the scene</span></div>
+<div class="line"><span class="lineno">   94</span>        List&lt;Zone&gt; zones = FindObjectsOfType&lt;Zone&gt;().ToList();</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_zone.html">Zone</a> zone <span class="keywordflow">in</span> zones)</div>
+<div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">RegisterZone</a>(zone);</div>
+<div class="line"><span class="lineno">   98</span>        }</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>        <span class="comment">// Get all the objectives in the scene</span></div>
+<div class="line"><span class="lineno">  101</span>        List&lt;ObjectiveObjectInstance&gt; objectiveObjectInstances = FindObjectsOfType&lt;ObjectiveObjectInstance&gt;().ToList();</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_object_instance.html">ObjectiveObjectInstance</a> objectiveObjectInstance <span class="keywordflow">in</span> objectiveObjectInstances)</div>
+<div class="line"><span class="lineno">  103</span>        {</div>
+<div class="line"><span class="lineno">  104</span>            <a class="code hl_function" href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">RegisterObject</a>(objectiveObjectInstance);</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>        <span class="comment">// Shuffle the possible objectives</span></div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Shuffle();</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="comment">// Reset the next available objective counter</span></div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a> = 0;</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a1a3bdfd34cc63246f362db68b653aa20"><div class="ttname"><a href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">ObjectiveManager.RegisterObject</a></div><div class="ttdeci">void RegisterObject(ObjectiveObjectInstance objectiveObjectInstance)</div><div class="ttdoc">Registers the objectiveObjectInstance with the Objective Manager  This allows the Objective Manager t...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:189</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a76a7fea8589bd79af92b8e7ac88cda9d"><div class="ttname"><a href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">ObjectiveManager.RegisterZone</a></div><div class="ttdeci">void RegisterZone(Zone zone)</div><div class="ttdoc">Registers a zone into the possibleZones dictionary, only if unique.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:227</div></div>
+<div class="ttc" id="aclass_objective_object_instance_html"><div class="ttname"><a href="class_objective_object_instance.html">ObjectiveObjectInstance</a></div><div class="ttdoc">An instance of an objective object.  This is the object that will be placed in the world.</div><div class="ttdef"><b>Definition:</b> ObjectiveObjectInstance.cs:14</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -833,13 +947,13 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  156</span>    {</div>
-<div class="line"><span class="lineno">  157</span>        <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">  158</span>        {</div>
-<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">if</span>(instance == <span class="keyword">null</span>) instance = FindObjectOfType&lt;ObjectiveManager&gt;();</div>
-<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">return</span> instance;</div>
-<div class="line"><span class="lineno">  161</span>        }</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   53</span>        {</div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">if</span>(_instance == <span class="keyword">null</span>) _instance = FindObjectOfType&lt;ObjectiveManager&gt;();</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> _instance;</div>
+<div class="line"><span class="lineno">   56</span>        }</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

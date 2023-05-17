@@ -1,0 +1,145 @@
+\hypertarget{class_action_grab}{}\doxysection{Action\+Grab Class Reference}
+\label{class_action_grab}\index{ActionGrab@{ActionGrab}}
+
+
+Class to detect when an object has been grabbed by a player and report this to the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}.  
+
+
+
+
+Inheritance diagram for Action\+Grab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_action_grab__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Grab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_action_grab__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_action_grab_ad0778f0dc6bcfba4e70e3b38e1cd7126}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_action_grab_a703bc33d0683ddfa002c31a9335c9261}\label{class_action_grab_a703bc33d0683ddfa002c31a9335c9261}} 
+Dictionary$<$ Fixed\+Joint2D,(ulong client\+Id, \mbox{\hyperlink{class_objective}{Objective}} running\+Objective, \mbox{\hyperlink{class_ragdoll}{Ragdoll}} ragdoll)$>$ {\bfseries \+\_\+prev\+Fixed\+Joint2\+Ds}
+\item 
+\mbox{\Hypertarget{class_action_grab_a144008329e6a1ee964480e86a86c006a}\label{class_action_grab_a144008329e6a1ee964480e86a86c006a}} 
+Dictionary$<$ Fixed\+Joint2D,(ulong client\+Id, \mbox{\hyperlink{class_objective}{Objective}} running\+Objective, \mbox{\hyperlink{class_ragdoll}{Ragdoll}} ragdoll)$>$ {\bfseries \+\_\+active\+Fixed\+Joint2\+Ds} = new Dictionary$<$Fixed\+Joint2D, (ulong client\+Id, \mbox{\hyperlink{class_objective}{Objective}} running\+Objective, \mbox{\hyperlink{class_ragdoll}{Ragdoll}} ragdoll)$>$()
+\item 
+\mbox{\Hypertarget{class_action_grab_ab3ea0c34e428ea887b10c25863229bc0}\label{class_action_grab_ab3ea0c34e428ea887b10c25863229bc0}} 
+List$<$ Fixed\+Joint2D $>$ {\bfseries current\+Fixed\+Joint2\+Ds} = new List$<$Fixed\+Joint2D$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_objective_action_behaviour}{Objective\+Action\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}\label{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}} 
+List$<$ \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} $>$ {\bfseries Conditions} = new List$<$\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}$>$()
+\begin{DoxyCompactList}\small\item\em Required list of conditions for this \mbox{\hyperlink{class_objective}{Objective}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}\label{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}} 
+\mbox{\hyperlink{class_objective}{Objective}} {\bfseries Objective}
+\begin{DoxyCompactList}\small\item\em An instance of \mbox{\hyperlink{class_objective}{Objective}} used to construct a possible objective that was achieved~\newline
+ This is passed to the Obejctive\+Manager for checking. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_objective_action_behaviour}{Objective\+Action\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})$>$ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{Get\+Active\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Provide a list of all conditions which are currently being met by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to detect when an object has been grabbed by a player and report this to the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_action_grab_ad0778f0dc6bcfba4e70e3b38e1cd7126}\label{class_action_grab_ad0778f0dc6bcfba4e70e3b38e1cd7126}} 
+\index{ActionGrab@{ActionGrab}!Update@{Update}}
+\index{Update@{Update}!ActionGrab@{ActionGrab}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Action\+Grab.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ List<(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}},\ \mbox{\hyperlink{class_zone}{Zone}})>\ activeConditions\ =\ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{GetActiveConditions}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ copy\ of\ the\ previous\ joints}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_prevFixedJoint2Ds\ =\ \textcolor{keyword}{new}(\_activeFixedJoint2Ds);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_activeFixedJoint2Ds.Clear();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//get\ a\ list\ of\ the\ connected\ joints\ (players)}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ currentFixedJoint2Ds\ =\ GetComponents<FixedJoint2D>().ToList<FixedJoint2D>();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ connected\ players\ has\ changed\ and\ trigger\ the\ ActionReporter\ accordingly}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(FixedJoint2D\ fixedJoint2D\ \textcolor{keywordflow}{in}\ currentFixedJoint2Ds)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_prevFixedJoint2Ds.ContainsKey(fixedJoint2D))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Existing\ joint}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ it\ still\ meets\ conditions}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (activeConditions.Contains((\_prevFixedJoint2Ds[fixedJoint2D].runningObjective.Condition,\ \_prevFixedJoint2Ds[fixedJoint2D].runningObjective.Zone)))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Still\ meets\ conditions}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ it\ from\ the\ prev\ List\ so\ that\ it\ doesn't\ get\ cancelled\ later}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_activeFixedJoint2Ds.Add(fixedJoint2D,\ \_prevFixedJoint2Ds[fixedJoint2D]);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevFixedJoint2Ds.Remove(fixedJoint2D);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ longer\ meets\ conditions}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ it\ from\ the\ active\ list\ as\ it\ will\ be\ cancelled\ later}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ New\ joint\ -\/\ register\ action\ started}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fixedJoint2D.connectedBody.gameObject.TryGetComponent<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>(out\ \mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll))}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ ((\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition,\ \mbox{\hyperlink{class_zone}{Zone}}\ zone)\ in\ activeConditions)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ objective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}{Objective}}(\mbox{\hyperlink{class_objective}{Objective}}.Action,\ \mbox{\hyperlink{class_objective}{Objective}}.Colour,\ \mbox{\hyperlink{class_objective}{Objective}}.Object,\ condition,\ zone,\ \mbox{\hyperlink{class_objective}{Objective}}.Inverse);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ragdoll.ObjectiveActionReporter.CheckAndStartActionObjective(objective,\ ragdoll.ClientId))}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ to\ the\ active\ list}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_activeFixedJoint2Ds.Add(fixedJoint2D,\ (ragdoll.ClientId,\ objective,\ ragdoll));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Anything\ left\ on\ the\ prev\ List\ is\ now\ no\ longer\ connected\ -\/\ as\ all\ connected\ joints\ /\ joints\ meeting\ conditions\ were\ removed}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cancel\ these\ actions}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(FixedJoint2D\ fixedJoint2D\ \textcolor{keywordflow}{in}\ \_prevFixedJoint2Ds.Keys)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !NOTE:\ Cannot\ access\ directly\ the\ fixedJoint2D\ as\ it\ may\ have\ been\ destroyed\ by\ the\ owner}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_prevFixedJoint2Ds[fixedJoint2D].ragdoll\ !=\ \textcolor{keyword}{null})\ \&\&\ (\_prevFixedJoint2Ds[fixedJoint2D].runningObjective\ !=\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cancel\ the\ ObjectiveAction}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevFixedJoint2Ds[fixedJoint2D].ragdoll.ObjectiveActionReporter.CancelActionObjective(\_prevFixedJoint2Ds[fixedJoint2D].runningObjective,\ \_prevFixedJoint2Ds[fixedJoint2D].clientId);\ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ the\ dictionary\ ready\ for\ the\ next\ pass}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \_prevFixedJoint2Ds.Clear();}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}

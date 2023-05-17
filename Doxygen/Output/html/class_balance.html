@@ -92,20 +92,24 @@ $(document).ready(function(){initNavTree('class_balance.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_balance-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Balance Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Keeps the body part balanced by rotating it towards the target rotation.  
+ <a href="class_balance.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Balance:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_balance__inherit__graph.png" border="0" usemap="#a_balance_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_balance_inherit__map" id="a_balance_inherit__map">
-<area shape="rect" title=" " alt="" coords="26,152,95,177"/>
-<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="28,79,93,104"/>
-<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" title="Keeps the body part balanced by rotating it towards the target rotation." alt="" coords="33,152,103,177"/>
+<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="35,79,101,104"/>
+<area shape="rect" title=" " alt="" coords="5,5,131,31"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -113,9 +117,31 @@ Collaboration diagram for Balance:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_balance__coll__graph.png" border="0" usemap="#a_balance_coll__map" alt="Collaboration graph"/></div>
 <map name="a_balance_coll__map" id="a_balance_coll__map">
-<area shape="rect" title=" " alt="" coords="26,152,95,177"/>
-<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="28,79,93,104"/>
-<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" title="Keeps the body part balanced by rotating it towards the target rotation." alt="" coords="2235,541,2304,567"/>
+<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="2120,541,2185,567"/>
+<area shape="rect" title=" " alt="" coords="964,520,1089,545"/>
+<area shape="rect" href="class_objective_action_reporter.html" title=" " alt="" coords="1767,475,1928,500"/>
+<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="1255,491,1333,516"/>
+<area shape="rect" href="class_character_input_handler.html" title="This class must be attached to each instance of the player &#160;It handles the input from the player and ..." alt="" coords="1219,592,1369,617"/>
+<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1479,475,1585,500"/>
+<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1257,289,1331,315"/>
+<area shape="rect" title=" " alt="" coords="947,401,1107,427"/>
+<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="267,37,379,63"/>
+<area shape="rect" title=" " alt="" coords="45,129,164,155"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="267,269,379,295"/>
+<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="266,88,379,113"/>
+<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="962,217,1091,243"/>
+<area shape="rect" title=" " alt="" coords="6,5,203,31"/>
+<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="625,189,712,215"/>
+<area shape="rect" title=" " alt="" coords="6,269,203,295"/>
+<area shape="rect" title=" " alt="" coords="35,469,174,495"/>
+<area shape="rect" href="struct_character_input_data.html" title=" " alt="" coords="602,520,735,545"/>
+<area shape="rect" href="struct_arms_movement_data.html" title="Container for Arms Movement Input Data." alt="" coords="253,469,392,495"/>
+<area shape="rect" title=" " alt="" coords="5,72,204,97"/>
+<area shape="rect" title=" " alt="" coords="561,239,776,264"/>
+<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="643,292,694,317"/>
+<area shape="rect" title=" " alt="" coords="267,319,378,344"/>
+<area shape="rect" title=" " alt="" coords="255,220,390,245"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -127,13 +153,33 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>TargetRotation</b></
 <tr class="memitem:a855e2b50c4e23099d79e015a720b3a6e"><td class="memItemLeft" align="right" valign="top"><a id="a855e2b50c4e23099d79e015a720b3a6e" name="a855e2b50c4e23099d79e015a720b3a6e"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>Force</b></td></tr>
 <tr class="separator:a855e2b50c4e23099d79e015a720b3a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
+<tr class="memitem:ae120b5caa1f4e32e2df5d94659660e47 inherit pub_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="ae120b5caa1f4e32e2df5d94659660e47" name="ae120b5caa1f4e32e2df5d94659660e47"></a>
+ulong&#160;</td><td class="memItemRight" valign="bottom"><b>ClientId</b></td></tr>
+<tr class="separator:ae120b5caa1f4e32e2df5d94659660e47 inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac345af1e15c222b4abcb47090001eac5 inherit pub_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="ac345af1e15c222b4abcb47090001eac5" name="ac345af1e15c222b4abcb47090001eac5"></a>
+<a class="el" href="class_objective_action_reporter.html">ObjectiveActionReporter</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ObjectiveActionReporter</b></td></tr>
+<tr class="separator:ac345af1e15c222b4abcb47090001eac5 inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="acaaa2340a31b2cab040df748984d90dd" name="acaaa2340a31b2cab040df748984d90dd"></a>
+<a class="el" href="class_character_input_handler.html">CharacterInputHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CharacterInputHandler</b></td></tr>
+<tr class="memdesc:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to this characters input handler, usually found on the parent of the player character prefab. <br /></td></tr>
+<tr class="separator:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8295a485520fec0aca4846cc91158471"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_balance.html#a8295a485520fec0aca4846cc91158471">Awake</a> ()</td></tr>
+<tr class="separator:a8295a485520fec0aca4846cc91158471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110adc2ea8abf45aed55ed08aca51e4d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a110adc2ea8abf45aed55ed08aca51e4d">Awake</a> ()</td></tr>
+<tr class="separator:a110adc2ea8abf45aed55ed08aca51e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a57f9dcd6a5a024a5a68344bb93759ddb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_balance.html#a57f9dcd6a5a024a5a68344bb93759ddb">Awake</a> ()</td></tr>
-<tr class="separator:a57f9dcd6a5a024a5a68344bb93759ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac47b993db61122f2a95b1a15adafa4a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_balance.html#ac47b993db61122f2a95b1a15adafa4a4">FixedUpdate</a> ()</td></tr>
 <tr class="separator:ac47b993db61122f2a95b1a15adafa4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16161579fd17b1ffa155591fba328118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_balance.html#a16161579fd17b1ffa155591fba328118">HandleBalanceServerRpc</a> ()</td></tr>
+<tr class="separator:a16161579fd17b1ffa155591fba328118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0dc91e2d9a293962cde77f7a766142"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_balance.html#ada0dc91e2d9a293962cde77f7a766142">HandleBalance</a> ()</td></tr>
+<tr class="separator:ada0dc91e2d9a293962cde77f7a766142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -144,17 +190,25 @@ Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><b>_rb</b></td></
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
-<tr class="memitem:acf111dd872e949009f7a99bb453139a9 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#acf111dd872e949009f7a99bb453139a9">OnCollapse</a> (bool collapse)</td></tr>
-<tr class="memdesc:acf111dd872e949009f7a99bb453139a9 inherit pub_methods_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly.  <br /></td></tr>
-<tr class="separator:acf111dd872e949009f7a99bb453139a9 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a9c609d3fa00d9066e88237f21f598fc8">OnCollapse</a> ((bool collapse, bool breakApart) collapseInfo)</td></tr>
+<tr class="memdesc:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly.  <br /></td></tr>
+<tr class="separator:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
 <tr class="memitem:acbe21edc246bbc1a07f9d7ad3aef7ed0 inherit pro_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="acbe21edc246bbc1a07f9d7ad3aef7ed0" name="acbe21edc246bbc1a07f9d7ad3aef7ed0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isActive</b> = true</td></tr>
+<tr class="memdesc:acbe21edc246bbc1a07f9d7ad3aef7ed0 inherit pro_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the ragdoll 'active' - if not, it is collapsed. <br /></td></tr>
 <tr class="separator:acbe21edc246bbc1a07f9d7ad3aef7ed0 inherit pro_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d2d6547a221a337ae4e8ef24790021 inherit pro_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="aa9d2d6547a221a337ae4e8ef24790021" name="aa9d2d6547a221a337ae4e8ef24790021"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false</td></tr>
+<tr class="memdesc:aa9d2d6547a221a337ae4e8ef24790021 inherit pro_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the ragdoll 'broken'. <br /></td></tr>
+<tr class="separator:aa9d2d6547a221a337ae4e8ef24790021 inherit pro_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a57f9dcd6a5a024a5a68344bb93759ddb" name="a57f9dcd6a5a024a5a68344bb93759ddb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57f9dcd6a5a024a5a68344bb93759ddb">&#9670;&#160;</a></span>Awake()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Keeps the body part balanced by rotating it towards the target rotation. </p>
+<p>Requires a Rigidbody2D component</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8295a485520fec0aca4846cc91158471" name="a8295a485520fec0aca4846cc91158471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8295a485520fec0aca4846cc91158471">&#9670;&#160;</a></span>Awake()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +217,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isActive</b> = true<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Balance.Awake </td>
+          <td class="memname">override void Balance.Awake </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -171,13 +225,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isActive</b> = true<
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
-<div class="line"><span class="lineno">   16</span>        _rb = GetComponent&lt;Rigidbody2D&gt;();</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
+
+<p>Reimplemented from <a class="el" href="class_ragdoll.html">Ragdoll</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>        base.Awake();</div>
+<div class="line"><span class="lineno">   20</span>        _rb = GetComponent&lt;Rigidbody2D&gt;();</div>
+<div class="line"><span class="lineno">   21</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,10 +260,72 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isActive</b> = true<
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        <span class="comment">//mvoe the body part towards its rotation with force</span></div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span>(_isActive) _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, TargetRotation, Force * Time.fixedDeltaTime));</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (!IsOwner) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (IsServer)</div>
+<div class="line"><span class="lineno">   28</span>            HandleBalance();</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   30</span>            HandleBalanceServerRpc();</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ada0dc91e2d9a293962cde77f7a766142" name="ada0dc91e2d9a293962cde77f7a766142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0dc91e2d9a293962cde77f7a766142">&#9670;&#160;</a></span>HandleBalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Balance.HandleBalance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="comment">// Move the body part towards its rotation with force</span></div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_ragdoll.html#acbe21edc246bbc1a07f9d7ad3aef7ed0">_isActive</a>) _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, TargetRotation, Force * Time.fixedDeltaTime));</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="ttc" id="aclass_ragdoll_html_acbe21edc246bbc1a07f9d7ad3aef7ed0"><div class="ttname"><a href="class_ragdoll.html#acbe21edc246bbc1a07f9d7ad3aef7ed0">Ragdoll._isActive</a></div><div class="ttdeci">bool _isActive</div><div class="ttdoc">Is the ragdoll 'active' - if not, it is collapsed.</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:27</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a16161579fd17b1ffa155591fba328118" name="a16161579fd17b1ffa155591fba328118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16161579fd17b1ffa155591fba328118">&#9670;&#160;</a></span>HandleBalanceServerRpc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Balance.HandleBalanceServerRpc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        HandleBalance();</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

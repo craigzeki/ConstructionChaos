@@ -2,28 +2,32 @@
 \label{class_arms}\index{Arms@{Arms}}
 
 
-Inheritance diagram for Arms\+:\nopagebreak
+Inheritance diagram for Arms\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_arms__inherit__graph}
+\includegraphics[width=174pt]{class_arms__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Arms\+:\nopagebreak
+Collaboration diagram for Arms\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_arms__coll__graph}
+\includegraphics[width=350pt]{class_arms__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_arms_a27914140917932c82b716179c79c9d9c}{Calculate\+Arm\+Rotation}} ()
+void \mbox{\hyperlink{class_arms_acddeac7d44a2ff98da45295f02020cf9}{Calculate\+Arm\+Rotation}} (\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} character\+Input\+Data)
 \begin{DoxyCompactList}\small\item\em Calculates the arm rotation value based on which controller is active. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_arms_ad91df96db381884f530a4da750250f85}{Fixed\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_arms_a57cffd2e3d68629934e2fe157b877257}{Handle\+Arms}} (\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} character\+Input\+Data)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -34,11 +38,11 @@ float {\bfseries \+\_\+speed} = 300f
 \mbox{\Hypertarget{class_arms_a14003c966c9e1f13c6905770413e461d}\label{class_arms_a14003c966c9e1f13c6905770413e461d}} 
 Rigidbody2D {\bfseries \+\_\+rb}
 \item 
-\mbox{\Hypertarget{class_arms_ab332fff7fdb1725ecdb218dee2b23f8d}\label{class_arms_ab332fff7fdb1725ecdb218dee2b23f8d}} 
-Vector3 {\bfseries \+\_\+controller\+Pos} = Vector3.\+zero
+\mbox{\Hypertarget{class_arms_aecea81d1d0c727708d736286263dfdc6}\label{class_arms_aecea81d1d0c727708d736286263dfdc6}} 
+Vector2 {\bfseries \+\_\+screen\+Origin} = new Vector2(Screen.\+width / 2, Screen.\+height / 2)
 \item 
-\mbox{\Hypertarget{class_arms_aa0abcaa83d335b5806b60e0c8a3e4c85}\label{class_arms_aa0abcaa83d335b5806b60e0c8a3e4c85}} 
-Vector3 {\bfseries \+\_\+delta} = Vector3.\+zero
+\mbox{\Hypertarget{class_arms_a9bf2b8abd8fc8a213701a1a44e547105}\label{class_arms_a9bf2b8abd8fc8a213701a1a44e547105}} 
+Vector2 {\bfseries \+\_\+delta} = Vector2.\+zero
 \item 
 \mbox{\Hypertarget{class_arms_af41e8383d7891c43560b6f0e4fca826a}\label{class_arms_af41e8383d7891c43560b6f0e4fca826a}} 
 float {\bfseries \+\_\+rotationZ} = 0f
@@ -47,45 +51,61 @@ float {\bfseries \+\_\+rotationZ} = 0f
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_ragdoll_acf111dd872e949009f7a99bb453139a9}{On\+Collapse}} (bool collapse)
-\begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}{On\+Collapse}} ((bool collapse, bool break\+Apart) collapse\+Info)
+\begin{DoxyCompactList}\small\item\em Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}\label{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}} 
+ulong {\bfseries Client\+Id}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}\label{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}} 
+\mbox{\hyperlink{class_objective_action_reporter}{Objective\+Action\+Reporter}} {\bfseries Objective\+Action\+Reporter}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
+\mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
+\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_ragdoll_a110adc2ea8abf45aed55ed08aca51e4d}{Awake}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}\label{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}} 
 bool {\bfseries \+\_\+is\+Active} = true
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}active\textquotesingle{} -\/ if not, it is collapsed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}\label{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}} 
+bool {\bfseries \+\_\+is\+Broken} = false
+\begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}broken\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_arms_a27914140917932c82b716179c79c9d9c}\label{class_arms_a27914140917932c82b716179c79c9d9c}} 
+\mbox{\Hypertarget{class_arms_acddeac7d44a2ff98da45295f02020cf9}\label{class_arms_acddeac7d44a2ff98da45295f02020cf9}} 
 \index{Arms@{Arms}!CalculateArmRotation@{CalculateArmRotation}}
 \index{CalculateArmRotation@{CalculateArmRotation}!Arms@{Arms}}
 \doxysubsubsection{\texorpdfstring{CalculateArmRotation()}{CalculateArmRotation()}}
-{\footnotesize\ttfamily void Arms.\+Calculate\+Arm\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Arms.\+Calculate\+Arm\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}}]{character\+Input\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Calculates the arm rotation value based on which controller is active. 
 
-
+This only works because the player is always in the center of the screen
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac6b6a96da9785b6c6aaed165ae4e7f39}{IsMouseController}})}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \_controllerPos.x\ =\ Camera.main.ScreenToWorldPoint(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}{ArmsControllerInput}}).x;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \_controllerPos.y\ =\ Camera.main.ScreenToWorldPoint(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}{ArmsControllerInput}}).y;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \_controllerPos.z\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(characterInputData.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}{IsMouseController}})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \_delta\ =\ characterInputData.ArmsMovementData.ArmsControllerInput\ -\/\ \_screenOrigin;}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \_delta\ =\ \_controllerPos\ -\/\ transform.position;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \_rotationZ\ =\ Mathf.Atan2(\_delta.x,\ -\/\_delta.y)\ *\ Mathf.Rad2Deg;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_rotationZ\ =\ Mathf.Atan2(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}{ArmsControllerInput}}.x,\ -\/\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a264e33c4408e7e137d3e8c7d499e8138}{ArmsControllerInput}}.y)\ *\ Mathf.Rad2Deg;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \_rotationZ\ =\ Mathf.Atan2(\_delta.x,\ -\/\_delta.y)\ *\ Mathf.Rad2Deg;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \_rotationZ\ =\ Mathf.Atan2(characterInputData.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}.x,\ -\/characterInputData.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}.y)\ *\ Mathf.Rad2Deg;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_arms_ad91df96db381884f530a4da750250f85}\label{class_arms_ad91df96db381884f530a4da750250f85}} 
@@ -96,23 +116,37 @@ Calculates the arm rotation value based on which controller is active.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00040\ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//not\ active\ /\ collapsed}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_isActive)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arms_a27914140917932c82b716179c79c9d9c}{CalculateArmRotation}}();}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ player\ is\ trying\ to\ grab\ and\ is\ a\ mouse\ controller}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a8c237a31f3987263e6cd0a40baaddbd0}{IsGrabbing}}\ \&\&\ \mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac6b6a96da9785b6c6aaed165ae4e7f39}{IsMouseController}})}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//move\ the\ amrs}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \_rb.MoveRotation(Mathf.LerpAngle(\_rb.rotation,\ \_rotationZ,\ \_speed\ *\ Time.fixedDeltaTime));}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_ac6b6a96da9785b6c6aaed165ae4e7f39}{IsMouseController}}\ \&\&\ !\mbox{\hyperlink{class_input_handler}{InputHandler}}.Instance.\mbox{\hyperlink{class_input_handler_a86ea5a56ceffee640cb9dd1adfe38f8a}{ArmsStickReleased}})}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ active\ /\ collapsed}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ HandleArms(\mbox{\hyperlink{class_character_input_handler}{CharacterInputHandler}}.CharacterInputData);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arms_a57cffd2e3d68629934e2fe157b877257}\label{class_arms_a57cffd2e3d68629934e2fe157b877257}} 
+\index{Arms@{Arms}!HandleArms@{HandleArms}}
+\index{HandleArms@{HandleArms}!Arms@{Arms}}
+\doxysubsubsection{\texorpdfstring{HandleArms()}{HandleArms()}}
+{\footnotesize\ttfamily void Arms.\+Handle\+Arms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}}]{character\+Input\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arms_acddeac7d44a2ff98da45295f02020cf9}{CalculateArmRotation}}(characterInputData);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ player\ is\ trying\ to\ grab\ and\ is\ a\ mouse\ controller}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((characterInputData.\mbox{\hyperlink{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}{IsGrabbingLeft}}\ ||\ characterInputData.\mbox{\hyperlink{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}{IsGrabbingRight}})\ \&\&\ characterInputData.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}{IsMouseController}})}
 \DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//player\ is\ trying\ to\ move\ arms\ using\ gamepad,\ move\ the\ arms\ (no\ reliance\ on\ grab\ to\ move}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ the\ amrs}}
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \_rb.MoveRotation(Mathf.LerpAngle(\_rb.rotation,\ \_rotationZ,\ \_speed\ *\ Time.fixedDeltaTime));}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!characterInputData.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}{IsMouseController}}\ \&\&\ !characterInputData.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_a06f5f4b0ceec504d825c835530a876e2}{ArmsStickReleased}})}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ is\ trying\ to\ move\ arms\ using\ gamepad,\ move\ the\ arms\ (no\ reliance\ on\ grab\ to\ move}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \_rb.MoveRotation(Mathf.LerpAngle(\_rb.rotation,\ \_rotationZ,\ \_speed\ *\ Time.fixedDeltaTime));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
 
 \end{DoxyCode}

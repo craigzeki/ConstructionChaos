@@ -1,0 +1,11 @@
+<map id="ObjectiveObjectInstance" name="ObjectiveObjectInstance">
+<area shape="rect" id="node1" title="An instance of an objective object. &#160;This is the object that will be placed in the world." alt="" coords="587,81,749,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="284,5,409,31"/>
+<area shape="rect" id="node3" title=" " alt="" coords="253,55,440,95"/>
+<area shape="rect" id="node4" href="$class_objective_object.html" title="An object that can be used in an objective." alt="" coords="290,177,403,203"/>
+<area shape="rect" id="node5" title=" " alt="" coords="45,160,164,185"/>
+<area shape="rect" id="node7" href="$class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="291,120,403,145"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,211,204,236"/>
+<area shape="rect" id="node8" title=" " alt="" coords="6,61,203,87"/>
+<area shape="rect" id="node9" title=" " alt="" coords="35,111,174,136"/>
+</map>

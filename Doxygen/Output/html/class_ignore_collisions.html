@@ -145,17 +145,17 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">    9</span>    {</div>
-<div class="line"><span class="lineno">   10</span>        <span class="comment">//get all our children colliders and setup physics to ignore collisions between them</span></div>
-<div class="line"><span class="lineno">   11</span>        var colliders = GetComponentsInChildren&lt;Collider2D&gt;();</div>
-<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; colliders.Length; i++)</div>
-<div class="line"><span class="lineno">   13</span>        {</div>
-<div class="line"><span class="lineno">   14</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = i+1; k &lt; colliders.Length; k++)</div>
-<div class="line"><span class="lineno">   15</span>            {</div>
-<div class="line"><span class="lineno">   16</span>                Physics2D.IgnoreCollision(colliders[i], colliders[k]);</div>
-<div class="line"><span class="lineno">   17</span>            }</div>
-<div class="line"><span class="lineno">   18</span>        }</div>
-<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    {</div>
+<div class="line"><span class="lineno">    9</span>        <span class="comment">// Get all our children colliders and setup physics to ignore collisions between them</span></div>
+<div class="line"><span class="lineno">   10</span>        var colliders = GetComponentsInChildren&lt;Collider2D&gt;();</div>
+<div class="line"><span class="lineno">   11</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; colliders.Length; i++)</div>
+<div class="line"><span class="lineno">   12</span>        {</div>
+<div class="line"><span class="lineno">   13</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k = i+1; k &lt; colliders.Length; k++)</div>
+<div class="line"><span class="lineno">   14</span>            {</div>
+<div class="line"><span class="lineno">   15</span>                Physics2D.IgnoreCollision(colliders[i], colliders[k]);</div>
+<div class="line"><span class="lineno">   16</span>            }</div>
+<div class="line"><span class="lineno">   17</span>        }</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -182,13 +182,13 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span>(collision.gameObject.tag == <span class="stringliteral">&quot;Player&quot;</span>)</div>
-<div class="line"><span class="lineno">   24</span>        {</div>
-<div class="line"><span class="lineno">   25</span>            <span class="comment">//if anything else has been added to the player object during runtime, detect this and also ignore</span></div>
-<div class="line"><span class="lineno">   26</span>            Physics2D.IgnoreCollision(this.gameObject.GetComponent&lt;Collider2D&gt;(), collision.gameObject.GetComponent&lt;Collider2D&gt;());</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="comment">//if(collision.gameObject.tag == &quot;Player&quot;)</span></div>
+<div class="line"><span class="lineno">   23</span>        <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">   24</span>        <span class="comment">//    // If anything else has been added to the player object during runtime, detect this and also ignore</span></div>
+<div class="line"><span class="lineno">   25</span>        <span class="comment">//    Physics2D.IgnoreCollision(this.gameObject.GetComponent&lt;Collider2D&gt;(), collision.gameObject.GetComponent&lt;Collider2D&gt;());</span></div>
+<div class="line"><span class="lineno">   26</span>        <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">   27</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

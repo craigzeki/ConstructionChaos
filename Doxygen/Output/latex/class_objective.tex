@@ -7,162 +7,233 @@ Container for storing objective information.
 
 
 
+Inheritance diagram for Objective\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_objective__inherit__graph}
+\end{center}
+\end{figure}
+
+
 Collaboration diagram for Objective\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=232pt]{class_objective__coll__graph}
+\includegraphics[width=350pt]{class_objective__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_objective_a19bf2a9754651600fa433523a26c1132}{Objective}} (\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Manager.\+Objective\+Action}} action, \mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Manager.\+Objective\+Colour}} colour, \mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Manager.\+Objective\+Object}} @object, \mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Manager.\+Objective\+Conditions}} condition, bool inverse, uint player)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_objective_a460b29167c25611cd5979b3400c9cbd0}{Objective}} (\mbox{\hyperlink{class_objective_action}{Objective\+Action}} action, \mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} colour, \mbox{\hyperlink{class_objective_object}{Objective\+Object}} obj\+Object, \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} condition, \mbox{\hyperlink{class_zone}{Zone}} zone, bool inverse)
+\begin{DoxyCompactList}\small\item\em Constructor for the objective class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}} (\mbox{\hyperlink{class_objective}{Objective}} other)
+\begin{DoxyCompactList}\small\item\em Specific Equals opperation for \mbox{\hyperlink{class_objective}{Objective}}. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_objective_a3835229c079769e8fb915b21c59a61a1}{Equals}} (object other)
+\begin{DoxyCompactList}\small\item\em Override of Equals to provide correct equivalence check. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_objective_a7cdb4f3ee81816830d9529ef2b7ddc83}{Get\+Hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Override of Get\+Hash\+Code to provide correct hash for Dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Manager.\+Objective\+Action}} \mbox{\hyperlink{class_objective_a229f140b2ff7fc0deadce0bedc0e9110}{Action}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_a2ff9eb431b1d237107b57c935cbd9241}\label{class_objective_a2ff9eb431b1d237107b57c935cbd9241}} 
+bool {\bfseries Inverse}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Manager.\+Objective\+Colour}} \mbox{\hyperlink{class_objective_ac0a84d7870e5fb22dabc2684e48a3e42}{Colour}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_a7e502e3e66028834dab86723f4245f78}\label{class_objective_a7e502e3e66028834dab86723f4245f78}} 
+\mbox{\hyperlink{class_objective_action}{Objective\+Action}} {\bfseries Action}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Manager.\+Objective\+Object}} \mbox{\hyperlink{class_objective_ae238487e8f9654140d615e1ab9d97059}{Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_afa4ba278da1e480d2628ac1f6c93f376}\label{class_objective_afa4ba278da1e480d2628ac1f6c93f376}} 
+\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} {\bfseries Colour}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-uint \mbox{\hyperlink{class_objective_a942b0a3014000c5bceb5206020bf1285}{Player}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_a35883b211bc0ca99018a84b939bcf145}\label{class_objective_a35883b211bc0ca99018a84b939bcf145}} 
+\mbox{\hyperlink{class_objective_object}{Objective\+Object}} {\bfseries Object}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-string \mbox{\hyperlink{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}{Objective\+String}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_a60b3d089f5c8a89def2fc403425525cf}\label{class_objective_a60b3d089f5c8a89def2fc403425525cf}} 
+\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} {\bfseries Condition}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-bool \mbox{\hyperlink{class_objective_a2ff9eb431b1d237107b57c935cbd9241}{Inverse}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}\label{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}} 
+string {\bfseries Objective\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Manager.\+Objective\+Conditions}} \mbox{\hyperlink{class_objective_a3f5d67d85d42f26dc8ab7c623b1ac953}{Condition}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\Hypertarget{class_objective_af04a76d01728fa99c8cd263f90b2a38e}\label{class_objective_af04a76d01728fa99c8cd263f90b2a38e}} 
+\mbox{\hyperlink{class_zone}{Zone}} {\bfseries Zone}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_a502d4bb21a9417c109a8a35118028c22}\label{class_objective_a502d4bb21a9417c109a8a35118028c22}} 
-\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Manager.\+Objective\+Action}} {\bfseries \+\_\+action}
-\begin{DoxyCompactList}\small\item\em The required action. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_objective_a83b227c142054424732bd80dd8f76db4}\label{class_objective_a83b227c142054424732bd80dd8f76db4}} 
-\mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Manager.\+Objective\+Colour}} {\bfseries \+\_\+colour}
-\begin{DoxyCompactList}\small\item\em The required colour. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_objective_a89c35a2cd05804b2be934fb672c0c60f}\label{class_objective_a89c35a2cd05804b2be934fb672c0c60f}} 
-\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Manager.\+Objective\+Object}} {\bfseries \+\_\+object}
-\begin{DoxyCompactList}\small\item\em The required action. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_objective_a4718b1cb94859da5140b3ef6f16351bb}\label{class_objective_a4718b1cb94859da5140b3ef6f16351bb}} 
-\mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Manager.\+Objective\+Conditions}} {\bfseries \+\_\+condition}
-\begin{DoxyCompactList}\small\item\em The required condition. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_aafe3cce7979ad37b28391112cb16dced}\label{class_objective_aafe3cce7979ad37b28391112cb16dced}} 
 bool {\bfseries \+\_\+inverse}
 \begin{DoxyCompactList}\small\item\em Modifier indicating the objective is to avoid instead of do. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_objective_a47dab2002ea88ada2d8c006be23f88a0}\label{class_objective_a47dab2002ea88ada2d8c006be23f88a0}} 
-uint {\bfseries \+\_\+player}
-\begin{DoxyCompactList}\small\item\em The assigned player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_a2bd95bed956156e3a7883246c01613e6}\label{class_objective_a2bd95bed956156e3a7883246c01613e6}} 
+\mbox{\hyperlink{class_objective_action}{Objective\+Action}} {\bfseries \+\_\+action}
+\begin{DoxyCompactList}\small\item\em The required action. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}\label{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}} 
+\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} {\bfseries \+\_\+colour}
+\begin{DoxyCompactList}\small\item\em The required colour. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_a74b3394ba6bc986a234c24beae1932c8}\label{class_objective_a74b3394ba6bc986a234c24beae1932c8}} 
+\mbox{\hyperlink{class_objective_object}{Objective\+Object}} {\bfseries \+\_\+object}
+\begin{DoxyCompactList}\small\item\em The required object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_ad7e084f271e3f80b960ecf579a72de53}\label{class_objective_ad7e084f271e3f80b960ecf579a72de53}} 
+\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} {\bfseries \+\_\+condition}
+\begin{DoxyCompactList}\small\item\em The required condition. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_a1f62f8184878270f4592734c2812a904}\label{class_objective_a1f62f8184878270f4592734c2812a904}} 
 string {\bfseries \+\_\+objective\+String}
-\begin{DoxyCompactList}\small\item\em The generated string which is displayed to the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The generated string which is displayed to the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}\label{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}} 
+\mbox{\hyperlink{class_zone}{Zone}} {\bfseries \+\_\+zone}
+\begin{DoxyCompactList}\small\item\em The zone (if any) required for the condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Container for storing objective information. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_objective_a19bf2a9754651600fa433523a26c1132}\label{class_objective_a19bf2a9754651600fa433523a26c1132}} 
+\mbox{\Hypertarget{class_objective_a460b29167c25611cd5979b3400c9cbd0}\label{class_objective_a460b29167c25611cd5979b3400c9cbd0}} 
 \index{Objective@{Objective}!Objective@{Objective}}
 \index{Objective@{Objective}!Objective@{Objective}}
 \doxysubsubsection{\texorpdfstring{Objective()}{Objective()}}
-{\footnotesize\ttfamily Objective.\+Objective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Manager\+::\+Objective\+Action}}}]{action,  }\item[{\mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Manager\+::\+Objective\+Colour}}}]{colour,  }\item[{\mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Manager\+::\+Objective\+Object}} @}]{object,  }\item[{\mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Manager\+::\+Objective\+Conditions}}}]{condition,  }\item[{bool}]{inverse,  }\item[{uint}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Objective.\+Objective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective_action}{Objective\+Action}}}]{action,  }\item[{\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}}}]{colour,  }\item[{\mbox{\hyperlink{class_objective_object}{Objective\+Object}}}]{obj\+Object,  }\item[{\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}}]{condition,  }\item[{\mbox{\hyperlink{class_zone}{Zone}}}]{zone,  }\item[{bool}]{inverse }\end{DoxyParamCaption})}
 
+
+
+Constructor for the objective class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The required action\\
+\hline
+{\em colour} & The required colour\\
+\hline
+{\em obj\+Object} & The required object\\
+\hline
+{\em condition} & The required condition\\
+\hline
+{\em zone} & The required zone for the condition\\
+\hline
+{\em inverse} & Modifier indicating the objective is to avoid instead of do\\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00308\ \ \ \ \ \{}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a502d4bb21a9417c109a8a35118028c22}{\_action}}\ =\ action;}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a83b227c142054424732bd80dd8f76db4}{\_colour}}\ =\ colour;}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a89c35a2cd05804b2be934fb672c0c60f}{\_object}}\ =\ @object;}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a4718b1cb94859da5140b3ef6f16351bb}{\_condition}}\ =\ condition;}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a47dab2002ea88ada2d8c006be23f88a0}{\_player}}\ =\ player;}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}\ =\ inverse;}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}\ =\ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}{CreateObjectiveString}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this.\_action\ =\ action;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ this.\_colour\ =\ colour;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ this.\_object\ =\ objObject;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ this.\_condition\ =\ condition;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ this.\_zone\ =\ zone;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ this.\_inverse\ =\ inverse;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ this.\_objectiveString\ =\ \textcolor{stringliteral}{"{}INVALID\ OBJECTIVE"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ this.\_objectiveString\ =\ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}{CreateObjectiveString}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-\doxysubsection{Property Documentation}
-\mbox{\Hypertarget{class_objective_a229f140b2ff7fc0deadce0bedc0e9110}\label{class_objective_a229f140b2ff7fc0deadce0bedc0e9110}} 
-\index{Objective@{Objective}!Action@{Action}}
-\index{Action@{Action}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{Action}{Action}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_objective_manager_a42f04c0c097a24a72eafcdc4b45f1dde}{Objective\+Manager.\+Objective\+Action}} Objective.\+Action\hspace{0.3cm}{\ttfamily [get]}}
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_objective_a3835229c079769e8fb915b21c59a61a1}\label{class_objective_a3835229c079769e8fb915b21c59a61a1}} 
+\index{Objective@{Objective}!Equals@{Equals}}
+\index{Equals@{Equals}!Objective@{Objective}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override bool Objective.\+Equals (\begin{DoxyParamCaption}\item[{object}]{other }\end{DoxyParamCaption})}
 
+
+
+Override of Equals to provide correct equivalence check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Object to compare with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True of False (Equal or Not Equal)
+\end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00318\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_a502d4bb21a9417c109a8a35118028c22}{\_action}};\ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}((\mbox{\hyperlink{class_objective}{Objective}})other);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_objective_ac0a84d7870e5fb22dabc2684e48a3e42}\label{class_objective_ac0a84d7870e5fb22dabc2684e48a3e42}} 
-\index{Objective@{Objective}!Colour@{Colour}}
-\index{Colour@{Colour}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{Colour}{Colour}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_objective_manager_a55d1d15a1de31be4226357d7c1def345}{Objective\+Manager.\+Objective\+Colour}} Objective.\+Colour\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\Hypertarget{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}\label{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}} 
+\index{Objective@{Objective}!Equals@{Equals}}
+\index{Equals@{Equals}!Objective@{Objective}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Objective.\+Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective}{Objective}}}]{other }\end{DoxyParamCaption})}
 
+
+
+Specific Equals opperation for \mbox{\hyperlink{class_objective}{Objective}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_objective}{Objective}} to compare with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True of False (Equal or Not Equal)
+\end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00319\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_a83b227c142054424732bd80dd8f76db4}{\_colour}};\ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.\mbox{\hyperlink{class_objective_action_a3126fcb6157262b3f941bf046da28234}{Equals}}(other.\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}})\ :\ other.\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}.\mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}(other.\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}})\ :\ other.\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.\mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}(other.\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}})\ :\ other.\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}.\mbox{\hyperlink{class_objective_condition_a8fa0bc061060aeaa343645e7ee6c3fc5}{Equals}}(other.\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}})\ :\ other.\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}.Equals(other.\mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}})\ \&\&}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}.Equals(other.\mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}})\ \&\&}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.\mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}}(other.Zone)\ :\ other.Zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_objective_a3f5d67d85d42f26dc8ab7c623b1ac953}\label{class_objective_a3f5d67d85d42f26dc8ab7c623b1ac953}} 
-\index{Objective@{Objective}!Condition@{Condition}}
-\index{Condition@{Condition}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{Condition}{Condition}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_objective_manager_a2117c87f37e1411914a0d9a9011d2ef2}{Objective\+Manager.\+Objective\+Conditions}} Objective.\+Condition\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\Hypertarget{class_objective_a7cdb4f3ee81816830d9529ef2b7ddc83}\label{class_objective_a7cdb4f3ee81816830d9529ef2b7ddc83}} 
+\index{Objective@{Objective}!GetHashCode@{GetHashCode}}
+\index{GetHashCode@{GetHashCode}!Objective@{Objective}}
+\doxysubsubsection{\texorpdfstring{GetHashCode()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Objective.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Override of Get\+Hash\+Code to provide correct hash for Dictionary. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
+ \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00324\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_a4718b1cb94859da5140b3ef6f16351bb}{\_condition}};\ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_a2ff9eb431b1d237107b57c935cbd9241}\label{class_objective_a2ff9eb431b1d237107b57c935cbd9241}} 
-\index{Objective@{Objective}!Inverse@{Inverse}}
-\index{Inverse@{Inverse}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{Inverse}{Inverse}}
-{\footnotesize\ttfamily bool Objective.\+Inverse\hspace{0.3cm}{\ttfamily [get]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00323\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}};\ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_ae238487e8f9654140d615e1ab9d97059}\label{class_objective_ae238487e8f9654140d615e1ab9d97059}} 
-\index{Objective@{Objective}!Object@{Object}}
-\index{Object@{Object}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{Object}{Object}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_objective_manager_a81d08fb6dcf1830d057af0c350b18ba7}{Objective\+Manager.\+Objective\+Object}} Objective.\+Object\hspace{0.3cm}{\ttfamily [get]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00320\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_a89c35a2cd05804b2be934fb672c0c60f}{\_object}};\ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}\label{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}} 
-\index{Objective@{Objective}!ObjectiveString@{ObjectiveString}}
-\index{ObjectiveString@{ObjectiveString}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{ObjectiveString}{ObjectiveString}}
-{\footnotesize\ttfamily string Objective.\+Objective\+String\hspace{0.3cm}{\ttfamily [get]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00322\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}};\ \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_objective_a942b0a3014000c5bceb5206020bf1285}\label{class_objective_a942b0a3014000c5bceb5206020bf1285}} 
-\index{Objective@{Objective}!Player@{Player}}
-\index{Player@{Player}!Objective@{Objective}}
-\doxysubsubsection{\texorpdfstring{Player}{Player}}
-{\footnotesize\ttfamily uint Objective.\+Player\hspace{0.3cm}{\ttfamily [get]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00321\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_objective_a47dab2002ea88ada2d8c006be23f88a0}{\_player}};\ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.\mbox{\hyperlink{class_objective_action_a6bbc3880e6ccf5dd84e5e35290ae482f}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.\mbox{\hyperlink{class_objective_object_ab7bf4ac4297e2b3b2e803c0404eef788}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}.\mbox{\hyperlink{class_objective_condition_a19d0adaf0122e695e64e126ec297ac83}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}.GetHashCode();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode*\ 23)\ +\ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.\mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
 
 \end{DoxyCode}

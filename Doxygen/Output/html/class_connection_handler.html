@@ -120,9 +120,9 @@ Collaboration diagram for ConnectionHandler:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a00b6ffa4c052a6828857c1fe00038be2"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#a00b6ffa4c052a6828857c1fe00038be2">HostGame</a> (int maxPlayers, bool local=false)</td></tr>
-<tr class="memdesc:a00b6ffa4c052a6828857c1fe00038be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hosts the game using the Unity Relay Service and Netcode for GameObjects.  <br /></td></tr>
-<tr class="separator:a00b6ffa4c052a6828857c1fe00038be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17bd06b8b4e045de1dde01ab6807335"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#ab17bd06b8b4e045de1dde01ab6807335">HostGame</a> (bool local=false)</td></tr>
+<tr class="memdesc:ab17bd06b8b4e045de1dde01ab6807335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hosts the game using the Unity Relay Service and Netcode for GameObjects.  <br /></td></tr>
+<tr class="separator:ab17bd06b8b4e045de1dde01ab6807335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80fdb9284b085c6b0d1aac5555104c8"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#ad80fdb9284b085c6b0d1aac5555104c8">JoinGame</a> (string roomCode, bool local=false)</td></tr>
 <tr class="memdesc:ad80fdb9284b085c6b0d1aac5555104c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the game using the Unity Relay Service and Netcode for GameObjects.  <br /></td></tr>
 <tr class="separator:ad80fdb9284b085c6b0d1aac5555104c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,25 +140,33 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:abcf7556517e0fd3061f239b1d754d369"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">UnityServicesLogin</a> ()</td></tr>
 <tr class="memdesc:abcf7556517e0fd3061f239b1d754d369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs into Unity Services Anonymously.  <br /></td></tr>
 <tr class="separator:abcf7556517e0fd3061f239b1d754d369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3ad4b31b90a6bf82bfa4ecd6f37095"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#abb3ad4b31b90a6bf82bfa4ecd6f37095">CreateRelay</a> (int maxPlayers)</td></tr>
-<tr class="memdesc:abb3ad4b31b90a6bf82bfa4ecd6f37095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a relay server using the Unity Relay Service.  <br /></td></tr>
-<tr class="separator:abb3ad4b31b90a6bf82bfa4ecd6f37095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fcf720daa49eee5ca8cb5b0f1b058a"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#aa4fcf720daa49eee5ca8cb5b0f1b058a">CreateRelay</a> ()</td></tr>
+<tr class="memdesc:aa4fcf720daa49eee5ca8cb5b0f1b058a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a relay server using the Unity Relay Service.  <br /></td></tr>
+<tr class="separator:aa4fcf720daa49eee5ca8cb5b0f1b058a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb52e5b49c6d7adf0dda062e0934d7a2"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#adb52e5b49c6d7adf0dda062e0934d7a2">JoinRelay</a> (string roomCode)</td></tr>
 <tr class="memdesc:adb52e5b49c6d7adf0dda062e0934d7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins a relay server using the Unity Relay Service.  <br /></td></tr>
 <tr class="separator:adb52e5b49c6d7adf0dda062e0934d7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac625bf2ba4c2f8e04e7bcabffefb89bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd">StartNetwork</a> (bool isHost)</td></tr>
+<tr class="memdesc:ac625bf2ba4c2f8e04e7bcabffefb89bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the network using Netcode for GameObjects.  <br /></td></tr>
+<tr class="separator:ac625bf2ba4c2f8e04e7bcabffefb89bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c943a0461d6660dcd35322349e9c363"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#a1c943a0461d6660dcd35322349e9c363">IPtoCode</a> (string ip)</td></tr>
+<tr class="memdesc:a1c943a0461d6660dcd35322349e9c363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an IP address to a room code by converting each part to hex and concatenating them.  <br /></td></tr>
 <tr class="separator:a1c943a0461d6660dcd35322349e9c363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a829651732f9fee6c5228133b9ed80a3b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connection_handler.html#a829651732f9fee6c5228133b9ed80a3b">CodeToIP</a> (string code)</td></tr>
+<tr class="memdesc:a829651732f9fee6c5228133b9ed80a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a room code to an IP address by converting each hex value to an integer and concatenating them.  <br /></td></tr>
 <tr class="separator:a829651732f9fee6c5228133b9ed80a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a12e998a4cef92b0eb00f5c69faf58250"><td class="memItemLeft" align="right" valign="top"><a id="a12e998a4cef92b0eb00f5c69faf58250" name="a12e998a4cef92b0eb00f5c69faf58250"></a>
-UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>unityTransport</b></td></tr>
-<tr class="separator:a12e998a4cef92b0eb00f5c69faf58250"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1921c8405871cc319366552645afb45a"><td class="memItemLeft" align="right" valign="top"><a id="a1921c8405871cc319366552645afb45a" name="a1921c8405871cc319366552645afb45a"></a>
-UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransport</b></td></tr>
-<tr class="separator:a1921c8405871cc319366552645afb45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ae61cbf870815f5cc46df36a163503"><td class="memItemLeft" align="right" valign="top"><a id="a21ae61cbf870815f5cc46df36a163503" name="a21ae61cbf870815f5cc46df36a163503"></a>
+UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>_unityTransport</b></td></tr>
+<tr class="separator:a21ae61cbf870815f5cc46df36a163503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8429f205749c5d9b7eca3497b9343d"><td class="memItemLeft" align="right" valign="top"><a id="a8c8429f205749c5d9b7eca3497b9343d" name="a8c8429f205749c5d9b7eca3497b9343d"></a>
+UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>_relayTransport</b></td></tr>
+<tr class="separator:a8c8429f205749c5d9b7eca3497b9343d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb85190481305eccb9358d086f643ceb"><td class="memItemLeft" align="right" valign="top"><a id="afb85190481305eccb9358d086f643ceb" name="afb85190481305eccb9358d086f643ceb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_maxNoOfPlayers</b> = 6</td></tr>
+<tr class="separator:afb85190481305eccb9358d086f643ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a226e69502f8e3f5cbf68bad6d0f35285" name="a226e69502f8e3f5cbf68bad6d0f35285"></a>
@@ -183,12 +191,12 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (Instance == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   25</span>            Instance = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   27</span>            Destroy(gameObject);</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (Instance == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   26</span>            Instance = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   28</span>            Destroy(gameObject);</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -215,24 +223,27 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  184</span>    {</div>
-<div class="line"><span class="lineno">  185</span>        <span class="keywordtype">string</span> ip = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; code.Length; i += 2)</div>
-<div class="line"><span class="lineno">  187</span>        {</div>
-<div class="line"><span class="lineno">  188</span>            ip += <span class="keywordtype">int</span>.Parse(code.Substring(i, 2), System.Globalization.NumberStyles.HexNumber).ToString();</div>
-<div class="line"><span class="lineno">  189</span>            <span class="keywordflow">if</span> (i != code.Length - 2)</div>
-<div class="line"><span class="lineno">  190</span>            {</div>
-<div class="line"><span class="lineno">  191</span>                ip += <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><span class="lineno">  192</span>            }</div>
-<div class="line"><span class="lineno">  193</span>        }</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">return</span> ip;</div>
-<div class="line"><span class="lineno">  196</span>    }</div>
+
+<p>Converts a room code to an IP address by converting each hex value to an integer and concatenating them. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the IP address</dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>    {</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordtype">string</span> ip = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; code.Length; i += 2)</div>
+<div class="line"><span class="lineno">  213</span>        {</div>
+<div class="line"><span class="lineno">  214</span>            ip += <span class="keywordtype">int</span>.Parse(code.Substring(i, 2), System.Globalization.NumberStyles.HexNumber).ToString();</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">if</span> (i != code.Length - 2)</div>
+<div class="line"><span class="lineno">  216</span>            {</div>
+<div class="line"><span class="lineno">  217</span>                ip += <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><span class="lineno">  218</span>            }</div>
+<div class="line"><span class="lineno">  219</span>        }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>        <span class="keywordflow">return</span> ip;</div>
+<div class="line"><span class="lineno">  222</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="abb3ad4b31b90a6bf82bfa4ecd6f37095" name="abb3ad4b31b90a6bf82bfa4ecd6f37095"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3ad4b31b90a6bf82bfa4ecd6f37095">&#9670;&#160;</a></span>CreateRelay()</h2>
+<a id="aa4fcf720daa49eee5ca8cb5b0f1b058a" name="aa4fcf720daa49eee5ca8cb5b0f1b058a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fcf720daa49eee5ca8cb5b0f1b058a">&#9670;&#160;</a></span>CreateRelay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,8 +254,7 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
         <tr>
           <td class="memname">async void ConnectionHandler.CreateRelay </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxPlayers</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -256,42 +266,37 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
 </div><div class="memdoc">
 
 <p>Creates a relay server using the Unity Relay Service. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">maxPlayers</td><td>The maximum number of players allowed in the game</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
-<div class="line"><span class="lineno">  124</span>        print(<span class="stringliteral">&quot;Creating relay&quot;</span>);</div>
-<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  126</span>        {</div>
-<div class="line"><span class="lineno">  127</span>            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxPlayers - 1);</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>            <span class="keywordtype">string</span> roomCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>            <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.<a class="code hl_function" href="class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca">SetRoomCode</a>(roomCode);</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>            RelayServerData relayServerData = <span class="keyword">new</span> RelayServerData(allocation, <span class="stringliteral">&quot;dtls&quot;</span>);</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>            relayTransport.SetRelayServerData(relayServerData);</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>            NetworkManager.Singleton.StartHost();</div>
-<div class="line"><span class="lineno">  140</span>        }</div>
-<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">catch</span> (RelayServiceException e)</div>
-<div class="line"><span class="lineno">  142</span>        {</div>
-<div class="line"><span class="lineno">  143</span>            print(e.Message);</div>
-<div class="line"><span class="lineno">  144</span>        }</div>
-<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>        print(<span class="stringliteral">&quot;Creating relay&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  123</span>        {</div>
+<div class="line"><span class="lineno">  124</span>            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(_maxNoOfPlayers - 1);</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>            <span class="keywordtype">string</span> roomCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.<a class="code hl_function" href="class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca">SetRoomCode</a>(roomCode);</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>            RelayServerData relayServerData = <span class="keyword">new</span> RelayServerData(allocation, <span class="stringliteral">&quot;dtls&quot;</span>);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>            _relayTransport.SetRelayServerData(relayServerData);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_function" href="class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd">StartNetwork</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  137</span>        }</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">catch</span> (RelayServiceException e)</div>
+<div class="line"><span class="lineno">  139</span>        {</div>
+<div class="line"><span class="lineno">  140</span>            print(e.Message);</div>
+<div class="line"><span class="lineno">  141</span>        }</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="ttc" id="aclass_connection_handler_html_ac625bf2ba4c2f8e04e7bcabffefb89bd"><div class="ttname"><a href="class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd">ConnectionHandler.StartNetwork</a></div><div class="ttdeci">void StartNetwork(bool isHost)</div><div class="ttdoc">Starts the network using Netcode for GameObjects.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:173</div></div>
 <div class="ttc" id="aclass_menu_u_i_manager_html"><div class="ttname"><a href="class_menu_u_i_manager.html">MenuUIManager</a></div><div class="ttdef"><b>Definition:</b> MenuUIManager.cs:8</div></div>
-<div class="ttc" id="aclass_menu_u_i_manager_html_a842e85a3fc7661b4bda5f0b963bf94ca"><div class="ttname"><a href="class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca">MenuUIManager.SetRoomCode</a></div><div class="ttdeci">void SetRoomCode(string roomCode)</div><div class="ttdoc">Changes the title text to show the room code to the host.</div><div class="ttdef"><b>Definition:</b> MenuUIManager.cs:78</div></div>
+<div class="ttc" id="aclass_menu_u_i_manager_html_a842e85a3fc7661b4bda5f0b963bf94ca"><div class="ttname"><a href="class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca">MenuUIManager.SetRoomCode</a></div><div class="ttdeci">void SetRoomCode(string roomCode)</div><div class="ttdoc">Changes the title text to show the room code to the host.</div><div class="ttdef"><b>Definition:</b> MenuUIManager.cs:68</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a00b6ffa4c052a6828857c1fe00038be2" name="a00b6ffa4c052a6828857c1fe00038be2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00b6ffa4c052a6828857c1fe00038be2">&#9670;&#160;</a></span>HostGame()</h2>
+<a id="ab17bd06b8b4e045de1dde01ab6807335" name="ab17bd06b8b4e045de1dde01ab6807335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab17bd06b8b4e045de1dde01ab6807335">&#9670;&#160;</a></span>HostGame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,19 +304,9 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
         <tr>
           <td class="memname">async void ConnectionHandler.HostGame </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxPlayers</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>local</em> = <code>false</code></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -323,45 +318,44 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
   </table>
   </dd>
 </dl>
-<p>The IP Address will be 127.0.0.1 if the device is not connected to a network</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (local)</div>
-<div class="line"><span class="lineno">   37</span>        {</div>
-<div class="line"><span class="lineno">   38</span>            <span class="keywordtype">string</span> ip = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(address =&gt; address.AddressFamily == AddressFamily.InterNetwork).ToString();</div>
-<div class="line"><span class="lineno">   42</span>            }</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">catch</span></div>
-<div class="line"><span class="lineno">   44</span>            {</div>
-<div class="line"><span class="lineno">   45</span>                print(<span class="stringliteral">&quot;Error getting IP address&quot;</span>);</div>
-<div class="line"><span class="lineno">   46</span>                <span class="comment">// TODO: Display an error message to the user</span></div>
-<div class="line"><span class="lineno">   47</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   48</span>            }</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   51</span>            <span class="comment">// TODO: Test if this causes the game not to work and implemented a fix</span></div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;</div>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (local)</div>
+<div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>            <span class="comment">// Try to get the local IP address</span></div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordtype">string</span> ip = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   42</span>            {</div>
+<div class="line"><span class="lineno">   43</span>                ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(address =&gt; address.AddressFamily == AddressFamily.InterNetwork).ToString();</div>
+<div class="line"><span class="lineno">   44</span>            }</div>
+<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">catch</span></div>
+<div class="line"><span class="lineno">   46</span>            {</div>
+<div class="line"><span class="lineno">   47</span>                print(<span class="stringliteral">&quot;Error getting IP address&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>                <span class="comment">// TODO: Display an error message to the user</span></div>
+<div class="line"><span class="lineno">   49</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   50</span>            }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>            <span class="comment">// Change the network transport to the Unity Transport</span></div>
+<div class="line"><span class="lineno">   53</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _unityTransport;</div>
 <div class="line"><span class="lineno">   54</span> </div>
 <div class="line"><span class="lineno">   55</span>            <span class="comment">// Set the connection data to the local IP address</span></div>
-<div class="line"><span class="lineno">   56</span>            unityTransport.ConnectionData.Address = ip;</div>
+<div class="line"><span class="lineno">   56</span>            _unityTransport.ConnectionData.Address = ip;</div>
 <div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="comment">// Start the server</span></div>
-<div class="line"><span class="lineno">   59</span>            NetworkManager.Singleton.StartHost();</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>            <span class="comment">// Display the room code to the user</span></div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordtype">string</span> roomCode = IPtoCode(ip);</div>
-<div class="line"><span class="lineno">   63</span>            <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.<a class="code hl_function" href="class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca">SetRoomCode</a>(roomCode);</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   66</span>        }</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>        await <a class="code hl_function" href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">UnityServicesLogin</a>();</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>        <a class="code hl_function" href="class_connection_handler.html#abb3ad4b31b90a6bf82bfa4ecd6f37095">CreateRelay</a>(maxPlayers);</div>
-<div class="line"><span class="lineno">   71</span>    }</div>
-<div class="ttc" id="aclass_connection_handler_html_abb3ad4b31b90a6bf82bfa4ecd6f37095"><div class="ttname"><a href="class_connection_handler.html#abb3ad4b31b90a6bf82bfa4ecd6f37095">ConnectionHandler.CreateRelay</a></div><div class="ttdeci">async void CreateRelay(int maxPlayers)</div><div class="ttdoc">Creates a relay server using the Unity Relay Service.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:122</div></div>
-<div class="ttc" id="aclass_connection_handler_html_abcf7556517e0fd3061f239b1d754d369"><div class="ttname"><a href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">ConnectionHandler.UnityServicesLogin</a></div><div class="ttdeci">async Task UnityServicesLogin()</div><div class="ttdoc">Logs into Unity Services Anonymously.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:104</div></div>
+<div class="line"><span class="lineno">   58</span>            <span class="comment">// Display the room code to the user</span></div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordtype">string</span> roomCode = <a class="code hl_function" href="class_connection_handler.html#a1c943a0461d6660dcd35322349e9c363">IPtoCode</a>(ip);</div>
+<div class="line"><span class="lineno">   60</span>            <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.<a class="code hl_function" href="class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca">SetRoomCode</a>(roomCode);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_function" href="class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd">StartNetwork</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        await <a class="code hl_function" href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">UnityServicesLogin</a>();</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_function" href="class_connection_handler.html#aa4fcf720daa49eee5ca8cb5b0f1b058a">CreateRelay</a>();</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="ttc" id="aclass_connection_handler_html_a1c943a0461d6660dcd35322349e9c363"><div class="ttname"><a href="class_connection_handler.html#a1c943a0461d6660dcd35322349e9c363">ConnectionHandler.IPtoCode</a></div><div class="ttdeci">string IPtoCode(string ip)</div><div class="ttdoc">Converts an IP address to a room code by converting each part to hex and concatenating them.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:194</div></div>
+<div class="ttc" id="aclass_connection_handler_html_aa4fcf720daa49eee5ca8cb5b0f1b058a"><div class="ttname"><a href="class_connection_handler.html#aa4fcf720daa49eee5ca8cb5b0f1b058a">ConnectionHandler.CreateRelay</a></div><div class="ttdeci">async void CreateRelay()</div><div class="ttdoc">Creates a relay server using the Unity Relay Service.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:119</div></div>
+<div class="ttc" id="aclass_connection_handler_html_abcf7556517e0fd3061f239b1d754d369"><div class="ttname"><a href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">ConnectionHandler.UnityServicesLogin</a></div><div class="ttdeci">async Task UnityServicesLogin()</div><div class="ttdoc">Logs into Unity Services Anonymously.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:102</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -388,15 +382,18 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  173</span>    {</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordtype">string</span>[] ipSplit = ip.Split(<span class="charliteral">&#39;.&#39;</span>);</div>
-<div class="line"><span class="lineno">  175</span>        <span class="keywordtype">string</span> code = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> ipSplit)</div>
-<div class="line"><span class="lineno">  177</span>        {</div>
-<div class="line"><span class="lineno">  178</span>            code += <span class="keywordtype">int</span>.Parse(s).ToString(<span class="stringliteral">&quot;X2&quot;</span>);</div>
-<div class="line"><span class="lineno">  179</span>        }</div>
-<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">return</span> code;</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
+
+<p>Converts an IP address to a room code by converting each part to hex and concatenating them. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the room code</dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordtype">string</span>[] ipSplit = ip.Split(<span class="charliteral">&#39;.&#39;</span>);</div>
+<div class="line"><span class="lineno">  197</span>        <span class="keywordtype">string</span> code = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> ipSplit)</div>
+<div class="line"><span class="lineno">  199</span>        {</div>
+<div class="line"><span class="lineno">  200</span>            code += <span class="keywordtype">int</span>.Parse(s).ToString(<span class="stringliteral">&quot;X2&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>        }</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">return</span> code;</div>
+<div class="line"><span class="lineno">  203</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -433,29 +430,29 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (local)</div>
-<div class="line"><span class="lineno">   80</span>        {</div>
-<div class="line"><span class="lineno">   81</span>            <span class="comment">// Convert the room code to an IP address</span></div>
-<div class="line"><span class="lineno">   82</span>            <span class="keywordtype">string</span> ip = CodeToIP(roomCode);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>            <span class="comment">// </span></div>
-<div class="line"><span class="lineno">   85</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = unityTransport;</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>            <span class="comment">// Set the connection data to the IP address</span></div>
-<div class="line"><span class="lineno">   88</span>            unityTransport.ConnectionData.Address = ip;</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>            <span class="comment">// Start the client</span></div>
-<div class="line"><span class="lineno">   91</span>            NetworkManager.Singleton.StartClient();</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">if</span> (local)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            <span class="comment">// Convert the room code to an IP address</span></div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordtype">string</span> ip = <a class="code hl_function" href="class_connection_handler.html#a829651732f9fee6c5228133b9ed80a3b">CodeToIP</a>(roomCode);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>            <span class="comment">// Change the network transport to the Unity Transport</span></div>
+<div class="line"><span class="lineno">   84</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _unityTransport;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>            <span class="comment">// Set the connection data to the IP address</span></div>
+<div class="line"><span class="lineno">   87</span>            _unityTransport.ConnectionData.Address = ip;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_function" href="class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd">StartNetwork</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   92</span>        }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>        await <a class="code hl_function" href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">UnityServicesLogin</a>();</div>
 <div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        await <a class="code hl_function" href="class_connection_handler.html#abcf7556517e0fd3061f239b1d754d369">UnityServicesLogin</a>();</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>        <a class="code hl_function" href="class_connection_handler.html#adb52e5b49c6d7adf0dda062e0934d7a2">JoinRelay</a>(roomCode);</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="ttc" id="aclass_connection_handler_html_adb52e5b49c6d7adf0dda062e0934d7a2"><div class="ttname"><a href="class_connection_handler.html#adb52e5b49c6d7adf0dda062e0934d7a2">ConnectionHandler.JoinRelay</a></div><div class="ttdeci">async void JoinRelay(string roomCode)</div><div class="ttdoc">Joins a relay server using the Unity Relay Service.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:151</div></div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_function" href="class_connection_handler.html#adb52e5b49c6d7adf0dda062e0934d7a2">JoinRelay</a>(roomCode);</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="ttc" id="aclass_connection_handler_html_a829651732f9fee6c5228133b9ed80a3b"><div class="ttname"><a href="class_connection_handler.html#a829651732f9fee6c5228133b9ed80a3b">ConnectionHandler.CodeToIP</a></div><div class="ttdeci">string CodeToIP(string code)</div><div class="ttdoc">Converts a room code to an IP address by converting each hex value to an integer and concatenating th...</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:209</div></div>
+<div class="ttc" id="aclass_connection_handler_html_adb52e5b49c6d7adf0dda062e0934d7a2"><div class="ttname"><a href="class_connection_handler.html#adb52e5b49c6d7adf0dda062e0934d7a2">ConnectionHandler.JoinRelay</a></div><div class="ttdeci">async void JoinRelay(string roomCode)</div><div class="ttdoc">Joins a relay server using the Unity Relay Service.</div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:148</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -491,24 +488,75 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
   </dd>
 </dl>
 <p>More error handling is needed here to catch the error when the room code is invalid</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>    {</div>
-<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  154</span>        {</div>
-<div class="line"><span class="lineno">  155</span>            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(roomCode);</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>            RelayServerData relayServerData = <span class="keyword">new</span> RelayServerData(joinAllocation, <span class="stringliteral">&quot;dtls&quot;</span>);</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = relayTransport;</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>            relayTransport.SetRelayServerData(relayServerData);</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>            NetworkManager.Singleton.StartClient();</div>
-<div class="line"><span class="lineno">  164</span>        }</div>
-<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">catch</span> (RelayServiceException e)</div>
-<div class="line"><span class="lineno">  166</span>        {</div>
-<div class="line"><span class="lineno">  168</span>            print(e.Message);</div>
-<div class="line"><span class="lineno">  169</span>        }</div>
-<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>    {</div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  151</span>        {</div>
+<div class="line"><span class="lineno">  152</span>            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(roomCode);</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>            RelayServerData relayServerData = <span class="keyword">new</span> RelayServerData(joinAllocation, <span class="stringliteral">&quot;dtls&quot;</span>);</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>            NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>            _relayTransport.SetRelayServerData(relayServerData);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>            <a class="code hl_function" href="class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd">StartNetwork</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  161</span>        }</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">catch</span> (RelayServiceException e)</div>
+<div class="line"><span class="lineno">  163</span>        {</div>
+<div class="line"><span class="lineno">  165</span>            print(e.Message);</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac625bf2ba4c2f8e04e7bcabffefb89bd" name="ac625bf2ba4c2f8e04e7bcabffefb89bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac625bf2ba4c2f8e04e7bcabffefb89bd">&#9670;&#160;</a></span>StartNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConnectionHandler.StartNetwork </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isHost</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts the network using Netcode for GameObjects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isHost</td><td>Whether the device is the host or not</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>    {</div>
+<div class="line"><span class="lineno">  175</span>        <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.LoadLobby();</div>
+<div class="line"><span class="lineno">  176</span>        AsyncOperation loadLobbyScene = SceneManager.LoadSceneAsync(<a class="code hl_class" href="class_scene_names.html">SceneNames</a>.LobbyEnvironment);</div>
+<div class="line"><span class="lineno">  177</span>        </div>
+<div class="line"><span class="lineno">  178</span>        loadLobbyScene.completed += (AsyncOperation op) =&gt;</div>
+<div class="line"><span class="lineno">  179</span>        {</div>
+<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">if</span> (isHost)</div>
+<div class="line"><span class="lineno">  181</span>            {</div>
+<div class="line"><span class="lineno">  182</span>                NetworkManager.Singleton.StartHost();</div>
+<div class="line"><span class="lineno">  183</span>                <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.LobbyLoaded();</div>
+<div class="line"><span class="lineno">  184</span>            }   </div>
+<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  186</span>                NetworkManager.Singleton.StartClient(); </div>
+<div class="line"><span class="lineno">  187</span>        };</div>
+<div class="line"><span class="lineno">  188</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:14</div></div>
+<div class="ttc" id="aclass_scene_names_html"><div class="ttname"><a href="class_scene_names.html">SceneNames</a></div><div class="ttdoc">Stores the names of the scenes as constant strings.</div><div class="ttdef"><b>Definition:</b> SceneNames.cs:9</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -536,18 +584,18 @@ UnityTransport&#160;</td><td class="memItemRight" valign="bottom"><b>relayTransp
 </div><div class="memdoc">
 
 <p>Logs into Unity Services Anonymously. </p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>    {</div>
-<div class="line"><span class="lineno">  106</span>        await UnityServices.InitializeAsync();</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>        AuthenticationService.Instance.SignedIn += () =&gt;</div>
-<div class="line"><span class="lineno">  109</span>        {</div>
-<div class="line"><span class="lineno">  110</span>            <span class="comment">// Player has successfully signed in anonymously</span></div>
-<div class="line"><span class="lineno">  111</span>            print(<span class="stringliteral">&quot;Signed in anonymously&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  113</span>        };</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>        await AuthenticationService.Instance.SignInAnonymouslyAsync();</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>        await UnityServices.InitializeAsync();</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>        AuthenticationService.Instance.SignedIn += () =&gt;</div>
+<div class="line"><span class="lineno">  107</span>        {</div>
+<div class="line"><span class="lineno">  108</span>            <span class="comment">// Player has successfully signed in anonymously</span></div>
+<div class="line"><span class="lineno">  109</span>            print(<span class="stringliteral">&quot;Signed in anonymously&quot;</span>);</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  111</span>        };</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>        await AuthenticationService.Instance.SignInAnonymouslyAsync();</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

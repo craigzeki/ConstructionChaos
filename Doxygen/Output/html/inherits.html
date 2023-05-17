@@ -96,27 +96,77 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <div class="textblock">
 <p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" usemap="#a_mono_behaviour" alt=""/>
-<map name="a_mono_behaviour" id="a_mono_behaviour">
-<area shape="rect" title=" " alt="" coords="5,228,116,253"/>
-<area shape="rect" href="class_connection_handler.html" title=" " alt="" coords="164,5,295,31"/>
-<area shape="rect" href="class_game_manager.html" title=" " alt="" coords="176,55,283,80"/>
-<area shape="rect" href="class_goal_zone.html" title=" " alt="" coords="191,104,268,129"/>
-<area shape="rect" href="class_ignore_collisions.html" title=" " alt="" coords="173,153,286,179"/>
-<area shape="rect" href="class_input_handler.html" title=" " alt="" coords="182,203,277,228"/>
-<area shape="rect" href="class_menu_u_i_manager.html" title=" " alt="" coords="171,252,287,277"/>
-<area shape="rect" href="class_objective_manager.html" title="Runs server side only. &#160;Creates random objectives and assigns them to players. &#160;Provides an event dri..." alt="" coords="167,301,292,327"/>
-<area shape="rect" href="class_objective_text.html" title=" " alt="" coords="179,351,279,376"/>
-<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="197,400,262,425"/>
-<area shape="rect" href="class_stick_movement.html" title=" " alt="" coords="174,449,285,475"/>
-<area shape="rect" href="class_arms.html" title=" " alt="" coords="351,351,404,376"/>
-<area shape="rect" href="class_balance.html" title=" " alt="" coords="343,400,412,425"/>
-<area shape="rect" href="class_grab.html" title=" " alt="" coords="352,449,403,475"/>
+<tr><td><img src="inherit_graph_0.png" border="0" usemap="#a_i_equatable" alt=""/>
+<map name="a_i_equatable" id="a_i_equatable">
+<area shape="rect" title=" " alt="" coords="33,252,116,277"/>
+<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="243,301,317,327"/>
+<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="224,153,336,179"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="224,104,336,129"/>
+<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="215,203,345,228"/>
+<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="223,252,337,277"/>
+<area shape="rect" href="class_objective_object_instance.html" title="An instance of an objective object. &#160;This is the object that will be placed in the world." alt="" coords="199,351,361,376"/>
+<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="255,548,305,573"/>
+<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="428,104,515,129"/>
+<area shape="rect" href="class_goal_zone.html" title=" " alt="" coords="433,548,510,573"/>
+<area shape="rect" title=" " alt="" coords="5,55,144,80"/>
+<area shape="rect" href="struct_arms_movement_data.html" title="Container for Arms Movement Input Data." alt="" coords="211,55,349,80"/>
+<area shape="rect" href="struct_character_input_data.html" title=" " alt="" coords="213,5,347,31"/>
+<area shape="rect" title=" " alt="" coords="19,917,130,943"/>
+<area shape="rect" href="class_connection_handler.html" title=" " alt="" coords="215,1140,345,1165"/>
+<area shape="rect" href="class_follow_cam.html" title=" " alt="" coords="237,1189,323,1215"/>
+<area shape="rect" href="class_game_manager.html" title="The Game Manager." alt="" coords="227,696,333,721"/>
+<area shape="rect" href="class_ignore_collisions.html" title=" " alt="" coords="223,745,337,771"/>
+<area shape="rect" href="class_menu_u_i_manager.html" title=" " alt="" coords="222,795,338,820"/>
+<area shape="rect" href="class_o_l_d_character_input_handler.html" title="Gets the inputs either via event or directly &#45; can be further tweaked to become the server side input..." alt="" coords="192,844,368,869"/>
+<area shape="rect" href="class_objective_action_behaviour.html" title="This is the base class for any action behaviour &#45; e.g. hold &#160;It provides condition and zone detection..." alt="" coords="196,893,364,919"/>
+<area shape="rect" href="class_objective_manager.html" title="Runs server side only. &#160;Creates random objectives and assigns them to players. &#160;Provides an event dri..." alt="" coords="217,943,343,968"/>
+<area shape="rect" href="class_objective_text.html" title=" " alt="" coords="230,992,330,1017"/>
+<area shape="rect" href="class_platform_arranger.html" title="Automatically spaces the end platforms to match the size of the middle one." alt="" coords="221,1041,339,1067"/>
+<area shape="rect" href="class_scene_persist.html" title="Makes the object persist between scenes." alt="" coords="230,1091,330,1116"/>
+<area shape="rect" href="class_action_grab.html" title="Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager." alt="" coords="428,868,515,893"/>
+<area shape="rect" href="class_action_swing.html" title=" " alt="" coords="424,917,519,943"/>
+<area shape="rect" title=" " alt="" coords="12,473,137,499"/>
+<area shape="rect" href="class_character_input_handler.html" title="This class must be attached to each instance of the player &#160;It handles the input from the player and ..." alt="" coords="205,499,355,524"/>
+<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="241,597,319,623"/>
+<area shape="rect" href="class_objective_action_reporter.html" title=" " alt="" coords="199,647,361,672"/>
+<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="247,400,313,425"/>
+<area shape="rect" href="class_server_input_handler.html" title="Server side input handler on all clients but only runs on the server." alt="" coords="215,449,345,475"/>
+<area shape="rect" href="class_arms.html" title=" " alt="" coords="445,473,498,499"/>
+<area shape="rect" href="class_balance.html" title="Keeps the body part balanced by rotating it towards the target rotation." alt="" coords="437,325,506,351"/>
+<area shape="rect" href="class_grab.html" title=" " alt="" coords="446,375,497,400"/>
+<area shape="rect" href="class_stick_movement.html" title=" " alt="" coords="416,424,527,449"/>
+<area shape="rect" title=" " alt="" coords="15,177,134,203"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#a_objective" alt=""/>
-<map name="a_objective" id="a_objective">
-<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="5,5,80,31"/>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#a_net_player_data" alt=""/>
+<map name="a_net_player_data" id="a_net_player_data">
+<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="5,5,112,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#a_network_animator" alt=""/>
+<map name="a_network_animator" id="a_network_animator">
+<area shape="rect" title=" " alt="" coords="5,5,127,31"/>
+<area shape="rect" href="class_owner_network_animator.html" title="Allows the client to dictate the animation state of the player &#160;This doesn&#39;t need to be server author..." alt="" coords="175,5,333,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#a_player_reconnect_data" alt=""/>
+<map name="a_player_reconnect_data" id="a_player_reconnect_data">
+<area shape="rect" href="class_player_reconnect_data.html" title="Class to store reconnection data to send to event subscribers." alt="" coords="5,5,153,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#a_scene_names" alt=""/>
+<map name="a_scene_names" id="a_scene_names">
+<area shape="rect" href="class_scene_names.html" title="Stores the names of the scenes as constant strings." alt="" coords="5,5,105,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#a_zeksters_lab_8_helpers_8_my_extensions" alt=""/>
+<map name="a_zeksters_lab_8_helpers_8_my_extensions" id="a_zeksters_lab_8_helpers_8_my_extensions">
+<area shape="rect" href="class_zeksters_lab_1_1_helpers_1_1_my_extensions.html" title="Class to provide extensions to existing types." alt="" coords="5,5,233,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#a_zeksters_lab_8_helpers_8_thread_safe_random" alt=""/>
+<map name="a_zeksters_lab_8_helpers_8_thread_safe_random" id="a_zeksters_lab_8_helpers_8_thread_safe_random">
+<area shape="rect" href="class_zeksters_lab_1_1_helpers_1_1_thread_safe_random.html" title="Generates a new random number on a static thread." alt="" coords="5,5,189,45"/>
 </map>
 </td></tr>
 </table>

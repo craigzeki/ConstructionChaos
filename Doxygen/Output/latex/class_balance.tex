@@ -2,20 +2,27 @@
 \label{class_balance}\index{Balance@{Balance}}
 
 
-Inheritance diagram for Balance\+:\nopagebreak
+Keeps the body part balanced by rotating it towards the target rotation.  
+
+
+
+
+Inheritance diagram for Balance\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_balance__inherit__graph}
+\includegraphics[width=174pt]{class_balance__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Balance\+:\nopagebreak
+Collaboration diagram for Balance\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_balance__coll__graph}
+\includegraphics[width=350pt]{class_balance__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Attributes}
@@ -27,12 +34,35 @@ float {\bfseries Target\+Rotation}
 \mbox{\Hypertarget{class_balance_a855e2b50c4e23099d79e015a720b3a6e}\label{class_balance_a855e2b50c4e23099d79e015a720b3a6e}} 
 float {\bfseries Force}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}\label{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}} 
+ulong {\bfseries Client\+Id}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}\label{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}} 
+\mbox{\hyperlink{class_objective_action_reporter}{Objective\+Action\+Reporter}} {\bfseries Objective\+Action\+Reporter}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
+\mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
+\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_balance_a8295a485520fec0aca4846cc91158471}{Awake}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_ragdoll_a110adc2ea8abf45aed55ed08aca51e4d}{Awake}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_balance_a57f9dcd6a5a024a5a68344bb93759ddb}{Awake}} ()
-\item 
 void \mbox{\hyperlink{class_balance_ac47b993db61122f2a95b1a15adafa4a4}{Fixed\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_balance_a16161579fd17b1ffa155591fba328118}{Handle\+Balance\+Server\+Rpc}} ()
+\item 
+void \mbox{\hyperlink{class_balance_ada0dc91e2d9a293962cde77f7a766142}{Handle\+Balance}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -44,28 +74,41 @@ Rigidbody2D {\bfseries \+\_\+rb}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_ragdoll_acf111dd872e949009f7a99bb453139a9}{On\+Collapse}} (bool collapse)
-\begin{DoxyCompactList}\small\item\em Rceives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}{On\+Collapse}} ((bool collapse, bool break\+Apart) collapse\+Info)
+\begin{DoxyCompactList}\small\item\em Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}\label{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}} 
 bool {\bfseries \+\_\+is\+Active} = true
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}active\textquotesingle{} -\/ if not, it is collapsed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}\label{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}} 
+bool {\bfseries \+\_\+is\+Broken} = false
+\begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}broken\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Keeps the body part balanced by rotating it towards the target rotation. 
+
+Requires a Rigidbody2D component
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_balance_a57f9dcd6a5a024a5a68344bb93759ddb}\label{class_balance_a57f9dcd6a5a024a5a68344bb93759ddb}} 
+\mbox{\Hypertarget{class_balance_a8295a485520fec0aca4846cc91158471}\label{class_balance_a8295a485520fec0aca4846cc91158471}} 
 \index{Balance@{Balance}!Awake@{Awake}}
 \index{Awake@{Awake}!Balance@{Balance}}
 \doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
-{\footnotesize\ttfamily void Balance.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily override void Balance.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00015\ \ \ \ \ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \_rb\ =\ GetComponent<Rigidbody2D>();}
-\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ base.Awake();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_rb\ =\ GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_balance_ac47b993db61122f2a95b1a15adafa4a4}\label{class_balance_ac47b993db61122f2a95b1a15adafa4a4}} 
@@ -76,9 +119,40 @@ bool {\bfseries \+\_\+is\+Active} = true
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//mvoe\ the\ body\ part\ towards\ its\ rotation\ with\ force}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_isActive)\ \_rb.MoveRotation(Mathf.LerpAngle(\_rb.rotation,\ TargetRotation,\ Force\ *\ Time.fixedDeltaTime));}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsOwner)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ HandleBalance();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ HandleBalanceServerRpc();}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_balance_ada0dc91e2d9a293962cde77f7a766142}\label{class_balance_ada0dc91e2d9a293962cde77f7a766142}} 
+\index{Balance@{Balance}!HandleBalance@{HandleBalance}}
+\index{HandleBalance@{HandleBalance}!Balance@{Balance}}
+\doxysubsubsection{\texorpdfstring{HandleBalance()}{HandleBalance()}}
+{\footnotesize\ttfamily void Balance.\+Handle\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ the\ body\ part\ towards\ its\ rotation\ with\ force}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}})\ \_rb.MoveRotation(Mathf.LerpAngle(\_rb.rotation,\ TargetRotation,\ Force\ *\ Time.fixedDeltaTime));}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_balance_a16161579fd17b1ffa155591fba328118}\label{class_balance_a16161579fd17b1ffa155591fba328118}} 
+\index{Balance@{Balance}!HandleBalanceServerRpc@{HandleBalanceServerRpc}}
+\index{HandleBalanceServerRpc@{HandleBalanceServerRpc}!Balance@{Balance}}
+\doxysubsubsection{\texorpdfstring{HandleBalanceServerRpc()}{HandleBalanceServerRpc()}}
+{\footnotesize\ttfamily void Balance.\+Handle\+Balance\+Server\+Rpc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ HandleBalance();}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
 
 \end{DoxyCode}

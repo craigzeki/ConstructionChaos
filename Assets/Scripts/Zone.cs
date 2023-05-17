@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class represents an interactible zone on the map
+/// </summary>
 public class Zone : MonoBehaviour, IEquatable<Zone>
 {
     public enum ZONE : int
@@ -13,9 +16,15 @@ public class Zone : MonoBehaviour, IEquatable<Zone>
         NUM_OF_ZONES
     }
 
+    /// <summary>
+    /// The friendly string which is used to construct the objective string
+    /// </summary>
     [SerializeField] private string _friendlyString = "";
     public string FriendlyString => _friendlyString;
 
+    /// <summary>
+    /// The Zone type
+    /// </summary>
     [SerializeField] private ZONE _zoneType = ZONE.GOAL_ZONE;
     public ZONE ZoneType => _zoneType;
 

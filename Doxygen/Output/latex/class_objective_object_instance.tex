@@ -1,0 +1,209 @@
+\hypertarget{class_objective_object_instance}{}\doxysection{Objective\+Object\+Instance Class Reference}
+\label{class_objective_object_instance}\index{ObjectiveObjectInstance@{ObjectiveObjectInstance}}
+
+
+An instance of an objective object.~\newline
+ This is the object that will be placed in the world.  
+
+
+
+
+Inheritance diagram for Objective\+Object\+Instance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_objective_object_instance__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Objective\+Object\+Instance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objective_object_instance__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_objective_object_instance_a25013d15224a1c99056f5a25aca389a0}{On\+Network\+Spawn}} ()
+\item 
+bool \mbox{\hyperlink{class_objective_object_instance_a919f43a419f1513ca992ccef56e089eb}{Equals}} (\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} other)
+\begin{DoxyCompactList}\small\item\em New euqality check which compares parameter values. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{class_objective_object_instance_ac9a11239c50ad2cfb057fe7a85674144}{Equals}} (object other)
+\begin{DoxyCompactList}\small\item\em Overriden equality check to allow calling of our new equality check in the case where the object type matches~\newline
+ Will call the base (Mono\+Behaviour) equality check in the case where the types do not match. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_objective_object_instance_a7c82aa38a54c6dcb943c419b4cd21d28}{Get\+Hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Override of Get\+Hash\+Code to provide correct hash for Dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_object_instance_a55785ddbecce76e92f3b512b42074473}\label{class_objective_object_instance_a55785ddbecce76e92f3b512b42074473}} 
+Network\+Variable$<$ \mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} $>$ {\bfseries Network\+Objective\+Colour} = new Network\+Variable$<$\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_object_instance_afb957519ed4e27978bd5edc8d0d1df68}\label{class_objective_object_instance_afb957519ed4e27978bd5edc8d0d1df68}} 
+\mbox{\hyperlink{class_objective_object}{Objective\+Object}} {\bfseries Objective\+Object}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_objective_object_instance_a474409c0b62a74f49aaecd573e016716}\label{class_objective_object_instance_a474409c0b62a74f49aaecd573e016716}} 
+\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} {\bfseries Objective\+Colour}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}\label{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}} 
+\mbox{\hyperlink{class_objective_object}{Objective\+Object}} {\bfseries objective\+Object}
+\begin{DoxyCompactList}\small\item\em The objective object that this instance is based on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}\label{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}} 
+\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} {\bfseries \+\_\+objective\+Colour}
+\begin{DoxyCompactList}\small\item\em The colour of the objective object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An instance of an objective object.~\newline
+ This is the object that will be placed in the world. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_objective_object_instance_ac9a11239c50ad2cfb057fe7a85674144}\label{class_objective_object_instance_ac9a11239c50ad2cfb057fe7a85674144}} 
+\index{ObjectiveObjectInstance@{ObjectiveObjectInstance}!Equals@{Equals}}
+\index{Equals@{Equals}!ObjectiveObjectInstance@{ObjectiveObjectInstance}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override bool Objective\+Object\+Instance.\+Equals (\begin{DoxyParamCaption}\item[{object}]{other }\end{DoxyParamCaption})}
+
+
+
+Overriden equality check to allow calling of our new equality check in the case where the object type matches~\newline
+ Will call the base (Mono\+Behaviour) equality check in the case where the types do not match. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_object_instance_a919f43a419f1513ca992ccef56e089eb}{Equals}}((\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}})other);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_object_instance_a919f43a419f1513ca992ccef56e089eb}\label{class_objective_object_instance_a919f43a419f1513ca992ccef56e089eb}} 
+\index{ObjectiveObjectInstance@{ObjectiveObjectInstance}!Equals@{Equals}}
+\index{Equals@{Equals}!ObjectiveObjectInstance@{ObjectiveObjectInstance}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Objective\+Object\+Instance.\+Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}}}]{other }\end{DoxyParamCaption})}
+
+
+
+New euqality check which compares parameter values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} instance to compare with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\+: Objective\+Object\+Insances contain identical parameters
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}}.\mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}(other.\mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}})\ \&\&\ \mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}}.\mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}(other.\mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}});}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_object_instance_a7c82aa38a54c6dcb943c419b4cd21d28}\label{class_objective_object_instance_a7c82aa38a54c6dcb943c419b4cd21d28}} 
+\index{ObjectiveObjectInstance@{ObjectiveObjectInstance}!GetHashCode@{GetHashCode}}
+\index{GetHashCode@{GetHashCode}!ObjectiveObjectInstance@{ObjectiveObjectInstance}}
+\doxysubsubsection{\texorpdfstring{GetHashCode()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Objective\+Object\+Instance.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Override of Get\+Hash\+Code to provide correct hash for Dictionary. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
+ \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ \mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}}.\mbox{\hyperlink{class_objective_object_ab7bf4ac4297e2b3b2e803c0404eef788}{GetHashCode}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ \mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}}.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_object_instance_a25013d15224a1c99056f5a25aca389a0}\label{class_objective_object_instance_a25013d15224a1c99056f5a25aca389a0}} 
+\index{ObjectiveObjectInstance@{ObjectiveObjectInstance}!OnNetworkSpawn@{OnNetworkSpawn}}
+\index{OnNetworkSpawn@{OnNetworkSpawn}!ObjectiveObjectInstance@{ObjectiveObjectInstance}}
+\doxysubsubsection{\texorpdfstring{OnNetworkSpawn()}{OnNetworkSpawn()}}
+{\footnotesize\ttfamily override void Objective\+Object\+Instance.\+On\+Network\+Spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ object\ should\ be\ an\ actual\ colour,\ not\ any\ coloured}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((\mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}}?.FriendlyString\ ==\ \textcolor{stringliteral}{"{}any\ coloured"{}})\ ||\ (\mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}}\ ==\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pick\ a\ random\ colour\ from\ the\ list\ of\ possible\ colours\ and\ assign\ it\ to\ the\ objective\ colour}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}}\ =\ \mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}}.PossibleColours[UnityEngine.Random.Range(0,\ \mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}}.PossibleColours.Count)];}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Removed\ for\ now,\ the\ ObjectManager\ was\ re-\/worked\ to\ use\ FindObjectOfType\ as\ it\ needed\ to\ get\ zones\ before\ objects}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ and\ there\ was\ no\ easy\ way\ to\ do\ this\ if\ everything\ was\ self\ registering}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ObjectiveManager.Instance.RegisterObject(this);}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ each\ action,\ add\ the\ configured\ components\ to\ the\ gameObject}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_objective_action}{ObjectiveAction}}\ action\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}}.PossibleActions)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ each\ action,\ add\ it\ as\ a\ component\ to\ the\ object}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (TypeReference\ typeReference\ \textcolor{keywordflow}{in}\ action.ActionBehaviours)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ add\ it\ if\ it\ inherits\ from\ ObjectActionBehaviour\ -\/\ this\ is\ required\ to\ be\ able\ to\ set\ parameters}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (typeReference.Type.IsSubclassOf(typeof(\mbox{\hyperlink{class_objective_action_behaviour}{ObjectiveActionBehaviour}})))}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_action_behaviour}{ObjectiveActionBehaviour}}\ component\ =\ this.gameObject.AddComponent(typeReference)\ as\ \mbox{\hyperlink{class_objective_action_behaviour}{ObjectiveActionBehaviour}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ component.Conditions\ =\ action.PossibleConditions;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ not\ need\ to\ set\ the\ condition\ \&\ zone\ as\ this\ will\ be\ set\ during\ action\ detection\ in\ the\ ObjectiveActionBehaviour}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ component.Objective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ \mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}},\ \mbox{\hyperlink{class_objective_object_instance_abb93682f5fb2d0947686bb93f49517e6}{objectiveObject}},\ \textcolor{keyword}{null},\ \textcolor{keyword}{null},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkObjectiveColour.Value\ =\ \mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_object_instance_aaa880a57c74814045ba5c50a2c3307d7}{\_objectiveColour}}\ =\ NetworkObjectiveColour.Value;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ colour\ of\ the\ object\ to\ the\ colour\ of\ the\ objective\ colour}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ GetComponent<SpriteRenderer>().color\ =\ NetworkObjectiveColour.Value.Colour;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,212 @@
+\hypertarget{class_server_input_handler}{}\doxysection{Server\+Input\+Handler Class Reference}
+\label{class_server_input_handler}\index{ServerInputHandler@{ServerInputHandler}}
+
+
+Server side input handler on all clients but only runs on the server.  
+
+
+
+
+Inheritance diagram for Server\+Input\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_server_input_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+Input\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_server_input_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_server_input_handler_acbd1c9156bff22cd1d8d31d5210f1cfb}{Add\+Player}} (ulong client\+Id, Game\+Object player\+Object)
+\begin{DoxyCompactList}\small\item\em Adds a player to the dictionary of Character\+Input\+Handlers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_server_input_handler_a3f8aa90711afd3e68cb998cfe6fd2a9a}{Remove\+Player}} (ulong client\+Id)
+\begin{DoxyCompactList}\small\item\em Removes a player from the dictionary of Character\+Input\+Handlers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_server_input_handler_a65a9d53ffd27b468b4feba47f54c8820}{Update\+Input\+Data\+Server\+Rpc}} (\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} character\+Input\+Data, Server\+Rpc\+Params server\+Rpc\+Params=default)
+\begin{DoxyCompactList}\small\item\em Updates the input data for a player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_server_input_handler_a74d69fff17abdb2c1652f9ea2216bdc1}\label{class_server_input_handler_a74d69fff17abdb2c1652f9ea2216bdc1}} 
+List$<$ ulong $>$ {\bfseries Client\+Ids} = new List$<$ulong$>$()
+\item 
+\mbox{\Hypertarget{class_server_input_handler_ab5c2b260eeec7e47d8e3f123d827db3d}\label{class_server_input_handler_ab5c2b260eeec7e47d8e3f123d827db3d}} 
+List$<$ \mbox{\hyperlink{class_o_l_d_character_input_handler}{OLDCharacter\+Input\+Handler}} $>$ {\bfseries Character\+Input\+Handlers} = new List$<$\mbox{\hyperlink{class_o_l_d_character_input_handler}{OLDCharacter\+Input\+Handler}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_server_input_handler}{Server\+Input\+Handler}} \mbox{\hyperlink{class_server_input_handler_a0ffeec42792b7b2366cb5a09b990d037}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Instance of the \mbox{\hyperlink{class_server_input_handler}{Server\+Input\+Handler}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_server_input_handler_a6f74de5b33e9488f36eaaa2a23ab9040}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_server_input_handler_adb5d102996602ccc6ebbb1f0fe79685e}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_server_input_handler_ad055c3d9bb78921f32ba5b1344ca7d8f}{Log\+Players}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}\label{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}} 
+Dictionary$<$ ulong, \mbox{\hyperlink{class_o_l_d_character_input_handler}{OLDCharacter\+Input\+Handler}} $>$ {\bfseries \+\_\+character\+Input\+Handlers} = new Dictionary$<$ulong, \mbox{\hyperlink{class_o_l_d_character_input_handler}{OLDCharacter\+Input\+Handler}}$>$()
+\begin{DoxyCompactList}\small\item\em Dictionary of \mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} for each player referenced by their Client\+Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Server side input handler on all clients but only runs on the server. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_server_input_handler_acbd1c9156bff22cd1d8d31d5210f1cfb}\label{class_server_input_handler_acbd1c9156bff22cd1d8d31d5210f1cfb}} 
+\index{ServerInputHandler@{ServerInputHandler}!AddPlayer@{AddPlayer}}
+\index{AddPlayer@{AddPlayer}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{AddPlayer()}{AddPlayer()}}
+{\footnotesize\ttfamily void Server\+Input\+Handler.\+Add\+Player (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id,  }\item[{Game\+Object}]{player\+Object }\end{DoxyParamCaption})}
+
+
+
+Adds a player to the dictionary of Character\+Input\+Handlers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+Id} & The client\+Id of the player to add\\
+\hline
+{\em player\+Object} & The player object to add\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.ContainsKey(clientId))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ print(\$\textcolor{stringliteral}{"{}Adding\ player\ with\ clientId\ \{clientId\}\ to\ ServerInputHandler"{}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ var\ characterInputHandler\ =\ playerObject.GetComponent<\mbox{\hyperlink{class_o_l_d_character_input_handler}{OLDCharacterInputHandler}}>();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.Add(clientId,\ characterInputHandler);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_server_input_handler_a6f74de5b33e9488f36eaaa2a23ab9040}\label{class_server_input_handler_a6f74de5b33e9488f36eaaa2a23ab9040}} 
+\index{ServerInputHandler@{ServerInputHandler}!Awake@{Awake}}
+\index{Awake@{Awake}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Server\+Input\+Handler.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_input_handler_a0ffeec42792b7b2366cb5a09b990d037}{Instance}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_server_input_handler_ad055c3d9bb78921f32ba5b1344ca7d8f}\label{class_server_input_handler_ad055c3d9bb78921f32ba5b1344ca7d8f}} 
+\index{ServerInputHandler@{ServerInputHandler}!LogPlayers@{LogPlayers}}
+\index{LogPlayers@{LogPlayers}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{LogPlayers()}{LogPlayers()}}
+{\footnotesize\ttfamily void Server\+Input\+Handler.\+Log\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ keyValuePair\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ print(\$\textcolor{stringliteral}{"{}ClientId:\ \{keyValuePair.Key\}\ -\/\ CharacterInputHandler:\ \{keyValuePair.Value\}"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_server_input_handler_a3f8aa90711afd3e68cb998cfe6fd2a9a}\label{class_server_input_handler_a3f8aa90711afd3e68cb998cfe6fd2a9a}} 
+\index{ServerInputHandler@{ServerInputHandler}!RemovePlayer@{RemovePlayer}}
+\index{RemovePlayer@{RemovePlayer}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{RemovePlayer()}{RemovePlayer()}}
+{\footnotesize\ttfamily void Server\+Input\+Handler.\+Remove\+Player (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})}
+
+
+
+Removes a player from the dictionary of Character\+Input\+Handlers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+Id} & The client\+Id of the player to remove\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.ContainsKey(clientId))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.Remove(clientId);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_server_input_handler_adb5d102996602ccc6ebbb1f0fe79685e}\label{class_server_input_handler_adb5d102996602ccc6ebbb1f0fe79685e}} 
+\index{ServerInputHandler@{ServerInputHandler}!Update@{Update}}
+\index{Update@{Update}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Server\+Input\+Handler.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}ServerInputHandler.Update()"{}});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ClientIds\ =\ \textcolor{keyword}{new}\ List<ulong>(\mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.Keys);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ CharacterInputHandlers\ =\ \textcolor{keyword}{new}\ List<OLDCharacterInputHandler>(\mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.Values);}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_server_input_handler_a65a9d53ffd27b468b4feba47f54c8820}\label{class_server_input_handler_a65a9d53ffd27b468b4feba47f54c8820}} 
+\index{ServerInputHandler@{ServerInputHandler}!UpdateInputDataServerRpc@{UpdateInputDataServerRpc}}
+\index{UpdateInputDataServerRpc@{UpdateInputDataServerRpc}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateInputDataServerRpc()}{UpdateInputDataServerRpc()}}
+{\footnotesize\ttfamily void Server\+Input\+Handler.\+Update\+Input\+Data\+Server\+Rpc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}}}]{character\+Input\+Data,  }\item[{Server\+Rpc\+Params}]{server\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+
+Updates the input data for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character\+Input\+Data} & The input data to update\\
+\hline
+{\em server\+Rpc\+Params} & The Server\+Rpc\+Params\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ print(\$\textcolor{stringliteral}{"{}Recieved\ input\ data\ from\ client:\ \{serverRpcParams.Receive.SenderClientId\}"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}.ContainsKey(serverRpcParams.Receive.SenderClientId))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_server_input_handler_aaf78843f02e7d50abdf8d030de24052c}{\_characterInputHandlers}}[serverRpcParams.Receive.SenderClientId].UpdateInputData(characterInputData);}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_server_input_handler_a0ffeec42792b7b2366cb5a09b990d037}\label{class_server_input_handler_a0ffeec42792b7b2366cb5a09b990d037}} 
+\index{ServerInputHandler@{ServerInputHandler}!Instance@{Instance}}
+\index{Instance@{Instance}!ServerInputHandler@{ServerInputHandler}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_server_input_handler}{Server\+Input\+Handler}} Server\+Input\+Handler.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+Instance of the \mbox{\hyperlink{class_server_input_handler}{Server\+Input\+Handler}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}

@@ -1,4 +1,4 @@
 var class_arms =
 [
-    [ "CalculateArmRotation", "class_arms.html#a27914140917932c82b716179c79c9d9c", null ]
+    [ "CalculateArmRotation", "class_arms.html#acddeac7d44a2ff98da45295f02020cf9", null ]
 ];

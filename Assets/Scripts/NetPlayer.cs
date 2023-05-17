@@ -5,11 +5,13 @@ using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// A class which contains all networking methods for the player
+/// </summary>
 [RequireComponent(typeof(CharacterInputHandler))]
 public class NetPlayer : NetworkBehaviour
 {
     [SerializeField] private string _objectiveString = "";
-    //[SerializeField] private NetworkVariable<FixedString128Bytes> _networkObjectiveString = new NetworkVariable<FixedString128Bytes>();
 
     public override void OnNetworkSpawn()
     {
@@ -19,8 +21,6 @@ public class NetPlayer : NetworkBehaviour
         {
             // Set the camera to follow the player's head
             FollowCam.Instance.SetFollowTarget(transform.GetChild(0));
-            //_objectiveString = _networkObjectiveString.ToString();
-            //_networkObjectiveString.OnValueChanged += OnObjectiveStringChanged;
         }
 
         if (IsServer)
@@ -51,11 +51,6 @@ public class NetPlayer : NetworkBehaviour
         
 
     }
-
-    //private void OnObjectiveStringChanged(FixedString128Bytes previous, FixedString128Bytes current)
-    //{
-    //    _objectiveString = current.ToString();
-    //}
 
     /// <summary>
     /// Receive a new objective from the ObjectiveManager and set this locally on the client.

@@ -1,0 +1,133 @@
+\hypertarget{class_net_player}{}\doxysection{Net\+Player Class Reference}
+\label{class_net_player}\index{NetPlayer@{NetPlayer}}
+
+
+A class which contains all networking methods for the player.  
+
+
+
+
+Inheritance diagram for Net\+Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_net_player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Net\+Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_net_player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_net_player_a2d8ca73cc7214b7326d774e990427604}{On\+Network\+Spawn}} ()
+\item 
+void \mbox{\hyperlink{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}{Set\+Objective\+String\+Client\+Rpc}} (string new\+Objective\+String, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\begin{DoxyCompactList}\small\item\em Receive a new objective from the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} and set this locally on the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{Network\+Manager\+\_\+\+On\+Client\+Connected\+Callback}} (ulong obj)
+\begin{DoxyCompactList}\small\item\em Callback which is called by the Client on the Server (automagically) once the Client has fully spawned and connected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_net_player_ae33e7c00d1dce355549da42320690bc2}\label{class_net_player_ae33e7c00d1dce355549da42320690bc2}} 
+string {\bfseries \+\_\+objective\+String} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class which contains all networking methods for the player. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_net_player_ad06a911e06dbaf5296460485336ada77}\label{class_net_player_ad06a911e06dbaf5296460485336ada77}} 
+\index{NetPlayer@{NetPlayer}!NetworkManager\_OnClientConnectedCallback@{NetworkManager\_OnClientConnectedCallback}}
+\index{NetworkManager\_OnClientConnectedCallback@{NetworkManager\_OnClientConnectedCallback}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{NetworkManager\_OnClientConnectedCallback()}{NetworkManager\_OnClientConnectedCallback()}}
+{\footnotesize\ttfamily void Net\+Player.\+Network\+Manager\+\_\+\+On\+Client\+Connected\+Callback (\begin{DoxyParamCaption}\item[{ulong}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback which is called by the Client on the Server (automagically) once the Client has fully spawned and connected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Register\ with\ the\ Game\ Manager}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a666bee91a62b4662a8ef635f43a9c06b}{RegisterNewPlayer}}(OwnerClientId,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ the\ ownerClientId\ to\ some\ objects\ which\ need\ it\ (to\ report\ to\ the\ objective\ system)}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ List<Ragdoll>\ ragdollObjects\ =\ GetComponentsInChildren<Ragdoll>().ToList<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_action_reporter}{ObjectiveActionReporter}}\ objectiveActionReporter\ =\ GetComponentInChildren<ObjectiveActionReporter>();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll\ \textcolor{keywordflow}{in}\ ragdollObjects)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ClientId\ =\ OwnerClientId;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ObjectiveActionReporter\ =\ objectiveActionReporter;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_a2d8ca73cc7214b7326d774e990427604}\label{class_net_player_a2d8ca73cc7214b7326d774e990427604}} 
+\index{NetPlayer@{NetPlayer}!OnNetworkSpawn@{OnNetworkSpawn}}
+\index{OnNetworkSpawn@{OnNetworkSpawn}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{OnNetworkSpawn()}{OnNetworkSpawn()}}
+{\footnotesize\ttfamily override void Net\+Player.\+On\+Network\+Spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ base.OnNetworkSpawn();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsLocalPlayer)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ camera\ to\ follow\ the\ player's\ head}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_follow_cam}{FollowCam}}.Instance.SetFollowTarget(transform.GetChild(0));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.OnClientConnectedCallback\ +=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_networkObjectiveString.Value\ =\ \_objectiveString;}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}\label{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}} 
+\index{NetPlayer@{NetPlayer}!SetObjectiveStringClientRpc@{SetObjectiveStringClientRpc}}
+\index{SetObjectiveStringClientRpc@{SetObjectiveStringClientRpc}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{SetObjectiveStringClientRpc()}{SetObjectiveStringClientRpc()}}
+{\footnotesize\ttfamily void Net\+Player.\+Set\+Objective\+String\+Client\+Rpc (\begin{DoxyParamCaption}\item[{string}]{new\+Objective\+String,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+
+Receive a new objective from the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} and set this locally on the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Objective\+String} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_objectiveString\ =\ newObjectiveString\ !=\ \textcolor{keyword}{null}\ ?\ newObjectiveString\ :\ \textcolor{stringliteral}{"{}No\ Objective"{}};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}

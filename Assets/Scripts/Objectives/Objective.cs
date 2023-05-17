@@ -66,6 +66,7 @@ public class Objective : IEquatable<Objective>
     /// <param name="colour">The required colour</param>
     /// <param name="objObject">The required object</param>
     /// <param name="condition">The required condition</param>
+    /// <param name="zone">The required zone for the condition</param>
     /// <param name="inverse">Modifier indicating the objective is to avoid instead of do</param>
     public Objective(ObjectiveAction action, ObjectiveColour colour, ObjectiveObject objObject, ObjectiveCondition condition, Zone zone, bool inverse)
     {

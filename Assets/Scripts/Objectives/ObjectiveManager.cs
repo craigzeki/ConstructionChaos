@@ -220,7 +220,10 @@ public class ObjectiveManager : MonoBehaviour
 		}
 	}
 
-
+	/// <summary>
+	/// Registers a zone into the possibleZones dictionary, only if unique
+	/// </summary>
+	/// <param name="zone">The Zone to register</param>
 	public void RegisterZone(Zone zone)
 	{
 

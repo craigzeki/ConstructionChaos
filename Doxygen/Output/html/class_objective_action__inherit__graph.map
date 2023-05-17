@@ -1,0 +1,5 @@
+<map id="ObjectiveAction" name="ObjectiveAction">
+<area shape="rect" id="node1" title="An action that can be performed on an objective object." alt="" coords="99,79,211,104"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node3" title=" " alt="" coords="149,5,346,31"/>
+</map>

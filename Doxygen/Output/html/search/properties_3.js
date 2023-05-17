@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jumpvalue_0',['JumpValue',['../class_input_handler.html#ad41291ac5f2d9e533eea80aa34a22a71',1,'InputHandler']]]
+  ['menubuttonpressed_0',['MenuButtonPressed',['../class_character_input_handler.html#ac43f3864282c7fbe620e1ae45bd2c5e9',1,'CharacterInputHandler']]]
 ];

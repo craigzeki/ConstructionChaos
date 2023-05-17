@@ -1,0 +1,51 @@
+\hypertarget{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random}{}\doxysection{Zeksters\+Lab.\+Helpers.\+Thread\+Safe\+Random Class Reference}
+\label{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random}\index{ZekstersLab.Helpers.ThreadSafeRandom@{ZekstersLab.Helpers.ThreadSafeRandom}}
+
+
+Generates a new random number on a static thread.  
+
+
+
+
+Collaboration diagram for Zeksters\+Lab.\+Helpers.\+Thread\+Safe\+Random\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static System.\+Random \mbox{\hyperlink{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random_a64eb861d2b7dd35218faa6ed6b582242}{This\+Threads\+Random}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Generates a new random number on a static thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random_af2c8106520a3a2cbe406addf9ca7e4df}\label{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random_af2c8106520a3a2cbe406addf9ca7e4df}} 
+static System.\+Random {\bfseries s\+\_\+local}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generates a new random number on a static thread. 
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random_a64eb861d2b7dd35218faa6ed6b582242}\label{class_zeksters_lab_1_1_helpers_1_1_thread_safe_random_a64eb861d2b7dd35218faa6ed6b582242}} 
+\index{ZekstersLab.Helpers.ThreadSafeRandom@{ZekstersLab.Helpers.ThreadSafeRandom}!ThisThreadsRandom@{ThisThreadsRandom}}
+\index{ThisThreadsRandom@{ThisThreadsRandom}!ZekstersLab.Helpers.ThreadSafeRandom@{ZekstersLab.Helpers.ThreadSafeRandom}}
+\doxysubsubsection{\texorpdfstring{ThisThreadsRandom}{ThisThreadsRandom}}
+{\footnotesize\ttfamily System.\+Random Zeksters\+Lab.\+Helpers.\+Thread\+Safe\+Random.\+This\+Threads\+Random\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Generates a new random number on a static thread. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ s\_local\ ??=\ \textcolor{keyword}{new}\ System.Random(unchecked(Environment.TickCount\ *\ 31\ +\ Thread.CurrentThread.ManagedThreadId));\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

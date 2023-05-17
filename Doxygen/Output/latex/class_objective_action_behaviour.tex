@@ -1,0 +1,153 @@
+\hypertarget{class_objective_action_behaviour}{}\doxysection{Objective\+Action\+Behaviour Class Reference}
+\label{class_objective_action_behaviour}\index{ObjectiveActionBehaviour@{ObjectiveActionBehaviour}}
+
+
+This is the base class for any action behaviour -\/ e.\+g. hold~\newline
+ It provides condition and zone detection to its concrete class.  
+
+
+
+
+Inheritance diagram for Objective\+Action\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_objective_action_behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Objective\+Action\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_objective_action_behaviour__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}\label{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}} 
+List$<$ \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} $>$ {\bfseries Conditions} = new List$<$\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}$>$()
+\begin{DoxyCompactList}\small\item\em Required list of conditions for this \mbox{\hyperlink{class_objective}{Objective}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}\label{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}} 
+\mbox{\hyperlink{class_objective}{Objective}} {\bfseries Objective}
+\begin{DoxyCompactList}\small\item\em An instance of \mbox{\hyperlink{class_objective}{Objective}} used to construct a possible objective that was achieved~\newline
+ This is passed to the Obejctive\+Manager for checking. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})$>$ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{Get\+Active\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Provide a list of all conditions which are currently being met by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_objective_action_behaviour_ad51484514478565af1d8e9c854815e33}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\item 
+void \mbox{\hyperlink{class_objective_action_behaviour_a0ffd07570a32c553fc8fc0bdc6024261}{On\+Trigger\+Exit2D}} (Collider2D collision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}\label{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}} 
+List$<$ \mbox{\hyperlink{class_zone}{Zone}} $>$ {\bfseries \+\_\+current\+Zones} = new List$<$\mbox{\hyperlink{class_zone}{Zone}}$>$()
+\begin{DoxyCompactList}\small\item\em List to store the zone(s) that the object is in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the base class for any action behaviour -\/ e.\+g. hold~\newline
+ It provides condition and zone detection to its concrete class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}\label{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}} 
+\index{ObjectiveActionBehaviour@{ObjectiveActionBehaviour}!GetActiveConditions@{GetActiveConditions}}
+\index{GetActiveConditions@{GetActiveConditions}!ObjectiveActionBehaviour@{ObjectiveActionBehaviour}}
+\doxysubsubsection{\texorpdfstring{GetActiveConditions()}{GetActiveConditions()}}
+{\footnotesize\ttfamily List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})$>$ Objective\+Action\+Behaviour.\+Get\+Active\+Conditions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Provide a list of all conditions which are currently being met by this object. 
+
+\begin{DoxyReturn}{Returns}
+A list of Tuples (\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})~\newline
+ \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} -\/ The condition that is met \mbox{\hyperlink{class_zone}{Zone}} -\/ The zone that it is in 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ List<(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}},\ \mbox{\hyperlink{class_zone}{Zone}})>\ validConditions\ =\ \textcolor{keyword}{new}\ List<(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}},\ \mbox{\hyperlink{class_zone}{Zone}})>();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}{Conditions}})}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition.DuringCountdown\ \&\&\ !condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ detect\ countdown\ (from\ gamemanager?\ /\ goalzone?\ etc)\ and\ check\ if\ active}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ and\ add\ to\ the\ validConditions\ list}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!condition.DuringCountdown\ \&\&\ condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zone}{Zone}}\ zone\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}{\_currentZones}})}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(zone.ZoneType\ ==\ condition.RequiredZone)\ validConditions.Add((condition,\ zone));}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(condition.DuringCountdown\ \&\&\ condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ detect\ countdown\ (from\ gamemanager?\ /\ goalzone?\ etc)\ and\ check\ if\ active}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ if\ not,\ break}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_zone}{Zone}}\ zone\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}{\_currentZones}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone.ZoneType\ ==\ condition.RequiredZone)\ validConditions.Add((condition,\ zone));}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ condition\ required}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ validConditions.Add((condition,\ \textcolor{keyword}{null}));}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ validConditions;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_action_behaviour_ad51484514478565af1d8e9c854815e33}\label{class_objective_action_behaviour_ad51484514478565af1d8e9c854815e33}} 
+\index{ObjectiveActionBehaviour@{ObjectiveActionBehaviour}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!ObjectiveActionBehaviour@{ObjectiveActionBehaviour}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily void Objective\+Action\+Behaviour.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ object\ is\ in\ any\ zone}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.TryGetComponent<\mbox{\hyperlink{class_zone}{Zone}}>(out\ \mbox{\hyperlink{class_zone}{Zone}}\ zone))}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}{\_currentZones}}.Contains(zone))\ \mbox{\hyperlink{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}{\_currentZones}}.Add(zone);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_action_behaviour_a0ffd07570a32c553fc8fc0bdc6024261}\label{class_objective_action_behaviour_a0ffd07570a32c553fc8fc0bdc6024261}} 
+\index{ObjectiveActionBehaviour@{ObjectiveActionBehaviour}!OnTriggerExit2D@{OnTriggerExit2D}}
+\index{OnTriggerExit2D@{OnTriggerExit2D}!ObjectiveActionBehaviour@{ObjectiveActionBehaviour}}
+\doxysubsubsection{\texorpdfstring{OnTriggerExit2D()}{OnTriggerExit2D()}}
+{\footnotesize\ttfamily void Objective\+Action\+Behaviour.\+On\+Trigger\+Exit2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ object\ is\ no\ longer\ in\ a\ zone}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.TryGetComponent<\mbox{\hyperlink{class_zone}{Zone}}>(out\ \mbox{\hyperlink{class_zone}{Zone}}\ zone))}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_action_behaviour_a7ced34ebc95519525583b33676540ffd}{\_currentZones}}.Remove(zone);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
