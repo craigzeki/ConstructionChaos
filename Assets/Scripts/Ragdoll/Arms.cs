@@ -45,18 +45,16 @@ public class Arms : Ragdoll
 
     private void HandleArms(CharacterInputData characterInputData)
     {
-        CalculateArmRotation(characterInputData);
-
         // If player is trying to grab and is a mouse controller
         if((characterInputData.IsGrabbingLeft || characterInputData.IsGrabbingRight) && characterInputData.ArmsMovementData.IsMouseController)
         {
             // Move the amrs
-            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));
+            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, characterInputData.ArmsMovementData.ArmRotation, _speed * Time.fixedDeltaTime));
         }
         else if(!characterInputData.ArmsMovementData.IsMouseController && !characterInputData.ArmsMovementData.ArmsStickReleased)
         {
             // Player is trying to move arms using gamepad, move the arms (no reliance on grab to move
-            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));
+            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, characterInputData.ArmsMovementData.ArmRotation, _speed * Time.fixedDeltaTime));
         }
     }
 }
