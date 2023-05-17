@@ -6,13 +6,19 @@ using UnityEngine.InputSystem;
 
 public class Grab : Ragdoll
 {
+    /// <sumamry>
+    /// Enum for which hand is being used
+    /// </summary>
     [System.Serializable]
     private enum HandType
     {
-        Left,
-        Right
+        LEFT,
+        RIGHT
     }
 
+    /// <summary>
+    /// Which hand is this script attached to
+    /// </summary>
     [SerializeField] private HandType _handType;
     [SerializeField] LayerMask _grabableLayerMask;
     private bool _hold = false;
@@ -34,7 +40,7 @@ public class Grab : Ragdoll
         if (!_isActive) return; // Not active or collapsed
 
         // Player is trying to grab, and is allowed to
-        if((characterInputData.IsGrabbingLeft && _handType == HandType.Left) || (characterInputData.IsGrabbingRight && _handType == HandType.Right))
+        if((characterInputData.IsGrabbingLeft && _handType == HandType.LEFT) || (characterInputData.IsGrabbingRight && _handType == HandType.RIGHT))
         {
             // Set hold to true
             _hold = true;

@@ -154,6 +154,9 @@ public class CharacterInputHandler : NetworkBehaviour
         CalculateArmRotation();
     }
 
+    /// <summary>
+    /// Calculates the arm rotation value based on which controller is active
+    /// </summary>
     private void CalculateArmRotation()
     {
         if(CharacterInputData.ArmsMovementData.IsMouseController)
