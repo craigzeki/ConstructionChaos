@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using ZekstersLab.Helpers;
+using Unity.Netcode.Components;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -44,6 +46,7 @@ public class SpawnManager : MonoBehaviour
 
     public void ReloadSpawnPoints()
     {
+        Debug.Log("Reloading Spawn Points");
         _spawnPoints.Clear();
         _spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
         _spawnPoints.Shuffle();
@@ -53,6 +56,7 @@ public class SpawnManager : MonoBehaviour
 
     public void ResetSpawnManager()
     {
+        Debug.Log("Resetting Spawn Manager");
         _spawnPoints.Clear();
         _currentSpawnPoint = 0;
         _ready = false;
@@ -60,7 +64,9 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnPlayer(GameObject player)
     {
+        Debug.Log("Spawning Player: " + player.GetComponent<NetworkObject>().OwnerClientId);
         if (!_ready) ReloadSpawnPoints();
+        Debug.Log("_spawnPoints count: " + _spawnPoints.Count);
         if (_spawnPoints.Count == 0) return;
 
         // There should always be at least 1 spawn point open as even with 5 players loaded, they can't cover all 6 spawn points
@@ -68,22 +74,35 @@ public class SpawnManager : MonoBehaviour
         for(int i = 0; i < _spawnPoints.Count; i++)
         {
             _currentSpawnPoint %= _spawnPoints.Count;
+            Debug.Log("_currentSpawnPoint: " + _currentSpawnPoint + " - Spawn point: " + _spawnPoints[_currentSpawnPoint].gameObject.name);
             if (_spawnPoints[_currentSpawnPoint].SpawnPointIsClear())
             {
+                Debug.Log("Spawn point is clear");
+                Debug.Log("Player position before: " + player.transform.position.ToString());
+                foreach(NetworkTransform transform in player.GetComponentsInChildren<NetworkTransform>())
+                {
+                    transform.Interpolate = false;
+                }
                 player.transform.position = _spawnPoints[_currentSpawnPoint].gameObject.transform.position;
+                foreach(Ragdoll ragdoll in player.GetComponentsInChildren<Ragdoll>())
+                {
+                    if(ragdoll.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+                    {
+                        rb.velocity = Vector2.zero;
+                        rb.angularVelocity = 0f;
+                    }
+                }
+                Debug.Log("_spawnPoint position: " + _spawnPoints[_currentSpawnPoint].gameObject.transform.position.ToString());
+                Debug.Log("Player position before: " + player.transform.position.ToString());
+                _currentSpawnPoint++;
                 break;
             }
             else
             {
+                Debug.Log("Spawn point is NOT clear");
                 _currentSpawnPoint++;
             }
-
         }
-
-
-        //StartCoroutine(SpawnWhenClear(player, _spawnPoints[_currentSpawnPoint]));
-
-        _currentSpawnPoint++;
     }
 
     //IEnumerator SpawnWhenClear(GameObject player, SpawnPoint spawnPoint)

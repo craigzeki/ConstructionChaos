@@ -47,6 +47,11 @@ public class Ragdoll : NetworkBehaviour
     private Vector3 _originLocalPosition;
 
     /// <summary>
+    /// Used to store the initial local position - needed to reset player to centre of parent before moving during spawn
+    /// </summary>
+    private Vector3 _initialLocalPosition;
+
+    /// <summary>
     /// Used to detect when the body part has returned to its original position
     /// </summary>
     [SerializeField] private float _rejoinAnchorDistanceThreshold = 0.005f;
@@ -56,6 +61,12 @@ public class Ragdoll : NetworkBehaviour
         _originLocalPosition = transform.position;
         _hingeJoint = GetComponent<HingeJoint2D>();
         _initialRotation = transform.rotation;
+        _initialLocalPosition = transform.localPosition;
+    }
+
+    public void ResetLocalPosition()
+    {
+        transform.localPosition = _initialLocalPosition;
     }
 
     /// <summary>

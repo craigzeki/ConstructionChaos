@@ -424,7 +424,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222132264095724719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1167,8 +1167,8 @@ GameObject:
   - component: {fileID: 5808222031482737029}
   - component: {fileID: -2620139986288455078}
   - component: {fileID: -9142643144001391287}
-  - component: {fileID: -6222109441686497915}
   - component: {fileID: -8798100150719738577}
+  - component: {fileID: -1664303383964529152}
   m_Layer: 0
   m_Name: RealNetSpriteDude
   m_TagString: Player
@@ -1310,18 +1310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveString: 
---- !u!114 &-6222109441686497915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5808222031482737028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f9de3e9d1e74fd4a84870e626689a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8798100150719738577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1333,32 @@ MonoBehaviour:
     MoveVerticalAxis: 0
     IsGrabbingLeft: 0
     IsGrabbingRight: 0
+--- !u!114 &-1664303383964529152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222031482737028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 0
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!1 &5808222031901579358
 GameObject:
   m_ObjectHideFlags: 0

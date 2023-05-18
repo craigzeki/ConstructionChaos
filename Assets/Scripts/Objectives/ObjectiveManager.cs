@@ -83,6 +83,7 @@ public class ObjectiveManager : MonoBehaviour
 		_objectiveObjects.Clear();
 		_possibleObjectives.Clear();
 		_possibleZones.Clear();
+		_playerObjectives.Clear();
 		// Clear the player data specific to a round
 		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
 		{

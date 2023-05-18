@@ -173,22 +173,26 @@ public class GameManager : NetworkBehaviour
 
                 if (_loadingTimerComplete)
                 {
+                    _loadingTimerComplete = false;
                     RoundLoaded();
                     // Do the state transition
                     DoStateTransition(GAMESTATE.PLAYING_LOBBY);
                 }
                 break;
             case GAMESTATE.PLAYING_LOBBY:
+                
                 break;
             case GAMESTATE.LOADING_ROUND:
                 if (_loadingTimerComplete)
                 {
+                    _loadingTimerComplete = false;
                     RoundLoaded();
                     // Do the state transition
                     DoStateTransition(GAMESTATE.PLAYING_ROUND);
                 }
                 break;
             case GAMESTATE.PLAYING_ROUND:
+                
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
@@ -264,7 +268,6 @@ public class GameManager : NetworkBehaviour
                 _loadingCanvas.SetActive(false);
                 break;
             case GAMESTATE.PLAYING_LOBBY:
-                
                 if (IsServer)
                 {
                     Destroy(_currentRound);
@@ -273,7 +276,11 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.LOADING_ROUND:
                 _loadingCanvas.SetActive(false);
                 break;
-            case GAMESTATE.PLAYING_ROUND:     
+            case GAMESTATE.PLAYING_ROUND:
+                if (IsServer)
+                {
+                    Destroy(_currentRound);
+                }
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
@@ -411,10 +418,16 @@ public class GameManager : NetworkBehaviour
         {
             foreach (NetPlayerData netPlayerData in PlayerData.Values)
             {
+                foreach (Ragdoll ragdoll in netPlayerData.NetPlayer.gameObject.GetComponentsInChildren<Ragdoll>())
+                {
+                    ragdoll.ResetLocalPosition();
+                }
                 SpawnManager.Instance.SpawnPlayer(netPlayerData.NetPlayer.gameObject);
+                
             }
         }
     }
+
 
     private void SendPlayerObjectiveStrings()
     {
