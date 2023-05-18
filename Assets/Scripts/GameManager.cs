@@ -2,15 +2,18 @@ using SolidUtilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using ZekstersLab.Helpers;
 
 /// <summary>
 /// The Game Manager
 /// </summary>
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     /// <summary>
     /// Possible game states
@@ -30,6 +33,13 @@ public class GameManager : MonoBehaviour
         NUM_OF_STATES
     }
 
+    [SerializeField] private GameObject _loadingCanvas;
+    [SerializeField] private float _minLoadScreenTime = 2f;
+
+    [SerializeField] private GameObject _lobbyPrefab;
+    [SerializeField] private List<GameObject> _roundPrefabs = new List<GameObject>();
+
+
     /// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
 	/// </summary>
@@ -46,6 +56,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] [ReadOnly] private GAMESTATE _currentState = GAMESTATE.START;
 
     private static GameManager _instance;
+    private bool _loadingTimerComplete = false;
+
+    private List<int> _roundOrder = new List<int>();
+    private int _roundIndex = 0;
+    private int _nextRound = 0;
+    private GameObject _currentRound;
 
     public static GameManager Instance
     {
@@ -60,7 +76,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        _loadingCanvas.SetActive(false);
+
         DoStateTransition(GAMESTATE.MENU);
+    }
+
+    private void Update()
+    {
+        DoStateCyclicActions();
     }
 
     /// <summary>
@@ -73,18 +96,23 @@ public class GameManager : MonoBehaviour
     /// <returns></returns>
     public bool RegisterNewPlayer(ulong clientId, NetPlayer netPlayer)
     {
-        if (netPlayer == null) return false;
+        if(IsServer)
+        {
+            if (netPlayer == null) return false;
 
-        NetPlayerData objectivePlayerData = new NetPlayerData(clientId, netPlayer);
+            NetPlayerData objectivePlayerData = new NetPlayerData(clientId, netPlayer);
 
-        if (!PlayerData.TryAdd(clientId, objectivePlayerData)) return false;
+            if (!PlayerData.TryAdd(clientId, objectivePlayerData)) return false;
 
-        OnPlayerSpawned?.Invoke(this, clientId);
+            OnPlayerSpawned?.Invoke(this, clientId);
 
-        // send the objective - will be null for the host (joins as the scene is loading - but will be updated when the scene loads in)
-        netPlayer.SetObjectiveStringClientRpc(PlayerData[clientId].Objective?.ObjectiveString, PlayerData[clientId].ClientRpcParams);
+            // send the objective - will be null for the host (joins as the scene is loading - but will be updated when the scene loads in)
+            netPlayer.SetObjectiveStringClientRpc(PlayerData[clientId].Objective?.ObjectiveString, PlayerData[clientId].ClientRpcParams);
 
-        return true;
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -133,6 +161,47 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    private void DoStateCyclicActions()
+    {
+        switch (_currentState)
+        {
+            case GAMESTATE.START:
+                break;
+            case GAMESTATE.MENU:
+                break;
+            case GAMESTATE.LOADING_LOBBY:
+
+                if (_loadingTimerComplete)
+                {
+                    RoundLoaded();
+                    // Do the state transition
+                    DoStateTransition(GAMESTATE.PLAYING_LOBBY);
+                }
+                break;
+            case GAMESTATE.PLAYING_LOBBY:
+                break;
+            case GAMESTATE.LOADING_ROUND:
+                if (_loadingTimerComplete)
+                {
+                    RoundLoaded();
+                    // Do the state transition
+                    DoStateTransition(GAMESTATE.PLAYING_ROUND);
+                }
+                break;
+            case GAMESTATE.PLAYING_ROUND:
+                break;
+            case GAMESTATE.MIDPOINT_LEADERBOARD:
+                break;
+            case GAMESTATE.FINAL_LEADERBOARD:
+                break;
+            case GAMESTATE.DISCONNECTED:
+                break;
+            case GAMESTATE.NUM_OF_STATES:
+            default:
+                break;
+        }
+    }
+
     private void DoEntryTransition(GAMESTATE state)
     {
         switch (state)
@@ -142,23 +211,22 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.MENU:
                 break;
             case GAMESTATE.LOADING_LOBBY:
+                StartCoroutine(LoadRound(_lobbyPrefab, _minLoadScreenTime));
                 break;
             case GAMESTATE.PLAYING_LOBBY:
-                // TODO move the below to Playing_Round once some rounds are implemented
+                // Now that scene has loaded, move players to spawn points
+                MovePlayersToSpawnPoints();
                 // Now that scene has loaded, inform the player of their objective
-                // First reset the objective manager so that it will gather all zones / objects
-                // Need to consider doing this in the loading screen so that there is no hang to the player
-                
-
-                foreach(NetPlayerData netPlayerData in PlayerData.Values)
-                {
-                    //setup clientRpc params to only send to specific client
-                    netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);
-                }
+                SendPlayerObjectiveStrings();
                 break;
             case GAMESTATE.LOADING_ROUND:
+                StartCoroutine(LoadRound(_roundPrefabs[_roundIndex], _minLoadScreenTime));
                 break;
             case GAMESTATE.PLAYING_ROUND:
+                // Now that scene has loaded, move players to spawn points
+                MovePlayersToSpawnPoints();
+                // Now that scene has loaded, inform the player of their objective
+                SendPlayerObjectiveStrings();
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
@@ -179,14 +247,33 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
+                if(IsServer)
+                {
+                    _roundOrder.Clear();
+                    for (int i = 0; i < _roundPrefabs.Count; i++)
+                    {
+                        _roundOrder.Add(i);
+                    }
+                    _roundOrder.Shuffle();
+
+                    _nextRound = 0;
+                    _roundIndex = _roundOrder[_nextRound];
+                }
                 break;
             case GAMESTATE.LOADING_LOBBY:
+                _loadingCanvas.SetActive(false);
                 break;
             case GAMESTATE.PLAYING_LOBBY:
+                
+                if (IsServer)
+                {
+                    Destroy(_currentRound);
+                }
                 break;
             case GAMESTATE.LOADING_ROUND:
+                _loadingCanvas.SetActive(false);
                 break;
-            case GAMESTATE.PLAYING_ROUND:
+            case GAMESTATE.PLAYING_ROUND:     
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
@@ -204,59 +291,66 @@ public class GameManager : MonoBehaviour
     /// Performs a state machine transition if transition is allowed.
     /// </summary>
     /// <param name="newState"></param>
-    private void DoStateTransition(GAMESTATE newState)
+    private bool DoStateTransition(GAMESTATE newState)
     {
         // check if state is different
-        if (newState == _currentState) return;
+        if (newState == _currentState) return true;
 
         // check each transition's guard clauses
         switch (newState)
         {
             case GAMESTATE.START:
                 // Not valid to come here (initial state only)
-                return;
+                return false;
             case GAMESTATE.MENU:
                 // Do not come here from Loading Lobby or Loading Round
-                if ((_currentState == GAMESTATE.LOADING_LOBBY) || (_currentState == GAMESTATE.LOADING_ROUND)) return;
+                if ((_currentState == GAMESTATE.LOADING_LOBBY) || (_currentState == GAMESTATE.LOADING_ROUND)) return false;
                 break;
             case GAMESTATE.LOADING_LOBBY:
                 // only come here from Menu
-                if (_currentState != GAMESTATE.MENU) return;
+                if (_currentState != GAMESTATE.MENU) return false;
                 break;
             case GAMESTATE.PLAYING_LOBBY:
                 // only come here from Loading Lobby
-                if (_currentState != GAMESTATE.LOADING_LOBBY) return;
+                if (_currentState != GAMESTATE.LOADING_LOBBY) return false;
                 break;
             case GAMESTATE.LOADING_ROUND:
                 // only come here from Playing Lobby
-                if (_currentState != GAMESTATE.LOADING_LOBBY) return;
+                if ((_currentState != GAMESTATE.PLAYING_LOBBY) && (_currentState != GAMESTATE.PLAYING_ROUND)) return false;
                 break;
             case GAMESTATE.PLAYING_ROUND:
                 // only come here from Loading Round
-                if(_currentState != GAMESTATE.LOADING_ROUND) return;
+                if(_currentState != GAMESTATE.LOADING_ROUND) return false;
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 // only come here from Playing Round
-                if (_currentState != GAMESTATE.PLAYING_ROUND) return;
+                if (_currentState != GAMESTATE.PLAYING_ROUND) return false;
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
                 // only come here from Playing Round
-                if (_currentState != GAMESTATE.PLAYING_ROUND) return;
+                if (_currentState != GAMESTATE.PLAYING_ROUND) return false;
                 break;
             case GAMESTATE.DISCONNECTED:
                 // do not come here from Menu or Start
-                if ((_currentState == GAMESTATE.START) || (_currentState == GAMESTATE.MENU)) return;
+                if ((_currentState == GAMESTATE.START) || (_currentState == GAMESTATE.MENU)) return false;
                 break;
             case GAMESTATE.NUM_OF_STATES:
             default:
-                return;
+                return false;
         }
 
         // do the transition
         DoExitTransition(_currentState);
         DoEntryTransition(newState);
         _currentState = newState;
-        OnGameStateChanged?.Invoke(this, _currentState);
+
+        if(IsServer)
+        {
+            OnGameStateChanged?.Invoke(this, _currentState);
+            // inform all clients
+            SetStateClientRpc(_currentState);
+        }
+        return true;
     }
 
     public void LoadLobby()
@@ -264,10 +358,85 @@ public class GameManager : MonoBehaviour
         DoStateTransition(GAMESTATE.LOADING_LOBBY);
     }    
 
-    public void LobbyLoaded()
+    private void RoundLoaded()
     {
-        ObjectiveManager.Instance.ResetObjectiveManager();
-        OnSceneLoaded?.Invoke(this, EventArgs.Empty);
-        DoStateTransition(GAMESTATE.PLAYING_LOBBY);
+        if (IsServer)
+        {
+            // Let everyone know the scene was loaded
+            OnSceneLoaded?.Invoke(this, EventArgs.Empty);
+        }
+        // State transition is controlled in DoStateCyclicActions to allow for min time to be accounted for also
+    }
+
+    IEnumerator LoadRound(GameObject roundToLoad, float minWaitDuration)
+    {
+        _loadingTimerComplete = false;
+        _loadingCanvas.SetActive(true);
+        if(IsServer)
+        {
+            SpawnManager.Instance.ResetSpawnManager();
+            if (roundToLoad != null)
+            {
+                _currentRound = Instantiate(roundToLoad);
+                _currentRound.GetComponent<NetworkObject>().Spawn();
+            }
+            
+            SpawnManager.Instance.ReloadSpawnPoints();
+        }
+        yield return new WaitForSeconds(minWaitDuration);
+        _loadingTimerComplete = true;
+    }
+
+    public void LoadRoundButton()
+    {
+        if (!IsServer) return;
+
+        if((_currentState != GAMESTATE.PLAYING_ROUND) && (_currentState != GAMESTATE.PLAYING_LOBBY)) return;
+        if(_nextRound >= _roundOrder.Count)
+        {
+            // No more rounds to play, load high score page
+            DoStateTransition(GAMESTATE.FINAL_LEADERBOARD);
+        }
+        else
+        {
+            _roundIndex = _roundOrder[_nextRound];
+            _nextRound++;
+            DoStateTransition(GAMESTATE.LOADING_ROUND);
+        }
+    }
+
+    private void MovePlayersToSpawnPoints()
+    {
+        if(IsServer)
+        {
+            foreach (NetPlayerData netPlayerData in PlayerData.Values)
+            {
+                SpawnManager.Instance.SpawnPlayer(netPlayerData.NetPlayer.gameObject);
+            }
+        }
+    }
+
+    private void SendPlayerObjectiveStrings()
+    {
+        if (IsServer)
+        {
+            foreach (NetPlayerData netPlayerData in PlayerData.Values)
+            {
+                //setup clientRpc params to only send to specific client
+                netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);
+            }
+        }
+    }
+
+    [ClientRpc]
+    private void SetStateClientRpc(GameManager.GAMESTATE state, ClientRpcParams clientRpcParams = default)
+    {
+        if(!DoStateTransition(state))
+        {
+            // Synchronization error between Client and Server GameManager - disconnect client
+            DoStateTransition(GAMESTATE.DISCONNECTED);
+            // TODO Error screen in the dicconnected state
+            Debug.Log("ERROR: Game Managers are not synchronized");
+        }
     }
 }

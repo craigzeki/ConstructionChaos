@@ -8,7 +8,7 @@ using UnityEngine;
 /// <summary>
 /// Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager
 /// </summary>
-public class ActionGrab : ObjectiveActionBehaviour
+public class ActionHold : ObjectiveActionBehaviour
 {
     //private List<ulong> _grabbingClients = new List<ulong>();
     Dictionary<FixedJoint2D, (ulong clientId, Objective runningObjective, Ragdoll ragdoll)> _prevFixedJoint2Ds;

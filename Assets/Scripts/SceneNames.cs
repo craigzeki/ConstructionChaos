@@ -8,4 +8,5 @@ using UnityEngine;
 public class SceneNames
 {
     public static readonly string LobbyEnvironment = "LobbyEnv";
+    public static readonly string GameEnvironment = "Game";
 }

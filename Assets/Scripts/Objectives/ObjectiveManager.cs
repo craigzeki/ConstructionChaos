@@ -65,14 +65,14 @@ public class ObjectiveManager : MonoBehaviour
 	{
 		if (GameManager.Instance == null) return;
         GameManager.Instance.OnPlayerSpawned += OnPlayerSpawned;
-		GameManager.Instance.OnSceneLoaded += OnSceneLoaded;
+		GameManager.Instance.OnSceneLoaded += OnRoundLoaded;
     }
 
 	private void OnDisable()
 	{
         if (GameManager.Instance == null) return;
         GameManager.Instance.OnPlayerSpawned -= OnPlayerSpawned;
-        GameManager.Instance.OnSceneLoaded -= OnSceneLoaded;
+        GameManager.Instance.OnSceneLoaded -= OnRoundLoaded;
     }
 
 	/// <summary>
@@ -200,7 +200,6 @@ public class ObjectiveManager : MonoBehaviour
 			{
 				foreach(ObjectiveCondition condition in action.PossibleConditions)
 				{
-					Zone zone = null;
 					if(condition.RequiresObjectToBeInZone)
 					{
 						// Condition requires a zone, try and get a random one from the list stored in the dictionary
@@ -214,6 +213,11 @@ public class ObjectiveManager : MonoBehaviour
                             }
 						}
 					}
+					else
+					{
+                        Objective newObjective = new Objective(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, null, false);
+                        _possibleObjectives.Add(newObjective);
+                    }
 					
 				}
 			}
@@ -308,10 +312,12 @@ public class ObjectiveManager : MonoBehaviour
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="e"></param>
-	private void OnSceneLoaded(object sender, EventArgs e)
+	private void OnRoundLoaded(object sender, EventArgs e)
 	{
-		// Assign each players objective
-		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
+		// reset everything as new scene has loaded
+        ObjectiveManager.Instance.ResetObjectiveManager();
+        // Assign each players objective
+        foreach (ulong clientId in GameManager.Instance.PlayerData.Keys)
 		{
 			if(GameManager.Instance.PlayerData[clientId].Objective == null)
 			{

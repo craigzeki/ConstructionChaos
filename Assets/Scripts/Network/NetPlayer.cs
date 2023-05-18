@@ -17,6 +17,8 @@ public class NetPlayer : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
+        
+
         if (IsLocalPlayer)
         {
             // Set the camera to follow the player's head
@@ -25,6 +27,9 @@ public class NetPlayer : NetworkBehaviour
 
         if (IsServer)
         {
+            // Move to an empty spawn point
+            SpawnManager.Instance.SpawnPlayer(gameObject);
+
             NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
             //_networkObjectiveString.Value = _objectiveString;
         }
@@ -48,7 +53,7 @@ public class NetPlayer : NetworkBehaviour
             ragdoll.ObjectiveActionReporter = objectiveActionReporter;
         }
 
-        
+        NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
 
     }
 
