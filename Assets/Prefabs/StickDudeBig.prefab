@@ -193,9 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   _speed: 300
   _rb: {fileID: 4642401683343087182}
-  _mouseButton: 324
 --- !u!1 &4642401683662654983
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   TargetRotation: 270
   Force: 150
 --- !u!1 &4642401683754698787
@@ -552,7 +559,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ce17a5317d2dc4ca5481846f16927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mouseButton: 324
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
+  _handType: 0
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -664,7 +675,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ce17a5317d2dc4ca5481846f16927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mouseButton: 323
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
+  _handType: 0
   _grabableLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -686,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4642401684132208535
 Transform:
   m_ObjectHideFlags: 0
@@ -756,6 +771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9199a96f9b1034d9c6a70f45ca4643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   _speed: 1.5
   _stepWait: 0.5
   _jumpForce: 6000
@@ -767,6 +786,8 @@ MonoBehaviour:
   _leftLegRB: {fileID: 4642401684502071249}
   _rightLegRB: {fileID: 4642401684855019246}
   _bodyRB: {fileID: 4642401685280564974}
+  _verticalMinValue: 0.5
+  _timeBetweenJumpsInPhysicsFrames: 5
   _anim: {fileID: 4642401684132208533}
 --- !u!1 &4642401684307287662
 GameObject:
@@ -930,6 +951,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   TargetRotation: 90
   Force: 150
 --- !u!1 &4642401684372180630
@@ -1093,9 +1118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   _speed: 300
   _rb: {fileID: 4642401684372180629}
-  _mouseButton: 323
 --- !u!1 &4642401684502071250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   TargetRotation: 160
   Force: 150
 --- !u!1 &4642401684736041868
@@ -1421,9 +1453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   _speed: 300
   _rb: {fileID: 4642401684736041856}
-  _mouseButton: 323
 --- !u!1 &4642401684749446721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   TargetRotation: 200
   Force: 150
 --- !u!1 &4642401685013665925
@@ -1779,9 +1818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec417a9538bff1c47b6b76beb9de7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   _speed: 300
   _rb: {fileID: 4642401685013665924}
-  _mouseButton: 324
 --- !u!1 &4642401685221556699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1986,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   TargetRotation: 0
   Force: 10
 --- !u!1 &4642401685280564975
@@ -2082,5 +2128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813dff84a49d904fb63786d7938a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClientId: 0
+  ObjectiveActionReporter: {fileID: 0}
+  CharacterInputHandler: {fileID: 0}
+  _rejoinAnchorDistanceThreshold: 0.005
   TargetRotation: 0
   Force: 150
