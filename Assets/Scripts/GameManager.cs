@@ -453,12 +453,20 @@ public class GameManager : NetworkBehaviour
     private void SetStateClientRpc(GameManager.GAMESTATE state, ClientRpcParams clientRpcParams = default)
     {
         Debug.Log("Received request to change state to: " + state.ToString());
-        if(!DoStateTransition(state))
+        if(!IsServer)
         {
-            // Synchronization error between Client and Server GameManager - disconnect client
-            DoStateTransition(GAMESTATE.DISCONNECTED);
-            // TODO Error screen in the dicconnected state
-            Debug.Log("ERROR: Game Managers are not synchronized");
+            if (!DoStateTransition(state))
+            {
+                // Synchronization error between Client and Server GameManager - disconnect client
+                DoStateTransition(GAMESTATE.DISCONNECTED);
+                // TODO Error screen in the dicconnected state
+                Debug.Log("ERROR: Game Managers are not synchronized");
+            }
         }
+        else
+        {
+            Debug.Log("Ignored state change as we are the server");
+        }
+        
     }
 }
