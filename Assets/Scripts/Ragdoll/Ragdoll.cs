@@ -52,6 +52,13 @@ public class Ragdoll : NetworkBehaviour
     private Vector3 _initialLocalPosition;
 
     /// <summary>
+    /// A reference to the top level movement controller - used to initiate collapse from other body parts
+    /// </summary>
+    public StickMovement StickMovement;
+
+    
+
+    /// <summary>
     /// Used to detect when the body part has returned to its original position
     /// </summary>
     [SerializeField] private float _rejoinAnchorDistanceThreshold = 0.005f;

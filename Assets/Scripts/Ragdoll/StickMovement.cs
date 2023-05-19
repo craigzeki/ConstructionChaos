@@ -41,6 +41,7 @@ public class StickMovement : Ragdoll
         for (int i = 1; i < ragdolls.Length; i++)
         {
             ragdolls[i].CharacterInputHandler = CharacterInputHandler;
+            ragdolls[i].StickMovement = this;
         }
     }
 
@@ -48,6 +49,12 @@ public class StickMovement : Ragdoll
     {
         if (IsServer)
             HandleMovementAndJump(CharacterInputHandler.CharacterInputData);
+    }
+
+    public void DoCollapse(bool collapse, bool breakApart)
+    {
+        _collapse = collapse;
+        gameObject.BroadcastMessage("OnCollapse", (collapse, breakApart));
     }
 
     /// <summary>
@@ -64,8 +71,7 @@ public class StickMovement : Ragdoll
             if (newCollapse != _collapse)
             {
                 // Collapse the player and send a message to all the body parts to do the same
-                _collapse = newCollapse;
-                gameObject.BroadcastMessage("OnCollapse", (_collapse, false));
+                DoCollapse(newCollapse, false);
             }
             Debug.Log("_collapse: " + _collapse.ToString());
         }

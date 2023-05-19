@@ -21,8 +21,10 @@ public class Grab : Ragdoll
     /// </summary>
     [SerializeField] private HandType _handType;
     [SerializeField] LayerMask _grabableLayerMask;
-    private bool _hold = false;
+    
     private FixedJoint2D _joint;
+    public bool IsHolding { get; private set; } = false;
+    public bool Release = false;
 
     protected override void Awake()
     {
@@ -38,17 +40,18 @@ public class Grab : Ragdoll
     private void HandleGrab(CharacterInputData characterInputData)
     {
         // Player is trying to grab, and is allowed to
-        if((_isActive) && ((characterInputData.IsGrabbingLeft && _handType == HandType.LEFT) || (characterInputData.IsGrabbingRight && _handType == HandType.RIGHT)))
+        if((_isActive) && (!Release) && ((characterInputData.IsGrabbingLeft && _handType == HandType.LEFT) || (characterInputData.IsGrabbingRight && _handType == HandType.RIGHT)))
         {
             // Set hold to true
-            _hold = true;
+            IsHolding = true;
         }
         else
         {
             // Player has let go, destroy the joint between player and item
-            _hold = false;
+            IsHolding = false;
             Destroy(_joint);
             _joint = null;
+            Release = false;
         }
     }
 
@@ -57,7 +60,7 @@ public class Grab : Ragdoll
         if (!IsServer) return;
         if (!_isActive) return; // Not active or collapsed
         if ((1 << collision.gameObject.layer) != _grabableLayerMask) return; // Item is not on the grabable layer
-        if (_hold && _joint == null) // Allowed to grab something and not already holding anything
+        if (IsHolding && _joint == null) // Allowed to grab something and not already holding anything
         {
             // Get the colliding objects rigidbody and create a joint between us and it
             Rigidbody2D rb = collision.transform.GetComponent<Rigidbody2D>();
