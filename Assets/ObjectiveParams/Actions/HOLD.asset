@@ -20,5 +20,5 @@ MonoBehaviour:
   _actionBehaviours:
   - GuidAssignmentFailed: 0
     GUID: 4790aba5609bdc74d857713728814d57
-    _typeNameAndAssembly: ActionGrab, Assembly-CSharp
+    _typeNameAndAssembly: ActionHold, Assembly-CSharp
     _suppressLogs: 0
