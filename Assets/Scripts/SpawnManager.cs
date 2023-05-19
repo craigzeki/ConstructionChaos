@@ -79,10 +79,10 @@ public class SpawnManager : MonoBehaviour
             {
                 Debug.Log("Spawn point is clear");
                 Debug.Log("Player position before: " + player.transform.position.ToString());
-                foreach(NetworkTransform transform in player.GetComponentsInChildren<NetworkTransform>())
-                {
-                    transform.Interpolate = false;
-                }
+                //foreach(NetworkTransform transform in player.GetComponentsInChildren<NetworkTransform>())
+                //{
+                //    transform.Interpolate = false;
+                //}
                 player.transform.position = _spawnPoints[_currentSpawnPoint].gameObject.transform.position;
                 foreach(Ragdoll ragdoll in player.GetComponentsInChildren<Ragdoll>())
                 {

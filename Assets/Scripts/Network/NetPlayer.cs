@@ -23,6 +23,7 @@ public class NetPlayer : NetworkBehaviour
         {
             // Set the camera to follow the player's head
             FollowCam.Instance.SetFollowTarget(transform.GetChild(0));
+            GameManager.Instance.LocalPlayer = this;
         }
 
         if (IsServer)

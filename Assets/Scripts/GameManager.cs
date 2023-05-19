@@ -62,6 +62,7 @@ public class GameManager : NetworkBehaviour
     private int _roundIndex = 0;
     private int _nextRound = 0;
     private GameObject _currentRound;
+    public NetPlayer LocalPlayer;
 
     public static GameManager Instance
     {
@@ -425,6 +426,11 @@ public class GameManager : NetworkBehaviour
                 SpawnManager.Instance.SpawnPlayer(netPlayerData.NetPlayer.gameObject);
                 
             }
+        }
+
+        if(LocalPlayer != null)
+        {
+            Camera.main.transform.position = FollowCam.Instance.gameObject.transform.position = LocalPlayer.gameObject.transform.position;
         }
     }
 
