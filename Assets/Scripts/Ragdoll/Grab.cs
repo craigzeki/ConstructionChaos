@@ -37,10 +37,8 @@ public class Grab : Ragdoll
 
     private void HandleGrab(CharacterInputData characterInputData)
     {
-        if (!_isActive) return; // Not active or collapsed
-
         // Player is trying to grab, and is allowed to
-        if((characterInputData.IsGrabbingLeft && _handType == HandType.LEFT) || (characterInputData.IsGrabbingRight && _handType == HandType.RIGHT))
+        if((_isActive) && ((characterInputData.IsGrabbingLeft && _handType == HandType.LEFT) || (characterInputData.IsGrabbingRight && _handType == HandType.RIGHT)))
         {
             // Set hold to true
             _hold = true;
