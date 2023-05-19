@@ -356,7 +356,9 @@ public class GameManager : NetworkBehaviour
         {
             OnGameStateChanged?.Invoke(this, _currentState);
             // inform all clients
+            Debug.Log("Sending state change to Clients");
             SetStateClientRpc(_currentState);
+
         }
         return true;
     }
@@ -450,6 +452,7 @@ public class GameManager : NetworkBehaviour
     [ClientRpc]
     private void SetStateClientRpc(GameManager.GAMESTATE state, ClientRpcParams clientRpcParams = default)
     {
+        Debug.Log("Received request to change state to: " + state.ToString());
         if(!DoStateTransition(state))
         {
             // Synchronization error between Client and Server GameManager - disconnect client
