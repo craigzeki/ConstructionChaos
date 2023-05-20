@@ -2837,6 +2837,11 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 3375138609505047820, guid: 6d340c81a70f44ec1a9a46db36c16570, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -3739,6 +3744,10 @@ PrefabInstance:
       propertyPath: _roundPrefabs.Array.size
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
+      propertyPath: _roundPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3375138609505047820, guid: 6d340c81a70f44ec1a9a46db36c16570, type: 3}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _roundPrefabs.Array.data[1]
       value: 

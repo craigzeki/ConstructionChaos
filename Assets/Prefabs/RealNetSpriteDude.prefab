@@ -964,7 +964,8 @@ MonoBehaviour:
   _handType: 1
   _grabableLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
+  Release: 0
 --- !u!114 &7703105428848278053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1122,8 @@ MonoBehaviour:
   _handType: 0
   _grabableLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
+  Release: 0
 --- !u!114 &4773885092507461239
 MonoBehaviour:
   m_ObjectHideFlags: 0
