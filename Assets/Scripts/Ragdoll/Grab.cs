@@ -57,9 +57,9 @@ public class Grab : Ragdoll
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!IsServer) return;
+        if (!IsServer) return; // Only the server can grab
         if (!_isActive) return; // Not active or collapsed
-        if ((1 << collision.gameObject.layer) != _grabableLayerMask) return; // Item is not on the grabable layer
+        if (((1 << collision.gameObject.layer) & _grabableLayerMask) == 0) return; // Item is not on the grabable layer
         if (IsHolding && _joint == null) // Allowed to grab something and not already holding anything
         {
             // Get the colliding objects rigidbody and create a joint between us and it
