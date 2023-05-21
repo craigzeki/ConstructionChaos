@@ -16,16 +16,25 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
     /// The objective object that this instance is based on.
     /// </summary>
     [SerializeField]
-    private ObjectiveObject objectiveObject;
-    public ObjectiveObject ObjectiveObject => objectiveObject;
+    private ObjectiveObject _objectiveObject;
+    public ObjectiveObject ObjectiveObject => _objectiveObject;
 
     /// <summary>
     /// The colour of the objective object.
     /// </summary>
     [SerializeField]
-    [Dropdown("objectiveObject.PossibleColours")]
+    [Dropdown("_objectiveObject.PossibleColours")]
     private ObjectiveColour _objectiveColour;
     public ObjectiveColour ObjectiveColour => _objectiveColour;
+
+    /// <summary>
+    /// Can be set to true to exlude this object from the objective manager<br/>
+    /// This is usefull for objects that you only want to configure for GOAL ZONE<br/>
+    /// E.g. The player.
+    /// </summary>
+    [SerializeField]
+    private bool _excludeFromObjectiveManager = false;
+    public bool ExcludeFromObjectiveManager => _excludeFromObjectiveManager;
 
     public NetworkVariable<ObjectiveColour> NetworkObjectiveColour = new NetworkVariable<ObjectiveColour>();
 
@@ -36,8 +45,9 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
             // The object should be an actual colour, not any coloured
             while ((_objectiveColour?.FriendlyString == "any coloured") || (_objectiveColour == null))
             {
+                if (_objectiveObject.PossibleColours.Count == 0) break;
                 // Pick a random colour from the list of possible colours and assign it to the objective colour
-                _objectiveColour = objectiveObject.PossibleColours[UnityEngine.Random.Range(0, objectiveObject.PossibleColours.Count)];
+                _objectiveColour = _objectiveObject.PossibleColours[UnityEngine.Random.Range(0, _objectiveObject.PossibleColours.Count)];
             }
 
             // Removed for now, the ObjectManager was re-worked to use FindObjectOfType as it needed to get zones before objects
@@ -45,7 +55,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
             //ObjectiveManager.Instance.RegisterObject(this);
 
             // For each action, add the configured components to the gameObject
-            foreach (ObjectiveAction action in objectiveObject.PossibleActions)
+            foreach (ObjectiveAction action in _objectiveObject.PossibleActions)
             {
                 // For each action, add it as a component to the object
                 foreach (TypeReference typeReference in action.ActionBehaviours)
@@ -57,7 +67,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
                         ObjectiveActionBehaviour component = this.gameObject.AddComponent(typeReference) as ObjectiveActionBehaviour;
                         component.Conditions = action.PossibleConditions;
                         // Do not need to set the condition & zone as this will be set during action detection in the ObjectiveActionBehaviour
-                        component.Objective = new Objective(action, _objectiveColour, objectiveObject, null, null, false);
+                        component.Objective = new Objective(action, _objectiveColour, _objectiveObject, null, null, false);
                     }
                     
                     
@@ -72,7 +82,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         }
 
         // Set the colour of the object to the colour of the objective colour
-        GetComponent<SpriteRenderer>().color = NetworkObjectiveColour.Value.Colour;
+        GetComponent<SpriteRenderer>().color = NetworkObjectiveColour.Value != null ? NetworkObjectiveColour.Value.Colour : Color.white;
     }
 
     /// <summary>
@@ -83,7 +93,9 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
     public bool Equals(ObjectiveObjectInstance other)
     {
         if (other is null) return false;
-        return objectiveObject.Equals(other.objectiveObject) && _objectiveColour.Equals(other._objectiveColour);
+        return _objectiveObject.Equals(other._objectiveObject) &&
+            _objectiveColour.Equals(other._objectiveColour) &&
+            (_excludeFromObjectiveManager == other.ExcludeFromObjectiveManager);
     }
 
     /// <summary>
@@ -114,8 +126,9 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         unchecked
         {
             int hashCode = 17;
-            hashCode = (hashCode * 23) + objectiveObject.GetHashCode();
+            hashCode = (hashCode * 23) + _objectiveObject.GetHashCode();
             hashCode = (hashCode * 23) + _objectiveColour.GetHashCode();
+            hashCode = (hashCode * 23) + _excludeFromObjectiveManager.GetHashCode();
             return hashCode;
         }
     }

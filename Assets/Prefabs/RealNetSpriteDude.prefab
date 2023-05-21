@@ -2432,6 +2432,7 @@ GameObject:
   - component: {fileID: 5808222032765315318}
   - component: {fileID: 5808222032765315326}
   - component: {fileID: 5808222032765315325}
+  - component: {fileID: 13433897506176989}
   m_Layer: 0
   m_Name: StickMan_Trunk
   m_TagString: Player
@@ -2601,6 +2602,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &13433897506176989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808222032765315323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectiveObject: {fileID: 11400000, guid: 89fb5ac8054c33e4b90620949b8be115, type: 2}
+  _objectiveColour: {fileID: 0}
+  _excludeFromObjectiveManager: 1
+  NetworkObjectiveColour:
+    m_InternalValue: {fileID: 0}
 --- !u!1 &5808222032804806786
 GameObject:
   m_ObjectHideFlags: 0

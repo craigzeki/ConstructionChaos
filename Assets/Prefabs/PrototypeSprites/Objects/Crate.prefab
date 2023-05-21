@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
   _objectiveColour: {fileID: 0}
+  _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
 --- !u!61 &3302851571061422871

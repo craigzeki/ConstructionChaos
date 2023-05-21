@@ -56,7 +56,6 @@ public class Ragdoll : NetworkBehaviour
     /// </summary>
     public StickMovement StickMovement;
 
-    
 
     /// <summary>
     /// Used to detect when the body part has returned to its original position

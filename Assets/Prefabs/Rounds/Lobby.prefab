@@ -5396,7 +5396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
       propertyPath: _goalRequirements.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
       propertyPath: _goalRequirements.Array.data[0].RequiredObject
@@ -5407,12 +5407,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1a0757c8380624065b817383ee3dcad7, type: 2}
     - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
+      propertyPath: _goalRequirements.Array.data[2].RequiredObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 89fb5ac8054c33e4b90620949b8be115, type: 2}
+    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
       propertyPath: _goalRequirements.Array.data[0].QuantityRequired
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
       propertyPath: _goalRequirements.Array.data[1].QuantityRequired
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
+      propertyPath: _goalRequirements.Array.data[2].QuantityRequired
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
+      propertyPath: _goalRequirements.Array.data[2].UseQtyAsPercentageInScene
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}

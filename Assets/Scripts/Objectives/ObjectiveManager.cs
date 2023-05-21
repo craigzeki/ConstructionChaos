@@ -102,8 +102,8 @@ public class ObjectiveManager : MonoBehaviour
 		List<ObjectiveObjectInstance> objectiveObjectInstances = FindObjectsOfType<ObjectiveObjectInstance>().ToList();
 		foreach(ObjectiveObjectInstance objectiveObjectInstance in objectiveObjectInstances)
 		{
-			RegisterObject(objectiveObjectInstance);
-		}
+			if(!objectiveObjectInstance.ExcludeFromObjectiveManager) RegisterObject(objectiveObjectInstance);
+        }
 
         // Shuffle the possible objectives
         _possibleObjectives.Shuffle();

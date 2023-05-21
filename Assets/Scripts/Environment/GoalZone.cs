@@ -1,6 +1,8 @@
+using SolidUtilities.UnityEngineInternals;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -21,6 +23,8 @@ public class GoalZone : Zone
     private Vector3 _targetScale = Vector3.zero;
     private Vector3 _startScale = Vector3.zero;
 
+    private Dictionary<ObjectiveObject, int> sceneObjects = new Dictionary<ObjectiveObject, int>();
+
     private void Awake()
     {
         //hide the goal countdown timer and set it to its value reeady for countdown
@@ -30,6 +34,27 @@ public class GoalZone : Zone
         if (_countdownText != null) _countdownTextRectTransform = _countdownText.rectTransform;
         _targetScale = _countdownTextRectTransform != null ? _countdownTextRectTransform.localScale : Vector3.zero;
         _countdownTextRectTransform.localScale = _startScale;
+
+        List<ObjectiveObjectInstance> sceneObjectiveObjectInstances = FindObjectsOfType<ObjectiveObjectInstance>().ToList<ObjectiveObjectInstance>();
+        
+
+        // Build a database of number of objects in the scene
+        foreach(ObjectiveObjectInstance objectiveInstance in sceneObjectiveObjectInstances)
+        {
+            if(!sceneObjects.TryAdd(objectiveInstance.ObjectiveObject, 1))
+            {
+                sceneObjects[objectiveInstance.ObjectiveObject]++;
+            }
+        }
+
+        // If any requirement is set to use percentages, calculate these now using the database
+        foreach(GoalRequirement goalRequirement in _goalRequirements)
+        {
+            if(goalRequirement.UseQtyAsPercentageInScene)
+            {
+                goalRequirement.CalculatePercentBasedQty(sceneObjects[goalRequirement.RequiredObject]);
+            }
+        }
         
     }
 
