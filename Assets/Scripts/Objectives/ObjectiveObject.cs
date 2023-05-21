@@ -39,6 +39,7 @@ public class ObjectiveObject : ScriptableObject, IEquatable<ObjectiveObject>
     /// <returns>True of False (Equal or Not Equal)</returns>
     public bool Equals(ObjectiveObject other)
     {
+        if (other is null) return false;
         return (
                 (friendlyString.Equals(other.friendlyString)) &&
                 Enumerable.SequenceEqual(possibleColours.OrderBy(i => i.FriendlyString), other.possibleColours.OrderBy(i => i.FriendlyString)) &&

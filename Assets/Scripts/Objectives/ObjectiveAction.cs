@@ -43,7 +43,7 @@ public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
     /// <returns>True of False (Equal or Not Equal)</returns>
     public bool Equals(ObjectiveAction other)
     {
-
+        if (other is null) return false;
         return (
                 (_friendlyString.Equals(other._friendlyString)) &&
                 (_requiredPerformanceTime == other._requiredPerformanceTime) &&

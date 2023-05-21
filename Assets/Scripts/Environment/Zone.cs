@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
 /// This class represents an interactible zone on the map
 /// </summary>
-public class Zone : MonoBehaviour, IEquatable<Zone>
+public class Zone : NetworkBehaviour, IEquatable<Zone>
 {
     public enum ZONE : int
     {

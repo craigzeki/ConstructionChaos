@@ -82,6 +82,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
     /// <returns>True: ObjectiveObjectInsances contain identical parameters</returns>
     public bool Equals(ObjectiveObjectInstance other)
     {
+        if (other is null) return false;
         return objectiveObject.Equals(other.objectiveObject) && _objectiveColour.Equals(other._objectiveColour);
     }
 

@@ -57,7 +57,7 @@ public class GameManager : NetworkBehaviour
     private static GameManager _instance;
     private bool _loadingTimerComplete = false;
 
-    private List<int> _roundOrder = new List<int>();
+    [SerializeField][ReadOnly] private List<int> _roundOrder = new List<int>();
     private int _roundIndex = 0;
     private int _nextRound = 0;
     private GameObject _currentRound;
