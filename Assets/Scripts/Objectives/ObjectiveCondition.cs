@@ -31,11 +31,16 @@ public class ObjectiveCondition : ScriptableObject, IEquatable<ObjectiveConditio
     private Zone.ZONE _requiredZone = Zone.ZONE.NO_ZONE;
     public Zone.ZONE RequiredZone => _requiredZone;
 
+    [SerializeField]
+    private bool _requiresZoneToBeOnGround = false;
+    public bool RequireZoneToBeOnGround => _requiresZoneToBeOnGround;
 
     [SerializeField]
     [HideInInspector] // Not currently used - in place for when coloured zones are implemented
     private ZoneColour _requiredZoneColour;
     public ZoneColour RequiredZoneColour => _requiredZoneColour;
+
+    
 
     /// <summary>
     /// Specific Equals opperation for ObjectiveCondition
@@ -51,6 +56,7 @@ public class ObjectiveCondition : ScriptableObject, IEquatable<ObjectiveConditio
                 (_duringCountdown == other.DuringCountdown) &&
                 (_requiresObjectToBeInZone == other.RequiresObjectToBeInZone) &&
                 (_requiredZone == other.RequiredZone) &&
+                (_requiresZoneToBeOnGround == other.RequireZoneToBeOnGround) &&
                 (_requiredZoneColour != null ? _requiredZoneColour.Equals(other.RequiredZoneColour) : other.RequiredZoneColour == null)
 
                 );
@@ -88,6 +94,7 @@ public class ObjectiveCondition : ScriptableObject, IEquatable<ObjectiveConditio
             hashCode = (hashCode * 23) + (_duringCountdown.GetHashCode());
             hashCode = (hashCode * 23) + (_requiresObjectToBeInZone.GetHashCode());
             hashCode = (hashCode * 23) + (_requiredZone.GetHashCode());
+            hashCode = (hashCode * 23) + (_requiresZoneToBeOnGround.GetHashCode());
             hashCode = (hashCode * 23) + (_requiredZoneColour != null ? _requiredZoneColour.GetHashCode() : 0);
             return hashCode;
         }

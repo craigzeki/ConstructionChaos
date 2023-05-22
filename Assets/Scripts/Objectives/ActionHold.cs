@@ -45,7 +45,7 @@ public class ActionHold : ObjectiveActionBehaviour
                 {
                     // No longer meets conditions
                     // Remove it from the active list as it will be cancelled later
-                    ;
+                    
                 }
                 
             }
@@ -86,44 +86,4 @@ public class ActionHold : ObjectiveActionBehaviour
         _prevFixedJoint2Ds.Clear();
     }
 
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.tag == "PlayerGrabber")
-    //    {
-    //        if(collision.gameObject.TryGetComponent<Ragdoll>(out Ragdoll ragdoll))
-    //        {
-    //            if(!_grabbingClients.Contains(ragdoll.ClientId)) _grabbingClients.Add(ragdoll.ClientId);
-
-    //            List<ObjectiveCondition> activeConditions = GetActiveConditions();
-
-    //            foreach(ObjectiveCondition condition in activeConditions)
-    //            {
-    //                Objective objective = new Objective(Objective.Action, Objective.Colour, Objective.Object, condition, Objective.Inverse);
-    //                if (ragdoll.ObjectiveActionReporter.CheckAndStartActionObjective(objective, ragdoll.ClientId))
-    //                {
-    //                    _runningObjective = objective;
-    //                    break;
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "PlayerGrabber")
-    //    {
-    //        if (collision.gameObject.TryGetComponent<Ragdoll>(out Ragdoll ragdoll))
-    //        {
-    //            _grabbingClients.Remove(ragdoll.ClientId);
-    //            if(_runningObjective != null)
-    //            {
-    //                ragdoll.ObjectiveActionReporter.CancelActionObjective(_runningObjective, ragdoll.ClientId);
-    //                _runningObjective = null;
-    //            }
-    //        }
-    //    }
-
-    //}
 }

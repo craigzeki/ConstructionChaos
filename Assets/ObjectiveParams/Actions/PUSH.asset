@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ee1a1274b464eaeb16d702d11a9630, type: 3}
-  m_Name: SWING
+  m_Name: PUSH
   m_EditorClassIdentifier: 
-  _friendlyString: Swing on <COLOUR> <OBJECT> <CONDITION>
-  _requiredPerformanceTime: 3
+  _friendlyString: Push <COLOUR> <OBJECT> <CONDITION>
+  _requiredPerformanceTime: 0
+  _requiredPerformanceDistance: 1
   _possibleConditions:
+  - {fileID: 11400000, guid: 24ee36ec3f5be734ca83099c0cfa56ac, type: 2}
+  - {fileID: 11400000, guid: 17e582e3a8f60554eaae81cf10b9b53c, type: 2}
   - {fileID: 11400000, guid: 36886ff6508184858a720125152fad62, type: 2}
   _actionBehaviours:
   - GuidAssignmentFailed: 0
-    GUID: 5493b9d09159ca34193fea18566a9d04
-    _typeNameAndAssembly: ActionSwing, Assembly-CSharp
+    GUID: 5aec1df648cf6d34c9e17334b6c045e7
+    _typeNameAndAssembly: ActionPush, Assembly-CSharp
     _suppressLogs: 0

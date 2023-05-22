@@ -29,6 +29,9 @@ public class Zone : NetworkBehaviour, IEquatable<Zone>
     [SerializeField] private ZONE _zoneType = ZONE.GOAL_ZONE;
     public ZONE ZoneType => _zoneType;
 
+    [SerializeField] private bool _isOnGround = false;
+    public bool IsOnGround => _isOnGround;
+
 
     /// <summary>
     /// Specific Equals opperation for Zone
@@ -37,10 +40,11 @@ public class Zone : NetworkBehaviour, IEquatable<Zone>
     /// <returns>True of False (Equal or Not Equal)</returns>
     public bool Equals(Zone other)
     {
-
+        if (other is null) return false;
         return (
                 (_friendlyString.Equals(other.FriendlyString)) &&
-                (_zoneType == other.ZoneType)
+                (_zoneType == other.ZoneType) &&
+                (_isOnGround == other.IsOnGround)
                 );
     }
 
@@ -74,7 +78,7 @@ public class Zone : NetworkBehaviour, IEquatable<Zone>
             int hashCode = 17;
             hashCode = (hashCode * 23) + (_friendlyString != null ? _friendlyString.GetHashCode() : 0);
             hashCode = (hashCode * 32) + _zoneType.GetHashCode();
-            
+            hashCode = (hashCode * 32) + _isOnGround.GetHashCode();
             return hashCode;
         }
     }

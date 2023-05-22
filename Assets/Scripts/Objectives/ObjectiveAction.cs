@@ -25,6 +25,10 @@ public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
     private uint _requiredPerformanceTime = 3;
     public uint RequiredPerformanceTime => _requiredPerformanceTime;
 
+    [SerializeField]
+    private float _requiredPerformanceDistance = 0f;
+    public float RequiredPerformanceDistance => _requiredPerformanceDistance;
+
     /// <summary>
     /// A list of all the possible conditions that can be applied to this action.
     /// </summary>
@@ -47,6 +51,7 @@ public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
         return (
                 (_friendlyString.Equals(other._friendlyString)) &&
                 (_requiredPerformanceTime == other._requiredPerformanceTime) &&
+                (_requiredPerformanceDistance == other._requiredPerformanceDistance) &&
                 Enumerable.SequenceEqual(_possibleConditions.OrderBy(i => i.FriendlyString), other._possibleConditions.OrderBy(i => i.FriendlyString)) &&
                 Enumerable.SequenceEqual(_actionBehaviours.OrderBy(i => i.Type.Name), other._actionBehaviours.OrderBy(i => i.Type.Name))
                 );
@@ -82,6 +87,7 @@ public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
             int hashCode = 17;
             hashCode = (hashCode * 23) + (_friendlyString != null ? _friendlyString.GetHashCode() : 0);
             hashCode = (hashCode * 32) + _requiredPerformanceTime.GetHashCode();
+            hashCode = (hashCode * 32) + _requiredPerformanceDistance.GetHashCode();
             foreach(ObjectiveCondition objectiveCondition in _possibleConditions)
             {
                 hashCode = (hashCode * 23) + objectiveCondition.GetHashCode();

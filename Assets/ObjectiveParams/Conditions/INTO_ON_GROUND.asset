@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ee1a1274b464eaeb16d702d11a9630, type: 3}
-  m_Name: TOUCH
+  m_Script: {fileID: 11500000, guid: 4fde6e9621eed4ed9ab84aa950bf7b35, type: 3}
+  m_Name: INTO_ON_GROUND
   m_EditorClassIdentifier: 
-  _friendlyString: Touch <COLOUR> <OBJECT> <CONDITION>
-  _possibleConditions:
-  - {fileID: 11400000, guid: 545ad0fc80a0045b59776e7a53022aab, type: 2}
-  _actionBehaviours: []
+  _friendlyString: into <ZONE>
+  _duringCountdown: 0
+  _requiresObjectToBeInZone: 1
+  _requiredZone: 2
+  _requiresZoneToBeOnGround: 1
+  _requiredZoneColour: {fileID: 0}

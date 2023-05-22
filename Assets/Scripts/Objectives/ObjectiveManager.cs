@@ -30,6 +30,7 @@ public class ObjectiveManager : MonoBehaviour
 	/// List of all possible zones based on what is present in the scene
 	/// </summary>
 	[SerializeField] private Dictionary<Zone.ZONE, List<Zone>> _possibleZones = new Dictionary<Zone.ZONE, List<Zone>>();
+	[SerializeField] private Dictionary<Zone.ZONE, List<Zone>> _possibleGroundZones = new Dictionary<Zone.ZONE, List<Zone>>();
 
 	/// <summary>
 	/// A dictionary which is hashed based on the objective - this allows very performant lookup of the assigned ClientID<br/>
@@ -203,16 +204,31 @@ public class ObjectiveManager : MonoBehaviour
 				{
 					if(condition.RequiresObjectToBeInZone)
 					{
-						// Condition requires a zone, try and get a random one from the list stored in the dictionary
-						if(_possibleZones.TryGetValue(condition.RequiredZone, out List<Zone> zones))
+						if(condition.RequireZoneToBeOnGround)
 						{
-							//if(zones.Count > 0) zone = zones[UnityEngine.Random.Range((int)0, zones.Count)];
-							foreach(Zone possibleZone in zones)
-							{
-                                Objective newObjective = new Objective(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, false);
-                                _possibleObjectives.Add(newObjective);
+                            // condition requires ground zone
+                            if (_possibleGroundZones.TryGetValue(condition.RequiredZone, out List<Zone> zones))
+                            {
+                                foreach (Zone possibleZone in zones)
+                                {
+                                    Objective newObjective = new Objective(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, false);
+                                    _possibleObjectives.Add(newObjective);
+                                }
                             }
-						}
+                        }
+						else
+						{
+                            // Condition requires any zone
+                            if (_possibleZones.TryGetValue(condition.RequiredZone, out List<Zone> zones))
+                            {
+                                foreach (Zone possibleZone in zones)
+                                {
+                                    Objective newObjective = new Objective(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, false);
+                                    _possibleObjectives.Add(newObjective);
+                                }
+                            }
+                        }
+						
 					}
 					else
 					{
@@ -231,7 +247,6 @@ public class ObjectiveManager : MonoBehaviour
 	/// <param name="zone">The Zone to register</param>
 	public void RegisterZone(Zone zone)
 	{
-
 		if (_possibleZones.TryGetValue(zone.ZoneType, out List<Zone> zones))
 		{
 			if (!zones.Contains(zone)) zones.Add(zone);
@@ -242,6 +257,21 @@ public class ObjectiveManager : MonoBehaviour
 			newZones.Add(zone);
 			_possibleZones.Add(zone.ZoneType, newZones);
 		}
+
+		if (zone.IsOnGround)
+		{
+            if (_possibleGroundZones.TryGetValue(zone.ZoneType, out List<Zone> groundZones))
+            {
+                if (!groundZones.Contains(zone)) groundZones.Add(zone);
+            }
+            else
+            {
+                List<Zone> newZones = new List<Zone>();
+                newZones.Add(zone);
+                _possibleGroundZones.Add(zone.ZoneType, newZones);
+            }
+        }
+
 	}
 
 	/// <summary>
