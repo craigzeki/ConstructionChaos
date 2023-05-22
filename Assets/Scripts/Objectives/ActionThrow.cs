@@ -47,7 +47,7 @@ public class ActionThrow : ObjectiveActionBehaviour
                 if (_currentHolders.Count == 1)
                 {
                     // Keep track of being held
-                    _prevHolder = _currentHolders[0];
+                    _prevHolder = _currentHolders.ElementAt(0).Value;
                 }
             }
             // Check for conditions to be met
@@ -75,7 +75,7 @@ public class ActionThrow : ObjectiveActionBehaviour
             if (_currentHolders.Count == 1)
             {
                 // Keep track of being held
-                _prevHolder = _currentHolders[0];
+                _prevHolder = _currentHolders.ElementAt(0).Value;
             }
             else if (_prevHolder != null)
             {
