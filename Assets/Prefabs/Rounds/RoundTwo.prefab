@@ -21851,22 +21851,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goal Zone
       objectReference: {fileID: 0}
-    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
-      propertyPath: _isOnGround
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
-      propertyPath: _goalRequirements.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
-      propertyPath: _goalRequirements.Array.data[0].RequiredObject
-      value: 
-      objectReference: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
-    - target: {fileID: 4042945522891260509, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
-      propertyPath: _goalRequirements.Array.data[0].QuantityRequired
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95e72e3d38a2742449b7b26e609c2f25, type: 3}
 --- !u!4 &3515341294109742606 stripped

@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 4042945521608468519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4042945522699587107}
@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4, y: 2}
+  m_SizeDelta: {x: 3, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4042945521608468515
 Canvas:
@@ -135,10 +135,10 @@ RectTransform:
   m_Father: {fileID: 4042945521608468518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4, y: 0.59}
+  m_SizeDelta: {x: 0, y: 1.2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4042945522699587117
 CanvasRenderer:
@@ -195,12 +195,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
+  m_fontSize: 0.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 72
+  m_fontSizeMax: 500
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
@@ -264,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 4042945522891260502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8.77, z: 0}
-  m_LocalScale: {x: 3.5, y: 6.01, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4042945521608468518}
@@ -285,7 +285,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0066354275, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -296,7 +296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9820628, y: 1}
+  m_Size: {x: 3, y: 6}
   m_EdgeRadius: 0
 --- !u!114 &4042945522891260509
 MonoBehaviour:
@@ -312,11 +312,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friendlyString: the goal zone
   _zoneType: 1
-  _isOnGround: 0
+  _isOnGround: 1
   _goalZoneText: {fileID: 4042945522699587106}
   _countdownText: {fileID: 8390311815576199647}
   _countdownTimerStart: 3
-  _goalRequirements: []
+  _goalRequirements:
+  - RequiredObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
+    QuantityRequired: 1
+    QuantityInZone: 0
+    UseQtyAsPercentageInScene: 0
+    PercentBasedQty: 0
+  _goalSprite: {fileID: 5210032476207396187}
+  _goalCanvas: {fileID: 4042945521608468519}
 --- !u!1 &4110160075537434235
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,17 +351,17 @@ RectTransform:
   m_GameObject: {fileID: 4110160075537434235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4042945521608468518}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 4.8}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1732563557549085956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -410,7 +417,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.35
+  m_fontSize: 3.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -418,7 +425,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -478,7 +485,7 @@ Transform:
   m_GameObject: {fileID: 5210032476207396187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4042945522891260497}
