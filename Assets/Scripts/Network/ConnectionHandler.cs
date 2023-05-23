@@ -87,26 +87,51 @@ public class ConnectionHandler : MonoBehaviour
             return StartNetwork(false);
         }
 
-        await UnityServicesLogin();
-
-        return await JoinRelay(roomCode);
+        bool loginSuccessful = await UnityServicesLogin();
+        if (loginSuccessful)
+        {
+            return await JoinRelay(roomCode);
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /// <summary>
     /// Logs into Unity Services Anonymously
     /// </summary>
-    private async Task UnityServicesLogin()
+    private async Task<bool> UnityServicesLogin()
     {
-        await UnityServices.InitializeAsync();
+        bool returnVal = false;
+
+        try
+        {
+            await UnityServices.InitializeAsync();
+        }
+        catch
+        {
+            return false;
+        }
 
         AuthenticationService.Instance.SignedIn += () =>
         {
             // Player has successfully signed in anonymously
             print("Signed in anonymously");
+            returnVal = true;
             return;
         };
 
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        try
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+        catch
+        {
+            return false;
+        }
+
+        return returnVal;
     }
 
     /// <summary>

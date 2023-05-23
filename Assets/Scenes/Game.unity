@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3850,11 +3850,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuCanvas: {fileID: 2092564315}
+  _loadingCanvas: {fileID: 1831606683}
+  _lobbyCanvas: {fileID: 198706483}
+  _titleImageRR: {fileID: 348857166}
+  _titleImageCC: {fileID: 374048710}
   _hostButton: {fileID: 1175237648}
   _joinButton: {fileID: 1432325565}
   _backButton: {fileID: 1062333159}
-  _roomCodeText: {fileID: 0}
-  _errorText: {fileID: 0}
+  _roomCodeText: {fileID: 1938494455}
+  _errorText: {fileID: 615447151}
   _roomCodeInput: {fileID: 1371784715}
   _localToggle: {fileID: 1969192941}
 --- !u!114 &1952457506

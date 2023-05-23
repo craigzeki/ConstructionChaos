@@ -218,6 +218,7 @@ public class GameManager : NetworkBehaviour
                 StartCoroutine(LoadRound(_lobbyPrefab, _minLoadScreenTime));
                 break;
             case GAMESTATE.PLAYING_LOBBY:
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LobbyCanvas, true);
                 // Now that scene has loaded, move players to spawn points
                 MovePlayersToSpawnPoints();
                 // Now that scene has loaded, inform the player of their objective
@@ -265,16 +266,17 @@ public class GameManager : NetworkBehaviour
                 }
                 break;
             case GAMESTATE.LOADING_LOBBY:
-                _loadingCanvas.SetActive(false);
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, false);
                 break;
             case GAMESTATE.PLAYING_LOBBY:
                 if (IsServer)
                 {
                     Destroy(_currentRound);
                 }
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LobbyCanvas, false);
                 break;
             case GAMESTATE.LOADING_ROUND:
-                _loadingCanvas.SetActive(false);
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, false);
                 break;
             case GAMESTATE.PLAYING_ROUND:
                 if (IsServer)
@@ -380,7 +382,7 @@ public class GameManager : NetworkBehaviour
     IEnumerator LoadRound(GameObject roundToLoad, float minWaitDuration)
     {
         _loadingTimerComplete = false;
-        _loadingCanvas.SetActive(true);
+        MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, true);
         if(IsServer)
         {
             SpawnManager.Instance.ResetSpawnManager();

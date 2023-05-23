@@ -10,7 +10,12 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private GameObject _mainMenuCanvas;
+    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas;
+    public GameObject MainMenuCanvas => _mainMenuCanvas;
+    public GameObject LoadingCanvas => _loadingCanvas;
+    public GameObject LobbyCanvas => _lobbyCanvas;
+
+    [SerializeField] private GameObject _titleImageRR, _titleImageCC;
 
     [SerializeField] private Button _hostButton, _joinButton, _backButton;
 
@@ -69,7 +74,9 @@ public class MenuUIManager : MonoBehaviour
     /// <param name="roomCode">The room code to display</param>
     public void SetRoomCode(string roomCode)
     {
+        _roomCodeText.gameObject.SetActive(false);
         _roomCodeText.text = "Room Code: " + roomCode;
+        AnimateElement(_roomCodeText.gameObject, true);
     }
 
     /// <summary>
@@ -81,15 +88,12 @@ public class MenuUIManager : MonoBehaviour
         if (LeanTween.isTweening(_hostButton.gameObject))
             return;
 
+        ToggleCanvas(_loadingCanvas.gameObject, true);
+
         bool connectionSuccessful = await ConnectionHandler.Instance.HostGame(_local);
         if (connectionSuccessful)
         {
-            // Animate everything out except the title text
-            AnimateElement(_hostButton.gameObject, false);
-            AnimateElement(_joinButton.gameObject, false);
-            AnimateElement(_localToggle.gameObject, false);
-            AnimateElement(_roomCodeInput.gameObject, false);
-            GameManager.Instance.LoadLobby();
+            SuccessfulConnection();
         }
         else
         {
@@ -111,15 +115,12 @@ public class MenuUIManager : MonoBehaviour
         
         if (_joinMenuOpen)
         {
+            ToggleCanvas(_loadingCanvas.gameObject, true);
+
             bool connectionSuccessful = await ConnectionHandler.Instance.JoinGame(_roomCodeInput.text, _local);
             if (connectionSuccessful)
             {
-                // Animate everything out
-                AnimateElement(_joinButton.gameObject, false);
-                AnimateElement(_backButton.gameObject, false);
-                AnimateElement(_roomCodeInput.gameObject, false);
-                AnimateElement(_localToggle.gameObject, false);
-                GameManager.Instance.LoadLobby();
+                SuccessfulConnection();
             }
             else
             {
@@ -161,6 +162,8 @@ public class MenuUIManager : MonoBehaviour
 
     private IEnumerator UnsuccessfulConnection()
     {
+        ToggleCanvas(_loadingCanvas.gameObject, false);
+        LeanTween.cancel(_errorText.gameObject);
         AnimateElement(_errorText.gameObject, true);
         yield return new WaitForSeconds(2f);
         AnimateElement(_errorText.gameObject, false);
@@ -168,7 +171,17 @@ public class MenuUIManager : MonoBehaviour
 
     private void SuccessfulConnection()
     {
-
+        // Animate everything out
+        AnimateElement(_titleImageRR, false);
+        AnimateElement(_titleImageCC, false);
+        AnimateElement(_errorText.gameObject, false);
+        AnimateElement(_hostButton.gameObject, false);
+        AnimateElement(_joinButton.gameObject, false);
+        AnimateElement(_backButton.gameObject, false);
+        AnimateElement(_localToggle.gameObject, false);
+        AnimateElement(_roomCodeInput.gameObject, false);
+        GameManager.Instance.LoadLobby();
+        ToggleCanvas(_mainMenuCanvas.gameObject, false);
     }
 
     /// <summary>
@@ -194,7 +207,7 @@ public class MenuUIManager : MonoBehaviour
         });
     }
 
-    private void ToggleCanvas(GameObject canvasObj, bool toggle)
+    public void ToggleCanvas(GameObject canvasObj, bool toggle)
     {
         canvasObj.SetActive(toggle);
     }
