@@ -16,6 +16,7 @@ public class NetPlayerData
     public ClientRpcParams ClientRpcParams = default;
     public ulong ClientId;
     public uint Score = 0;
+    public int ColourIndex = 0;
 
     public NetPlayerData(ulong clientId, NetPlayer netPlayer)
     {

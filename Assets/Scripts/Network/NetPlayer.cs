@@ -12,6 +12,10 @@ using UnityEngine;
 public class NetPlayer : NetworkBehaviour
 {
     [SerializeField] private string _objectiveString = "";
+    [SerializeField] private List<SpriteRenderer> _partsToColour = new List<SpriteRenderer>();
+    [SerializeField][ReadOnly] private Color _playerColour = Color.white;
+
+    public NetworkVariable<int> PlayerColorIndex = new NetworkVariable<int>();
 
     public override void OnNetworkSpawn()
     {
@@ -34,6 +38,20 @@ public class NetPlayer : NetworkBehaviour
             NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
             //_networkObjectiveString.Value = _objectiveString;
         }
+        else
+        {
+            PlayerColorIndex.OnValueChanged += SetPlayerColour;
+            SetPlayerColour(0, PlayerColorIndex.Value);
+        }
+        
+        
+        
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+        PlayerColorIndex.OnValueChanged -= SetPlayerColour;
     }
 
     /// <summary>
@@ -42,8 +60,14 @@ public class NetPlayer : NetworkBehaviour
     /// <param name="obj"></param>
     private void NetworkManager_OnClientConnectedCallback(ulong obj)
     {
+        
         // Register with the Game Manager
         GameManager.Instance.RegisterNewPlayer(OwnerClientId, this);
+        
+        if(GameManager.Instance.PlayerData.TryGetValue(OwnerClientId, out NetPlayerData playerData))
+        {
+            SetPlayerColour(0,playerData.ColourIndex);
+        }
 
         // Send the ownerClientId to some objects which need it (to report to the objective system)
         List<Ragdoll> ragdollObjects = GetComponentsInChildren<Ragdoll>().ToList<Ragdoll>();
@@ -66,5 +90,14 @@ public class NetPlayer : NetworkBehaviour
     public void SetObjectiveStringClientRpc(string newObjectiveString, ClientRpcParams clientRpcParams = default)
     {
         _objectiveString = newObjectiveString != null ? newObjectiveString : "No Objective";
+    }
+
+    private void SetPlayerColour(int previous, int current)
+    {
+        _playerColour = GameManager.Instance.GetPlayerColour(current);
+        foreach(SpriteRenderer spriteRenderer in _partsToColour)
+        {
+            spriteRenderer.color = _playerColour;
+        }
     }
 }

@@ -37,7 +37,7 @@ public class GameManager : NetworkBehaviour
 
     [SerializeField] private GameObject _lobbyPrefab;
     [SerializeField] private List<GameObject> _roundPrefabs = new List<GameObject>();
-
+    [SerializeField] private List<Color> _playerColours = new List<Color>();
 
     /// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
@@ -62,6 +62,7 @@ public class GameManager : NetworkBehaviour
     private int _nextRound = 0;
     private GameObject _currentRound;
     public NetPlayer LocalPlayer;
+    private int _playerColourIndex = 0;
 
     public static GameManager Instance
     {
@@ -104,10 +105,15 @@ public class GameManager : NetworkBehaviour
 
             if (!PlayerData.TryAdd(clientId, objectivePlayerData)) return false;
 
+            SetPlayerColour(objectivePlayerData);
+
             OnPlayerSpawned?.Invoke(this, clientId);
 
             // send the objective - will be null for the host (joins as the scene is loading - but will be updated when the scene loads in)
             netPlayer.SetObjectiveStringClientRpc(PlayerData[clientId].Objective?.ObjectiveString, PlayerData[clientId].ClientRpcParams);
+            // send the player colour
+            //netPlayer.SetPlayerColourClientRpc(PlayerData[clientId].ColourIndex, PlayerData[clientId].ClientRpcParams);
+            netPlayer.PlayerColorIndex.Value = PlayerData[clientId].ColourIndex;
 
             return true;
         }
@@ -161,6 +167,24 @@ public class GameManager : NetworkBehaviour
         return true;
     }
 
+    private void SetPlayerColour(NetPlayerData playerData)
+    {
+        if (_playerColourIndex >= _playerColours.Count) return;
+        if (playerData == null) return;
+
+        playerData.ColourIndex = _playerColourIndex;
+        _playerColourIndex++;
+    }
+
+    public Color GetPlayerColour(int colourIndex)
+    {
+        return colourIndex < _playerColours.Count ? _playerColours[colourIndex] : Color.white;
+    }
+
+    /// <summary>
+    /// Perform the state's cyclic actions<BR/>
+    /// Called every Update()
+    /// </summary>
     private void DoStateCyclicActions()
     {
         switch (_currentState)
@@ -213,6 +237,7 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
+                _playerColourIndex = 0;
                 break;
             case GAMESTATE.LOADING_LOBBY:
                 StartCoroutine(LoadRound(_lobbyPrefab, _minLoadScreenTime));
@@ -263,6 +288,7 @@ public class GameManager : NetworkBehaviour
 
                     _nextRound = 0;
                     _roundIndex = _roundOrder[_nextRound];
+                    
                 }
                 break;
             case GAMESTATE.LOADING_LOBBY:
