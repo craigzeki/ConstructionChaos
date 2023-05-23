@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -1364,8 +1364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -1580,8 +1580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -1994,8 +1994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -2872,8 +2872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -3204,8 +3204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -3632,8 +3632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -3959,8 +3959,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -4175,8 +4175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -4391,8 +4391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -4719,8 +4719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -4935,8 +4935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -5262,8 +5262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -7901,8 +7901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -8117,8 +8117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -8333,8 +8333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -11897,8 +11897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -12200,8 +12200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -12635,8 +12635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -13010,8 +13010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -13529,8 +13529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -13856,8 +13856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -14122,8 +14122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -14944,8 +14944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -15160,8 +15160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -15574,8 +15574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -15790,8 +15790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -16006,8 +16006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -16222,8 +16222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -16549,8 +16549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -16765,8 +16765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -17172,8 +17172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -18700,7 +18700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
+  _objectiveObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
   _objectiveColour: {fileID: 0}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
@@ -18891,7 +18891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
+  _objectiveObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
   _objectiveColour: {fileID: 0}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
@@ -19082,7 +19082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
+  _objectiveObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
   _objectiveColour: {fileID: 0}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
@@ -19201,8 +19201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -19892,8 +19892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -20108,8 +20108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -20324,8 +20324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -20651,8 +20651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -20951,8 +20951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -21278,8 +21278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -21494,8 +21494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b52f5df500641a2931b3d076b00dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectiveObject: {fileID: 0}
-  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
+  _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
