@@ -7,20 +7,24 @@ using UnityEngine.UI;
 public class AnimatedImage : MonoBehaviour
 {
     [SerializeField] private Sprite[] _frames;
-    [SerializeField] private float _timeBetweenFrames = (1f/60f);
-    [SerializeField] Image _image;
+    [SerializeField] private int _framesPerSecond;
+    private Image _image;
 
     private void Awake()
     {
         if(_image == null) _image = GetComponent<Image>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         if (_image == null) return;
-        
 
-        StartCoroutine(PlayGif(_timeBetweenFrames));
+        StartCoroutine(PlayGif(1f / _framesPerSecond));
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator PlayGif(float timeBetweenFrames)
@@ -30,9 +34,10 @@ public class AnimatedImage : MonoBehaviour
         while(true)
         {
             if (_frames.Count() == 0) yield break;
-            _image.sprite = _frames[index % _frames.Count()];
+            _image.sprite = _frames[index];
             yield return new WaitForSeconds(timeBetweenFrames);
             index++;
+            if (index >= _frames.Count()) index = 0;
         }
     }
 }

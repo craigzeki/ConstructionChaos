@@ -32,7 +32,7 @@ public class ConnectionHandler : MonoBehaviour
     /// Hosts the game using the Unity Relay Service and Netcode for GameObjects
     /// </summary>
     /// <param name="maxPlayers">The maximum number of players allowed in the game</param>
-    public async void HostGame(bool local = false)
+    public async Task<bool> HostGame(bool local = false)
     {
         if (local)
         {
@@ -46,7 +46,7 @@ public class ConnectionHandler : MonoBehaviour
             {
                 print("Error getting IP address");
                 // TODO: Display an error message to the user
-                return;
+                return false;
             }
 
             // Change the network transport to the Unity Transport
@@ -59,21 +59,19 @@ public class ConnectionHandler : MonoBehaviour
             string roomCode = IPtoCode(ip);
             MenuUIManager.Instance.SetRoomCode(roomCode);
 
-            StartNetwork(true);
-
-            return;
+            return StartNetwork(true);
         }
 
         await UnityServicesLogin();
 
-        CreateRelay();
+        return await CreateRelay();
     }
 
     /// <summary>
     /// Joins the game using the Unity Relay Service and Netcode for GameObjects
     /// </summary>
     /// <param name="roomCode">The room code to join</param>
-    public async void JoinGame(string roomCode, bool local = false)
+    public async Task<bool> JoinGame(string roomCode, bool local = false)
     {
         if (local)
         {
@@ -86,14 +84,12 @@ public class ConnectionHandler : MonoBehaviour
             // Set the connection data to the IP address
             _unityTransport.ConnectionData.Address = ip;
 
-            StartNetwork(false);
-
-            return;
+            return StartNetwork(false);
         }
 
         await UnityServicesLogin();
 
-        JoinRelay(roomCode);
+        return await JoinRelay(roomCode);
     }
 
     /// <summary>
@@ -116,7 +112,7 @@ public class ConnectionHandler : MonoBehaviour
     /// <summary>
     /// Creates a relay server using the Unity Relay Service
     /// </summary>
-    private async void CreateRelay()
+    private async Task<bool> CreateRelay()
     {
         print("Creating relay");
         try
@@ -133,11 +129,12 @@ public class ConnectionHandler : MonoBehaviour
 
             _relayTransport.SetRelayServerData(relayServerData);
 
-            StartNetwork(true);
+            return StartNetwork(true);
         }
         catch (RelayServiceException e)
         {
             print(e.Message);
+            return false;
         }
     }
 
@@ -145,7 +142,7 @@ public class ConnectionHandler : MonoBehaviour
     /// Joins a relay server using the Unity Relay Service
     /// </summary>
     /// <param name="roomCode">The room code to join</param>
-    private async void JoinRelay(string roomCode)
+    private async Task<bool> JoinRelay(string roomCode)
     {
         try
         {
@@ -157,12 +154,13 @@ public class ConnectionHandler : MonoBehaviour
 
             _relayTransport.SetRelayServerData(relayServerData);
 
-            StartNetwork(false);
+            return StartNetwork(false);
         }
         catch (RelayServiceException e)
         {
             //! More error handling is needed here to catch the error when the room code is invalid
             print(e.Message);
+            return false;
         }
     }
 
@@ -170,17 +168,16 @@ public class ConnectionHandler : MonoBehaviour
     /// Starts the network using Netcode for GameObjects
     /// </summary>
     /// <param name="isHost">Whether the device is the host or not</param>
-    private void StartNetwork(bool isHost)
+    private bool StartNetwork(bool isHost)
     {
         if (isHost)
         {
-            NetworkManager.Singleton.StartHost();
+            return NetworkManager.Singleton.StartHost();
         }
         else
         {
-            NetworkManager.Singleton.StartClient();
+            return NetworkManager.Singleton.StartClient();
         }
-        GameManager.Instance.LoadLobby();
     }
 
     /// <summary>

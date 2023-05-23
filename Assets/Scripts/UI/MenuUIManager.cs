@@ -10,9 +10,11 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
+    [SerializeField] private GameObject _mainMenuCanvas;
+
     [SerializeField] private Button _hostButton, _joinButton, _backButton;
 
-    [SerializeField] private TextMeshProUGUI _titleText;
+    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText;
 
     [SerializeField] private TMP_InputField _roomCodeInput;
 
@@ -67,33 +69,39 @@ public class MenuUIManager : MonoBehaviour
     /// <param name="roomCode">The room code to display</param>
     public void SetRoomCode(string roomCode)
     {
-        _titleText.text = "Room Code: " + roomCode;
+        _roomCodeText.text = "Room Code: " + roomCode;
     }
 
     /// <summary>
     /// Starts hosting the game
     /// </summary>
     /// <remarks>Called by pressing the host button</remarks>
-    private void HostButton()
+    private async void HostButton()
     {
         if (LeanTween.isTweening(_hostButton.gameObject))
             return;
-        
-        // Animate everything out except the title text
-        AnimateElement(_hostButton.gameObject, false);
-        AnimateElement(_joinButton.gameObject, false);
-        AnimateElement(_localToggle.gameObject, false);
-        AnimateElement(_roomCodeInput.gameObject, false);
 
-        // Start hosting the game
-        ConnectionHandler.Instance.HostGame(_local);
+        bool connectionSuccessful = await ConnectionHandler.Instance.HostGame(_local);
+        if (connectionSuccessful)
+        {
+            // Animate everything out except the title text
+            AnimateElement(_hostButton.gameObject, false);
+            AnimateElement(_joinButton.gameObject, false);
+            AnimateElement(_localToggle.gameObject, false);
+            AnimateElement(_roomCodeInput.gameObject, false);
+            GameManager.Instance.LoadLobby();
+        }
+        else
+        {
+            StartCoroutine(UnsuccessfulConnection());
+        }
     }
 
     /// <summary>
     /// Opens the join menu or joins the game
     /// </summary>
     /// <remarks>Called by pressing the join button</remarks>
-    private void JoinButton()
+    private async void JoinButton()
     {
         if (LeanTween.isTweening(_joinButton.gameObject))
             return;
@@ -103,17 +111,20 @@ public class MenuUIManager : MonoBehaviour
         
         if (_joinMenuOpen)
         {
-            // Animate everything out
-            AnimateElement(_joinButton.gameObject, false);
-            AnimateElement(_backButton.gameObject, false);
-            AnimateElement(_roomCodeInput.gameObject, false);
-            AnimateElement(_localToggle.gameObject, false);
-            AnimateElement(_titleText.gameObject, false);
-
-            // TODO: The UI will need to be updated if the room code is invalid
-
-            // Join the game
-            ConnectionHandler.Instance.JoinGame(_roomCodeInput.text, _local);
+            bool connectionSuccessful = await ConnectionHandler.Instance.JoinGame(_roomCodeInput.text, _local);
+            if (connectionSuccessful)
+            {
+                // Animate everything out
+                AnimateElement(_joinButton.gameObject, false);
+                AnimateElement(_backButton.gameObject, false);
+                AnimateElement(_roomCodeInput.gameObject, false);
+                AnimateElement(_localToggle.gameObject, false);
+                GameManager.Instance.LoadLobby();
+            }
+            else
+            {
+                StartCoroutine(UnsuccessfulConnection());
+            }
         }
         else
         {
@@ -148,6 +159,18 @@ public class MenuUIManager : MonoBehaviour
         _joinMenuOpen = false;
     }
 
+    private IEnumerator UnsuccessfulConnection()
+    {
+        AnimateElement(_errorText.gameObject, true);
+        yield return new WaitForSeconds(2f);
+        AnimateElement(_errorText.gameObject, false);
+    }
+
+    private void SuccessfulConnection()
+    {
+
+    }
+
     /// <summary>
     /// Animates the given GameObject in or out, and optionally disables it after the animation
     /// </summary>
@@ -169,6 +192,11 @@ public class MenuUIManager : MonoBehaviour
             if (disableAfter)
                 gameObject.SetActive(false);
         });
+    }
+
+    private void ToggleCanvas(GameObject canvasObj, bool toggle)
+    {
+        canvasObj.SetActive(toggle);
     }
 
     /// <summary>
