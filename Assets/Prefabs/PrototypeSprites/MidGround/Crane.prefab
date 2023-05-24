@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friendlyString: the body of the crane
   _zoneType: 2
+  _isOnGround: 0
 --- !u!1 &4843070015994528164
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friendlyString: the crane's hook
   _zoneType: 2
+  _isOnGround: 0
 --- !u!1 &5738479966694643546
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: f9459b002e54e1a4da23bc21059dc9ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bad49a32f924ccf448c4d1f6abca5a13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
