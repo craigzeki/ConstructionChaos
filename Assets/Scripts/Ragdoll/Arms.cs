@@ -55,7 +55,7 @@ public class Arms : Ragdoll
 
         if(_grabber != null)
         {
-            if(_grabber.IsHolding)
+            if(_grabber.ReadyToGrab)
             {
                 _connectedPosition = _connectedRb.gameObject.transform.localPosition;
                 _currentConnectionDistance = Vector3.Distance(transform.localPosition, _connectedPosition);

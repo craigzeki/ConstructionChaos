@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 2196349899748416794}
   m_Layer: 6
   m_Name: GrabPoint
-  m_TagString: Untagged
+  m_TagString: Ledge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 2715761591903180211}
   m_Layer: 6
   m_Name: GrabPoint
-  m_TagString: Untagged
+  m_TagString: Ledge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

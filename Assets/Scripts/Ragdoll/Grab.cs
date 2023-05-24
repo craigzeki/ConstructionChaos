@@ -23,7 +23,8 @@ public class Grab : Ragdoll
     [SerializeField] LayerMask _grabableLayerMask;
     
     private FixedJoint2D _joint;
-    public bool IsHolding { get; private set; } = false;
+    public bool ReadyToGrab { get; private set; } = false;
+    public bool IsHoldingLedge { get; private set; } = false;
     public bool Release = false;
 
     protected override void Awake()
@@ -43,12 +44,13 @@ public class Grab : Ragdoll
         if((_isActive) && (!Release) && ((characterInputData.IsGrabbingLeft && _handType == HandType.LEFT) || (characterInputData.IsGrabbingRight && _handType == HandType.RIGHT)))
         {
             // Set hold to true
-            IsHolding = true;
+            ReadyToGrab = true;
         }
         else
         {
             // Player has let go, destroy the joint between player and item
-            IsHolding = false;
+            ReadyToGrab = false;
+            IsHoldingLedge = false;
             Destroy(_joint);
             _joint = null;
             Release = false;
@@ -60,7 +62,7 @@ public class Grab : Ragdoll
         if (!IsServer) return; // Only the server can grab
         if (!_isActive) return; // Not active or collapsed
         if (((1 << collision.gameObject.layer) & _grabableLayerMask) == 0) return; // Item is not on the grabable layer
-        if (IsHolding && _joint == null) // Allowed to grab something and not already holding anything
+        if (ReadyToGrab && _joint == null) // Allowed to grab something and not already holding anything
         {
             // Get the colliding objects rigidbody and create a joint between us and it
             Rigidbody2D rb = collision.transform.GetComponent<Rigidbody2D>();
@@ -68,6 +70,7 @@ public class Grab : Ragdoll
             {
                 _joint = collision.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                 _joint.connectedBody = GetComponent<Rigidbody2D>();
+                if (collision.gameObject.tag == "Ledge") IsHoldingLedge = true;
             }
             else
             {

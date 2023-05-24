@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.IO.LowLevel.Unsafe;
@@ -30,6 +31,7 @@ public class StickMovement : Ragdoll
     private Coroutine _walkLeft, _walkRight;
     private bool _collapse = false;
     private bool _allowedToJump = true;
+    private List<Grab> _grabbers = new List<Grab>();
 
     protected override void Awake()
     {
@@ -43,6 +45,8 @@ public class StickMovement : Ragdoll
             ragdolls[i].CharacterInputHandler = CharacterInputHandler;
             ragdolls[i].StickMovement = this;
         }
+
+        _grabbers = GetComponentsInChildren<Grab>().ToList<Grab>();
     }
 
     private void FixedUpdate()
@@ -103,13 +107,35 @@ public class StickMovement : Ragdoll
         }
 
         // Check if user can and is requesting to jump
-        if (IsOnGround() && !_collapse && _allowedToJump && characterInputData.JumpValue)
+        if ((IsOnGround() || IsHoldingLedge()) && !_collapse && _allowedToJump && characterInputData.JumpValue)
         {
             // Do jump
             _bodyRB.AddForce(Vector2.up * _jumpForce);
             Debug.Log("Jumped");
             _allowedToJump = false;
+
+            // If holding the ledge, let go
+            ReleaseLedge();
+
             StartCoroutine(WaitToJumpAgain());
+        }
+    }
+
+    private bool IsHoldingLedge()
+    {
+        bool result = false;
+        foreach(Grab grabber in _grabbers)
+        {
+            result |= grabber.IsHoldingLedge;
+        }
+        return result;
+    }
+
+    private void ReleaseLedge()
+    {
+        foreach(Grab grabber in _grabbers)
+        {
+            if (grabber.IsHoldingLedge) grabber.Release = true;
         }
     }
 
