@@ -15,6 +15,7 @@ public class GoalZone : Zone
     [SerializeField] private uint _countdownTimerStart = 3;
     [SerializeField] private List<GoalRequirement> _goalRequirements = new List<GoalRequirement>();
     [SerializeField] private GameObject _goalSprite, _goalCanvas;
+    [SerializeField] public List<String> GoalStrings { get; private set; } = new List<String>();
 
     private int _countdownTimer = 0;
     private Coroutine _countdownCoroutine = null;
@@ -56,7 +57,18 @@ public class GoalZone : Zone
                 goalRequirement.CalculatePercentBasedQty(sceneObjects[goalRequirement.RequiredObject]);
             }
         }
-        
+
+        // Build the goal string
+        foreach(GoalRequirement requirement in _goalRequirements)
+        {
+            String goalString = "";
+            goalString += (requirement.UseQtyAsPercentageInScene ? requirement.PercentBasedQty.ToString() : requirement.QuantityRequired.ToString());
+            goalString += " " + requirement.RequiredObject.FriendlyString;
+            goalString += (requirement.UseQtyAsPercentageInScene ? (requirement.PercentBasedQty > 1 ? "s" : "") : (requirement.QuantityRequired > 1 ? "s" : ""));
+            GoalStrings.Add(goalString);
+        }
+
+        // TODO: Tell the UI the GoalStrings
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,6 +93,8 @@ public class GoalZone : Zone
                 // If this requirement is met, maybe this was the last to be met, do a full check
                 if (goalRequirement.RequirementMet())
                 {
+                    // TODO: Inform the UI / Game Manager that the single objective is met
+
                     if (AllGoalRequirementsMet())
                     {
                         // Start the countdown
@@ -147,6 +161,8 @@ public class GoalZone : Zone
                 // If this requirement is no longer met, cancel the countdown
                 if (!goalRequirement.RequirementMet())
                 {
+                    // TODO: Inform the UI / Game Manager that the single objective is no longer met
+
                     // Cancel countdown
                     if (_countdownCoroutine != null)
                     {
