@@ -411,6 +411,7 @@ public class GameManager : NetworkBehaviour
         MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, true);
         if(IsServer)
         {
+            yield return new WaitForEndOfFrame();
             SpawnManager.Instance.ResetSpawnManager();
             if (roundToLoad != null)
             {

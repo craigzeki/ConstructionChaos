@@ -73,6 +73,8 @@ public class GoalZone : Zone
                 // Get its Goal Requirement
                 GoalRequirement goalRequirement = GetGoalRequirement(objectiveObjectInstance.ObjectiveObject);
 
+                if (goalRequirement == null) return;
+
                 // Increment the number of objects in the zone
                 goalRequirement.QuantityInZone++;
 
@@ -136,6 +138,8 @@ public class GoalZone : Zone
                 // Object has an objectiveObjectInstance (and thus an ObjectiveObject)
                 // Get its Goal Requirement
                 GoalRequirement goalRequirement = GetGoalRequirement(objectiveObjectInstance.ObjectiveObject);
+
+                if (goalRequirement == null) return;
 
                 // Decrement the number of objects in the zone
                 goalRequirement.QuantityInZone--;
