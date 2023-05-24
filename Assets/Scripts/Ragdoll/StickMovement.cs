@@ -29,7 +29,7 @@ public class StickMovement : Ragdoll
 
     private Coroutine _walkLeft, _walkRight;
     private bool _collapse = false;
-    private uint _framesToNextJump = 0;
+    private bool _allowedToJump = true;
 
     protected override void Awake()
     {
@@ -102,22 +102,14 @@ public class StickMovement : Ragdoll
             _anim.Play("Idle");
         }
 
-        // Handle jumping
-        if (_framesToNextJump > 0)
+        // Check if user can and is requesting to jump
+        if (IsOnGround() && !_collapse && _allowedToJump && characterInputData.JumpValue)
         {
-            _framesToNextJump--;
-        }
-        else
-        {
-            // Check if user can and is requesting to jump
-            if (IsOnGround() && !_collapse && characterInputData.JumpValue)
-            {
-                // Do jump
-                _bodyRB.AddForce(Vector2.up * _jumpForce);
-                Debug.Log("Jumped");
-                //_jumpValue= false;
-            }
-            _framesToNextJump = _timeBetweenJumpsInPhysicsFrames;
+            // Do jump
+            _bodyRB.AddForce(Vector2.up * _jumpForce);
+            Debug.Log("Jumped");
+            _allowedToJump = false;
+            StartCoroutine(WaitToJumpAgain());
         }
     }
 
@@ -148,6 +140,19 @@ public class StickMovement : Ragdoll
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Wait for a set number of physics frames before allowing the player to jump again
+    /// </summary>
+    private IEnumerator WaitToJumpAgain()
+    {
+        for (int i = 0; i < _timeBetweenJumpsInPhysicsFrames; i++)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+
+        _allowedToJump = true;
     }
 
     /// <summary>
