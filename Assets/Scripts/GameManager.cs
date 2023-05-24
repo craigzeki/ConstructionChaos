@@ -237,6 +237,7 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
+                PlayerData.Clear();
                 _playerColourIndex = 0;
                 break;
             case GAMESTATE.LOADING_LOBBY:
@@ -279,6 +280,8 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.MENU:
                 if(IsServer)
                 {
+                    // ! Do not change PlayerData here, as the host has already loaded in
+                    // ! Instead change it in Menu Entry Transition
                     _roundOrder.Clear();
                     for (int i = 0; i < _roundPrefabs.Count; i++)
                     {

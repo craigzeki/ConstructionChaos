@@ -52,6 +52,7 @@ public class NetPlayer : NetworkBehaviour
     {
         base.OnNetworkDespawn();
         PlayerColorIndex.OnValueChanged -= SetPlayerColour;
+        GameManager.Instance.UnRegisterPlayer(OwnerClientId);
     }
 
     /// <summary>

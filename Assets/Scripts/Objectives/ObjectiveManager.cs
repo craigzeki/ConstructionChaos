@@ -2,9 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 using ZekstersLab.Helpers;
 
 /// <summary>
@@ -36,16 +34,11 @@ public class ObjectiveManager : MonoBehaviour
 	/// A dictionary which is hashed based on the objective - this allows very performant lookup of the assigned ClientID<br/>
 	/// during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID.
 	/// </summary>
-	[SerializeField] private Dictionary<Objective, ulong> _playerObjectives = new Dictionary<Objective, ulong>();
+	//[SerializeField] private Dictionary<Objective, ulong> _playerObjectives = new Dictionary<Objective, ulong>();
 
 	private string _inverseString = "Don't ";
 
 	private string _anyActionString = "Do anything with";
-
-	/// <summary>
-	/// Keeps track of the position in the _possibleObjectives list for the next one which hasn't been used.
-	/// </summary>
-	private int _nextAvailableObjective = 0;
 
 	private static ObjectiveManager _instance;
     public static ObjectiveManager Instance
@@ -84,13 +77,15 @@ public class ObjectiveManager : MonoBehaviour
 		_objectiveObjects.Clear();
 		_possibleObjectives.Clear();
 		_possibleZones.Clear();
-		_playerObjectives.Clear();
-		// Clear the player data specific to a round
-		foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
-		{
-			GameManager.Instance.PlayerData[clientId].Objective = null;
-			// TODO: Add any other objective related params that need clearing - objectives cleared this round? etc.
-		}
+		//_playerObjectives.Clear();
+		
+
+		//foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)
+		//{
+		//	GameManager.Instance.PlayerData[clientId].Objective = null;
+		//	GameManager.Instance.PlayerData[clientId].NextObjectiveIndex = 0;
+		//	// TODO: Add any other objective related params that need clearing - objectives cleared this round? etc.
+		//}
 
 		// Get all the zones in the scene
 		List<Zone> zones = FindObjectsOfType<Zone>().ToList();
@@ -106,11 +101,18 @@ public class ObjectiveManager : MonoBehaviour
 			if(!objectiveObjectInstance.ExcludeFromObjectiveManager) RegisterObject(objectiveObjectInstance);
         }
 
-        // Shuffle the possible objectives
-        _possibleObjectives.Shuffle();
+        // Clear the player data specific to a round
+        foreach (NetPlayerData playerData in GameManager.Instance.PlayerData.Values)
+        {
+            playerData.Objective = null;
+            playerData.NextObjectiveIndex = 0;
+            playerData.PossibleObjectives.Clear();
 
-        // Reset the next available objective counter
-        _nextAvailableObjective = 0;
+			// Shuffle the possible objectives
+			_possibleObjectives.Shuffle();
+            // Make a copy for this player
+			playerData.PossibleObjectives = new(_possibleObjectives);
+        }
     }
 
     /// <summary>
@@ -123,11 +125,11 @@ public class ObjectiveManager : MonoBehaviour
 	{
         if (!GameManager.Instance.PlayerData.TryGetValue(clientId, out NetPlayerData playerData)) return false;
 
-		if(_nextAvailableObjective < _possibleObjectives.Count)
+		if (playerData.NextObjectiveIndex < playerData.PossibleObjectives.Count)
 		{
-            _playerObjectives.Add(_possibleObjectives[_nextAvailableObjective], clientId);
-            playerData.Objective = _possibleObjectives[_nextAvailableObjective];
-            _nextAvailableObjective++;
+            //_playerObjectives.Add(_possibleObjectives[playerData.NextObjectiveIndex], clientId);
+            playerData.Objective = playerData.PossibleObjectives[playerData.NextObjectiveIndex];
+            playerData.NextObjectiveIndex++;
         }
 		else
 		{
@@ -148,10 +150,12 @@ public class ObjectiveManager : MonoBehaviour
 	{
 		if (GameManager.Instance.PlayerData.TryGetValue(clientId, out NetPlayerData objectivePlayerData))
 		{
-            if (objectivePlayerData.Objective != null)
-            {
-                _playerObjectives.Remove(objectivePlayerData.Objective);
-            }
+			objectivePlayerData.Objective = null;
+			objectivePlayerData.NextObjectiveIndex = 0;
+            //if (objectivePlayerData.Objective != null)
+            //{
+            //    _playerObjectives.Remove(objectivePlayerData.Objective);
+            //}
         }
 	}
 
@@ -173,10 +177,10 @@ public class ObjectiveManager : MonoBehaviour
 		{
 			AssignPlayerObjective(currentClientId);
 		}
-		else
-		{
-			_playerObjectives.Add(netPlayerData.Objective, currentClientId);
-		}
+		//else
+		//{
+		//	_playerObjectives.Add(netPlayerData.Objective, currentClientId);
+		//}
 
         netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);
         
@@ -314,6 +318,14 @@ public class ObjectiveManager : MonoBehaviour
 	/// <param name="clientId"></param>
 	private void OnPlayerSpawned(object sender, ulong clientId)
 	{
+		// Setup player settings
+		if(GameManager.Instance.PlayerData.TryGetValue(clientId, out NetPlayerData playerData))
+		{
+			playerData.Objective = null;
+			playerData.NextObjectiveIndex = 0;
+			_possibleObjectives.Shuffle();
+			playerData.PossibleObjectives = new(_possibleObjectives);
+		}
 		AssignPlayerObjective(clientId);
 	}
 
@@ -364,23 +376,40 @@ public class ObjectiveManager : MonoBehaviour
 	/// <param name="playerClientId">The player Client ID that initiated the action</param>
 	public void ReportObjectiveAction(Objective objectiveOccured, ulong playerClientId)
 	{
-		// Check if the objective is one that is assigned to a player
-		if(_playerObjectives.TryGetValue(objectiveOccured, out ulong clientId))
+		// Get the players current objective
+		if (GameManager.Instance.PlayerData.TryGetValue(playerClientId, out NetPlayerData playerData))
 		{
-			// Check if the matching objective's assigned player is the same as the one performing the action
-			if (playerClientId != clientId) return;
+			if(playerData.Objective.Equals(objectiveOccured))
+			{
+                // The objective that occured matches one of that is assigned to a player
+                // TODO increment player score, below is temporary for testing
+                GameManager.Instance.PlayerData[playerClientId].Score += 100;
 
-			// The objective that occured matches one of that is assigned to a player
-			// TODO increment player score, below is temporary for testing
-			GameManager.Instance.PlayerData[playerClientId].Score += 100;
+                // Assign a new objective
+                AssignPlayerObjective(playerClientId);
 
-			// Remove this objective from the player list
-			_playerObjectives.Remove(objectiveOccured);
-
-			// Assign a new objective
-			AssignPlayerObjective(clientId);
-
-			GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective?.ObjectiveString, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
+                playerData.NetPlayer.SetObjectiveStringClientRpc(playerData.Objective?.ObjectiveString, playerData.ClientRpcParams);
+            }
 		}
+
+		// ! OLD METHOD
+		//// Check if the objective is one that is assigned to a player
+		//if(_playerObjectives.TryGetValue(objectiveOccured, out ulong clientId))
+		//{
+		//	// Check if the matching objective's assigned player is the same as the one performing the action
+		//	if (playerClientId != clientId) return;
+
+		//	// The objective that occured matches one of that is assigned to a player
+		//	// TODO increment player score, below is temporary for testing
+		//	GameManager.Instance.PlayerData[playerClientId].Score += 100;
+
+		//	// Remove this objective from the player list
+		//	_playerObjectives.Remove(objectiveOccured);
+
+		//	// Assign a new objective
+		//	AssignPlayerObjective(clientId);
+
+		//	GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective?.ObjectiveString, GameManager.Instance.PlayerData[clientId].ClientRpcParams);
+		//}
 	}
 }
