@@ -288,9 +288,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &3127648986832893145
@@ -504,9 +504,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &3372384273779466333
@@ -1260,9 +1260,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &8340781569222096321
@@ -1587,9 +1587,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &6652575858585711905
@@ -1803,9 +1803,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &4407756627009679757
@@ -2188,9 +2188,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5020532193062635515
@@ -4627,9 +4627,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5741831211519929200
@@ -4936,6 +4936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 226071343590649885}
     m_Modifications:
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate (2)
@@ -5006,6 +5010,10 @@ PrefabInstance:
       propertyPath: objectiveColour
       value: 
       objectReference: {fileID: 11400000, guid: 707b8c6fb706b498d816e537e26e4902, type: 2}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate
@@ -5068,6 +5076,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 226071343590649885}
     m_Modifications:
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate (1)
@@ -5200,6 +5212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 226071343590649885}
     m_Modifications:
+    - target: {fileID: 1201751415685219569, guid: 321c3505479726945882430537be6d7b, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 321c3505479726945882430537be6d7b, type: 3}
       propertyPath: m_Name
       value: Barrel (2)
@@ -5262,6 +5278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 226071343590649885}
     m_Modifications:
+    - target: {fileID: 1201751415685219569, guid: 321c3505479726945882430537be6d7b, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 321c3505479726945882430537be6d7b, type: 3}
       propertyPath: m_Name
       value: Barrel
@@ -5574,6 +5594,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 226071343590649885}
     m_Modifications:
+    - target: {fileID: 1201751415685219569, guid: 321c3505479726945882430537be6d7b, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 321c3505479726945882430537be6d7b, type: 3}
       propertyPath: m_Name
       value: Barrel (1)

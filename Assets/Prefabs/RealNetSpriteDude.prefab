@@ -193,9 +193,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &2825808639662105411
@@ -398,9 +398,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!1 &3222132264095724719
@@ -644,9 +644,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &3048596715126787752
@@ -988,9 +988,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &7639031154560843216
@@ -1146,9 +1146,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &4549398798120052810
@@ -1327,6 +1327,9 @@ MonoBehaviour:
   - {fileID: 2258823356251465718}
   - {fileID: 5808222032804806814}
   - {fileID: 5808222032498415277}
+  _playerColour: {r: 1, g: 1, b: 1, a: 1}
+  PlayerColorIndex:
+    m_InternalValue: 0
 --- !u!114 &-8798100150719738577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,9 +1374,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!1 &5808222031901579358
@@ -1570,9 +1573,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222031901579296
@@ -1779,9 +1782,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032221110293
@@ -1987,9 +1990,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032339736829
@@ -2197,9 +2200,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032498415251
@@ -2407,9 +2410,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032706277329
@@ -2592,9 +2595,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032765315325
@@ -2819,9 +2822,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032804806753
@@ -3028,9 +3031,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032865775740
@@ -3236,9 +3239,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222032926312904
@@ -3306,9 +3309,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!1 &5808222033294503320
@@ -3505,9 +3508,9 @@ MonoBehaviour:
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
+  PositionThreshold: 0.05
+  RotAngleThreshold: 0.5
+  ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
 --- !u!114 &5808222033294503322

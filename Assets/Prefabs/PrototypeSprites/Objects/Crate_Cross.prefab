@@ -39,6 +39,18 @@ PrefabInstance:
       propertyPath: SyncRotAngleY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: ScaleThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: PositionThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201751415685219569, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
+      propertyPath: RotAngleThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4724151446537633097, guid: 7916cb1e78377504a8ce36554fef0cb1, type: 3}
       propertyPath: m_Name
       value: Crate_Cross
