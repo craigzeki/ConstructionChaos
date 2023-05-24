@@ -1277,7 +1277,7 @@ MonoBehaviour:
   _rightLegRB: {fileID: 5808222032339736826}
   _bodyRB: {fileID: 5808222032765315322}
   _verticalMinValue: 1
-  _timeBetweenJumpsInPhysicsFrames: 5
+  _timeBetweenJumpsInPhysicsFrames: 10
   _anim: {fileID: 5808222031482737025}
 --- !u!114 &5808222031482737029
 MonoBehaviour:

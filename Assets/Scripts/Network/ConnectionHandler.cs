@@ -75,6 +75,8 @@ public class ConnectionHandler : MonoBehaviour
     {
         if (local)
         {
+            MenuUIManager.Instance.SetRoomCode(roomCode);
+
             // Convert the room code to an IP address
             string ip = CodeToIP(roomCode);
 
@@ -156,9 +158,8 @@ public class ConnectionHandler : MonoBehaviour
 
             return StartNetwork(true);
         }
-        catch (RelayServiceException e)
+        catch
         {
-            print(e.Message);
             return false;
         }
     }
@@ -173,6 +174,8 @@ public class ConnectionHandler : MonoBehaviour
         {
             JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(roomCode);
 
+            MenuUIManager.Instance.SetRoomCode(roomCode);
+
             RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
 
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;
@@ -181,10 +184,8 @@ public class ConnectionHandler : MonoBehaviour
 
             return StartNetwork(false);
         }
-        catch (RelayServiceException e)
+        catch
         {
-            //! More error handling is needed here to catch the error when the room code is invalid
-            print(e.Message);
             return false;
         }
     }
