@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3774900426492099683}
   - component: {fileID: 2825808639662105412}
   - component: {fileID: 2825808639662105411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Arm_R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 2591919015033376652}
   - component: {fileID: 6279825401080881307}
   - component: {fileID: 5420963837230419559}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7223273230729471258}
   - component: {fileID: 154417821701004819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064542847423550415}
   - component: {fileID: 3930250315128821541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObjectiveActionReporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 1986419445192301326}
   - component: {fileID: 3048596715126787753}
   - component: {fileID: 3048596715126787752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Arm_L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 1643741274290784625}
   - component: {fileID: 3181989218980036301}
   - component: {fileID: 2280560666975216851}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5808222031239415350}
   - component: {fileID: 5808222031239415349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_HeadIdle
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 5808222031332944257}
   - component: {fileID: 7703105428848278053}
   - component: {fileID: 7639031154560843216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HandPoint_R
   m_TagString: PlayerGrabber
   m_Icon: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 5808222031478768123}
   - component: {fileID: 4773885092507461239}
   - component: {fileID: 4549398798120052810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HandPoint_L
   m_TagString: PlayerGrabber
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: -9142643144001391287}
   - component: {fileID: -8798100150719738577}
   - component: {fileID: -1664303383964529152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RealNetSpriteDude
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1400,7 +1400,7 @@ GameObject:
   - component: {fileID: 5808222031901579352}
   - component: {fileID: 5808222031901579297}
   - component: {fileID: 5808222031901579296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Hand_R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1611,7 +1611,7 @@ GameObject:
   - component: {fileID: 5808222032221110317}
   - component: {fileID: 5808222032221110294}
   - component: {fileID: 5808222032221110293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Foot_R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1820,7 +1820,7 @@ GameObject:
   - component: {fileID: 5808222032339736821}
   - component: {fileID: 5808222032339736830}
   - component: {fileID: 5808222032339736829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Leg_U_R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2028,7 +2028,7 @@ GameObject:
   - component: {fileID: 5808222032498415275}
   - component: {fileID: 5808222032498415252}
   - component: {fileID: 5808222032498415251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Shoulder_R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 5808222032706277321}
   - component: {fileID: 5808222032706277330}
   - component: {fileID: 5808222032706277329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_HeadDirectional
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2448,7 +2448,7 @@ GameObject:
   - component: {fileID: 5808222032765315326}
   - component: {fileID: 5808222032765315325}
   - component: {fileID: 13433897506176989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Trunk
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2650,7 +2650,7 @@ GameObject:
   - component: {fileID: 5808222032804806812}
   - component: {fileID: 5808222032804806754}
   - component: {fileID: 5808222032804806753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Shoulder_L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2860,7 +2860,7 @@ GameObject:
   - component: {fileID: 5808222032865775732}
   - component: {fileID: 5808222032865775741}
   - component: {fileID: 5808222032865775740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Foot_L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3069,7 +3069,7 @@ GameObject:
   - component: {fileID: 5808222032926312896}
   - component: {fileID: 5808222032926312905}
   - component: {fileID: 5808222032926312904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Leg_U_L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3271,7 +3271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5808222033182072916}
   - component: {fileID: 2138053348356360045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundPoint
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3335,7 +3335,7 @@ GameObject:
   - component: {fileID: 5808222033294503314}
   - component: {fileID: 5808222033294503323}
   - component: {fileID: 5808222033294503322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickMan_Hand_L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3540,7 +3540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6385721091941527201}
   - component: {fileID: 2258823356251465718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HatSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3624,7 +3624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3558172912178890028}
   - component: {fileID: 4087870284770872574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HatFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
