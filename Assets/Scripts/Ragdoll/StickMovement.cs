@@ -23,7 +23,7 @@ public class StickMovement : Ragdoll
     [SerializeField] private Rigidbody2D _rightLegRB;
     [SerializeField] private Rigidbody2D _bodyRB;
     [SerializeField] private float _verticalMinValue = 0.5f;
-    [SerializeField] private uint _timeBetweenJumpsInPhysicsFrames = 5; //required to prevent compunded jumps
+    [SerializeField] private uint _timeBetweenJumpsInPhysicsFrames = 10; //required to prevent compunded jumps
 
     [SerializeField] private Animator _anim;
 
@@ -127,15 +127,27 @@ public class StickMovement : Ragdoll
     /// <returns>True: Player is on the ground<br/>False: Player is not on the ground</returns>
     private bool IsOnGround()
     {
-        bool isOnGround = false;
-
         // Check each ground point, if any are contacting the ground, set isOnGround = true
         foreach (Transform t in _groundPositions)
         {
-            isOnGround |= Physics2D.OverlapCircle(t.position, _positionRadius, _groundLayerMask);
+            //! This needs to get all of the colliders because it will always return your own colliders
+            //! The other option is to set the legs and feet to a different layer to the rest of the body
+            // Get all the colliders in the ground position
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(t.position, _positionRadius, _groundLayerMask);
+
+            foreach (Collider2D collider in colliders)
+            {
+                // If the collider is attached to the player, ignore it
+                if (collider.transform.parent == transform)
+                    continue;
+
+                // If the collider is not null, the player is on the ground
+                if (collider != null)
+                    return true;
+            }
         }
 
-        return isOnGround;
+        return false;
     }
 
     /// <summary>
