@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c08465fa64b546a8863ddf8b0e8f86c, type: 3}
   m_Name: CHAIN
   m_EditorClassIdentifier: 
-  friendlyString: chain
+  friendlyString: <style="Object">chain</style>
   possibleColours:
   - {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   - {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}

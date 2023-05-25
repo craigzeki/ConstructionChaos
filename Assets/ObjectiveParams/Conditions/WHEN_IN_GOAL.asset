@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fde6e9621eed4ed9ab84aa950bf7b35, type: 3}
   m_Name: WHEN_IN_GOAL
   m_EditorClassIdentifier: 
-  _friendlyString: when in the goal zone
+  _friendlyString: when in the <style="Zone">goal zone</style>
+  _duringCountdown: 0
   _requiresObjectToBeInZone: 1
   _requiredZone: 1
+  _requiresZoneToBeOnGround: 0
   _requiredZoneColour: {fileID: 0}

@@ -40,6 +40,8 @@ public class ObjectiveManager : MonoBehaviour
 
 	private string _anyActionString = "Do anything with";
 
+	private string _anyColourString = "any coloured";
+
 	private static ObjectiveManager _instance;
     public static ObjectiveManager Instance
 	{
@@ -293,7 +295,21 @@ public class ObjectiveManager : MonoBehaviour
 		// If the action is "Do anything with" then we don't need to add the colour, object or condition
 		if (str != _anyActionString)
 		{
-			str = str.Replace("<COLOUR>", objective.Colour.FriendlyString);
+			if (objective.Colour.FriendlyString == _anyColourString)
+			{
+				str = str.Replace("<COLOUR>", objective.Colour.FriendlyString);
+			}
+			else
+			{
+				// Calculate the hex value of the colour
+				string hexValue = ColorUtility.ToHtmlStringRGB(objective.Colour.Colour);
+
+				// Get the colour name from the friendly string (without the "a" at the start)
+				string colourString = objective.Colour.FriendlyString.Split(' ')[1];
+
+				// Replace the <COLOUR> tag with the colour name in the correct colour
+				str = str.Replace("<COLOUR>", $"a <color=#{hexValue}>{colourString}</color>");
+			}
 			str = str.Replace("<OBJECT>", objective.Object.FriendlyString);
 			str = str.Replace("<CONDITION>", objective.Condition.FriendlyString);
 			if(objective.Condition.RequiresObjectToBeInZone)

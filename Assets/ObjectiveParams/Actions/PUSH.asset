@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ee1a1274b464eaeb16d702d11a9630, type: 3}
   m_Name: PUSH
   m_EditorClassIdentifier: 
-  _friendlyString: Push <COLOUR> <OBJECT> <CONDITION>
+  _friendlyString: <style="Action">Push</style> <COLOUR> <OBJECT> <CONDITION>
   _requiredPerformanceTime: 0
   _requiredPerformanceDistance: 1
   _possibleConditions:

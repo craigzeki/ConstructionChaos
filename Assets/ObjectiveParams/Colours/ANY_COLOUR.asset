@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258533565c2da44d1897bc1280320e2f, type: 3}
   m_Name: ANY_COLOUR
   m_EditorClassIdentifier: 
-  friendlyString: any coloured
+  friendlyString: <style="Colour">any coloured</style>
   colour: {r: 0, g: 0, b: 0, a: 0}

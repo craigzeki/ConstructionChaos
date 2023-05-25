@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ee1a1274b464eaeb16d702d11a9630, type: 3}
   m_Name: HOLD
   m_EditorClassIdentifier: 
-  _friendlyString: Hold <COLOUR> <OBJECT> <CONDITION>
+  _friendlyString: <style="Action">Hold</style> <COLOUR> <OBJECT> <CONDITION>
   _requiredPerformanceTime: 3
+  _requiredPerformanceDistance: 0
   _possibleConditions:
   - {fileID: 11400000, guid: 50a36de5ddcd04661983cb120214bd2b, type: 2}
   - {fileID: 11400000, guid: 05e2cfb6507d93a4eb808b9786d1548a, type: 2}
