@@ -53,6 +53,18 @@ public class NetPlayer : NetworkBehaviour
         base.OnNetworkDespawn();
         PlayerColorIndex.OnValueChanged -= SetPlayerColour;
         GameManager.Instance.UnRegisterPlayer(OwnerClientId);
+        if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+    }
+
+    private void OnDisable()
+    {
+        if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        if(NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
     }
 
     /// <summary>
@@ -79,7 +91,7 @@ public class NetPlayer : NetworkBehaviour
             ragdoll.ObjectiveActionReporter = objectiveActionReporter;
         }
 
-        NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
 
     }
 

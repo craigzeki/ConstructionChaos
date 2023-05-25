@@ -36,8 +36,11 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private float _minLoadScreenTime = 2f;
 
     [SerializeField] private GameObject _lobbyPrefab;
-    [SerializeField] private List<GameObject> _roundPrefabs = new List<GameObject>();
+    [SerializeField] private List<Round> _rounds = new List<Round>();
     [SerializeField] private List<Color> _playerColours = new List<Color>();
+    [SerializeField][ReadOnly] private List<int> _playerColourIndexes = new List<int>();
+    [SerializeField] private GameObject _disconnectedCanvas;
+    [SerializeField] private TextMeshProUGUI _disconnectedText;
 
     /// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
@@ -62,7 +65,11 @@ public class GameManager : NetworkBehaviour
     private int _nextRound = 0;
     private GameObject _currentRound;
     public NetPlayer LocalPlayer;
-    private int _playerColourIndex = 0;
+    //private int _playerColourIndex = 0;
+    private bool _roundTimerRunning = false;
+    private Coroutine _roundTimerCoroutine;
+    private bool _clientConnected = false;
+    private const string NETWORK_ERROR_TEXT = "Oh No!\nA network error occured!";
 
     public static GameManager Instance
     {
@@ -133,6 +140,12 @@ public class GameManager : NetworkBehaviour
         //inform all that care so that they can also perform tidy up actions
         OnPlayerDisconnect?.Invoke(this, clientId);
 
+        if(PlayerData.TryGetValue(clientId, out NetPlayerData playerData))
+        {
+            // Add the colour index back to the stack
+            _playerColourIndexes.Add(playerData.ColourIndex);
+        }
+
         if (!PlayerData.Remove(clientId)) return false;
 
         return true;
@@ -169,11 +182,17 @@ public class GameManager : NetworkBehaviour
 
     private void SetPlayerColour(NetPlayerData playerData)
     {
-        if (_playerColourIndex >= _playerColours.Count) return;
+        if (_playerColourIndexes.Count <= 0) return;
         if (playerData == null) return;
+        playerData.ColourIndex = _playerColourIndexes[0];
+        _playerColourIndexes.RemoveAt(0);
 
-        playerData.ColourIndex = _playerColourIndex;
-        _playerColourIndex++;
+        // Old method
+        //if (_playerColourIndex >= _playerColours.Count) return;
+        //if (playerData == null) return;
+
+        //playerData.ColourIndex = _playerColourIndex;
+        //_playerColourIndex++;
     }
 
     public Color GetPlayerColour(int colourIndex)
@@ -195,7 +214,7 @@ public class GameManager : NetworkBehaviour
                 break;
             case GAMESTATE.LOADING_LOBBY:
 
-                if (_loadingTimerComplete)
+                if (_loadingTimerComplete && _clientConnected)
                 {
                     _loadingTimerComplete = false;
                     RoundLoaded();
@@ -216,7 +235,20 @@ public class GameManager : NetworkBehaviour
                 }
                 break;
             case GAMESTATE.PLAYING_ROUND:
-                
+                if(!_roundTimerRunning)
+                {
+                    // Round timer has expired - load the leaderboard if configured
+                    if (_rounds[_roundIndex].ShowLeaderBoardAfterRound && (_nextRound < _roundOrder.Count))
+                    {
+                        // If not the last round, and configured, show the Leaderboard
+                        DoStateTransition(GAMESTATE.MIDPOINT_LEADERBOARD);
+                    }
+                    else
+                    {
+                        // Move to next round (also handles move to final leaderboard)
+                        LoadRound();
+                    }
+                }
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
@@ -237,8 +269,16 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
+                MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance?.MainMenuCanvas, true);
+                _clientConnected = false;
                 PlayerData.Clear();
-                _playerColourIndex = 0;
+                //_playerColourIndex = 0;
+
+                // reload all colours
+                for(int i = 0; i < _playerColours.Count; i++)
+                {
+                    _playerColourIndexes.Add(i);
+                }
                 break;
             case GAMESTATE.LOADING_LOBBY:
                 StartCoroutine(LoadRound(_lobbyPrefab, _minLoadScreenTime));
@@ -251,19 +291,27 @@ public class GameManager : NetworkBehaviour
                 SendPlayerObjectiveStrings();
                 break;
             case GAMESTATE.LOADING_ROUND:
-                StartCoroutine(LoadRound(_roundPrefabs[_roundIndex], _minLoadScreenTime));
+                StartCoroutine(LoadRound(_rounds[_roundIndex].RoundPrefab, _minLoadScreenTime));
                 break;
             case GAMESTATE.PLAYING_ROUND:
                 // Now that scene has loaded, move players to spawn points
                 MovePlayersToSpawnPoints();
                 // Now that scene has loaded, inform the player of their objective
                 SendPlayerObjectiveStrings();
+                // Reset the round timer
+                if(_roundTimerCoroutine != null) StopCoroutine(_roundTimerCoroutine);
+                _roundTimerCoroutine = StartCoroutine(RoundTimer(_rounds[_roundIndex].RoundDurationSeconds));
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
+                // TODO: Show the leaderboard UI
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
+                // TODO: Show the leaderboard UI
                 break;
             case GAMESTATE.DISCONNECTED:
+                if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(true);
+                // Shutdowmn the network manager so it can be used again
+                ConnectionHandler.Instance.Shutdown();
                 break;
             case GAMESTATE.NUM_OF_STATES:
             default:
@@ -283,7 +331,7 @@ public class GameManager : NetworkBehaviour
                     // ! Do not change PlayerData here, as the host has already loaded in
                     // ! Instead change it in Menu Entry Transition
                     _roundOrder.Clear();
-                    for (int i = 0; i < _roundPrefabs.Count; i++)
+                    for (int i = 0; i < _rounds.Count; i++)
                     {
                         _roundOrder.Add(i);
                     }
@@ -314,10 +362,13 @@ public class GameManager : NetworkBehaviour
                 }
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
+                // TODO: Hide the leaderboard UI
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
+                // TODO: Hide the leaderboard UI
                 break;
             case GAMESTATE.DISCONNECTED:
+                if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(false);
                 break;
             case GAMESTATE.NUM_OF_STATES:
             default:
@@ -353,8 +404,8 @@ public class GameManager : NetworkBehaviour
                 if (_currentState != GAMESTATE.LOADING_LOBBY) return false;
                 break;
             case GAMESTATE.LOADING_ROUND:
-                // only come here from Playing Lobby
-                if ((_currentState != GAMESTATE.PLAYING_LOBBY) && (_currentState != GAMESTATE.PLAYING_ROUND)) return false;
+                // only come here from Playing Lobby or Mid Point Leaderboard
+                if ((_currentState != GAMESTATE.PLAYING_LOBBY) && (_currentState != GAMESTATE.PLAYING_ROUND) && (_currentState != GAMESTATE.MIDPOINT_LEADERBOARD)) return false;
                 break;
             case GAMESTATE.PLAYING_ROUND:
                 // only come here from Loading Round
@@ -369,8 +420,8 @@ public class GameManager : NetworkBehaviour
                 if (_currentState != GAMESTATE.PLAYING_ROUND) return false;
                 break;
             case GAMESTATE.DISCONNECTED:
-                // do not come here from Menu or Start
-                if ((_currentState == GAMESTATE.START) || (_currentState == GAMESTATE.MENU)) return false;
+                // do not come here from Start
+                if (_currentState == GAMESTATE.START) return false;
                 break;
             case GAMESTATE.NUM_OF_STATES:
             default:
@@ -428,12 +479,76 @@ public class GameManager : NetworkBehaviour
         _loadingTimerComplete = true;
     }
 
+    /// <summary>
+    /// Only to be called by the Editor script for GameManager
+    /// </summary>
     public void LoadRoundButton()
     {
         if (!IsServer) return;
 
         if((_currentState != GAMESTATE.PLAYING_ROUND) && (_currentState != GAMESTATE.PLAYING_LOBBY)) return;
-        if(_nextRound >= _roundOrder.Count)
+        if ((_currentState == GAMESTATE.PLAYING_ROUND) && _rounds[_roundIndex].ShowLeaderBoardAfterRound && (_nextRound < _roundOrder.Count))
+        {
+            // If not the last round, and configured, show the Leaderboard
+            DoStateTransition(GAMESTATE.MIDPOINT_LEADERBOARD);
+        }
+        else
+        {
+            // Move to next round (also handles move to final leaderboard)
+            LoadRound();
+        }
+        
+    }
+
+    /// <summary>
+    /// Function allows UI to move on from Leaderboard
+    /// </summary>
+    public void LoadNextRound()
+    {
+        if (!IsServer) return;
+        if ((_currentState == GAMESTATE.MIDPOINT_LEADERBOARD))
+        {
+            LoadRound();
+        }
+        else if(_currentState == GAMESTATE.FINAL_LEADERBOARD)
+        {
+            DoStateTransition(GAMESTATE.MENU);
+        }
+    }
+
+    public void LoadMenu()
+    {
+        DoStateTransition(GAMESTATE.MENU);
+    }
+
+    public void ClientDisconnected(string reason)
+    {
+        _disconnectedText.text = NETWORK_ERROR_TEXT;
+
+        if (reason != string.Empty)
+        {
+             _disconnectedText.text += ("\n" + reason);
+        }
+
+        
+        DoStateTransition(GAMESTATE.DISCONNECTED);
+    }
+
+    public void ClientConnected()
+    {
+        _clientConnected = true;
+    }
+
+    /// <summary>
+    /// Function allows GameManager to move on the round
+    /// </summary>
+    private void LoadRound()
+    {
+        if ((_currentState != GAMESTATE.PLAYING_ROUND) && (_currentState != GAMESTATE.PLAYING_LOBBY) && (_currentState != GAMESTATE.MIDPOINT_LEADERBOARD)) return;
+
+        if (!IsServer) return;
+
+        if (_nextRound >= _roundOrder.Count)
         {
             // No more rounds to play, load high score page
             DoStateTransition(GAMESTATE.FINAL_LEADERBOARD);
@@ -499,5 +614,18 @@ public class GameManager : NetworkBehaviour
             Debug.Log("Ignored state change as we are the server");
         }
         
+    }
+
+    IEnumerator RoundTimer(uint durationInSeconds)
+    {
+        _roundTimerRunning = true;
+        while(durationInSeconds > 0)
+        {
+            yield return new WaitForSeconds(1);
+            durationInSeconds--;
+            // TODO: Call the UI and pass it durationInSeconds
+        }
+        _roundTimerRunning = false;
+        _roundTimerCoroutine = null;
     }
 }

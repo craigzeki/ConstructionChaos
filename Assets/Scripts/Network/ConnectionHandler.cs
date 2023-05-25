@@ -34,6 +34,12 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="maxPlayers">The maximum number of players allowed in the game</param>
     public async Task<bool> HostGame(bool local = false)
     {
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
+            NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+        }
         if (local)
         {
             // Try to get the local IP address
@@ -73,6 +79,12 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="roomCode">The room code to join</param>
     public async Task<bool> JoinGame(string roomCode, bool local = false)
     {
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
+            NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+        }
         if (local)
         {
             MenuUIManager.Instance.SetRoomCode(roomCode);
@@ -238,5 +250,53 @@ public class ConnectionHandler : MonoBehaviour
         }
 
         return ip;
+    }
+
+    private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
+    {
+        response.CreatePlayerObject = true;
+        //response.PlayerPrefabHash = null;
+        //response.Position = Vector3.zero;
+        //response.Rotation = Quaternion.identity;
+        
+        if (NetworkManager.Singleton.ConnectedClientsIds.Count() >= _maxNoOfPlayers)
+        {
+            
+            response.Approved = false;
+            response.Reason = "Maximum number of players reached";
+        }
+        else
+        {
+            response.Approved = true;
+        }
+        response.Pending = false;
+    }
+
+    private void OnClientDisconnectCallback(ulong obj)
+    {
+        if (!NetworkManager.Singleton.IsServer && NetworkManager.Singleton.DisconnectReason != string.Empty)
+        {
+            Debug.Log($"Approval Declined Reason: {NetworkManager.Singleton.DisconnectReason}");
+            
+        }
+        GameManager.Instance?.ClientDisconnected(NetworkManager.Singleton.DisconnectReason);
+    }
+
+    private void OnClientConnectedCallback(ulong obj)
+    {
+        Debug.Log("Client Connected Called");
+        GameManager.Instance?.ClientConnected();
+    }
+
+    public void Shutdown()
+    {
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+            NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+            NetworkManager.Singleton.Shutdown();
+        }
+
     }
 }
