@@ -14,7 +14,7 @@ public class GoalZone : Zone
     [SerializeField] private TextMeshProUGUI _countdownText;
     [SerializeField] private uint _countdownTimerStart = 3;
     [SerializeField] private List<GoalRequirement> _goalRequirements = new List<GoalRequirement>();
-    [SerializeField] private GameObject _goalSprite, _goalCanvas;
+    [SerializeField] private GameObject _goalSprite, _goalCanvas, _countdownCanvas;
     [SerializeField] public List<String> GoalStrings { get; private set; } = new List<String>();
 
     private int _countdownTimer = 0;
@@ -253,6 +253,7 @@ public class GoalZone : Zone
         float yScale = _goalSprite.transform.localScale.y;
         GetComponent<BoxCollider2D>().size = new Vector2(xScale, yScale);
         _goalCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(xScale, yScale);
+        _countdownCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(xScale, yScale);
         _goalZoneText.GetComponent<RectTransform>().sizeDelta = new Vector2(0, yScale * (1f/5f));
         _countdownText.GetComponent<RectTransform>().sizeDelta = new Vector2(0, yScale * (4f/5f));
     }
