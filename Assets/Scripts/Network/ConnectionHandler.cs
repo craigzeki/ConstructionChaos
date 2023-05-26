@@ -324,6 +324,18 @@ public class ConnectionHandler : MonoBehaviour
 
     public void Shutdown()
     {
+        // If connected to a relay server, disconnect from it
+        // If logged in to Unity Services, log out
+        try
+        {
+            AuthenticationService.Instance.SignOut();
+        }
+        catch
+        {
+            // Do nothing if not logged in
+        }
+
+        // Shut down the network
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
