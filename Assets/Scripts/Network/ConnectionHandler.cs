@@ -265,6 +265,11 @@ public class ConnectionHandler : MonoBehaviour
             response.Approved = false;
             response.Reason = "Maximum number of players reached";
         }
+        else if(GameManager.Instance.CurrentState != GameManager.GAMESTATE.PLAYING_LOBBY)
+        {
+            response.Approved = false;
+            response.Reason = "Game already in progress";
+        }
         else
         {
             response.Approved = true;

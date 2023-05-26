@@ -374,6 +374,8 @@ public class ObjectiveManager : MonoBehaviour
 	/// <param name="e"></param>
 	private void OnRoundLoaded(object sender, EventArgs e)
 	{
+		// Only load objectives for actual rounds.
+		if (GameManager.Instance.CurrentState != GameManager.GAMESTATE.LOADING_ROUND) return;
 		// reset everything as new scene has loaded
         ObjectiveManager.Instance.ResetObjectiveManager();
         // Assign each players objective
