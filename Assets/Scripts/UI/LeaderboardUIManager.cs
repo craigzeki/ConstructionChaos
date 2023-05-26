@@ -16,6 +16,10 @@ public class LeaderboardUIManager : NetworkBehaviour
     [SerializeField] private GameObject _leaderboardEntryPrefab;
 
     [SerializeField] private TextMeshProUGUI _countdownText;
+    
+    [SerializeField] private Button _mainMenuButton;
+
+    public bool FinalLeaderboard = false;
 
     private float _countdownTime = 15f;
 
@@ -74,6 +78,7 @@ public class LeaderboardUIManager : NetworkBehaviour
     public void UpdateLeaderboardUIClientRpc(NetworkLeaderboardData[] playerData)
     {
         _loadingIcon.SetActive(false);
+        _mainMenuButton.gameObject.SetActive(false);
 
         foreach (Transform child in _leaderboardPanel.transform)
         {
@@ -88,7 +93,18 @@ public class LeaderboardUIManager : NetworkBehaviour
             entry.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = data.Score.ToString();
         }
 
-        StartCoroutine(Countdown());
+        GameManager.Instance.LeaderboardReady();
+
+        if (FinalLeaderboard)
+        {
+            _mainMenuButton.gameObject.SetActive(true);
+            _countdownText.gameObject.SetActive(false);
+        }
+        else
+        {
+            _countdownText.gameObject.SetActive(true);
+            StartCoroutine(Countdown());
+        }
     }
 
     private IEnumerator Countdown()

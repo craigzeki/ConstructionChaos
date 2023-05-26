@@ -71,6 +71,7 @@ public class GameManager : NetworkBehaviour
     private bool _roundTimerRunning = false;
     private Coroutine _roundTimerCoroutine;
     private bool _clientConnected = false;
+    private bool _leaderboardReady = false;
     private const string NETWORK_ERROR_TEXT = "Oh No!\nA network error occurred!";
     private Controls _controls;
 
@@ -267,6 +268,11 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
+                if (_leaderboardReady && !IsServer)
+                {
+                    ConnectionHandler.Instance.Shutdown();
+                    _leaderboardReady = false;
+                }
                 break;
             case GAMESTATE.DISCONNECTED:
                 break;
@@ -321,6 +327,7 @@ public class GameManager : NetworkBehaviour
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
+                LeaderboardUIManager.Instance.FinalLeaderboard = true;
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.DISCONNECTED:
@@ -382,6 +389,11 @@ public class GameManager : NetworkBehaviour
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, false);
+                LeaderboardUIManager.Instance.FinalLeaderboard = false;
+                if (IsServer)
+                {
+                    ConnectionHandler.Instance.Shutdown();
+                }
                 break;
             case GAMESTATE.DISCONNECTED:
                 if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(false);
@@ -651,6 +663,11 @@ public class GameManager : NetworkBehaviour
 
         if (_playerNameText != null) _playerNameText.text = "You are: " + playerName;
 
+    }
+
+    public void LeaderboardReady()
+    {
+        _leaderboardReady = true;
     }
 
     public void QuitApp()
