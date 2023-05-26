@@ -17,7 +17,7 @@ public class LeaderboardUIManager : NetworkBehaviour
 
     [SerializeField] private TextMeshProUGUI _countdownText;
 
-    private float _countdownTime = 5f;
+    private float _countdownTime = 15f;
 
     private void Awake()
     {
@@ -95,7 +95,7 @@ public class LeaderboardUIManager : NetworkBehaviour
     {
         while (_countdownTime > 0)
         {
-            _countdownText.text = "Next Round in " + _countdownTime.ToString("0");
+            _countdownText.text = "Next Round in " + _countdownTime.ToString();
             yield return new WaitForSeconds(1f);
             _countdownTime--;
         }
