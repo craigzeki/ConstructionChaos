@@ -8667,7 +8667,7 @@ PrefabInstance:
       objectReference: {fileID: 1591499156}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _rounds.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _disconnectedCanvas
@@ -8811,7 +8811,7 @@ PrefabInstance:
       objectReference: {fileID: 3375138609505047820, guid: 6d340c81a70f44ec1a9a46db36c16570, type: 3}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _rounds.Array.data[0].RoundDurationSeconds
-      value: 60
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _rounds.Array.data[1].RoundDurationSeconds
@@ -8819,7 +8819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _rounds.Array.data[0].ShowLeaderBoardAfterRound
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
       propertyPath: _rounds.Array.data[1].ShowLeaderBoardAfterRound
