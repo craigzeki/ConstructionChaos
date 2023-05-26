@@ -224,8 +224,6 @@ public class MenuUIManager : MonoBehaviour
         
         if (canvasObj == _leaderboardCanvas.gameObject)
         {
-            LeaderboardUIManager.Instance.LeaderboardEnabled();
-
             if (NetworkManager.Singleton.IsServer)
             {
                 LeaderboardUIManager.Instance.GetPlayerData();
