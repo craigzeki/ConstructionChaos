@@ -451,6 +451,7 @@ MonoBehaviour:
   _canvasRectTransform: {fileID: 0}
   _countdownText: {fileID: 0}
   _objectiveRequiredTime: 0
+  _spriteAsset: {fileID: 11400000, guid: c3f59204bfca26240b2ace7da18e7fa1, type: 2}
 --- !u!1 &3591508854170261679
 GameObject:
   m_ObjectHideFlags: 0

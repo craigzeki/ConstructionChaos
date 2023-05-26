@@ -40,6 +40,7 @@ public class GameManager : NetworkBehaviour
     [SerializeField][ReadOnly] private List<int> _playerColourIndexes = new List<int>();
     [SerializeField] private GameObject _disconnectedCanvas;
     [SerializeField] private TextMeshProUGUI _disconnectedText;
+    [SerializeField] private TextMeshProUGUI _playerNameText;
 
     /// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
@@ -120,6 +121,8 @@ public class GameManager : NetworkBehaviour
             // send the player colour
             //netPlayer.SetPlayerColourClientRpc(PlayerData[clientId].ColourIndex, PlayerData[clientId].ClientRpcParams);
             netPlayer.PlayerColorIndex.Value = PlayerData[clientId].ColourIndex;
+
+            if (_playerNameText != null) _playerNameText.text = "You are: " + objectivePlayerData.PlayerName;
 
             return true;
         }
@@ -619,6 +622,7 @@ public class GameManager : NetworkBehaviour
 
     IEnumerator RoundTimer(uint durationInSeconds)
     {
+        GameUIManager.Instance.UpdateTimerUI(durationInSeconds);
         _roundTimerRunning = true;
         while(durationInSeconds > 0)
         {

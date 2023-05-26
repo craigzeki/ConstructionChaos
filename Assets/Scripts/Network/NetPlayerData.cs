@@ -19,6 +19,7 @@ public class NetPlayerData
     public int ColourIndex = 0;
     public int NextObjectiveIndex = 0;
     public List<Objective> PossibleObjectives = new List<Objective>();
+    public string PlayerName = "";
 
     public NetPlayerData(ulong clientId, NetPlayer netPlayer)
     {
@@ -30,6 +31,7 @@ public class NetPlayerData
         ColourIndex = 0;
         NextObjectiveIndex = 0;
         PossibleObjectives.Clear();
+        PlayerName = "Player " + (clientId + 1).ToString();
     }
 
     public NetPlayerData(ulong clientId, NetPlayer netPlayer, Objective objective)
@@ -42,6 +44,7 @@ public class NetPlayerData
         ColourIndex = 0;
         NextObjectiveIndex = 0;
         PossibleObjectives.Clear();
+        PlayerName = "Player " + (clientId + 1).ToString();
     }
 
     private void CreateRpcParams(ulong clientId)

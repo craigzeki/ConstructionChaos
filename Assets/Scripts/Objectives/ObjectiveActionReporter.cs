@@ -4,12 +4,14 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using SolidUtilities;
+using System.Text;
 
 public class ObjectiveActionReporter : NetworkBehaviour
 {
     [SerializeField] private RectTransform _canvasRectTransform;
     [SerializeField] private TextMeshProUGUI _countdownText;
     [SerializeField] [ReadOnly] private uint _objectiveRequiredTime;
+    [SerializeField] private TMP_SpriteAsset _spriteAsset;
     private Vector3 _targetScale = Vector3.zero;
     private Vector3 _startScale = Vector3.zero;
 
@@ -112,8 +114,19 @@ public class ObjectiveActionReporter : NetworkBehaviour
 
         if(IsOwner)
         {
-            _countdownText.text = duration.ToString();
-            _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => { _canvasRectTransform.localScale = Vector3.zero; });
+            // Get a random smiley face
+            if((_spriteAsset != null) && (_spriteAsset.spriteCharacterTable.Count > 0))
+            {
+                _countdownText.spriteAsset = _spriteAsset;
+                string spriteString = new ("<sprite=" + UnityEngine.Random.Range((int)0, (int)_spriteAsset.spriteCharacterTable.Count).ToString() + ">");
+                _countdownText.text = spriteString;
+            }
+            else
+            {
+                _countdownText.text = duration.ToString();
+            }
+            
+            _canvasRectTransform.LeanScale(_targetScale * 1.5f, 2f).setEaseOutBounce().setOnComplete(() => { _canvasRectTransform.localScale = Vector3.zero; });
         }
         
 
