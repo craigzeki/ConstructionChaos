@@ -272,14 +272,24 @@ public class ConnectionHandler : MonoBehaviour
         response.Pending = false;
     }
 
-    private void OnClientDisconnectCallback(ulong obj)
+    private void OnClientDisconnectCallback(ulong clientId)
     {
+        Debug.Log("OnClientDisconnectCallback - assumed clientId: = " + clientId.ToString());
+        Debug.Log("LocalClientId: " + NetworkManager.Singleton.LocalClientId.ToString());
+
         if (!NetworkManager.Singleton.IsServer && NetworkManager.Singleton.DisconnectReason != string.Empty)
         {
             Debug.Log($"Approval Declined Reason: {NetworkManager.Singleton.DisconnectReason}");
             
         }
-        GameManager.Instance?.ClientDisconnected(NetworkManager.Singleton.DisconnectReason);
+        if ((NetworkManager.Singleton.IsServer) && clientId == NetworkManager.Singleton.LocalClientId)
+        {
+            GameManager.Instance?.ClientDisconnected(NetworkManager.Singleton.DisconnectReason);
+        }
+        else if(!NetworkManager.Singleton.IsServer)
+        {
+            GameManager.Instance?.ClientDisconnected(NetworkManager.Singleton.DisconnectReason);
+        }
     }
 
     private void OnClientConnectedCallback(ulong obj)
