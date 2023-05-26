@@ -16,6 +16,7 @@ public class NetPlayer : NetworkBehaviour
     [SerializeField][ReadOnly] private Color _playerColour = Color.white;
 
     public NetworkVariable<int> PlayerColorIndex = new NetworkVariable<int>();
+    public NetworkVariable<FixedString32Bytes> LocalPlayerName = new NetworkVariable<FixedString32Bytes>();
 
     public override void OnNetworkSpawn()
     {
@@ -41,6 +42,7 @@ public class NetPlayer : NetworkBehaviour
         else
         {
             PlayerColorIndex.OnValueChanged += SetPlayerColour;
+            LocalPlayerName.OnValueChanged += SetPlayerName;
             SetPlayerColour(0, PlayerColorIndex.Value);
         }
         
@@ -52,6 +54,7 @@ public class NetPlayer : NetworkBehaviour
     {
         base.OnNetworkDespawn();
         PlayerColorIndex.OnValueChanged -= SetPlayerColour;
+        LocalPlayerName.OnValueChanged -= SetPlayerName;
         GameManager.Instance.UnRegisterPlayer(OwnerClientId);
         if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
     }
@@ -113,5 +116,12 @@ public class NetPlayer : NetworkBehaviour
         {
             spriteRenderer.color = _playerColour;
         }
+    }
+
+    public void SetPlayerName(FixedString32Bytes previous, FixedString32Bytes current)
+    {
+        Debug.Log("SetPlayerName: " + current.ToString());
+        GameManager.Instance.SetPlayerNameText(current.ToString());
+
     }
 }

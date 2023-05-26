@@ -121,8 +121,12 @@ public class GameManager : NetworkBehaviour
             // send the player colour
             //netPlayer.SetPlayerColourClientRpc(PlayerData[clientId].ColourIndex, PlayerData[clientId].ClientRpcParams);
             netPlayer.PlayerColorIndex.Value = PlayerData[clientId].ColourIndex;
+            netPlayer.LocalPlayerName.Value = PlayerData[clientId].PlayerName;
 
-            if (_playerNameText != null) _playerNameText.text = "You are: " + objectivePlayerData.PlayerName;
+            if (clientId == NetworkManager.Singleton.LocalClientId)
+            {
+                SetPlayerNameText(PlayerData[clientId].PlayerName);
+            }
 
             return true;
         }
@@ -632,5 +636,12 @@ public class GameManager : NetworkBehaviour
         }
         _roundTimerRunning = false;
         _roundTimerCoroutine = null;
+    }
+
+    public void SetPlayerNameText(string playerName)
+    {
+
+        if (_playerNameText != null) _playerNameText.text = "You are: " + playerName;
+
     }
 }
