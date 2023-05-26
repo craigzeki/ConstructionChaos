@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ae73594f1b6014d80dad2b896aaa14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friendlyString: the <style="Zone">crane's hook,/style>
+  _friendlyString: the <style="Zone">crane's hook</style>
   _zoneType: 2
   _isOnGround: 0
 --- !u!1 &5738479966694643546
