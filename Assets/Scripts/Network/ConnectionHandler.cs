@@ -34,6 +34,8 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="maxPlayers">The maximum number of players allowed in the game</param>
     public async Task<bool> HostGame(bool local = false)
     {
+        Shutdown();
+
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
@@ -50,8 +52,6 @@ public class ConnectionHandler : MonoBehaviour
             }
             catch
             {
-                print("Error getting IP address");
-                // TODO: Display an error message to the user
                 return false;
             }
 
@@ -68,9 +68,14 @@ public class ConnectionHandler : MonoBehaviour
             return StartNetwork(true);
         }
 
-        await UnityServicesLogin();
+        bool connectionSuccessful = await UnityServicesLogin();
 
-        return await CreateRelay();
+        if (connectionSuccessful)
+        {
+            connectionSuccessful = await CreateRelay();
+        }
+
+        return connectionSuccessful;
     }
 
     /// <summary>
@@ -79,6 +84,8 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="roomCode">The room code to join</param>
     public async Task<bool> JoinGame(string roomCode, bool local = false)
     {
+        Shutdown();
+
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback;
@@ -92,6 +99,11 @@ public class ConnectionHandler : MonoBehaviour
             // Convert the room code to an IP address
             string ip = CodeToIP(roomCode);
 
+            if (ip == null)
+            {
+                return false;
+            }
+
             // Change the network transport to the Unity Transport
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = _unityTransport;
 
@@ -102,14 +114,13 @@ public class ConnectionHandler : MonoBehaviour
         }
 
         bool loginSuccessful = await UnityServicesLogin();
+
         if (loginSuccessful)
         {
-            return await JoinRelay(roomCode);
+            loginSuccessful = await JoinRelay(roomCode);
         }
-        else
-        {
-            return false;
-        }
+
+        return loginSuccessful;
     }
 
     /// <summary>
@@ -242,7 +253,15 @@ public class ConnectionHandler : MonoBehaviour
         string ip = "";
         for (int i = 0; i < code.Length; i += 2)
         {
-            ip += int.Parse(code.Substring(i, 2), System.Globalization.NumberStyles.HexNumber).ToString();
+            try
+            {
+                ip += int.Parse(code.Substring(i, 2), System.Globalization.NumberStyles.HexNumber).ToString();
+            }
+            catch
+            {
+                return null;
+            }
+
             if (i != code.Length - 2)
             {
                 ip += ".";

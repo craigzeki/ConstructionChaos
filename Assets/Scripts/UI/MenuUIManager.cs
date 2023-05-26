@@ -18,7 +18,7 @@ public class MenuUIManager : MonoBehaviour
     public GameObject LeaderboardCanvas => _leaderboardCanvas;
     public GameObject GameCanvas => _gameCanvas;
 
-    [SerializeField] private GameObject _titleImageRR, _titleImageCC;
+    [SerializeField] private GameObject _titleImage;
 
     [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
 
@@ -155,6 +155,9 @@ public class MenuUIManager : MonoBehaviour
         // Animate out the room code input
         AnimateElement(_roomCodeInput.gameObject, false);
 
+        // Animate out the back button
+        AnimateElement(_backButton.gameObject, false);
+
         // Animate in the host and join buttons
         AnimateElement(_hostButton.gameObject, true);
         AnimateElement(_joinButton.gameObject, true);
@@ -175,8 +178,7 @@ public class MenuUIManager : MonoBehaviour
     private void SuccessfulConnection()
     {
         // Animate everything out
-        AnimateElement(_titleImageRR, false);
-        AnimateElement(_titleImageCC, false);
+        AnimateElement(_titleImage, false);
         AnimateElement(_errorText.gameObject, false);
         AnimateElement(_hostButton.gameObject, false);
         AnimateElement(_joinButton.gameObject, false);
@@ -242,6 +244,9 @@ public class MenuUIManager : MonoBehaviour
 
     private void EnableMenu()
     {
+        _joinMenuOpen = false;
+        _roomCodeInput.text = "";
+
         // Animate in the host and join buttons
         AnimateElement(_hostButton.gameObject, true);
         AnimateElement(_joinButton.gameObject, true);
@@ -250,8 +255,7 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(_localToggle.gameObject, true);
 
         // Animate in the title images
-        AnimateElement(_titleImageRR, true);
-        AnimateElement(_titleImageCC, true);
+        AnimateElement(_titleImage, true);
     }
 
     private void EnableLobby()
