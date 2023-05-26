@@ -29,7 +29,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
 
     /// <summary>
     /// Can be set to true to exlude this object from the objective manager<br/>
-    /// This is usefull for objects that you only want to configure for GOAL ZONE<br/>
+    /// This is useful for objects that you only want to configure for GOAL ZONE<br/>
     /// E.g. The player.
     /// </summary>
     [SerializeField]

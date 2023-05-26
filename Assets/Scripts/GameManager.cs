@@ -37,6 +37,7 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject _lobbyPrefab;
     [SerializeField] private List<Round> _rounds = new List<Round>();
     [SerializeField] private List<Color> _playerColours = new List<Color>();
+    public List<Color> PlayerColours => _playerColours;
     [SerializeField][ReadOnly] private List<int> _playerColourIndexes = new List<int>();
     [SerializeField] private GameObject _disconnectedCanvas;
     [SerializeField] private TextMeshProUGUI _disconnectedText;
