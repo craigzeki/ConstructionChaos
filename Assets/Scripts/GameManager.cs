@@ -6,6 +6,7 @@ using System.Linq;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using ZekstersLab.Helpers;
 
 /// <summary>
@@ -71,6 +72,7 @@ public class GameManager : NetworkBehaviour
     private Coroutine _roundTimerCoroutine;
     private bool _clientConnected = false;
     private const string NETWORK_ERROR_TEXT = "Oh No!\nA network error occurred!";
+    private Controls _controls;
 
     public static GameManager Instance
     {
@@ -85,6 +87,11 @@ public class GameManager : NetworkBehaviour
 
     private void Awake()
     {
+        _controls = new Controls();
+        _controls.Gameplay.Enable();
+        _controls.Gameplay.Escape.performed += EscapeButtonPressed;
+        _controls.Gameplay.Escape.canceled += EscapeButtonPressed;
+
         _loadingCanvas.SetActive(false);
 
         DoStateTransition(GAMESTATE.MENU);
@@ -401,8 +408,8 @@ public class GameManager : NetworkBehaviour
                 // Not valid to come here (initial state only)
                 return false;
             case GAMESTATE.MENU:
-                // Do not come here from Loading Lobby or Loading Round
-                if ((_currentState == GAMESTATE.LOADING_LOBBY) || (_currentState == GAMESTATE.LOADING_ROUND)) return false;
+                // Do not come here from Menu!
+                if (_currentState == GAMESTATE.MENU) return false;
                 break;
             case GAMESTATE.LOADING_LOBBY:
                 // only come here from Menu
@@ -644,5 +651,28 @@ public class GameManager : NetworkBehaviour
 
         if (_playerNameText != null) _playerNameText.text = "You are: " + playerName;
 
+    }
+
+    public void QuitApp()
+    {
+        ConnectionHandler.Instance.Shutdown();
+        Application.Quit();
+    }
+
+    private void EscapeButtonPressed(InputAction.CallbackContext value)
+    {
+        if(value.ReadValueAsButton())
+        {
+            if (CurrentState == GAMESTATE.MENU)
+            {
+                QuitApp();
+            }
+            else
+            {
+                ConnectionHandler.Instance.Shutdown();
+                DoStateTransition(GAMESTATE.MENU);
+            }
+        }
+        
     }
 }

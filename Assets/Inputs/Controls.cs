@@ -89,6 +89,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""c47a1dfc-eb7d-4684-a494-127cf3da6eb9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -289,6 +298,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""StickMoveArms"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2742bc71-c5a4-4a89-b80e-5c2695a1a6a9"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard+Mouse;Gamepad"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -371,6 +391,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Gameplay_Collapse = m_Gameplay.FindAction("Collapse", throwIfNotFound: true);
         m_Gameplay_MouseMoveArms = m_Gameplay.FindAction("MouseMoveArms", throwIfNotFound: true);
         m_Gameplay_StickMoveArms = m_Gameplay.FindAction("StickMoveArms", throwIfNotFound: true);
+        m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_DoIt = m_Menu.FindAction("DoIt", throwIfNotFound: true);
@@ -440,6 +461,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Collapse;
     private readonly InputAction m_Gameplay_MouseMoveArms;
     private readonly InputAction m_Gameplay_StickMoveArms;
+    private readonly InputAction m_Gameplay_Escape;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -451,6 +473,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Collapse => m_Wrapper.m_Gameplay_Collapse;
         public InputAction @MouseMoveArms => m_Wrapper.m_Gameplay_MouseMoveArms;
         public InputAction @StickMoveArms => m_Wrapper.m_Gameplay_StickMoveArms;
+        public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -481,6 +504,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @StickMoveArms.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickMoveArms;
                 @StickMoveArms.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickMoveArms;
                 @StickMoveArms.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickMoveArms;
+                @Escape.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -506,6 +532,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @StickMoveArms.started += instance.OnStickMoveArms;
                 @StickMoveArms.performed += instance.OnStickMoveArms;
                 @StickMoveArms.canceled += instance.OnStickMoveArms;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -570,6 +599,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnCollapse(InputAction.CallbackContext context);
         void OnMouseMoveArms(InputAction.CallbackContext context);
         void OnStickMoveArms(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
