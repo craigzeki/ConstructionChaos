@@ -10,8 +10,6 @@ public class LeaderboardUIManager : NetworkBehaviour
 {
     public static LeaderboardUIManager Instance;
 
-    [SerializeField] private GameObject _loadingIcon;
-
     [SerializeField] private GameObject _leaderboardPanel;
     [SerializeField] private GameObject _leaderboardEntryPrefab;
 
@@ -19,7 +17,7 @@ public class LeaderboardUIManager : NetworkBehaviour
     
     [SerializeField] private Button _mainMenuButton;
 
-    [HideInInspector] public bool FinalLeaderboard = false;
+    public bool FinalLeaderboard = false;
 
     private float _countdownTime = 15f;
 
@@ -41,11 +39,6 @@ public class LeaderboardUIManager : NetworkBehaviour
             serializer.SerializeValue(ref PlayerName);
             serializer.SerializeValue(ref Score);
         }
-    }
-
-    public void LeaderboardEnabled()
-    {
-        _loadingIcon.SetActive(true);
     }
 
     public void GetPlayerData()
@@ -71,13 +64,12 @@ public class LeaderboardUIManager : NetworkBehaviour
             };
         }
 
-        UpdateLeaderboardUIClientRpc(playerDataStrings);
+        UpdateLeaderboardUIClientRpc(playerDataStrings, FinalLeaderboard);
     }
 
     [ClientRpc]
-    public void UpdateLeaderboardUIClientRpc(NetworkLeaderboardData[] playerData)
+    public void UpdateLeaderboardUIClientRpc(NetworkLeaderboardData[] playerData, bool finalLeaderboard, ClientRpcParams clientRpcParams = default)
     {
-        _loadingIcon.SetActive(false);
         _mainMenuButton.gameObject.SetActive(false);
 
         foreach (Transform child in _leaderboardPanel.transform)
@@ -95,7 +87,7 @@ public class LeaderboardUIManager : NetworkBehaviour
 
         GameManager.Instance.LeaderboardReady();
 
-        if (FinalLeaderboard)
+        if (finalLeaderboard)
         {
             _mainMenuButton.gameObject.SetActive(true);
             _countdownText.gameObject.SetActive(false);
