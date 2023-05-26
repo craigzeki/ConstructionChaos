@@ -43,7 +43,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         if (IsServer)
         {
             // The object should be an actual colour, not any coloured
-            while ((_objectiveColour?.FriendlyString == "any coloured") || (_objectiveColour == null))
+            while ((_objectiveColour?.FriendlyString == ObjectiveManager.Instance.AnyColourString) || (_objectiveColour == null))
             {
                 if (_objectiveObject.PossibleColours.Count == 0) break;
                 // Pick a random colour from the list of possible colours and assign it to the objective colour

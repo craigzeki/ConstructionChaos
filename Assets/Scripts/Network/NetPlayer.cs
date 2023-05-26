@@ -103,6 +103,7 @@ public class NetPlayer : NetworkBehaviour
     public void SetObjectiveStringClientRpc(string newObjectiveString, ClientRpcParams clientRpcParams = default)
     {
         _objectiveString = newObjectiveString != null ? newObjectiveString : "No Objective";
+        GameUIManager.Instance.SetObjectiveText(_objectiveString);
     }
 
     private void SetPlayerColour(int previous, int current)

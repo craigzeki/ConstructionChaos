@@ -40,7 +40,8 @@ public class ObjectiveManager : MonoBehaviour
 
 	private string _anyActionString = "Do anything with";
 
-	private string _anyColourString = "any coloured";
+	private string _anyColourString = "<style=\"Colour\">any coloured</style>";
+	public string AnyColourString => _anyColourString;
 
 	private static ObjectiveManager _instance;
     public static ObjectiveManager Instance

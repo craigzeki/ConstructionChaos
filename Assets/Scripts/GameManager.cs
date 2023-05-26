@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
 using ZekstersLab.Helpers;
 
@@ -69,7 +68,7 @@ public class GameManager : NetworkBehaviour
     private bool _roundTimerRunning = false;
     private Coroutine _roundTimerCoroutine;
     private bool _clientConnected = false;
-    private const string NETWORK_ERROR_TEXT = "Oh No!\nA network error occured!";
+    private const string NETWORK_ERROR_TEXT = "Oh No!\nA network error occurred!";
 
     public static GameManager Instance
     {
@@ -269,7 +268,7 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
-                MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance?.MainMenuCanvas, true);
+                MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
                 _clientConnected = false;
                 PlayerData.Clear();
                 //_playerColourIndex = 0;
@@ -301,12 +300,13 @@ public class GameManager : NetworkBehaviour
                 // Reset the round timer
                 if(_roundTimerCoroutine != null) StopCoroutine(_roundTimerCoroutine);
                 _roundTimerCoroutine = StartCoroutine(RoundTimer(_rounds[_roundIndex].RoundDurationSeconds));
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.GameCanvas, true);
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
-                // TODO: Show the leaderboard UI
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
-                // TODO: Show the leaderboard UI
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.DISCONNECTED:
                 if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(true);
@@ -356,16 +356,17 @@ public class GameManager : NetworkBehaviour
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, false);
                 break;
             case GAMESTATE.PLAYING_ROUND:
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.GameCanvas, false);
                 if (IsServer)
                 {
                     Destroy(_currentRound);
                 }
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
-                // TODO: Hide the leaderboard UI
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, false);
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
-                // TODO: Hide the leaderboard UI
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, false);
                 break;
             case GAMESTATE.DISCONNECTED:
                 if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(false);
@@ -506,7 +507,7 @@ public class GameManager : NetworkBehaviour
     public void LoadNextRound()
     {
         if (!IsServer) return;
-        if ((_currentState == GAMESTATE.MIDPOINT_LEADERBOARD))
+        if ((_currentState == GAMESTATE.MIDPOINT_LEADERBOARD) || (_currentState == GAMESTATE.PLAYING_LOBBY))
         {
             LoadRound();
         }
@@ -623,7 +624,7 @@ public class GameManager : NetworkBehaviour
         {
             yield return new WaitForSeconds(1);
             durationInSeconds--;
-            // TODO: Call the UI and pass it durationInSeconds
+            GameUIManager.Instance.UpdateTimerUI(durationInSeconds);
         }
         _roundTimerRunning = false;
         _roundTimerCoroutine = null;

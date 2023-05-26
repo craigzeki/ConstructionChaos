@@ -67,8 +67,12 @@ public class GoalZone : Zone
             goalString += (requirement.UseQtyAsPercentageInScene ? (requirement.PercentBasedQty > 1 ? "s" : "") : (requirement.QuantityRequired > 1 ? "s" : ""));
             GoalStrings.Add(goalString);
         }
+    }
 
-        // TODO: Tell the UI the GoalStrings
+    private void Start()
+    {
+        // Tell the Game UI the goal strings
+        GameUIManager.Instance.SetupGroupObjectiveUI(GoalStrings);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,7 +97,8 @@ public class GoalZone : Zone
                 // If this requirement is met, maybe this was the last to be met, do a full check
                 if (goalRequirement.RequirementMet())
                 {
-                    // TODO: Inform the UI / Game Manager that the single objective is met
+                    // Inform the UI / Game Manager that the single objective is met
+                    GameUIManager.Instance.UpdateGroupObjectiveRequirement(_goalRequirements.IndexOf(goalRequirement), true);
 
                     if (AllGoalRequirementsMet())
                     {
@@ -161,7 +166,8 @@ public class GoalZone : Zone
                 // If this requirement is no longer met, cancel the countdown
                 if (!goalRequirement.RequirementMet())
                 {
-                    // TODO: Inform the UI / Game Manager that the single objective is no longer met
+                    // Inform the UI / Game Manager that the single objective is no longer met
+                    GameUIManager.Instance.UpdateGroupObjectiveRequirement(_goalRequirements.IndexOf(goalRequirement), false);
 
                     // Cancel countdown
                     if (_countdownCoroutine != null)

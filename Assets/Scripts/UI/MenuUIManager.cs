@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Netcode;
 using TMPro;
 
 public class MenuUIManager : MonoBehaviour
@@ -10,14 +11,16 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas;
+    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _leaderboardCanvas, _gameCanvas;
     public GameObject MainMenuCanvas => _mainMenuCanvas;
     public GameObject LoadingCanvas => _loadingCanvas;
     public GameObject LobbyCanvas => _lobbyCanvas;
+    public GameObject LeaderboardCanvas => _leaderboardCanvas;
+    public GameObject GameCanvas => _gameCanvas;
 
     [SerializeField] private GameObject _titleImageRR, _titleImageCC;
 
-    [SerializeField] private Button _hostButton, _joinButton, _backButton;
+    [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
 
     [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText;
 
@@ -210,6 +213,17 @@ public class MenuUIManager : MonoBehaviour
     public void ToggleCanvas(GameObject canvasObj, bool toggle)
     {
         canvasObj.SetActive(toggle);
+
+        if (canvasObj == _mainMenuCanvas.gameObject)
+            EnableMenu();
+        
+        if (canvasObj == _lobbyCanvas.gameObject)
+            EnableLobby();
+        
+        if (canvasObj == _leaderboardCanvas.gameObject)
+        {
+            // TODO: Load leaderboard
+        }
     }
 
     /// <summary>
@@ -219,5 +233,24 @@ public class MenuUIManager : MonoBehaviour
     private void UpdateToggle(bool toggleVal)
     {
         _local = toggleVal;
+    }
+
+    private void EnableMenu()
+    {
+        // Animate in the host and join buttons
+        AnimateElement(_hostButton.gameObject, true);
+        AnimateElement(_joinButton.gameObject, true);
+
+        // Animate in the local toggle
+        AnimateElement(_localToggle.gameObject, true);
+
+        // Animate in the title images
+        AnimateElement(_titleImageRR, true);
+        AnimateElement(_titleImageCC, true);
+    }
+
+    private void EnableLobby()
+    {
+        _startButton.gameObject.SetActive(NetworkManager.Singleton.IsServer);
     }
 }
