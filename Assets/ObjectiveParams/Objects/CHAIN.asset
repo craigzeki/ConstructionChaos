@@ -16,5 +16,11 @@ MonoBehaviour:
   possibleColours:
   - {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   - {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  - {fileID: 11400000, guid: bb80d45de34bf45da81d1d7bed7be92c, type: 2}
+  - {fileID: 11400000, guid: ae1c110b24f584722a117ff22f901ec5, type: 2}
+  - {fileID: 11400000, guid: 76d3358ecf3324fa58ba3a799f350777, type: 2}
+  - {fileID: 11400000, guid: b2baff89d8c64f545be6fc6d75e00701, type: 2}
+  - {fileID: 11400000, guid: 956a91b941827400c9d5c41c3325835d, type: 2}
+  - {fileID: 11400000, guid: cc56cd59f26784efd99390b39820f872, type: 2}
   possibleActions:
   - {fileID: 11400000, guid: 1f0de8038cd784e92933d89153ae0a75, type: 2}
