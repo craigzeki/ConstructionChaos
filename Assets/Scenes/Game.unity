@@ -3091,7 +3091,7 @@ MonoBehaviour:
   _leaderboardPanel: {fileID: 1358835151}
   _leaderboardEntryPrefab: {fileID: 8996383576783222703, guid: 9eece293ebc224297af9961a376b2b71, type: 3}
   _countdownText: {fileID: 527885052}
-  _mainMenuButton: {fileID: 0}
+  _mainMenuButton: {fileID: 2042090123}
   FinalLeaderboard: 0
 --- !u!1 &748596471
 GameObject:
