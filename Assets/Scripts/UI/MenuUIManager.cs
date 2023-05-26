@@ -11,18 +11,19 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _leaderboardCanvas, _gameCanvas;
+    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _leaderboardCanvas, _gameCanvas, _disconnectedCanvas;
     public GameObject MainMenuCanvas => _mainMenuCanvas;
     public GameObject LoadingCanvas => _loadingCanvas;
     public GameObject LobbyCanvas => _lobbyCanvas;
     public GameObject LeaderboardCanvas => _leaderboardCanvas;
     public GameObject GameCanvas => _gameCanvas;
+    public GameObject DisconnectedCanvas => _disconnectedCanvas;
 
     [SerializeField] private GameObject _titleImage;
 
     [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
 
-    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText;
+    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText;
 
     [SerializeField] private TMP_InputField _roomCodeInput;
 
@@ -240,6 +241,21 @@ public class MenuUIManager : MonoBehaviour
         _local = toggleVal;
     }
 
+    public void SetNetworkErrorText(string text)
+    {
+        _disconnectedText.text = text;
+    }
+
+    public void AppendNetworkErrorText(string text)
+    {
+        _disconnectedText.text += text;
+    }
+    
+    public void SetPlayerNameText(string name)
+    {
+        _playerNameText.text = "You are: " + name;
+    }
+
     private void EnableMenu()
     {
         _joinMenuOpen = false;
@@ -259,5 +275,15 @@ public class MenuUIManager : MonoBehaviour
     private void EnableLobby()
     {
         _startButton.gameObject.SetActive(NetworkManager.Singleton.IsServer);
+    }
+
+    public void LoadNextRound()
+    {
+        GameManager.Instance.LoadNextRound();
+    }
+
+    public void LoadMenu()
+    {
+        GameManager.Instance.LoadMenu();
     }
 }

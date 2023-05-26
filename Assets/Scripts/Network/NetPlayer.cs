@@ -55,7 +55,7 @@ public class NetPlayer : NetworkBehaviour
         base.OnNetworkDespawn();
         PlayerColorIndex.OnValueChanged -= SetPlayerColour;
         LocalPlayerName.OnValueChanged -= SetPlayerName;
-        GameManager.Instance.UnRegisterPlayer(OwnerClientId);
+        GameManager.Instance?.UnRegisterPlayer(OwnerClientId);
         if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
     }
 
@@ -121,7 +121,6 @@ public class NetPlayer : NetworkBehaviour
     public void SetPlayerName(FixedString32Bytes previous, FixedString32Bytes current)
     {
         Debug.Log("SetPlayerName: " + current.ToString());
-        GameManager.Instance.SetPlayerNameText(current.ToString());
-
+        MenuUIManager.Instance.SetPlayerNameText(current.ToString());
     }
 }

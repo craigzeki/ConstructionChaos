@@ -32,7 +32,6 @@ public class GameManager : NetworkBehaviour
         NUM_OF_STATES
     }
 
-    [SerializeField] private GameObject _loadingCanvas;
     [SerializeField] private float _minLoadScreenTime = 2f;
 
     [SerializeField] private GameObject _lobbyPrefab;
@@ -40,9 +39,6 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private List<Color> _playerColours = new List<Color>();
     public List<Color> PlayerColours => _playerColours;
     [SerializeField][ReadOnly] private List<int> _playerColourIndexes = new List<int>();
-    [SerializeField] private GameObject _disconnectedCanvas;
-    [SerializeField] private TextMeshProUGUI _disconnectedText;
-    [SerializeField] private TextMeshProUGUI _playerNameText;
 
     /// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
@@ -86,6 +82,8 @@ public class GameManager : NetworkBehaviour
 
     public GAMESTATE CurrentState { get => _currentState; }
 
+    public bool TrueIsServer = false;
+
     private void Awake()
     {
         _controls = new Controls();
@@ -93,9 +91,19 @@ public class GameManager : NetworkBehaviour
         _controls.Gameplay.Escape.performed += EscapeButtonPressed;
         _controls.Gameplay.Escape.canceled += EscapeButtonPressed;
 
-        _loadingCanvas.SetActive(false);
-
         DoStateTransition(GAMESTATE.MENU);
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        TrueIsServer = IsServer;
+        base.OnNetworkSpawn();
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        TrueIsServer = false;
+        base.OnNetworkDespawn();
     }
 
     private void Update()
@@ -134,7 +142,7 @@ public class GameManager : NetworkBehaviour
 
             if (clientId == NetworkManager.Singleton.LocalClientId)
             {
-                SetPlayerNameText(PlayerData[clientId].PlayerName);
+                MenuUIManager.Instance.SetPlayerNameText(PlayerData[clientId].PlayerName);
             }
 
             return true;
@@ -290,6 +298,17 @@ public class GameManager : NetworkBehaviour
                 break;
             case GAMESTATE.MENU:
                 MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
+                if (_currentState != GAMESTATE.START)
+                {
+                    try
+                    {
+                        NetworkObject.Despawn(false);
+                    }
+                    catch (NullReferenceException)
+                    {
+                        // Do nothing
+                    }
+                }
                 _clientConnected = false;
                 PlayerData.Clear();
                 //_playerColourIndex = 0;
@@ -331,7 +350,7 @@ public class GameManager : NetworkBehaviour
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.DISCONNECTED:
-                if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(true);
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.DisconnectedCanvas, true);
                 // Shutdowmn the network manager so it can be used again
                 ConnectionHandler.Instance.Shutdown();
                 break;
@@ -396,7 +415,7 @@ public class GameManager : NetworkBehaviour
                 }
                 break;
             case GAMESTATE.DISCONNECTED:
-                if (_disconnectedCanvas != null) _disconnectedCanvas.SetActive(false);
+                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.DisconnectedCanvas, false);
                 break;
             case GAMESTATE.NUM_OF_STATES:
             default:
@@ -491,7 +510,7 @@ public class GameManager : NetworkBehaviour
     {
         _loadingTimerComplete = false;
         MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, true);
-        if(IsServer)
+        if(TrueIsServer)
         {
             yield return new WaitForEndOfFrame();
             SpawnManager.Instance.ResetSpawnManager();
@@ -551,11 +570,11 @@ public class GameManager : NetworkBehaviour
 
     public void ClientDisconnected(string reason)
     {
-        _disconnectedText.text = NETWORK_ERROR_TEXT;
+        MenuUIManager.Instance.SetNetworkErrorText(NETWORK_ERROR_TEXT);
 
         if (reason != string.Empty)
         {
-             _disconnectedText.text += ("\n" + reason);
+            MenuUIManager.Instance.AppendNetworkErrorText("\n" + reason);
         }
 
         
@@ -574,7 +593,7 @@ public class GameManager : NetworkBehaviour
     {
         if ((_currentState != GAMESTATE.PLAYING_ROUND) && (_currentState != GAMESTATE.PLAYING_LOBBY) && (_currentState != GAMESTATE.MIDPOINT_LEADERBOARD)) return;
 
-        if (!IsServer) return;
+        if (!TrueIsServer) return;
 
         if (_nextRound >= _roundOrder.Count)
         {
@@ -656,13 +675,6 @@ public class GameManager : NetworkBehaviour
         }
         _roundTimerRunning = false;
         _roundTimerCoroutine = null;
-    }
-
-    public void SetPlayerNameText(string playerName)
-    {
-
-        if (_playerNameText != null) _playerNameText.text = "You are: " + playerName;
-
     }
 
     public void LeaderboardReady()

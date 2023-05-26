@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8346858115108698170}
   - component: {fileID: 8346858115108698173}
-  - component: {fileID: 8346858115108698172}
   - component: {fileID: 2023662495}
   m_Layer: 0
   m_Name: GameManager
@@ -46,24 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8a5e0f44a40348b0b120f33ad3ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingCanvas: {fileID: 0}
   _minLoadScreenTime: 2
   _lobbyPrefab: {fileID: 226071342479353666, guid: 9febbed559c3dff44a4d461b7af0140a, type: 3}
-  _roundPrefabs:
-  - {fileID: 252855060625079280, guid: 5aec12ec7111b104a8188d781bcaf9a6, type: 3}
+  _rounds:
+  - RoundPrefab: {fileID: 3375138609505047820, guid: 6d340c81a70f44ec1a9a46db36c16570, type: 3}
+    RoundDurationSeconds: 5
+    ShowLeaderBoardAfterRound: 0
+  _playerColours:
+  - {r: 0.990566, g: 0.43454072, b: 0.43454072, a: 1}
+  - {r: 0.38781592, g: 0.5406664, b: 0.990566, a: 1}
+  - {r: 0.79635626, g: 0.43454072, b: 0.990566, a: 1}
+  - {r: 0.9811321, g: 0.72665024, b: 0.37486652, a: 1}
+  - {r: 0.42593357, g: 0.990566, b: 0.41585082, a: 1}
+  - {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+  _playerColourIndexes: 
   _currentState: 0
---- !u!114 &8346858115108698172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8346858115108698171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f9de3e9d1e74fd4a84870e626689a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _roundOrder: 
+  LocalPlayer: {fileID: 0}
 --- !u!114 &2023662495
 MonoBehaviour:
   m_ObjectHideFlags: 0

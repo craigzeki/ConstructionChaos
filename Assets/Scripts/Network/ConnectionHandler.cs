@@ -20,6 +20,8 @@ public class ConnectionHandler : MonoBehaviour
 
     [SerializeField] private int _maxNoOfPlayers = 6;
 
+    [SerializeField] private GameObject _gameManagerObject;
+
     private void Awake()
     {
         if (Instance == null)
@@ -65,7 +67,25 @@ public class ConnectionHandler : MonoBehaviour
             string roomCode = IPtoCode(ip);
             MenuUIManager.Instance.SetRoomCode(roomCode);
 
-            return StartNetwork(true);
+            bool localConnectionSuccessful = StartNetwork(true);
+
+            if (localConnectionSuccessful)
+            {
+                try
+                {
+                    GameManager.Instance?.NetworkObject.Spawn();
+                }
+                catch (SpawnStateException)
+                {
+                    // Do nothing if the game manager is already spawned
+                }
+                catch (NotServerException)
+                {
+
+                }
+            }
+
+            return localConnectionSuccessful;
         }
 
         bool connectionSuccessful = await UnityServicesLogin();
@@ -73,6 +93,22 @@ public class ConnectionHandler : MonoBehaviour
         if (connectionSuccessful)
         {
             connectionSuccessful = await CreateRelay();
+        }
+
+        if (connectionSuccessful)
+        {
+            try
+            {
+                GameManager.Instance?.NetworkObject.Spawn();
+            }
+            catch (SpawnStateException)
+            {
+                // Do nothing if the game manager is already spawned
+            }
+            catch (NotServerException)
+            {
+
+            }
         }
 
         return connectionSuccessful;
@@ -110,7 +146,25 @@ public class ConnectionHandler : MonoBehaviour
             // Set the connection data to the IP address
             _unityTransport.ConnectionData.Address = ip;
 
-            return StartNetwork(false);
+            bool localLoginSuccessful = StartNetwork(false);
+
+            if (localLoginSuccessful)
+            {
+                try
+                {
+                    GameManager.Instance?.NetworkObject.Spawn();
+                }
+                catch (SpawnStateException)
+                {
+                    // Do nothing if the game manager is already spawned
+                }
+                catch (NotServerException)
+                {
+
+                }
+            }
+
+            return localLoginSuccessful;
         }
 
         bool loginSuccessful = await UnityServicesLogin();
@@ -118,6 +172,22 @@ public class ConnectionHandler : MonoBehaviour
         if (loginSuccessful)
         {
             loginSuccessful = await JoinRelay(roomCode);
+        }
+
+        if (loginSuccessful)
+        {
+            try
+            {
+                GameManager.Instance?.NetworkObject.Spawn();
+            }
+            catch (SpawnStateException)
+            {
+                // Do nothing if the game manager is already spawned
+            }
+            catch (NotServerException)
+            {
+
+            }
         }
 
         return loginSuccessful;
@@ -341,8 +411,33 @@ public class ConnectionHandler : MonoBehaviour
             NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
             NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
             NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
-            NetworkManager.Singleton.Shutdown();
+            NetworkManager.Singleton.Shutdown(true);
         }
+    }
 
+    public void SpawnManagerNetworkObjects()
+    {
+        try
+        {
+            GameManager.Instance.NetworkObject.Spawn();
+            LeaderboardUIManager.Instance.NetworkObject.Spawn();
+        }
+        catch (NotListeningException)
+        {
+            // Do nothing if NetworkManager is not listening
+        }
+    }
+
+    public void DespawnManagerNetworkObjects()
+    {
+        try
+        {
+            GameManager.Instance.NetworkObject.Despawn(false);
+            LeaderboardUIManager.Instance.NetworkObject.Despawn(false);
+        }
+        catch (System.NullReferenceException)
+        {
+            // Do nothing if already despawned
+        }
     }
 }
