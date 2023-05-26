@@ -19,7 +19,7 @@ public class LeaderboardUIManager : NetworkBehaviour
     
     [SerializeField] private Button _mainMenuButton;
 
-    public bool FinalLeaderboard = false;
+    [HideInInspector] public bool FinalLeaderboard = false;
 
     private float _countdownTime = 15f;
 
