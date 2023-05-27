@@ -7715,6 +7715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8346858115108698173, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
+      propertyPath: _rounds.Array.data[0].RoundDurationSeconds
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
 --- !u!1 &1930443305
