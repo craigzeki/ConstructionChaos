@@ -316,6 +316,7 @@ MonoBehaviour:
   _goalZoneText: {fileID: 4042945522699587106}
   _countdownText: {fileID: 8394504472028686210}
   _countdownTimerStart: 3
+  _spriteAsset: {fileID: 11400000, guid: c3f59204bfca26240b2ace7da18e7fa1, type: 2}
   _goalRequirements:
   - RequiredObject: {fileID: 11400000, guid: 796608c6954d64d3781ce8d58bda7f58, type: 2}
     QuantityRequired: 1
@@ -475,7 +476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e62fdbb8a305406191747627e543a29, type: 2}
   m_sharedMaterial: {fileID: -5577275323075483545, guid: 6e62fdbb8a305406191747627e543a29, type: 2}
@@ -503,11 +504,11 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 3.3
-  m_fontSizeBase: 36
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 72
+  m_fontSizeMax: 74
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
@@ -573,7 +574,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7895315701050789231}
   m_Father: {fileID: 4042945522891260497}
@@ -582,7 +583,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3, y: 6}
+  m_SizeDelta: {x: 3, y: 4.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7624278870112461477
 Canvas:

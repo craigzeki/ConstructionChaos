@@ -13,6 +13,7 @@ public class GoalZone : Zone
     [SerializeField] private TextMeshProUGUI _goalZoneText;
     [SerializeField] private TextMeshProUGUI _countdownText;
     [SerializeField] private uint _countdownTimerStart = 3;
+    [SerializeField] private TMP_SpriteAsset _spriteAsset;
     [SerializeField] private List<GoalRequirement> _goalRequirements = new List<GoalRequirement>();
     [SerializeField] private GameObject _goalSprite, _goalCanvas, _countdownCanvas;
     [SerializeField] public List<String> GoalStrings { get; private set; } = new List<String>();
@@ -33,7 +34,7 @@ public class GoalZone : Zone
         _countdownText.enabled = false;
         _countdownTimer = (int)_countdownTimerStart;
 
-        if (_countdownText != null) _countdownTextRectTransform = _countdownText.rectTransform;
+        if (_countdownCanvas != null) _countdownTextRectTransform = _countdownCanvas.GetComponent<RectTransform>();
         _targetScale = _countdownTextRectTransform != null ? _countdownTextRectTransform.localScale : Vector3.zero;
         _countdownTextRectTransform.localScale = _startScale;
 
@@ -233,9 +234,18 @@ public class GoalZone : Zone
             
         }
 
-        // TODO replace with line to show emoji instead
-        _countdownText.text = _countdownTimer.ToString();
-        _countdownTextRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => {
+        if ((_spriteAsset != null) && (_spriteAsset.spriteCharacterTable.Count > 0))
+        {
+            _countdownText.spriteAsset = _spriteAsset;
+            string spriteString = new("<sprite=" + UnityEngine.Random.Range((int)0, (int)_spriteAsset.spriteCharacterTable.Count).ToString() + ">");
+            _countdownText.text = spriteString;
+        }
+        else
+        {
+            _countdownText.text = _countdownTimer.ToString();
+        }
+        
+        _countdownTextRectTransform.LeanScale(_targetScale * 5f, 0.75f).setEaseOutBounce().setOnComplete(() => {
                                                                                                             _countdownTextRectTransform.localScale = _startScale;
                                                                                                             if (IsServer)
                                                                                                             {
@@ -258,7 +268,7 @@ public class GoalZone : Zone
         float yScale = _goalSprite.transform.localScale.y;
         GetComponent<BoxCollider2D>().size = new Vector2(xScale, yScale);
         _goalCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(xScale, yScale);
-        _countdownCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(xScale, yScale);
+        _countdownCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(xScale, yScale * (4f / 5f));
         _goalZoneText.GetComponent<RectTransform>().sizeDelta = new Vector2(0, yScale * (1f/5f));
         _countdownText.GetComponent<RectTransform>().sizeDelta = new Vector2(0, yScale * (4f/5f));
     }
