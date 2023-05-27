@@ -27,7 +27,7 @@ public class CharacterInputHandler : NetworkBehaviour
     private ControlActionMaps _currentActionMap;
 
     private bool _menuButtonPressed = false;
-    Vector2 _screenOrigin = new Vector2(Screen.width / 2, Screen.height / 2);
+    Vector2 _screenOrigin { get => new Vector2(Screen.width / 2, Screen.height / 2); }
     Vector2 _delta = Vector2.zero;
 
     public CharacterInputData CharacterInputData = new CharacterInputData();
