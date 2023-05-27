@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -10307,7 +10307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -12345,7 +12345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -14756,7 +14756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -16128,7 +16128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -16344,7 +16344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectiveObject: {fileID: 11400000, guid: 4df22d4518ef54f02aec32f59bf9c3f8, type: 2}
-  _objectiveColour: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+  _objectiveColour: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   _excludeFromObjectiveManager: 0
   NetworkObjectiveColour:
     m_InternalValue: {fileID: 0}
@@ -18469,7 +18469,7 @@ PrefabInstance:
     - target: {fileID: 1743502305197928727, guid: db0e208e2bb774fc685e62fd41b3fa0c, type: 3}
       propertyPath: _objectiveColour
       value: 
-      objectReference: {fileID: 11400000, guid: 058f19d30f9804f69b0f5b932e0b31f0, type: 2}
+      objectReference: {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
     - target: {fileID: 3230283267525653696, guid: db0e208e2bb774fc685e62fd41b3fa0c, type: 3}
       propertyPath: _linksToAdd
       value: 10
