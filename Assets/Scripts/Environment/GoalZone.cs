@@ -98,7 +98,7 @@ public class GoalZone : Zone
                 if (goalRequirement.RequirementMet())
                 {
                     // Inform the UI / Game Manager that the single objective is met
-                    GameUIManager.Instance.UpdateGroupObjectiveRequirement(_goalRequirements.IndexOf(goalRequirement), true);
+                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), true);
 
                     if (AllGoalRequirementsMet())
                     {
@@ -167,7 +167,7 @@ public class GoalZone : Zone
                 if (!goalRequirement.RequirementMet())
                 {
                     // Inform the UI / Game Manager that the single objective is no longer met
-                    GameUIManager.Instance.UpdateGroupObjectiveRequirement(_goalRequirements.IndexOf(goalRequirement), false);
+                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), false);
 
                     // Cancel countdown
                     if (_countdownCoroutine != null)
@@ -181,6 +181,12 @@ public class GoalZone : Zone
                 }
             }
         } 
+    }
+
+    [ClientRpc]
+    private void UpdateGroupObjectiveRequirementClientRpc(int index, bool isComplete, ClientRpcParams clientRpcParams = default)
+    {
+        GameUIManager.Instance.UpdateGroupObjectiveRequirement(index, isComplete);
     }
 
 
