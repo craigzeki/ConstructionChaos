@@ -18,6 +18,8 @@ public class RaisedPlatformArranger : PlatformArranger
     /// The top platform's sprite renderer, used to adjust the sprite size
     private SpriteRenderer _topSpriteRenderer;
 
+    private SpriteRenderer _midSpriteRenderer;
+
     /// <summary>
     /// The left end of the platform
     /// </summary>
@@ -43,6 +45,7 @@ public class RaisedPlatformArranger : PlatformArranger
         _rightSpriteRenderer = _platformEndR.GetComponent<SpriteRenderer>();
         UpdateEndPositions();
         UpdateSpriteSizes();
+        UpdateSpriteOrder();
     }
 
     public override void UpdateEndPositions()
@@ -75,5 +78,14 @@ public class RaisedPlatformArranger : PlatformArranger
         if (_rightSpriteRenderer == null) return;
 
         _rightSpriteRenderer.size = new Vector2(_rightSpriteRenderer.size.x, _midCollider.bounds.size.y / _rightSpriteRenderer.gameObject.transform.localScale.y);
+    }
+
+    public void UpdateSpriteOrder()
+    {
+        if (_platformMid == null) return;
+
+        _leftSpriteRenderer.sortingOrder = _platformMid.GetComponent<SpriteRenderer>().sortingOrder;
+        _rightSpriteRenderer.sortingOrder = _platformMid.GetComponent<SpriteRenderer>().sortingOrder;
+        _topSpriteRenderer.sortingOrder = _platformMid.GetComponent<SpriteRenderer>().sortingOrder + 1;
     }
 }
