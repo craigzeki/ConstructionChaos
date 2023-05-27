@@ -15,7 +15,8 @@ public class NetPlayerData
 
     public ClientRpcParams ClientRpcParams = default;
     public ulong ClientId;
-    public uint Score = 0;
+    public uint RoundScore = 0;
+    public uint GameScore = 0;
     public int ColourIndex = 0;
     public int NextObjectiveIndex = 0;
     public List<Objective> PossibleObjectives = new List<Objective>();
@@ -27,7 +28,7 @@ public class NetPlayerData
         Objective = null;
         ClientId = clientId;
         CreateRpcParams(clientId);
-        Score = 0;
+        RoundScore = 0;
         ColourIndex = 0;
         NextObjectiveIndex = 0;
         PossibleObjectives.Clear();
@@ -40,7 +41,7 @@ public class NetPlayerData
         Objective = objective;
         ClientId = clientId;
         CreateRpcParams(clientId);
-        Score = 0;
+        RoundScore = 0;
         ColourIndex = 0;
         NextObjectiveIndex = 0;
         PossibleObjectives.Clear();

@@ -11,6 +11,7 @@ public class ActionPush : ObjectiveActionBehaviour
     private List<(ObjectiveCondition, Zone)> activeConditions;
     private ulong _clientToRemove;
     private bool _removeClient = false;
+    private Dictionary<ulong, Coroutine> _removeCoroutines = new Dictionary<ulong, Coroutine>();
 
     private void Awake()
     {
@@ -54,9 +55,23 @@ public class ActionPush : ObjectiveActionBehaviour
     {
         if(collision.gameObject.TryGetComponent<Ragdoll>(out Ragdoll ragdoll))
         {
-            if(_pushingPlayers.TryAdd(ragdoll.ClientId, ragdoll))
+            if (_pushingPlayers.TryAdd(ragdoll.ClientId, ragdoll))
             {
                 _pushingDistances.TryAdd(ragdoll.ClientId, 0);
+            }
+            else
+            {
+                // we have briefly let go and reconnected
+                // stop the hysteresis
+                if (_removeCoroutines.TryGetValue(ragdoll.ClientId, out Coroutine coroutine))
+                {
+                    if (coroutine != null)
+                    {
+                        StopCoroutine(coroutine);
+                        Debug.Log("PUSH: Player reconnected - hysteresis cancelled");
+                        _removeCoroutines.Remove(ragdoll.ClientId);
+                    }
+                }
             }
         }
     }
@@ -65,8 +80,26 @@ public class ActionPush : ObjectiveActionBehaviour
     {
         if (collision.gameObject.TryGetComponent<Ragdoll>(out Ragdoll ragdoll))
         {
-            _pushingPlayers.Remove(ragdoll.ClientId);
-            _pushingDistances.Remove(ragdoll.ClientId);
+            if(_removeCoroutines.TryGetValue(ragdoll.ClientId, out Coroutine coroutine))
+            {
+                Debug.Log("PUSH: Using existing hysteresis coroutine");
+                if (coroutine == null) coroutine = StartCoroutine(DoHysteresis(ragdoll.ClientId));
+            }
+            else
+            {
+                Debug.Log("PUSH: Creating new hysteresis coroutine");
+                _removeCoroutines.Add(ragdoll.ClientId, StartCoroutine(DoHysteresis(ragdoll.ClientId)));
+            }
         }
+    }
+
+    IEnumerator DoHysteresis(ulong clientId)
+    {
+        Debug.Log("PUSH: Player disconnected, hysteresis started");
+        yield return new WaitForSeconds(0.4f);
+        Debug.Log("PUSH: Hysteresis completed - player disconnected");
+        _pushingPlayers.Remove(clientId);
+        _pushingDistances.Remove(clientId);
+        _removeCoroutines.Remove(clientId);
     }
 }

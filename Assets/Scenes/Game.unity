@@ -2998,6 +2998,7 @@ MonoBehaviour:
   - {fileID: 8346858115108698171, guid: 90c1ac2062b098745b9cb832c238d74a, type: 3}
   - {fileID: 8071276538416336539, guid: 25446e554448fb84d99b2117fd4de222, type: 3}
   - {fileID: 5689711838893495676, guid: 483ea6afc91ec974cb0eaeb191666799, type: 3}
+  - {fileID: 8376602980400484338, guid: e35dbbf01d2205a4a84887f22c0e0868, type: 3}
   _sceneNetworkObjects: []
 --- !u!1 &756466368
 GameObject:

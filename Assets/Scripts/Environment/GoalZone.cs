@@ -239,12 +239,11 @@ public class GoalZone : Zone
                                                                                                             _countdownTextRectTransform.localScale = _startScale;
                                                                                                             if (IsServer)
                                                                                                             {
-                                                                                                                // TODO Inform Game Manager that player has won the round
+                                                                                                                ScoreManager.Instance.IncrementGameScores();
+                                                                                                                GameManager.Instance.RoundWon();
                                                                                                             }
 
-                                                                                                            // TODO remove next line of code once Game Manager functionality is added
-                                                                                                            // For now will just set the GOAL ZONE text to WIN
-                                                                                                            if (_goalZoneText != null) _goalZoneText.text = "WIN";
+                                                                                                            if (_goalZoneText != null) _goalZoneText.text = "GOAL MET!";
 
                                                                                                             });
 

@@ -65,6 +65,7 @@ public class GameManager : NetworkBehaviour
     public NetPlayer LocalPlayer;
     //private int _playerColourIndex = 0;
     private bool _roundTimerRunning = false;
+    private bool _roundWon = false;
     private Coroutine _roundTimerCoroutine;
     private bool _clientConnected = false;
     private bool _leaderboardReady = false;
@@ -263,7 +264,7 @@ public class GameManager : NetworkBehaviour
                 }
                 break;
             case GAMESTATE.PLAYING_ROUND:
-                if(!_roundTimerRunning)
+                if(!_roundTimerRunning || _roundWon)
                 {
                     // Round timer has expired - load the leaderboard if configured
                     if (_rounds[_roundIndex].ShowLeaderBoardAfterRound && (_nextRound < _roundOrder.Count))
@@ -347,6 +348,7 @@ public class GameManager : NetworkBehaviour
                 StartCoroutine(LoadRound(_rounds[_roundIndex].RoundPrefab, _minLoadScreenTime));
                 break;
             case GAMESTATE.PLAYING_ROUND:
+                _roundWon = false;
                 // Now that scene has loaded, move players to spawn points
                 MovePlayersToSpawnPoints();
                 // Now that scene has loaded, inform the player of their objective
@@ -703,6 +705,11 @@ public class GameManager : NetworkBehaviour
     public void LeaderboardReady()
     {
         _leaderboardReady = true;
+    }
+
+    public void RoundWon()
+    {
+        if(_currentState == GAMESTATE.PLAYING_ROUND) _roundWon = true;
     }
 
     public void QuitApp()

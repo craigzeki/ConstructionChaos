@@ -400,9 +400,9 @@ public class ObjectiveManager : MonoBehaviour
 		{
 			if(playerData.Objective.Equals(objectiveOccured))
 			{
-                // The objective that occured matches one of that is assigned to a player
-                // TODO increment player score, below is temporary for testing
-                GameManager.Instance.PlayerData[playerClientId].Score += 100;
+				// The objective that occured matches one of that is assigned to a player
+				// TODO: Replace the 100 with the calculated objective score
+				ScoreManager.Instance.AddPlayerScore(playerData, 100);
 
                 // Assign a new objective
                 AssignPlayerObjective(playerClientId);

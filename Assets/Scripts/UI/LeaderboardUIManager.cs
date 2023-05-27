@@ -50,7 +50,7 @@ public class LeaderboardUIManager : NetworkBehaviour
             return;
 
         List<NetPlayerData> playerData = GameManager.Instance.PlayerData.Values
-            .OrderByDescending(x => x.Score)
+            .OrderByDescending(x => x.GameScore)
             .ToList();
         
         NetworkLeaderboardData[] playerDataStrings = new NetworkLeaderboardData[playerData.Count];
@@ -63,7 +63,7 @@ public class LeaderboardUIManager : NetworkBehaviour
             {
                 Colour = Colour,
                 PlayerName = playerData[i].PlayerName,
-                Score = playerData[i].Score
+                Score = playerData[i].GameScore
             };
         }
 
