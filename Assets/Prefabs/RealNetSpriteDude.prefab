@@ -171,7 +171,7 @@ MonoBehaviour:
   _speed: 300
   _rb: {fileID: 6015876895606871700}
   _connectedRb: {fileID: 0}
-  _releaseThreshold: 0.04
+  _releaseThreshold: 0.05
 --- !u!114 &2825808639662105412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   _speed: 300
   _rb: {fileID: 3048596715126787750}
   _connectedRb: {fileID: 0}
-  _releaseThreshold: 0.04
+  _releaseThreshold: 0.05
 --- !u!114 &3048596715126787753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,7 +1592,7 @@ MonoBehaviour:
   _speed: 300
   _rb: {fileID: 5808222031901579354}
   _connectedRb: {fileID: 0}
-  _releaseThreshold: 0.04
+  _releaseThreshold: 0.05
 --- !u!114 &5808222031901579297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2219,7 +2219,7 @@ MonoBehaviour:
   _speed: 300
   _rb: {fileID: 5808222032498415248}
   _connectedRb: {fileID: 0}
-  _releaseThreshold: 0.04
+  _releaseThreshold: 0.05
 --- !u!114 &5808222032498415252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   _speed: 300
   _rb: {fileID: 5808222032804806785}
   _connectedRb: {fileID: 0}
-  _releaseThreshold: 0.04
+  _releaseThreshold: 0.05
 --- !u!114 &5808222032804806754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,7 +3527,7 @@ MonoBehaviour:
   _speed: 300
   _rb: {fileID: 5808222033294503316}
   _connectedRb: {fileID: 0}
-  _releaseThreshold: 0.04
+  _releaseThreshold: 0.05
 --- !u!114 &5808222033294503323
 MonoBehaviour:
   m_ObjectHideFlags: 0
