@@ -11,6 +11,11 @@ public class SuperGameManager : MonoBehaviour
 
     private Coroutine _coroutine;
 
+    private void Start()
+    {
+        ReloadEntireGame(true);
+    }
+
     public static SuperGameManager Instance
     {
         get
@@ -20,13 +25,21 @@ public class SuperGameManager : MonoBehaviour
         }
     }
 
-    public void ReloadEntireGame()
+    public void ReloadEntireGame(bool splashScreen = false)
     {
         if (_coroutine != null) return;
 
 
-        MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.DisconnectedCanvas, false);
-        MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, true);
+        MenuUIManager.Instance.ToggleAllCanvasesOff();
+        if (splashScreen)
+        {
+            MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.SplashScreenCanvas, true);
+        }
+        else
+        {
+            MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, true);
+        }
+        
 
         _coroutine = StartCoroutine(RecreateNetworkObjects());
     }
@@ -48,10 +61,11 @@ public class SuperGameManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        yield return new WaitForSeconds(2);
-        MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, false);
+        yield return new WaitForSeconds(1);
+        MenuUIManager.Instance.ToggleAllCanvasesOff();
         Debug.Log("SuperGameManager: Menu Canvas = true");
         MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
+        GameManager.Instance.StartGameManager();
         _coroutine = null;
     }
 

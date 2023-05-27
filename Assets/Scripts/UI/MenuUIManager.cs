@@ -11,12 +11,13 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _gameCanvas, _disconnectedCanvas;
+    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _gameCanvas, _disconnectedCanvas, _splashScreenCanvas;
     public GameObject MainMenuCanvas => _mainMenuCanvas;
     public GameObject LoadingCanvas => _loadingCanvas;
     public GameObject LobbyCanvas => _lobbyCanvas;
     public GameObject GameCanvas => _gameCanvas;
     public GameObject DisconnectedCanvas => _disconnectedCanvas;
+    public GameObject SplashScreenCanvas => _splashScreenCanvas;
 
     [SerializeField] private GameObject _titleImage;
 
@@ -212,6 +213,19 @@ public class MenuUIManager : MonoBehaviour
         });
     }
 
+    public void ToggleAllCanvasesOff()
+    {
+        ToggleCanvas(_mainMenuCanvas, false);
+        ToggleCanvas(_loadingCanvas, false);
+        ToggleCanvas(_lobbyCanvas, false);
+        ToggleCanvas(_gameCanvas, false);
+        ToggleCanvas(_disconnectedCanvas, false);
+        ToggleCanvas(_splashScreenCanvas, false);
+
+        if (LeaderboardUIManager.Instance == null) return;
+        ToggleCanvas(LeaderboardUIManager.Instance.LeaderboardCanvas, false);
+    }
+
     public void ToggleCanvas(GameObject canvasObj, bool toggle)
     {
         canvasObj.SetActive(toggle);
@@ -221,7 +235,9 @@ public class MenuUIManager : MonoBehaviour
         
         if (canvasObj == _lobbyCanvas.gameObject)
             EnableLobby();
-        
+
+        if (LeaderboardUIManager.Instance == null) return;
+
         if (canvasObj == LeaderboardUIManager.Instance.LeaderboardCanvas)
         {
             if (NetworkManager.Singleton.IsServer)
@@ -273,7 +289,7 @@ public class MenuUIManager : MonoBehaviour
 
     private void EnableLobby()
     {
-        _startButton.gameObject.SetActive(NetworkManager.Singleton.IsServer);
+        if(NetworkManager.Singleton != null) _startButton.gameObject.SetActive(NetworkManager.Singleton.IsServer);
     }
 
     public void LoadNextRound()

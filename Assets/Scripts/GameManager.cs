@@ -91,7 +91,7 @@ public class GameManager : NetworkBehaviour
         _controls.Gameplay.Escape.performed += EscapeButtonPressed;
         _controls.Gameplay.Escape.canceled += EscapeButtonPressed;
 
-        DoStateTransition(GAMESTATE.MENU);
+        _currentState = GAMESTATE.START;
     }
 
     public override void OnNetworkSpawn()
@@ -109,6 +109,11 @@ public class GameManager : NetworkBehaviour
     private void Update()
     {
         DoStateCyclicActions();
+    }
+
+    public void StartGameManager()
+    {
+        if(_currentState == GAMESTATE.START) DoStateTransition(GAMESTATE.MENU);
     }
 
     /// <summary>
