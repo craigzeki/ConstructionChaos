@@ -10,6 +10,9 @@ public class LeaderboardUIManager : NetworkBehaviour
 {
     public static LeaderboardUIManager Instance;
 
+    [SerializeField] private GameObject _leaderboardCanvas;
+    public GameObject LeaderboardCanvas => _leaderboardCanvas;
+
     [SerializeField] private GameObject _leaderboardPanel;
     [SerializeField] private GameObject _leaderboardEntryPrefab;
 
@@ -111,5 +114,10 @@ public class LeaderboardUIManager : NetworkBehaviour
         _countdownText.text = "GO!";
         yield return new WaitForSeconds(1f);
         GameManager.Instance.LoadNextRound();
+    }
+
+    public void LoadMenu()
+    {
+        MenuUIManager.Instance.LoadMenu();
     }
 }

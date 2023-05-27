@@ -11,11 +11,10 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _leaderboardCanvas, _gameCanvas, _disconnectedCanvas;
+    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _gameCanvas, _disconnectedCanvas;
     public GameObject MainMenuCanvas => _mainMenuCanvas;
     public GameObject LoadingCanvas => _loadingCanvas;
     public GameObject LobbyCanvas => _lobbyCanvas;
-    public GameObject LeaderboardCanvas => _leaderboardCanvas;
     public GameObject GameCanvas => _gameCanvas;
     public GameObject DisconnectedCanvas => _disconnectedCanvas;
 
@@ -223,7 +222,7 @@ public class MenuUIManager : MonoBehaviour
         if (canvasObj == _lobbyCanvas.gameObject)
             EnableLobby();
         
-        if (canvasObj == _leaderboardCanvas.gameObject)
+        if (canvasObj == LeaderboardUIManager.Instance.LeaderboardCanvas)
         {
             if (NetworkManager.Singleton.IsServer)
             {

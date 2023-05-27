@@ -49,7 +49,7 @@ MonoBehaviour:
   _lobbyPrefab: {fileID: 226071342479353666, guid: 9febbed559c3dff44a4d461b7af0140a, type: 3}
   _rounds:
   - RoundPrefab: {fileID: 3375138609505047820, guid: 6d340c81a70f44ec1a9a46db36c16570, type: 3}
-    RoundDurationSeconds: 5
+    RoundDurationSeconds: 10
     ShowLeaderBoardAfterRound: 0
   _playerColours:
   - {r: 0.990566, g: 0.43454072, b: 0.43454072, a: 1}
@@ -62,6 +62,7 @@ MonoBehaviour:
   _currentState: 0
   _roundOrder: 
   LocalPlayer: {fileID: 0}
+  TrueIsServer: 0
 --- !u!114 &2023662495
 MonoBehaviour:
   m_ObjectHideFlags: 0

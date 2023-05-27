@@ -36,7 +36,7 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="maxPlayers">The maximum number of players allowed in the game</param>
     public async Task<bool> HostGame(bool local = false)
     {
-        Shutdown();
+        //Shutdown();
 
         if (NetworkManager.Singleton != null)
         {
@@ -84,6 +84,12 @@ public class ConnectionHandler : MonoBehaviour
 
                 }
             }
+            else
+            {
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
+                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+                NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+            }
 
             return localConnectionSuccessful;
         }
@@ -110,6 +116,12 @@ public class ConnectionHandler : MonoBehaviour
 
             }
         }
+        else
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+            NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+        }
 
         return connectionSuccessful;
     }
@@ -120,7 +132,7 @@ public class ConnectionHandler : MonoBehaviour
     /// <param name="roomCode">The room code to join</param>
     public async Task<bool> JoinGame(string roomCode, bool local = false)
     {
-        Shutdown();
+        //Shutdown();
 
         if (NetworkManager.Singleton != null)
         {
@@ -163,6 +175,12 @@ public class ConnectionHandler : MonoBehaviour
 
                 }
             }
+            else
+            {
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
+                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+                NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+            }
 
             return localLoginSuccessful;
         }
@@ -188,6 +206,12 @@ public class ConnectionHandler : MonoBehaviour
             {
 
             }
+        }
+        else
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+            NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
         }
 
         return loginSuccessful;
@@ -347,7 +371,16 @@ public class ConnectionHandler : MonoBehaviour
         //response.PlayerPrefabHash = null;
         //response.Position = Vector3.zero;
         //response.Rotation = Quaternion.identity;
-        
+
+        // Always approve the host
+        if (request.ClientNetworkId == NetworkManager.Singleton.LocalClientId)
+        {
+            Debug.Log("Automatically approved the Host for connection");
+            response.Approved = true;
+            response.Pending = false;
+            return;
+        }
+
         if (NetworkManager.Singleton.ConnectedClientsIds.Count() >= _maxNoOfPlayers)
         {
             

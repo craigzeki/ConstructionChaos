@@ -31,7 +31,7 @@ public class GameManager : NetworkBehaviour
         //Add new states above this line
         NUM_OF_STATES
     }
-
+    
     [SerializeField] private float _minLoadScreenTime = 2f;
 
     [SerializeField] private GameObject _lobbyPrefab;
@@ -121,7 +121,7 @@ public class GameManager : NetworkBehaviour
     /// <returns></returns>
     public bool RegisterNewPlayer(ulong clientId, NetPlayer netPlayer)
     {
-        if(IsServer)
+        if(TrueIsServer)
         {
             if (netPlayer == null) return false;
 
@@ -276,7 +276,7 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.MIDPOINT_LEADERBOARD:
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
-                if (_leaderboardReady && !IsServer)
+                if (_leaderboardReady && !TrueIsServer)
                 {
                     ConnectionHandler.Instance.Shutdown();
                     _leaderboardReady = false;
@@ -297,27 +297,36 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
-                MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
+                
                 if (_currentState != GAMESTATE.START)
                 {
-                    try
-                    {
-                        NetworkObject.Despawn(false);
-                    }
-                    catch (NullReferenceException)
-                    {
-                        // Do nothing
-                    }
+                    SuperGameManager.Instance.ReloadEntireGame();
+                    //try
+                    //{
+                    //    NetworkObject.Despawn(false);
+                    //}
+                    //catch (NullReferenceException)
+                    //{
+                    //    // Do nothing
+                    //}
                 }
-                _clientConnected = false;
-                PlayerData.Clear();
-                //_playerColourIndex = 0;
-
-                // reload all colours
-                for(int i = 0; i < _playerColours.Count; i++)
+                else
                 {
-                    _playerColourIndexes.Add(i);
+                    Debug.Log("MenuEntry: Menu Canvas = true");
+                    MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
+                    _clientConnected = false;
+
+                    // Reset players
+                    PlayerData.Clear();
+
+                    // reload all colours
+                    _playerColourIndexes.Clear();
+                    for (int i = 0; i < _playerColours.Count; i++)
+                    {
+                        _playerColourIndexes.Add(i);
+                    }
                 }
+                
                 break;
             case GAMESTATE.LOADING_LOBBY:
                 StartCoroutine(LoadRound(_lobbyPrefab, _minLoadScreenTime));
@@ -343,11 +352,11 @@ public class GameManager : NetworkBehaviour
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.GameCanvas, true);
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
-                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
+                MenuUIManager.Instance.ToggleCanvas(LeaderboardUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
                 LeaderboardUIManager.Instance.FinalLeaderboard = true;
-                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, true);
+                MenuUIManager.Instance.ToggleCanvas(LeaderboardUIManager.Instance.LeaderboardCanvas, true);
                 break;
             case GAMESTATE.DISCONNECTED:
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.DisconnectedCanvas, true);
@@ -367,7 +376,7 @@ public class GameManager : NetworkBehaviour
             case GAMESTATE.START:
                 break;
             case GAMESTATE.MENU:
-                if(IsServer)
+                if(TrueIsServer)
                 {
                     // ! Do not change PlayerData here, as the host has already loaded in
                     // ! Instead change it in Menu Entry Transition
@@ -384,10 +393,11 @@ public class GameManager : NetworkBehaviour
                 }
                 break;
             case GAMESTATE.LOADING_LOBBY:
+                Debug.Log("LoadingLobbyExit: Menu Canvas = false");
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LoadingCanvas, false);
                 break;
             case GAMESTATE.PLAYING_LOBBY:
-                if (IsServer)
+                if (TrueIsServer)
                 {
                     Destroy(_currentRound);
                 }
@@ -398,18 +408,18 @@ public class GameManager : NetworkBehaviour
                 break;
             case GAMESTATE.PLAYING_ROUND:
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.GameCanvas, false);
-                if (IsServer)
+                if (TrueIsServer)
                 {
                     Destroy(_currentRound);
                 }
                 break;
             case GAMESTATE.MIDPOINT_LEADERBOARD:
-                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, false);
+                MenuUIManager.Instance.ToggleCanvas(LeaderboardUIManager.Instance.LeaderboardCanvas, false);
                 break;
             case GAMESTATE.FINAL_LEADERBOARD:
-                MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.LeaderboardCanvas, false);
+                MenuUIManager.Instance.ToggleCanvas(LeaderboardUIManager.Instance.LeaderboardCanvas, false);
                 LeaderboardUIManager.Instance.FinalLeaderboard = false;
-                if (IsServer)
+                if (TrueIsServer)
                 {
                     ConnectionHandler.Instance.Shutdown();
                 }
@@ -480,7 +490,7 @@ public class GameManager : NetworkBehaviour
         DoEntryTransition(newState);
         _currentState = newState;
 
-        if(IsServer)
+        if(TrueIsServer)
         {
             OnGameStateChanged?.Invoke(this, _currentState);
             // inform all clients
@@ -498,7 +508,7 @@ public class GameManager : NetworkBehaviour
 
     private void RoundLoaded()
     {
-        if (IsServer)
+        if (TrueIsServer)
         {
             // Let everyone know the scene was loaded
             OnSceneLoaded?.Invoke(this, EventArgs.Empty);
@@ -531,7 +541,7 @@ public class GameManager : NetworkBehaviour
     /// </summary>
     public void LoadRoundButton()
     {
-        if (!IsServer) return;
+        if (!TrueIsServer) return;
 
         if((_currentState != GAMESTATE.PLAYING_ROUND) && (_currentState != GAMESTATE.PLAYING_LOBBY)) return;
         if ((_currentState == GAMESTATE.PLAYING_ROUND) && _rounds[_roundIndex].ShowLeaderBoardAfterRound && (_nextRound < _roundOrder.Count))
@@ -552,7 +562,7 @@ public class GameManager : NetworkBehaviour
     /// </summary>
     public void LoadNextRound()
     {
-        if (!IsServer) return;
+        if (!TrueIsServer) return;
         if ((_currentState == GAMESTATE.MIDPOINT_LEADERBOARD) || (_currentState == GAMESTATE.PLAYING_LOBBY))
         {
             LoadRound();
@@ -565,7 +575,15 @@ public class GameManager : NetworkBehaviour
 
     public void LoadMenu()
     {
-        DoStateTransition(GAMESTATE.MENU);
+        if (CurrentState == GAMESTATE.MENU)
+        {
+            QuitApp();
+        }
+        else
+        {
+            ConnectionHandler.Instance.Shutdown();
+            SuperGameManager.Instance.ReloadEntireGame();
+        }
     }
 
     public void ClientDisconnected(string reason)
@@ -610,7 +628,7 @@ public class GameManager : NetworkBehaviour
 
     private void MovePlayersToSpawnPoints()
     {
-        if(IsServer)
+        if(TrueIsServer)
         {
             foreach (NetPlayerData netPlayerData in PlayerData.Values)
             {
@@ -632,7 +650,7 @@ public class GameManager : NetworkBehaviour
 
     private void SendPlayerObjectiveStrings()
     {
-        if (IsServer)
+        if (TrueIsServer)
         {
             foreach (NetPlayerData netPlayerData in PlayerData.Values)
             {
@@ -646,7 +664,7 @@ public class GameManager : NetworkBehaviour
     private void SetStateClientRpc(GameManager.GAMESTATE state, ClientRpcParams clientRpcParams = default)
     {
         Debug.Log("Received request to change state to: " + state.ToString());
-        if(!IsServer)
+        if(!TrueIsServer)
         {
             if (!DoStateTransition(state))
             {
@@ -692,15 +710,7 @@ public class GameManager : NetworkBehaviour
     {
         if(value.ReadValueAsButton())
         {
-            if (CurrentState == GAMESTATE.MENU)
-            {
-                QuitApp();
-            }
-            else
-            {
-                ConnectionHandler.Instance.Shutdown();
-                DoStateTransition(GAMESTATE.MENU);
-            }
+            LoadMenu();
         }
         
     }
