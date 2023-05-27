@@ -88,7 +88,9 @@ public class ActionThrow : ObjectiveActionBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        LayerMask layerMask = (LayerMask.NameToLayer("Ground") | LayerMask.NameToLayer("Player"));
+        //LayerMask layerMask = (LayerMask.NameToLayer("Ground") | LayerMask.NameToLayer("Player"));
+        LayerMask layerMask = LayerMask.NameToLayer("Ground");
+        
         // colliding with the ground or player will cancel the throw
         if ((collision.gameObject.layer & layerMask) != 0)
         {
