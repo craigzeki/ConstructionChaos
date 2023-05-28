@@ -101,7 +101,7 @@ public class GoalZone : Zone
                 if (goalRequirement.RequirementMet())
                 {
                     // Inform the UI / Game Manager that the single objective is met
-                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), true);
+                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), (int)goalRequirement.QuantityInZone, true);
 
                     if (AllGoalRequirementsMet())
                     {
@@ -114,6 +114,10 @@ public class GoalZone : Zone
                         // Start the countdown on clients
                         DoCountdownClientRpc();
                     }
+                }
+                else
+                {
+                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), (int)goalRequirement.QuantityInZone, false);
                 }
             }
         } 
@@ -170,7 +174,7 @@ public class GoalZone : Zone
                 if (!goalRequirement.RequirementMet())
                 {
                     // Inform the UI / Game Manager that the single objective is no longer met
-                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), false);
+                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), (int)goalRequirement.QuantityInZone, false);
 
                     // Cancel countdown
                     if (_countdownCoroutine != null)
@@ -182,14 +186,18 @@ public class GoalZone : Zone
                     // Cancel the countdown on clients
                     CancelCountdownClientRpc();
                 }
+                else
+                {
+                    UpdateGroupObjectiveRequirementClientRpc(_goalRequirements.IndexOf(goalRequirement), (int)goalRequirement.QuantityInZone, true);
+                }
             }
         } 
     }
 
     [ClientRpc]
-    private void UpdateGroupObjectiveRequirementClientRpc(int index, bool isComplete, ClientRpcParams clientRpcParams = default)
+    private void UpdateGroupObjectiveRequirementClientRpc(int index, int newValue, bool isComplete, ClientRpcParams clientRpcParams = default)
     {
-        GameUIManager.Instance.UpdateGroupObjectiveRequirement(index, isComplete);
+        GameUIManager.Instance.UpdateGroupObjectiveRequirement(index, newValue, isComplete);
     }
 
 

@@ -59,7 +59,7 @@ public class GameUIManager : MonoBehaviour
         foreach (string requirement in objectiveRequirements)
         {
             GameObject requirementObject = Instantiate(_groupObjectiveRequirementPrefab, _groupObjectiveRequirementsParent.transform);
-            requirementObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = requirement;
+            requirementObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "0/" + requirement;
         }
     }
 
@@ -68,8 +68,18 @@ public class GameUIManager : MonoBehaviour
     /// </summary>
     /// <param name="index">The index of the requirement to update</param>
     /// <param name="isComplete">Whether the requirement is complete or not</param>
-    public void UpdateGroupObjectiveRequirement(int index, bool isComplete)
+    public void UpdateGroupObjectiveRequirement(int index, int newValue, bool isComplete = false)
     {
-        _groupObjectiveRequirementsParent.transform.GetChild(index).transform.GetChild(0).GetComponent<Image>().sprite = isComplete ? _objectiveRequirementDoneSprite : _objectiveRequirementNotDoneSprite;
+        Transform requirementTransform = _groupObjectiveRequirementsParent.transform.GetChild(index);
+
+        requirementTransform.GetChild(0).GetComponent<Image>().sprite = isComplete ? _objectiveRequirementDoneSprite : _objectiveRequirementNotDoneSprite;
+
+        string requirementText = requirementTransform.GetChild(1).GetComponent<TextMeshProUGUI>().text;
+
+        int slashIndex = requirementText.IndexOf('/');
+
+        requirementText = newValue + requirementText.Substring(slashIndex);
+
+        requirementTransform.GetChild(1).GetComponent<TextMeshProUGUI>().text = requirementText;
     }
 }
