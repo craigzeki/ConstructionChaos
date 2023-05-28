@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc64da782c53f146bde9ce8f0846ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friendlyString: the goal zone
+  _friendlyString: the <style="Zone">goal zone</style>
   _zoneType: 1
   _isOnGround: 1
   _goalZoneText: {fileID: 4042945522699587106}
@@ -400,7 +400,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.0936263, b: 0, a: 0.53333336}
+  m_Color: {r: 1, g: 0.0936263, b: 0, a: 0.54901963}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

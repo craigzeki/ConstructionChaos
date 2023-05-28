@@ -42,6 +42,7 @@ public class ObjectiveManager : MonoBehaviour
 
 	private string _anyColourString = "<style=\"Colour\">any coloured</style>";
 	public string AnyColourString => _anyColourString;
+	private string _orangeString = "<style=\"Colour\">orange</style>";
 
 	private static ObjectiveManager _instance;
     public static ObjectiveManager Instance
@@ -308,8 +309,10 @@ public class ObjectiveManager : MonoBehaviour
 				// Get the colour name from the friendly string (without the "a" at the start)
 				string colourString = objective.Colour.FriendlyString.Split(' ')[1];
 
+				string a = colourString == _orangeString ? "an" : "a";
+
 				// Replace the <COLOUR> tag with the colour name in the correct colour
-				str = str.Replace("<COLOUR>", $"a <color=#{hexValue}>{colourString}</color>");
+				str = str.Replace("<COLOUR>", $"{a} <color=#{hexValue}>{colourString}</color>");
 			}
 			str = str.Replace("<OBJECT>", objective.Object.FriendlyString);
 			str = str.Replace("<CONDITION>", objective.Condition.FriendlyString);

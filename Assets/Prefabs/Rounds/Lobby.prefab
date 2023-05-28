@@ -667,7 +667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226071342872568466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.6, y: 14.4, z: 0}
+  m_LocalPosition: {x: 41.3, y: 14.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -799,7 +799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226071343763051943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.6, y: 12.88, z: 0}
+  m_LocalPosition: {x: 18.72, y: 12.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4131,6 +4131,30 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 900535961365186063, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 1.0008202
+      objectReference: {fileID: 0}
+    - target: {fileID: 900535961365186063, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 0.8548913
+      objectReference: {fileID: 0}
+    - target: {fileID: 900535961365186063, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: -0.007075906
+      objectReference: {fileID: 0}
+    - target: {fileID: 900535961365186063, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: 0.14620638
+      objectReference: {fileID: 0}
+    - target: {fileID: 900535961365186063, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: -0.9832517
+      objectReference: {fileID: 0}
+    - target: {fileID: 900535961365186063, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 0.13644181
+      objectReference: {fileID: 0}
     - target: {fileID: 900535961365186096, guid: 7313d1ad7ae2c224abe5bfb0ec7772c7, type: 3}
       propertyPath: m_Name
       value: Ground2Wall Left
@@ -4957,7 +4981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506680575437497721, guid: 3b3c8d6a3c5699341964578d0edfcbea, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 4.96
       objectReference: {fileID: 0}
     - target: {fileID: 8506680575437497721, guid: 3b3c8d6a3c5699341964578d0edfcbea, type: 3}
       propertyPath: m_LocalScale.y

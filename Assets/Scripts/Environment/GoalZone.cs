@@ -65,7 +65,9 @@ public class GoalZone : Zone
             String goalString = "";
             goalString += (requirement.UseQtyAsPercentageInScene ? requirement.PercentBasedQty.ToString() : requirement.QuantityRequired.ToString());
             goalString += " " + requirement.RequiredObject.FriendlyString;
+            goalString = goalString.Replace("</style>", "");
             goalString += (requirement.UseQtyAsPercentageInScene ? (requirement.PercentBasedQty > 1 ? "s" : "") : (requirement.QuantityRequired > 1 ? "s" : ""));
+            goalString += "</style>";
             GoalStrings.Add(goalString);
         }
     }
