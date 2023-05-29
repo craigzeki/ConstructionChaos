@@ -15,6 +15,7 @@ using UnityEngine.InputSystem;
 public class StickMovement : Ragdoll
 {
     [SerializeField] private float _speed = 1.5f;
+    [SerializeField] private float _maxVelocity = 23f;
     [SerializeField] private float _stepWait = 0.5f;
     [SerializeField] private float _jumpForce = 10f;
     [SerializeField] private float _positionRadius;
@@ -32,6 +33,7 @@ public class StickMovement : Ragdoll
     private bool _collapse = false;
     private bool _allowedToJump = true;
     private List<Grab> _grabbers = new List<Grab>();
+    private float _maxSqrVelocity;
 
     protected override void Awake()
     {
@@ -47,18 +49,34 @@ public class StickMovement : Ragdoll
         }
 
         _grabbers = GetComponentsInChildren<Grab>().ToList<Grab>();
+        _maxSqrVelocity = _maxVelocity * _maxVelocity;
     }
 
     private void FixedUpdate()
     {
         if (IsServer)
+        {
             HandleMovementAndJump(CharacterInputHandler.CharacterInputData);
+            LimitVelocity();
+        }
+            
     }
 
     public void DoCollapse(bool collapse, bool breakApart)
     {
         _collapse = collapse;
         gameObject.BroadcastMessage("OnCollapse", (collapse, breakApart));
+    }
+
+    private void LimitVelocity()
+    {
+        _maxSqrVelocity = _maxVelocity * _maxVelocity;
+        
+        if(_bodyRB.velocity.sqrMagnitude > _maxSqrVelocity)
+        {
+            _bodyRB.velocity = _bodyRB.velocity.normalized * _maxVelocity;
+            Debug.Log("LIMITED VELOCITY to " + _bodyRB.velocity);
+        }
     }
 
     /// <summary>

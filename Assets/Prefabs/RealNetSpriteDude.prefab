@@ -1265,6 +1265,7 @@ MonoBehaviour:
   StickMovement: {fileID: 0}
   _rejoinAnchorDistanceThreshold: 0.005
   _speed: 1.5
+  _maxVelocity: 15
   _stepWait: 0.5
   _jumpForce: 6000
   _positionRadius: 0.22
