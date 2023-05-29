@@ -59,7 +59,7 @@ public class Arms : Ragdoll
             {
                 _connectedPosition = _connectedRb.gameObject.transform.localPosition;
                 _currentConnectionDistance = Vector3.Distance(transform.localPosition, _connectedPosition);
-                Debug.Log("Distance: " + Mathf.Abs(_currentConnectionDistance - _initialConnectionDistance).ToString("##.###"));
+                //Debug.Log("Distance: " + Mathf.Abs(_currentConnectionDistance - _initialConnectionDistance).ToString("##.###"));
                 if (Mathf.Abs(_currentConnectionDistance - _initialConnectionDistance) > _releaseThreshold)
                 {
                     _grabber.Release = true;
