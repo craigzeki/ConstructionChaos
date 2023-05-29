@@ -29,7 +29,7 @@ public class ActionPush : ObjectiveActionBehaviour
         foreach(ulong clientId in _pushingPlayers.Keys)
         {
             _pushingDistances[clientId] += _distanceTravelled;
-            Debug.Log("Pushing distance: " + _pushingDistances[clientId]);
+            //Debug.Log("Pushing distance: " + _pushingDistances[clientId]);
             if(_pushingDistances[clientId] > Objective.Action.RequiredPerformanceDistance)
             {
 
@@ -89,7 +89,7 @@ public class ActionPush : ObjectiveActionBehaviour
                     if (coroutine != null)
                     {
                         StopCoroutine(coroutine);
-                        Debug.Log("PUSH: Player reconnected - hysteresis cancelled");
+                        //Debug.Log("PUSH: Player reconnected - hysteresis cancelled");
                         _removeCoroutines.Remove(ragdoll.ClientId);
                     }
                 }
@@ -106,7 +106,7 @@ public class ActionPush : ObjectiveActionBehaviour
                     if(coroutine != null)
                     {
                         StopCoroutine(coroutine);
-                        Debug.Log("PUSH: Ground reconnected - hysteresis cancelled");
+                        //Debug.Log("PUSH: Ground reconnected - hysteresis cancelled");
                         _removeGroundCoroutines.Remove(clientId);
                     }
                 }
@@ -120,12 +120,12 @@ public class ActionPush : ObjectiveActionBehaviour
         {
             if(_removeCoroutines.TryGetValue(ragdoll.ClientId, out Coroutine coroutine))
             {
-                Debug.Log("PUSH: Using existing hysteresis coroutine");
+                //Debug.Log("PUSH: Using existing hysteresis coroutine");
                 if (coroutine == null) coroutine = StartCoroutine(DoHysteresis(ragdoll.ClientId, "Player"));
             }
             else
             {
-                Debug.Log("PUSH: Creating new hysteresis coroutine");
+                //Debug.Log("PUSH: Creating new hysteresis coroutine");
                 _removeCoroutines.Add(ragdoll.ClientId, StartCoroutine(DoHysteresis(ragdoll.ClientId, "Player")));
             }
         }
@@ -137,12 +137,12 @@ public class ActionPush : ObjectiveActionBehaviour
             {
                 if (_removeGroundCoroutines.TryGetValue(clientId, out Coroutine coroutine))
                 {
-                    Debug.Log("PUSH: Using existing ground hysteresis coroutine");
+                    //Debug.Log("PUSH: Using existing ground hysteresis coroutine");
                     if (coroutine == null) coroutine = StartCoroutine(DoHysteresis(clientId, "Ground"));
                 }
                 else
                 {
-                    Debug.Log("PUSH: Creating new ground hysteresis coroutine");
+                    //Debug.Log("PUSH: Creating new ground hysteresis coroutine");
                     _removeGroundCoroutines.Add(clientId, StartCoroutine(DoHysteresis(clientId, "Ground")));
                 }
             }
@@ -151,9 +151,9 @@ public class ActionPush : ObjectiveActionBehaviour
 
     IEnumerator DoHysteresis(ulong clientId, string reason)
     {
-        Debug.Log("PUSH: " + reason + " disconnected, hysteresis started");
+        //Debug.Log("PUSH: " + reason + " disconnected, hysteresis started");
         yield return new WaitForSeconds(0.4f);
-        Debug.Log("PUSH: " + reason + " Hysteresis completed - player disconnected");
+        //Debug.Log("PUSH: " + reason + " Hysteresis completed - player disconnected");
         _pushingPlayers.Remove(clientId);
         _pushingDistances.Remove(clientId);
         
