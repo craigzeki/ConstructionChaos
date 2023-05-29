@@ -23,7 +23,7 @@ public class MenuUIManager : MonoBehaviour
 
     [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
 
-    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText;
+    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText, _waitingText;
 
     [SerializeField] private TMP_InputField _roomCodeInput;
 
@@ -289,7 +289,9 @@ public class MenuUIManager : MonoBehaviour
 
     private void EnableLobby()
     {
-        if(NetworkManager.Singleton != null) _startButton.gameObject.SetActive(NetworkManager.Singleton.IsServer);
+        if(NetworkManager.Singleton == null) return;
+        _startButton.gameObject.SetActive(NetworkManager.Singleton.IsHost);
+        _waitingText.gameObject.SetActive(!NetworkManager.Singleton.IsHost);
     }
 
     public void LoadNextRound()
