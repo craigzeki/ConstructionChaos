@@ -9,15 +9,8 @@ using UnityEngine;
 /// An action that can be performed on an objective object.
 /// </summary>
 [CreateAssetMenu(fileName = "ObjectiveAction", menuName = "ScriptableObjects/ObjectiveAction", order = 1)]
-public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
+public class ObjectiveAction : ObjectiveBase, IEquatable<ObjectiveAction>
 {
-    /// <summary>
-    /// The friendly string of the action. Must be in the format "... <COLOUR> <OBJECT> <CONDITION>".
-    /// </summary>
-    [SerializeField]
-    private string _friendlyString;
-    public string FriendlyString => _friendlyString;
-
     /// <summary>
     /// The amount of time that the player has to perform this action for in order for it to count
     /// </summary>
@@ -50,6 +43,7 @@ public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
         if (other is null) return false;
         return (
                 (_friendlyString.Equals(other._friendlyString)) &&
+                (_points == other._points) &&
                 (_requiredPerformanceTime == other._requiredPerformanceTime) &&
                 (_requiredPerformanceDistance == other._requiredPerformanceDistance) &&
                 Enumerable.SequenceEqual(_possibleConditions.OrderBy(i => i.FriendlyString), other._possibleConditions.OrderBy(i => i.FriendlyString)) &&
@@ -86,6 +80,7 @@ public class ObjectiveAction : ScriptableObject, IEquatable<ObjectiveAction>
         {
             int hashCode = 17;
             hashCode = (hashCode * 23) + (_friendlyString != null ? _friendlyString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + _points.GetHashCode();
             hashCode = (hashCode * 32) + _requiredPerformanceTime.GetHashCode();
             hashCode = (hashCode * 32) + _requiredPerformanceDistance.GetHashCode();
             foreach(ObjectiveCondition objectiveCondition in _possibleConditions)

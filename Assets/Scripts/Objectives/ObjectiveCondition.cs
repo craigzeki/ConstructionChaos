@@ -9,15 +9,8 @@ using UnityEngine;
 /// A condition that an objective action can have.
 /// </summary>
 [CreateAssetMenu(fileName = "ObjectiveCondition", menuName = "ScriptableObjects/ObjectiveCondition", order = 1)]
-public class ObjectiveCondition : ScriptableObject, IEquatable<ObjectiveCondition>
+public class ObjectiveCondition : ObjectiveBase, IEquatable<ObjectiveCondition>
 {
-    /// <summary>
-    /// The friendly string of the condition.
-    /// </summary>
-    [SerializeField]
-    private string _friendlyString;
-    public string FriendlyString => _friendlyString;
-
     [SerializeField]
     private bool _duringCountdown = false;
     public bool DuringCountdown => _duringCountdown;
@@ -53,6 +46,7 @@ public class ObjectiveCondition : ScriptableObject, IEquatable<ObjectiveConditio
         //if (ReferenceEquals(this, other)) return true;
         return (
                 (_friendlyString.Equals(other.FriendlyString)) &&
+                (_points == other._points) &&
                 (_duringCountdown == other.DuringCountdown) &&
                 (_requiresObjectToBeInZone == other.RequiresObjectToBeInZone) &&
                 (_requiredZone == other.RequiredZone) &&
@@ -91,6 +85,7 @@ public class ObjectiveCondition : ScriptableObject, IEquatable<ObjectiveConditio
         {
             int hashCode = 17;
             hashCode = (hashCode * 23) + (_friendlyString != null ? _friendlyString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_points.GetHashCode());
             hashCode = (hashCode * 23) + (_duringCountdown.GetHashCode());
             hashCode = (hashCode * 23) + (_requiresObjectToBeInZone.GetHashCode());
             hashCode = (hashCode * 23) + (_requiredZone.GetHashCode());

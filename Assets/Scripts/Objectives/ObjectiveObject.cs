@@ -8,15 +8,8 @@ using UnityEngine;
 /// An object that can be used in an objective.
 /// </summary>
 [CreateAssetMenu(fileName = "ObjectiveObject", menuName = "ScriptableObjects/ObjectiveObject", order = 1)]
-public class ObjectiveObject : ScriptableObject, IEquatable<ObjectiveObject>
+public class ObjectiveObject : ObjectiveBase, IEquatable<ObjectiveObject>
 {
-    /// <summary>
-    /// The friendly string of the object.
-    /// </summary>
-    [SerializeField]
-    private string friendlyString;
-    public string FriendlyString => friendlyString;
-
     /// <summary>
     /// A list of all the possible colours that this object can be.
     /// </summary>
@@ -41,7 +34,8 @@ public class ObjectiveObject : ScriptableObject, IEquatable<ObjectiveObject>
     {
         if (other is null) return false;
         return (
-                (friendlyString.Equals(other.friendlyString)) &&
+                (_friendlyString.Equals(other._friendlyString)) &&
+                _points == other._points &&
                 Enumerable.SequenceEqual(possibleColours.OrderBy(i => i.FriendlyString), other.possibleColours.OrderBy(i => i.FriendlyString)) &&
                 Enumerable.SequenceEqual(possibleActions.OrderBy(i => i.FriendlyString), other.possibleActions.OrderBy(i => i.FriendlyString))
                 );
@@ -75,7 +69,8 @@ public class ObjectiveObject : ScriptableObject, IEquatable<ObjectiveObject>
         unchecked
         {
             int hashCode = 17;
-            hashCode = (hashCode * 23) + (friendlyString != null ? friendlyString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_friendlyString != null ? _friendlyString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_points.GetHashCode());
             foreach(ObjectiveColour objectiveColour in possibleColours)
             {
                 hashCode = (hashCode * 23) + objectiveColour.GetHashCode();

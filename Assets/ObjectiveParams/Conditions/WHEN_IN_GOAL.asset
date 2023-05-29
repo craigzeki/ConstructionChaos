@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WHEN_IN_GOAL
   m_EditorClassIdentifier: 
   _friendlyString: when in the <style="Zone">goal zone</style>
+  _points: 10
   _duringCountdown: 0
   _requiresObjectToBeInZone: 1
   _requiredZone: 1

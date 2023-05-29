@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HOLD
   m_EditorClassIdentifier: 
   _friendlyString: <style="Action">Hold</style> <COLOUR> <OBJECT> <CONDITION>
+  _points: 30
   _requiredPerformanceTime: 3
   _requiredPerformanceDistance: 0
   _possibleConditions:

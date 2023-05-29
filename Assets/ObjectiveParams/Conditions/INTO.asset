@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: INTO
   m_EditorClassIdentifier: 
   _friendlyString: into <ZONE>
+  _points: 20
   _duringCountdown: 0
   _requiresObjectToBeInZone: 1
   _requiredZone: 2
+  _requiresZoneToBeOnGround: 0
   _requiredZoneColour: {fileID: 0}

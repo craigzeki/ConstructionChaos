@@ -8,15 +8,8 @@ using UnityEngine;
 /// A colour that an objective object can be.
 /// </summary>
 [CreateAssetMenu(fileName = "ObjectiveColour", menuName = "ScriptableObjects/ObjectiveColour", order = 1)]
-public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, INetworkSerializable
+public class ObjectiveColour : ObjectiveBase, IEquatable<ObjectiveColour>, INetworkSerializable
 {
-    /// <summary>
-    /// The friendly string of the colour.
-    /// </summary>
-    [SerializeField]
-    private string friendlyString;
-    public string FriendlyString => friendlyString;
-
     /// <summary>
     /// The actual colour of the colour.
     /// </summary>
@@ -35,7 +28,8 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, IN
         if (other is null) return false;
         return
         (
-            (friendlyString.Equals(other.friendlyString)) &&
+            (_friendlyString.Equals(other._friendlyString)) &&
+            (_points == other._points) &&
             (colour.Equals(other.colour))
         );
     }
@@ -68,7 +62,8 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, IN
         unchecked
         {
             int hashCode = 17;
-            hashCode = (hashCode * 23) + (friendlyString != null ? friendlyString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + (_friendlyString != null ? _friendlyString.GetHashCode() : 0);
+            hashCode = (hashCode * 23) + _points.GetHashCode();
             hashCode = (hashCode * 23) + (colour != null ? colour.GetHashCode() : 0);
             return hashCode;
         }
@@ -76,7 +71,7 @@ public class ObjectiveColour : ScriptableObject, IEquatable<ObjectiveColour>, IN
 
     void INetworkSerializable.NetworkSerialize<T>(BufferSerializer<T> serializer)
     {
-        serializer.SerializeValue(ref friendlyString);
+        serializer.SerializeValue(ref _friendlyString);
         serializer.SerializeValue(ref colour);
     }
 }

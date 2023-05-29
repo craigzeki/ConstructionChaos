@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: THROW
   m_EditorClassIdentifier: 
   _friendlyString: <style="Action">Throw</style> <COLOUR> <OBJECT> <CONDITION>
+  _points: 40
   _requiredPerformanceTime: 0
   _requiredPerformanceDistance: 0
   _possibleConditions:

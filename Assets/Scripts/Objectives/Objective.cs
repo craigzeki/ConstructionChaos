@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Zone;
 
 /// <summary>
 /// Container for storing objective information
@@ -51,6 +53,10 @@ public class Objective : IEquatable<Objective>
     private string _objectiveString;
     public string ObjectiveString => _objectiveString;
 
+    [SerializeField]
+    private uint _points;
+    public uint Points => _points;
+
 
     /// <summary>
     /// The zone (if any) required for the condition
@@ -85,7 +91,18 @@ public class Objective : IEquatable<Objective>
         {
             this._objectiveString = ObjectiveManager.Instance.CreateObjectiveString(this);
         }
-        
+
+        _points = 0;
+    }
+
+    public uint GetPoints()
+    {
+        _points += (_action != null) ? _action.Points : 0;
+        _points += (_colour != null) ? _colour.Points : 0;
+        _points += (_object != null) ? _object.Points : 0;
+        _points += (_condition != null) ? _condition.Points : 0;
+        _points += (_zone != null) ? _zone.Points : 0;
+        return _points;
     }
 
     /// <summary>

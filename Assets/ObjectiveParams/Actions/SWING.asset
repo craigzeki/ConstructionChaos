@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SWING
   m_EditorClassIdentifier: 
   _friendlyString: <style="Action">Swing</style> on <COLOUR> <OBJECT> <CONDITION>
+  _points: 40
   _requiredPerformanceTime: 3
   _requiredPerformanceDistance: 0
   _possibleConditions:

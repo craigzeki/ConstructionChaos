@@ -404,8 +404,7 @@ public class ObjectiveManager : MonoBehaviour
 			if(playerData.Objective.Equals(objectiveOccured))
 			{
 				// The objective that occured matches one of that is assigned to a player
-				// TODO: Replace the 100 with the calculated objective score
-				ScoreManager.Instance.AddPlayerScore(playerData, 100);
+				ScoreManager.Instance.AddPlayerScore(playerData, objectiveOccured.GetPoints());
 
                 // Assign a new objective
                 AssignPlayerObjective(playerClientId);

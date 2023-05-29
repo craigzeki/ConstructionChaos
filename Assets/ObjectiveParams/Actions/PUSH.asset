@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PUSH
   m_EditorClassIdentifier: 
   _friendlyString: <style="Action">Push</style> <COLOUR> <OBJECT> <CONDITION>
+  _points: 20
   _requiredPerformanceTime: 0
   _requiredPerformanceDistance: 1
   _possibleConditions:

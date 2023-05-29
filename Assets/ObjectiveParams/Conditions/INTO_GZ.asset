@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: INTO_GZ
   m_EditorClassIdentifier: 
   _friendlyString: into <ZONE>
+  _points: 20
   _duringCountdown: 0
   _requiresObjectToBeInZone: 1
   _requiredZone: 1

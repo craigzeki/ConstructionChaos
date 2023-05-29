@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c08465fa64b546a8863ddf8b0e8f86c, type: 3}
   m_Name: PLAYER
   m_EditorClassIdentifier: 
-  friendlyString: <style="Object">player</style>
+  _friendlyString: <style="Object">player</style>
+  _points: 0
   possibleColours:
   - {fileID: 11400000, guid: 707b8c6fb706b498d816e537e26e4902, type: 2}
   possibleActions: []

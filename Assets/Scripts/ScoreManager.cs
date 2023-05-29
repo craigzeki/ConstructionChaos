@@ -19,6 +19,8 @@ public class ScoreManager : MonoBehaviour
     {
         // TODO: Add streak modifier to this score before saving
         playerData.RoundScore += score;
+        Debug.Log("Obj Point: " + score);
+        Debug.Log("Total Points: " + playerData.RoundScore);
     }
 
     public void IncrementGameScores()
