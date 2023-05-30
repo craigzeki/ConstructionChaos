@@ -138,7 +138,7 @@ public class ObjectiveManager : MonoBehaviour
 			ArrowManager.Instance.RemoveAllArrows();
 
 			// Find the objective object instance in the scene based on the distance to the player
-			ObjectiveObjectInstance objectiveObjectInstance = _objectiveObjects.OrderBy(x => Vector3.Distance(x.Key.transform.position, playerData.NetPlayer.transform.GetChild(1).position)).Reverse().FirstOrDefault(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).Key;
+			ObjectiveObjectInstance objectiveObjectInstance = _objectiveObjects.OrderBy(x => Vector3.Distance(x.Key.transform.position, playerData.NetPlayer.transform.GetChild(1).position)).FirstOrDefault(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).Key;
 
 			// Create an arrow to point to the objective object
 			ArrowManager.Instance.AddArrowWithIcon(objectiveObjectInstance.gameObject, objectiveObjectInstance.GetComponent<SpriteRenderer>().sprite, objectiveObjectInstance.GetComponent<SpriteRenderer>().color);
@@ -151,6 +151,8 @@ public class ObjectiveManager : MonoBehaviour
 				// Create an arrow to point to the objective zone
 				ArrowManager.Instance.AddArrowWithText(zone.gameObject, "Target Zone");
 			}
+
+			ScoreManager.Instance.DecreaseStreak(playerData.Objective.GetPoints());
         }
 		else
 		{

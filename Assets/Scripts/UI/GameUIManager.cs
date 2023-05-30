@@ -18,6 +18,10 @@ public class GameUIManager : MonoBehaviour
 
     [SerializeField] private Image _streakBarImage;
 
+    [SerializeField] private GameObject _streakBarColourPartPrefab;
+
+    [SerializeField] private TextMeshProUGUI _streakText;
+
     private void Awake()
     {
         if (Instance == null)
@@ -81,5 +85,25 @@ public class GameUIManager : MonoBehaviour
         requirementText = newValue + requirementText.Substring(slashIndex);
 
         requirementTransform.GetChild(1).GetComponent<TextMeshProUGUI>().text = requirementText;
+    }
+
+    public void SetupStreakBar(List<float> percentages, List<Color> colours)
+    {
+        float totalPercentage = 1f;
+        for (int i = percentages.Count - 1; i >= 0; i--)
+        {
+            GameObject colourPart = Instantiate(_streakBarColourPartPrefab, _streakBarImage.transform);
+            Image colourPartImage = colourPart.GetComponent<Image>();
+            colourPartImage.color = colours[i];
+            colourPartImage.fillAmount = totalPercentage;
+            totalPercentage = Mathf.Clamp01(totalPercentage - percentages[i]);
+        }
+    }
+
+    public void UpdateStreakBar(float currentMultiplier, float currentPercentage)
+    {
+        string multiplierString = currentMultiplier.ToString("0.0");
+        _streakText.text = $"{multiplierString}x";
+        _streakBarImage.fillAmount = currentPercentage;
     }
 }
