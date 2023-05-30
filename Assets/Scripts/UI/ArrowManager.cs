@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Unity.Netcode;
 
@@ -16,6 +17,8 @@ public class ArrowManager : NetworkBehaviour
 
     [SerializeField] private float _arrowDistance = 3.5f;
     public float ArrowDistance => _arrowDistance;
+
+    private ObjectiveObjectInstance _currentObjectiveObjectInstance;
 
     private void Awake()
     {
@@ -57,5 +60,53 @@ public class ArrowManager : NetworkBehaviour
             Destroy(arrow.gameObject);
         }
         _arrows.Clear();
+    }
+
+    public void SetUpObjectiveArrows(NetPlayerData playerData)
+    {
+        RemoveAllArrows();
+
+        // Find the objective object instance in the scene based on the distance to the player
+        //ObjectiveObjectInstance objectiveObjectInstance = ObjectiveManager.Instance.ObjectiveObjects.OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.Key.transform.position).sqrMagnitude).FirstOrDefault(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).Key;
+        ObjectiveObjectInstance objectiveObjectInstance = FindObjectsOfType<ObjectiveObjectInstance>().Where(x => x.ObjectiveObject == playerData.Objective.Object && x.ObjectiveColour == playerData.Objective.Colour).OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.transform.position).sqrMagnitude).FirstOrDefault();
+        _currentObjectiveObjectInstance = objectiveObjectInstance;
+
+        // Create an arrow to point to the objective object
+        AddArrowWithIcon(objectiveObjectInstance.gameObject, objectiveObjectInstance.GetComponent<SpriteRenderer>().sprite, objectiveObjectInstance.GetComponent<SpriteRenderer>().color);
+
+        if (playerData.Objective.Condition.RequiredZone == Zone.ZONE.LOCATION_ZONE)
+        {
+            // Find the zone in the scene
+            Zone zone = ObjectiveManager.Instance.PossibleZones[playerData.Objective.Condition.RequiredZone].FirstOrDefault(x => x == playerData.Objective.Zone);
+
+            // Create an arrow to point to the objective zone
+            AddArrowWithText(zone.gameObject, "Target Zone");
+        }
+
+        StartCoroutine(UpdateArrows(playerData));
+    }
+
+    private IEnumerator UpdateArrows(NetPlayerData playerData)
+    {
+        print("Updating arrows called");
+    
+        while (true)
+        {
+            print("Updating arrows");
+            //ObjectiveObjectInstance objectiveObjectInstance = ObjectiveManager.Instance.ObjectiveObjects.OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.Key.transform.position).sqrMagnitude).FirstOrDefault(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).Key;
+            ObjectiveObjectInstance objectiveObjectInstance = FindObjectsOfType<ObjectiveObjectInstance>().Where(x => x.ObjectiveObject == playerData.Objective.Object && x.ObjectiveColour == playerData.Objective.Colour).OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.transform.position).sqrMagnitude).FirstOrDefault();
+            if (!objectiveObjectInstance.EqualsWithID(_currentObjectiveObjectInstance))
+            {
+                print("Nearest Objective object instance changed");
+                SetUpObjectiveArrows(playerData);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    public void StopUpdatingArrows()
+    {
+        print("Stop updating arrows called");
+        StopAllCoroutines();
     }
 }

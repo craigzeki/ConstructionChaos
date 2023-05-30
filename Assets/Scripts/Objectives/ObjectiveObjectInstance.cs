@@ -113,6 +113,22 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
     }
 
     /// <summary>
+    /// New equality check which compares parameter values and instance ID<br/>
+    /// This is used to compare objects in the ArrowManager to ensure that they are actually separate instances of the same object
+    /// </summary>
+    /// <param name="other">The ObjectiveObjectInstance instance to compare with</param>
+    /// <returns>True: ObjectiveObjectInstances contain identical parameters and are identical instances<br/>
+    /// False: ObjectiveObjectInstances contain identical parameters but are not identical instances</returns>
+    public bool EqualsWithID(ObjectiveObjectInstance other)
+    {
+        if (other is null) return false;
+        return _objectiveObject.Equals(other._objectiveObject) &&
+            _objectiveColour.Equals(other._objectiveColour) &&
+            (_excludeFromObjectiveManager == other.ExcludeFromObjectiveManager) &&
+            GetInstanceID() == other.GetInstanceID();
+    }
+
+    /// <summary>
     /// Override of GetHashCode to provide correct hash for Dictionary
     /// </summary>
     /// <returns></returns>

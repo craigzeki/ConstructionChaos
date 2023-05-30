@@ -22,6 +22,8 @@ public class ScoreManager : MonoBehaviour
     private float _currentMultiplier;
     private float _currentPercentage;
 
+    private float _streakIncreaseAnimationTime = 0.1f;
+
     private void Start()
     {
         GameUIManager.Instance?.SetupStreakBar(_streakPercentages, _streakColours);
@@ -65,6 +67,8 @@ public class ScoreManager : MonoBehaviour
     {
         // Increase the streak bar based on the difficulty of the objective
         _currentPercentage = Mathf.Clamp01((objectiveDifficulty / 200f) + _currentPercentage);
+        _currentMultiplier = CalculateCurrentMultiplier();
+        GameUIManager.Instance?.UpdateStreakBar(_currentMultiplier, _currentPercentage);
         print("Increase Streak: " + _currentPercentage);
     }
 
@@ -73,6 +77,7 @@ public class ScoreManager : MonoBehaviour
         // TIME = DISTANCE / SPEED
         float animationTime = _currentPercentage / (objectiveDifficulty / 3200f);
         print("Decrease Streak: " + _currentPercentage + " in " + animationTime + " seconds");
+        // Wait until all other LeanTweens have finished
         LeanTween.value(gameObject, _currentPercentage, 0f, animationTime).setOnUpdate((float value) =>
         {
             _currentPercentage = value;
