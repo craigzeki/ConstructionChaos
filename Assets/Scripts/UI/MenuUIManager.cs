@@ -11,13 +11,15 @@ public class MenuUIManager : MonoBehaviour
     public static MenuUIManager Instance;
 
     // UI Element References
-    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _gameCanvas, _disconnectedCanvas, _splashScreenCanvas;
+    [SerializeField] private GameObject _mainMenuCanvas, _loadingCanvas, _lobbyCanvas, _gameCanvas, _disconnectedCanvas, _splashScreenCanvas, _scrollingBgCanvas;
     public GameObject MainMenuCanvas => _mainMenuCanvas;
     public GameObject LoadingCanvas => _loadingCanvas;
     public GameObject LobbyCanvas => _lobbyCanvas;
     public GameObject GameCanvas => _gameCanvas;
     public GameObject DisconnectedCanvas => _disconnectedCanvas;
     public GameObject SplashScreenCanvas => _splashScreenCanvas;
+    public GameObject ScrollingBgCanvas => _scrollingBgCanvas;
+
 
     [SerializeField] private GameObject _titleImage;
 
@@ -213,7 +215,7 @@ public class MenuUIManager : MonoBehaviour
         });
     }
 
-    public void ToggleAllCanvasesOff()
+    public void ToggleAllCanvasesOff(bool exceptScrollingBg = false)
     {
         ToggleCanvas(_mainMenuCanvas, false);
         ToggleCanvas(_loadingCanvas, false);
@@ -221,6 +223,7 @@ public class MenuUIManager : MonoBehaviour
         ToggleCanvas(_gameCanvas, false);
         ToggleCanvas(_disconnectedCanvas, false);
         ToggleCanvas(_splashScreenCanvas, false);
+        if(!exceptScrollingBg) ToggleCanvas(_scrollingBgCanvas, false);
 
         if (LeaderboardUIManager.Instance == null) return;
         ToggleCanvas(LeaderboardUIManager.Instance.LeaderboardCanvas, false);
@@ -229,6 +232,20 @@ public class MenuUIManager : MonoBehaviour
     public void ToggleCanvas(GameObject canvasObj, bool toggle)
     {
         canvasObj.SetActive(toggle);
+
+        if((toggle == true) && ((canvasObj == _splashScreenCanvas) ||
+                                (canvasObj == _loadingCanvas) ||
+                                (canvasObj == _disconnectedCanvas) ||
+                                (canvasObj == _mainMenuCanvas) ||
+                                (canvasObj == LeaderboardUIManager.Instance?.LeaderboardCanvas)))
+        {
+            ToggleCanvas(_scrollingBgCanvas, true);
+        }
+        else if((toggle == true) && ((canvasObj == _lobbyCanvas) ||
+                                    (canvasObj == _gameCanvas)))
+        {
+            ToggleCanvas(_scrollingBgCanvas, false);
+        }
 
         if (canvasObj == _mainMenuCanvas.gameObject)
             EnableMenu();

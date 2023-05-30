@@ -31,7 +31,7 @@ public class SuperGameManager : MonoBehaviour
         if (_coroutine != null) return;
 
 
-        MenuUIManager.Instance.ToggleAllCanvasesOff();
+        MenuUIManager.Instance.ToggleAllCanvasesOff(true);
         if (splashScreen)
         {
             MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.SplashScreenCanvas, true);
@@ -63,7 +63,7 @@ public class SuperGameManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(_loadingScreenMinTime);
-        MenuUIManager.Instance.ToggleAllCanvasesOff();
+        MenuUIManager.Instance.ToggleAllCanvasesOff(true);
         Debug.Log("SuperGameManager: Menu Canvas = true");
         MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
         GameManager.Instance.StartGameManager();
