@@ -76,6 +76,7 @@ public class GoalZone : Zone
     {
         // Tell the Game UI the goal strings
         GameUIManager.Instance.SetupGroupObjectiveUI(GoalStrings);
+        ArrowManager.Instance.AddArrowWithText(gameObject, "Goal Zone", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

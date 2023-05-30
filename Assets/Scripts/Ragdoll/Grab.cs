@@ -23,6 +23,14 @@ public class Grab : Ragdoll
     [SerializeField] LayerMask _grabableLayerMask;
     
     private FixedJoint2D _joint;
+    public GameObject GrabbedObject
+    {
+        get
+        {
+            if (_joint == null) return null;
+            return _joint.connectedBody.gameObject;
+        }
+    }
     public bool ReadyToGrab { get; private set; } = false;
     public bool IsHoldingLedge { get; private set; } = false;
     public bool Release = false;
