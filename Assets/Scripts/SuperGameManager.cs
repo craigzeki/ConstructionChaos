@@ -8,6 +8,7 @@ public class SuperGameManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> _sceneNetworkObjectPrefabs = new List<GameObject>();
     [SerializeField] private List<GameObject> _sceneNetworkObjects = new List<GameObject>();
+    [SerializeField] private float _loadingScreenMinTime = 2.0f;
 
     private Coroutine _coroutine;
 
@@ -61,7 +62,7 @@ public class SuperGameManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_loadingScreenMinTime);
         MenuUIManager.Instance.ToggleAllCanvasesOff();
         Debug.Log("SuperGameManager: Menu Canvas = true");
         MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
