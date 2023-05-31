@@ -101,22 +101,7 @@ public class ConnectionHandler : MonoBehaviour
             connectionSuccessful = await CreateRelay();
         }
 
-        if (connectionSuccessful)
-        {
-            try
-            {
-                GameManager.Instance?.NetworkObject.Spawn();
-            }
-            catch (SpawnStateException)
-            {
-                // Do nothing if the game manager is already spawned
-            }
-            catch (NotServerException)
-            {
-
-            }
-        }
-        else
+        if (!connectionSuccessful)
         {
             NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
             NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
@@ -192,22 +177,7 @@ public class ConnectionHandler : MonoBehaviour
             loginSuccessful = await JoinRelay(roomCode);
         }
 
-        if (loginSuccessful)
-        {
-            try
-            {
-                GameManager.Instance?.NetworkObject.Spawn();
-            }
-            catch (SpawnStateException)
-            {
-                // Do nothing if the game manager is already spawned
-            }
-            catch (NotServerException)
-            {
-
-            }
-        }
-        else
+        if (!loginSuccessful)
         {
             NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback;
             NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
@@ -222,7 +192,7 @@ public class ConnectionHandler : MonoBehaviour
     /// </summary>
     private async Task<bool> UnityServicesLogin()
     {
-        bool returnVal = false;
+        //bool returnVal = false;
 
         try
         {
@@ -237,8 +207,7 @@ public class ConnectionHandler : MonoBehaviour
         {
             // Player has successfully signed in anonymously
             print("Signed in anonymously");
-            returnVal = true;
-            return;
+            //returnVal = true;
         };
 
         try
@@ -250,7 +219,7 @@ public class ConnectionHandler : MonoBehaviour
             return false;
         }
 
-        return returnVal;
+        return AuthenticationService.Instance.IsSignedIn;
     }
 
     /// <summary>
