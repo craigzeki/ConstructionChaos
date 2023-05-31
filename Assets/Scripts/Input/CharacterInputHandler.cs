@@ -88,6 +88,33 @@ public class CharacterInputHandler : NetworkBehaviour
         _controls.Menu.DoIt.canceled += SetMenuButtonPressed;
     }
 
+    private void OnDisable()
+    {
+        _controls.Gameplay.Jump.performed -= SetJump;
+        _controls.Gameplay.Jump.canceled -= SetJump;
+
+        _controls.Gameplay.MovePlayer.performed -= SetMovePlayer;
+        _controls.Gameplay.MovePlayer.canceled -= SetMovePlayer;
+
+        _controls.Gameplay.Collapse.performed -= SetCollapse;
+        _controls.Gameplay.Collapse.canceled -= SetCollapse;
+
+        _controls.Gameplay.MouseMoveArms.performed -= SetMouseMoveArms;
+        _controls.Gameplay.MouseMoveArms.canceled -= SetMouseMoveArms;
+
+        _controls.Gameplay.StickMoveArms.performed -= SetStickMoveArms;
+        _controls.Gameplay.StickMoveArms.canceled -= SetStickMoveArms;
+
+        _controls.Gameplay.GrabLeftHand.performed -= SetLeftGrabButton;
+        _controls.Gameplay.GrabLeftHand.canceled -= SetLeftGrabButton;
+
+        _controls.Gameplay.GrabRightHand.performed -= SetRightGrabButton;
+        _controls.Gameplay.GrabRightHand.canceled -= SetRightGrabButton;
+
+        _controls.Menu.DoIt.performed -= SetMenuButtonPressed;
+        _controls.Menu.DoIt.canceled -= SetMenuButtonPressed;
+    }
+
     private void FixedUpdate()
     {
         if (!IsServer && IsOwner)
