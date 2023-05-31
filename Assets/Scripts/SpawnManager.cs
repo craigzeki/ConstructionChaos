@@ -10,8 +10,10 @@ using Unity.Netcode.Components;
 
 public class SpawnManager : MonoBehaviour
 {
+    [SerializeField] private LayerMask _layersToCheck = new LayerMask();
     [SerializeField][ReadOnly] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
     [SerializeField][ReadOnly] private int _currentSpawnPoint = 0;
+    
 
     private const float MAX_WAIT_TIME = 0.5f;
 
@@ -75,7 +77,7 @@ public class SpawnManager : MonoBehaviour
         {
             _currentSpawnPoint %= _spawnPoints.Count;
             Debug.Log("_currentSpawnPoint: " + _currentSpawnPoint + " - Spawn point: " + _spawnPoints[_currentSpawnPoint].gameObject.name);
-            if (_spawnPoints[_currentSpawnPoint].SpawnPointIsClear())
+            if (_spawnPoints[_currentSpawnPoint].SpawnPointIsClear(_layersToCheck))
             {
                 Debug.Log("Spawn point is clear");
                 Debug.Log("Player position before: " + player.transform.position.ToString());
