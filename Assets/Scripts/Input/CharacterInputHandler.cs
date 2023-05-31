@@ -90,6 +90,8 @@ public class CharacterInputHandler : NetworkBehaviour
 
     private void OnDisable()
     {
+        if (_controls == null) return;
+
         _controls.Gameplay.Jump.performed -= SetJump;
         _controls.Gameplay.Jump.canceled -= SetJump;
 
