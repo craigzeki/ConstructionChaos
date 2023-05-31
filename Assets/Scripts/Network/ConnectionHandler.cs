@@ -192,7 +192,7 @@ public class ConnectionHandler : MonoBehaviour
     /// </summary>
     private async Task<bool> UnityServicesLogin()
     {
-        //bool returnVal = false;
+        int returnVal = -1;
 
         try
         {
@@ -207,7 +207,14 @@ public class ConnectionHandler : MonoBehaviour
         {
             // Player has successfully signed in anonymously
             print("Signed in anonymously");
-            //returnVal = true;
+            returnVal = 1;
+        };
+
+        AuthenticationService.Instance.SignInFailed += (error) =>
+        {
+            // Player failed to sign in anonymously
+            print("Failed to sign in anonymously");
+            returnVal = 0;
         };
 
         try
@@ -219,7 +226,12 @@ public class ConnectionHandler : MonoBehaviour
             return false;
         }
 
-        return AuthenticationService.Instance.IsSignedIn;
+        while (returnVal == -1)
+        {
+            await Task.Yield();
+        }
+
+        return returnVal == 1;
     }
 
     /// <summary>
