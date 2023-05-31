@@ -122,10 +122,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
     public bool EqualsWithID(ObjectiveObjectInstance other)
     {
         if (other is null) return false;
-        return _objectiveObject.Equals(other._objectiveObject) &&
-            _objectiveColour.Equals(other._objectiveColour) &&
-            (_excludeFromObjectiveManager == other.ExcludeFromObjectiveManager) &&
-            GetInstanceID() == other.GetInstanceID();
+        return Equals(other) && GetInstanceID() == other.GetInstanceID();
     }
 
     /// <summary>

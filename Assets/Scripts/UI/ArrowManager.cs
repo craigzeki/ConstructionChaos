@@ -18,6 +18,8 @@ public class ArrowManager : NetworkBehaviour
     [SerializeField] private float _arrowDistance = 3.5f;
     public float ArrowDistance => _arrowDistance;
 
+    private List<ObjectiveObjectInstance> _objectiveObjectInstances = new List<ObjectiveObjectInstance>();
+
     private ObjectiveObjectInstance _currentObjectiveObjectInstance;
 
     private void Awake()
@@ -66,9 +68,14 @@ public class ArrowManager : NetworkBehaviour
     {
         RemoveAllArrows();
 
+        if (_objectiveObjectInstances.Count == 0)
+        {
+            _objectiveObjectInstances = FindObjectsOfType<ObjectiveObjectInstance>().ToList();
+        }
+
         // Find the objective object instance in the scene based on the distance to the player
-        //ObjectiveObjectInstance objectiveObjectInstance = ObjectiveManager.Instance.ObjectiveObjects.OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.Key.transform.position).sqrMagnitude).FirstOrDefault(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).Key;
-        ObjectiveObjectInstance objectiveObjectInstance = FindObjectsOfType<ObjectiveObjectInstance>().Where(x => x.ObjectiveObject == playerData.Objective.Object && x.ObjectiveColour == playerData.Objective.Colour).OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.transform.position).sqrMagnitude).FirstOrDefault();
+        ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(playerData);
+
         _currentObjectiveObjectInstance = objectiveObjectInstance;
 
         // Create an arrow to point to the objective object
@@ -93,8 +100,8 @@ public class ArrowManager : NetworkBehaviour
         while (true)
         {
             print("Updating arrows");
-            //ObjectiveObjectInstance objectiveObjectInstance = ObjectiveManager.Instance.ObjectiveObjects.OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.Key.transform.position).sqrMagnitude).FirstOrDefault(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).Key;
-            ObjectiveObjectInstance objectiveObjectInstance = FindObjectsOfType<ObjectiveObjectInstance>().Where(x => x.ObjectiveObject == playerData.Objective.Object && x.ObjectiveColour == playerData.Objective.Colour).OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.transform.position).sqrMagnitude).FirstOrDefault();
+            ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(playerData);
+
             if (!objectiveObjectInstance.EqualsWithID(_currentObjectiveObjectInstance))
             {
                 print("Nearest Objective object instance changed");
@@ -108,5 +115,10 @@ public class ArrowManager : NetworkBehaviour
     {
         print("Stop updating arrows called");
         StopAllCoroutines();
+    }
+
+    private ObjectiveObjectInstance GetNearestTargetObject(NetPlayerData playerData)
+    {
+        return _objectiveObjectInstances.Where(x => x.ObjectiveObject == playerData.Objective.Object && x.ObjectiveColour == playerData.Objective.Colour).OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.transform.position).sqrMagnitude).FirstOrDefault();
     }
 }
