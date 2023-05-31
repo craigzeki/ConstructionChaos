@@ -24,6 +24,7 @@ public class ConnectionHandler : MonoBehaviour
 
     [SerializeField] private GameObject _gameManagerObject;
 
+    private int _returnVal = -1;
     private bool _timedOut = false;
 
     private void Awake()
@@ -196,7 +197,14 @@ public class ConnectionHandler : MonoBehaviour
     /// </summary>
     private async Task<bool> UnityServicesLogin()
     {
-        int returnVal = -1;
+        try
+        {
+            if (AuthenticationService.Instance.IsSignedIn) AuthenticationService.Instance.SignOut();
+        }
+        catch
+        {
+            // Do nothing
+        }
 
         try
         {
@@ -211,14 +219,14 @@ public class ConnectionHandler : MonoBehaviour
         {
             // Player has successfully signed in anonymously
             print("Signed in anonymously");
-            returnVal = 1;
+            _returnVal = 1;
         };
 
         AuthenticationService.Instance.SignInFailed += (error) =>
         {
             // Player failed to sign in anonymously
             print("Failed to sign in anonymously");
-            returnVal = 0;
+            _returnVal = 0;
         };
 
         try
@@ -232,12 +240,12 @@ public class ConnectionHandler : MonoBehaviour
             return false;
         }
 
-        while (returnVal == -1 && !_timedOut)
+        while (_returnVal == -1 && !_timedOut)
         {
             // Do nothing
         }
 
-        return returnVal == 1;
+        return _returnVal == 1;
     }
 
     IEnumerator Timeout(float timeoutTime)
