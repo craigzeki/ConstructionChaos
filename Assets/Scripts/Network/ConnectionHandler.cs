@@ -219,17 +219,17 @@ public class ConnectionHandler : MonoBehaviour
 
         try
         {
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            AuthenticationService.Instance.SignInAnonymouslyAsync().Wait();
         }
         catch
         {
             return false;
         }
 
-        while (returnVal == -1)
-        {
-            await Task.Yield();
-        }
+        //while (returnVal == -1)
+        //{
+            //AuthenticationService.Instance.SignInAnonymouslyAsync().Wait();
+        //}
 
         return returnVal == 1;
     }
