@@ -9,9 +9,9 @@ public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private float _pointRadius = 3;
     
-    public bool SpawnPointIsClear()
+    public bool SpawnPointIsClear(LayerMask layerMask = default)
     {
-        Collider2D _overlapCollider = Physics2D.OverlapCircle(transform.position, _pointRadius);
+        Collider2D _overlapCollider = Physics2D.OverlapCircle(transform.position, _pointRadius, layerMask);
         return _overlapCollider == null;
     }
     
