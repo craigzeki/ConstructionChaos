@@ -19,6 +19,8 @@ TagManager:
   - Player
   - PlatformEffectorLayer
   - PlatformTop
+  - Sky
+  - CameraConfiner
   - 
   - 
   - 

@@ -6,8 +6,9 @@ using Cinemachine;
 public class FollowCam : MonoBehaviour
 {
     public static FollowCam Instance { get; private set; }
-
+    
     [SerializeField] private CinemachineVirtualCamera vcam;
+    [SerializeField] private CinemachineConfiner2D confiner;
 
     private void Awake()
     {
@@ -17,5 +18,10 @@ public class FollowCam : MonoBehaviour
     public void SetFollowTarget(Transform target)
     {
         vcam.Follow = target;
+    }
+
+    public void SetConfiner(Collider2D collider)
+    {
+        confiner.m_BoundingShape2D = collider;
     }
 }
