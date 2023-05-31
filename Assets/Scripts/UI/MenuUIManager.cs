@@ -250,10 +250,10 @@ public class MenuUIManager : MonoBehaviour
             ToggleCanvas(_scrollingBgCanvas, false);
         }
 
-        if (canvasObj == _mainMenuCanvas.gameObject)
+        if (canvasObj == _mainMenuCanvas.gameObject && toggle)
             EnableMenu();
         
-        if (canvasObj == _lobbyCanvas.gameObject)
+        if (canvasObj == _lobbyCanvas.gameObject && toggle)
             EnableLobby();
 
         if (LeaderboardUIManager.Instance == null) return;
