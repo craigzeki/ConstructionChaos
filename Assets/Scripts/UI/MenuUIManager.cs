@@ -94,6 +94,7 @@ public class MenuUIManager : MonoBehaviour
         if (LeanTween.isTweening(_hostButton.gameObject))
             return;
 
+        ToggleCanvas(_mainMenuCanvas.gameObject, false);
         ToggleCanvas(_loadingCanvas.gameObject, true);
 
         bool connectionSuccessful = await ConnectionHandler.Instance.HostGame(_local);
@@ -121,6 +122,7 @@ public class MenuUIManager : MonoBehaviour
         
         if (_joinMenuOpen)
         {
+            ToggleCanvas(_mainMenuCanvas.gameObject, false);
             ToggleCanvas(_loadingCanvas.gameObject, true);
 
             bool connectionSuccessful = await ConnectionHandler.Instance.JoinGame(_roomCodeInput.text, _local);
@@ -172,6 +174,7 @@ public class MenuUIManager : MonoBehaviour
     private IEnumerator UnsuccessfulConnection()
     {
         ToggleCanvas(_loadingCanvas.gameObject, false);
+        ToggleCanvas(_mainMenuCanvas.gameObject, true);
         LeanTween.cancel(_errorText.gameObject);
         AnimateElement(_errorText.gameObject, true);
         yield return new WaitForSeconds(2f);

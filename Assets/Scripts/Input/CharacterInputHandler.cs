@@ -27,8 +27,9 @@ public class CharacterInputHandler : NetworkBehaviour
     private ControlActionMaps _currentActionMap;
 
     private bool _menuButtonPressed = false;
-    Vector2 _screenOrigin { get => new Vector2(Screen.width / 2, Screen.height / 2); }
-    Vector2 _delta = Vector2.zero;
+    Vector2 _screenOrigin { get => FollowCam.Instance.Cam.WorldToScreenPoint(transform.GetChild(1).position); }
+    [SerializeField] Vector2 _mouseWorldPosition;
+    [SerializeField] Vector2 _delta = Vector2.zero;
 
     public CharacterInputData CharacterInputData = new CharacterInputData();
 
@@ -161,7 +162,6 @@ public class CharacterInputHandler : NetworkBehaviour
     {
         if(CharacterInputData.ArmsMovementData.IsMouseController)
         {
-            //! This only works because the player is always in the center of the screen
             _delta = CharacterInputData.ArmsMovementData.ArmsControllerInput - _screenOrigin;
 
             CharacterInputData.ArmsMovementData.ArmRotation = Mathf.Atan2(_delta.x, -_delta.y) * Mathf.Rad2Deg;

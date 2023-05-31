@@ -1443,6 +1443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158caac430fda2140b807a93ea0efbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mouseWorldPosition: {x: 0, y: 0}
+  _delta: {x: 0, y: 0}
   CharacterInputData:
     ArmsMovementData:
       ArmsControllerInput: {x: 0, y: 0}
@@ -1801,7 +1803,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &5808222032221110288
 CapsuleCollider2D:
@@ -3051,7 +3053,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &5808222032865775735
 CapsuleCollider2D:

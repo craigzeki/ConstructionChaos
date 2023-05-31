@@ -5975,8 +5975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649151193594b410c868846ca02406e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vcam: {fileID: 1641363126}
-  confiner: {fileID: 1641363128}
+  _vcam: {fileID: 1641363126}
+  _confiner: {fileID: 1641363128}
+  _cam: {fileID: 54285382}
 --- !u!114 &1641363126
 MonoBehaviour:
   m_ObjectHideFlags: 0

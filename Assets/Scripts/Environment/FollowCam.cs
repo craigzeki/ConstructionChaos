@@ -7,8 +7,11 @@ public class FollowCam : MonoBehaviour
 {
     public static FollowCam Instance { get; private set; }
     
-    [SerializeField] private CinemachineVirtualCamera vcam;
-    [SerializeField] private CinemachineConfiner2D confiner;
+    [SerializeField] private CinemachineVirtualCamera _vcam;
+    [SerializeField] private CinemachineConfiner2D _confiner;
+
+    [SerializeField] private Camera _cam;
+    public Camera Cam => _cam;
 
     private void Awake()
     {
@@ -17,11 +20,11 @@ public class FollowCam : MonoBehaviour
 
     public void SetFollowTarget(Transform target)
     {
-        vcam.Follow = target;
+        _vcam.Follow = target;
     }
 
     public void SetConfiner(Collider2D collider)
     {
-        confiner.m_BoundingShape2D = collider;
+        _confiner.m_BoundingShape2D = collider;
     }
 }
