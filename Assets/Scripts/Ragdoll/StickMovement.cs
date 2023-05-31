@@ -161,7 +161,7 @@ public class StickMovement : Ragdoll
     /// Check if the user is contacting the ground
     /// </summary>
     /// <returns>True: Player is on the ground<br/>False: Player is not on the ground</returns>
-    private bool IsOnGround()
+    public bool IsOnGround(Collider2D other = null)
     {
         // Check each ground point, if any are contacting the ground, set isOnGround = true
         foreach (Transform t in _groundPositions)
@@ -176,10 +176,15 @@ public class StickMovement : Ragdoll
                 // If the collider is attached to the player, ignore it
                 if (collider.transform.parent == transform)
                     continue;
+                
+                // If the collider is the one we are checking against, return true
+                if (other != null && collider == other) return true;
 
-                // If the collider is not null, the player is on the ground
-                if (collider != null)
-                    return true;
+                // If we are checking against a specific collider but are colliding with another collider then don't return true
+                else if (other != null && collider != null) continue;
+
+                // If we are not checking against a specific collider but have collided, return true
+                else if (other == null && collider != null) return true;
             }
         }
 

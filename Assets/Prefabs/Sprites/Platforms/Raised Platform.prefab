@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5315845086255363592}
   - component: {fileID: 1166910002198178299}
   - component: {fileID: 301597498073011355}
-  - component: {fileID: 7033240404726444036}
-  m_Layer: 3
+  - component: {fileID: 2117962978521021112}
+  m_Layer: 10
   m_Name: PlatformTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.14}
   m_EdgeRadius: 0
---- !u!251 &7033240404726444036
+--- !u!251 &2117962978521021112
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,14 +120,14 @@ PlatformEffector2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2829996137310769617}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
-  m_UseOneWayGrouping: 1
-  m_SurfaceArc: 200
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 130
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
