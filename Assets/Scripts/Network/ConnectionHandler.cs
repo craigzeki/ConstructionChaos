@@ -11,6 +11,8 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ConnectionHandler : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class ConnectionHandler : MonoBehaviour
     [SerializeField] private int _maxNoOfPlayers = 6;
 
     [SerializeField] private GameObject _gameManagerObject;
+
+    private bool _timedOut = false;
 
     private void Awake()
     {
@@ -219,19 +223,27 @@ public class ConnectionHandler : MonoBehaviour
 
         try
         {
-            AuthenticationService.Instance.SignInAnonymouslyAsync().Wait();
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            _timedOut = false;
+            StartCoroutine(Timeout(10));
         }
         catch
         {
             return false;
         }
 
-        //while (returnVal == -1)
-        //{
-            //AuthenticationService.Instance.SignInAnonymouslyAsync().Wait();
-        //}
+        while (returnVal == -1 && !_timedOut)
+        {
+            // Do nothing
+        }
 
         return returnVal == 1;
+    }
+
+    IEnumerator Timeout(float timeoutTime)
+    {
+        yield return new WaitForSeconds(timeoutTime);
+        _timedOut = true;
     }
 
     /// <summary>
