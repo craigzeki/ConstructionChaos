@@ -137,9 +137,9 @@ public class ObjectiveManager : MonoBehaviour
             playerData.Objective = playerData.PossibleObjectives[playerData.NextObjectiveIndex];
             playerData.NextObjectiveIndex++;
 
-			ArrowManager.Instance.SetUpObjectiveArrows(playerData);
+			//ArrowManager.Instance.SetUpObjectiveArrows(playerData);
 
-			ScoreManager.Instance.DecreaseStreak(playerData.Objective.GetPoints());
+			ScoreManager.Instance.DecreaseStreakClientRpc(playerData.Objective.GetPoints(), playerData.ClientRpcParams);
         }
 		else
 		{
@@ -412,7 +412,7 @@ public class ObjectiveManager : MonoBehaviour
 				// The objective that occured matches one of that is assigned to a player
 				ScoreManager.Instance.AddPlayerScore(playerData, objectiveOccured.GetPoints());
 
-				ArrowManager.Instance.StopUpdatingArrows();
+				//ArrowManager.Instance.StopUpdatingArrows();
 
                 // Assign a new objective
                 AssignPlayerObjective(playerClientId);

@@ -104,6 +104,10 @@ public class GameUIManager : MonoBehaviour
     {
         string multiplierString = currentMultiplier.ToString("0.0");
         _streakText.text = $"{multiplierString}x";
-        _streakBarImage.fillAmount = currentPercentage;
+        LeanTween.cancel(_streakBarImage.gameObject);
+        LeanTween.value(_streakBarImage.gameObject, _streakBarImage.fillAmount, currentPercentage, 0.1f).setEase(LeanTweenType.easeOutCubic).setOnUpdate((float val) =>
+        {
+            _streakBarImage.fillAmount = val;
+        });
     }
 }

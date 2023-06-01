@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : NetworkBehaviour
 {
     private static ScoreManager _instance;
 
@@ -19,8 +20,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private List<float> _streakPercentages;
     [SerializeField] private List<Color> _streakColours;
 
-    private float _currentMultiplier;
-    private float _currentPercentage;
+    private float _currentMultiplier = 1f;
+    private float _currentPercentage = 0f;
 
     private float _streakIncreaseAnimationTime = 0.1f;
 
@@ -37,9 +38,14 @@ public class ScoreManager : MonoBehaviour
         score *= (uint)_currentMultiplier;
         playerData.RoundScore += score;
 
-        IncreaseStreak(objectiveDifficulty);
+        if (IsServer)
+        {
+            IncreaseStreakClientRpc(objectiveDifficulty, playerData.ClientRpcParams);
+        }
 
-        Debug.Log("Obj Point: " + score);
+        Debug.Log("Objective Difficulty: " + objectiveDifficulty);
+        Debug.Log("Current Multiplier: " + _currentMultiplier);
+        Debug.Log("Obj Points: " + score);
         Debug.Log("Total Points: " + playerData.RoundScore);
     }
 
@@ -63,13 +69,26 @@ public class ScoreManager : MonoBehaviour
         return 1f;
     }
 
+    [ClientRpc]
+    private void IncreaseStreakClientRpc(uint objectiveDifficulty, ClientRpcParams clientRpcParams = default)
+    {
+        IncreaseStreak(objectiveDifficulty);
+    }
+
     private void IncreaseStreak(uint objectiveDifficulty)
     {
         // Increase the streak bar based on the difficulty of the objective
         _currentPercentage = Mathf.Clamp01((objectiveDifficulty / 200f) + _currentPercentage);
         _currentMultiplier = CalculateCurrentMultiplier();
-        GameUIManager.Instance?.UpdateStreakBar(_currentMultiplier, _currentPercentage);
+        LeanTween.cancel(gameObject);
+        GameUIManager.Instance.UpdateStreakBar(_currentMultiplier, _currentPercentage);
         print("Increase Streak: " + _currentPercentage);
+    }
+
+    [ClientRpc]
+    public void DecreaseStreakClientRpc(uint objectiveDifficulty, ClientRpcParams clientRpcParams = default)
+    {
+        DecreaseStreak(objectiveDifficulty);
     }
 
     public void DecreaseStreak(uint objectiveDifficulty)
@@ -82,7 +101,7 @@ public class ScoreManager : MonoBehaviour
         {
             _currentPercentage = value;
             _currentMultiplier = CalculateCurrentMultiplier();
-            GameUIManager.Instance?.UpdateStreakBar(_currentMultiplier, _currentPercentage);
+            GameUIManager.Instance.UpdateStreakBar(_currentMultiplier, _currentPercentage);
         });
     }
 

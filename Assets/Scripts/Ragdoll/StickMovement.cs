@@ -75,7 +75,7 @@ public class StickMovement : Ragdoll
         if(_bodyRB.velocity.sqrMagnitude > _maxSqrVelocity)
         {
             _bodyRB.velocity = _bodyRB.velocity.normalized * _maxVelocity;
-            Debug.Log("LIMITED VELOCITY to " + _bodyRB.velocity);
+            //Debug.Log("LIMITED VELOCITY to " + _bodyRB.velocity);
         }
     }
 

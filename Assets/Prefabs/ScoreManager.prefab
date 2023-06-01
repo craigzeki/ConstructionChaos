@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8376602980400484336}
   - component: {fileID: 8376602980400484339}
+  - component: {fileID: -3404732835477924809}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -59,3 +60,19 @@ MonoBehaviour:
   - {r: 1, g: 0.47887665, b: 0, a: 1}
   - {r: 1, g: 0.8763639, b: 0, a: 1}
   - {r: 0.41383624, g: 1, b: 0, a: 1}
+--- !u!114 &-3404732835477924809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376602980400484338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
