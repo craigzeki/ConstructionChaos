@@ -115,7 +115,7 @@
                 {
                     "name": "",
                     "id": "6ac62e15-0070-47c6-9c78-fc4366959df9",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -137,7 +137,7 @@
                 {
                     "name": "",
                     "id": "9b94e250-3924-40f4-8d8d-d429de720707",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -246,17 +246,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a03fb498-5d2d-4807-8293-83902ca185ac",
-                    "path": "<Gamepad>/leftStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Collapse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "a039373f-3842-461e-a6d3-09e3cb1194e8",
                     "path": "<Mouse>/position",
                     "interactions": "",
@@ -283,7 +272,18 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard+Mouse;Gamepad",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15761a3a-b671-4bb3-918b-d7c392bf30e2",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
