@@ -56,6 +56,8 @@ public class MenuUIManager : MonoBehaviour
         // Add a listener to the input field to make sure the input is always uppercase
         _roomCodeInput.onValidateInput += delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
 
+        _roomCodeInput.onEndEdit.AddListener(JoinButton);
+
         // Add a listener to the toggle to update the local boolean
         _localToggle.onValueChanged.AddListener(UpdateToggle);
     }
@@ -146,6 +148,15 @@ public class MenuUIManager : MonoBehaviour
             AnimateElement(_roomCodeInput.gameObject, true);
             AnimateElement(_backButton.gameObject, true);
         }
+    }
+
+    /// <summary>
+    /// An overload of the JoinButton method that allows the join button to be called by pressing enter in the input field
+    /// </summary>
+    /// <param name="text">The text in the input field</param>
+    private void JoinButton(string text)
+    {
+        JoinButton();
     }
 
     /// <summary>
@@ -305,6 +316,12 @@ public class MenuUIManager : MonoBehaviour
 
         // Animate in the title images
         AnimateElement(_titleImage, true);
+
+        // Animate out the room code input
+        AnimateElement(_roomCodeInput.gameObject, false);
+
+        // Animate out the back button
+        AnimateElement(_backButton.gameObject, false);
     }
 
     private void EnableLobby()
