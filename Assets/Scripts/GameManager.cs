@@ -33,7 +33,8 @@ public class GameManager : NetworkBehaviour
     }
     
     [SerializeField] private float _minLoadScreenTime = 2f;
-
+    [SerializeField] private LayerMask _groundLayers = new LayerMask();
+    public LayerMask GroundLayers => _groundLayers;
     [SerializeField] private GameObject _lobbyPrefab;
     [SerializeField] private List<Round> _rounds = new List<Round>();
     [SerializeField] private List<Color> _playerColours = new List<Color>();
