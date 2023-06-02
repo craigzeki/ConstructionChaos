@@ -38,4 +38,17 @@ public class ChainMaker : MonoBehaviour
             AddOneLink();
         }
     }
+
+    [ContextMenu("Recreate Links")]
+    public void RecreateLinks()
+    {
+        _linksToAdd = transform.childCount - 1;
+
+        for (int i = transform.childCount - 1; i > 0; i--)
+        {
+            DestroyImmediate(transform.GetChild(i).gameObject);
+        }
+
+        AddLinks();
+    }
 }

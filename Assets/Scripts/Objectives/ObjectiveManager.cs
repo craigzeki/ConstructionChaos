@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 using ZekstersLab.Helpers;
 
@@ -137,7 +138,25 @@ public class ObjectiveManager : MonoBehaviour
             playerData.Objective = playerData.PossibleObjectives[playerData.NextObjectiveIndex];
             playerData.NextObjectiveIndex++;
 
-			//ArrowManager.Instance.SetUpObjectiveArrows(playerData);
+			uint id = _objectiveObjects.Where(x => x.Key.ObjectiveObject == playerData.Objective.Object && x.Key.ObjectiveColour == playerData.Objective.Colour).FirstOrDefault().Key.GetComponent<NetworkIdentifier>().NetworkId.Value;
+
+			//ArrowData arrowData = new ArrowData
+			//(
+				//id,
+				//playerData.Objective.Zone.ZoneType,
+				//(FixedString64Bytes)playerData.Objective.Zone.FriendlyString,
+				//playerData.Objective.Colour.Colour,
+				//false
+			//);
+
+			ArrowData arrowData = new ArrowData();
+			arrowData.ObjectToFollowId = id;
+			arrowData.ZoneType = playerData.Objective.Zone == null ? Zone.ZONE.NO_ZONE : playerData.Objective.Zone.ZoneType;
+			arrowData.ZoneName = playerData.Objective.Zone == null ? null : (FixedString64Bytes)playerData.Objective.Zone.FriendlyString;
+			arrowData.Colour = playerData.Objective.Colour.Colour;
+			arrowData.IsGoalArrow = false;
+
+			ArrowManager.Instance.SetUpObjectiveArrowsServerSide(arrowData, playerData.ClientRpcParams);
 
 			ScoreManager.Instance.DecreaseStreakClientRpc(playerData.Objective.GetPoints(), playerData.ClientRpcParams);
         }
@@ -412,7 +431,7 @@ public class ObjectiveManager : MonoBehaviour
 				// The objective that occured matches one of that is assigned to a player
 				ScoreManager.Instance.AddPlayerScore(playerData, objectiveOccured.GetPoints());
 
-				//ArrowManager.Instance.StopUpdatingArrows();
+				ArrowManager.Instance.StopUpdatingArrowsServerSide(playerData.ClientRpcParams);
 
                 // Assign a new objective
                 AssignPlayerObjective(playerClientId);

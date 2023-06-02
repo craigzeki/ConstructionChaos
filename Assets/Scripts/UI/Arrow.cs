@@ -5,14 +5,14 @@ using TMPro;
 
 public class Arrow : MonoBehaviour
 {
-    private GameObject _objectToFollow;
+    private Transform _objectToFollow;
     [SerializeField] private GameObject _arrow;
     [SerializeField] private GameObject _arrowIcon;
     [SerializeField] private SpriteRenderer _iconSpriteRenderer;
     [SerializeField] private GameObject _iconCanvas;
     [SerializeField] private TextMeshProUGUI _iconText;
 
-    public void SetUpWithIcon(GameObject objectToFollow, Sprite icon, Color colour)
+    public void SetUpWithIcon(Transform objectToFollow, Sprite icon, Color colour)
     {
         _objectToFollow = objectToFollow;
         _iconCanvas.SetActive(false);
@@ -27,7 +27,7 @@ public class Arrow : MonoBehaviour
         _iconSpriteRenderer.enabled = true;
     }
 
-    public void SetUpWithText(GameObject objectToFollow, string text)
+    public void SetUpWithText(Transform objectToFollow, string text)
     {
         _objectToFollow = objectToFollow;
         _iconSpriteRenderer.transform.localScale = Vector3.one;
@@ -55,7 +55,7 @@ public class Arrow : MonoBehaviour
             ToggleArrowVisibility(true);
 
             // Update the position of the object
-            Vector2 direction = _objectToFollow.transform.position - transform.parent.position;
+            Vector2 direction = _objectToFollow.position - transform.parent.position;
             direction.Normalize();
             transform.localPosition = direction * ArrowManager.Instance.ArrowDistance;
 

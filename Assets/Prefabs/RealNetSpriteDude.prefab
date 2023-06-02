@@ -403,6 +403,64 @@ MonoBehaviour:
   ScaleThreshold: 0.5
   InLocalSpace: 0
   Interpolate: 1
+--- !u!1 &2830879241737419291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6937212466174221298}
+  - component: {fileID: 4255519177320419149}
+  - component: {fileID: 8970768747773341801}
+  m_Layer: 8
+  m_Name: Arrow Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6937212466174221298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830879241737419291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05652113, y: 0.06594132, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5808222032765315319}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4255519177320419149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830879241737419291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08357b1baa4f84d248b64682c283486b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTrunk: {fileID: 5808222032765315319}
+--- !u!114 &8970768747773341801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830879241737419291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab75ba1f5c55046559edf9d4540ccb31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3222132264095724719
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,65 +510,6 @@ MonoBehaviour:
   _countdownText: {fileID: 0}
   _objectiveRequiredTime: 0
   _spriteAsset: {fileID: 11400000, guid: c3f59204bfca26240b2ace7da18e7fa1, type: 2}
---- !u!1 &3425997408579301979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1795405104120721651}
-  - component: {fileID: 394461457886202575}
-  - component: {fileID: 5114702203938002492}
-  m_Layer: 8
-  m_Name: Arrow Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1795405104120721651
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3425997408579301979}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05652113, y: 0.06594132, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5808222032765315319}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &394461457886202575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3425997408579301979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee2bca17283b49a4bb749120f47e025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _arrowPrefab: {fileID: 2922479259028006384, guid: 0a4a065106dc04266be0c24bf40989e0, type: 3}
-  _arrowDistance: 3.5
---- !u!114 &5114702203938002492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3425997408579301979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab75ba1f5c55046559edf9d4540ccb31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3591508854170261679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,7 +2565,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2064542847423550415}
-  - {fileID: 1795405104120721651}
+  - {fileID: 6937212466174221298}
   m_Father: {fileID: 5808222031482737027}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

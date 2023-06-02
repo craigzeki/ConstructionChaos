@@ -9,11 +9,24 @@ public class ArrowManager : NetworkBehaviour
     /// <summary>
     /// Singleton instance of the arrow manager only on the local player
     /// </summary>
-    public static ArrowManager Instance;
+    private static ArrowManager _instance;
+    public static ArrowManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = FindObjectOfType<ArrowManager>();
+            return _instance;
+        }
+    }
 
     [SerializeField] private GameObject _arrowPrefab;
 
     private List<Arrow> _arrows = new List<Arrow>();
+
+    private Arrow _goalArrow = null;
+
+    private Coroutine _arrowUpdateCoroutine = null;
 
     [SerializeField] private float _arrowDistance = 3.5f;
     public float ArrowDistance => _arrowDistance;
@@ -22,40 +35,29 @@ public class ArrowManager : NetworkBehaviour
 
     private ObjectiveObjectInstance _currentObjectiveObjectInstance;
 
-    private void Awake()
-    {
-        float xScale = 1 / transform.parent.lossyScale.x;
-        float yScale = 1 / transform.parent.lossyScale.y;
-        transform.lossyScale.Set(xScale, yScale, 1);
-    }
+    private List<NetworkIdentifier> _networkIdentifiers = new List<NetworkIdentifier>();
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
+    private List<Zone> _zones = new List<Zone>();
 
-        if (IsLocalPlayer)
-        {
-            Instance = this;
-        }
-    }
-
-    public void AddArrowWithIcon(GameObject objectToFollow, Sprite icon, Color colour, bool isGoalArrow = false)
+    public void AddArrowWithIcon(Transform objectToFollow, Sprite icon, Color colour, bool isGoalArrow = false)
     {
-        GameObject newArrow = Instantiate(_arrowPrefab, transform);
+        GameObject newArrow = Instantiate(_arrowPrefab, ArrowHolder.Instance.transform);
         if (!isGoalArrow)
             _arrows.Add(newArrow.GetComponent<Arrow>());
+        else
+            _goalArrow = newArrow.GetComponent<Arrow>();
         newArrow.GetComponent<Arrow>().SetUpWithIcon(objectToFollow, icon, colour);
     }
 
-    public void AddArrowWithText(GameObject objectToFollow, string text, bool isGoalArrow = false)
+    public void AddArrowWithText(Transform objectToFollow, string text, bool isGoalArrow = false)
     {
-        GameObject newArrow = Instantiate(_arrowPrefab, transform);
+        GameObject newArrow = Instantiate(_arrowPrefab, ArrowHolder.Instance.transform);
         if (!isGoalArrow)
             _arrows.Add(newArrow.GetComponent<Arrow>());
         newArrow.GetComponent<Arrow>().SetUpWithText(objectToFollow, text);
     }
 
-    public void RemoveAllArrows()
+    public void RemoveAllObjectiveArrows()
     {
         foreach (Arrow arrow in _arrows)
         {
@@ -64,61 +66,105 @@ public class ArrowManager : NetworkBehaviour
         _arrows.Clear();
     }
 
-    public void SetUpObjectiveArrows(NetPlayerData playerData)
+    public void RemoveAllArrows()
     {
-        RemoveAllArrows();
+        RemoveAllObjectiveArrows();
+        Destroy(_goalArrow.gameObject);
+        _goalArrow = null;
+    }
+
+    public void SetUpObjectiveArrowsServerSide(ArrowData arrowData, ClientRpcParams clientRpcParams = default)
+    {
+        SetUpObjectiveArrowsClientRpc(arrowData, clientRpcParams);
+    }
+
+    [ClientRpc]
+    private void SetUpObjectiveArrowsClientRpc(ArrowData arrowData, ClientRpcParams clientRpcParams = default)
+    {
+        SetUpObjectiveArrows(arrowData);
+    }
+
+    private void SetUpObjectiveArrows(ArrowData arrowData)
+    {
+        RemoveAllObjectiveArrows();
 
         if (_objectiveObjectInstances.Count == 0)
         {
             _objectiveObjectInstances = FindObjectsOfType<ObjectiveObjectInstance>().ToList();
         }
 
+        if (_networkIdentifiers.Count == 0)
+        {
+            _networkIdentifiers = FindObjectsOfType<NetworkIdentifier>().ToList();
+        }
+
+        if (_zones.Count == 0)
+        {
+            _zones = FindObjectsOfType<Zone>().ToList();
+        }
+
         // Find the objective object instance in the scene based on the distance to the player
-        ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(playerData);
+        ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(arrowData);
 
         _currentObjectiveObjectInstance = objectiveObjectInstance;
 
         // Create an arrow to point to the objective object
-        AddArrowWithIcon(objectiveObjectInstance.gameObject, objectiveObjectInstance.GetComponent<SpriteRenderer>().sprite, objectiveObjectInstance.GetComponent<SpriteRenderer>().color);
+        AddArrowWithIcon(objectiveObjectInstance.transform, objectiveObjectInstance.GetComponent<SpriteRenderer>().sprite, objectiveObjectInstance.GetComponent<SpriteRenderer>().color);
 
-        if (playerData.Objective.Condition.RequiredZone == Zone.ZONE.LOCATION_ZONE)
+        if (arrowData.ZoneType == Zone.ZONE.LOCATION_ZONE)
         {
             // Find the zone in the scene
-            Zone zone = ObjectiveManager.Instance.PossibleZones[playerData.Objective.Condition.RequiredZone].FirstOrDefault(x => x == playerData.Objective.Zone);
+            Zone zone = _zones.FirstOrDefault(x => x.FriendlyString == arrowData.ZoneName);
 
             // Create an arrow to point to the objective zone
-            AddArrowWithText(zone.gameObject, "Target Zone");
+            AddArrowWithText(zone.transform, "Target Zone");
         }
 
-        StartCoroutine(UpdateArrows(playerData));
+        if (_arrowUpdateCoroutine != null)
+        {
+            StopCoroutine(_arrowUpdateCoroutine);
+        }
+        _arrowUpdateCoroutine = StartCoroutine(UpdateArrows(arrowData));
     }
 
-    private IEnumerator UpdateArrows(NetPlayerData playerData)
+    private IEnumerator UpdateArrows(ArrowData arrowData)
     {
         print("Updating arrows called");
     
         while (true)
         {
             print("Updating arrows");
-            ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(playerData);
+            ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(arrowData);
 
             if (!objectiveObjectInstance.EqualsWithID(_currentObjectiveObjectInstance))
             {
                 print("Nearest Objective object instance changed");
-                SetUpObjectiveArrows(playerData);
+                SetUpObjectiveArrows(arrowData);
             }
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    public void StopUpdatingArrows()
+    public void StopUpdatingArrowsServerSide(ClientRpcParams clientRpcParams = default)
+    {
+        StopUpdatingArrowsClientRpc(clientRpcParams);
+    }
+
+    [ClientRpc]
+    private void StopUpdatingArrowsClientRpc(ClientRpcParams clientRpcParams = default)
+    {
+        StopUpdatingArrows();
+    }
+
+    private void StopUpdatingArrows()
     {
         print("Stop updating arrows called");
         StopAllCoroutines();
     }
 
-    private ObjectiveObjectInstance GetNearestTargetObject(NetPlayerData playerData)
+    private ObjectiveObjectInstance GetNearestTargetObject(ArrowData arrowData)
     {
-        return _objectiveObjectInstances.Where(x => x.ObjectiveObject == playerData.Objective.Object && x.ObjectiveColour == playerData.Objective.Colour).OrderBy(x => (playerData.NetPlayer.transform.GetChild(1).position - x.transform.position).sqrMagnitude).FirstOrDefault();
+        // Don't look at this
+        return _objectiveObjectInstances.Where(x => x.ObjectiveObject == _networkIdentifiers.Where(x => x.NetworkId.Value == arrowData.ObjectToFollowId).FirstOrDefault().GetComponent<ObjectiveObjectInstance>().ObjectiveObject && x.ObjectiveColour == _networkIdentifiers.Where(x => x.NetworkId.Value == arrowData.ObjectToFollowId).FirstOrDefault().GetComponent<ObjectiveObjectInstance>().NetworkObjectiveColour.Value).OrderBy(x => (ArrowHolder.Instance.PlayerTrunk.position - x.transform.position).sqrMagnitude).FirstOrDefault();
     }
 }
