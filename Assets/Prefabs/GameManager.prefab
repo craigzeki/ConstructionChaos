@@ -65,6 +65,26 @@ MonoBehaviour:
   - {r: 0.42593357, g: 0.990566, b: 0.41585082, a: 1}
   - {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   _playerColourIndexes: 
+  _playerNames:
+  - Hammerhead Holly
+  - Cement Crusher
+  - Sledge Smash
+  - Bulldozer Betty
+  - Jackhammer Joe
+  - Crane Commander
+  - Wrecking Ball Wanda
+  - Drillmaster Dave
+  - Digger Doug
+  - Mason Maniac
+  - Architect Annie
+  - Welding Wally
+  - Scaffold Sam
+  - Roofing Rebel
+  - Steelworker Steve
+  - Excavator Emily
+  - Paintbrush Picasso
+  - Lumberjack Larry
+  _remainingNames: []
   _currentState: 0
   _roundOrder: 
   LocalPlayer: {fileID: 0}

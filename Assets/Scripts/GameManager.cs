@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using ZekstersLab.Helpers;
@@ -40,6 +41,8 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private List<Color> _playerColours = new List<Color>();
     public List<Color> PlayerColours => _playerColours;
     [SerializeField][ReadOnly] private List<int> _playerColourIndexes = new List<int>();
+    [SerializeField] private List<String> _playerNames = new List<string>();
+    [SerializeField][ReadOnly] private List<String> _remainingNames = new List<string>();
 
     /// <summary>
 	/// Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective
@@ -145,7 +148,7 @@ public class GameManager : NetworkBehaviour
             // send the player colour
             //netPlayer.SetPlayerColourClientRpc(PlayerData[clientId].ColourIndex, PlayerData[clientId].ClientRpcParams);
             netPlayer.PlayerColorIndex.Value = PlayerData[clientId].ColourIndex;
-            netPlayer.LocalPlayerName.Value = PlayerData[clientId].PlayerName;
+            netPlayer.LocalPlayerName.Value = GetPlayerName(clientId);
 
             if (clientId == NetworkManager.Singleton.LocalClientId)
             {
@@ -174,6 +177,8 @@ public class GameManager : NetworkBehaviour
         {
             // Add the colour index back to the stack
             _playerColourIndexes.Add(playerData.ColourIndex);
+            // If we have a unique name stored, restore this to the list
+            if (!playerData.DefaultNameUsed) ReAddPlayerName(clientId);
         }
 
         if (!PlayerData.Remove(clientId)) return false;
@@ -332,6 +337,9 @@ public class GameManager : NetworkBehaviour
                     {
                         _playerColourIndexes.Add(i);
                     }
+
+                    _remainingNames.Clear();
+                    _remainingNames = new(_playerNames);
                 }
                 
                 break;
@@ -708,6 +716,25 @@ public class GameManager : NetworkBehaviour
     public void LeaderboardReady()
     {
         _leaderboardReady = true;
+    }
+
+    private string GetPlayerName(ulong clientId)
+    {
+        if(_remainingNames == null) return PlayerData[clientId].PlayerName;
+        if(_remainingNames.Count <= 0) return PlayerData[clientId].PlayerName;
+
+        int index = UnityEngine.Random.Range((int)0, (int)_remainingNames.Count);
+        string playerName = _remainingNames[index];
+        _remainingNames.RemoveAt(index);
+        PlayerData[clientId].PlayerName = playerName;
+        PlayerData[clientId].DefaultNameUsed = false;
+        return playerName;
+    }
+
+    private void ReAddPlayerName(ulong clientId)
+    {
+        if (_remainingNames == null) return;
+        if (!PlayerData[clientId].DefaultNameUsed) _remainingNames.Add(PlayerData[clientId].PlayerName);
     }
 
     public void RoundWon()
