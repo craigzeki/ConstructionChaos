@@ -51,9 +51,6 @@ MonoBehaviour:
     m_Bits: 1032
   _lobbyPrefab: {fileID: 226071342479353666, guid: 9febbed559c3dff44a4d461b7af0140a, type: 3}
   _rounds:
-  - RoundPrefab: {fileID: 3375138609505047820, guid: 6d340c81a70f44ec1a9a46db36c16570, type: 3}
-    RoundDurationSeconds: 200
-    ShowLeaderBoardAfterRound: 0
   - RoundPrefab: {fileID: 3375138609505047820, guid: ca2ba50a291ff404fb89ff6098ea683f, type: 3}
     RoundDurationSeconds: 200
     ShowLeaderBoardAfterRound: 0
