@@ -79,7 +79,7 @@ public class PlatformArranger : MonoBehaviour
     protected virtual void OnDrawGizmos()
     {
         if (Application.IsPlaying(this)) return;
-        Debug.Log("DrawGizmo");
+        //Debug.Log("DrawGizmo");
         Awake();
     }
 }

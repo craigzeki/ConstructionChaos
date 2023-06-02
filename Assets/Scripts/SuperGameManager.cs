@@ -64,7 +64,7 @@ public class SuperGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(_loadingScreenMinTime);
         MenuUIManager.Instance.ToggleAllCanvasesOff(true);
-        Debug.Log("SuperGameManager: Menu Canvas = true");
+        //Debug.Log("SuperGameManager: Menu Canvas = true");
         MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
         GameManager.Instance.StartGameManager();
         _coroutine = null;

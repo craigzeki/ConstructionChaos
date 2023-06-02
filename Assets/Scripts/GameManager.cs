@@ -319,7 +319,7 @@ public class GameManager : NetworkBehaviour
                 }
                 else
                 {
-                    Debug.Log("MenuEntry: Menu Canvas = true");
+                    //Debug.Log("MenuEntry: Menu Canvas = true");
                     MenuUIManager.Instance?.ToggleCanvas(MenuUIManager.Instance.MainMenuCanvas, true);
                     _clientConnected = false;
 
