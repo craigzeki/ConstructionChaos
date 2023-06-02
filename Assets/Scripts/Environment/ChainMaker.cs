@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ChainMaker : MonoBehaviour
@@ -10,7 +11,8 @@ public class ChainMaker : MonoBehaviour
 
     [SerializeField] private int _linksToAdd = 0;
 
-    [ContextMenu("Add One Link")]
+#if UNITY_EDITOR
+    //[ContextMenu("Add One Link")]
     public void AddOneLink()
     {
         Transform lastLink = transform.GetChild(transform.childCount - 1);
@@ -21,7 +23,10 @@ public class ChainMaker : MonoBehaviour
 
         Vector3 spawnPosition = lastLink.position - new Vector3(0, _heightOffset, 0);
 
-        GameObject newLink = Instantiate(_linkPrefab, spawnPosition, Quaternion.identity, transform);
+        //GameObject newLink = Instantiate(_linkPrefab, spawnPosition, Quaternion.identity, transform);
+        GameObject newLink = PrefabUtility.InstantiatePrefab(_linkPrefab, transform) as GameObject;
+        newLink.transform.position = spawnPosition;
+        newLink.transform.rotation = Quaternion.identity;
 
         newLink.GetComponent<HingeJoint2D>().connectedBody = lastLinkRigidbody;
 
@@ -30,7 +35,7 @@ public class ChainMaker : MonoBehaviour
         newLink.name = $"Link {transform.childCount - 1}";
     }
 
-    [ContextMenu("Add Links")]
+    //[ContextMenu("Add Links")]
     public void AddLinks()
     {
         for (int i = 0; i < _linksToAdd; i++)
@@ -39,7 +44,7 @@ public class ChainMaker : MonoBehaviour
         }
     }
 
-    [ContextMenu("Recreate Links")]
+    //[ContextMenu("Recreate Links")]
     public void RecreateLinks()
     {
         _linksToAdd = transform.childCount - 1;
@@ -51,4 +56,5 @@ public class ChainMaker : MonoBehaviour
 
         AddLinks();
     }
+#endif
 }
