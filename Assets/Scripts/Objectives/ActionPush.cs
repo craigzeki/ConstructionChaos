@@ -96,7 +96,7 @@ public class ActionPush : ObjectiveActionBehaviour
             }
         }
 
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if(GameManager.Instance.GroundLayers == (GameManager.Instance.GroundLayers |  1 << collision.gameObject.layer))
         {
             _isOnGround = true;
             foreach(ulong clientId in _pushingPlayers.Keys)
