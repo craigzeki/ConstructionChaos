@@ -80,7 +80,8 @@ public class PlankArranger : MonoBehaviour
         );
 
         _mainCollider.offset= Vector3.zero;
-        _mainCollider.size = new Vector2(_midCollider.size.x + _endLCollider.size.x + _endRCollider.size.x, _midCollider.size.y);
+        //_mainCollider.size = new Vector2(((_midCollider.size.x * _platformMid.transform.localScale.x) + (_endLCollider.size.x * _platformEndL.transform.localScale.x) + (_endRCollider.size.x * _platformEndR.transform.localScale.x)), _midCollider.size.y * _platformMid.transform.localScale.y);
+        _mainCollider.size = new Vector2((_endLCollider.bounds.extents.x * 2) + (_midCollider.bounds.extents.x * 2) + (_endRCollider.bounds.extents.x * 2), (_midCollider.bounds.extents.y * 2));
     }
 
     protected virtual void OnDrawGizmos()
