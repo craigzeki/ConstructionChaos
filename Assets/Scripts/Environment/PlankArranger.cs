@@ -58,6 +58,9 @@ public class PlankArranger : MonoBehaviour
 
     public virtual void UpdateEndPositions()
     {
+        Vector3 orignalRotation = transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
         if (_midCollider == null) return;
 
         if (_endLCollider == null) return;
@@ -82,6 +85,7 @@ public class PlankArranger : MonoBehaviour
         _mainCollider.offset= Vector3.zero;
         //_mainCollider.size = new Vector2(((_midCollider.size.x * _platformMid.transform.localScale.x) + (_endLCollider.size.x * _platformEndL.transform.localScale.x) + (_endRCollider.size.x * _platformEndR.transform.localScale.x)), _midCollider.size.y * _platformMid.transform.localScale.y);
         _mainCollider.size = new Vector2((_endLCollider.bounds.extents.x * 2) + (_midCollider.bounds.extents.x * 2) + (_endRCollider.bounds.extents.x * 2), (_midCollider.bounds.extents.y * 2));
+        transform.rotation = Quaternion.Euler(orignalRotation);
     }
 
     protected virtual void OnDrawGizmos()
