@@ -134,6 +134,12 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         return Equals(other) && GetInstanceID() == other.GetInstanceID();
     }
 
+    public bool EqualsWithIDAndNetworkID(ObjectiveObjectInstance other)
+    {
+        if (other is null) return false;
+        return Equals(other) && GetInstanceID() == other.GetInstanceID() && GetComponent<NetworkIdentifier>().NetworkId.Value == other.GetComponent<NetworkIdentifier>().NetworkId.Value;
+    }
+
     /// <summary>
     /// Override of GetHashCode to provide correct hash for Dictionary
     /// </summary>

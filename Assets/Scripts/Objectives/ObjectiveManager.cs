@@ -152,7 +152,7 @@ public class ObjectiveManager : MonoBehaviour
 			ArrowData arrowData = new ArrowData();
 			arrowData.ObjectToFollowId = id;
 			arrowData.ZoneType = playerData.Objective.Zone == null ? Zone.ZONE.NO_ZONE : playerData.Objective.Zone.ZoneType;
-			arrowData.ZoneName = playerData.Objective.Zone == null ? null : (FixedString64Bytes)playerData.Objective.Zone.FriendlyString;
+			arrowData.ZoneName = playerData.Objective.Zone == null ? new FixedString64Bytes("") : (FixedString64Bytes)playerData.Objective.Zone.FriendlyString;
 			arrowData.Colour = playerData.Objective.Colour.Colour;
 			arrowData.IsGoalArrow = false;
 

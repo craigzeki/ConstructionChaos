@@ -416,6 +416,8 @@ public class GameManager : NetworkBehaviour
                 break;
             case GAMESTATE.PLAYING_ROUND:
                 MenuUIManager.Instance.ToggleCanvas(MenuUIManager.Instance.GameCanvas, false);
+                ArrowManager.Instance.RemoveAllArrows();
+                ArrowManager.Instance.ClearAllLists();
                 if (TrueIsServer)
                 {
                     Destroy(_currentRound);

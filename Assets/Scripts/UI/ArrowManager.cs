@@ -24,7 +24,7 @@ public class ArrowManager : NetworkBehaviour
 
     private List<Arrow> _arrows = new List<Arrow>();
 
-    private Arrow _goalArrow = null;
+    [SerializeField] private Arrow _goalArrow = null;
 
     private Coroutine _arrowUpdateCoroutine = null;
 
@@ -54,6 +54,8 @@ public class ArrowManager : NetworkBehaviour
         GameObject newArrow = Instantiate(_arrowPrefab, ArrowHolder.Instance.transform);
         if (!isGoalArrow)
             _arrows.Add(newArrow.GetComponent<Arrow>());
+        else
+            _goalArrow = newArrow.GetComponent<Arrow>();
         newArrow.GetComponent<Arrow>().SetUpWithText(objectToFollow, text);
     }
 
@@ -71,6 +73,18 @@ public class ArrowManager : NetworkBehaviour
         RemoveAllObjectiveArrows();
         Destroy(_goalArrow.gameObject);
         _goalArrow = null;
+        if (_arrowUpdateCoroutine != null)
+        {
+            StopCoroutine(_arrowUpdateCoroutine);
+            _arrowUpdateCoroutine = null;
+        }
+    }
+
+    public void ClearAllLists()
+    {
+        _objectiveObjectInstances.Clear();
+        _networkIdentifiers.Clear();
+        _zones.Clear();
     }
 
     public void SetUpObjectiveArrowsServerSide(ArrowData arrowData, ClientRpcParams clientRpcParams = default)
@@ -123,6 +137,7 @@ public class ArrowManager : NetworkBehaviour
         if (_arrowUpdateCoroutine != null)
         {
             StopCoroutine(_arrowUpdateCoroutine);
+            _arrowUpdateCoroutine = null;
         }
         _arrowUpdateCoroutine = StartCoroutine(UpdateArrows(arrowData));
     }
@@ -136,7 +151,7 @@ public class ArrowManager : NetworkBehaviour
             print("Updating arrows");
             ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(arrowData);
 
-            if (!objectiveObjectInstance.EqualsWithID(_currentObjectiveObjectInstance))
+            if (!objectiveObjectInstance.EqualsWithIDAndNetworkID(_currentObjectiveObjectInstance))
             {
                 print("Nearest Objective object instance changed");
                 SetUpObjectiveArrows(arrowData);
@@ -165,6 +180,6 @@ public class ArrowManager : NetworkBehaviour
     private ObjectiveObjectInstance GetNearestTargetObject(ArrowData arrowData)
     {
         // Don't look at this
-        return _objectiveObjectInstances.Where(x => x.ObjectiveObject == _networkIdentifiers.Where(x => x.NetworkId.Value == arrowData.ObjectToFollowId).FirstOrDefault().GetComponent<ObjectiveObjectInstance>().ObjectiveObject && x.ObjectiveColour == _networkIdentifiers.Where(x => x.NetworkId.Value == arrowData.ObjectToFollowId).FirstOrDefault().GetComponent<ObjectiveObjectInstance>().NetworkObjectiveColour.Value).OrderBy(x => (ArrowHolder.Instance.PlayerTrunk.position - x.transform.position).sqrMagnitude).FirstOrDefault();
+        return _objectiveObjectInstances.Where(x => x.ObjectiveObject == _networkIdentifiers.FirstOrDefault(x => x.NetworkId.Value == arrowData.ObjectToFollowId).GetComponent<ObjectiveObjectInstance>().ObjectiveObject && x.ObjectiveColour.Equals(_networkIdentifiers.FirstOrDefault(x => x.NetworkId.Value == arrowData.ObjectToFollowId).GetComponent<ObjectiveObjectInstance>().NetworkObjectiveColour.Value)).OrderBy(x => (ArrowHolder.Instance.PlayerTrunk.position - x.transform.position).sqrMagnitude).FirstOrDefault();
     }
 }
