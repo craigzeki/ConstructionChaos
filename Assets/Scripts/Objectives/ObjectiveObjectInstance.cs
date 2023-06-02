@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TypeReferences;
 using Unity.Netcode;
 using UnityEngine;
+using System.Linq;
 
 /// <summary>
 /// An instance of an objective object.<br/>
@@ -26,6 +27,9 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
     [Dropdown("_objectiveObject.PossibleColours")]
     private ObjectiveColour _objectiveColour;
     public ObjectiveColour ObjectiveColour => _objectiveColour;
+
+    [SerializeField]
+    private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>();
 
     /// <summary>
     /// Can be set to true to exlude this object from the objective manager<br/>
@@ -82,7 +86,11 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         }
 
         // Set the colour of the object to the colour of the objective colour
-        GetComponent<SpriteRenderer>().color = NetworkObjectiveColour.Value != null ? NetworkObjectiveColour.Value.Colour : Color.white;
+        foreach(SpriteRenderer spriteRenderer in _spriteRenderers)
+        {
+            spriteRenderer.color = NetworkObjectiveColour.Value != null ? NetworkObjectiveColour.Value.Colour : Color.white;
+        }
+        
     }
 
     /// <summary>
@@ -95,6 +103,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
         if (other is null) return false;
         return _objectiveObject.Equals(other._objectiveObject) &&
             _objectiveColour.Equals(other._objectiveColour) &&
+            Enumerable.SequenceEqual(_spriteRenderers.OrderBy(i => i.name), other._spriteRenderers.OrderBy(i => i.name)) &&
             (_excludeFromObjectiveManager == other.ExcludeFromObjectiveManager);
     }
 
@@ -141,6 +150,7 @@ public class ObjectiveObjectInstance : NetworkBehaviour, IEquatable<ObjectiveObj
             int hashCode = 17;
             hashCode = (hashCode * 23) + _objectiveObject.GetHashCode();
             hashCode = (hashCode * 23) + _objectiveColour.GetHashCode();
+            hashCode = (hashCode * 23) + _spriteRenderers.GetHashCode();
             hashCode = (hashCode * 23) + _excludeFromObjectiveManager.GetHashCode();
             return hashCode;
         }
