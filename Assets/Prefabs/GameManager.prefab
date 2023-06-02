@@ -52,10 +52,10 @@ MonoBehaviour:
   _lobbyPrefab: {fileID: 226071342479353666, guid: 9febbed559c3dff44a4d461b7af0140a, type: 3}
   _rounds:
   - RoundPrefab: {fileID: 3375138609505047820, guid: 5aec12ec7111b104a8188d781bcaf9a6, type: 3}
-    RoundDurationSeconds: 30
+    RoundDurationSeconds: 300
     ShowLeaderBoardAfterRound: 1
   - RoundPrefab: {fileID: 3375138609505047820, guid: ca2ba50a291ff404fb89ff6098ea683f, type: 3}
-    RoundDurationSeconds: 30
+    RoundDurationSeconds: 300
     ShowLeaderBoardAfterRound: 1
   _playerColours:
   - {r: 0.990566, g: 0.43454072, b: 0.43454072, a: 1}
@@ -66,24 +66,27 @@ MonoBehaviour:
   - {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   _playerColourIndexes: 
   _playerNames:
-  - Hammerhead Holly
-  - Cement Crusher
-  - Sledge Smash
-  - Bulldozer Betty
-  - Jackhammer Joe
-  - Crane Commander
-  - Wrecking Ball Wanda
+  - Hammerhead Harry
+  - Nailin' Nate
+  - Craftsman Conrad
+  - Bulldozer Ben
+  - Jackhammer Jon
+  - Crane Commander Craig
+  - Wrecking Ball Rex
   - Drillmaster Dave
   - Digger Doug
-  - Mason Maniac
-  - Architect Annie
+  - Mason the Maniac
+  - Arnie the Architect
   - Welding Wally
-  - Scaffold Sam
-  - Roofing Rebel
+  - Scaffolding Sam
+  - Roofing Rufus
   - Steelworker Steve
-  - Excavator Emily
-  - Paintbrush Picasso
+  - Paintbrush Pete
   - Lumberjack Larry
+  - Carpenter Caleb
+  - Hector the Hardhat
+  - Blueprint Brian
+  - Tape Measure Terry
   _remainingNames: []
   _currentState: 0
   _roundOrder: 
