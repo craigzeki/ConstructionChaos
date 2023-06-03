@@ -148,12 +148,12 @@ public class ArrowManager : NetworkBehaviour
     
         while (true)
         {
-            print("Updating arrows");
+            //print("Updating arrows");
             ObjectiveObjectInstance objectiveObjectInstance = GetNearestTargetObject(arrowData);
 
             if (!objectiveObjectInstance.EqualsWithIDAndNetworkID(_currentObjectiveObjectInstance))
             {
-                print("Nearest Objective object instance changed");
+                //print("Nearest Objective object instance changed");
                 SetUpObjectiveArrows(arrowData);
             }
             yield return new WaitForSeconds(0.1f);
