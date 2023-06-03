@@ -32,7 +32,9 @@ public class GameManager : NetworkBehaviour
         //Add new states above this line
         NUM_OF_STATES
     }
-    
+
+    [SerializeField] private float _networkFixedDeltaTime = 0.02f;
+    [SerializeField][ReadOnly] private uint _networkFixedDeltaTimeItterations;
     [SerializeField] private float _minLoadScreenTime = 2f;
     [SerializeField] private LayerMask _groundLayers = new LayerMask();
     public LayerMask GroundLayers => _groundLayers;
@@ -86,11 +88,14 @@ public class GameManager : NetworkBehaviour
     }
 
     public GAMESTATE CurrentState { get => _currentState; }
+    public float NetworkFixedDeltaTime { get => _networkFixedDeltaTime; }
+    public uint NetworkFixedDeltaTimeItterations { get => _networkFixedDeltaTimeItterations; }
 
     public bool TrueIsServer = false;
 
     private void Awake()
     {
+        _networkFixedDeltaTimeItterations = (uint)Math.Round(_networkFixedDeltaTime / Time.fixedDeltaTime, MidpointRounding.AwayFromZero);
         _controls = new Controls();
         _controls.Gameplay.Enable();
         _controls.Gameplay.Escape.performed += EscapeButtonPressed;

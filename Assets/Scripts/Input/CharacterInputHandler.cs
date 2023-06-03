@@ -25,7 +25,7 @@ public class CharacterInputHandler : NetworkBehaviour
 
     private Controls _controls;
     private ControlActionMaps _currentActionMap;
-
+    private uint _fixedUpdateCounter = 0;
     private bool _menuButtonPressed = false;
     Vector2 _screenOrigin { get => FollowCam.Instance.Cam.WorldToScreenPoint(transform.GetChild(1).position); }
     [SerializeField] Vector2 _mouseWorldPosition;
@@ -119,8 +119,22 @@ public class CharacterInputHandler : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        
         if (!IsServer && IsOwner)
-            OverrideInputDataServerRpc(CharacterInputData);
+        {
+            
+            if((_fixedUpdateCounter % GameManager.Instance.NetworkFixedDeltaTimeItterations) == 0)
+            {
+                OverrideInputDataServerRpc(CharacterInputData);
+                _fixedUpdateCounter = 1;
+            }
+            else
+            {
+                _fixedUpdateCounter++;
+            }
+            
+        }
+            
     }
 
     [ServerRpc]

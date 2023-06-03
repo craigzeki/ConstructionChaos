@@ -22,12 +22,12 @@ public class Balance : Ragdoll
 
     void FixedUpdate()
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
 
         if (IsServer)
             HandleBalance();
-        else
-            HandleBalanceServerRpc();
+        //else
+            //HandleBalanceServerRpc();
     }
 
     [ServerRpc(RequireOwnership = false)]
