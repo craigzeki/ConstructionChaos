@@ -1322,10 +1322,10 @@ MonoBehaviour:
   CharacterInputHandler: {fileID: -8798100150719738577}
   StickMovement: {fileID: 0}
   _rejoinAnchorDistanceThreshold: 0.005
-  _speed: 1.5
+  _speed: 3
   _maxVelocity: 15
   _stepWait: 0.5
-  _jumpForce: 6000
+  _jumpForce: 12000
   _positionRadius: 0.22
   _groundLayerMask:
     serializedVersion: 2
