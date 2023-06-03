@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c08465fa64b546a8863ddf8b0e8f86c, type: 3}
-  m_Name: PLANK
+  m_Name: BAG_OF_CEMENT
   m_EditorClassIdentifier: 
-  _friendlyString: <style="Object">plank</style>
-  _points: 20
+  _friendlyString: <style="Object">bag of cement</style>
+  _points: 10
   possibleColours:
   - {fileID: 11400000, guid: 4992c3c30842c4c20ab6506cdc885262, type: 2}
   - {fileID: 11400000, guid: bb80d45de34bf45da81d1d7bed7be92c, type: 2}
@@ -25,3 +25,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc56cd59f26784efd99390b39820f872, type: 2}
   possibleActions:
   - {fileID: 11400000, guid: 15559eafa3bc84913847e263af46ee52, type: 2}
+  - {fileID: 11400000, guid: 3af4e407275cd494782a749e8c772237, type: 2}
+  - {fileID: 11400000, guid: 045fa71bd284d7646b5dc581428a6136, type: 2}

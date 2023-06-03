@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a36283b6962959b4a977da580e34321f
+guid: 15a9f93d769d8a347afa65ce3439183f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,17 +113,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Barrier_0
+      name: Cement_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 10
-        width: 107
-        height: 73
+        x: 28
+        y: 5
+        width: 70
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0fec3626568cfd47a1fd3cb8352e150
-      internalID: 682309890
+      spriteID: 10549c25d9625ae49aae918cb010d3fb
+      internalID: -817231698
       vertices: []
       indices: 
       edges: []
@@ -148,7 +160,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Barrier_0: 682309890
+      Cement_0: -817231698
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
