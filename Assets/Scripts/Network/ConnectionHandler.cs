@@ -270,6 +270,8 @@ public class ConnectionHandler : MonoBehaviour
 
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
 
+            _relayTransport.SetHostRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port, allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData, true);
+
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;
 
             _relayTransport.SetRelayServerData(relayServerData);
@@ -295,6 +297,8 @@ public class ConnectionHandler : MonoBehaviour
             MenuUIManager.Instance.SetRoomCode(roomCode);
 
             RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
+
+            _relayTransport.SetClientRelayData(joinAllocation.RelayServer.IpV4, (ushort)joinAllocation.RelayServer.Port, joinAllocation.AllocationIdBytes, joinAllocation.Key, joinAllocation.ConnectionData, joinAllocation.HostConnectionData, true);
 
             NetworkManager.Singleton.NetworkConfig.NetworkTransport = _relayTransport;
 
