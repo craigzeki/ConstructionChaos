@@ -25,7 +25,7 @@ public class MenuUIManager : MonoBehaviour
 
     [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
 
-    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText, _waitingText;
+    [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText, _noOfPlayersText, _waitingText;
 
     [SerializeField] private TMP_InputField _roomCodeInput;
 
@@ -300,6 +300,11 @@ public class MenuUIManager : MonoBehaviour
     public void SetPlayerNameText(string name)
     {
         _playerNameText.text = "You are: " + name;
+    }
+
+    public void SetNoOfPlayersText(string noOfPlayers)
+    {
+        _noOfPlayersText.text = $"No. of Players: {noOfPlayers}";
     }
 
     private void EnableMenu()

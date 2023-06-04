@@ -160,6 +160,8 @@ public class GameManager : NetworkBehaviour
                 MenuUIManager.Instance.SetPlayerNameText(PlayerData[clientId].PlayerName);
             }
 
+            SetNoOfPlayersTextClientRpc(PlayerData.Count);
+
             return true;
         }
 
@@ -187,6 +189,8 @@ public class GameManager : NetworkBehaviour
         }
 
         if (!PlayerData.Remove(clientId)) return false;
+
+        SetNoOfPlayersTextClientRpc(PlayerData.Count);
 
         return true;
 
@@ -740,6 +744,12 @@ public class GameManager : NetworkBehaviour
     {
         if (_remainingNames == null) return;
         if (!PlayerData[clientId].DefaultNameUsed) _remainingNames.Add(PlayerData[clientId].PlayerName);
+    }
+
+    [ClientRpc]
+    private void SetNoOfPlayersTextClientRpc(int noOfPlayers, ClientRpcParams clientRpcParams = default)
+    {
+        MenuUIManager.Instance.SetNoOfPlayersText(noOfPlayers.ToString());
     }
 
     public void RoundWon()
