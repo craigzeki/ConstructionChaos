@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7605685968059988900}
   - component: {fileID: 1914358010588162065}
   - component: {fileID: 6318362825268219218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall2Ground Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
