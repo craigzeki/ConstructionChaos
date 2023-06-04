@@ -46,7 +46,7 @@ public class ArrowManager : NetworkBehaviour
             _arrows.Add(newArrow.GetComponent<Arrow>());
         else
             _goalArrow = newArrow.GetComponent<Arrow>();
-        newArrow.GetComponent<Arrow>().SetUpWithIcon(objectToFollow, icon, colour);
+        newArrow.GetComponent<Arrow>().SetUpWithIcon(objectToFollow, icon, colour, isGoalArrow);
     }
 
     public void AddArrowWithText(Transform objectToFollow, string text, bool isGoalArrow = false)
@@ -56,7 +56,7 @@ public class ArrowManager : NetworkBehaviour
             _arrows.Add(newArrow.GetComponent<Arrow>());
         else
             _goalArrow = newArrow.GetComponent<Arrow>();
-        newArrow.GetComponent<Arrow>().SetUpWithText(objectToFollow, text);
+        newArrow.GetComponent<Arrow>().SetUpWithText(objectToFollow, text, isGoalArrow);
     }
 
     public void RemoveAllObjectiveArrows()

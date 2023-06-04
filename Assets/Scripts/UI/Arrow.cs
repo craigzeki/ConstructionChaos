@@ -11,8 +11,9 @@ public class Arrow : MonoBehaviour
     [SerializeField] private SpriteRenderer _iconSpriteRenderer;
     [SerializeField] private GameObject _iconCanvas;
     [SerializeField] private TextMeshProUGUI _iconText;
+    private bool _isGoalArrow = false;
 
-    public void SetUpWithIcon(Transform objectToFollow, Sprite icon, Color colour)
+    public void SetUpWithIcon(Transform objectToFollow, Sprite icon, Color colour, bool isGoalArrow = false)
     {
         _objectToFollow = objectToFollow;
         _iconCanvas.SetActive(false);
@@ -25,9 +26,10 @@ public class Arrow : MonoBehaviour
         _iconSpriteRenderer.sprite = icon;
         _iconSpriteRenderer.color = colour;
         _iconSpriteRenderer.enabled = true;
+        _isGoalArrow = isGoalArrow;
     }
 
-    public void SetUpWithText(Transform objectToFollow, string text)
+    public void SetUpWithText(Transform objectToFollow, string text, bool isGoalArrow = false)
     {
         _objectToFollow = objectToFollow;
         _iconSpriteRenderer.transform.localScale = Vector3.one;
@@ -35,6 +37,7 @@ public class Arrow : MonoBehaviour
         _iconSpriteRenderer.color = Color.white;
         _iconCanvas.SetActive(true);
         _iconText.text = text;
+        _isGoalArrow = isGoalArrow;
     }
 
     // Update is called once per frame
@@ -49,10 +52,14 @@ public class Arrow : MonoBehaviour
         if (ObjectIsVisible())
         {
             ToggleArrowVisibility(false);
+            if (_isGoalArrow)
+                GameUIManager.Instance.HideGroupObjectiveCountdown();
         }
         else
         {
             ToggleArrowVisibility(true);
+            if (_isGoalArrow)
+                GameUIManager.Instance.ShowGroupObjectiveCountdown();
 
             // Update the position of the object
             Vector2 direction = _objectToFollow.position - transform.parent.position;

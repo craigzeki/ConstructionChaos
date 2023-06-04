@@ -12,7 +12,7 @@ public class GameUIManager : MonoBehaviour
     // UI Element References
     [SerializeField] private TextMeshProUGUI _timerText, _objectiveText;
 
-    [SerializeField] private GameObject _groupObjectiveRequirementsParent, _groupObjectiveRequirementPrefab;
+    [SerializeField] private GameObject _groupObjectiveRequirementsParent, _groupObjectiveRequirementPrefab, _groupObjectiveCountdownPrefab;
 
     [SerializeField] private Sprite _objectiveRequirementDoneSprite, _objectiveRequirementNotDoneSprite;
 
@@ -21,6 +21,9 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameObject _streakBarColourPartPrefab;
 
     [SerializeField] private TextMeshProUGUI _streakText;
+
+    private GameObject CountdownObject;
+    private TextMeshProUGUI _groupObjectiveCountdownText;
 
     private void Awake()
     {
@@ -46,6 +49,40 @@ public class GameUIManager : MonoBehaviour
         string minutes = Mathf.Floor(seconds / 60).ToString("00");
         string secondsString = (seconds % 60).ToString("00");
         _timerText.text = minutes + ":" + secondsString;
+    }
+
+    public void UpdateGroupObjectiveCountdown(string seconds)
+    {
+        if (CountdownObject == null)
+        {
+            SpawnGroupObjectiveCountdown();
+        }
+        _groupObjectiveCountdownText.text = $"Countdown: {seconds}";
+    }
+
+    private void SpawnGroupObjectiveCountdown()
+    {
+        CountdownObject = Instantiate(_groupObjectiveCountdownPrefab, _groupObjectiveRequirementsParent.transform);
+        _groupObjectiveCountdownText = CountdownObject.GetComponent<TextMeshProUGUI>();
+    }
+
+    public void CancelGroupObjectiveCountdown()
+    {
+        Destroy(CountdownObject);
+        CountdownObject = null;
+        _groupObjectiveCountdownText = null;
+    }
+
+    public void HideGroupObjectiveCountdown()
+    {
+        if (CountdownObject == null) return;
+        CountdownObject.SetActive(false);
+    }
+
+    public void ShowGroupObjectiveCountdown()
+    {
+        if (CountdownObject == null) return;
+        CountdownObject.SetActive(true);
     }
 
     /// <summary>

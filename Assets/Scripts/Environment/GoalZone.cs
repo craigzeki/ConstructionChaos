@@ -221,6 +221,7 @@ public class GoalZone : Zone
             {
                 StopCoroutine(_countdownCoroutine);
                 _countdownCoroutine = null;
+                GameUIManager.Instance.CancelGroupObjectiveCountdown();
             }
         }
         
@@ -239,6 +240,7 @@ public class GoalZone : Zone
         while(_countdownTimer > 0)
         {
             _countdownText.text = _countdownTimer.ToString();
+            GameUIManager.Instance.UpdateGroupObjectiveCountdown(_countdownTimer.ToString());
             _countdownTextRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() => { _countdownTextRectTransform.localScale = _startScale; });
             _countdownTimer--;
             yield return new WaitForSeconds(1);
