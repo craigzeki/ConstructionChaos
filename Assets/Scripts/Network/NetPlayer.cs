@@ -39,12 +39,19 @@ public class NetPlayer : NetworkBehaviour
             NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
             //_networkObjectiveString.Value = _objectiveString;
         }
-        else if(IsOwner)
+        else
         {
+            if(IsOwner)
+            {
+                LocalPlayerName.OnValueChanged += SetPlayerName;
+            }
+            
             PlayerColorIndex.OnValueChanged += SetPlayerColour;
-            LocalPlayerName.OnValueChanged += SetPlayerName;
             SetPlayerColour(0, PlayerColorIndex.Value);
         }
+
+            
+        
         
         
         
@@ -55,7 +62,7 @@ public class NetPlayer : NetworkBehaviour
         base.OnNetworkDespawn();
         if(IsOwner)
         {
-            PlayerColorIndex.OnValueChanged -= SetPlayerColour;
+            
             LocalPlayerName.OnValueChanged -= SetPlayerName;
         }
         
@@ -63,6 +70,10 @@ public class NetPlayer : NetworkBehaviour
         {
             GameManager.Instance?.UnRegisterPlayer(OwnerClientId);
             if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        }
+        else
+        {
+            PlayerColorIndex.OnValueChanged -= SetPlayerColour;
         }
     }
 
