@@ -39,7 +39,7 @@ public class NetPlayer : NetworkBehaviour
             NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
             //_networkObjectiveString.Value = _objectiveString;
         }
-        else
+        else if(IsOwner)
         {
             PlayerColorIndex.OnValueChanged += SetPlayerColour;
             LocalPlayerName.OnValueChanged += SetPlayerName;
@@ -53,21 +53,36 @@ public class NetPlayer : NetworkBehaviour
     public override void OnNetworkDespawn()
     {
         base.OnNetworkDespawn();
-        PlayerColorIndex.OnValueChanged -= SetPlayerColour;
-        LocalPlayerName.OnValueChanged -= SetPlayerName;
-        GameManager.Instance?.UnRegisterPlayer(OwnerClientId);
-        if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        if(IsOwner)
+        {
+            PlayerColorIndex.OnValueChanged -= SetPlayerColour;
+            LocalPlayerName.OnValueChanged -= SetPlayerName;
+        }
+        
+        if(IsServer)
+        {
+            GameManager.Instance?.UnRegisterPlayer(OwnerClientId);
+            if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        }
     }
 
     private void OnDisable()
     {
-        if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        if(IsServer)
+        {
+            if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        }
+        
     }
 
     public override void OnDestroy()
     {
         base.OnDestroy();
-        if(NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        if(IsServer)
+        {
+            if (NetworkManager != null) NetworkManager.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+        }
+        
     }
 
     /// <summary>
