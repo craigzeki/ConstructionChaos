@@ -29,7 +29,7 @@ public class MenuUIManager : MonoBehaviour
 
     [SerializeField] private TMP_InputField _roomCodeInput;
 
-    [SerializeField] private Toggle _localToggle;
+    [SerializeField] private Toggle _localToggle, _muteToggle;
 
     private bool _local = false;
 
@@ -201,6 +201,7 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(_joinButton.gameObject, false);
         AnimateElement(_backButton.gameObject, false);
         AnimateElement(_localToggle.gameObject, false);
+        AnimateElement(_muteToggle.gameObject, false);
         AnimateElement(_roomCodeInput.gameObject, false);
         GameManager.Instance.LoadLobby();
         ToggleCanvas(_mainMenuCanvas.gameObject, false);
@@ -318,6 +319,9 @@ public class MenuUIManager : MonoBehaviour
 
         // Animate in the local toggle
         AnimateElement(_localToggle.gameObject, true);
+
+        // Animate in the mute toggle
+        AnimateElement(_muteToggle.gameObject, true);
 
         // Animate in the title images
         AnimateElement(_titleImage, true);
