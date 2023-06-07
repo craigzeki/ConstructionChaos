@@ -21,6 +21,9 @@ public class Grab : Ragdoll
     /// </summary>
     [SerializeField] private HandType _handType;
     [SerializeField] LayerMask _grabableLayerMask;
+
+    private LayerMask _objectLayerMask;
+    [SerializeField] private int _platformIgnoreGrabLayerMask;
     
     private FixedJoint2D _joint;
     public GameObject GrabbedObject
@@ -59,6 +62,9 @@ public class Grab : Ragdoll
             // Player has let go, destroy the joint between player and item
             ReadyToGrab = false;
             IsHoldingLedge = false;
+            if (_joint != null)
+                if (_joint.attachedRigidbody.gameObject.layer == _platformIgnoreGrabLayerMask)
+                    _joint.attachedRigidbody.gameObject.layer = _objectLayerMask;
             Destroy(_joint);
             _joint = null;
             Release = false;
@@ -79,6 +85,11 @@ public class Grab : Ragdoll
                 _joint = collision.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                 _joint.connectedBody = GetComponent<Rigidbody2D>();
                 if (collision.gameObject.tag == "Ledge") IsHoldingLedge = true;
+                if (collision.gameObject.layer == LayerMask.NameToLayer("Grabable"))
+                {
+                    _objectLayerMask = collision.gameObject.layer;
+                    collision.gameObject.layer = _platformIgnoreGrabLayerMask;
+                }
             }
             else
             {
