@@ -101,7 +101,12 @@ public class ScrollingUIBackground : MonoBehaviour
 
         if (random)
         {
-            index = Random.Range((int)0, (int)_images.Count);
+            int newIndex = Random.Range((int)0, (int)_images.Count);
+            while (newIndex == index)
+            {
+                newIndex = Random.Range((int)0, (int)_images.Count);
+            }
+            index = newIndex;
         }
 
         if(index >= _images.Count) return;
