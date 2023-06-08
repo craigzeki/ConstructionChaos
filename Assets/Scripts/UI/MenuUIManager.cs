@@ -23,7 +23,7 @@ public class MenuUIManager : MonoBehaviour
 
     [SerializeField] private GameObject _titleImage;
 
-    [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
+    [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton, _quitButton;
 
     [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText, _noOfPlayersText, _waitingText;
 
@@ -200,6 +200,7 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(_hostButton.gameObject, false);
         AnimateElement(_joinButton.gameObject, false);
         AnimateElement(_backButton.gameObject, false);
+        AnimateElement(_quitButton.gameObject, false);
         AnimateElement(_localToggle.gameObject, false);
         AnimateElement(_muteToggle.gameObject, false);
         AnimateElement(_roomCodeInput.gameObject, false);
@@ -316,6 +317,9 @@ public class MenuUIManager : MonoBehaviour
         // Animate in the host and join buttons
         AnimateElement(_hostButton.gameObject, true);
         AnimateElement(_joinButton.gameObject, true);
+
+        // Animate in the quit button
+        AnimateElement(_quitButton.gameObject, true);
 
         // Animate in the local toggle
         AnimateElement(_localToggle.gameObject, true);

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8a5e0f44a40348b0b120f33ad3ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _networkFixedDeltaTime: 0.02
+  _networkFixedDeltaTimeItterations: 0
   _minLoadScreenTime: 2
   _groundLayers:
     serializedVersion: 2
@@ -52,9 +54,6 @@ MonoBehaviour:
   _lobbyPrefab: {fileID: 226071342479353666, guid: 9febbed559c3dff44a4d461b7af0140a, type: 3}
   _rounds:
   - RoundPrefab: {fileID: 3375138609505047820, guid: 5aec12ec7111b104a8188d781bcaf9a6, type: 3}
-    RoundDurationSeconds: 300
-    ShowLeaderBoardAfterRound: 1
-  - RoundPrefab: {fileID: 3375138609505047820, guid: ca2ba50a291ff404fb89ff6098ea683f, type: 3}
     RoundDurationSeconds: 300
     ShowLeaderBoardAfterRound: 1
   _playerColours:
