@@ -1190,7 +1190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &340957234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8000,7 +8000,7 @@ MonoBehaviour:
   _joinButton: {fileID: 1432325565}
   _backButton: {fileID: 1062333159}
   _startButton: {fileID: 1769883888}
-  _quitButton: {fileID: 0}
+  _quitButton: {fileID: 1051609561}
   _roomCodeText: {fileID: 1938494455}
   _errorText: {fileID: 615447151}
   _disconnectedText: {fileID: 1591499156}
@@ -8636,7 +8636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2092564316
 MonoBehaviour:
   m_ObjectHideFlags: 0
