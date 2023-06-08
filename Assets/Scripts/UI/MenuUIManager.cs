@@ -21,21 +21,26 @@ public class MenuUIManager : MonoBehaviour
     public GameObject ScrollingBgCanvas => _scrollingBgCanvas;
 
 
-    [SerializeField] private GameObject _titleImage;
+    [SerializeField] private GameObject _titleImage, _controlsImagesParent, _creditsParent;
 
-    [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton;
+    [SerializeField] private Button _hostButton, _joinButton, _backButton, _startButton, _controlsButton, _creditsButton, _quitButton;
 
     [SerializeField] private TextMeshProUGUI _roomCodeText, _errorText, _disconnectedText, _playerNameText, _noOfPlayersText, _waitingText;
 
     [SerializeField] private TMP_InputField _roomCodeInput;
 
-    [SerializeField] private Toggle _localToggle;
+    [SerializeField] private Toggle _localToggle, _muteToggle;
 
     private bool _local = false;
 
     private float _animationTime = 0.5f;
 
     private bool _joinMenuOpen = false;
+    private bool _controlsMenuOpen = false;
+    private bool _creditsMenuOpen = false;
+
+    private Coroutine _controlsCoroutine = null;
+    private Coroutine _creditsCoroutine = null;
 
     private void Awake()
     {
@@ -52,6 +57,8 @@ public class MenuUIManager : MonoBehaviour
         _hostButton.onClick.AddListener(HostButton);
         _joinButton.onClick.AddListener(JoinButton);
         _backButton.onClick.AddListener(BackButton);
+        _controlsButton.onClick.AddListener(ControlsButton);
+        _creditsButton.onClick.AddListener(CreditsButton);
 
         // Add a listener to the input field to make sure the input is always uppercase
         _roomCodeInput.onValidateInput += delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
@@ -68,6 +75,8 @@ public class MenuUIManager : MonoBehaviour
         _hostButton.onClick.RemoveListener(HostButton);
         _joinButton.onClick.RemoveListener(JoinButton);
         _backButton.onClick.RemoveListener(BackButton);
+        _controlsButton.onClick.RemoveListener(ControlsButton);
+        _creditsButton.onClick.RemoveListener(CreditsButton);
 
         // Remove the listener from the input field
         _roomCodeInput.onValidateInput -= delegate (string input, int charIndex, char addedChar) { return char.ToUpper(addedChar); };
@@ -200,7 +209,12 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(_hostButton.gameObject, false);
         AnimateElement(_joinButton.gameObject, false);
         AnimateElement(_backButton.gameObject, false);
+        AnimateElement(_quitButton.gameObject, false);
+        AnimateElement(_controlsButton.gameObject, false);
+        AnimateElement(_creditsButton.gameObject, false);
+        AnimateElement(_controlsImagesParent, false);
         AnimateElement(_localToggle.gameObject, false);
+        AnimateElement(_muteToggle.gameObject, false);
         AnimateElement(_roomCodeInput.gameObject, false);
         GameManager.Instance.LoadLobby();
         ToggleCanvas(_mainMenuCanvas.gameObject, false);
@@ -316,8 +330,16 @@ public class MenuUIManager : MonoBehaviour
         AnimateElement(_hostButton.gameObject, true);
         AnimateElement(_joinButton.gameObject, true);
 
+        // Animate in the quit, controls and credits button
+        AnimateElement(_quitButton.gameObject, true);
+        AnimateElement(_controlsButton.gameObject, true);
+        AnimateElement(_creditsButton.gameObject, true);
+
         // Animate in the local toggle
         AnimateElement(_localToggle.gameObject, true);
+
+        // Animate in the mute toggle
+        AnimateElement(_muteToggle.gameObject, true);
 
         // Animate in the title images
         AnimateElement(_titleImage, true);
@@ -344,5 +366,118 @@ public class MenuUIManager : MonoBehaviour
     public void LoadMenu()
     {
         GameManager.Instance.LoadMenu();
+    }
+
+    private void ControlsButton()
+    {
+        if (_controlsCoroutine != null)
+        {
+            StopCoroutine(_controlsCoroutine);
+            _controlsCoroutine = null;
+        }
+        _controlsCoroutine = StartCoroutine(ControlsButtonCoroutine());
+    }
+
+    IEnumerator ControlsButtonCoroutine()
+    {
+        _controlsMenuOpen = !_controlsMenuOpen;
+        _joinMenuOpen = false;
+        _creditsMenuOpen = false;
+        if (!_controlsMenuOpen)
+        {
+            // Animate out the controls menu
+            AnimateElement(_controlsImagesParent, false);
+
+            yield return new WaitForSeconds(_animationTime);
+
+            // Animate in the host and join buttons
+            AnimateElement(_hostButton.gameObject, true);
+            AnimateElement(_joinButton.gameObject, true);
+
+            // Animate in the mute and local toggles
+            AnimateElement(_muteToggle.gameObject, true);
+            AnimateElement(_localToggle.gameObject, true);
+        }
+        else
+        {
+            // Animate out the host and join buttons
+            AnimateElement(_hostButton.gameObject, false);
+            AnimateElement(_joinButton.gameObject, false);
+
+            // Animate out the mute and local toggles
+            AnimateElement(_muteToggle.gameObject, false);
+            AnimateElement(_localToggle.gameObject, false);
+
+            // Animate out the back button
+            AnimateElement(_backButton.gameObject, false);
+
+            // Animate out the room code input
+            AnimateElement(_roomCodeInput.gameObject, false);
+
+            // Animate out the credits menu
+            AnimateElement(_creditsParent, false);
+
+            yield return new WaitForSeconds(_animationTime);
+
+            // Animate in the controls menu
+            AnimateElement(_controlsImagesParent, true);
+        }
+    }
+
+    private void CreditsButton()
+    {
+        if (_creditsCoroutine != null)
+        {
+            StopCoroutine(_creditsCoroutine);
+            _creditsCoroutine = null;
+        }
+        _creditsCoroutine = StartCoroutine(CreditsButtonCoroutine());
+    }
+
+    IEnumerator CreditsButtonCoroutine()
+    {
+        _creditsMenuOpen = !_creditsMenuOpen;
+        _joinMenuOpen = false;
+        _controlsMenuOpen = false;
+        if (!_creditsMenuOpen)
+        {
+            // Animate out the controls menu
+            AnimateElement(_creditsParent, false);
+
+            yield return new WaitForSeconds(_animationTime);
+
+            // Animate in the host and join buttons
+            AnimateElement(_hostButton.gameObject, true);
+            AnimateElement(_joinButton.gameObject, true);
+
+            // Animate in the mute and local toggles
+            AnimateElement(_muteToggle.gameObject, true);
+            AnimateElement(_localToggle.gameObject, true);
+        }
+        else
+        {
+            // Animate out the host and join buttons
+            AnimateElement(_hostButton.gameObject, false);
+            AnimateElement(_joinButton.gameObject, false);
+
+            // Animate out the mute and local toggles
+            AnimateElement(_muteToggle.gameObject, false);
+            AnimateElement(_localToggle.gameObject, false);
+
+            // Animate out the back button
+            AnimateElement(_backButton.gameObject, false);
+
+            // Animate out the room code input
+            AnimateElement(_roomCodeInput.gameObject, false);
+
+            // Animate out the controls menu
+            AnimateElement(_controlsImagesParent, false);
+
+            yield return new WaitForSeconds(_animationTime);
+
+            // Animate in the controls menu
+            AnimateElement(_creditsParent, true);
+        }
+
     }
 }

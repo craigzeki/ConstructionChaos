@@ -1024,7 +1024,8 @@ MonoBehaviour:
   _handType: 1
   _grabableLayerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 8384
+  _platformIgnoreGrabLayerMask: 13
   Release: 0
 --- !u!114 &7703105428848278053
 MonoBehaviour:
@@ -1182,7 +1183,8 @@ MonoBehaviour:
   _handType: 0
   _grabableLayerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 8384
+  _platformIgnoreGrabLayerMask: 13
   Release: 0
 --- !u!114 &4773885092507461239
 MonoBehaviour:
@@ -1329,7 +1331,7 @@ MonoBehaviour:
   _positionRadius: 0.22
   _groundLayerMask:
     serializedVersion: 2
-    m_Bits: 1864
+    m_Bits: 10056
   _groundPositions:
   - {fileID: 5808222033182072916}
   - {fileID: 7223273230729471258}

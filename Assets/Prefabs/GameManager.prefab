@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8a5e0f44a40348b0b120f33ad3ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _networkFixedDeltaTime: 0.02
+  _networkFixedDeltaTimeItterations: 0
   _minLoadScreenTime: 2
   _groundLayers:
     serializedVersion: 2
