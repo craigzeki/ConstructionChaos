@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using ZekstersLab.Helpers;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,9 +14,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Toggle _muteToggle;
 
     private List<int> _audioClipIndexes = new List<int>();
-
-    private int _previousClipIndex = -1;
-    private int _previousPreviousClipIndex = -1;
 
     private void Awake()
     {
@@ -35,6 +33,7 @@ public class AudioManager : MonoBehaviour
     {
         _audioClipIndexes.Clear();
         _audioClipIndexes = Enumerable.Range(0, _audioClips.Count).ToList();
+        _audioClipIndexes.Shuffle();
     }
 
     private IEnumerator BackgroundMusicLoop()
@@ -43,17 +42,10 @@ public class AudioManager : MonoBehaviour
         {
             if (_audioClipIndexes.Count == 0) ResetAudioClipIndexes();
 
-            int index = Random.Range(0, _audioClipIndexes.Count);
-            while (index == _previousClipIndex || index == _previousPreviousClipIndex)
-            {
-                index = Random.Range(0, _audioClipIndexes.Count);
-            }
-            _previousPreviousClipIndex = _previousClipIndex;
-            _previousClipIndex = index;
             _audioSource.Stop();
-            _audioSource.clip = _audioClips[_audioClipIndexes[index]];
+            _audioSource.clip = _audioClips[_audioClipIndexes[0]];
             _audioSource.Play();
-            _audioClipIndexes.RemoveAt(index);
+            _audioClipIndexes.RemoveAt(0);
 
             yield return new WaitForSeconds(_audioSource.clip.length);
         }
