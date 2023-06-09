@@ -1,0 +1,366 @@
+\hypertarget{class_arrow_manager}{}\doxysection{Arrow\+Manager Class Reference}
+\label{class_arrow_manager}\index{ArrowManager@{ArrowManager}}
+
+
+Inheritance diagram for Arrow\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_arrow_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arrow\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_arrow_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_manager_acf7dd6faaf65aa355a4163fbdaa91d43}{Add\+Arrow\+With\+Icon}} (Transform object\+To\+Follow, Sprite icon, Color colour, bool is\+Goal\+Arrow=false)
+\item 
+void \mbox{\hyperlink{class_arrow_manager_ac594b75caa561fb6748ab4de40b0446b}{Add\+Arrow\+With\+Text}} (Transform object\+To\+Follow, string text, bool is\+Goal\+Arrow=false)
+\item 
+void \mbox{\hyperlink{class_arrow_manager_ae8552fe13b166e7772d800277a79f462}{Remove\+All\+Objective\+Arrows}} ()
+\item 
+void \mbox{\hyperlink{class_arrow_manager_a68332590d44c71463a5b28691d59ac2b}{Remove\+All\+Arrows}} ()
+\item 
+void \mbox{\hyperlink{class_arrow_manager_afe2a5ed6702d9502caf3caac9c14a76d}{Clear\+All\+Lists}} ()
+\item 
+void \mbox{\hyperlink{class_arrow_manager_a846fdef8dca3f888cc7c2cfdb7cc176f}{Set\+Up\+Objective\+Arrows\+Server\+Side}} (\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}} arrow\+Data, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_arrow_manager_a0aea86a8d23145842d8716b3eda09ef8}{Stop\+Updating\+Arrows\+Server\+Side}} (Client\+Rpc\+Params client\+Rpc\+Params=default)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_arrow_manager}{Arrow\+Manager}} \mbox{\hyperlink{class_arrow_manager_a8a1a21e17afa45618b057f7e755cfe98}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a9c12d578a9bb6b5ce646a88f0f98d915}\label{class_arrow_manager_a9c12d578a9bb6b5ce646a88f0f98d915}} 
+float {\bfseries Arrow\+Distance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_manager_a95a9a4285f24015bbd95791f5c75cb5e}{Set\+Up\+Objective\+Arrows\+Client\+Rpc}} (\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}} arrow\+Data, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_arrow_manager_ab6b04847c2329edc8ee9480c2b7afdb8}{Set\+Up\+Objective\+Arrows}} (\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}} arrow\+Data)
+\item 
+IEnumerator \mbox{\hyperlink{class_arrow_manager_a25d8355ba1759cc17f5b3072fb7df23f}{Update\+Arrows}} (\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}} arrow\+Data)
+\item 
+void \mbox{\hyperlink{class_arrow_manager_a5b88f990d0509d5ef9278734a75961a6}{Stop\+Updating\+Arrows\+Client\+Rpc}} (Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_arrow_manager_a9d3d8fa593a2ea55e53a7c351d9f426b}{Stop\+Updating\+Arrows}} ()
+\item 
+\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} \mbox{\hyperlink{class_arrow_manager_a5ba57cefd498e346409ff861c0545e64}{Get\+Nearest\+Target\+Object}} (\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}} arrow\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_manager_ab0ffd6f47690bebe6ff2a71ab34e5aa0}\label{class_arrow_manager_ab0ffd6f47690bebe6ff2a71ab34e5aa0}} 
+Game\+Object {\bfseries \+\_\+arrow\+Prefab}
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a278f1c4266b1201d309d30c387f2d7c1}\label{class_arrow_manager_a278f1c4266b1201d309d30c387f2d7c1}} 
+List$<$ \mbox{\hyperlink{class_arrow}{Arrow}} $>$ {\bfseries \+\_\+arrows} = new List$<$\mbox{\hyperlink{class_arrow}{Arrow}}$>$()
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a0394117c14fc36b6edb534892aadbd54}\label{class_arrow_manager_a0394117c14fc36b6edb534892aadbd54}} 
+\mbox{\hyperlink{class_arrow}{Arrow}} {\bfseries \+\_\+goal\+Arrow} = null
+\item 
+\mbox{\Hypertarget{class_arrow_manager_ade36490dc723b746b81396b10e56083e}\label{class_arrow_manager_ade36490dc723b746b81396b10e56083e}} 
+Coroutine {\bfseries \+\_\+arrow\+Update\+Coroutine} = null
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a44e87ce8d1e1a79243b9004ade0893fa}\label{class_arrow_manager_a44e87ce8d1e1a79243b9004ade0893fa}} 
+float {\bfseries \+\_\+arrow\+Distance} = 3.\+5f
+\item 
+\mbox{\Hypertarget{class_arrow_manager_afbc85127667d446698fa0d0ef1459d17}\label{class_arrow_manager_afbc85127667d446698fa0d0ef1459d17}} 
+List$<$ \mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} $>$ {\bfseries \+\_\+objective\+Object\+Instances} = new List$<$\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}}$>$()
+\item 
+\mbox{\Hypertarget{class_arrow_manager_afb08109ceb7c45d11089dabb506a72b9}\label{class_arrow_manager_afb08109ceb7c45d11089dabb506a72b9}} 
+\mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} {\bfseries \+\_\+current\+Objective\+Object\+Instance}
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a6d48efed60235e5b5482456eed54340b}\label{class_arrow_manager_a6d48efed60235e5b5482456eed54340b}} 
+List$<$ \mbox{\hyperlink{class_network_identifier}{Network\+Identifier}} $>$ {\bfseries \+\_\+network\+Identifiers} = new List$<$\mbox{\hyperlink{class_network_identifier}{Network\+Identifier}}$>$()
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a074c955d3dbb6549290be0afbf8687cd}\label{class_arrow_manager_a074c955d3dbb6549290be0afbf8687cd}} 
+List$<$ \mbox{\hyperlink{class_zone}{Zone}} $>$ {\bfseries \+\_\+zones} = new List$<$\mbox{\hyperlink{class_zone}{Zone}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_manager_a8884b2e426d3712c2f1acaf79a5df3b3}\label{class_arrow_manager_a8884b2e426d3712c2f1acaf79a5df3b3}} 
+static \mbox{\hyperlink{class_arrow_manager}{Arrow\+Manager}} {\bfseries \+\_\+instance}
+\begin{DoxyCompactList}\small\item\em Singleton instance of the arrow manager only on the local player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arrow_manager_acf7dd6faaf65aa355a4163fbdaa91d43}\label{class_arrow_manager_acf7dd6faaf65aa355a4163fbdaa91d43}} 
+\index{ArrowManager@{ArrowManager}!AddArrowWithIcon@{AddArrowWithIcon}}
+\index{AddArrowWithIcon@{AddArrowWithIcon}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{AddArrowWithIcon()}{AddArrowWithIcon()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Add\+Arrow\+With\+Icon (\begin{DoxyParamCaption}\item[{Transform}]{object\+To\+Follow,  }\item[{Sprite}]{icon,  }\item[{Color}]{colour,  }\item[{bool}]{is\+Goal\+Arrow = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ GameObject\ newArrow\ =\ Instantiate(\_arrowPrefab,\ \mbox{\hyperlink{class_arrow_holder}{ArrowHolder}}.Instance.transform);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isGoalArrow)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \_arrows.Add(newArrow.GetComponent<\mbox{\hyperlink{class_arrow}{Arrow}}>());}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \_goalArrow\ =\ newArrow.GetComponent<\mbox{\hyperlink{class_arrow}{Arrow}}>();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ newArrow.GetComponent<\mbox{\hyperlink{class_arrow}{Arrow}}>().SetUpWithIcon(objectToFollow,\ icon,\ colour,\ isGoalArrow);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_ac594b75caa561fb6748ab4de40b0446b}\label{class_arrow_manager_ac594b75caa561fb6748ab4de40b0446b}} 
+\index{ArrowManager@{ArrowManager}!AddArrowWithText@{AddArrowWithText}}
+\index{AddArrowWithText@{AddArrowWithText}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{AddArrowWithText()}{AddArrowWithText()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Add\+Arrow\+With\+Text (\begin{DoxyParamCaption}\item[{Transform}]{object\+To\+Follow,  }\item[{string}]{text,  }\item[{bool}]{is\+Goal\+Arrow = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ GameObject\ newArrow\ =\ Instantiate(\_arrowPrefab,\ \mbox{\hyperlink{class_arrow_holder}{ArrowHolder}}.Instance.transform);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isGoalArrow)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \_arrows.Add(newArrow.GetComponent<\mbox{\hyperlink{class_arrow}{Arrow}}>());}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \_goalArrow\ =\ newArrow.GetComponent<\mbox{\hyperlink{class_arrow}{Arrow}}>();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ newArrow.GetComponent<\mbox{\hyperlink{class_arrow}{Arrow}}>().SetUpWithText(objectToFollow,\ text,\ isGoalArrow);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_afe2a5ed6702d9502caf3caac9c14a76d}\label{class_arrow_manager_afe2a5ed6702d9502caf3caac9c14a76d}} 
+\index{ArrowManager@{ArrowManager}!ClearAllLists@{ClearAllLists}}
+\index{ClearAllLists@{ClearAllLists}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{ClearAllLists()}{ClearAllLists()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Clear\+All\+Lists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_objectiveObjectInstances.Clear();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \_networkIdentifiers.Clear();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \_zones.Clear();}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a5ba57cefd498e346409ff861c0545e64}\label{class_arrow_manager_a5ba57cefd498e346409ff861c0545e64}} 
+\index{ArrowManager@{ArrowManager}!GetNearestTargetObject@{GetNearestTargetObject}}
+\index{GetNearestTargetObject@{GetNearestTargetObject}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{GetNearestTargetObject()}{GetNearestTargetObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}} Arrow\+Manager.\+Get\+Nearest\+Target\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}}}]{arrow\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181\ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Don't\ look\ at\ this}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_objectiveObjectInstances.Where(x\ =>\ x.ObjectiveObject\ ==\ \_networkIdentifiers.FirstOrDefault(x\ =>\ x.NetworkId.Value\ ==\ arrowData.ObjectToFollowId).GetComponent<\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}>().ObjectiveObject\ \&\&\ x.ObjectiveColour.\mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}(\_networkIdentifiers.FirstOrDefault(x\ =>\ x.NetworkId.Value\ ==\ arrowData.ObjectToFollowId).GetComponent<\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}>().NetworkObjectiveColour.Value)).OrderBy(x\ =>\ (\mbox{\hyperlink{class_arrow_holder}{ArrowHolder}}.Instance.PlayerTrunk.position\ -\/\ x.transform.position).sqrMagnitude).FirstOrDefault();}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a68332590d44c71463a5b28691d59ac2b}\label{class_arrow_manager_a68332590d44c71463a5b28691d59ac2b}} 
+\index{ArrowManager@{ArrowManager}!RemoveAllArrows@{RemoveAllArrows}}
+\index{RemoveAllArrows@{RemoveAllArrows}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{RemoveAllArrows()}{RemoveAllArrows()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Remove\+All\+Arrows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ RemoveAllObjectiveArrows();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Destroy(\_goalArrow.gameObject);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_goalArrow\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_arrowUpdateCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_arrowUpdateCoroutine);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \_arrowUpdateCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_ae8552fe13b166e7772d800277a79f462}\label{class_arrow_manager_ae8552fe13b166e7772d800277a79f462}} 
+\index{ArrowManager@{ArrowManager}!RemoveAllObjectiveArrows@{RemoveAllObjectiveArrows}}
+\index{RemoveAllObjectiveArrows@{RemoveAllObjectiveArrows}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{RemoveAllObjectiveArrows()}{RemoveAllObjectiveArrows()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Remove\+All\+Objective\+Arrows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_arrow}{Arrow}}\ arrow\ \textcolor{keywordflow}{in}\ \_arrows)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(arrow.gameObject);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_arrows.Clear();}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_ab6b04847c2329edc8ee9480c2b7afdb8}\label{class_arrow_manager_ab6b04847c2329edc8ee9480c2b7afdb8}} 
+\index{ArrowManager@{ArrowManager}!SetUpObjectiveArrows@{SetUpObjectiveArrows}}
+\index{SetUpObjectiveArrows@{SetUpObjectiveArrows}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{SetUpObjectiveArrows()}{SetUpObjectiveArrows()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Set\+Up\+Objective\+Arrows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}}}]{arrow\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ RemoveAllObjectiveArrows();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_objectiveObjectInstances.Count\ ==\ 0)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \_objectiveObjectInstances\ =\ FindObjectsOfType<ObjectiveObjectInstance>().ToList();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_networkIdentifiers.Count\ ==\ 0)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \_networkIdentifiers\ =\ FindObjectsOfType<NetworkIdentifier>().ToList();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_zones.Count\ ==\ 0)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \_zones\ =\ FindObjectsOfType<Zone>().ToList();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ objective\ object\ instance\ in\ the\ scene\ based\ on\ the\ distance\ to\ the\ player}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance\ =\ GetNearestTargetObject(arrowData);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \_currentObjectiveObjectInstance\ =\ objectiveObjectInstance;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ an\ arrow\ to\ point\ to\ the\ objective\ object}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ AddArrowWithIcon(objectiveObjectInstance.transform,\ objectiveObjectInstance.GetComponent<SpriteRenderer>().sprite,\ objectiveObjectInstance.GetComponent<SpriteRenderer>().color);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arrowData.ZoneType\ ==\ \mbox{\hyperlink{class_zone}{Zone}}.ZONE.LOCATION\_ZONE)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ zone\ in\ the\ scene}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zone}{Zone}}\ zone\ =\ \_zones.FirstOrDefault(x\ =>\ x.FriendlyString\ ==\ arrowData.ZoneName);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ an\ arrow\ to\ point\ to\ the\ objective\ zone}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ AddArrowWithText(zone.transform,\ \textcolor{stringliteral}{"{}Target\ Zone"{}});}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_arrowUpdateCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_arrowUpdateCoroutine);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \_arrowUpdateCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \_arrowUpdateCoroutine\ =\ StartCoroutine(UpdateArrows(arrowData));}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a95a9a4285f24015bbd95791f5c75cb5e}\label{class_arrow_manager_a95a9a4285f24015bbd95791f5c75cb5e}} 
+\index{ArrowManager@{ArrowManager}!SetUpObjectiveArrowsClientRpc@{SetUpObjectiveArrowsClientRpc}}
+\index{SetUpObjectiveArrowsClientRpc@{SetUpObjectiveArrowsClientRpc}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{SetUpObjectiveArrowsClientRpc()}{SetUpObjectiveArrowsClientRpc()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Set\+Up\+Objective\+Arrows\+Client\+Rpc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}}}]{arrow\+Data,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ SetUpObjectiveArrows(arrowData);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a846fdef8dca3f888cc7c2cfdb7cc176f}\label{class_arrow_manager_a846fdef8dca3f888cc7c2cfdb7cc176f}} 
+\index{ArrowManager@{ArrowManager}!SetUpObjectiveArrowsServerSide@{SetUpObjectiveArrowsServerSide}}
+\index{SetUpObjectiveArrowsServerSide@{SetUpObjectiveArrowsServerSide}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{SetUpObjectiveArrowsServerSide()}{SetUpObjectiveArrowsServerSide()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Set\+Up\+Objective\+Arrows\+Server\+Side (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}}}]{arrow\+Data,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ SetUpObjectiveArrowsClientRpc(arrowData,\ clientRpcParams);}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a9d3d8fa593a2ea55e53a7c351d9f426b}\label{class_arrow_manager_a9d3d8fa593a2ea55e53a7c351d9f426b}} 
+\index{ArrowManager@{ArrowManager}!StopUpdatingArrows@{StopUpdatingArrows}}
+\index{StopUpdatingArrows@{StopUpdatingArrows}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{StopUpdatingArrows()}{StopUpdatingArrows()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Stop\+Updating\+Arrows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Stop\ updating\ arrows\ called"{}});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a5b88f990d0509d5ef9278734a75961a6}\label{class_arrow_manager_a5b88f990d0509d5ef9278734a75961a6}} 
+\index{ArrowManager@{ArrowManager}!StopUpdatingArrowsClientRpc@{StopUpdatingArrowsClientRpc}}
+\index{StopUpdatingArrowsClientRpc@{StopUpdatingArrowsClientRpc}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{StopUpdatingArrowsClientRpc()}{StopUpdatingArrowsClientRpc()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Stop\+Updating\+Arrows\+Client\+Rpc (\begin{DoxyParamCaption}\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ StopUpdatingArrows();}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a0aea86a8d23145842d8716b3eda09ef8}\label{class_arrow_manager_a0aea86a8d23145842d8716b3eda09ef8}} 
+\index{ArrowManager@{ArrowManager}!StopUpdatingArrowsServerSide@{StopUpdatingArrowsServerSide}}
+\index{StopUpdatingArrowsServerSide@{StopUpdatingArrowsServerSide}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{StopUpdatingArrowsServerSide()}{StopUpdatingArrowsServerSide()}}
+{\footnotesize\ttfamily void Arrow\+Manager.\+Stop\+Updating\+Arrows\+Server\+Side (\begin{DoxyParamCaption}\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ StopUpdatingArrowsClientRpc(clientRpcParams);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_manager_a25d8355ba1759cc17f5b3072fb7df23f}\label{class_arrow_manager_a25d8355ba1759cc17f5b3072fb7df23f}} 
+\index{ArrowManager@{ArrowManager}!UpdateArrows@{UpdateArrows}}
+\index{UpdateArrows@{UpdateArrows}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{UpdateArrows()}{UpdateArrows()}}
+{\footnotesize\ttfamily IEnumerator Arrow\+Manager.\+Update\+Arrows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_arrow_data}{Arrow\+Data}}}]{arrow\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Updating\ arrows\ called"{}});}
+\DoxyCodeLine{00148\ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//print("{}Updating\ arrows"{});}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance\ =\ GetNearestTargetObject(arrowData);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!objectiveObjectInstance.EqualsWithIDAndNetworkID(\_currentObjectiveObjectInstance))}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//print("{}Nearest\ Objective\ object\ instance\ changed"{});}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetUpObjectiveArrows(arrowData);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.1f);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_arrow_manager_a8a1a21e17afa45618b057f7e755cfe98}\label{class_arrow_manager_a8a1a21e17afa45618b057f7e755cfe98}} 
+\index{ArrowManager@{ArrowManager}!Instance@{Instance}}
+\index{Instance@{Instance}!ArrowManager@{ArrowManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_arrow_manager}{Arrow\+Manager}} Arrow\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_arrow_manager_a8884b2e426d3712c2f1acaf79a5df3b3}{\_instance}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_manager_a8884b2e426d3712c2f1acaf79a5df3b3}{\_instance}}\ =\ FindObjectOfType<ArrowManager>();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_arrow_manager_a8884b2e426d3712c2f1acaf79a5df3b3}{\_instance}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}

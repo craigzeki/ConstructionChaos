@@ -1,0 +1,89 @@
+\hypertarget{class_u_i_scale_animator}{}\doxysection{UIScale\+Animator Class Reference}
+\label{class_u_i_scale_animator}\index{UIScaleAnimator@{UIScaleAnimator}}
+
+
+Inheritance diagram for UIScale\+Animator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_u_i_scale_animator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UIScale\+Animator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_u_i_scale_animator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_i_scale_animator_a4c89d66b0b4fa1fbd88e7591ba2c7674}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_u_i_scale_animator_a179610b8fa6a02ddab7db7243a1c7a14}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_u_i_scale_animator_a299baa5860eb812ffa040e084940d83e}{Animate\+Loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_i_scale_animator_acddc2af1ebb7245a310f7b8951703629}\label{class_u_i_scale_animator_acddc2af1ebb7245a310f7b8951703629}} 
+Vector2 {\bfseries \+\_\+small\+Scale} = Vector2.\+one
+\item 
+\mbox{\Hypertarget{class_u_i_scale_animator_aef1e3cca817a47d433389e30d5f9cd5f}\label{class_u_i_scale_animator_aef1e3cca817a47d433389e30d5f9cd5f}} 
+Vector2 {\bfseries \+\_\+large\+Scale} = new Vector2(1.\+2f, 1.\+2f)
+\item 
+\mbox{\Hypertarget{class_u_i_scale_animator_a1e39bf55c3a4d54127be76b29f6e107e}\label{class_u_i_scale_animator_a1e39bf55c3a4d54127be76b29f6e107e}} 
+float {\bfseries \+\_\+scale\+Speed} = 1f
+\item 
+\mbox{\Hypertarget{class_u_i_scale_animator_abb6f7956468ff753a2fc3e68b09da988}\label{class_u_i_scale_animator_abb6f7956468ff753a2fc3e68b09da988}} 
+bool {\bfseries \+\_\+scale\+Up} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_i_scale_animator_a299baa5860eb812ffa040e084940d83e}\label{class_u_i_scale_animator_a299baa5860eb812ffa040e084940d83e}} 
+\index{UIScaleAnimator@{UIScaleAnimator}!AnimateLoop@{AnimateLoop}}
+\index{AnimateLoop@{AnimateLoop}!UIScaleAnimator@{UIScaleAnimator}}
+\doxysubsubsection{\texorpdfstring{AnimateLoop()}{AnimateLoop()}}
+{\footnotesize\ttfamily void UIScale\+Animator.\+Animate\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ LeanTween.scale(gameObject,\ \_scaleUp\ ?\ \_largeScale\ :\ \_smallScale,\ \_scaleSpeed).setEaseInOutSine().setOnComplete(AnimateLoop);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_scaleUp\ =\ !\_scaleUp;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_scale_animator_a179610b8fa6a02ddab7db7243a1c7a14}\label{class_u_i_scale_animator_a179610b8fa6a02ddab7db7243a1c7a14}} 
+\index{UIScaleAnimator@{UIScaleAnimator}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!UIScaleAnimator@{UIScaleAnimator}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void UIScale\+Animator.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ LeanTween.cancel(gameObject);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_scale_animator_a4c89d66b0b4fa1fbd88e7591ba2c7674}\label{class_u_i_scale_animator_a4c89d66b0b4fa1fbd88e7591ba2c7674}} 
+\index{UIScaleAnimator@{UIScaleAnimator}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!UIScaleAnimator@{UIScaleAnimator}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void UIScale\+Animator.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ transform.localScale\ =\ \_smallScale;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \_scaleUp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ AnimateLoop();}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}

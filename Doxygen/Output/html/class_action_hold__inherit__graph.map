@@ -1,0 +1,5 @@
+<map id="ActionHold" name="ActionHold">
+<area shape="rect" id="node1" title="Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager." alt="" coords="47,152,132,177"/>
+<area shape="rect" id="node2" href="$class_objective_action_behaviour.html" title="This is the base class for any action behaviour &#45; e.g. hold &#160;It provides condition and zone detection..." alt="" coords="5,79,173,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="34,5,145,31"/>
+</map>

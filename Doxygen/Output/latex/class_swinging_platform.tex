@@ -1,0 +1,73 @@
+\hypertarget{class_swinging_platform}{}\doxysection{Swinging\+Platform Class Reference}
+\label{class_swinging_platform}\index{SwingingPlatform@{SwingingPlatform}}
+
+
+Inheritance diagram for Swinging\+Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_swinging_platform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Swinging\+Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_swinging_platform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_swinging_platform_a6f5c72855dc976f77e6a02f14411963e}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_swinging_platform_affcf1812f63a4ad8065a83be378ea475}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_swinging_platform_a2c9dfc61f13eafa9f3e43a6470908b15}\label{class_swinging_platform_a2c9dfc61f13eafa9f3e43a6470908b15}} 
+Transform {\bfseries \+\_\+right\+Chain\+World\+Connection\+Point}
+\item 
+\mbox{\Hypertarget{class_swinging_platform_ae15c5267d0f2b5047c8f16dbbf522a25}\label{class_swinging_platform_ae15c5267d0f2b5047c8f16dbbf522a25}} 
+Transform {\bfseries \+\_\+left\+Chain\+World\+Connection\+Point}
+\item 
+\mbox{\Hypertarget{class_swinging_platform_af757f3e191dc70977f69994396e6d9f0}\label{class_swinging_platform_af757f3e191dc70977f69994396e6d9f0}} 
+Vector3 {\bfseries \+\_\+left\+Chain\+Origin} = Vector3.\+zero
+\item 
+\mbox{\Hypertarget{class_swinging_platform_ac96c269105259682521ec01e53d45ee0}\label{class_swinging_platform_ac96c269105259682521ec01e53d45ee0}} 
+Vector3 {\bfseries \+\_\+right\+Chain\+Origin} = Vector3.\+zero
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_swinging_platform_a6f5c72855dc976f77e6a02f14411963e}\label{class_swinging_platform_a6f5c72855dc976f77e6a02f14411963e}} 
+\index{SwingingPlatform@{SwingingPlatform}!Awake@{Awake}}
+\index{Awake@{Awake}!SwingingPlatform@{SwingingPlatform}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Swinging\+Platform.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_rightChainWorldConnectionPoint\ !=\ \textcolor{keyword}{null})\ \_rightChainOrigin\ =\ \_rightChainWorldConnectionPoint.position;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_leftChainWorldConnectionPoint\ !=\ \textcolor{keyword}{null})\ \_leftChainOrigin\ =\ \_leftChainWorldConnectionPoint.position;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_swinging_platform_affcf1812f63a4ad8065a83be378ea475}\label{class_swinging_platform_affcf1812f63a4ad8065a83be378ea475}} 
+\index{SwingingPlatform@{SwingingPlatform}!Update@{Update}}
+\index{Update@{Update}!SwingingPlatform@{SwingingPlatform}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Swinging\+Platform.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_leftChainWorldConnectionPoint.position\ =\ \_leftChainOrigin;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \_rightChainWorldConnectionPoint.position\ =\ \_rightChainOrigin;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}

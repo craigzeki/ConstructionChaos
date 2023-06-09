@@ -1,0 +1,73 @@
+\hypertarget{class_glass}{}\doxysection{Glass Class Reference}
+\label{class_glass}\index{Glass@{Glass}}
+
+
+Inheritance diagram for Glass\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_glass__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Glass\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_glass__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_glass_a6d290610ac6867e1ccac798109da6dd7}{On\+Trigger\+Enter2D}} (Collider2D other)
+\item 
+IEnumerator \mbox{\hyperlink{class_glass_a5500d43dab39a189ad6bff5e4d46d058}{Play\+Gif}} (float time\+Between\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_glass_ab825d54d8af6e349774583c5d1412f63}\label{class_glass_ab825d54d8af6e349774583c5d1412f63}} 
+Sprite\+Renderer {\bfseries \+\_\+sprite\+Renderer}
+\item 
+\mbox{\Hypertarget{class_glass_a789497e8720adc06db14be0abda52d24}\label{class_glass_a789497e8720adc06db14be0abda52d24}} 
+Sprite\mbox{[}$\,$\mbox{]} {\bfseries frames}
+\item 
+\mbox{\Hypertarget{class_glass_a23e7bed172a2ab249b34591836a0999c}\label{class_glass_a23e7bed172a2ab249b34591836a0999c}} 
+float {\bfseries \+\_\+frames\+Per\+Second}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_glass_a6d290610ac6867e1ccac798109da6dd7}\label{class_glass_a6d290610ac6867e1ccac798109da6dd7}} 
+\index{Glass@{Glass}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!Glass@{Glass}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily void Glass.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ StartCoroutine(PlayGif(1f\ /\ \_framesPerSecond));}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_glass_a5500d43dab39a189ad6bff5e4d46d058}\label{class_glass_a5500d43dab39a189ad6bff5e4d46d058}} 
+\index{Glass@{Glass}!PlayGif@{PlayGif}}
+\index{PlayGif@{PlayGif}!Glass@{Glass}}
+\doxysubsubsection{\texorpdfstring{PlayGif()}{PlayGif()}}
+{\footnotesize\ttfamily IEnumerator Glass.\+Play\+Gif (\begin{DoxyParamCaption}\item[{float}]{time\+Between\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ frames.Length;\ i++)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \_spriteRenderer.sprite\ =\ frames[i];}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(timeBetweenFrames);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}

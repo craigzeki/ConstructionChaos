@@ -15,16 +15,22 @@ Collaboration diagram for Connection\+Handler\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=236pt]{class_connection_handler__coll__graph}
+\includegraphics[width=224pt]{class_connection_handler__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-async void \mbox{\hyperlink{class_connection_handler_ab17bd06b8b4e045de1dde01ab6807335}{Host\+Game}} (bool local=false)
+async Task$<$ bool $>$ \mbox{\hyperlink{class_connection_handler_add0d7af1a66979a85d072201a4a14adc}{Host\+Game}} (bool local=false)
 \begin{DoxyCompactList}\small\item\em Hosts the game using the Unity Relay Service and Netcode for Game\+Objects. \end{DoxyCompactList}\item 
-async void \mbox{\hyperlink{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}{Join\+Game}} (string room\+Code, bool local=false)
-\begin{DoxyCompactList}\small\item\em Joins the game using the Unity Relay Service and Netcode for Game\+Objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+async Task$<$ bool $>$ \mbox{\hyperlink{class_connection_handler_a094679c6b71fca10c6878f5c49babcc3}{Join\+Game}} (string room\+Code, bool local=false)
+\begin{DoxyCompactList}\small\item\em Joins the game using the Unity Relay Service and Netcode for Game\+Objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connection_handler_a9106720a138f76524af16676deb893c4}{Shutdown}} ()
+\item 
+void \mbox{\hyperlink{class_connection_handler_a14a3cf08dca5a0a4f8bae74f2fa89b63}{Spawn\+Manager\+Network\+Objects}} ()
+\item 
+void \mbox{\hyperlink{class_connection_handler_aa593447b03b873760e8bb8851056bd80}{Despawn\+Manager\+Network\+Objects}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,18 +42,26 @@ static \mbox{\hyperlink{class_connection_handler}{Connection\+Handler}} {\bfseri
 \item 
 void \mbox{\hyperlink{class_connection_handler_a226e69502f8e3f5cbf68bad6d0f35285}{Awake}} ()
 \item 
-async Task \mbox{\hyperlink{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}{Unity\+Services\+Login}} ()
+async Task$<$ bool $>$ \mbox{\hyperlink{class_connection_handler_aabd7a74eb4a001ab701f2040780b95cb}{Unity\+Services\+Login}} ()
 \begin{DoxyCompactList}\small\item\em Logs into Unity Services Anonymously. \end{DoxyCompactList}\item 
-async void \mbox{\hyperlink{class_connection_handler_aa4fcf720daa49eee5ca8cb5b0f1b058a}{Create\+Relay}} ()
+IEnumerator \mbox{\hyperlink{class_connection_handler_ab208d20269b770dba019ab9e1b3d069d}{Timeout}} (float timeout\+Time)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_connection_handler_a5753f45f109a03a11f175b57d23ead37}{Create\+Relay}} ()
 \begin{DoxyCompactList}\small\item\em Creates a relay server using the Unity Relay Service. \end{DoxyCompactList}\item 
-async void \mbox{\hyperlink{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}{Join\+Relay}} (string room\+Code)
+async Task$<$ bool $>$ \mbox{\hyperlink{class_connection_handler_a6dfa594dff1ce97ea3bfa7ff31cce271}{Join\+Relay}} (string room\+Code)
 \begin{DoxyCompactList}\small\item\em Joins a relay server using the Unity Relay Service. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}{Start\+Network}} (bool is\+Host)
+bool \mbox{\hyperlink{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}{Start\+Network}} (bool is\+Host)
 \begin{DoxyCompactList}\small\item\em Starts the network using Netcode for Game\+Objects. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}{IPto\+Code}} (string ip)
 \begin{DoxyCompactList}\small\item\em Converts an IP address to a room code by converting each part to hex and concatenating them. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}{Code\+To\+IP}} (string code)
-\begin{DoxyCompactList}\small\item\em Converts a room code to an IP address by converting each hex value to an integer and concatenating them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts a room code to an IP address by converting each hex value to an integer and concatenating them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connection_handler_ab0c7ee01b6832ca66e2b98a419ecaa64}{Approval\+Check}} (Network\+Manager.\+Connection\+Approval\+Request request, Network\+Manager.\+Connection\+Approval\+Response response)
+\item 
+void \mbox{\hyperlink{class_connection_handler_a5c63ec5d31ad003fe83877cf3d01771c}{On\+Client\+Disconnect\+Callback}} (ulong client\+Id)
+\item 
+void \mbox{\hyperlink{class_connection_handler_a66495ea3c35b8c5f2944af6dd90da74a}{On\+Client\+Connected\+Callback}} (ulong obj)
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,10 +73,61 @@ Unity\+Transport {\bfseries \+\_\+relay\+Transport}
 \item 
 \mbox{\Hypertarget{class_connection_handler_afb85190481305eccb9358d086f643ceb}\label{class_connection_handler_afb85190481305eccb9358d086f643ceb}} 
 int {\bfseries \+\_\+max\+No\+Of\+Players} = 6
+\item 
+\mbox{\Hypertarget{class_connection_handler_ad4c44cd1d58ee6a9c127a52bce8d3a5c}\label{class_connection_handler_ad4c44cd1d58ee6a9c127a52bce8d3a5c}} 
+Game\+Object {\bfseries \+\_\+game\+Manager\+Object}
+\item 
+\mbox{\Hypertarget{class_connection_handler_aafd50ba4fe74754cff83099d946f5ba8}\label{class_connection_handler_aafd50ba4fe74754cff83099d946f5ba8}} 
+int {\bfseries \+\_\+return\+Val} = -\/1
+\item 
+\mbox{\Hypertarget{class_connection_handler_ad1dab8a7d193a3dc185b37373b65976e}\label{class_connection_handler_ad1dab8a7d193a3dc185b37373b65976e}} 
+bool {\bfseries \+\_\+timed\+Out} = false
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connection_handler_ab0c7ee01b6832ca66e2b98a419ecaa64}\label{class_connection_handler_ab0c7ee01b6832ca66e2b98a419ecaa64}} 
+\index{ConnectionHandler@{ConnectionHandler}!ApprovalCheck@{ApprovalCheck}}
+\index{ApprovalCheck@{ApprovalCheck}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{ApprovalCheck()}{ApprovalCheck()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+Approval\+Check (\begin{DoxyParamCaption}\item[{Network\+Manager\+::\+Connection\+Approval\+Request}]{request,  }\item[{Network\+Manager\+::\+Connection\+Approval\+Response}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00374\ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ response.CreatePlayerObject\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{comment}{//response.PlayerPrefabHash\ =\ null;}}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{comment}{//response.Position\ =\ Vector3.zero;}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{comment}{//response.Rotation\ =\ Quaternion.identity;}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Always\ approve\ the\ host}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.ClientNetworkId\ ==\ NetworkManager.Singleton.LocalClientId)}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Automatically\ approved\ the\ Host\ for\ connection"{}});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ response.Approved\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ response.Pending\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager.Singleton.ConnectedClientsIds.Count()\ >=\ \_maxNoOfPlayers)}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ response.Approved\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ response.Reason\ =\ \textcolor{stringliteral}{"{}Maximum\ number\ of\ players\ reached"{}};}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.CurrentState\ !=\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY)}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ response.Approved\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ response.Reason\ =\ \textcolor{stringliteral}{"{}Game\ already\ in\ progress"{}};}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ response.Approved\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ response.Pending\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00405\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_connection_handler_a226e69502f8e3f5cbf68bad6d0f35285}\label{class_connection_handler_a226e69502f8e3f5cbf68bad6d0f35285}} 
 \index{ConnectionHandler@{ConnectionHandler}!Awake@{Awake}}
 \index{Awake@{Awake}!ConnectionHandler@{ConnectionHandler}}
@@ -71,12 +136,12 @@ int {\bfseries \+\_\+max\+No\+Of\+Players} = 6
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024\ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
-\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}\label{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}} 
@@ -94,26 +159,34 @@ A string containing the IP address
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00210\ \ \ \ \ \{}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ code.Length;\ i\ +=\ 2)}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{keywordtype}{int}.Parse(code.Substring(i,\ 2),\ System.Globalization.NumberStyles.HexNumber).ToString();}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ code.Length\ -\/\ 2)}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{stringliteral}{"{}."{}};}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00220\ }
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ip;}
-\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00351\ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ code.Length;\ i\ +=\ 2)}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{keywordtype}{int}.Parse(code.Substring(i,\ 2),\ System.Globalization.NumberStyles.HexNumber).ToString();}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ code.Length\ -\/\ 2)}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ +=\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ip;}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connection_handler_aa4fcf720daa49eee5ca8cb5b0f1b058a}\label{class_connection_handler_aa4fcf720daa49eee5ca8cb5b0f1b058a}} 
+\mbox{\Hypertarget{class_connection_handler_a5753f45f109a03a11f175b57d23ead37}\label{class_connection_handler_a5753f45f109a03a11f175b57d23ead37}} 
 \index{ConnectionHandler@{ConnectionHandler}!CreateRelay@{CreateRelay}}
 \index{CreateRelay@{CreateRelay}!ConnectionHandler@{ConnectionHandler}}
 \doxysubsubsection{\texorpdfstring{CreateRelay()}{CreateRelay()}}
-{\footnotesize\ttfamily async void Connection\+Handler.\+Create\+Relay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Connection\+Handler.\+Create\+Relay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -121,36 +194,59 @@ Creates a relay server using the Unity Relay Service.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00120\ \ \ \ \ \{}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Creating\ relay"{}});}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ Allocation\ allocation\ =\ await\ RelayService.Instance.CreateAllocationAsync(\_maxNoOfPlayers\ -\/\ 1);}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ await\ RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(allocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_relayTransport;}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \_relayTransport.SetRelayServerData(relayServerData);}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}{StartNetwork}}(\textcolor{keyword}{true});}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (RelayServiceException\ e)}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ print(e.Message);}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Creating\ relay"{}});}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ Allocation\ allocation\ =\ await\ RelayService.Instance.CreateAllocationAsync(\_maxNoOfPlayers\ -\/\ 1);}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ await\ RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(allocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \_relayTransport.SetHostRelayData(allocation.RelayServer.IpV4,\ (ushort)allocation.RelayServer.Port,\ allocation.AllocationIdBytes,\ allocation.Key,\ allocation.ConnectionData,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_relayTransport;}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \_relayTransport.SetRelayServerData(relayServerData);}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}{StartNetwork}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connection_handler_ab17bd06b8b4e045de1dde01ab6807335}\label{class_connection_handler_ab17bd06b8b4e045de1dde01ab6807335}} 
+\mbox{\Hypertarget{class_connection_handler_aa593447b03b873760e8bb8851056bd80}\label{class_connection_handler_aa593447b03b873760e8bb8851056bd80}} 
+\index{ConnectionHandler@{ConnectionHandler}!DespawnManagerNetworkObjects@{DespawnManagerNetworkObjects}}
+\index{DespawnManagerNetworkObjects@{DespawnManagerNetworkObjects}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{DespawnManagerNetworkObjects()}{DespawnManagerNetworkObjects()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+Despawn\+Manager\+Network\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00470\ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.NetworkObject.Despawn(\textcolor{keyword}{false});}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.NetworkObject.Despawn(\textcolor{keyword}{false});}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (System.NullReferenceException)}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing\ if\ already\ despawned}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00480\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_add0d7af1a66979a85d072201a4a14adc}\label{class_connection_handler_add0d7af1a66979a85d072201a4a14adc}} 
 \index{ConnectionHandler@{ConnectionHandler}!HostGame@{HostGame}}
 \index{HostGame@{HostGame}!ConnectionHandler@{ConnectionHandler}}
 \doxysubsubsection{\texorpdfstring{HostGame()}{HostGame()}}
-{\footnotesize\ttfamily async void Connection\+Handler.\+Host\+Game (\begin{DoxyParamCaption}\item[{bool}]{local = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Connection\+Handler.\+Host\+Game (\begin{DoxyParamCaption}\item[{bool}]{local = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
 
@@ -163,41 +259,81 @@ Hosts the game using the Unity Relay Service and Netcode for Game\+Objects.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ the\ local\ IP\ address}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ =\ Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(address\ =>\ address.AddressFamily\ ==\ AddressFamily.InterNetwork).ToString();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Error\ getting\ IP\ address"{}});}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Display\ an\ error\ message\ to\ the\ user}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Change\ the\ network\ transport\ to\ the\ Unity\ Transport}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_unityTransport;}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ local\ IP\ address}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \_unityTransport.ConnectionData.Address\ =\ ip;}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ the\ room\ code\ to\ the\ user}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ \mbox{\hyperlink{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}{IPtoCode}}(ip);}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}{StartNetwork}}(\textcolor{keyword}{true});}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ await\ \mbox{\hyperlink{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}{UnityServicesLogin}}();}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_aa4fcf720daa49eee5ca8cb5b0f1b058a}{CreateRelay}}();}
-\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Shutdown();}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager.Singleton\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ +=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ +=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ +=\ ApprovalCheck;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ the\ local\ IP\ address}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ip\ =\ Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(address\ =>\ address.AddressFamily\ ==\ AddressFamily.InterNetwork).ToString();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Change\ the\ network\ transport\ to\ the\ Unity\ Transport}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_unityTransport;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ local\ IP\ address}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_unityTransport.ConnectionData.Address\ =\ ip;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ the\ room\ code\ to\ the\ user}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ roomCode\ =\ \mbox{\hyperlink{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}{IPtoCode}}(ip);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ localConnectionSuccessful\ =\ \mbox{\hyperlink{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}{StartNetwork}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (localConnectionSuccessful)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance?.NetworkObject.Spawn();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (SpawnStateException)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing\ if\ the\ game\ manager\ is\ already\ spawned}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (NotServerException)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ -\/=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ -\/=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ -\/=\ ApprovalCheck;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ localConnectionSuccessful;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ connectionSuccessful\ =\ await\ \mbox{\hyperlink{class_connection_handler_aabd7a74eb4a001ab701f2040780b95cb}{UnityServicesLogin}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (connectionSuccessful)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ connectionSuccessful\ =\ await\ \mbox{\hyperlink{class_connection_handler_a5753f45f109a03a11f175b57d23ead37}{CreateRelay}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!connectionSuccessful)}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ -\/=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ -\/=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ -\/=\ ApprovalCheck;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ connectionSuccessful;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}\label{class_connection_handler_a1c943a0461d6660dcd35322349e9c363}} 
@@ -215,22 +351,22 @@ A string containing the room code
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00195\ \ \ \ \ \{}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ ipSplit\ =\ ip.Split(\textcolor{charliteral}{'.'});}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ code\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ s\ \textcolor{keywordflow}{in}\ ipSplit)}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ code\ +=\ \textcolor{keywordtype}{int}.Parse(s).ToString(\textcolor{stringliteral}{"{}X2"{}});}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
-\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ ipSplit\ =\ ip.Split(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ code\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ s\ \textcolor{keywordflow}{in}\ ipSplit)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ code\ +=\ \textcolor{keywordtype}{int}.Parse(s).ToString(\textcolor{stringliteral}{"{}X2"{}});}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}\label{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}} 
+\mbox{\Hypertarget{class_connection_handler_a094679c6b71fca10c6878f5c49babcc3}\label{class_connection_handler_a094679c6b71fca10c6878f5c49babcc3}} 
 \index{ConnectionHandler@{ConnectionHandler}!JoinGame@{JoinGame}}
 \index{JoinGame@{JoinGame}!ConnectionHandler@{ConnectionHandler}}
 \doxysubsubsection{\texorpdfstring{JoinGame()}{JoinGame()}}
-{\footnotesize\ttfamily async void Connection\+Handler.\+Join\+Game (\begin{DoxyParamCaption}\item[{string}]{room\+Code,  }\item[{bool}]{local = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Connection\+Handler.\+Join\+Game (\begin{DoxyParamCaption}\item[{string}]{room\+Code,  }\item[{bool}]{local = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
 
@@ -243,34 +379,83 @@ Joins the game using the Unity Relay Service and Netcode for Game\+Objects.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \ \ \ \ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ room\ code\ to\ an\ IP\ address}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \mbox{\hyperlink{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}{CodeToIP}}(roomCode);}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Change\ the\ network\ transport\ to\ the\ Unity\ Transport}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_unityTransport;}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ IP\ address}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \_unityTransport.ConnectionData.Address\ =\ ip;}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}{StartNetwork}}(\textcolor{keyword}{false});}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ await\ \mbox{\hyperlink{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}{UnityServicesLogin}}();}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}{JoinRelay}}(roomCode);}
-\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Shutdown();}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager.Singleton\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ +=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ +=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ +=\ ApprovalCheck;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (local)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ the\ room\ code\ to\ an\ IP\ address}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ ip\ =\ \mbox{\hyperlink{class_connection_handler_a829651732f9fee6c5228133b9ed80a3b}{CodeToIP}}(roomCode);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ip\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Change\ the\ network\ transport\ to\ the\ Unity\ Transport}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_unityTransport;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ connection\ data\ to\ the\ IP\ address}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \_unityTransport.ConnectionData.Address\ =\ ip;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ localLoginSuccessful\ =\ \mbox{\hyperlink{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}{StartNetwork}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (localLoginSuccessful)}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance?.NetworkObject.Spawn();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (SpawnStateException)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing\ if\ the\ game\ manager\ is\ already\ spawned}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (NotServerException)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ -\/=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ -\/=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ -\/=\ ApprovalCheck;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ localLoginSuccessful;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loginSuccessful\ =\ await\ \mbox{\hyperlink{class_connection_handler_aabd7a74eb4a001ab701f2040780b95cb}{UnityServicesLogin}}();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (loginSuccessful)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ loginSuccessful\ =\ await\ \mbox{\hyperlink{class_connection_handler_a6dfa594dff1ce97ea3bfa7ff31cce271}{JoinRelay}}(roomCode);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!loginSuccessful)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ -\/=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ -\/=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ -\/=\ ApprovalCheck;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ loginSuccessful;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}\label{class_connection_handler_adb52e5b49c6d7adf0dda062e0934d7a2}} 
+\mbox{\Hypertarget{class_connection_handler_a6dfa594dff1ce97ea3bfa7ff31cce271}\label{class_connection_handler_a6dfa594dff1ce97ea3bfa7ff31cce271}} 
 \index{ConnectionHandler@{ConnectionHandler}!JoinRelay@{JoinRelay}}
 \index{JoinRelay@{JoinRelay}!ConnectionHandler@{ConnectionHandler}}
 \doxysubsubsection{\texorpdfstring{JoinRelay()}{JoinRelay()}}
-{\footnotesize\ttfamily async void Connection\+Handler.\+Join\+Relay (\begin{DoxyParamCaption}\item[{string}]{room\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Connection\+Handler.\+Join\+Relay (\begin{DoxyParamCaption}\item[{string}]{room\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -281,33 +466,131 @@ Joins a relay server using the Unity Relay Service.
 {\em room\+Code} & The room code to join\\
 \hline
 \end{DoxyParams}
-More error handling is needed here to catch the error when the room code is invalid
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00149\ \ \ \ \ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ JoinAllocation\ joinAllocation\ =\ await\ RelayService.Instance.JoinAllocationAsync(roomCode);}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(joinAllocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_relayTransport;}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \_relayTransport.SetRelayServerData(relayServerData);}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}{StartNetwork}}(\textcolor{keyword}{false});}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (RelayServiceException\ e)}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ print(e.Message);}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ JoinAllocation\ joinAllocation\ =\ await\ RelayService.Instance.JoinAllocationAsync(roomCode);}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.\mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{SetRoomCode}}(roomCode);}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ RelayServerData\ relayServerData\ =\ \textcolor{keyword}{new}\ RelayServerData(joinAllocation,\ \textcolor{stringliteral}{"{}dtls"{}});}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \_relayTransport.SetClientRelayData(joinAllocation.RelayServer.IpV4,\ (ushort)joinAllocation.RelayServer.Port,\ joinAllocation.AllocationIdBytes,\ joinAllocation.Key,\ joinAllocation.ConnectionData,\ joinAllocation.HostConnectionData,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.NetworkConfig.NetworkTransport\ =\ \_relayTransport;}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \_relayTransport.SetRelayServerData(relayServerData);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}{StartNetwork}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}\label{class_connection_handler_ac625bf2ba4c2f8e04e7bcabffefb89bd}} 
+\mbox{\Hypertarget{class_connection_handler_a66495ea3c35b8c5f2944af6dd90da74a}\label{class_connection_handler_a66495ea3c35b8c5f2944af6dd90da74a}} 
+\index{ConnectionHandler@{ConnectionHandler}!OnClientConnectedCallback@{OnClientConnectedCallback}}
+\index{OnClientConnectedCallback@{OnClientConnectedCallback}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{OnClientConnectedCallback()}{OnClientConnectedCallback()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+On\+Client\+Connected\+Callback (\begin{DoxyParamCaption}\item[{ulong}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00428\ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Client\ Connected\ Called"{}});}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance?.ClientConnected();}
+\DoxyCodeLine{00431\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_a5c63ec5d31ad003fe83877cf3d01771c}\label{class_connection_handler_a5c63ec5d31ad003fe83877cf3d01771c}} 
+\index{ConnectionHandler@{ConnectionHandler}!OnClientDisconnectCallback@{OnClientDisconnectCallback}}
+\index{OnClientDisconnectCallback@{OnClientDisconnectCallback}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{OnClientDisconnectCallback()}{OnClientDisconnectCallback()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+On\+Client\+Disconnect\+Callback (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00408\ \ \ \ \ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}OnClientDisconnectCallback\ -\/\ assumed\ clientId:\ =\ "{}}\ +\ clientId.ToString());}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}LocalClientId:\ "{}}\ +\ NetworkManager.Singleton.LocalClientId.ToString());}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!NetworkManager.Singleton.IsServer\ \&\&\ NetworkManager.Singleton.DisconnectReason\ !=\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Approval\ Declined\ Reason:\ \{NetworkManager.Singleton.DisconnectReason\}"{}});}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((NetworkManager.Singleton.IsServer)\ \&\&\ clientId\ ==\ NetworkManager.Singleton.LocalClientId)}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance?.ClientDisconnected(NetworkManager.Singleton.DisconnectReason);}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!NetworkManager.Singleton.IsServer)}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance?.ClientDisconnected(NetworkManager.Singleton.DisconnectReason);}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00425\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_a9106720a138f76524af16676deb893c4}\label{class_connection_handler_a9106720a138f76524af16676deb893c4}} 
+\index{ConnectionHandler@{ConnectionHandler}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+Shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00434\ \ \ \ \ \{}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ connected\ to\ a\ relay\ server,\ disconnect\ from\ it}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ logged\ in\ to\ Unity\ Services,\ log\ out}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ AuthenticationService.Instance.SignOut();}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing\ if\ not\ logged\ in}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shut\ down\ the\ network}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager.Singleton\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientDisconnectCallback\ -\/=\ OnClientDisconnectCallback;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.OnClientConnectedCallback\ -\/=\ OnClientConnectedCallback;}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.ConnectionApprovalCallback\ -\/=\ ApprovalCheck;}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.Shutdown(\textcolor{keyword}{true});}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_a14a3cf08dca5a0a4f8bae74f2fa89b63}\label{class_connection_handler_a14a3cf08dca5a0a4f8bae74f2fa89b63}} 
+\index{ConnectionHandler@{ConnectionHandler}!SpawnManagerNetworkObjects@{SpawnManagerNetworkObjects}}
+\index{SpawnManagerNetworkObjects@{SpawnManagerNetworkObjects}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{SpawnManagerNetworkObjects()}{SpawnManagerNetworkObjects()}}
+{\footnotesize\ttfamily void Connection\+Handler.\+Spawn\+Manager\+Network\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00457\ \ \ \ \ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.NetworkObject.Spawn();}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.NetworkObject.Spawn();}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (NotListeningException)}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing\ if\ NetworkManager\ is\ not\ listening}}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00467\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}\label{class_connection_handler_a38b0694c66004deac56ff05bf87943e6}} 
 \index{ConnectionHandler@{ConnectionHandler}!StartNetwork@{StartNetwork}}
 \index{StartNetwork@{StartNetwork}!ConnectionHandler@{ConnectionHandler}}
 \doxysubsubsection{\texorpdfstring{StartNetwork()}{StartNetwork()}}
-{\footnotesize\ttfamily void Connection\+Handler.\+Start\+Network (\begin{DoxyParamCaption}\item[{bool}]{is\+Host }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool Connection\+Handler.\+Start\+Network (\begin{DoxyParamCaption}\item[{bool}]{is\+Host }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -320,28 +603,37 @@ Starts the network using Netcode for Game\+Objects.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00174\ \ \ \ \ \{}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.LoadLobby();}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ AsyncOperation\ loadLobbyScene\ =\ SceneManager.LoadSceneAsync(\mbox{\hyperlink{class_scene_names}{SceneNames}}.LobbyEnvironment);}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ loadLobbyScene.completed\ +=\ (AsyncOperation\ op)\ =>}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isHost)}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartHost();}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.LobbyLoaded();}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.Singleton.StartClient();\ }
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isHost)}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NetworkManager.Singleton.StartHost();}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NetworkManager.Singleton.StartClient();}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}\label{class_connection_handler_abcf7556517e0fd3061f239b1d754d369}} 
+\mbox{\Hypertarget{class_connection_handler_ab208d20269b770dba019ab9e1b3d069d}\label{class_connection_handler_ab208d20269b770dba019ab9e1b3d069d}} 
+\index{ConnectionHandler@{ConnectionHandler}!Timeout@{Timeout}}
+\index{Timeout@{Timeout}!ConnectionHandler@{ConnectionHandler}}
+\doxysubsubsection{\texorpdfstring{Timeout()}{Timeout()}}
+{\footnotesize\ttfamily IEnumerator Connection\+Handler.\+Timeout (\begin{DoxyParamCaption}\item[{float}]{timeout\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(timeoutTime);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \_timedOut\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connection_handler_aabd7a74eb4a001ab701f2040780b95cb}\label{class_connection_handler_aabd7a74eb4a001ab701f2040780b95cb}} 
 \index{ConnectionHandler@{ConnectionHandler}!UnityServicesLogin@{UnityServicesLogin}}
 \index{UnityServicesLogin@{UnityServicesLogin}!ConnectionHandler@{ConnectionHandler}}
 \doxysubsubsection{\texorpdfstring{UnityServicesLogin()}{UnityServicesLogin()}}
-{\footnotesize\ttfamily async Task Connection\+Handler.\+Unity\+Services\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Connection\+Handler.\+Unity\+Services\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -349,17 +641,56 @@ Logs into Unity Services Anonymously.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00103\ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ await\ UnityServices.InitializeAsync();}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ AuthenticationService.Instance.SignedIn\ +=\ ()\ =>}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ has\ successfully\ signed\ in\ anonymously}}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Signed\ in\ anonymously"{}});}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ await\ AuthenticationService.Instance.SignInAnonymouslyAsync();}
-\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (AuthenticationService.Instance.IsSignedIn)\ AuthenticationService.Instance.SignOut();}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ await\ UnityServices.InitializeAsync();}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ AuthenticationService.Instance.SignedIn\ +=\ ()\ =>}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ has\ successfully\ signed\ in\ anonymously}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Signed\ in\ anonymously"{}});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \_returnVal\ =\ 1;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ AuthenticationService.Instance.SignInFailed\ +=\ (error)\ =>}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ failed\ to\ sign\ in\ anonymously}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Failed\ to\ sign\ in\ anonymously"{}});}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \_returnVal\ =\ 0;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ await\ AuthenticationService.Instance.SignInAnonymouslyAsync();}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \_timedOut\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Timeout(10));}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\_returnVal\ ==\ -\/1\ \&\&\ !\_timedOut)}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ nothing}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_returnVal\ ==\ 1;}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
 
 \end{DoxyCode}

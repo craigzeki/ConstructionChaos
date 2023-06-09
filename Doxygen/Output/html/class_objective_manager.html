@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: ObjectiveManager Class Reference</title>
+<title>Construction Chaos: ObjectiveManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -121,8 +121,9 @@ Collaboration diagram for ObjectiveManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_objective_manager__coll__graph.png" border="0" usemap="#a_objective_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_objective_manager_coll__map" id="a_objective_manager_coll__map">
-<area shape="rect" title="Runs server side only. &#160;Creates random objectives and assigns them to players. &#160;Provides an event dri..." alt="" coords="5,80,131,105"/>
-<area shape="rect" title=" " alt="" coords="13,5,123,31"/>
+<area shape="rect" title="Runs server side only. &#160;Creates random objectives and assigns them to players. &#160;Provides an event dri..." alt="" coords="51,93,177,119"/>
+<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" title=" " alt="" coords="140,5,195,31"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -163,6 +164,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:af1dbac40c315aec407915c19b4920f9b"><td class="memItemLeft" align="right" valign="top"><a id="af1dbac40c315aec407915c19b4920f9b" name="af1dbac40c315aec407915c19b4920f9b"></a>
+Dictionary&lt; <a class="el" href="class_objective_object_instance.html">ObjectiveObjectInstance</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ObjectiveObjects</b><code> [get]</code></td></tr>
+<tr class="separator:af1dbac40c315aec407915c19b4920f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af872427c1889752da9e87bb1607c0d8b"><td class="memItemLeft" align="right" valign="top"><a id="af872427c1889752da9e87bb1607c0d8b" name="af872427c1889752da9e87bb1607c0d8b"></a>
+Dictionary&lt; Zone.ZONE, List&lt; <a class="el" href="class_zone.html">Zone</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PossibleZones</b><code> [get]</code></td></tr>
+<tr class="separator:af872427c1889752da9e87bb1607c0d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb92aee167814dec336264b623c1c88c"><td class="memItemLeft" align="right" valign="top"><a id="acb92aee167814dec336264b623c1c88c" name="acb92aee167814dec336264b623c1c88c"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>AnyColourString</b><code> [get]</code></td></tr>
+<tr class="separator:acb92aee167814dec336264b623c1c88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41f816982cf51e6d7ebf962f77e44bc2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a41f816982cf51e6d7ebf962f77e44bc2">Instance</a><code> [get]</code></td></tr>
 <tr class="separator:a41f816982cf51e6d7ebf962f77e44bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -183,9 +193,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a1652acec1f6b135d923619bc929bdebe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a1652acec1f6b135d923619bc929bdebe">OnPlayerReconnect</a> (object sender, <a class="el" href="class_player_reconnect_data.html">PlayerReconnectData</a> playerReconnectData)</td></tr>
 <tr class="memdesc:a1652acec1f6b135d923619bc929bdebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends the OnPlayerReconnect event.  <br /></td></tr>
 <tr class="separator:a1652acec1f6b135d923619bc929bdebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe8cedc57759aba9b98a4f9f74a49d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">OnSceneLoaded</a> (object sender, EventArgs e)</td></tr>
-<tr class="memdesc:abe8cedc57759aba9b98a4f9f74a49d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends OnSceneLoaded event.  <br /></td></tr>
-<tr class="separator:abe8cedc57759aba9b98a4f9f74a49d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a5f1cffa3b115ef4d22339cdf807a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_manager.html#a41a5f1cffa3b115ef4d22339cdf807a9">OnRoundLoaded</a> (object sender, EventArgs e)</td></tr>
+<tr class="memdesc:a41a5f1cffa3b115ef4d22339cdf807a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> sends OnSceneLoaded event.  <br /></td></tr>
+<tr class="separator:a41a5f1cffa3b115ef4d22339cdf807a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -202,21 +212,23 @@ List&lt; <a class="el" href="class_objective.html">Objective</a> &gt;&#160;</td>
 Dictionary&lt; Zone.ZONE, List&lt; <a class="el" href="class_zone.html">Zone</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_possibleZones</b> = new Dictionary&lt;Zone.ZONE, List&lt;<a class="el" href="class_zone.html">Zone</a>&gt;&gt;()</td></tr>
 <tr class="memdesc:a722a4a5300f7373feebde579e16350c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all possible zones based on what is present in the scene. <br /></td></tr>
 <tr class="separator:a722a4a5300f7373feebde579e16350c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab53e2f60c4ce08cc3ca3a2f68564273d"><td class="memItemLeft" align="right" valign="top"><a id="ab53e2f60c4ce08cc3ca3a2f68564273d" name="ab53e2f60c4ce08cc3ca3a2f68564273d"></a>
-Dictionary&lt; <a class="el" href="class_objective.html">Objective</a>, ulong &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_playerObjectives</b> = new Dictionary&lt;<a class="el" href="class_objective.html">Objective</a>, ulong&gt;()</td></tr>
-<tr class="memdesc:ab53e2f60c4ce08cc3ca3a2f68564273d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which is hashed based on the objective - this allows very performant lookup of the assigned ClientID<br  />
- during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID. <br /></td></tr>
-<tr class="separator:ab53e2f60c4ce08cc3ca3a2f68564273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad11d6a6cee267b8520815cdefc5e7ec4"><td class="memItemLeft" align="right" valign="top"><a id="ad11d6a6cee267b8520815cdefc5e7ec4" name="ad11d6a6cee267b8520815cdefc5e7ec4"></a>
+Dictionary&lt; Zone.ZONE, List&lt; <a class="el" href="class_zone.html">Zone</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_possibleGroundZones</b> = new Dictionary&lt;Zone.ZONE, List&lt;<a class="el" href="class_zone.html">Zone</a>&gt;&gt;()</td></tr>
+<tr class="separator:ad11d6a6cee267b8520815cdefc5e7ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6e9c14ad90215d4f74aab58639d17fc"><td class="memItemLeft" align="right" valign="top"><a id="af6e9c14ad90215d4f74aab58639d17fc" name="af6e9c14ad90215d4f74aab58639d17fc"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>_inverseString</b> = &quot;Don't &quot;</td></tr>
+<tr class="memdesc:af6e9c14ad90215d4f74aab58639d17fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which is hashed based on the objective - this allows very performant lookup of the assigned ClientID<br  />
+ during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID. <br /></td></tr>
 <tr class="separator:af6e9c14ad90215d4f74aab58639d17fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01a80df5ca83b47db193d3fc2bbd886c"><td class="memItemLeft" align="right" valign="top"><a id="a01a80df5ca83b47db193d3fc2bbd886c" name="a01a80df5ca83b47db193d3fc2bbd886c"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>_anyActionString</b> = &quot;Do anything with&quot;</td></tr>
 <tr class="separator:a01a80df5ca83b47db193d3fc2bbd886c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc821e2ad773f49937f18fc461662df"><td class="memItemLeft" align="right" valign="top"><a id="a8fc821e2ad773f49937f18fc461662df" name="a8fc821e2ad773f49937f18fc461662df"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>_nextAvailableObjective</b> = 0</td></tr>
-<tr class="memdesc:a8fc821e2ad773f49937f18fc461662df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of the position in the _possibleObjectives list for the next one which hasn't been used. <br /></td></tr>
-<tr class="separator:a8fc821e2ad773f49937f18fc461662df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52dabb2e262062fa266fdd9217e69987"><td class="memItemLeft" align="right" valign="top"><a id="a52dabb2e262062fa266fdd9217e69987" name="a52dabb2e262062fa266fdd9217e69987"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_anyColourString</b> = &quot;&lt;style=\&quot;Colour\&quot;&gt;any coloured&lt;/style&gt;&quot;</td></tr>
+<tr class="separator:a52dabb2e262062fa266fdd9217e69987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6c2ef2d793665921a07f81cb52d12a"><td class="memItemLeft" align="right" valign="top"><a id="ace6c2ef2d793665921a07f81cb52d12a" name="ace6c2ef2d793665921a07f81cb52d12a"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_orangeString</b> = &quot;&lt;style=\&quot;Colour\&quot;&gt;orange&lt;/style&gt;&quot;</td></tr>
+<tr class="separator:ace6c2ef2d793665921a07f81cb52d12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -256,29 +268,55 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if successful, False if out of objectives or clientId not found in PlayerData</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>    {</div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a> &lt; <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Count)</div>
-<div class="line"><span class="lineno">  125</span>        {</div>
-<div class="line"><span class="lineno">  126</span>            <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Add(<a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>[<a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a>], clientId);</div>
-<div class="line"><span class="lineno">  127</span>            playerData.Objective = <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>[<a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a>];</div>
-<div class="line"><span class="lineno">  128</span>            <a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a>++;</div>
-<div class="line"><span class="lineno">  129</span>        }</div>
-<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  131</span>        {</div>
-<div class="line"><span class="lineno">  132</span>            playerData.Objective = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
-<div class="line"><span class="lineno">  134</span>        </div>
-<div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
-<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:14</div></div>
-<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:36</div></div>
-<div class="ttc" id="aclass_net_player_data_html"><div class="ttname"><a href="class_net_player_data.html">NetPlayerData</a></div><div class="ttdoc">Class to store objective data related to a player.</div><div class="ttdef"><b>Definition:</b> NetPlayerData.cs:13</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a65027ae111883976e9a022f86d3175f2"><div class="ttname"><a href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">ObjectiveManager._possibleObjectives</a></div><div class="ttdeci">List&lt; Objective &gt; _possibleObjectives</div><div class="ttdoc">List of all possible objectives based on the objects in the scene.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:27</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a8fc821e2ad773f49937f18fc461662df"><div class="ttname"><a href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">ObjectiveManager._nextAvailableObjective</a></div><div class="ttdeci">int _nextAvailableObjective</div><div class="ttdoc">Keeps track of the position in the _possibleObjectives list for the next one which hasn't been used.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:47</div></div>
-<div class="ttc" id="aclass_objective_manager_html_ab53e2f60c4ce08cc3ca3a2f68564273d"><div class="ttname"><a href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">ObjectiveManager._playerObjectives</a></div><div class="ttdeci">Dictionary&lt; Objective, ulong &gt; _playerObjectives</div><div class="ttdoc">A dictionary which is hashed based on the objective - this allows very performant lookup of the assig...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:38</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>    {</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (playerData.NextObjectiveIndex &lt; playerData.PossibleObjectives.Count)</div>
+<div class="line"><span class="lineno">  136</span>        {</div>
+<div class="line"><span class="lineno">  137</span>            <span class="comment">//_playerObjectives.Add(_possibleObjectives[playerData.NextObjectiveIndex], clientId);</span></div>
+<div class="line"><span class="lineno">  138</span>            playerData.Objective = playerData.PossibleObjectives[playerData.NextObjectiveIndex];</div>
+<div class="line"><span class="lineno">  139</span>            playerData.NextObjectiveIndex++;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>            uint <span class="keywordtype">id</span> = <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.Where(x =&gt; x.Key.ObjectiveObject == playerData.Objective.Object &amp;&amp; x.Key.ObjectiveColour == playerData.Objective.Colour).FirstOrDefault().Key.GetComponent&lt;<a class="code hl_class" href="class_network_identifier.html">NetworkIdentifier</a>&gt;().NetworkId.Value;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>            <span class="comment">//ArrowData arrowData = new ArrowData</span></div>
+<div class="line"><span class="lineno">  144</span>            <span class="comment">//(</span></div>
+<div class="line"><span class="lineno">  145</span>                <span class="comment">//id,</span></div>
+<div class="line"><span class="lineno">  146</span>                <span class="comment">//playerData.Objective.Zone.ZoneType,</span></div>
+<div class="line"><span class="lineno">  147</span>                <span class="comment">//(FixedString64Bytes)playerData.Objective.Zone.FriendlyString,</span></div>
+<div class="line"><span class="lineno">  148</span>                <span class="comment">//playerData.Objective.Colour.Colour,</span></div>
+<div class="line"><span class="lineno">  149</span>                <span class="comment">//false</span></div>
+<div class="line"><span class="lineno">  150</span>            <span class="comment">//);</span></div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>            <a class="code hl_class" href="class_arrow_data.html">ArrowData</a> arrowData = <span class="keyword">new</span> <a class="code hl_class" href="class_arrow_data.html">ArrowData</a>();</div>
+<div class="line"><span class="lineno">  153</span>            arrowData.ObjectToFollowId = id;</div>
+<div class="line"><span class="lineno">  154</span>            arrowData.ZoneType = playerData.Objective.Zone == <span class="keyword">null</span> ? Zone.ZONE.NO_ZONE : playerData.Objective.Zone.ZoneType;</div>
+<div class="line"><span class="lineno">  155</span>            arrowData.ZoneName = playerData.Objective.Zone == <span class="keyword">null</span> ? <span class="keyword">new</span> FixedString64Bytes(<span class="stringliteral">&quot;&quot;</span>) : (FixedString64Bytes)playerData.<a class="code hl_class" href="class_objective.html">Objective</a>.<a class="code hl_class" href="class_zone.html">Zone</a>.FriendlyString;</div>
+<div class="line"><span class="lineno">  156</span>            arrowData.Colour = playerData.Objective.Colour.Colour;</div>
+<div class="line"><span class="lineno">  157</span>            arrowData.IsGoalArrow = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>            <a class="code hl_class" href="class_arrow_manager.html">ArrowManager</a>.Instance.SetUpObjectiveArrowsServerSide(arrowData, playerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>            <a class="code hl_class" href="class_score_manager.html">ScoreManager</a>.Instance.DecreaseStreakClientRpc(playerData.Objective.GetPoints(), playerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  164</span>        {</div>
+<div class="line"><span class="lineno">  165</span>            playerData.Objective = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+<div class="line"><span class="lineno">  167</span>        </div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="ttc" id="aclass_arrow_data_html"><div class="ttname"><a href="class_arrow_data.html">ArrowData</a></div><div class="ttdef"><b>Definition:</b> ArrowData.cs:8</div></div>
+<div class="ttc" id="aclass_arrow_manager_html"><div class="ttname"><a href="class_arrow_manager.html">ArrowManager</a></div><div class="ttdef"><b>Definition:</b> ArrowManager.cs:8</div></div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:16</div></div>
+<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:51</div></div>
+<div class="ttc" id="aclass_net_player_data_html"><div class="ttname"><a href="class_net_player_data.html">NetPlayerData</a></div><div class="ttdoc">Class to store objective data related to a player.</div><div class="ttdef"><b>Definition:</b> NetPlayerData.cs:12</div></div>
+<div class="ttc" id="aclass_network_identifier_html"><div class="ttname"><a href="class_network_identifier.html">NetworkIdentifier</a></div><div class="ttdef"><b>Definition:</b> NetworkIdentifier.cs:7</div></div>
+<div class="ttc" id="aclass_objective_html"><div class="ttname"><a href="class_objective.html">Objective</a></div><div class="ttdoc">Container for storing objective information.</div><div class="ttdef"><b>Definition:</b> Objective.cs:13</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a24fcce2a0e3ed05e0d594b2feeace100"><div class="ttname"><a href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">ObjectiveManager._objectiveObjects</a></div><div class="ttdeci">Dictionary&lt; ObjectiveObjectInstance, int &gt; _objectiveObjects</div><div class="ttdoc">Dictionary of ObjectiveObjectInstances and their corresponding qty that exist in the current scene  A...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:21</div></div>
+<div class="ttc" id="aclass_score_manager_html"><div class="ttname"><a href="class_score_manager.html">ScoreManager</a></div><div class="ttdef"><b>Definition:</b> ScoreManager.cs:7</div></div>
+<div class="ttc" id="aclass_zone_html"><div class="ttname"><a href="class_zone.html">Zone</a></div><div class="ttdoc">This class represents an interactible zone on the map.</div><div class="ttdef"><b>Definition:</b> Zone.cs:11</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,9 +342,9 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
-<div class="line"><span class="lineno">   61</span>        UnityEngine.Random.InitState((<span class="keywordtype">int</span>)DateTime.Now.Ticks);</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        UnityEngine.Random.InitState((<span class="keywordtype">int</span>)DateTime.Now.Ticks);</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -334,32 +372,49 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The objective as a string</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  248</span>    {</div>
-<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span> String.Empty;</div>
-<div class="line"><span class="lineno">  250</span> </div>
-<div class="line"><span class="lineno">  251</span>        <span class="keywordtype">string</span> str = <span class="keywordtype">string</span>.Empty;</div>
-<div class="line"><span class="lineno">  252</span>        str = objective.Action.FriendlyString;</div>
-<div class="line"><span class="lineno">  253</span> </div>
-<div class="line"><span class="lineno">  254</span>        <span class="comment">// If the action is &quot;Do anything with&quot; then we don&#39;t need to add the colour, object or condition</span></div>
-<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">if</span> (str != _anyActionString)</div>
-<div class="line"><span class="lineno">  256</span>        {</div>
-<div class="line"><span class="lineno">  257</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;COLOUR&gt;&quot;</span>, objective.Colour.FriendlyString);</div>
-<div class="line"><span class="lineno">  258</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;OBJECT&gt;&quot;</span>, objective.Object.FriendlyString);</div>
-<div class="line"><span class="lineno">  259</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;CONDITION&gt;&quot;</span>, objective.Condition.FriendlyString);</div>
-<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">if</span>(objective.Condition.RequiresObjectToBeInZone)</div>
-<div class="line"><span class="lineno">  261</span>            {</div>
-<div class="line"><span class="lineno">  262</span>                str = str.Replace(<span class="stringliteral">&quot;&lt;ZONE&gt;&quot;</span>, objective.Zone.FriendlyString);</div>
-<div class="line"><span class="lineno">  263</span>            }</div>
-<div class="line"><span class="lineno">  264</span>        }</div>
-<div class="line"><span class="lineno">  265</span>        </div>
-<div class="line"><span class="lineno">  266</span>        <span class="keywordflow">if</span>(objective.Inverse)</div>
-<div class="line"><span class="lineno">  267</span>        {</div>
-<div class="line"><span class="lineno">  268</span>            <span class="comment">// Prepend the inverse string and force first letter of original string to be lower case</span></div>
-<div class="line"><span class="lineno">  269</span>            str = _inverseString + <span class="keywordtype">char</span>.ToLower(str[0]) + str[1..];</div>
-<div class="line"><span class="lineno">  270</span>        }</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">return</span> str;</div>
-<div class="line"><span class="lineno">  273</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  316</span>    {</div>
+<div class="line"><span class="lineno">  317</span>        <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span> String.Empty;</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordtype">string</span> str = <span class="keywordtype">string</span>.Empty;</div>
+<div class="line"><span class="lineno">  320</span>        str = objective.Action.FriendlyString;</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>        <span class="comment">// If the action is &quot;Do anything with&quot; then we don&#39;t need to add the colour, object or condition</span></div>
+<div class="line"><span class="lineno">  323</span>        <span class="keywordflow">if</span> (str != _anyActionString)</div>
+<div class="line"><span class="lineno">  324</span>        {</div>
+<div class="line"><span class="lineno">  325</span>            <span class="keywordflow">if</span> (objective.Colour.FriendlyString == _anyColourString)</div>
+<div class="line"><span class="lineno">  326</span>            {</div>
+<div class="line"><span class="lineno">  327</span>                str = str.Replace(<span class="stringliteral">&quot;&lt;COLOUR&gt;&quot;</span>, objective.Colour.FriendlyString);</div>
+<div class="line"><span class="lineno">  328</span>            }</div>
+<div class="line"><span class="lineno">  329</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  330</span>            {</div>
+<div class="line"><span class="lineno">  331</span>                <span class="comment">// Calculate the hex value of the colour</span></div>
+<div class="line"><span class="lineno">  332</span>                <span class="keywordtype">string</span> hexValue = ColorUtility.ToHtmlStringRGB(objective.Colour.Colour);</div>
+<div class="line"><span class="lineno">  333</span> </div>
+<div class="line"><span class="lineno">  334</span>                <span class="comment">// Get the colour name from the friendly string (without the &quot;a&quot; at the start)</span></div>
+<div class="line"><span class="lineno">  335</span>                <span class="keywordtype">string</span> colourString = objective.Colour.FriendlyString.Split(<span class="charliteral">&#39; &#39;</span>)[1];</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>                <span class="keywordtype">string</span> a = colourString == _orangeString ? <span class="stringliteral">&quot;an&quot;</span> : <span class="stringliteral">&quot;a&quot;</span>;</div>
+<div class="line"><span class="lineno">  338</span> </div>
+<div class="line"><span class="lineno">  339</span>                <span class="comment">// Replace the &lt;COLOUR&gt; tag with the colour name in the correct colour</span></div>
+<div class="line"><span class="lineno">  340</span>                str = str.Replace(<span class="stringliteral">&quot;&lt;COLOUR&gt;&quot;</span>, $<span class="stringliteral">&quot;{a} &lt;color=#{hexValue}&gt;{colourString}&lt;/color&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  341</span>            }</div>
+<div class="line"><span class="lineno">  342</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;OBJECT&gt;&quot;</span>, objective.Object.FriendlyString);</div>
+<div class="line"><span class="lineno">  343</span>            str = str.Replace(<span class="stringliteral">&quot;&lt;CONDITION&gt;&quot;</span>, objective.Condition.FriendlyString);</div>
+<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">if</span>(objective.Condition.RequiresObjectToBeInZone)</div>
+<div class="line"><span class="lineno">  345</span>            {</div>
+<div class="line"><span class="lineno">  346</span>                str = str.Replace(<span class="stringliteral">&quot;&lt;ZONE&gt;&quot;</span>, objective.Zone.FriendlyString);</div>
+<div class="line"><span class="lineno">  347</span>            }</div>
+<div class="line"><span class="lineno">  348</span>        }</div>
+<div class="line"><span class="lineno">  349</span>        </div>
+<div class="line"><span class="lineno">  350</span>        <span class="keywordflow">if</span>(objective.Inverse)</div>
+<div class="line"><span class="lineno">  351</span>        {</div>
+<div class="line"><span class="lineno">  352</span>            <span class="comment">// Prepend the inverse string and force first letter of original string to be lower case</span></div>
+<div class="line"><span class="lineno">  353</span>            str = <a class="code hl_variable" href="class_objective_manager.html#af6e9c14ad90215d4f74aab58639d17fc">_inverseString</a> + <span class="keywordtype">char</span>.ToLower(str[0]) + str[1..];</div>
+<div class="line"><span class="lineno">  354</span>        }</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">return</span> str;</div>
+<div class="line"><span class="lineno">  357</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_af6e9c14ad90215d4f74aab58639d17fc"><div class="ttname"><a href="class_objective_manager.html#af6e9c14ad90215d4f74aab58639d17fc">ObjectiveManager._inverseString</a></div><div class="ttdeci">string _inverseString</div><div class="ttdoc">A dictionary which is hashed based on the objective - this allows very performant lookup of the assig...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:42</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -385,13 +440,13 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   74</span>        GameManager.Instance.OnPlayerSpawned -= <a class="code hl_function" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a>;</div>
-<div class="line"><span class="lineno">   75</span>        GameManager.Instance.OnSceneLoaded -= <a class="code hl_function" href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">OnSceneLoaded</a>;</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a86ab4b7937e9b578a0d87bd538e855c6"><div class="ttname"><a href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">ObjectiveManager.OnPlayerSpawned</a></div><div class="ttdeci">void OnPlayerSpawned(object sender, ulong clientId)</div><div class="ttdoc">Triggered when GameManager sends the OnPlayerSpawned event.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:280</div></div>
-<div class="ttc" id="aclass_objective_manager_html_abe8cedc57759aba9b98a4f9f74a49d32"><div class="ttname"><a href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">ObjectiveManager.OnSceneLoaded</a></div><div class="ttdeci">void OnSceneLoaded(object sender, EventArgs e)</div><div class="ttdoc">Triggered when GameManager sends OnSceneLoaded event.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:311</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   75</span>        GameManager.Instance.OnPlayerSpawned -= <a class="code hl_function" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a>;</div>
+<div class="line"><span class="lineno">   76</span>        GameManager.Instance.OnSceneLoaded -= <a class="code hl_function" href="class_objective_manager.html#a41a5f1cffa3b115ef4d22339cdf807a9">OnRoundLoaded</a>;</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a41a5f1cffa3b115ef4d22339cdf807a9"><div class="ttname"><a href="class_objective_manager.html#a41a5f1cffa3b115ef4d22339cdf807a9">ObjectiveManager.OnRoundLoaded</a></div><div class="ttdeci">void OnRoundLoaded(object sender, EventArgs e)</div><div class="ttdoc">Triggered when GameManager sends OnSceneLoaded event.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:403</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a86ab4b7937e9b578a0d87bd538e855c6"><div class="ttname"><a href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">ObjectiveManager.OnPlayerSpawned</a></div><div class="ttdeci">void OnPlayerSpawned(object sender, ulong clientId)</div><div class="ttdoc">Triggered when GameManager sends the OnPlayerSpawned event.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:364</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -417,11 +472,11 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   67</span>        GameManager.Instance.OnPlayerSpawned += <a class="code hl_function" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a>;</div>
-<div class="line"><span class="lineno">   68</span>        GameManager.Instance.OnSceneLoaded += <a class="code hl_function" href="class_objective_manager.html#abe8cedc57759aba9b98a4f9f74a49d32">OnSceneLoaded</a>;</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   68</span>        GameManager.Instance.OnPlayerSpawned += <a class="code hl_function" href="class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6">OnPlayerSpawned</a>;</div>
+<div class="line"><span class="lineno">   69</span>        GameManager.Instance.OnSceneLoaded += <a class="code hl_function" href="class_objective_manager.html#a41a5f1cffa3b115ef4d22339cdf807a9">OnRoundLoaded</a>;</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -467,10 +522,10 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  292</span>    {</div>
-<div class="line"><span class="lineno">  293</span>        <a class="code hl_function" href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">RemovePlayer</a>(clientId);</div>
-<div class="line"><span class="lineno">  294</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a290b41e8a4237ee6f51bdc61b2c760df"><div class="ttname"><a href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">ObjectiveManager.RemovePlayer</a></div><div class="ttdeci">void RemovePlayer(ulong clientId)</div><div class="ttdoc">To be called if a player disconnects intentionally.  Removes the player from the ObjectiveManager  Th...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:145</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  384</span>    {</div>
+<div class="line"><span class="lineno">  385</span>        <a class="code hl_function" href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">RemovePlayer</a>(clientId);</div>
+<div class="line"><span class="lineno">  386</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a290b41e8a4237ee6f51bdc61b2c760df"><div class="ttname"><a href="class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df">ObjectiveManager.RemovePlayer</a></div><div class="ttdeci">void RemovePlayer(ulong clientId)</div><div class="ttdoc">To be called if a player disconnects intentionally.  Removes the player from the ObjectiveManager  Th...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:178</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -516,10 +571,10 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  302</span>    {</div>
-<div class="line"><span class="lineno">  303</span>        <a class="code hl_function" href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ReconnectPlayer</a>(playerReconnectData.CurrentClientID);</div>
-<div class="line"><span class="lineno">  304</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a00505f6e1b68931dd95c095570706733"><div class="ttname"><a href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ObjectiveManager.ReconnectPlayer</a></div><div class="ttdeci">bool ReconnectPlayer(ulong currentClientId)</div><div class="ttdoc">To be called if a player has rejoined following a disconnection.  This will re-register the player wi...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:165</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  394</span>    {</div>
+<div class="line"><span class="lineno">  395</span>        <a class="code hl_function" href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ReconnectPlayer</a>(playerReconnectData.CurrentClientID);</div>
+<div class="line"><span class="lineno">  396</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a00505f6e1b68931dd95c095570706733"><div class="ttname"><a href="class_objective_manager.html#a00505f6e1b68931dd95c095570706733">ObjectiveManager.ReconnectPlayer</a></div><div class="ttdeci">bool ReconnectPlayer(ulong currentClientId)</div><div class="ttdoc">To be called if a player has rejoined following a disconnection.  This will re-register the player wi...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:200</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -565,15 +620,24 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  281</span>    {</div>
-<div class="line"><span class="lineno">  282</span>        <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
-<div class="line"><span class="lineno">  283</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a1251be92e8837460174e21319ba03401"><div class="ttname"><a href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">ObjectiveManager.AssignPlayerObjective</a></div><div class="ttdeci">bool AssignPlayerObjective(ulong clientId)</div><div class="ttdoc">Triggered by GameManager event once a player has spawned on the server.  Sets the player's objective ...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:120</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  365</span>    {</div>
+<div class="line"><span class="lineno">  366</span>        <span class="comment">// Setup player settings</span></div>
+<div class="line"><span class="lineno">  367</span>        <span class="keywordflow">if</span>(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData))</div>
+<div class="line"><span class="lineno">  368</span>        {</div>
+<div class="line"><span class="lineno">  369</span>            playerData.Objective = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  370</span>            playerData.NextObjectiveIndex = 0;</div>
+<div class="line"><span class="lineno">  371</span>            <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Shuffle();</div>
+<div class="line"><span class="lineno">  372</span>            playerData.PossibleObjectives = <span class="keyword">new</span>(<a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>);</div>
+<div class="line"><span class="lineno">  373</span>        }</div>
+<div class="line"><span class="lineno">  374</span>        <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
+<div class="line"><span class="lineno">  375</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a1251be92e8837460174e21319ba03401"><div class="ttname"><a href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">ObjectiveManager.AssignPlayerObjective</a></div><div class="ttdeci">bool AssignPlayerObjective(ulong clientId)</div><div class="ttdoc">Triggered by GameManager event once a player has spawned on the server.  Sets the player's objective ...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:131</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a65027ae111883976e9a022f86d3175f2"><div class="ttname"><a href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">ObjectiveManager._possibleObjectives</a></div><div class="ttdeci">List&lt; Objective &gt; _possibleObjectives</div><div class="ttdoc">List of all possible objectives based on the objects in the scene.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:27</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="abe8cedc57759aba9b98a4f9f74a49d32" name="abe8cedc57759aba9b98a4f9f74a49d32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe8cedc57759aba9b98a4f9f74a49d32">&#9670;&#160;</a></span>OnSceneLoaded()</h2>
+<a id="a41a5f1cffa3b115ef4d22339cdf807a9" name="a41a5f1cffa3b115ef4d22339cdf807a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a5f1cffa3b115ef4d22339cdf807a9">&#9670;&#160;</a></span>OnRoundLoaded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -582,7 +646,7 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ObjectiveManager.OnSceneLoaded </td>
+          <td class="memname">void ObjectiveManager.OnRoundLoaded </td>
           <td>(</td>
           <td class="paramtype">object&#160;</td>
           <td class="paramname"><em>sender</em>, </td>
@@ -614,16 +678,23 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  312</span>    {</div>
-<div class="line"><span class="lineno">  313</span>        <span class="comment">// Assign each players objective</span></div>
-<div class="line"><span class="lineno">  314</span>        <span class="keywordflow">foreach</span>(ulong clientId <span class="keywordflow">in</span> <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Keys)</div>
-<div class="line"><span class="lineno">  315</span>        {</div>
-<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">if</span>(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  317</span>            {</div>
-<div class="line"><span class="lineno">  318</span>                <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
-<div class="line"><span class="lineno">  319</span>            }</div>
-<div class="line"><span class="lineno">  320</span>        }</div>
-<div class="line"><span class="lineno">  321</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  404</span>    {</div>
+<div class="line"><span class="lineno">  405</span>        <span class="comment">// Only load objectives for actual rounds.</span></div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.CurrentState != <a class="code hl_class" href="class_game_manager.html">GameManager</a>.<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="comment">// reset everything as new scene has loaded</span></div>
+<div class="line"><span class="lineno">  408</span>        <a class="code hl_class" href="class_objective_manager.html">ObjectiveManager</a>.Instance.<a class="code hl_function" href="class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3">ResetObjectiveManager</a>();</div>
+<div class="line"><span class="lineno">  409</span>        <span class="comment">// Assign each players objective</span></div>
+<div class="line"><span class="lineno">  410</span>        <span class="keywordflow">foreach</span> (ulong clientId <span class="keywordflow">in</span> <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Keys)</div>
+<div class="line"><span class="lineno">  411</span>        {</div>
+<div class="line"><span class="lineno">  412</span>            <span class="keywordflow">if</span>(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  413</span>            {</div>
+<div class="line"><span class="lineno">  414</span>                <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
+<div class="line"><span class="lineno">  415</span>            }</div>
+<div class="line"><span class="lineno">  416</span>        }</div>
+<div class="line"><span class="lineno">  417</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html_ab27ff4979f87ebcdce6fb311425d0e9c"><div class="ttname"><a href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GameManager.GAMESTATE</a></div><div class="ttdeci">GAMESTATE</div><div class="ttdoc">Possible game states.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:21</div></div>
+<div class="ttc" id="aclass_objective_manager_html"><div class="ttname"><a href="class_objective_manager.html">ObjectiveManager</a></div><div class="ttdoc">Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:16</div></div>
+<div class="ttc" id="aclass_objective_manager_html_ab7e37a8bff711016bb30f872aef5c5c3"><div class="ttname"><a href="class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3">ObjectiveManager.ResetObjectiveManager</a></div><div class="ttdeci">void ResetObjectiveManager()</div><div class="ttdoc">Resets the ObjectiveManager to start a new round.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:82</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -656,23 +727,23 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if successful, False if not successful</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
-<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(currentClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> netPlayerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>        <span class="comment">// If an old objective does not exist, create one. If it does, remap it. </span></div>
-<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">if</span> (netPlayerData.Objective == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  171</span>        {</div>
-<div class="line"><span class="lineno">  172</span>            <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(currentClientId);</div>
-<div class="line"><span class="lineno">  173</span>        }</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  175</span>        {</div>
-<div class="line"><span class="lineno">  176</span>            <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Add(netPlayerData.Objective, currentClientId);</div>
-<div class="line"><span class="lineno">  177</span>        }</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>        netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);</div>
-<div class="line"><span class="lineno">  180</span>        </div>
-<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  182</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>    {</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(currentClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> netPlayerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>        <span class="comment">// If an old objective does not exist, create one. If it does, remap it. </span></div>
+<div class="line"><span class="lineno">  205</span>        <span class="keywordflow">if</span> (netPlayerData.Objective == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  206</span>        {</div>
+<div class="line"><span class="lineno">  207</span>            <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(currentClientId);</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+<div class="line"><span class="lineno">  209</span>        <span class="comment">//else</span></div>
+<div class="line"><span class="lineno">  210</span>        <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">  211</span>        <span class="comment">//  _playerObjectives.Add(netPlayerData.Objective, currentClientId);</span></div>
+<div class="line"><span class="lineno">  212</span>        <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>        netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  215</span>        </div>
+<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -700,44 +771,60 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  190</span>    {</div>
-<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.TryAdd(objectiveObjectInstance, 1))</div>
-<div class="line"><span class="lineno">  192</span>        {</div>
-<div class="line"><span class="lineno">  193</span>            <span class="comment">// objectiveObjectInstance already exists - add to the qty</span></div>
-<div class="line"><span class="lineno">  194</span>            <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>[objectiveObjectInstance]++;</div>
-<div class="line"><span class="lineno">  195</span>        }</div>
-<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  197</span>        {</div>
-<div class="line"><span class="lineno">  198</span>            <span class="comment">// First time adding this object type - create all possible objectives</span></div>
-<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_action.html">ObjectiveAction</a> action <span class="keywordflow">in</span> objectiveObjectInstance.ObjectiveObject.PossibleActions)</div>
-<div class="line"><span class="lineno">  200</span>            {</div>
-<div class="line"><span class="lineno">  201</span>                <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_condition.html">ObjectiveCondition</a> condition <span class="keywordflow">in</span> action.PossibleConditions)</div>
-<div class="line"><span class="lineno">  202</span>                {</div>
-<div class="line"><span class="lineno">  203</span>                    <a class="code hl_class" href="class_zone.html">Zone</a> zone = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  204</span>                    <span class="keywordflow">if</span>(condition.RequiresObjectToBeInZone)</div>
-<div class="line"><span class="lineno">  205</span>                    {</div>
-<div class="line"><span class="lineno">  206</span>                        <span class="comment">// Condition requires a zone, try and get a random one from the list stored in the dictionary</span></div>
-<div class="line"><span class="lineno">  207</span>                        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.TryGetValue(condition.RequiredZone, out List&lt;Zone&gt; zones))</div>
-<div class="line"><span class="lineno">  208</span>                        {</div>
-<div class="line"><span class="lineno">  209</span>                            <span class="comment">//if(zones.Count &gt; 0) zone = zones[UnityEngine.Random.Range((int)0, zones.Count)];</span></div>
-<div class="line"><span class="lineno">  210</span>                            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_zone.html">Zone</a> possibleZone <span class="keywordflow">in</span> zones)</div>
-<div class="line"><span class="lineno">  211</span>                            {</div>
-<div class="line"><span class="lineno">  212</span>                                <a class="code hl_class" href="class_objective.html">Objective</a> newObjective = <span class="keyword">new</span> <a class="code hl_class" href="class_objective.html">Objective</a>(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  213</span>                                <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Add(newObjective);</div>
-<div class="line"><span class="lineno">  214</span>                            }</div>
-<div class="line"><span class="lineno">  215</span>                        }</div>
-<div class="line"><span class="lineno">  216</span>                    }</div>
-<div class="line"><span class="lineno">  217</span>                    </div>
-<div class="line"><span class="lineno">  218</span>                }</div>
-<div class="line"><span class="lineno">  219</span>            }</div>
-<div class="line"><span class="lineno">  220</span>        }</div>
-<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>    {</div>
+<div class="line"><span class="lineno">  226</span>        <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.TryAdd(objectiveObjectInstance, 1))</div>
+<div class="line"><span class="lineno">  227</span>        {</div>
+<div class="line"><span class="lineno">  228</span>            <span class="comment">// objectiveObjectInstance already exists - add to the qty</span></div>
+<div class="line"><span class="lineno">  229</span>            <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>[objectiveObjectInstance]++;</div>
+<div class="line"><span class="lineno">  230</span>        }</div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  232</span>        {</div>
+<div class="line"><span class="lineno">  233</span>            <span class="comment">// First time adding this object type - create all possible objectives</span></div>
+<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_action.html">ObjectiveAction</a> action <span class="keywordflow">in</span> objectiveObjectInstance.ObjectiveObject.PossibleActions)</div>
+<div class="line"><span class="lineno">  235</span>            {</div>
+<div class="line"><span class="lineno">  236</span>                <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_condition.html">ObjectiveCondition</a> condition <span class="keywordflow">in</span> action.PossibleConditions)</div>
+<div class="line"><span class="lineno">  237</span>                {</div>
+<div class="line"><span class="lineno">  238</span>                    <span class="keywordflow">if</span>(condition.RequiresObjectToBeInZone)</div>
+<div class="line"><span class="lineno">  239</span>                    {</div>
+<div class="line"><span class="lineno">  240</span>                        <span class="keywordflow">if</span>(condition.RequireZoneToBeOnGround)</div>
+<div class="line"><span class="lineno">  241</span>                        {</div>
+<div class="line"><span class="lineno">  242</span>                            <span class="comment">// condition requires ground zone</span></div>
+<div class="line"><span class="lineno">  243</span>                            <span class="keywordflow">if</span> (_possibleGroundZones.TryGetValue(condition.RequiredZone, out List&lt;Zone&gt; zones))</div>
+<div class="line"><span class="lineno">  244</span>                            {</div>
+<div class="line"><span class="lineno">  245</span>                                <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_zone.html">Zone</a> possibleZone <span class="keywordflow">in</span> zones)</div>
+<div class="line"><span class="lineno">  246</span>                                {</div>
+<div class="line"><span class="lineno">  247</span>                                    <a class="code hl_class" href="class_objective.html">Objective</a> newObjective = <span class="keyword">new</span> <a class="code hl_class" href="class_objective.html">Objective</a>(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  248</span>                                    <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Add(newObjective);</div>
+<div class="line"><span class="lineno">  249</span>                                }</div>
+<div class="line"><span class="lineno">  250</span>                            }</div>
+<div class="line"><span class="lineno">  251</span>                        }</div>
+<div class="line"><span class="lineno">  252</span>                        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  253</span>                        {</div>
+<div class="line"><span class="lineno">  254</span>                            <span class="comment">// Condition requires any zone</span></div>
+<div class="line"><span class="lineno">  255</span>                            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.TryGetValue(condition.RequiredZone, out List&lt;Zone&gt; zones))</div>
+<div class="line"><span class="lineno">  256</span>                            {</div>
+<div class="line"><span class="lineno">  257</span>                                <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_zone.html">Zone</a> possibleZone <span class="keywordflow">in</span> zones)</div>
+<div class="line"><span class="lineno">  258</span>                                {</div>
+<div class="line"><span class="lineno">  259</span>                                    <a class="code hl_class" href="class_objective.html">Objective</a> newObjective = <span class="keyword">new</span> <a class="code hl_class" href="class_objective.html">Objective</a>(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, possibleZone, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  260</span>                                    <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Add(newObjective);</div>
+<div class="line"><span class="lineno">  261</span>                                }</div>
+<div class="line"><span class="lineno">  262</span>                            }</div>
+<div class="line"><span class="lineno">  263</span>                        }</div>
+<div class="line"><span class="lineno">  264</span>                        </div>
+<div class="line"><span class="lineno">  265</span>                    }</div>
+<div class="line"><span class="lineno">  266</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  267</span>                    {</div>
+<div class="line"><span class="lineno">  268</span>                        <a class="code hl_class" href="class_objective.html">Objective</a> newObjective = <span class="keyword">new</span> <a class="code hl_class" href="class_objective.html">Objective</a>(action, objectiveObjectInstance.ObjectiveColour, objectiveObjectInstance.ObjectiveObject, condition, <span class="keyword">null</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  269</span>                        <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Add(newObjective);</div>
+<div class="line"><span class="lineno">  270</span>                    }</div>
+<div class="line"><span class="lineno">  271</span>                    </div>
+<div class="line"><span class="lineno">  272</span>                }</div>
+<div class="line"><span class="lineno">  273</span>            }</div>
+<div class="line"><span class="lineno">  274</span>        }</div>
+<div class="line"><span class="lineno">  275</span>    }</div>
 <div class="ttc" id="aclass_objective_action_html"><div class="ttname"><a href="class_objective_action.html">ObjectiveAction</a></div><div class="ttdoc">An action that can be performed on an objective object.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:13</div></div>
 <div class="ttc" id="aclass_objective_condition_html"><div class="ttname"><a href="class_objective_condition.html">ObjectiveCondition</a></div><div class="ttdoc">A condition that an objective action can have.</div><div class="ttdef"><b>Definition:</b> ObjectiveCondition.cs:13</div></div>
-<div class="ttc" id="aclass_objective_html"><div class="ttname"><a href="class_objective.html">Objective</a></div><div class="ttdoc">Container for storing objective information.</div><div class="ttdef"><b>Definition:</b> Objective.cs:11</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a24fcce2a0e3ed05e0d594b2feeace100"><div class="ttname"><a href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">ObjectiveManager._objectiveObjects</a></div><div class="ttdeci">Dictionary&lt; ObjectiveObjectInstance, int &gt; _objectiveObjects</div><div class="ttdoc">Dictionary of ObjectiveObjectInstances and their corresponding qty that exist in the current scene  A...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:22</div></div>
 <div class="ttc" id="aclass_objective_manager_html_a722a4a5300f7373feebde579e16350c3"><div class="ttname"><a href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">ObjectiveManager._possibleZones</a></div><div class="ttdeci">Dictionary&lt; Zone.ZONE, List&lt; Zone &gt; &gt; _possibleZones</div><div class="ttdoc">List of all possible zones based on what is present in the scene.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:32</div></div>
-<div class="ttc" id="aclass_zone_html"><div class="ttname"><a href="class_zone.html">Zone</a></div><div class="ttdoc">This class represents an interactible zone on the map.</div><div class="ttdef"><b>Definition:</b> Zone.cs:10</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -764,19 +851,33 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  228</span>    {</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.TryGetValue(zone.ZoneType, out List&lt;Zone&gt; zones))</div>
-<div class="line"><span class="lineno">  231</span>        {</div>
-<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">if</span> (!zones.Contains(zone)) zones.Add(zone);</div>
-<div class="line"><span class="lineno">  233</span>        }</div>
-<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  235</span>        {</div>
-<div class="line"><span class="lineno">  236</span>            List&lt;Zone&gt; newZones = <span class="keyword">new</span> List&lt;Zone&gt;();</div>
-<div class="line"><span class="lineno">  237</span>            newZones.Add(zone);</div>
-<div class="line"><span class="lineno">  238</span>            <a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.Add(zone.ZoneType, newZones);</div>
-<div class="line"><span class="lineno">  239</span>        }</div>
-<div class="line"><span class="lineno">  240</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>    {</div>
+<div class="line"><span class="lineno">  283</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.TryGetValue(zone.ZoneType, out List&lt;Zone&gt; zones))</div>
+<div class="line"><span class="lineno">  284</span>        {</div>
+<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">if</span> (!zones.Contains(zone)) zones.Add(zone);</div>
+<div class="line"><span class="lineno">  286</span>        }</div>
+<div class="line"><span class="lineno">  287</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  288</span>        {</div>
+<div class="line"><span class="lineno">  289</span>            List&lt;Zone&gt; newZones = <span class="keyword">new</span> List&lt;Zone&gt;();</div>
+<div class="line"><span class="lineno">  290</span>            newZones.Add(zone);</div>
+<div class="line"><span class="lineno">  291</span>            <a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.Add(zone.ZoneType, newZones);</div>
+<div class="line"><span class="lineno">  292</span>        }</div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>        <span class="keywordflow">if</span> (zone.IsOnGround)</div>
+<div class="line"><span class="lineno">  295</span>        {</div>
+<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">if</span> (_possibleGroundZones.TryGetValue(zone.ZoneType, out List&lt;Zone&gt; groundZones))</div>
+<div class="line"><span class="lineno">  297</span>            {</div>
+<div class="line"><span class="lineno">  298</span>                <span class="keywordflow">if</span> (!groundZones.Contains(zone)) groundZones.Add(zone);</div>
+<div class="line"><span class="lineno">  299</span>            }</div>
+<div class="line"><span class="lineno">  300</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  301</span>            {</div>
+<div class="line"><span class="lineno">  302</span>                List&lt;Zone&gt; newZones = <span class="keyword">new</span> List&lt;Zone&gt;();</div>
+<div class="line"><span class="lineno">  303</span>                newZones.Add(zone);</div>
+<div class="line"><span class="lineno">  304</span>                _possibleGroundZones.Add(zone.ZoneType, newZones);</div>
+<div class="line"><span class="lineno">  305</span>            }</div>
+<div class="line"><span class="lineno">  306</span>        }</div>
+<div class="line"><span class="lineno">  307</span> </div>
+<div class="line"><span class="lineno">  308</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -805,15 +906,17 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
-<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> objectivePlayerData))</div>
-<div class="line"><span class="lineno">  148</span>        {</div>
-<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">if</span> (objectivePlayerData.Objective != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  150</span>            {</div>
-<div class="line"><span class="lineno">  151</span>                <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Remove(objectivePlayerData.Objective);</div>
-<div class="line"><span class="lineno">  152</span>            }</div>
-<div class="line"><span class="lineno">  153</span>        }</div>
-<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>    {</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> objectivePlayerData))</div>
+<div class="line"><span class="lineno">  181</span>        {</div>
+<div class="line"><span class="lineno">  182</span>            objectivePlayerData.Objective = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  183</span>            objectivePlayerData.NextObjectiveIndex = 0;</div>
+<div class="line"><span class="lineno">  184</span>            <span class="comment">//if (objectivePlayerData.Objective != null)</span></div>
+<div class="line"><span class="lineno">  185</span>            <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">  186</span>            <span class="comment">//    _playerObjectives.Remove(objectivePlayerData.Objective);</span></div>
+<div class="line"><span class="lineno">  187</span>            <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">  188</span>        }</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -851,26 +954,43 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  329</span>    {</div>
-<div class="line"><span class="lineno">  330</span>        <span class="comment">// Check if the objective is one that is assigned to a player</span></div>
-<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.TryGetValue(objectiveOccured, out ulong clientId))</div>
-<div class="line"><span class="lineno">  332</span>        {</div>
-<div class="line"><span class="lineno">  333</span>            <span class="comment">// Check if the matching objective&#39;s assigned player is the same as the one performing the action</span></div>
-<div class="line"><span class="lineno">  334</span>            <span class="keywordflow">if</span> (playerClientId != clientId) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  335</span> </div>
-<div class="line"><span class="lineno">  336</span>            <span class="comment">// The objective that occured matches one of that is assigned to a player</span></div>
-<div class="line"><span class="lineno">  337</span>            <span class="comment">// TODO increment player score, below is temporary for testing</span></div>
-<div class="line"><span class="lineno">  338</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[playerClientId].Score += 100;</div>
-<div class="line"><span class="lineno">  339</span> </div>
-<div class="line"><span class="lineno">  340</span>            <span class="comment">// Remove this objective from the player list</span></div>
-<div class="line"><span class="lineno">  341</span>            <a class="code hl_variable" href="class_objective_manager.html#ab53e2f60c4ce08cc3ca3a2f68564273d">_playerObjectives</a>.Remove(objectiveOccured);</div>
-<div class="line"><span class="lineno">  342</span> </div>
-<div class="line"><span class="lineno">  343</span>            <span class="comment">// Assign a new objective</span></div>
-<div class="line"><span class="lineno">  344</span>            <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(clientId);</div>
-<div class="line"><span class="lineno">  345</span> </div>
-<div class="line"><span class="lineno">  346</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].NetPlayer.SetObjectiveStringClientRpc(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective?.ObjectiveString, <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ClientRpcParams);</div>
-<div class="line"><span class="lineno">  347</span>        }</div>
-<div class="line"><span class="lineno">  348</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  425</span>    {</div>
+<div class="line"><span class="lineno">  426</span>        <span class="comment">// Get the players current objective</span></div>
+<div class="line"><span class="lineno">  427</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(playerClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData))</div>
+<div class="line"><span class="lineno">  428</span>        {</div>
+<div class="line"><span class="lineno">  429</span>            <span class="keywordflow">if</span>(playerData.Objective.Equals(objectiveOccured))</div>
+<div class="line"><span class="lineno">  430</span>            {</div>
+<div class="line"><span class="lineno">  431</span>                <span class="comment">// The objective that occured matches one of that is assigned to a player</span></div>
+<div class="line"><span class="lineno">  432</span>                <a class="code hl_class" href="class_score_manager.html">ScoreManager</a>.Instance.AddPlayerScore(playerData, objectiveOccured.GetPoints());</div>
+<div class="line"><span class="lineno">  433</span> </div>
+<div class="line"><span class="lineno">  434</span>                <a class="code hl_class" href="class_arrow_manager.html">ArrowManager</a>.Instance.StopUpdatingArrowsServerSide(playerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  435</span> </div>
+<div class="line"><span class="lineno">  436</span>                <span class="comment">// Assign a new objective</span></div>
+<div class="line"><span class="lineno">  437</span>                <a class="code hl_function" href="class_objective_manager.html#a1251be92e8837460174e21319ba03401">AssignPlayerObjective</a>(playerClientId);</div>
+<div class="line"><span class="lineno">  438</span> </div>
+<div class="line"><span class="lineno">  439</span>                playerData.NetPlayer.SetObjectiveStringClientRpc(playerData.Objective?.ObjectiveString, playerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  440</span>            }</div>
+<div class="line"><span class="lineno">  441</span>        }</div>
+<div class="line"><span class="lineno">  442</span> </div>
+<div class="line"><span class="lineno">  443</span>        <span class="comment">// ! OLD METHOD</span></div>
+<div class="line"><span class="lineno">  445</span><span class="comment"></span>        <span class="comment">//if(_playerObjectives.TryGetValue(objectiveOccured, out ulong clientId))</span></div>
+<div class="line"><span class="lineno">  446</span>        <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">  447</span>        <span class="comment">//  // Check if the matching objective&#39;s assigned player is the same as the one performing the action</span></div>
+<div class="line"><span class="lineno">  448</span>        <span class="comment">//  if (playerClientId != clientId) return;</span></div>
+<div class="line"><span class="lineno">  449</span> </div>
+<div class="line"><span class="lineno">  450</span>        <span class="comment">//  // The objective that occured matches one of that is assigned to a player</span></div>
+<div class="line"><span class="lineno">  451</span>        <span class="comment">//  // TODO increment player score, below is temporary for testing</span></div>
+<div class="line"><span class="lineno">  452</span>        <span class="comment">//  GameManager.Instance.PlayerData[playerClientId].Score += 100;</span></div>
+<div class="line"><span class="lineno">  453</span> </div>
+<div class="line"><span class="lineno">  454</span>        <span class="comment">//  // Remove this objective from the player list</span></div>
+<div class="line"><span class="lineno">  455</span>        <span class="comment">//  _playerObjectives.Remove(objectiveOccured);</span></div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>        <span class="comment">//  // Assign a new objective</span></div>
+<div class="line"><span class="lineno">  458</span>        <span class="comment">//  AssignPlayerObjective(clientId);</span></div>
+<div class="line"><span class="lineno">  459</span> </div>
+<div class="line"><span class="lineno">  460</span>        <span class="comment">//  GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective?.ObjectiveString, GameManager.Instance.PlayerData[clientId].ClientRpcParams);</span></div>
+<div class="line"><span class="lineno">  461</span>        <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">  462</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -890,40 +1010,50 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
 </div><div class="memdoc">
 
 <p>Resets the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a> to start a new round. </p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>    {</div>
-<div class="line"><span class="lineno">   83</span>        <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.Clear();</div>
-<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Clear();</div>
-<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.Clear();</div>
-<div class="line"><span class="lineno">   86</span>        <span class="comment">// Clear the player data specific to a round</span></div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">foreach</span>(ulong clientId <span class="keywordflow">in</span> <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Keys)</div>
-<div class="line"><span class="lineno">   88</span>        {</div>
-<div class="line"><span class="lineno">   89</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].Objective = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   90</span>            <span class="comment">// TODO: Add any other objective related params that need clearing - objectives cleared this round? etc.</span></div>
-<div class="line"><span class="lineno">   91</span>        }</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>        <span class="comment">// Get all the zones in the scene</span></div>
-<div class="line"><span class="lineno">   94</span>        List&lt;Zone&gt; zones = FindObjectsOfType&lt;Zone&gt;().ToList();</div>
-<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_zone.html">Zone</a> zone <span class="keywordflow">in</span> zones)</div>
-<div class="line"><span class="lineno">   96</span>        {</div>
-<div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">RegisterZone</a>(zone);</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>        <span class="comment">// Get all the objectives in the scene</span></div>
-<div class="line"><span class="lineno">  101</span>        List&lt;ObjectiveObjectInstance&gt; objectiveObjectInstances = FindObjectsOfType&lt;ObjectiveObjectInstance&gt;().ToList();</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_object_instance.html">ObjectiveObjectInstance</a> objectiveObjectInstance <span class="keywordflow">in</span> objectiveObjectInstances)</div>
-<div class="line"><span class="lineno">  103</span>        {</div>
-<div class="line"><span class="lineno">  104</span>            <a class="code hl_function" href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">RegisterObject</a>(objectiveObjectInstance);</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>        <span class="comment">// Shuffle the possible objectives</span></div>
-<div class="line"><span class="lineno">  108</span>        <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Shuffle();</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>        <span class="comment">// Reset the next available objective counter</span></div>
-<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="class_objective_manager.html#a8fc821e2ad773f49937f18fc461662df">_nextAvailableObjective</a> = 0;</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html_a1a3bdfd34cc63246f362db68b653aa20"><div class="ttname"><a href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">ObjectiveManager.RegisterObject</a></div><div class="ttdeci">void RegisterObject(ObjectiveObjectInstance objectiveObjectInstance)</div><div class="ttdoc">Registers the objectiveObjectInstance with the Objective Manager  This allows the Objective Manager t...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:189</div></div>
-<div class="ttc" id="aclass_objective_manager_html_a76a7fea8589bd79af92b8e7ac88cda9d"><div class="ttname"><a href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">ObjectiveManager.RegisterZone</a></div><div class="ttdeci">void RegisterZone(Zone zone)</div><div class="ttdoc">Registers a zone into the possibleZones dictionary, only if unique.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:227</div></div>
-<div class="ttc" id="aclass_objective_object_instance_html"><div class="ttname"><a href="class_objective_object_instance.html">ObjectiveObjectInstance</a></div><div class="ttdoc">An instance of an objective object.  This is the object that will be placed in the world.</div><div class="ttdef"><b>Definition:</b> ObjectiveObjectInstance.cs:14</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="class_objective_manager.html#a24fcce2a0e3ed05e0d594b2feeace100">_objectiveObjects</a>.Clear();</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Clear();</div>
+<div class="line"><span class="lineno">   86</span>        <a class="code hl_variable" href="class_objective_manager.html#a722a4a5300f7373feebde579e16350c3">_possibleZones</a>.Clear();</div>
+<div class="line"><span class="lineno">   87</span>        <span class="comment">//_playerObjectives.Clear();</span></div>
+<div class="line"><span class="lineno">   88</span>        </div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>        <span class="comment">//foreach(ulong clientId in GameManager.Instance.PlayerData.Keys)</span></div>
+<div class="line"><span class="lineno">   91</span>        <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">   92</span>        <span class="comment">//  GameManager.Instance.PlayerData[clientId].Objective = null;</span></div>
+<div class="line"><span class="lineno">   93</span>        <span class="comment">//  GameManager.Instance.PlayerData[clientId].NextObjectiveIndex = 0;</span></div>
+<div class="line"><span class="lineno">   94</span>        <span class="comment">//  // TODO: Add any other objective related params that need clearing - objectives cleared this round? etc.</span></div>
+<div class="line"><span class="lineno">   95</span>        <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>        <span class="comment">// Get all the zones in the scene</span></div>
+<div class="line"><span class="lineno">   98</span>        List&lt;Zone&gt; zones = FindObjectsOfType&lt;Zone&gt;().ToList();</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_zone.html">Zone</a> zone <span class="keywordflow">in</span> zones)</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            <a class="code hl_function" href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">RegisterZone</a>(zone);</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        <span class="comment">// Get all the objectives in the scene</span></div>
+<div class="line"><span class="lineno">  105</span>        List&lt;ObjectiveObjectInstance&gt; objectiveObjectInstances = FindObjectsOfType&lt;ObjectiveObjectInstance&gt;().ToList();</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_object_instance.html">ObjectiveObjectInstance</a> objectiveObjectInstance <span class="keywordflow">in</span> objectiveObjectInstances)</div>
+<div class="line"><span class="lineno">  107</span>        {</div>
+<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span>(!objectiveObjectInstance.ExcludeFromObjectiveManager) <a class="code hl_function" href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">RegisterObject</a>(objectiveObjectInstance);</div>
+<div class="line"><span class="lineno">  109</span>        }</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>        <span class="comment">// Clear the player data specific to a round</span></div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData <span class="keywordflow">in</span> <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Values)</div>
+<div class="line"><span class="lineno">  113</span>        {</div>
+<div class="line"><span class="lineno">  114</span>            playerData.Objective = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  115</span>            playerData.NextObjectiveIndex = 0;</div>
+<div class="line"><span class="lineno">  116</span>            playerData.PossibleObjectives.Clear();</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>            <span class="comment">// Shuffle the possible objectives</span></div>
+<div class="line"><span class="lineno">  119</span>            <a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>.Shuffle();</div>
+<div class="line"><span class="lineno">  120</span>            <span class="comment">// Make a copy for this player</span></div>
+<div class="line"><span class="lineno">  121</span>            playerData.PossibleObjectives = <span class="keyword">new</span>(<a class="code hl_variable" href="class_objective_manager.html#a65027ae111883976e9a022f86d3175f2">_possibleObjectives</a>);</div>
+<div class="line"><span class="lineno">  122</span>        }</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html_a1a3bdfd34cc63246f362db68b653aa20"><div class="ttname"><a href="class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20">ObjectiveManager.RegisterObject</a></div><div class="ttdeci">void RegisterObject(ObjectiveObjectInstance objectiveObjectInstance)</div><div class="ttdoc">Registers the objectiveObjectInstance with the Objective Manager  This allows the Objective Manager t...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:224</div></div>
+<div class="ttc" id="aclass_objective_manager_html_a76a7fea8589bd79af92b8e7ac88cda9d"><div class="ttname"><a href="class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d">ObjectiveManager.RegisterZone</a></div><div class="ttdeci">void RegisterZone(Zone zone)</div><div class="ttdoc">Registers a zone into the possibleZones dictionary, only if unique.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:281</div></div>
+<div class="ttc" id="aclass_objective_object_instance_html"><div class="ttname"><a href="class_objective_object_instance.html">ObjectiveObjectInstance</a></div><div class="ttdoc">An instance of an objective object.  This is the object that will be placed in the world.</div><div class="ttdef"><b>Definition:</b> ObjectiveObjectInstance.cs:15</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -947,13 +1077,13 @@ static <a class="el" href="class_objective_manager.html">ObjectiveManager</a>&#1
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   53</span>        {</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">if</span>(_instance == <span class="keyword">null</span>) _instance = FindObjectOfType&lt;ObjectiveManager&gt;();</div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> _instance;</div>
-<div class="line"><span class="lineno">   56</span>        }</div>
-<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   54</span>        {</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span>(_instance == <span class="keyword">null</span>) _instance = FindObjectOfType&lt;ObjectiveManager&gt;();</div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> _instance;</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['reconnectplayer_0',['ReconnectPlayer',['../class_objective_manager.html#a00505f6e1b68931dd95c095570706733',1,'ObjectiveManager']]],
-  ['registernewplayer_1',['RegisterNewPlayer',['../class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b',1,'GameManager']]],
-  ['registerobject_2',['RegisterObject',['../class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20',1,'ObjectiveManager']]],
-  ['registerzone_3',['RegisterZone',['../class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d',1,'ObjectiveManager']]],
-  ['removeplayer_4',['RemovePlayer',['../class_server_input_handler.html#a3f8aa90711afd3e68cb998cfe6fd2a9a',1,'ServerInputHandler.RemovePlayer()'],['../class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df',1,'ObjectiveManager.RemovePlayer(ulong clientId)']]],
-  ['reportobjectiveaction_5',['ReportObjectiveAction',['../class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b',1,'ObjectiveManager']]],
-  ['reregisterplayer_6',['ReRegisterPlayer',['../class_game_manager.html#a9da9fba4b3db9b478e8977c9c08d79b8',1,'GameManager']]],
-  ['resetobjectivemanager_7',['ResetObjectiveManager',['../class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3',1,'ObjectiveManager']]]
+  ['objective_0',['Objective',['../class_objective.html#a460b29167c25611cd5979b3400c9cbd0',1,'Objective']]],
+  ['oncollapse_1',['OnCollapse',['../class_ragdoll.html#a9c609d3fa00d9066e88237f21f598fc8',1,'Ragdoll']]],
+  ['onisserverauthoritative_2',['OnIsServerAuthoritative',['../class_owner_network_animator.html#a481b46f684314dff0500417b857d8e89',1,'OwnerNetworkAnimator']]],
+  ['onplayerdisconnect_3',['OnPlayerDisconnect',['../class_objective_manager.html#a009c801b8ac08e51e649d1f2c4714b14',1,'ObjectiveManager']]],
+  ['onplayerreconnect_4',['OnPlayerReconnect',['../class_objective_manager.html#a1652acec1f6b135d923619bc929bdebe',1,'ObjectiveManager']]],
+  ['onplayerspawned_5',['OnPlayerSpawned',['../class_objective_manager.html#a86ab4b7937e9b578a0d87bd538e855c6',1,'ObjectiveManager']]],
+  ['onroundloaded_6',['OnRoundLoaded',['../class_objective_manager.html#a41a5f1cffa3b115ef4d22339cdf807a9',1,'ObjectiveManager']]]
 ];

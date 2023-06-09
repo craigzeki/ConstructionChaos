@@ -1,0 +1,234 @@
+\hypertarget{class_cloud_system}{}\doxysection{Cloud\+System Class Reference}
+\label{class_cloud_system}\index{CloudSystem@{CloudSystem}}
+
+
+Inheritance diagram for Cloud\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_cloud_system__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cloud\+System\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_cloud_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_cloud_system}{Cloud\+System}} \mbox{\hyperlink{class_cloud_system_a687d54989e8d20c0d063f8e930cab6e0}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries CLOUD\+\_\+\+TYPE} \+: int \{ {\bfseries FOREGROUND} = 0
+, {\bfseries MIDGROUND}
+, {\bfseries BACKGROUND}
+, {\bfseries NUM\+\_\+\+OF\+\_\+\+CLOUD\+\_\+\+TYPES}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cloud_system_afa347de6d913aa191afbd15d931a04ad}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_cloud_system_aba1536a52989efb34a0f40d49c7eb8fb}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_cloud_system_a3c848178568703623f3eb212cdef06f9}{On\+Disable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_cloud_system_a220c97ff341f0c5bed76a0caf19939ae}{Do\+Cloud\+Spawning}} (float cloud\+Speed, float cloud\+Scale, int layer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cloud_system_ad13101858bc0b19eb1ff4413d10537ff}\label{class_cloud_system_ad13101858bc0b19eb1ff4413d10537ff}} 
+List$<$ Game\+Object $>$ {\bfseries \+\_\+cloud\+Prefabs} = new List$<$Game\+Object$>$()
+\item 
+\mbox{\Hypertarget{class_cloud_system_a1fff9ee9e54f15e3bbbe6e100eab75ed}\label{class_cloud_system_a1fff9ee9e54f15e3bbbe6e100eab75ed}} 
+float {\bfseries \+\_\+fore\+Ground\+Speed} = 0.\+4f
+\item 
+\mbox{\Hypertarget{class_cloud_system_ad7495c5bddd3de2fe7d92df16c90e0cb}\label{class_cloud_system_ad7495c5bddd3de2fe7d92df16c90e0cb}} 
+float {\bfseries \+\_\+mid\+Ground\+Speed} = 0.\+3f
+\item 
+\mbox{\Hypertarget{class_cloud_system_ac33cc7618710020458f9f8d1ac3904ef}\label{class_cloud_system_ac33cc7618710020458f9f8d1ac3904ef}} 
+float {\bfseries \+\_\+back\+Ground\+Speed} = 0.\+2f
+\item 
+\mbox{\Hypertarget{class_cloud_system_aafb228d30e11c5d1da04445c0f687737}\label{class_cloud_system_aafb228d30e11c5d1da04445c0f687737}} 
+float {\bfseries \+\_\+fore\+Ground\+Scale} = 50f
+\item 
+\mbox{\Hypertarget{class_cloud_system_a9677f99caef28429356cee4bb1cefc7e}\label{class_cloud_system_a9677f99caef28429356cee4bb1cefc7e}} 
+float {\bfseries \+\_\+mid\+Ground\+Scale} = 35f
+\item 
+\mbox{\Hypertarget{class_cloud_system_a965ec13e64470f136e758e437df279bf}\label{class_cloud_system_a965ec13e64470f136e758e437df279bf}} 
+float {\bfseries \+\_\+back\+Ground\+Scale} = 25f
+\item 
+\mbox{\Hypertarget{class_cloud_system_a5d390125b8aef057c77b69eb5a15ab6f}\label{class_cloud_system_a5d390125b8aef057c77b69eb5a15ab6f}} 
+int {\bfseries \+\_\+fore\+Ground\+Layer} = -\/46
+\item 
+\mbox{\Hypertarget{class_cloud_system_accbcaf1e3ea22f82b5a9314fa092c060}\label{class_cloud_system_accbcaf1e3ea22f82b5a9314fa092c060}} 
+int {\bfseries \+\_\+mid\+Ground\+Layer} = -\/47
+\item 
+\mbox{\Hypertarget{class_cloud_system_a69f7d3b35920f1a8feec2717011dc28b}\label{class_cloud_system_a69f7d3b35920f1a8feec2717011dc28b}} 
+int {\bfseries \+\_\+back\+Ground\+Layer} = -\/48
+\item 
+\mbox{\Hypertarget{class_cloud_system_ae82309ed53c2eae531dae27f8f23bfa2}\label{class_cloud_system_ae82309ed53c2eae531dae27f8f23bfa2}} 
+float {\bfseries \+\_\+scale\+Variance} = 5f
+\item 
+\mbox{\Hypertarget{class_cloud_system_ab96da6732a9f948c05e26b7ee8c056a1}\label{class_cloud_system_ab96da6732a9f948c05e26b7ee8c056a1}} 
+float {\bfseries \+\_\+speed\+Variance} = 0.\+1f
+\item 
+\mbox{\Hypertarget{class_cloud_system_ab81d01b893e62326303e7397f75cd045}\label{class_cloud_system_ab81d01b893e62326303e7397f75cd045}} 
+float {\bfseries \+\_\+min\+YPoint} = 0f
+\item 
+\mbox{\Hypertarget{class_cloud_system_a3d8151a9a6099c1832a8f22653d723c2}\label{class_cloud_system_a3d8151a9a6099c1832a8f22653d723c2}} 
+float {\bfseries \+\_\+max\+YPoint} = 0f
+\item 
+\mbox{\Hypertarget{class_cloud_system_a27654d658b67e76689f3661a105343e8}\label{class_cloud_system_a27654d658b67e76689f3661a105343e8}} 
+float {\bfseries \+\_\+min\+Time\+Between\+Clouds} = 10f
+\item 
+\mbox{\Hypertarget{class_cloud_system_aedbf93d1c6f85ffc4d82a15810f08a37}\label{class_cloud_system_aedbf93d1c6f85ffc4d82a15810f08a37}} 
+float {\bfseries \+\_\+max\+Time\+Between\+Clouds} = 15f
+\item 
+\mbox{\Hypertarget{class_cloud_system_a0d358983486139a823273973414c706e}\label{class_cloud_system_a0d358983486139a823273973414c706e}} 
+Box\+Collider2D {\bfseries \+\_\+collider}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cloud_system_ae96f58d7b026f272658f518645829b66}\label{class_cloud_system_ae96f58d7b026f272658f518645829b66}} 
+static \mbox{\hyperlink{class_cloud_system}{Cloud\+System}} {\bfseries \+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_cloud_system_afac9b82f8417a3bf274dc1b06df6c5da}\label{class_cloud_system_afac9b82f8417a3bf274dc1b06df6c5da}} 
+\index{CloudSystem@{CloudSystem}!CLOUD\_TYPE@{CLOUD\_TYPE}}
+\index{CLOUD\_TYPE@{CLOUD\_TYPE}!CloudSystem@{CloudSystem}}
+\doxysubsubsection{\texorpdfstring{CLOUD\_TYPE}{CLOUD\_TYPE}}
+{\footnotesize\ttfamily enum Cloud\+System.\+CLOUD\+\_\+\+TYPE \+: int\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ FOREGROUND\ =\ 0,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ MIDGROUND,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ BACKGROUND,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ NUM\_OF\_CLOUD\_TYPES}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cloud_system_afa347de6d913aa191afbd15d931a04ad}\label{class_cloud_system_afa347de6d913aa191afbd15d931a04ad}} 
+\index{CloudSystem@{CloudSystem}!Awake@{Awake}}
+\index{Awake@{Awake}!CloudSystem@{CloudSystem}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Cloud\+System.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_collider\ =\ GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Vector2\ localPosition\ =\ \_collider.offset;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Vector2\ localSize\ =\ \_collider.size;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Vector2\ worldPosition\ =\ (Vector2)transform.position\ +\ localPosition;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_minYPoint\ =\ worldPosition.y\ -\/\ (localSize.y\ *\ 0.5f);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_maxYPoint\ =\ worldPosition.y\ +\ (localSize.y\ *\ 0.5f);\ }
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cloud_system_a220c97ff341f0c5bed76a0caf19939ae}\label{class_cloud_system_a220c97ff341f0c5bed76a0caf19939ae}} 
+\index{CloudSystem@{CloudSystem}!DoCloudSpawning@{DoCloudSpawning}}
+\index{DoCloudSpawning@{DoCloudSpawning}!CloudSystem@{CloudSystem}}
+\doxysubsubsection{\texorpdfstring{DoCloudSpawning()}{DoCloudSpawning()}}
+{\footnotesize\ttfamily IEnumerator Cloud\+System.\+Do\+Cloud\+Spawning (\begin{DoxyParamCaption}\item[{float}]{cloud\+Speed,  }\item[{float}]{cloud\+Scale,  }\item[{int}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cloudPrefabs\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cloudPrefabs.Count\ <=\ 0)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cloudIndex;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cloudYPos;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ GameObject\ cloudObject;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ cloudIndex\ =\ UnityEngine.Random.Range((\textcolor{keywordtype}{int})0,\ (\textcolor{keywordtype}{int})\_cloudPrefabs.Count);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ cloudYPos\ =\ UnityEngine.Random.Range(\_minYPoint,\ \_maxYPoint);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ cloudObject\ =\ Instantiate(\_cloudPrefabs[cloudIndex],\ \textcolor{keyword}{new}\ Vector3(transform.position.x,\ cloudYPos,\ 0),\ Quaternion.identity,\ transform);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(cloudObject.TryGetComponent<\mbox{\hyperlink{class_cloud}{Cloud}}>(out\ \mbox{\hyperlink{class_cloud}{Cloud}}\ cloud))}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cloud.Speed\ =\ cloudSpeed\ +\ UnityEngine.Random.Range(-\/\_speedVariance,\ \_speedVariance);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ cloudObject.transform.localScale\ =\ (Vector3.one\ *\ (cloudScale\ +\ UnityEngine.Random.Range(-\/\_scaleVariance,\ \_scaleVariance)));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cloudObject.TryGetComponent<SpriteRenderer>(out\ SpriteRenderer\ spriteRenderer))}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ spriteRenderer.sortingOrder\ =\ layer;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(UnityEngine.Random.Range(\_minTimeBetweenClouds,\ \_maxTimeBetweenClouds)\ /\ (cloud\ !=\ \textcolor{keyword}{null}\ ?\ cloud.Speed\ :\ cloudSpeed));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cloud_system_a3c848178568703623f3eb212cdef06f9}\label{class_cloud_system_a3c848178568703623f3eb212cdef06f9}} 
+\index{CloudSystem@{CloudSystem}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!CloudSystem@{CloudSystem}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Cloud\+System.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cloud_system_aba1536a52989efb34a0f40d49c7eb8fb}\label{class_cloud_system_aba1536a52989efb34a0f40d49c7eb8fb}} 
+\index{CloudSystem@{CloudSystem}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!CloudSystem@{CloudSystem}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Cloud\+System.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ StartCoroutine(DoCloudSpawning(\_foreGroundSpeed,\ \_foreGroundScale,\ \_foreGroundLayer));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ StartCoroutine(DoCloudSpawning(\_midGroundSpeed,\ \_midGroundScale,\ \_midGroundLayer));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ StartCoroutine(DoCloudSpawning(\_backGroundSpeed,\ \_backGroundScale,\ \_backGroundLayer));}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_cloud_system_a687d54989e8d20c0d063f8e930cab6e0}\label{class_cloud_system_a687d54989e8d20c0d063f8e930cab6e0}} 
+\index{CloudSystem@{CloudSystem}!Instance@{Instance}}
+\index{Instance@{Instance}!CloudSystem@{CloudSystem}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cloud_system}{Cloud\+System}} Cloud\+System.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<CloudSystem>();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: ObjectiveAction Class Reference</title>
+<title>Construction Chaos: ObjectiveAction Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -106,9 +106,10 @@ Inheritance diagram for ObjectiveAction:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_objective_action__inherit__graph.png" border="0" usemap="#a_objective_action_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_objective_action_inherit__map" id="a_objective_action_inherit__map">
-<area shape="rect" title="An action that can be performed on an objective object." alt="" coords="99,79,211,104"/>
+<area shape="rect" title="An action that can be performed on an objective object." alt="" coords="97,152,209,177"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="12,79,117,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" title=" " alt="" coords="149,5,346,31"/>
+<area shape="rect" title=" " alt="" coords="142,79,339,104"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -116,9 +117,10 @@ Collaboration diagram for ObjectiveAction:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_objective_action__coll__graph.png" border="0" usemap="#a_objective_action_coll__map" alt="Collaboration graph"/></div>
 <map name="a_objective_action_coll__map" id="a_objective_action_coll__map">
-<area shape="rect" title="An action that can be performed on an objective object." alt="" coords="99,79,211,104"/>
+<area shape="rect" title="An action that can be performed on an objective object." alt="" coords="97,152,209,177"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="12,79,117,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" title=" " alt="" coords="149,5,346,31"/>
+<area shape="rect" title=" " alt="" coords="142,79,339,104"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -136,29 +138,35 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a739ed49d14a252ebf8b1bd54ff8dba19"><td class="memItemLeft" align="right" valign="top"><a id="a739ed49d14a252ebf8b1bd54ff8dba19" name="a739ed49d14a252ebf8b1bd54ff8dba19"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>FriendlyString</b><code> [get]</code></td></tr>
-<tr class="separator:a739ed49d14a252ebf8b1bd54ff8dba19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7744412dcab278d98875007b9734c418"><td class="memItemLeft" align="right" valign="top"><a id="a7744412dcab278d98875007b9734c418" name="a7744412dcab278d98875007b9734c418"></a>
 uint&#160;</td><td class="memItemRight" valign="bottom"><b>RequiredPerformanceTime</b><code> [get]</code></td></tr>
 <tr class="separator:a7744412dcab278d98875007b9734c418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6300ff434b60dad96adcd929cdfa091c"><td class="memItemLeft" align="right" valign="top"><a id="a6300ff434b60dad96adcd929cdfa091c" name="a6300ff434b60dad96adcd929cdfa091c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>RequiredPerformanceDistance</b><code> [get]</code></td></tr>
+<tr class="separator:a6300ff434b60dad96adcd929cdfa091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35f6798385a793287f03e49ae71453b6"><td class="memItemLeft" align="right" valign="top"><a id="a35f6798385a793287f03e49ae71453b6" name="a35f6798385a793287f03e49ae71453b6"></a>
 List&lt; <a class="el" href="class_objective_condition.html">ObjectiveCondition</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PossibleConditions</b><code> [get]</code></td></tr>
 <tr class="separator:a35f6798385a793287f03e49ae71453b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39162b408e52c9b63ffa9719de3609b1"><td class="memItemLeft" align="right" valign="top"><a id="a39162b408e52c9b63ffa9719de3609b1" name="a39162b408e52c9b63ffa9719de3609b1"></a>
 List&lt; TypeReference &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ActionBehaviours</b><code> [get]</code></td></tr>
 <tr class="separator:a39162b408e52c9b63ffa9719de3609b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_objective_base"><td colspan="2" onclick="javascript:toggleInherit('properties_class_objective_base')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_objective_base.html">ObjectiveBase</a></td></tr>
+<tr class="memitem:af388eae4f57c462f1723e95bfc4cfe3d inherit properties_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="af388eae4f57c462f1723e95bfc4cfe3d" name="af388eae4f57c462f1723e95bfc4cfe3d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>FriendlyString</b><code> [get]</code></td></tr>
+<tr class="separator:af388eae4f57c462f1723e95bfc4cfe3d inherit properties_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb7ea49e943f1d66f444fe8261949d16 inherit properties_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="abb7ea49e943f1d66f444fe8261949d16" name="abb7ea49e943f1d66f444fe8261949d16"></a>
+uint&#160;</td><td class="memItemRight" valign="bottom"><b>Points</b><code> [get]</code></td></tr>
+<tr class="separator:abb7ea49e943f1d66f444fe8261949d16 inherit properties_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa8a35a1b66c208c5ee6dac07af9375c9"><td class="memItemLeft" align="right" valign="top"><a id="aa8a35a1b66c208c5ee6dac07af9375c9" name="aa8a35a1b66c208c5ee6dac07af9375c9"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>_friendlyString</b></td></tr>
-<tr class="memdesc:aa8a35a1b66c208c5ee6dac07af9375c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The friendly string of the action. Must be in the format "... &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;". <br /></td></tr>
-<tr class="separator:aa8a35a1b66c208c5ee6dac07af9375c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361a5d117310797abe3017cca28cb0e9"><td class="memItemLeft" align="right" valign="top"><a id="a361a5d117310797abe3017cca28cb0e9" name="a361a5d117310797abe3017cca28cb0e9"></a>
 uint&#160;</td><td class="memItemRight" valign="bottom"><b>_requiredPerformanceTime</b> = 3</td></tr>
 <tr class="memdesc:a361a5d117310797abe3017cca28cb0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of time that the player has to perform this action for in order for it to count. <br /></td></tr>
 <tr class="separator:a361a5d117310797abe3017cca28cb0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9cadd2cd432109f85e9a152c6cbd426"><td class="memItemLeft" align="right" valign="top"><a id="aa9cadd2cd432109f85e9a152c6cbd426" name="aa9cadd2cd432109f85e9a152c6cbd426"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_requiredPerformanceDistance</b> = 0f</td></tr>
+<tr class="separator:aa9cadd2cd432109f85e9a152c6cbd426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98ced5897b6c2b26862537c52ff45dc1"><td class="memItemLeft" align="right" valign="top"><a id="a98ced5897b6c2b26862537c52ff45dc1" name="a98ced5897b6c2b26862537c52ff45dc1"></a>
 List&lt; <a class="el" href="class_objective_condition.html">ObjectiveCondition</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_possibleConditions</b> = new List&lt;<a class="el" href="class_objective_condition.html">ObjectiveCondition</a>&gt;()</td></tr>
 <tr class="memdesc:a98ced5897b6c2b26862537c52ff45dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of all the possible conditions that can be applied to this action. <br /></td></tr>
@@ -166,6 +174,17 @@ List&lt; <a class="el" href="class_objective_condition.html">ObjectiveCondition<
 <tr class="memitem:a24938ad3087de25524636243fe21f9f4"><td class="memItemLeft" align="right" valign="top"><a id="a24938ad3087de25524636243fe21f9f4" name="a24938ad3087de25524636243fe21f9f4"></a>
 List&lt; TypeReference &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_actionBehaviours</b> = new List&lt;TypeReference&gt;()</td></tr>
 <tr class="separator:a24938ad3087de25524636243fe21f9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_objective_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_objective_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_objective_base.html">ObjectiveBase</a></td></tr>
+<tr class="memitem:a3c82ae5e6093fe50f49f6ac173c70fb7 inherit pro_attribs_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="a3c82ae5e6093fe50f49f6ac173c70fb7" name="a3c82ae5e6093fe50f49f6ac173c70fb7"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_friendlyString</b></td></tr>
+<tr class="memdesc:a3c82ae5e6093fe50f49f6ac173c70fb7 inherit pro_attribs_class_objective_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The friendly string of the action. Must be in the format "... &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;". <br /></td></tr>
+<tr class="separator:a3c82ae5e6093fe50f49f6ac173c70fb7 inherit pro_attribs_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20546d70d80723d074e1df500423a9d inherit pro_attribs_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="ab20546d70d80723d074e1df500423a9d" name="ab20546d70d80723d074e1df500423a9d"></a>
+uint&#160;</td><td class="memItemRight" valign="bottom"><b>_points</b></td></tr>
+<tr class="separator:ab20546d70d80723d074e1df500423a9d inherit pro_attribs_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An action that can be performed on an objective object. </p>
@@ -194,14 +213,14 @@ List&lt; TypeReference &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True of False (Equal or Not Equal)</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (other is <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span> (ReferenceEquals(<span class="keyword">this</span>, other)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">if</span> (other.GetType() != <span class="keyword">this</span>.GetType()) <span class="keywordflow">return</span> base.Equals(other);</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_objective_action.html#a3126fcb6157262b3f941bf046da28234">Equals</a>((<a class="code hl_class" href="class_objective_action.html">ObjectiveAction</a>)other);</div>
-<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (other is <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (ReferenceEquals(<span class="keyword">this</span>, other)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span> (other.GetType() != <span class="keyword">this</span>.GetType()) <span class="keywordflow">return</span> base.Equals(other);</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_objective_action.html#a3126fcb6157262b3f941bf046da28234">Equals</a>((<a class="code hl_class" href="class_objective_action.html">ObjectiveAction</a>)other);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
 <div class="ttc" id="aclass_objective_action_html"><div class="ttname"><a href="class_objective_action.html">ObjectiveAction</a></div><div class="ttdoc">An action that can be performed on an objective object.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:13</div></div>
-<div class="ttc" id="aclass_objective_action_html_a3126fcb6157262b3f941bf046da28234"><div class="ttname"><a href="class_objective_action.html#a3126fcb6157262b3f941bf046da28234">ObjectiveAction.Equals</a></div><div class="ttdeci">bool Equals(ObjectiveAction other)</div><div class="ttdoc">Specific Equals opperation for ObjectiveAction.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:44</div></div>
+<div class="ttc" id="aclass_objective_action_html_a3126fcb6157262b3f941bf046da28234"><div class="ttname"><a href="class_objective_action.html#a3126fcb6157262b3f941bf046da28234">ObjectiveAction.Equals</a></div><div class="ttdeci">bool Equals(ObjectiveAction other)</div><div class="ttdoc">Specific Equals opperation for ObjectiveAction.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:41</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -229,18 +248,20 @@ List&lt; TypeReference &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True of False (Equal or Not Equal)</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> (</div>
-<div class="line"><span class="lineno">   48</span>                (<a class="code hl_variable" href="class_objective_action.html#aa8a35a1b66c208c5ee6dac07af9375c9">_friendlyString</a>.Equals(other.<a class="code hl_variable" href="class_objective_action.html#aa8a35a1b66c208c5ee6dac07af9375c9">_friendlyString</a>)) &amp;&amp;</div>
-<div class="line"><span class="lineno">   49</span>                (<a class="code hl_variable" href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">_requiredPerformanceTime</a> == other.<a class="code hl_variable" href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">_requiredPerformanceTime</a>) &amp;&amp;</div>
-<div class="line"><span class="lineno">   50</span>                Enumerable.SequenceEqual(<a class="code hl_variable" href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">_possibleConditions</a>.OrderBy(i =&gt; i.FriendlyString), other.<a class="code hl_variable" href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">_possibleConditions</a>.OrderBy(i =&gt; i.FriendlyString)) &amp;&amp;</div>
-<div class="line"><span class="lineno">   51</span>                Enumerable.SequenceEqual(_actionBehaviours.OrderBy(i =&gt; i.Type.Name), other._actionBehaviours.OrderBy(i =&gt; i.Type.Name))</div>
-<div class="line"><span class="lineno">   52</span>                );</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="ttc" id="aclass_objective_action_html_a361a5d117310797abe3017cca28cb0e9"><div class="ttname"><a href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">ObjectiveAction._requiredPerformanceTime</a></div><div class="ttdeci">uint _requiredPerformanceTime</div><div class="ttdoc">The amount of time that the player has to perform this action for in order for it to count.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:25</div></div>
-<div class="ttc" id="aclass_objective_action_html_a98ced5897b6c2b26862537c52ff45dc1"><div class="ttname"><a href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">ObjectiveAction._possibleConditions</a></div><div class="ttdeci">List&lt; ObjectiveCondition &gt; _possibleConditions</div><div class="ttdoc">A list of all the possible conditions that can be applied to this action.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:32</div></div>
-<div class="ttc" id="aclass_objective_action_html_aa8a35a1b66c208c5ee6dac07af9375c9"><div class="ttname"><a href="class_objective_action.html#aa8a35a1b66c208c5ee6dac07af9375c9">ObjectiveAction._friendlyString</a></div><div class="ttdeci">string _friendlyString</div><div class="ttdoc">The friendly string of the action. Must be in the format &quot;... &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;&quot;.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:18</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (other is <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> (</div>
+<div class="line"><span class="lineno">   45</span>                (<a class="code hl_variable" href="class_objective_base.html#a3c82ae5e6093fe50f49f6ac173c70fb7">_friendlyString</a>.Equals(other.<a class="code hl_variable" href="class_objective_base.html#a3c82ae5e6093fe50f49f6ac173c70fb7">_friendlyString</a>)) &amp;&amp;</div>
+<div class="line"><span class="lineno">   46</span>                (_points == other._points) &amp;&amp;</div>
+<div class="line"><span class="lineno">   47</span>                (<a class="code hl_variable" href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">_requiredPerformanceTime</a> == other.<a class="code hl_variable" href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">_requiredPerformanceTime</a>) &amp;&amp;</div>
+<div class="line"><span class="lineno">   48</span>                (_requiredPerformanceDistance == other._requiredPerformanceDistance) &amp;&amp;</div>
+<div class="line"><span class="lineno">   49</span>                Enumerable.SequenceEqual(<a class="code hl_variable" href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">_possibleConditions</a>.OrderBy(i =&gt; i.FriendlyString), other.<a class="code hl_variable" href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">_possibleConditions</a>.OrderBy(i =&gt; i.FriendlyString)) &amp;&amp;</div>
+<div class="line"><span class="lineno">   50</span>                Enumerable.SequenceEqual(_actionBehaviours.OrderBy(i =&gt; i.Type.Name), other._actionBehaviours.OrderBy(i =&gt; i.Type.Name))</div>
+<div class="line"><span class="lineno">   51</span>                );</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="ttc" id="aclass_objective_action_html_a361a5d117310797abe3017cca28cb0e9"><div class="ttname"><a href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">ObjectiveAction._requiredPerformanceTime</a></div><div class="ttdeci">uint _requiredPerformanceTime</div><div class="ttdoc">The amount of time that the player has to perform this action for in order for it to count.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:18</div></div>
+<div class="ttc" id="aclass_objective_action_html_a98ced5897b6c2b26862537c52ff45dc1"><div class="ttname"><a href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">ObjectiveAction._possibleConditions</a></div><div class="ttdeci">List&lt; ObjectiveCondition &gt; _possibleConditions</div><div class="ttdoc">A list of all the possible conditions that can be applied to this action.</div><div class="ttdef"><b>Definition:</b> ObjectiveAction.cs:29</div></div>
+<div class="ttc" id="aclass_objective_base_html_a3c82ae5e6093fe50f49f6ac173c70fb7"><div class="ttname"><a href="class_objective_base.html#a3c82ae5e6093fe50f49f6ac173c70fb7">ObjectiveBase._friendlyString</a></div><div class="ttdeci">string _friendlyString</div><div class="ttdoc">The friendly string of the action. Must be in the format &quot;... &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;&quot;.</div><div class="ttdef"><b>Definition:</b> ObjectiveBase.cs:12</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -263,24 +284,26 @@ List&lt; TypeReference &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <p><a href="https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode">https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode</a><br  />
  <a href="https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode">https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode</a> </p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
-<div class="line"><span class="lineno">   79</span>        <span class="comment">//unchecked allows overflows to occur and be truncated without throwing an exception</span></div>
-<div class="line"><span class="lineno">   80</span>        unchecked</div>
-<div class="line"><span class="lineno">   81</span>        {</div>
-<div class="line"><span class="lineno">   82</span>            <span class="keywordtype">int</span> hashCode = 17;</div>
-<div class="line"><span class="lineno">   83</span>            hashCode = (hashCode * 23) + (<a class="code hl_variable" href="class_objective_action.html#aa8a35a1b66c208c5ee6dac07af9375c9">_friendlyString</a> != <span class="keyword">null</span> ? <a class="code hl_variable" href="class_objective_action.html#aa8a35a1b66c208c5ee6dac07af9375c9">_friendlyString</a>.GetHashCode() : 0);</div>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>        <span class="comment">//unchecked allows overflows to occur and be truncated without throwing an exception</span></div>
+<div class="line"><span class="lineno">   79</span>        unchecked</div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordtype">int</span> hashCode = 17;</div>
+<div class="line"><span class="lineno">   82</span>            hashCode = (hashCode * 23) + (<a class="code hl_variable" href="class_objective_base.html#a3c82ae5e6093fe50f49f6ac173c70fb7">_friendlyString</a> != <span class="keyword">null</span> ? <a class="code hl_variable" href="class_objective_base.html#a3c82ae5e6093fe50f49f6ac173c70fb7">_friendlyString</a>.GetHashCode() : 0);</div>
+<div class="line"><span class="lineno">   83</span>            hashCode = (hashCode * 23) + _points.GetHashCode();</div>
 <div class="line"><span class="lineno">   84</span>            hashCode = (hashCode * 32) + <a class="code hl_variable" href="class_objective_action.html#a361a5d117310797abe3017cca28cb0e9">_requiredPerformanceTime</a>.GetHashCode();</div>
-<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_condition.html">ObjectiveCondition</a> objectiveCondition <span class="keywordflow">in</span> <a class="code hl_variable" href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">_possibleConditions</a>)</div>
-<div class="line"><span class="lineno">   86</span>            {</div>
-<div class="line"><span class="lineno">   87</span>                hashCode = (hashCode * 23) + objectiveCondition.<a class="code hl_function" href="class_objective_condition.html#a19d0adaf0122e695e64e126ec297ac83">GetHashCode</a>();</div>
-<div class="line"><span class="lineno">   88</span>            }</div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">foreach</span>(TypeReference type <span class="keywordflow">in</span> _actionBehaviours)</div>
-<div class="line"><span class="lineno">   90</span>            {</div>
-<div class="line"><span class="lineno">   91</span>                hashCode = (hashCode * 23) + type.GetHashCode();</div>
-<div class="line"><span class="lineno">   92</span>            }</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">return</span> hashCode;</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   85</span>            hashCode = (hashCode * 32) + _requiredPerformanceDistance.GetHashCode();</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_objective_condition.html">ObjectiveCondition</a> objectiveCondition <span class="keywordflow">in</span> <a class="code hl_variable" href="class_objective_action.html#a98ced5897b6c2b26862537c52ff45dc1">_possibleConditions</a>)</div>
+<div class="line"><span class="lineno">   87</span>            {</div>
+<div class="line"><span class="lineno">   88</span>                hashCode = (hashCode * 23) + objectiveCondition.<a class="code hl_function" href="class_objective_condition.html#a19d0adaf0122e695e64e126ec297ac83">GetHashCode</a>();</div>
+<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">foreach</span>(TypeReference type <span class="keywordflow">in</span> _actionBehaviours)</div>
+<div class="line"><span class="lineno">   91</span>            {</div>
+<div class="line"><span class="lineno">   92</span>                hashCode = (hashCode * 23) + type.GetHashCode();</div>
+<div class="line"><span class="lineno">   93</span>            }</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">return</span> hashCode;</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
 <div class="ttc" id="aclass_objective_condition_html"><div class="ttname"><a href="class_objective_condition.html">ObjectiveCondition</a></div><div class="ttdoc">A condition that an objective action can have.</div><div class="ttdef"><b>Definition:</b> ObjectiveCondition.cs:13</div></div>
 <div class="ttc" id="aclass_objective_condition_html_a19d0adaf0122e695e64e126ec297ac83"><div class="ttname"><a href="class_objective_condition.html#a19d0adaf0122e695e64e126ec297ac83">ObjectiveCondition.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdoc">Override of GetHashCode to provide correct hash for Dictionary.</div><div class="ttdef"><b>Definition:</b> ObjectiveCondition.cs:81</div></div>
 </div><!-- fragment -->

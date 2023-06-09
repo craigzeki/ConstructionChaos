@@ -1,0 +1,173 @@
+\hypertarget{class_arrow}{}\doxysection{Arrow Class Reference}
+\label{class_arrow}\index{Arrow@{Arrow}}
+
+
+Inheritance diagram for Arrow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_arrow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arrow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_arrow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_a8c20e50b1d16df1fcf867342a319d453}{Set\+Up\+With\+Icon}} (Transform object\+To\+Follow, Sprite icon, Color colour, bool is\+Goal\+Arrow=false)
+\item 
+void \mbox{\hyperlink{class_arrow_ab206b4bdb4926f5131b29fce769565af}{Set\+Up\+With\+Text}} (Transform object\+To\+Follow, string text, bool is\+Goal\+Arrow=false)
+\item 
+bool \mbox{\hyperlink{class_arrow_a8c633206b7194633b7ec30153b461da6}{Object\+Is\+Visible}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_a98d2142ded67e21edd7f652a9c5f7d89}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_arrow_a5f46d2685462b6fa6f92d03bad2ed2cc}{Toggle\+Arrow\+Visibility}} (bool toggle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_a78a7df500732b3f58487e021f0161073}\label{class_arrow_a78a7df500732b3f58487e021f0161073}} 
+Transform {\bfseries \+\_\+object\+To\+Follow}
+\item 
+\mbox{\Hypertarget{class_arrow_ae4c80439414b0e6a7d055409b5635aea}\label{class_arrow_ae4c80439414b0e6a7d055409b5635aea}} 
+Game\+Object {\bfseries \+\_\+arrow}
+\item 
+\mbox{\Hypertarget{class_arrow_a8e6c492cdf20874600e1168e07be7724}\label{class_arrow_a8e6c492cdf20874600e1168e07be7724}} 
+Game\+Object {\bfseries \+\_\+arrow\+Icon}
+\item 
+\mbox{\Hypertarget{class_arrow_a33658a5df33609b29b032d8d3e81fbf2}\label{class_arrow_a33658a5df33609b29b032d8d3e81fbf2}} 
+Sprite\+Renderer {\bfseries \+\_\+icon\+Sprite\+Renderer}
+\item 
+\mbox{\Hypertarget{class_arrow_a6d10359484d64730caf155473fff725f}\label{class_arrow_a6d10359484d64730caf155473fff725f}} 
+Game\+Object {\bfseries \+\_\+icon\+Canvas}
+\item 
+\mbox{\Hypertarget{class_arrow_aae86b3af6cc37ff40874b04c2accb1b5}\label{class_arrow_aae86b3af6cc37ff40874b04c2accb1b5}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+icon\+Text}
+\item 
+\mbox{\Hypertarget{class_arrow_aa2900c9ec5b35e14d2c859fd8a307d3f}\label{class_arrow_aa2900c9ec5b35e14d2c859fd8a307d3f}} 
+bool {\bfseries \+\_\+is\+Goal\+Arrow} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arrow_a8c633206b7194633b7ec30153b461da6}\label{class_arrow_a8c633206b7194633b7ec30153b461da6}} 
+\index{Arrow@{Arrow}!ObjectIsVisible@{ObjectIsVisible}}
+\index{ObjectIsVisible@{ObjectIsVisible}!Arrow@{Arrow}}
+\doxysubsubsection{\texorpdfstring{ObjectIsVisible()}{ObjectIsVisible()}}
+{\footnotesize\ttfamily bool Arrow.\+Object\+Is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ Plane[]\ planes\ =\ GeometryUtility.CalculateFrustumPlanes(Camera.main);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GeometryUtility.TestPlanesAABB(planes,\ \_objectToFollow.GetComponent<Collider2D>().bounds);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_a8c20e50b1d16df1fcf867342a319d453}\label{class_arrow_a8c20e50b1d16df1fcf867342a319d453}} 
+\index{Arrow@{Arrow}!SetUpWithIcon@{SetUpWithIcon}}
+\index{SetUpWithIcon@{SetUpWithIcon}!Arrow@{Arrow}}
+\doxysubsubsection{\texorpdfstring{SetUpWithIcon()}{SetUpWithIcon()}}
+{\footnotesize\ttfamily void Arrow.\+Set\+Up\+With\+Icon (\begin{DoxyParamCaption}\item[{Transform}]{object\+To\+Follow,  }\item[{Sprite}]{icon,  }\item[{Color}]{colour,  }\item[{bool}]{is\+Goal\+Arrow = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \_objectToFollow\ =\ objectToFollow;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \_iconCanvas.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (icon.pixelsPerUnit\ !=\ 100)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ scale\ of\ the\ icon\ to\ be\ 100\ pixels\ per\ unit}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scale\ =\ icon.pixelsPerUnit\ >\ 100\ ?\ icon.pixelsPerUnit\ /\ 100\ :\ 100\ /\ icon.pixelsPerUnit;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.transform.localScale\ =\ \textcolor{keyword}{new}\ Vector3(scale,\ scale,\ 1);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.sprite\ =\ icon;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.color\ =\ colour;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \_isGoalArrow\ =\ isGoalArrow;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_ab206b4bdb4926f5131b29fce769565af}\label{class_arrow_ab206b4bdb4926f5131b29fce769565af}} 
+\index{Arrow@{Arrow}!SetUpWithText@{SetUpWithText}}
+\index{SetUpWithText@{SetUpWithText}!Arrow@{Arrow}}
+\doxysubsubsection{\texorpdfstring{SetUpWithText()}{SetUpWithText()}}
+{\footnotesize\ttfamily void Arrow.\+Set\+Up\+With\+Text (\begin{DoxyParamCaption}\item[{Transform}]{object\+To\+Follow,  }\item[{string}]{text,  }\item[{bool}]{is\+Goal\+Arrow = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_objectToFollow\ =\ objectToFollow;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.transform.localScale\ =\ Vector3.one;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_iconSpriteRenderer.color\ =\ Color.white;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \_iconCanvas.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \_iconText.text\ =\ text;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \_isGoalArrow\ =\ isGoalArrow;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_a5f46d2685462b6fa6f92d03bad2ed2cc}\label{class_arrow_a5f46d2685462b6fa6f92d03bad2ed2cc}} 
+\index{Arrow@{Arrow}!ToggleArrowVisibility@{ToggleArrowVisibility}}
+\index{ToggleArrowVisibility@{ToggleArrowVisibility}!Arrow@{Arrow}}
+\doxysubsubsection{\texorpdfstring{ToggleArrowVisibility()}{ToggleArrowVisibility()}}
+{\footnotesize\ttfamily void Arrow.\+Toggle\+Arrow\+Visibility (\begin{DoxyParamCaption}\item[{bool}]{toggle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \_arrow.SetActive(toggle);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \_arrowIcon.SetActive(toggle);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_a98d2142ded67e21edd7f652a9c5f7d89}\label{class_arrow_a98d2142ded67e21edd7f652a9c5f7d89}} 
+\index{Arrow@{Arrow}!Update@{Update}}
+\index{Update@{Update}!Arrow@{Arrow}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Arrow.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_objectToFollow\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ObjectIsVisible())}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ ToggleArrowVisibility(\textcolor{keyword}{false});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_isGoalArrow)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.HideGroupObjectiveCountdown();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ ToggleArrowVisibility(\textcolor{keyword}{true});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_isGoalArrow)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.ShowGroupObjectiveCountdown();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ position\ of\ the\ object}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Vector2\ direction\ =\ \_objectToFollow.position\ -\/\ transform.parent.position;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ direction.Normalize();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ transform.localPosition\ =\ direction\ *\ \mbox{\hyperlink{class_arrow_manager}{ArrowManager}}.Instance.ArrowDistance;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ rotation\ of\ the\ object}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angle\ =\ Mathf.Atan2(direction.y,\ direction.x)\ *\ Mathf.Rad2Deg;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ transform.rotation\ =\ Quaternion.Euler(0,\ 0,\ angle\ -\/\ 90);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+
+\end{DoxyCode}

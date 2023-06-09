@@ -1,0 +1,48 @@
+\hypertarget{class_spawn_point}{}\doxysection{Spawn\+Point Class Reference}
+\label{class_spawn_point}\index{SpawnPoint@{SpawnPoint}}
+
+
+Inheritance diagram for Spawn\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_spawn_point__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spawn\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_spawn_point__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_spawn_point_a7abf71441b12668f0b8eab1625a5f2f8}{Spawn\+Point\+Is\+Clear}} (Layer\+Mask layer\+Mask=default)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_point_a19f4c34ef5270e99cf5d3f0ab3f38eda}\label{class_spawn_point_a19f4c34ef5270e99cf5d3f0ab3f38eda}} 
+float {\bfseries \+\_\+point\+Radius} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spawn_point_a7abf71441b12668f0b8eab1625a5f2f8}\label{class_spawn_point_a7abf71441b12668f0b8eab1625a5f2f8}} 
+\index{SpawnPoint@{SpawnPoint}!SpawnPointIsClear@{SpawnPointIsClear}}
+\index{SpawnPointIsClear@{SpawnPointIsClear}!SpawnPoint@{SpawnPoint}}
+\doxysubsubsection{\texorpdfstring{SpawnPointIsClear()}{SpawnPointIsClear()}}
+{\footnotesize\ttfamily bool Spawn\+Point.\+Spawn\+Point\+Is\+Clear (\begin{DoxyParamCaption}\item[{Layer\+Mask}]{layer\+Mask = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Collider2D\ \_overlapCollider\ =\ Physics2D.OverlapCircle(transform.position,\ \_pointRadius,\ layerMask);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_overlapCollider\ ==\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}

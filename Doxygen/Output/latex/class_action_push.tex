@@ -1,0 +1,289 @@
+\hypertarget{class_action_push}{}\doxysection{Action\+Push Class Reference}
+\label{class_action_push}\index{ActionPush@{ActionPush}}
+
+
+Inheritance diagram for Action\+Push\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_action_push__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Push\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_action_push__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_action_push_a68046c0d9ed83c50c0ec8391f5d762dc}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_action_push_af3444391b6a4eb679324144d4601665b}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_action_push_a9b472f7fad26218e77d4d2e1761c13fc}{On\+Collision\+Enter2D}} (Collision2D collision)
+\item 
+void \mbox{\hyperlink{class_action_push_ac60f09597c9fac9e3904b68d16a5a003}{On\+Collision\+Exit2D}} (Collision2D collision)
+\item 
+IEnumerator \mbox{\hyperlink{class_action_push_aaa1c6d1e6255a872dce52e518f1c117b}{Do\+Hysteresis}} (ulong client\+Id, string reason)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_action_push_a3a412b35d23f06f97ddea9dbb2e7fa92}\label{class_action_push_a3a412b35d23f06f97ddea9dbb2e7fa92}} 
+Dictionary$<$ ulong, \mbox{\hyperlink{class_ragdoll}{Ragdoll}} $>$ {\bfseries \+\_\+pushing\+Players} = new Dictionary$<$ulong, \mbox{\hyperlink{class_ragdoll}{Ragdoll}}$>$()
+\item 
+\mbox{\Hypertarget{class_action_push_a3fce88e25b9fa6d291177113d7de4c7b}\label{class_action_push_a3fce88e25b9fa6d291177113d7de4c7b}} 
+Dictionary$<$ ulong, float $>$ {\bfseries \+\_\+pushing\+Distances} = new Dictionary$<$ulong, float$>$()
+\item 
+\mbox{\Hypertarget{class_action_push_a9249b5d53bb5b289b4ce558455e285b2}\label{class_action_push_a9249b5d53bb5b289b4ce558455e285b2}} 
+Vector3 {\bfseries \+\_\+prev\+Position} = Vector3.\+zero
+\item 
+\mbox{\Hypertarget{class_action_push_ad8951d604437bbcd3b62e6b5cf6451f2}\label{class_action_push_ad8951d604437bbcd3b62e6b5cf6451f2}} 
+float {\bfseries \+\_\+distance\+Travelled} = 0f
+\item 
+\mbox{\Hypertarget{class_action_push_a538c8d414f0085361c2685760eb7b5a8}\label{class_action_push_a538c8d414f0085361c2685760eb7b5a8}} 
+List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})$>$ {\bfseries active\+Conditions}
+\item 
+\mbox{\Hypertarget{class_action_push_a2ac90a401489ed6119a8ea1ce49db617}\label{class_action_push_a2ac90a401489ed6119a8ea1ce49db617}} 
+List$<$ ulong $>$ {\bfseries \+\_\+clients\+To\+Remove} = new List$<$ulong$>$()
+\item 
+\mbox{\Hypertarget{class_action_push_a9c8a949f3e06fe2dc0bb39a69158058a}\label{class_action_push_a9c8a949f3e06fe2dc0bb39a69158058a}} 
+bool {\bfseries \+\_\+remove\+Client} = false
+\item 
+\mbox{\Hypertarget{class_action_push_a9ddcb89761cb6e37fc128f366fbca528}\label{class_action_push_a9ddcb89761cb6e37fc128f366fbca528}} 
+Dictionary$<$ ulong, Coroutine $>$ {\bfseries \+\_\+remove\+Coroutines} = new Dictionary$<$ulong, Coroutine$>$()
+\item 
+\mbox{\Hypertarget{class_action_push_a5224fca8b71a87171def8e932a75b914}\label{class_action_push_a5224fca8b71a87171def8e932a75b914}} 
+Dictionary$<$ ulong, Coroutine $>$ {\bfseries \+\_\+remove\+Ground\+Coroutines} = new Dictionary$<$ulong, Coroutine$>$()
+\item 
+\mbox{\Hypertarget{class_action_push_a77174f3a58e36d089ed8e9a809707a49}\label{class_action_push_a77174f3a58e36d089ed8e9a809707a49}} 
+bool {\bfseries \+\_\+is\+On\+Ground} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_objective_action_behaviour}{Objective\+Action\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}\label{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}} 
+List$<$ \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} $>$ {\bfseries Conditions} = new List$<$\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}$>$()
+\begin{DoxyCompactList}\small\item\em Required list of conditions for this \mbox{\hyperlink{class_objective}{Objective}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}\label{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}} 
+\mbox{\hyperlink{class_objective}{Objective}} {\bfseries Objective}
+\begin{DoxyCompactList}\small\item\em An instance of \mbox{\hyperlink{class_objective}{Objective}} used to construct a possible objective that was achieved~\newline
+ This is passed to the Obejctive\+Manager for checking. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_objective_action_behaviour}{Objective\+Action\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})$>$ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{Get\+Active\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Provide a list of all conditions which are currently being met by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_action_push_a68046c0d9ed83c50c0ec8391f5d762dc}\label{class_action_push_a68046c0d9ed83c50c0ec8391f5d762dc}} 
+\index{ActionPush@{ActionPush}!Awake@{Awake}}
+\index{Awake@{Awake}!ActionPush@{ActionPush}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Action\+Push.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_prevPosition\ =\ transform.position;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_action_push_aaa1c6d1e6255a872dce52e518f1c117b}\label{class_action_push_aaa1c6d1e6255a872dce52e518f1c117b}} 
+\index{ActionPush@{ActionPush}!DoHysteresis@{DoHysteresis}}
+\index{DoHysteresis@{DoHysteresis}!ActionPush@{ActionPush}}
+\doxysubsubsection{\texorpdfstring{DoHysteresis()}{DoHysteresis()}}
+{\footnotesize\ttfamily IEnumerator Action\+Push.\+Do\+Hysteresis (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id,  }\item[{string}]{reason }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ "{}\ +\ reason\ +\ "{}\ disconnected,\ hysteresis\ started"{});}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(0.4f);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ "{}\ +\ reason\ +\ "{}\ Hysteresis\ completed\ -\/\ player\ disconnected"{});}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \_pushingPlayers.Remove(clientId);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \_pushingDistances.Remove(clientId);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(reason\ ==\ \textcolor{stringliteral}{"{}Player"{}})}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \_removeCoroutines.Remove(clientId);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_removeGroundCoroutines.TryGetValue(clientId,\ out\ Coroutine\ coroutine))}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(coroutine);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeGroundCoroutines.Remove(clientId);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(reason\ ==\ \textcolor{stringliteral}{"{}Ground"{}})}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \_removeGroundCoroutines.Remove(clientId);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_removeCoroutines.TryGetValue(clientId,\ out\ Coroutine\ coroutine))}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(coroutine);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeCoroutines.Remove(clientId);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_action_push_a9b472f7fad26218e77d4d2e1761c13fc}\label{class_action_push_a9b472f7fad26218e77d4d2e1761c13fc}} 
+\index{ActionPush@{ActionPush}!OnCollisionEnter2D@{OnCollisionEnter2D}}
+\index{OnCollisionEnter2D@{OnCollisionEnter2D}!ActionPush@{ActionPush}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter2D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Action\+Push.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(collision.gameObject.TryGetComponent<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>(out\ \mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll))}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_isOnGround\ \&\&\ \_pushingPlayers.TryAdd(ragdoll.ClientId,\ ragdoll))}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_pushingDistances.TryAdd(ragdoll.ClientId,\ 0);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ have\ briefly\ let\ go\ and\ reconnected}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ stop\ the\ hysteresis}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_removeCoroutines.TryGetValue(ragdoll.ClientId,\ out\ Coroutine\ coroutine))}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (coroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(coroutine);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ Player\ reconnected\ -\/\ hysteresis\ cancelled"{});}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeCoroutines.Remove(ragdoll.ClientId);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.GroundLayers\ ==\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.GroundLayers\ |\ \ 1\ <<\ collision.gameObject.layer))}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \_isOnGround\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \_pushingPlayers.Keys)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_removeGroundCoroutines.TryGetValue(clientId,\ out\ Coroutine\ coroutine))}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(coroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(coroutine);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ Ground\ reconnected\ -\/\ hysteresis\ cancelled"{});}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeGroundCoroutines.Remove(clientId);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_action_push_ac60f09597c9fac9e3904b68d16a5a003}\label{class_action_push_ac60f09597c9fac9e3904b68d16a5a003}} 
+\index{ActionPush@{ActionPush}!OnCollisionExit2D@{OnCollisionExit2D}}
+\index{OnCollisionExit2D@{OnCollisionExit2D}!ActionPush@{ActionPush}}
+\doxysubsubsection{\texorpdfstring{OnCollisionExit2D()}{OnCollisionExit2D()}}
+{\footnotesize\ttfamily void Action\+Push.\+On\+Collision\+Exit2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.TryGetComponent<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>(out\ \mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll))}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_removeCoroutines.TryGetValue(ragdoll.ClientId,\ out\ Coroutine\ coroutine))}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ Using\ existing\ hysteresis\ coroutine"{});}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (coroutine\ ==\ \textcolor{keyword}{null})\ coroutine\ =\ StartCoroutine(DoHysteresis(ragdoll.ClientId,\ \textcolor{stringliteral}{"{}Player"{}}));}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ Creating\ new\ hysteresis\ coroutine"{});}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeCoroutines.Add(ragdoll.ClientId,\ StartCoroutine(DoHysteresis(ragdoll.ClientId,\ \textcolor{stringliteral}{"{}Player"{}})));}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(collision.gameObject.layer\ ==\ LayerMask.NameToLayer(\textcolor{stringliteral}{"{}Ground"{}}))}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \_isOnGround\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \_pushingPlayers.Keys)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_removeGroundCoroutines.TryGetValue(clientId,\ out\ Coroutine\ coroutine))}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ Using\ existing\ ground\ hysteresis\ coroutine"{});}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (coroutine\ ==\ \textcolor{keyword}{null})\ coroutine\ =\ StartCoroutine(DoHysteresis(clientId,\ \textcolor{stringliteral}{"{}Ground"{}}));}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}PUSH:\ Creating\ new\ ground\ hysteresis\ coroutine"{});}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeGroundCoroutines.Add(clientId,\ StartCoroutine(DoHysteresis(clientId,\ \textcolor{stringliteral}{"{}Ground"{}})));}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_action_push_af3444391b6a4eb679324144d4601665b}\label{class_action_push_af3444391b6a4eb679324144d4601665b}} 
+\index{ActionPush@{ActionPush}!Update@{Update}}
+\index{Update@{Update}!ActionPush@{ActionPush}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Action\+Push.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ activeConditions\ =\ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{GetActiveConditions}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_distanceTravelled\ =\ Vector3.Distance(\_prevPosition,\ transform.position);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \_pushingPlayers.Keys)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \_pushingDistances[clientId]\ +=\ \_distanceTravelled;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}Pushing\ distance:\ "{}\ +\ \_pushingDistances[clientId]);}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_pushingDistances[clientId]\ >\ \mbox{\hyperlink{class_objective}{Objective}}.Action.RequiredPerformanceDistance)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((activeConditions.Count\ ==\ 0)\ \&\&\ (\mbox{\hyperlink{class_objective}{Objective}}.Condition\ ==\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ objective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}{Objective}}(\mbox{\hyperlink{class_objective}{Objective}}.Action,\ \mbox{\hyperlink{class_objective}{Objective}}.Colour,\ \mbox{\hyperlink{class_objective}{Objective}}.Object,\ \textcolor{keyword}{null},\ \textcolor{keyword}{null},\ \mbox{\hyperlink{class_objective}{Objective}}.Inverse);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_pushingPlayers[clientId].\mbox{\hyperlink{class_objective_action_reporter}{ObjectiveActionReporter}}.\mbox{\hyperlink{class_objective_action_reporter_a262a9c8593f70749201619eab9cbfa6d}{CheckAndStartActionObjective}}(objective,\ clientId))}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_clientsToRemove.Add(clientId);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeClient\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ ((\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition,\ \mbox{\hyperlink{class_zone}{Zone}}\ zone)\ in\ activeConditions)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ objective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}{Objective}}(\mbox{\hyperlink{class_objective}{Objective}}.Action,\ \mbox{\hyperlink{class_objective}{Objective}}.Colour,\ \mbox{\hyperlink{class_objective}{Objective}}.Object,\ condition,\ zone,\ \mbox{\hyperlink{class_objective}{Objective}}.Inverse);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_pushingPlayers[clientId].\mbox{\hyperlink{class_objective_action_reporter}{ObjectiveActionReporter}}.\mbox{\hyperlink{class_objective_action_reporter_a262a9c8593f70749201619eab9cbfa6d}{CheckAndStartActionObjective}}(objective,\ clientId))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_clientsToRemove.Add(clientId);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_removeClient\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \_clientsToRemove)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \_pushingDistances.Remove(clientId);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \_pushingPlayers.Remove(clientId);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_clientsToRemove.Clear();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \_prevPosition\ =\ transform.position;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+
+\end{DoxyCode}

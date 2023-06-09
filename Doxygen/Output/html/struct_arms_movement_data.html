@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: ArmsMovementData Struct Reference</title>
+<title>Construction Chaos: ArmsMovementData Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -121,8 +121,8 @@ Collaboration diagram for ArmsMovementData:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a161d46131bf312156758bc0227b9b035"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_arms_movement_data.html#a161d46131bf312156758bc0227b9b035">ArmsMovementData</a> (Vector2 armsControllerInput, bool isMouseController, bool armsStickReleased)</td></tr>
-<tr class="separator:a161d46131bf312156758bc0227b9b035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3129b1a3eeb8d62f80e45c7dc7ba84af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_arms_movement_data.html#a3129b1a3eeb8d62f80e45c7dc7ba84af">ArmsMovementData</a> (Vector2 armsControllerInput, float armRotation, bool isMouseController, bool armsStickReleased)</td></tr>
+<tr class="separator:a3129b1a3eeb8d62f80e45c7dc7ba84af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f1d7d1416ce94c36de1737643cfcd47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_arms_movement_data.html#a3f1d7d1416ce94c36de1737643cfcd47">NetworkSerialize&lt; T &gt;</a> (BufferSerializer&lt; T &gt; serializer)</td></tr>
 <tr class="separator:a3f1d7d1416ce94c36de1737643cfcd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,6 +133,11 @@ Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>ArmsControllerInpu
 <tr class="memdesc:aa7f49438ef107ac9810ddc7e8f240142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action Map: Gameplay<br  />
  2D array representing horizontal and vertical axis for arms movement. <br /></td></tr>
 <tr class="separator:aa7f49438ef107ac9810ddc7e8f240142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d55807632b8cea27a98b31084fa827"><td class="memItemLeft" align="right" valign="top"><a id="aa4d55807632b8cea27a98b31084fa827" name="aa4d55807632b8cea27a98b31084fa827"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>ArmRotation</b></td></tr>
+<tr class="memdesc:aa4d55807632b8cea27a98b31084fa827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action Map: Gameplay<br  />
+ Float representing the rotation of the arms. <br /></td></tr>
+<tr class="separator:aa4d55807632b8cea27a98b31084fa827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4061c8419d2894ac58b937f5d1e92b5"><td class="memItemLeft" align="right" valign="top"><a id="ac4061c8419d2894ac58b937f5d1e92b5" name="ac4061c8419d2894ac58b937f5d1e92b5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsMouseController</b></td></tr>
 <tr class="memdesc:ac4061c8419d2894ac58b937f5d1e92b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action Map: Gameplay<br  />
@@ -147,8 +152,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>ArmsStickReleased</b>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container for <a class="el" href="class_arms.html">Arms</a> Movement Input Data. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a161d46131bf312156758bc0227b9b035" name="a161d46131bf312156758bc0227b9b035"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a161d46131bf312156758bc0227b9b035">&#9670;&#160;</a></span>ArmsMovementData()</h2>
+<a id="a3129b1a3eeb8d62f80e45c7dc7ba84af" name="a3129b1a3eeb8d62f80e45c7dc7ba84af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3129b1a3eeb8d62f80e45c7dc7ba84af">&#9670;&#160;</a></span>ArmsMovementData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,6 +163,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>ArmsStickReleased</b>
           <td>(</td>
           <td class="paramtype">Vector2&#160;</td>
           <td class="paramname"><em>armsControllerInput</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>armRotation</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -178,14 +189,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>ArmsStickReleased</b>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsControllerInput</a> = armsControllerInput;</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a> = isMouseController;</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsStickReleased</a> = armsStickReleased;</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="ttc" id="astruct_arms_movement_data_html_a06f5f4b0ceec504d825c835530a876e2"><div class="ttname"><a href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsMovementData.ArmsStickReleased</a></div><div class="ttdeci">bool ArmsStickReleased</div><div class="ttdoc">Action Map: Gameplay  True if the gamepad stick controlling the arms centred.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:28</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsControllerInput</a> = armsControllerInput;</div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827">ArmRotation</a> = armRotation;</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a> = isMouseController;</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsStickReleased</a> = armsStickReleased;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="ttc" id="astruct_arms_movement_data_html_a06f5f4b0ceec504d825c835530a876e2"><div class="ttname"><a href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsMovementData.ArmsStickReleased</a></div><div class="ttdeci">bool ArmsStickReleased</div><div class="ttdoc">Action Map: Gameplay  True if the gamepad stick controlling the arms centred.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:34</div></div>
+<div class="ttc" id="astruct_arms_movement_data_html_aa4d55807632b8cea27a98b31084fa827"><div class="ttname"><a href="struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827">ArmsMovementData.ArmRotation</a></div><div class="ttdeci">float ArmRotation</div><div class="ttdoc">Action Map: Gameplay  Float representing the rotation of the arms.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:22</div></div>
 <div class="ttc" id="astruct_arms_movement_data_html_aa7f49438ef107ac9810ddc7e8f240142"><div class="ttname"><a href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsMovementData.ArmsControllerInput</a></div><div class="ttdeci">Vector2 ArmsControllerInput</div><div class="ttdoc">Action Map: Gameplay  2D array representing horizontal and vertical axis for arms movement.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:16</div></div>
-<div class="ttc" id="astruct_arms_movement_data_html_ac4061c8419d2894ac58b937f5d1e92b5"><div class="ttname"><a href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">ArmsMovementData.IsMouseController</a></div><div class="ttdeci">bool IsMouseController</div><div class="ttdoc">Action Map: Gameplay  Boolean flag indicating if last input was from a mouse controller.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:22</div></div>
+<div class="ttc" id="astruct_arms_movement_data_html_ac4061c8419d2894ac58b937f5d1e92b5"><div class="ttname"><a href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">ArmsMovementData.IsMouseController</a></div><div class="ttdeci">bool IsMouseController</div><div class="ttdoc">Action Map: Gameplay  Boolean flag indicating if last input was from a mouse controller.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:28</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,12 +226,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>ArmsStickReleased</b>
 </dd>
 </dl>
 </div>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                                            : IReaderWriter</div>
-<div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsControllerInput</a>);</div>
-<div class="line"><span class="lineno">   40</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a>);</div>
-<div class="line"><span class="lineno">   41</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsStickReleased</a>);</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                                            : IReaderWriter</div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsControllerInput</a>);</div>
+<div class="line"><span class="lineno">   47</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827">ArmRotation</a>);</div>
+<div class="line"><span class="lineno">   48</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a>);</div>
+<div class="line"><span class="lineno">   49</span>        serializer.SerializeValue(ref <a class="code hl_variable" href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsStickReleased</a>);</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

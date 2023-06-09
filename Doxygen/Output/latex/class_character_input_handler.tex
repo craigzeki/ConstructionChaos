@@ -8,8 +8,7 @@ This class must be attached to each instance of the player~\newline
 
 
 
-Inheritance diagram for Character\+Input\+Handler\+:
-\nopagebreak
+Inheritance diagram for Character\+Input\+Handler\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,8 +17,7 @@ Inheritance diagram for Character\+Input\+Handler\+:
 \end{figure}
 
 
-Collaboration diagram for Character\+Input\+Handler\+:
-\nopagebreak
+Collaboration diagram for Character\+Input\+Handler\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -49,6 +47,8 @@ void \mbox{\hyperlink{class_character_input_handler_a10f78d8ebcea23940e210c3e476
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
+Vector2 \mbox{\hyperlink{class_character_input_handler_a163ce88b610fa00a1d478e126ecf2e85}{\+\_\+screen\+Origin}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 bool \mbox{\hyperlink{class_character_input_handler_ac43f3864282c7fbe620e1ae45bd2c5e9}{Menu\+Button\+Pressed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Action Map\+: Menu~\newline
  True if the \textquotesingle{}Do\+It\textquotesingle{} button is pressed. \end{DoxyCompactList}\item 
@@ -62,6 +62,8 @@ void \mbox{\hyperlink{class_character_input_handler_a0eefaa05fdf96e26df0640e1e4f
 IEnumerator \mbox{\hyperlink{class_character_input_handler_a291305cf089938f581826c77cfcb6728}{Wait\+To\+Enable}} ()
 \begin{DoxyCompactList}\small\item\em Waits for one frame before subscribing to the events~\newline
  This is to ensure that the network object has been spawned correctly first. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_input_handler_a9d99628772f2d38d089fbe997977ce1b}{On\+Disable}} ()
+\item 
 void \mbox{\hyperlink{class_character_input_handler_a29896600655e49f5ffa504067ff655e9}{Fixed\+Update}} ()
 \item 
 void \mbox{\hyperlink{class_character_input_handler_a7a3fb93901c933fc2225787cd7b7c9fd}{Override\+Input\+Data\+Server\+Rpc}} (\mbox{\hyperlink{struct_character_input_data}{Character\+Input\+Data}} input\+Data)
@@ -76,6 +78,8 @@ void \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec
 \begin{DoxyCompactList}\small\item\em Processes the mouse input and sets a rotation angle for the arms to target towards. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{Set\+Stick\+Move\+Arms}} (Input\+Action.\+Callback\+Context value)
 \begin{DoxyCompactList}\small\item\em Processes the gamepad stick input and sets a rotation angle for the arms to target towards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_input_handler_afb5e28347a96726a6b94e756f45c1a05}{Calculate\+Arm\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the arm rotation value based on which controller is active. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{Set\+Left\+Grab\+Button}} (Input\+Action.\+Callback\+Context value)
 \begin{DoxyCompactList}\small\item\em Processes a button press and sets whether the user is trying to grab with left hand. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{Set\+Right\+Grab\+Button}} (Input\+Action.\+Callback\+Context value)
@@ -91,8 +95,17 @@ Controls {\bfseries \+\_\+controls}
 \mbox{\Hypertarget{class_character_input_handler_a485f28df9e78f4b96f2f3b00f81ec020}\label{class_character_input_handler_a485f28df9e78f4b96f2f3b00f81ec020}} 
 \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{Control\+Action\+Maps}} {\bfseries \+\_\+current\+Action\+Map}
 \item 
+\mbox{\Hypertarget{class_character_input_handler_adec2464f849a0b4ad1428357a5bf3771}\label{class_character_input_handler_adec2464f849a0b4ad1428357a5bf3771}} 
+uint {\bfseries \+\_\+fixed\+Update\+Counter} = 0
+\item 
 \mbox{\Hypertarget{class_character_input_handler_ab69a0113b064f045aa8a90ceeedfc583}\label{class_character_input_handler_ab69a0113b064f045aa8a90ceeedfc583}} 
 bool {\bfseries \+\_\+menu\+Button\+Pressed} = false
+\item 
+\mbox{\Hypertarget{class_character_input_handler_a032c641ea4fe6f302f83923908b2cd81}\label{class_character_input_handler_a032c641ea4fe6f302f83923908b2cd81}} 
+Vector2 {\bfseries \+\_\+mouse\+World\+Position}
+\item 
+\mbox{\Hypertarget{class_character_input_handler_a6d61c6dc124f01b0280d2be16803caec}\label{class_character_input_handler_a6d61c6dc124f01b0280d2be16803caec}} 
+Vector2 {\bfseries \+\_\+delta} = Vector2.\+zero
 \end{DoxyCompactItemize}
 
 
@@ -124,6 +137,32 @@ Enum to represent each Action Map.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_character_input_handler_afb5e28347a96726a6b94e756f45c1a05}\label{class_character_input_handler_afb5e28347a96726a6b94e756f45c1a05}} 
+\index{CharacterInputHandler@{CharacterInputHandler}!CalculateArmRotation@{CalculateArmRotation}}
+\index{CalculateArmRotation@{CalculateArmRotation}!CharacterInputHandler@{CharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{CalculateArmRotation()}{CalculateArmRotation()}}
+{\footnotesize\ttfamily void Character\+Input\+Handler.\+Calculate\+Arm\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the arm rotation value based on which controller is active. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_ac4061c8419d2894ac58b937f5d1e92b5}{IsMouseController}})}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \_delta\ =\ CharacterInputData.ArmsMovementData.ArmsControllerInput\ -\/\ \_screenOrigin;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmRotation\ =\ Mathf.Atan2(\_delta.x,\ -\/\_delta.y)\ *\ Mathf.Rad2Deg;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmRotation\ =\ Mathf.Atan2(\mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}.x,\ -\/\mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}.y)\ *\ Mathf.Rad2Deg;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a29896600655e49f5ffa504067ff655e9}\label{class_character_input_handler_a29896600655e49f5ffa504067ff655e9}} 
 \index{CharacterInputHandler@{CharacterInputHandler}!FixedUpdate@{FixedUpdate}}
 \index{FixedUpdate@{FixedUpdate}!CharacterInputHandler@{CharacterInputHandler}}
@@ -132,10 +171,61 @@ Enum to represent each Action Map.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00089\ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer\ \&\&\ IsOwner)}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ OverrideInputDataServerRpc(\mbox{\hyperlink{struct_character_input_data}{CharacterInputData}});}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer\ \&\&\ IsOwner)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\_fixedUpdateCounter\ \%\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.NetworkFixedDeltaTimeItterations)\ ==\ 0)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OverrideInputDataServerRpc(\mbox{\hyperlink{struct_character_input_data}{CharacterInputData}});}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_fixedUpdateCounter\ =\ 1;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_fixedUpdateCounter++;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_character_input_handler_a9d99628772f2d38d089fbe997977ce1b}\label{class_character_input_handler_a9d99628772f2d38d089fbe997977ce1b}} 
+\index{CharacterInputHandler@{CharacterInputHandler}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!CharacterInputHandler@{CharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Character\+Input\+Handler.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_controls\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}{SetJump}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}{SetJump}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a654275d52249e74661150d96ce80c963}{SetMovePlayer}};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a654275d52249e74661150d96ce80c963}{SetMovePlayer}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}{SetCollapse}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}{SetCollapse}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}{SetMouseMoveArms}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}{SetMouseMoveArms}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{SetStickMoveArms}};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{SetStickMoveArms}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{SetLeftGrabButton}};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{SetLeftGrabButton}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{SetRightGrabButton}};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{SetRightGrabButton}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.performed\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}{SetMenuButtonPressed}};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.canceled\ -\/=\ \mbox{\hyperlink{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}{SetMenuButtonPressed}};}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a0eefaa05fdf96e26df0640e1e4fe2bbe}\label{class_character_input_handler_a0eefaa05fdf96e26df0640e1e4fe2bbe}} 
@@ -146,9 +236,9 @@ Enum to represent each Action Map.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00045\ \ \ \ \ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_character_input_handler_a291305cf089938f581826c77cfcb6728}{WaitToEnable}}());}
-\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_character_input_handler_a291305cf089938f581826c77cfcb6728}{WaitToEnable}}());}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a7a3fb93901c933fc2225787cd7b7c9fd}\label{class_character_input_handler_a7a3fb93901c933fc2225787cd7b7c9fd}} 
@@ -159,9 +249,9 @@ Enum to represent each Action Map.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00096\ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}\ =\ inputData;}
-\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}\ =\ inputData;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}\label{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}} 
@@ -183,9 +273,9 @@ Processes a button press and sets whether the user is trying to collapse.
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00126\ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ CharacterInputData.MoveVerticalAxis\ =\ value.ReadValue<\textcolor{keywordtype}{float}>();}
-\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ CharacterInputData.MoveVerticalAxis\ =\ value.ReadValue<\textcolor{keywordtype}{float}>();}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}\label{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}} 
@@ -207,9 +297,9 @@ Processes a button press and sets whether the user is trying to jump.
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00106\ \ \ \ \ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ CharacterInputData.JumpValue\ =\ value.ReadValueAsButton();}
-\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ CharacterInputData.JumpValue\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}\label{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}} 
@@ -231,9 +321,9 @@ Processes a button press and sets whether the user is trying to grab with left h
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00159\ \ \ \ \ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ CharacterInputData.IsGrabbingLeft\ =\ value.ReadValueAsButton();}
-\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ CharacterInputData.IsGrabbingLeft\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}\label{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}} 
@@ -256,9 +346,9 @@ Processes a button press and sets whether the user is trying to do something on 
 Only use to link to the Input System~\newline
 Only for testing enabling of different Action Maps
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00179\ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \_menuButtonPressed\ =\ value.ReadValueAsButton();}
-\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \_menuButtonPressed\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}\label{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}} 
@@ -280,10 +370,11 @@ Processes the mouse input and sets a rotation angle for the arms to target towar
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00136\ \ \ \ \ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmsControllerInput\ =\ value.ReadValue<Vector2>();}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.IsMouseController\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmsControllerInput\ =\ value.ReadValue<Vector2>();}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.IsMouseController\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_input_handler_afb5e28347a96726a6b94e756f45c1a05}{CalculateArmRotation}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a654275d52249e74661150d96ce80c963}\label{class_character_input_handler_a654275d52249e74661150d96ce80c963}} 
@@ -305,9 +396,9 @@ Processes an axis input for left right movement and sets the intended direction.
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00116\ \ \ \ \ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ CharacterInputData.MoveHorizontalAxis\ =\ value.ReadValue<\textcolor{keywordtype}{float}>();}
-\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ CharacterInputData.MoveHorizontalAxis\ =\ value.ReadValue<\textcolor{keywordtype}{float}>();}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}\label{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}} 
@@ -329,9 +420,9 @@ Processes a button press and sets whether the user is trying to grab with right 
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00169\ \ \ \ \ \{}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ CharacterInputData.IsGrabbingRight\ =\ value.ReadValueAsButton();}
-\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ CharacterInputData.IsGrabbingRight\ =\ value.ReadValueAsButton();}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}\label{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}} 
@@ -353,11 +444,12 @@ Processes the gamepad stick input and sets a rotation angle for the arms to targ
 
 Only use to link to the Input System
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00147\ \ \ \ \ \{}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmsControllerInput\ =\ value.ReadValue<Vector2>();}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.IsMouseController\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmsStickReleased\ =\ \mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}.Vector2Approximately(Vector2.zero);}
-\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmsControllerInput\ =\ value.ReadValue<Vector2>();}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.IsMouseController\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ CharacterInputData.ArmsMovementData.ArmsStickReleased\ =\ \mbox{\hyperlink{struct_character_input_data}{CharacterInputData}}.ArmsMovementData.\mbox{\hyperlink{struct_arms_movement_data_aa7f49438ef107ac9810ddc7e8f240142}{ArmsControllerInput}}.Vector2Approximately(Vector2.zero);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_input_handler_afb5e28347a96726a6b94e756f45c1a05}{CalculateArmRotation}}();}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a10f78d8ebcea23940e210c3e476a8a13}\label{class_character_input_handler_a10f78d8ebcea23940e210c3e476a8a13}} 
@@ -377,32 +469,32 @@ Change the controller action map.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00188\ \ \ \ \ \{}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_map\ ==\ \_currentActionMap)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00190\ }
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ map\ is\ unknown\ or\ the\ number\ of\ action\ maps,\ do\ nothing}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_map\ ==\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.UNKNOWN)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_map\ ==\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.NUM\_OF\_ACTIONMAPS)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ all\ action\ maps}}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \_controls.Disable();}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ the\ action\ map\ passed\ in}}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\_map)}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.GAMEPLAY:}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Gameplay.Enable();}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.MENU:}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Menu.Enable();}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ current\ action\ map}}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \_map;}
-\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_map\ ==\ \_currentActionMap)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ map\ is\ unknown\ or\ the\ number\ of\ action\ maps,\ do\ nothing}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_map\ ==\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.UNKNOWN)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_map\ ==\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.NUM\_OF\_ACTIONMAPS)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disable\ all\ action\ maps}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \_controls.Disable();}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ the\ action\ map\ passed\ in}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\_map)}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.GAMEPLAY:}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Gameplay.Enable();}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.MENU:}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_controls.Menu.Enable();}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ current\ action\ map}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \_map;}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a291305cf089938f581826c77cfcb6728}\label{class_character_input_handler_a291305cf089938f581826c77cfcb6728}} 
@@ -418,44 +510,55 @@ Waits for one frame before subscribing to the events~\newline
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00054\ \ \ \ \ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsOwner)\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \_controls\ =\ \textcolor{keyword}{new}\ Controls();}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.UNKNOWN;}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_input_handler_a10f78d8ebcea23940e210c3e476a8a13}{SwitchActionMap}}(\mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.GAMEPLAY);}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}{SetJump}};}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}{SetJump}};}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsOwner)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_controls\ =\ \textcolor{keyword}{new}\ Controls();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_currentActionMap\ =\ \mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.UNKNOWN;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_input_handler_a10f78d8ebcea23940e210c3e476a8a13}{SwitchActionMap}}(\mbox{\hyperlink{class_character_input_handler_ae81e60add6deed99b67faa3a96946713}{ControlActionMaps}}.GAMEPLAY);}
 \DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a654275d52249e74661150d96ce80c963}{SetMovePlayer}};}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a654275d52249e74661150d96ce80c963}{SetMovePlayer}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}{SetJump}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Jump.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a9cc4b779c96446505439df1250c2b7d8}{SetJump}};}
 \DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}{SetCollapse}};}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}{SetCollapse}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a654275d52249e74661150d96ce80c963}{SetMovePlayer}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MovePlayer.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a654275d52249e74661150d96ce80c963}{SetMovePlayer}};}
 \DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}{SetMouseMoveArms}};}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}{SetMouseMoveArms}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}{SetCollapse}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Collapse.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_adffb4b8f08ca33cbb896a8952fd9e3b4}{SetCollapse}};}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{SetStickMoveArms}};}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{SetStickMoveArms}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}{SetMouseMoveArms}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_controls.Gameplay.MouseMoveArms.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_ab9e17780d7a7a6ff19b1907aaec4dfd4}{SetMouseMoveArms}};}
 \DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{SetLeftGrabButton}};}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{SetLeftGrabButton}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{SetStickMoveArms}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \_controls.Gameplay.StickMoveArms.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_af8a4515e69aee4ead10954fdf7e4998a}{SetStickMoveArms}};}
 \DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{SetRightGrabButton}};}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{SetRightGrabButton}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{SetLeftGrabButton}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabLeftHand.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a8fd3710e3402d70b687f355186c1a920}{SetLeftGrabButton}};}
 \DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}{SetMenuButtonPressed}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}{SetMenuButtonPressed}};}
-\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{SetRightGrabButton}};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_controls.Gameplay.GrabRightHand.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a89bb786f902a9ea60e2bffd506718487}{SetRightGrabButton}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.performed\ +=\ \mbox{\hyperlink{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}{SetMenuButtonPressed}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \_controls.Menu.DoIt.canceled\ +=\ \mbox{\hyperlink{class_character_input_handler_a01e366860c217a76e9b05ed1ea9e38f0}{SetMenuButtonPressed}};}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_character_input_handler_a163ce88b610fa00a1d478e126ecf2e85}\label{class_character_input_handler_a163ce88b610fa00a1d478e126ecf2e85}} 
+\index{CharacterInputHandler@{CharacterInputHandler}!\_screenOrigin@{\_screenOrigin}}
+\index{\_screenOrigin@{\_screenOrigin}!CharacterInputHandler@{CharacterInputHandler}}
+\doxysubsubsection{\texorpdfstring{\_screenOrigin}{\_screenOrigin}}
+{\footnotesize\ttfamily Vector2 Character\+Input\+Handler.\+\_\+screen\+Origin\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{\ \textcolor{keyword}{get}\ =>\ \mbox{\hyperlink{class_follow_cam}{FollowCam}}.Instance.Cam.WorldToScreenPoint(transform.GetChild(1).position);\ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_a2c191c85e573b789aa84b8e4ff46052c}\label{class_character_input_handler_a2c191c85e573b789aa84b8e4ff46052c}} 
 \index{CharacterInputHandler@{CharacterInputHandler}!CurrentActionMap@{CurrentActionMap}}
 \index{CurrentActionMap@{CurrentActionMap}!CharacterInputHandler@{CharacterInputHandler}}
@@ -468,7 +571,7 @@ Which Action Map is active.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00042\ \{\ \textcolor{keyword}{get}\ =>\ \_currentActionMap;\ \}}
+\DoxyCodeLine{00045\ \{\ \textcolor{keyword}{get}\ =>\ \_currentActionMap;\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_character_input_handler_ac43f3864282c7fbe620e1ae45bd2c5e9}\label{class_character_input_handler_ac43f3864282c7fbe620e1ae45bd2c5e9}} 
@@ -484,6 +587,6 @@ Action Map\+: Menu~\newline
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get}\ =>\ \_menuButtonPressed;\ \}}
+\DoxyCodeLine{00040\ \{\ \textcolor{keyword}{get}\ =>\ \_menuButtonPressed;\ \}}
 
 \end{DoxyCode}

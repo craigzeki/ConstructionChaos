@@ -1,6 +1,8 @@
 <map id="ObjectiveActionBehaviour" name="ObjectiveActionBehaviour">
-<area shape="rect" id="node1" title="This is the base class for any action behaviour &#45; e.g. hold &#160;It provides condition and zone detection..." alt="" coords="22,79,190,104"/>
-<area shape="rect" id="node3" href="$class_action_grab.html" title="Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager." alt="" coords="5,152,92,177"/>
-<area shape="rect" id="node4" href="$class_action_swing.html" title=" " alt="" coords="116,152,211,177"/>
-<area shape="rect" id="node2" title=" " alt="" coords="51,5,161,31"/>
+<area shape="rect" id="node1" title="This is the base class for any action behaviour &#45; e.g. hold &#160;It provides condition and zone detection..." alt="" coords="133,79,301,104"/>
+<area shape="rect" id="node3" href="$class_action_hold.html" title="Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager." alt="" coords="5,152,91,177"/>
+<area shape="rect" id="node4" href="$class_action_push.html" title=" " alt="" coords="115,152,205,177"/>
+<area shape="rect" id="node5" href="$class_action_swing.html" title="Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager." alt="" coords="229,152,323,177"/>
+<area shape="rect" id="node6" href="$class_action_throw.html" title="Class to detect when an object has been grabbed by a player and report this to the ObjectiveManager." alt="" coords="348,152,441,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="162,5,273,31"/>
 </map>

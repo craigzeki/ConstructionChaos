@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: StickMovement Class Reference</title>
+<title>Construction Chaos: StickMovement Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('class_stick_movement.html',''); initRe
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -113,34 +114,48 @@ Collaboration diagram for StickMovement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stick_movement__coll__graph.png" border="0" usemap="#a_stick_movement_coll__map" alt="Collaboration graph"/></div>
 <map name="a_stick_movement_coll__map" id="a_stick_movement_coll__map">
-<area shape="rect" title=" " alt="" coords="2235,541,2345,567"/>
-<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="2120,541,2185,567"/>
-<area shape="rect" title=" " alt="" coords="964,520,1089,545"/>
-<area shape="rect" href="class_objective_action_reporter.html" title=" " alt="" coords="1767,475,1928,500"/>
-<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="1255,491,1333,516"/>
-<area shape="rect" href="class_character_input_handler.html" title="This class must be attached to each instance of the player &#160;It handles the input from the player and ..." alt="" coords="1219,592,1369,617"/>
-<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1479,475,1585,500"/>
-<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1257,289,1331,315"/>
-<area shape="rect" title=" " alt="" coords="947,401,1107,427"/>
-<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="267,37,379,63"/>
-<area shape="rect" title=" " alt="" coords="45,129,164,155"/>
-<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="267,269,379,295"/>
-<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="266,88,379,113"/>
-<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="962,217,1091,243"/>
-<area shape="rect" title=" " alt="" coords="6,5,203,31"/>
-<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="625,189,712,215"/>
-<area shape="rect" title=" " alt="" coords="6,269,203,295"/>
-<area shape="rect" title=" " alt="" coords="35,469,174,495"/>
-<area shape="rect" href="struct_character_input_data.html" title=" " alt="" coords="602,520,735,545"/>
-<area shape="rect" href="struct_arms_movement_data.html" title="Container for Arms Movement Input Data." alt="" coords="253,469,392,495"/>
-<area shape="rect" title=" " alt="" coords="5,72,204,97"/>
-<area shape="rect" title=" " alt="" coords="561,239,776,264"/>
-<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="643,292,694,317"/>
-<area shape="rect" title=" " alt="" coords="267,319,378,344"/>
-<area shape="rect" title=" " alt="" coords="255,220,390,245"/>
+<area shape="rect" title=" " alt="" coords="1840,384,1951,409"/>
+<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="2168,456,2233,481"/>
+<area shape="rect" title=" " alt="" coords="428,440,553,465"/>
+<area shape="rect" href="class_objective_action_reporter.html" title=" " alt="" coords="1815,440,1976,465"/>
+<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="990,389,1069,415"/>
+<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="811,281,862,307"/>
+<area shape="rect" href="class_character_input_handler.html" title="This class must be attached to each instance of the player &#160;It handles the input from the player and ..." alt="" coords="1119,500,1270,525"/>
+<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1580,389,1687,415"/>
+<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1387,225,1461,251"/>
+<area shape="rect" title=" " alt="" coords="1115,109,1275,135"/>
+<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="435,331,547,356"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="220,80,325,105"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="435,184,547,209"/>
+<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="434,21,547,47"/>
+<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="1130,159,1259,184"/>
+<area shape="rect" title=" " alt="" coords="5,80,124,105"/>
+<area shape="rect" title=" " alt="" coords="174,331,371,356"/>
+<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="793,123,880,148"/>
+<area shape="rect" title=" " alt="" coords="174,184,371,209"/>
+<area shape="rect" title=" " alt="" coords="203,597,342,623"/>
+<area shape="rect" href="struct_character_input_data.html" title=" " alt="" coords="770,620,903,645"/>
+<area shape="rect" href="struct_arms_movement_data.html" title="Container for Arms Movement Input Data." alt="" coords="421,597,560,623"/>
+<area shape="rect" title=" " alt="" coords="173,5,372,31"/>
+<area shape="rect" title=" " alt="" coords="729,172,944,197"/>
+<area shape="rect" title=" " alt="" coords="423,272,558,297"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aeb592dabc8b02b24199fb05de26c2c44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#aeb592dabc8b02b24199fb05de26c2c44">DoCollapse</a> (bool collapse, bool breakApart)</td></tr>
+<tr class="separator:aeb592dabc8b02b24199fb05de26c2c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a064ea620f39535e1b0d4e85e768cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#a49a064ea620f39535e1b0d4e85e768cc">IsOnGround</a> (Collider2D other=null)</td></tr>
+<tr class="memdesc:a49a064ea620f39535e1b0d4e85e768cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the user is contacting the ground.  <br /></td></tr>
+<tr class="separator:a49a064ea620f39535e1b0d4e85e768cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
+<tr class="memitem:a386206900b13d3727f54d3df33dcfd17 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a386206900b13d3727f54d3df33dcfd17">ResetLocalPosition</a> ()</td></tr>
+<tr class="separator:a386206900b13d3727f54d3df33dcfd17 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a9c609d3fa00d9066e88237f21f598fc8">OnCollapse</a> ((bool collapse, bool breakApart) collapseInfo)</td></tr>
+<tr class="memdesc:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly.  <br /></td></tr>
+<tr class="separator:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7ef40d8fcea39120bd96eaa364610463"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#a7ef40d8fcea39120bd96eaa364610463">Awake</a> ()</td></tr>
@@ -152,12 +167,18 @@ Protected Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:afb8a17bace38c3a570a013e9c727f876"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#afb8a17bace38c3a570a013e9c727f876">FixedUpdate</a> ()</td></tr>
 <tr class="separator:afb8a17bace38c3a570a013e9c727f876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb97f01def2c5c3460fa8d12fd396963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#aeb97f01def2c5c3460fa8d12fd396963">LimitVelocity</a> ()</td></tr>
+<tr class="separator:aeb97f01def2c5c3460fa8d12fd396963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a046371064fa68f3d5d80c8539dde1f56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#a046371064fa68f3d5d80c8539dde1f56">HandleMovementAndJump</a> (<a class="el" href="struct_character_input_data.html">CharacterInputData</a> characterInputData)</td></tr>
 <tr class="memdesc:a046371064fa68f3d5d80c8539dde1f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player on the server.  <br /></td></tr>
 <tr class="separator:a046371064fa68f3d5d80c8539dde1f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2e6c2b6073f49f998c437571dbb7e69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#ad2e6c2b6073f49f998c437571dbb7e69">IsOnGround</a> ()</td></tr>
-<tr class="memdesc:ad2e6c2b6073f49f998c437571dbb7e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the user is contacting the ground.  <br /></td></tr>
-<tr class="separator:ad2e6c2b6073f49f998c437571dbb7e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f9553d5a7655471aad25dc79e12b0fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#a5f9553d5a7655471aad25dc79e12b0fd">IsHoldingLedge</a> ()</td></tr>
+<tr class="separator:a5f9553d5a7655471aad25dc79e12b0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d99d8f68feb3864a02ad4e4b58d378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#ab2d99d8f68feb3864a02ad4e4b58d378">ReleaseLedge</a> ()</td></tr>
+<tr class="separator:ab2d99d8f68feb3864a02ad4e4b58d378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03fa1787b4a1f5f4fd11208330005ad"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#ae03fa1787b4a1f5f4fd11208330005ad">WaitToJumpAgain</a> ()</td></tr>
+<tr class="memdesc:ae03fa1787b4a1f5f4fd11208330005ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a set number of physics frames before allowing the player to jump again.  <br /></td></tr>
+<tr class="separator:ae03fa1787b4a1f5f4fd11208330005ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2b37d327fcfc3141f92d54ece98c06d"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stick_movement.html#ac2b37d327fcfc3141f92d54ece98c06d">MoveRight</a> (float seconds)</td></tr>
 <tr class="memdesc:ac2b37d327fcfc3141f92d54ece98c06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the legs using force - leg angles are changed in the animator.  <br /></td></tr>
 <tr class="separator:ac2b37d327fcfc3141f92d54ece98c06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,6 +191,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a66fb6dc23b14f22c26cc3e4da6061f8c"><td class="memItemLeft" align="right" valign="top"><a id="a66fb6dc23b14f22c26cc3e4da6061f8c" name="a66fb6dc23b14f22c26cc3e4da6061f8c"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>_speed</b> = 1.5f</td></tr>
 <tr class="separator:a66fb6dc23b14f22c26cc3e4da6061f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542662503670b5ca108af9ea42f5ba86"><td class="memItemLeft" align="right" valign="top"><a id="a542662503670b5ca108af9ea42f5ba86" name="a542662503670b5ca108af9ea42f5ba86"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_maxVelocity</b> = 23f</td></tr>
+<tr class="separator:a542662503670b5ca108af9ea42f5ba86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abed942d3176dc3cec61ef06543762448"><td class="memItemLeft" align="right" valign="top"><a id="abed942d3176dc3cec61ef06543762448" name="abed942d3176dc3cec61ef06543762448"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>_stepWait</b> = 0.5f</td></tr>
 <tr class="separator:abed942d3176dc3cec61ef06543762448"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +222,7 @@ Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><b>_bodyRB</b></t
 float&#160;</td><td class="memItemRight" valign="bottom"><b>_verticalMinValue</b> = 0.5f</td></tr>
 <tr class="separator:a29f55f6af85e27958c7ce72d0c853c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa474169d34568c94bbae1dff9d11885e"><td class="memItemLeft" align="right" valign="top"><a id="aa474169d34568c94bbae1dff9d11885e" name="aa474169d34568c94bbae1dff9d11885e"></a>
-uint&#160;</td><td class="memItemRight" valign="bottom"><b>_timeBetweenJumpsInPhysicsFrames</b> = 5</td></tr>
+uint&#160;</td><td class="memItemRight" valign="bottom"><b>_timeBetweenJumpsInPhysicsFrames</b> = 10</td></tr>
 <tr class="separator:aa474169d34568c94bbae1dff9d11885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf7b944f82df4806c8c2af19e0ba95a"><td class="memItemLeft" align="right" valign="top"><a id="aadf7b944f82df4806c8c2af19e0ba95a" name="aadf7b944f82df4806c8c2af19e0ba95a"></a>
 Animator&#160;</td><td class="memItemRight" valign="bottom"><b>_anim</b></td></tr>
@@ -212,16 +236,18 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_walkRight</b></
 <tr class="memitem:a28934b54aed252375af11eb1bbc108ec"><td class="memItemLeft" align="right" valign="top"><a id="a28934b54aed252375af11eb1bbc108ec" name="a28934b54aed252375af11eb1bbc108ec"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_collapse</b> = false</td></tr>
 <tr class="separator:a28934b54aed252375af11eb1bbc108ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9e7b56987dd2e211d1eb252d033a8ab"><td class="memItemLeft" align="right" valign="top"><a id="ae9e7b56987dd2e211d1eb252d033a8ab" name="ae9e7b56987dd2e211d1eb252d033a8ab"></a>
-uint&#160;</td><td class="memItemRight" valign="bottom"><b>_framesToNextJump</b> = 0</td></tr>
-<tr class="separator:ae9e7b56987dd2e211d1eb252d033a8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09edb58bf96f7ec86cf392a0a7eecdad"><td class="memItemLeft" align="right" valign="top"><a id="a09edb58bf96f7ec86cf392a0a7eecdad" name="a09edb58bf96f7ec86cf392a0a7eecdad"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_allowedToJump</b> = true</td></tr>
+<tr class="separator:a09edb58bf96f7ec86cf392a0a7eecdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af183806dfe701ea7ba94a4803aaacc28"><td class="memItemLeft" align="right" valign="top"><a id="af183806dfe701ea7ba94a4803aaacc28" name="af183806dfe701ea7ba94a4803aaacc28"></a>
+List&lt; <a class="el" href="class_grab.html">Grab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_grabbers</b> = new List&lt;<a class="el" href="class_grab.html">Grab</a>&gt;()</td></tr>
+<tr class="separator:af183806dfe701ea7ba94a4803aaacc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab511dcd1b858496435d874b7e76e0966"><td class="memItemLeft" align="right" valign="top"><a id="ab511dcd1b858496435d874b7e76e0966" name="ab511dcd1b858496435d874b7e76e0966"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_maxSqrVelocity</b></td></tr>
+<tr class="separator:ab511dcd1b858496435d874b7e76e0966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
-<tr class="memitem:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a9c609d3fa00d9066e88237f21f598fc8">OnCollapse</a> ((bool collapse, bool breakApart) collapseInfo)</td></tr>
-<tr class="memdesc:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly.  <br /></td></tr>
-<tr class="separator:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
 <tr class="memitem:ae120b5caa1f4e32e2df5d94659660e47 inherit pub_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="ae120b5caa1f4e32e2df5d94659660e47" name="ae120b5caa1f4e32e2df5d94659660e47"></a>
 ulong&#160;</td><td class="memItemRight" valign="bottom"><b>ClientId</b></td></tr>
@@ -233,6 +259,10 @@ ulong&#160;</td><td class="memItemRight" valign="bottom"><b>ClientId</b></td></t
 <a class="el" href="class_character_input_handler.html">CharacterInputHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CharacterInputHandler</b></td></tr>
 <tr class="memdesc:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to this characters input handler, usually found on the parent of the player character prefab. <br /></td></tr>
 <tr class="separator:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20102c2e3c74be6bd44d84503a5d663 inherit pub_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="aa20102c2e3c74be6bd44d84503a5d663" name="aa20102c2e3c74be6bd44d84503a5d663"></a>
+<a class="el" href="class_stick_movement.html">StickMovement</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StickMovement</b></td></tr>
+<tr class="memdesc:aa20102c2e3c74be6bd44d84503a5d663 inherit pub_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to the top level movement controller - used to initiate collapse from other body parts. <br /></td></tr>
+<tr class="separator:aa20102c2e3c74be6bd44d84503a5d663 inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
 <tr class="memitem:acbe21edc246bbc1a07f9d7ad3aef7ed0 inherit pro_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="acbe21edc246bbc1a07f9d7ad3aef7ed0" name="acbe21edc246bbc1a07f9d7ad3aef7ed0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isActive</b> = true</td></tr>
@@ -268,19 +298,57 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_ragdoll.html">Ragdoll</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        <span class="comment">//not calling base.Awake() as do not need the ragdoll effects, only access to set the collapse feature</span></div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>        <span class="comment">// Get all the ragdoll parts and set the input handler</span></div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_class" href="class_ragdoll.html">Ragdoll</a>[] ragdolls = GetComponentsInChildren&lt;Ragdoll&gt;();</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; ragdolls.Length; i++)</div>
-<div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            ragdolls[i].<a class="code hl_variable" href="class_ragdoll.html#acaaa2340a31b2cab040df748984d90dd">CharacterInputHandler</a> = <a class="code hl_variable" href="class_ragdoll.html#acaaa2340a31b2cab040df748984d90dd">CharacterInputHandler</a>;</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        <span class="comment">//not calling base.Awake() as do not need the ragdoll effects, only access to set the collapse feature</span></div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>        <span class="comment">// Get all the ragdoll parts and set the input handler</span></div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_class" href="class_ragdoll.html">Ragdoll</a>[] ragdolls = GetComponentsInChildren&lt;Ragdoll&gt;();</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; ragdolls.Length; i++)</div>
+<div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>            ragdolls[i].<a class="code hl_variable" href="class_ragdoll.html#acaaa2340a31b2cab040df748984d90dd">CharacterInputHandler</a> = <a class="code hl_variable" href="class_ragdoll.html#acaaa2340a31b2cab040df748984d90dd">CharacterInputHandler</a>;</div>
+<div class="line"><span class="lineno">   48</span>            ragdolls[i].<a class="code hl_variable" href="class_ragdoll.html#aa20102c2e3c74be6bd44d84503a5d663">StickMovement</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>        _grabbers = GetComponentsInChildren&lt;Grab&gt;().ToList&lt;<a class="code hl_class" href="class_grab.html">Grab</a>&gt;();</div>
+<div class="line"><span class="lineno">   52</span>        _maxSqrVelocity = _maxVelocity * _maxVelocity;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="ttc" id="aclass_grab_html"><div class="ttname"><a href="class_grab.html">Grab</a></div><div class="ttdef"><b>Definition:</b> Grab.cs:8</div></div>
 <div class="ttc" id="aclass_ragdoll_html"><div class="ttname"><a href="class_ragdoll.html">Ragdoll</a></div><div class="ttdoc">Base class for all Ragdoll behaviour.</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:12</div></div>
+<div class="ttc" id="aclass_ragdoll_html_aa20102c2e3c74be6bd44d84503a5d663"><div class="ttname"><a href="class_ragdoll.html#aa20102c2e3c74be6bd44d84503a5d663">Ragdoll.StickMovement</a></div><div class="ttdeci">StickMovement StickMovement</div><div class="ttdoc">A reference to the top level movement controller - used to initiate collapse from other body parts.</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:57</div></div>
 <div class="ttc" id="aclass_ragdoll_html_acaaa2340a31b2cab040df748984d90dd"><div class="ttname"><a href="class_ragdoll.html#acaaa2340a31b2cab040df748984d90dd">Ragdoll.CharacterInputHandler</a></div><div class="ttdeci">CharacterInputHandler CharacterInputHandler</div><div class="ttdoc">A reference to this characters input handler, usually found on the parent of the player character pre...</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:22</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeb592dabc8b02b24199fb05de26c2c44" name="aeb592dabc8b02b24199fb05de26c2c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb592dabc8b02b24199fb05de26c2c44">&#9670;&#160;</a></span>DoCollapse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StickMovement.DoCollapse </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>collapse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>breakApart</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        _collapse = collapse;</div>
+<div class="line"><span class="lineno">   68</span>        gameObject.BroadcastMessage(<span class="stringliteral">&quot;OnCollapse&quot;</span>, (collapse, breakApart));</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -306,12 +374,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   48</span>    {</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">if</span> (IsServer)</div>
-<div class="line"><span class="lineno">   50</span>            <a class="code hl_function" href="class_stick_movement.html#a046371064fa68f3d5d80c8539dde1f56">HandleMovementAndJump</a>(<a class="code hl_class" href="class_character_input_handler.html">CharacterInputHandler</a>.CharacterInputData);</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (IsServer)</div>
+<div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_function" href="class_stick_movement.html#a046371064fa68f3d5d80c8539dde1f56">HandleMovementAndJump</a>(<a class="code hl_class" href="class_character_input_handler.html">CharacterInputHandler</a>.CharacterInputData);</div>
+<div class="line"><span class="lineno">   60</span>            LimitVelocity();</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>            </div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 <div class="ttc" id="aclass_character_input_handler_html"><div class="ttname"><a href="class_character_input_handler.html">CharacterInputHandler</a></div><div class="ttdoc">This class must be attached to each instance of the player  It handles the input from the player and ...</div><div class="ttdef"><b>Definition:</b> CharacterInputHandler.cs:14</div></div>
-<div class="ttc" id="aclass_stick_movement_html_a046371064fa68f3d5d80c8539dde1f56"><div class="ttname"><a href="class_stick_movement.html#a046371064fa68f3d5d80c8539dde1f56">StickMovement.HandleMovementAndJump</a></div><div class="ttdeci">void HandleMovementAndJump(CharacterInputData characterInputData)</div><div class="ttdoc">Moves the player on the server.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:56</div></div>
+<div class="ttc" id="aclass_stick_movement_html_a046371064fa68f3d5d80c8539dde1f56"><div class="ttname"><a href="class_stick_movement.html#a046371064fa68f3d5d80c8539dde1f56">StickMovement.HandleMovementAndJump</a></div><div class="ttdeci">void HandleMovementAndJump(CharacterInputData characterInputData)</div><div class="ttdoc">Moves the player on the server.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:85</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -340,77 +412,73 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
 </div><div class="memdoc">
 
 <p>Moves the player on the server. </p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>        <span class="comment">// Handle movement</span></div>
-<div class="line"><span class="lineno">   59</span>        <span class="comment">// Check if user is pressing up or down</span></div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span>(!Mathf.Approximately(characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a5d375c26c82543e6b7549d381b35d3e3">MoveVerticalAxis</a>, 0f))</div>
-<div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            <span class="comment">// Check if the axis input is above a tolerance to try and reject unintentional up / down movement</span></div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordtype">bool</span> newCollapse = characterInputData.MoveVerticalAxis &gt;= _verticalMinValue ? false : characterInputData.MoveVerticalAxis &lt;= (-_verticalMinValue) ? <span class="keyword">true</span> : _collapse;</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (newCollapse != _collapse)</div>
-<div class="line"><span class="lineno">   65</span>            {</div>
-<div class="line"><span class="lineno">   66</span>                <span class="comment">// Collapse the player and send a message to all the body parts to do the same</span></div>
-<div class="line"><span class="lineno">   67</span>                _collapse = newCollapse;</div>
-<div class="line"><span class="lineno">   68</span>                gameObject.BroadcastMessage(<span class="stringliteral">&quot;OnCollapse&quot;</span>, (_collapse, <span class="keyword">true</span>));</div>
-<div class="line"><span class="lineno">   69</span>            }</div>
-<div class="line"><span class="lineno">   70</span>            Debug.Log(<span class="stringliteral">&quot;_collapse: &quot;</span> + _collapse.ToString());</div>
-<div class="line"><span class="lineno">   71</span>        }</div>
-<div class="line"><span class="lineno">   72</span>        </div>
-<div class="line"><span class="lineno">   73</span>        <span class="comment">// Check if the user is inputting horizontal movement</span></div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (!Mathf.Approximately(characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a61444ad8dc71e41e62e33034361ee614">MoveHorizontalAxis</a>, 0f) &amp;&amp; !_collapse)</div>
-<div class="line"><span class="lineno">   75</span>        {</div>
-<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">if</span> (characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a61444ad8dc71e41e62e33034361ee614">MoveHorizontalAxis</a> &gt; 0)</div>
-<div class="line"><span class="lineno">   77</span>            {</div>
-<div class="line"><span class="lineno">   78</span>                <span class="comment">// Move right</span></div>
-<div class="line"><span class="lineno">   79</span>                _anim.Play(<span class="stringliteral">&quot;WalkRight&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>                <span class="keywordflow">if</span> (_walkLeft != <span class="keyword">null</span>) StopCoroutine(_walkLeft);</div>
-<div class="line"><span class="lineno">   81</span>                _walkRight = StartCoroutine(<a class="code hl_function" href="class_stick_movement.html#ac2b37d327fcfc3141f92d54ece98c06d">MoveRight</a>(_stepWait));</div>
-<div class="line"><span class="lineno">   82</span>            }</div>
-<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   84</span>            {</div>
-<div class="line"><span class="lineno">   85</span>                <span class="comment">// Move left</span></div>
-<div class="line"><span class="lineno">   86</span>                _anim.Play(<span class="stringliteral">&quot;WalkLeft&quot;</span>);</div>
-<div class="line"><span class="lineno">   87</span>                <span class="keywordflow">if</span> (_walkRight != <span class="keyword">null</span>) StopCoroutine(_walkRight);</div>
-<div class="line"><span class="lineno">   88</span>                _walkLeft = StartCoroutine(<a class="code hl_function" href="class_stick_movement.html#a34744cfccf0c3817cc7f93a95289d68d">MoveLeft</a>(_stepWait));</div>
-<div class="line"><span class="lineno">   89</span>            }</div>
-<div class="line"><span class="lineno">   90</span>        }</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   92</span>        {</div>
-<div class="line"><span class="lineno">   93</span>            <span class="comment">// Idle</span></div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> (_walkLeft != <span class="keyword">null</span>) StopCoroutine(_walkLeft);</div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> (_walkRight != <span class="keyword">null</span>) StopCoroutine(_walkRight);</div>
-<div class="line"><span class="lineno">   96</span>            _anim.Play(<span class="stringliteral">&quot;Idle&quot;</span>);</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>        <span class="comment">// Handle jumping</span></div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">if</span> (_framesToNextJump &gt; 0)</div>
-<div class="line"><span class="lineno">  101</span>        {</div>
-<div class="line"><span class="lineno">  102</span>            _framesToNextJump--;</div>
-<div class="line"><span class="lineno">  103</span>        }</div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  105</span>        {</div>
-<div class="line"><span class="lineno">  106</span>            <span class="comment">// Check if user can and is requesting to jump</span></div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="class_stick_movement.html#ad2e6c2b6073f49f998c437571dbb7e69">IsOnGround</a>() &amp;&amp; !_collapse &amp;&amp; characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a2df8e170322366799f463049c1503300">JumpValue</a>)</div>
-<div class="line"><span class="lineno">  108</span>            {</div>
-<div class="line"><span class="lineno">  109</span>                <span class="comment">// Do jump</span></div>
-<div class="line"><span class="lineno">  110</span>                _bodyRB.AddForce(Vector2.up * _jumpForce);</div>
-<div class="line"><span class="lineno">  111</span>                Debug.Log(<span class="stringliteral">&quot;Jumped&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span>                <span class="comment">//_jumpValue= false;</span></div>
-<div class="line"><span class="lineno">  113</span>            }</div>
-<div class="line"><span class="lineno">  114</span>            _framesToNextJump = _timeBetweenJumpsInPhysicsFrames;</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
-<div class="ttc" id="aclass_stick_movement_html_a34744cfccf0c3817cc7f93a95289d68d"><div class="ttname"><a href="class_stick_movement.html#a34744cfccf0c3817cc7f93a95289d68d">StickMovement.MoveLeft</a></div><div class="ttdeci">IEnumerator MoveLeft(float seconds)</div><div class="ttdoc">Move the legs using force - leg angles are changed in the animator.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:153</div></div>
-<div class="ttc" id="aclass_stick_movement_html_ac2b37d327fcfc3141f92d54ece98c06d"><div class="ttname"><a href="class_stick_movement.html#ac2b37d327fcfc3141f92d54ece98c06d">StickMovement.MoveRight</a></div><div class="ttdeci">IEnumerator MoveRight(float seconds)</div><div class="ttdoc">Move the legs using force - leg angles are changed in the animator.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:140</div></div>
-<div class="ttc" id="aclass_stick_movement_html_ad2e6c2b6073f49f998c437571dbb7e69"><div class="ttname"><a href="class_stick_movement.html#ad2e6c2b6073f49f998c437571dbb7e69">StickMovement.IsOnGround</a></div><div class="ttdeci">bool IsOnGround()</div><div class="ttdoc">Check if the user is contacting the ground.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:122</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>    {</div>
+<div class="line"><span class="lineno">   87</span>        <span class="comment">// Handle movement</span></div>
+<div class="line"><span class="lineno">   88</span>        <span class="comment">// Check if user is pressing up or down</span></div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">if</span>(!Mathf.Approximately(characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a5d375c26c82543e6b7549d381b35d3e3">MoveVerticalAxis</a>, 0f))</div>
+<div class="line"><span class="lineno">   90</span>        {</div>
+<div class="line"><span class="lineno">   91</span>            <span class="comment">// Check if the axis input is above a tolerance to try and reject unintentional up / down movement</span></div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordtype">bool</span> newCollapse = characterInputData.MoveVerticalAxis &gt;= _verticalMinValue ? false : characterInputData.MoveVerticalAxis &lt;= (-_verticalMinValue) ? <span class="keyword">true</span> : _collapse;</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (newCollapse != _collapse)</div>
+<div class="line"><span class="lineno">   94</span>            {</div>
+<div class="line"><span class="lineno">   95</span>                <span class="comment">// Collapse the player and send a message to all the body parts to do the same</span></div>
+<div class="line"><span class="lineno">   96</span>                DoCollapse(newCollapse, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   97</span>            }</div>
+<div class="line"><span class="lineno">   98</span>            Debug.Log(<span class="stringliteral">&quot;_collapse: &quot;</span> + _collapse.ToString());</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>        </div>
+<div class="line"><span class="lineno">  101</span>        <span class="comment">// Check if the user is inputting horizontal movement</span></div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span> (!Mathf.Approximately(characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a61444ad8dc71e41e62e33034361ee614">MoveHorizontalAxis</a>, 0f) &amp;&amp; !_collapse)</div>
+<div class="line"><span class="lineno">  103</span>        {</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">if</span> (characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a61444ad8dc71e41e62e33034361ee614">MoveHorizontalAxis</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  105</span>            {</div>
+<div class="line"><span class="lineno">  106</span>                <span class="comment">// Move right</span></div>
+<div class="line"><span class="lineno">  107</span>                _anim.Play(<span class="stringliteral">&quot;WalkRight&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">if</span> (_walkLeft != <span class="keyword">null</span>) StopCoroutine(_walkLeft);</div>
+<div class="line"><span class="lineno">  109</span>                _walkRight = StartCoroutine(<a class="code hl_function" href="class_stick_movement.html#ac2b37d327fcfc3141f92d54ece98c06d">MoveRight</a>(_stepWait));</div>
+<div class="line"><span class="lineno">  110</span>            }</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  112</span>            {</div>
+<div class="line"><span class="lineno">  113</span>                <span class="comment">// Move left</span></div>
+<div class="line"><span class="lineno">  114</span>                _anim.Play(<span class="stringliteral">&quot;WalkLeft&quot;</span>);</div>
+<div class="line"><span class="lineno">  115</span>                <span class="keywordflow">if</span> (_walkRight != <span class="keyword">null</span>) StopCoroutine(_walkRight);</div>
+<div class="line"><span class="lineno">  116</span>                _walkLeft = StartCoroutine(<a class="code hl_function" href="class_stick_movement.html#a34744cfccf0c3817cc7f93a95289d68d">MoveLeft</a>(_stepWait));</div>
+<div class="line"><span class="lineno">  117</span>            }</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  120</span>        {</div>
+<div class="line"><span class="lineno">  121</span>            <span class="comment">// Idle</span></div>
+<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">if</span> (_walkLeft != <span class="keyword">null</span>) StopCoroutine(_walkLeft);</div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> (_walkRight != <span class="keyword">null</span>) StopCoroutine(_walkRight);</div>
+<div class="line"><span class="lineno">  124</span>            _anim.Play(<span class="stringliteral">&quot;Idle&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>        }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>        <span class="comment">// Check if user can and is requesting to jump</span></div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> ((<a class="code hl_function" href="class_stick_movement.html#a49a064ea620f39535e1b0d4e85e768cc">IsOnGround</a>() || IsHoldingLedge()) &amp;&amp; !_collapse &amp;&amp; _allowedToJump &amp;&amp; characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a2df8e170322366799f463049c1503300">JumpValue</a>)</div>
+<div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>            <span class="comment">// Do jump</span></div>
+<div class="line"><span class="lineno">  131</span>            _bodyRB.AddForce(Vector2.up * _jumpForce);</div>
+<div class="line"><span class="lineno">  132</span>            Debug.Log(<span class="stringliteral">&quot;Jumped&quot;</span>);</div>
+<div class="line"><span class="lineno">  133</span>            _allowedToJump = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>            <span class="comment">// If holding the ledge, let go</span></div>
+<div class="line"><span class="lineno">  136</span>            ReleaseLedge();</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>            StartCoroutine(<a class="code hl_function" href="class_stick_movement.html#ae03fa1787b4a1f5f4fd11208330005ad">WaitToJumpAgain</a>());</div>
+<div class="line"><span class="lineno">  139</span>        }</div>
+<div class="line"><span class="lineno">  140</span>    }</div>
+<div class="ttc" id="aclass_stick_movement_html_a34744cfccf0c3817cc7f93a95289d68d"><div class="ttname"><a href="class_stick_movement.html#a34744cfccf0c3817cc7f93a95289d68d">StickMovement.MoveLeft</a></div><div class="ttdeci">IEnumerator MoveLeft(float seconds)</div><div class="ttdoc">Move the legs using force - leg angles are changed in the animator.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:225</div></div>
+<div class="ttc" id="aclass_stick_movement_html_a49a064ea620f39535e1b0d4e85e768cc"><div class="ttname"><a href="class_stick_movement.html#a49a064ea620f39535e1b0d4e85e768cc">StickMovement.IsOnGround</a></div><div class="ttdeci">bool IsOnGround(Collider2D other=null)</div><div class="ttdoc">Check if the user is contacting the ground.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:164</div></div>
+<div class="ttc" id="aclass_stick_movement_html_ac2b37d327fcfc3141f92d54ece98c06d"><div class="ttname"><a href="class_stick_movement.html#ac2b37d327fcfc3141f92d54ece98c06d">StickMovement.MoveRight</a></div><div class="ttdeci">IEnumerator MoveRight(float seconds)</div><div class="ttdoc">Move the legs using force - leg angles are changed in the animator.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:212</div></div>
+<div class="ttc" id="aclass_stick_movement_html_ae03fa1787b4a1f5f4fd11208330005ad"><div class="ttname"><a href="class_stick_movement.html#ae03fa1787b4a1f5f4fd11208330005ad">StickMovement.WaitToJumpAgain</a></div><div class="ttdeci">IEnumerator WaitToJumpAgain()</div><div class="ttdoc">Wait for a set number of physics frames before allowing the player to jump again.</div><div class="ttdef"><b>Definition:</b> StickMovement.cs:197</div></div>
 <div class="ttc" id="astruct_character_input_data_html_a2df8e170322366799f463049c1503300"><div class="ttname"><a href="struct_character_input_data.html#a2df8e170322366799f463049c1503300">CharacterInputData.JumpValue</a></div><div class="ttdeci">bool JumpValue</div><div class="ttdoc">Action Map: Gameplay  True if jump pressed.</div><div class="ttdef"><b>Definition:</b> CharacterInputData.cs:15</div></div>
 <div class="ttc" id="astruct_character_input_data_html_a5d375c26c82543e6b7549d381b35d3e3"><div class="ttname"><a href="struct_character_input_data.html#a5d375c26c82543e6b7549d381b35d3e3">CharacterInputData.MoveVerticalAxis</a></div><div class="ttdeci">float MoveVerticalAxis</div><div class="ttdoc">Action Map: Gameplay  -1 to 1 based on vertical input representing player movement.</div><div class="ttdef"><b>Definition:</b> CharacterInputData.cs:27</div></div>
 <div class="ttc" id="astruct_character_input_data_html_a61444ad8dc71e41e62e33034361ee614"><div class="ttname"><a href="struct_character_input_data.html#a61444ad8dc71e41e62e33034361ee614">CharacterInputData.MoveHorizontalAxis</a></div><div class="ttdeci">float MoveHorizontalAxis</div><div class="ttdoc">Action Map: Gameplay  -1 to 1 based on horizontal input representing player movement.</div><div class="ttdef"><b>Definition:</b> CharacterInputData.cs:21</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad2e6c2b6073f49f998c437571dbb7e69" name="ad2e6c2b6073f49f998c437571dbb7e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2e6c2b6073f49f998c437571dbb7e69">&#9670;&#160;</a></span>IsOnGround()</h2>
+<a id="a5f9553d5a7655471aad25dc79e12b0fd" name="a5f9553d5a7655471aad25dc79e12b0fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f9553d5a7655471aad25dc79e12b0fd">&#9670;&#160;</a></span>IsHoldingLedge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,7 +487,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool StickMovement.IsOnGround </td>
+          <td class="memname">bool StickMovement.IsHoldingLedge </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -431,21 +499,97 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  143</span>    {</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_grab.html">Grab</a> grabber <span class="keywordflow">in</span> _grabbers)</div>
+<div class="line"><span class="lineno">  146</span>        {</div>
+<div class="line"><span class="lineno">  147</span>            result |= grabber.IsHoldingLedge;</div>
+<div class="line"><span class="lineno">  148</span>        }</div>
+<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a49a064ea620f39535e1b0d4e85e768cc" name="a49a064ea620f39535e1b0d4e85e768cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a064ea620f39535e1b0d4e85e768cc">&#9670;&#160;</a></span>IsOnGround()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StickMovement.IsOnGround </td>
+          <td>(</td>
+          <td class="paramtype">Collider2D&#160;</td>
+          <td class="paramname"><em>other</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 <p>Check if the user is contacting the ground. </p>
 <dl class="section return"><dt>Returns</dt><dd>True: Player is on the ground<br  />
 False: Player is not on the ground</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordtype">bool</span> isOnGround = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>        <span class="comment">// Check each ground point, if any are contacting the ground, set isOnGround = true</span></div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">foreach</span> (Transform t <span class="keywordflow">in</span> _groundPositions)</div>
-<div class="line"><span class="lineno">  128</span>        {</div>
-<div class="line"><span class="lineno">  129</span>            isOnGround |= Physics2D.OverlapCircle(t.position, _positionRadius, _groundLayerMask);</div>
-<div class="line"><span class="lineno">  130</span>        }</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">return</span> isOnGround;</div>
-<div class="line"><span class="lineno">  133</span>    }</div>
+<p>This needs to get all of the colliders because it will always return your own colliders The other option is to set the legs and feet to a different layer to the rest of the body</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>        <span class="comment">// Check each ground point, if any are contacting the ground, set isOnGround = true</span></div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">foreach</span> (Transform t <span class="keywordflow">in</span> _groundPositions)</div>
+<div class="line"><span class="lineno">  168</span>        {</div>
+<div class="line"><span class="lineno">  171</span>            <span class="comment">// Get all the colliders in the ground position</span></div>
+<div class="line"><span class="lineno">  172</span>            Collider2D[] colliders = Physics2D.OverlapCircleAll(t.position, _positionRadius, _groundLayerMask);</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">foreach</span> (Collider2D collider <span class="keywordflow">in</span> colliders)</div>
+<div class="line"><span class="lineno">  175</span>            {</div>
+<div class="line"><span class="lineno">  176</span>                <span class="comment">// If the collider is attached to the player, ignore it</span></div>
+<div class="line"><span class="lineno">  177</span>                <span class="keywordflow">if</span> (collider.transform.parent == transform)</div>
+<div class="line"><span class="lineno">  178</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  179</span>                </div>
+<div class="line"><span class="lineno">  180</span>                <span class="comment">// If the collider is the one we are checking against, return true</span></div>
+<div class="line"><span class="lineno">  181</span>                <span class="keywordflow">if</span> (other != <span class="keyword">null</span> &amp;&amp; collider == other) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>                <span class="comment">// If we are checking against a specific collider but are colliding with another collider then don&#39;t return true</span></div>
+<div class="line"><span class="lineno">  184</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other != <span class="keyword">null</span> &amp;&amp; collider != <span class="keyword">null</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>                <span class="comment">// If we are not checking against a specific collider but have collided, return true</span></div>
+<div class="line"><span class="lineno">  187</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other == <span class="keyword">null</span> &amp;&amp; collider != <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  188</span>            }</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  192</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeb97f01def2c5c3460fa8d12fd396963" name="aeb97f01def2c5c3460fa8d12fd396963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb97f01def2c5c3460fa8d12fd396963">&#9670;&#160;</a></span>LimitVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StickMovement.LimitVelocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        _maxSqrVelocity = _maxVelocity * _maxVelocity;</div>
+<div class="line"><span class="lineno">   74</span>        </div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span>(_bodyRB.velocity.sqrMagnitude &gt; _maxSqrVelocity)</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            _bodyRB.velocity = _bodyRB.velocity.normalized * _maxVelocity;</div>
+<div class="line"><span class="lineno">   78</span>            <span class="comment">//Debug.Log(&quot;LIMITED VELOCITY to &quot; + _bodyRB.velocity);</span></div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -481,12 +625,12 @@ False: Player is not on the ground</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>    {</div>
-<div class="line"><span class="lineno">  155</span>        _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.fixedDeltaTime);</div>
-<div class="line"><span class="lineno">  156</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
-<div class="line"><span class="lineno">  157</span>        _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.fixedDeltaTime);</div>
-<div class="line"><span class="lineno">  158</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
-<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  226</span>    {</div>
+<div class="line"><span class="lineno">  227</span>        _rightLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.fixedDeltaTime);</div>
+<div class="line"><span class="lineno">  228</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
+<div class="line"><span class="lineno">  229</span>        _leftLegRB.AddForce(Vector2.left * (_speed * 1000) * Time.fixedDeltaTime);</div>
+<div class="line"><span class="lineno">  230</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
+<div class="line"><span class="lineno">  231</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -522,12 +666,78 @@ False: Player is not on the ground</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>    {</div>
-<div class="line"><span class="lineno">  142</span>        _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.fixedDeltaTime);</div>
-<div class="line"><span class="lineno">  143</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
-<div class="line"><span class="lineno">  144</span>        _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.fixedDeltaTime);</div>
-<div class="line"><span class="lineno">  145</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
-<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>    {</div>
+<div class="line"><span class="lineno">  214</span>        _leftLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.fixedDeltaTime);</div>
+<div class="line"><span class="lineno">  215</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
+<div class="line"><span class="lineno">  216</span>        _rightLegRB.AddForce(Vector2.right * (_speed * 1000) * Time.fixedDeltaTime);</div>
+<div class="line"><span class="lineno">  217</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(seconds);</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab2d99d8f68feb3864a02ad4e4b58d378" name="ab2d99d8f68feb3864a02ad4e4b58d378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d99d8f68feb3864a02ad4e4b58d378">&#9670;&#160;</a></span>ReleaseLedge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StickMovement.ReleaseLedge </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_grab.html">Grab</a> grabber <span class="keywordflow">in</span> _grabbers)</div>
+<div class="line"><span class="lineno">  155</span>        {</div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">if</span> (grabber.IsHoldingLedge) grabber.Release = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  157</span>        }</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae03fa1787b4a1f5f4fd11208330005ad" name="ae03fa1787b4a1f5f4fd11208330005ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03fa1787b4a1f5f4fd11208330005ad">&#9670;&#160;</a></span>WaitToJumpAgain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator StickMovement.WaitToJumpAgain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait for a set number of physics frames before allowing the player to jump again. </p>
+<div class="fragment"><div class="line"><span class="lineno">  198</span>    {</div>
+<div class="line"><span class="lineno">  199</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _timeBetweenJumpsInPhysicsFrames; i++)</div>
+<div class="line"><span class="lineno">  200</span>        {</div>
+<div class="line"><span class="lineno">  201</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForFixedUpdate();</div>
+<div class="line"><span class="lineno">  202</span>        }</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>        _allowedToJump = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  205</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

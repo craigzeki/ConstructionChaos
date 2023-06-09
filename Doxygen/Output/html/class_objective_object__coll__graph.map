@@ -1,5 +1,6 @@
 <map id="ObjectiveObject" name="ObjectiveObject">
-<area shape="rect" id="node1" title="An object that can be used in an objective." alt="" coords="99,79,212,104"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" id="node3" title=" " alt="" coords="148,5,347,31"/>
+<area shape="rect" id="node1" title="An object that can be used in an objective." alt="" coords="96,152,209,177"/>
+<area shape="rect" id="node2" href="$class_objective_base.html" title=" " alt="" coords="12,79,117,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node4" title=" " alt="" coords="141,79,340,104"/>
 </map>

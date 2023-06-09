@@ -1,12 +1,13 @@
 <map id="ObjectiveCondition" name="ObjectiveCondition">
-<area shape="rect" id="node1" title="A condition that an objective action can have." alt="" coords="227,243,356,268"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" id="node8" href="$class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="174,80,286,105"/>
-<area shape="rect" id="node3" title=" " alt="" coords="256,155,471,180"/>
-<area shape="rect" id="node4" href="$class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="495,155,546,180"/>
-<area shape="rect" id="node5" title=" " alt="" coords="327,80,437,105"/>
-<area shape="rect" id="node6" title=" " alt="" coords="461,80,596,105"/>
-<area shape="rect" id="node7" href="$class_zone_colour.html" title=" " alt="" coords="145,155,232,180"/>
-<area shape="rect" id="node9" title=" " alt="" coords="149,5,346,31"/>
-<area shape="rect" id="node10" title=" " alt="" coords="370,5,509,31"/>
+<area shape="rect" id="node1" title="A condition that an objective action can have." alt="" coords="449,317,578,343"/>
+<area shape="rect" id="node2" href="$class_objective_base.html" title=" " alt="" coords="390,80,495,105"/>
+<area shape="rect" id="node9" href="$class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="240,155,352,180"/>
+<area shape="rect" id="node3" title=" " alt="" coords="383,5,502,31"/>
+<area shape="rect" id="node4" title=" " alt="" coords="479,229,694,255"/>
+<area shape="rect" id="node5" href="$class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="719,229,769,255"/>
+<area shape="rect" id="node6" title=" " alt="" coords="604,155,729,180"/>
+<area shape="rect" id="node7" title=" " alt="" coords="754,155,889,180"/>
+<area shape="rect" id="node8" href="$class_zone_colour.html" title=" " alt="" coords="254,229,341,255"/>
+<area shape="rect" id="node10" title=" " alt="" coords="5,80,203,105"/>
+<area shape="rect" id="node11" title=" " alt="" coords="227,80,365,105"/>
 </map>

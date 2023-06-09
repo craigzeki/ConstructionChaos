@@ -7,8 +7,7 @@ Container for storing objective information.
 
 
 
-Inheritance diagram for Objective\+:
-\nopagebreak
+Inheritance diagram for Objective\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for Objective\+:
 \end{figure}
 
 
-Collaboration diagram for Objective\+:
-\nopagebreak
+Collaboration diagram for Objective\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,6 +28,8 @@ Collaboration diagram for Objective\+:
 \item 
 \mbox{\hyperlink{class_objective_a460b29167c25611cd5979b3400c9cbd0}{Objective}} (\mbox{\hyperlink{class_objective_action}{Objective\+Action}} action, \mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} colour, \mbox{\hyperlink{class_objective_object}{Objective\+Object}} obj\+Object, \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} condition, \mbox{\hyperlink{class_zone}{Zone}} zone, bool inverse)
 \begin{DoxyCompactList}\small\item\em Constructor for the objective class. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{class_objective_a6abb1f20add4c640ee48e0b96c2a1d1c}{Get\+Points}} ()
+\item 
 bool \mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}} (\mbox{\hyperlink{class_objective}{Objective}} other)
 \begin{DoxyCompactList}\small\item\em Specific Equals opperation for \mbox{\hyperlink{class_objective}{Objective}}. \end{DoxyCompactList}\item 
 override bool \mbox{\hyperlink{class_objective_a3835229c079769e8fb915b21c59a61a1}{Equals}} (object other)
@@ -57,6 +57,9 @@ bool {\bfseries Inverse}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \mbox{\Hypertarget{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}\label{class_objective_a05432589f8fbf02b43d44b85e7e17c7a}} 
 string {\bfseries Objective\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
+\mbox{\Hypertarget{class_objective_a55dc6ab1690be83b1ecbafc6e3497df6}\label{class_objective_a55dc6ab1690be83b1ecbafc6e3497df6}} 
+uint {\bfseries Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 \mbox{\Hypertarget{class_objective_af04a76d01728fa99c8cd263f90b2a38e}\label{class_objective_af04a76d01728fa99c8cd263f90b2a38e}} 
 \mbox{\hyperlink{class_zone}{Zone}} {\bfseries Zone}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
@@ -81,6 +84,9 @@ bool {\bfseries \+\_\+inverse}
 \mbox{\Hypertarget{class_objective_a1f62f8184878270f4592734c2812a904}\label{class_objective_a1f62f8184878270f4592734c2812a904}} 
 string {\bfseries \+\_\+objective\+String}
 \begin{DoxyCompactList}\small\item\em The generated string which is displayed to the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_ae5d22547161c4bd6ef7399a323486bf3}\label{class_objective_ae5d22547161c4bd6ef7399a323486bf3}} 
+uint {\bfseries \+\_\+points}
+\item 
 \mbox{\Hypertarget{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}\label{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}} 
 \mbox{\hyperlink{class_zone}{Zone}} {\bfseries \+\_\+zone}
 \begin{DoxyCompactList}\small\item\em The zone (if any) required for the condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -117,24 +123,25 @@ Constructor for the objective class.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this.\_action\ =\ action;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ this.\_colour\ =\ colour;}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ this.\_object\ =\ objObject;}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ this.\_condition\ =\ condition;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ this.\_zone\ =\ zone;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ this.\_inverse\ =\ inverse;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ this.\_objectiveString\ =\ \textcolor{stringliteral}{"{}INVALID\ OBJECTIVE"{}};}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ this.\_objectiveString\ =\ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}{CreateObjectiveString}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ this.\_action\ =\ action;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ this.\_colour\ =\ colour;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ this.\_object\ =\ objObject;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ this.\_condition\ =\ condition;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ this.\_zone\ =\ zone;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ this.\_inverse\ =\ inverse;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ this.\_objectiveString\ =\ \textcolor{stringliteral}{"{}INVALID\ OBJECTIVE"{}};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ this.\_objectiveString\ =\ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}{CreateObjectiveString}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \_points\ =\ 0;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -160,12 +167,12 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00116\ \ \ \ \ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}((\mbox{\hyperlink{class_objective}{Objective}})other);}
-\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}((\mbox{\hyperlink{class_objective}{Objective}})other);}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}\label{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}} 
@@ -188,18 +195,18 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00097\ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.\mbox{\hyperlink{class_objective_action_a3126fcb6157262b3f941bf046da28234}{Equals}}(other.\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}})\ :\ other.\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ ==\ \textcolor{keyword}{null})\ \&\&}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}.\mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}(other.\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}})\ :\ other.\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ ==\ \textcolor{keyword}{null})\ \&\&}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.\mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}(other.\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}})\ :\ other.\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ ==\ \textcolor{keyword}{null})\ \&\&}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}.\mbox{\hyperlink{class_objective_condition_a8fa0bc061060aeaa343645e7ee6c3fc5}{Equals}}(other.\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}})\ :\ other.\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ ==\ \textcolor{keyword}{null})\ \&\&}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}.Equals(other.\mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}})\ \&\&}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}.Equals(other.\mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}})\ \&\&}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.\mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}}(other.Zone)\ :\ other.Zone\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.\mbox{\hyperlink{class_objective_action_a3126fcb6157262b3f941bf046da28234}{Equals}}(other.\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}})\ :\ other.\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}.\mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}(other.\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}})\ :\ other.\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.\mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}(other.\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}})\ :\ other.\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}.\mbox{\hyperlink{class_objective_condition_a8fa0bc061060aeaa343645e7ee6c3fc5}{Equals}}(other.\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}})\ :\ other.\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ ==\ \textcolor{keyword}{null})\ \&\&}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}.Equals(other.\mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}})\ \&\&}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}.Equals(other.\mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}})\ \&\&}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.\mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}}(other.Zone)\ :\ other.Zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_a7cdb4f3ee81816830d9529ef2b7ddc83}\label{class_objective_a7cdb4f3ee81816830d9529ef2b7ddc83}} 
@@ -220,20 +227,38 @@ Override of Get\+Hash\+Code to provide correct hash for Dictionary.
 \href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
  \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00133\ \ \ \ \ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ unchecked}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.\mbox{\hyperlink{class_objective_action_a6bbc3880e6ccf5dd84e5e35290ae482f}{GetHashCode}}()\ :\ 0);}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}()\ :\ 0);}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.\mbox{\hyperlink{class_objective_object_ab7bf4ac4297e2b3b2e803c0404eef788}{GetHashCode}}()\ :\ 0);}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}.\mbox{\hyperlink{class_objective_condition_a19d0adaf0122e695e64e126ec297ac83}{GetHashCode}}()\ :\ 0);}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}.GetHashCode();}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}.GetHashCode()\ :\ 0);}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode*\ 23)\ +\ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.\mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{GetHashCode}}()\ :\ 0);}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.\mbox{\hyperlink{class_objective_action_a6bbc3880e6ccf5dd84e5e35290ae482f}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.\mbox{\hyperlink{class_objective_object_ab7bf4ac4297e2b3b2e803c0404eef788}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}.\mbox{\hyperlink{class_objective_condition_a19d0adaf0122e695e64e126ec297ac83}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ \mbox{\hyperlink{class_objective_aafe3cce7979ad37b28391112cb16dced}{\_inverse}}.GetHashCode();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_a1f62f8184878270f4592734c2812a904}{\_objectiveString}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode*\ 23)\ +\ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.\mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_objective_a6abb1f20add4c640ee48e0b96c2a1d1c}\label{class_objective_a6abb1f20add4c640ee48e0b96c2a1d1c}} 
+\index{Objective@{Objective}!GetPoints@{GetPoints}}
+\index{GetPoints@{GetPoints}!Objective@{Objective}}
+\doxysubsubsection{\texorpdfstring{GetPoints()}{GetPoints()}}
+{\footnotesize\ttfamily uint Objective.\+Get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \_points\ +=\ (\mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}\ !=\ \textcolor{keyword}{null})\ ?\ \mbox{\hyperlink{class_objective_a2bd95bed956156e3a7883246c01613e6}{\_action}}.Points\ :\ 0;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_points\ +=\ (\mbox{\hyperlink{class_objective_ac8d05eb5c5b2e2e2b85bb4c62d25f7c2}{\_colour}}\ !=\ \textcolor{keyword}{null})\ ?\ \_colour.Points\ :\ 0;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \_points\ +=\ (\mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}\ !=\ \textcolor{keyword}{null})\ ?\ \mbox{\hyperlink{class_objective_a74b3394ba6bc986a234c24beae1932c8}{\_object}}.Points\ :\ 0;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \_points\ +=\ (\mbox{\hyperlink{class_objective_ad7e084f271e3f80b960ecf579a72de53}{\_condition}}\ !=\ \textcolor{keyword}{null})\ ?\ \_condition.Points\ :\ 0;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \_points\ +=\ (\mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}\ !=\ \textcolor{keyword}{null})\ ?\ \mbox{\hyperlink{class_objective_aacd973210d5bfe3db3a6c5eda65ede91}{\_zone}}.Points\ :\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_points;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
 
 \end{DoxyCode}

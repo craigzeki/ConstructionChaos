@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: ZoneColour Class Reference</title>
+<title>Construction Chaos: ZoneColour Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -100,11 +100,12 @@ Inheritance diagram for ZoneColour:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_zone_colour__inherit__graph.png" border="0" usemap="#a_zone_colour_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_zone_colour_inherit__map" id="a_zone_colour_inherit__map">
-<area shape="rect" title=" " alt="" coords="204,152,291,177"/>
-<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="191,79,303,104"/>
+<area shape="rect" title=" " alt="" coords="197,225,284,251"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="185,152,297,177"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="12,79,117,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" title=" " alt="" coords="149,5,346,31"/>
-<area shape="rect" title=" " alt="" coords="370,5,509,31"/>
+<area shape="rect" title=" " alt="" coords="142,79,339,104"/>
+<area shape="rect" title=" " alt="" coords="363,79,502,104"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -112,11 +113,12 @@ Collaboration diagram for ZoneColour:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_zone_colour__coll__graph.png" border="0" usemap="#a_zone_colour_coll__map" alt="Collaboration graph"/></div>
 <map name="a_zone_colour_coll__map" id="a_zone_colour_coll__map">
-<area shape="rect" title=" " alt="" coords="204,152,291,177"/>
-<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="191,79,303,104"/>
+<area shape="rect" title=" " alt="" coords="197,225,284,251"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="185,152,297,177"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="12,79,117,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" title=" " alt="" coords="149,5,346,31"/>
-<area shape="rect" title=" " alt="" coords="370,5,509,31"/>
+<area shape="rect" title=" " alt="" coords="142,79,339,104"/>
+<area shape="rect" title=" " alt="" coords="363,79,502,104"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -132,13 +134,25 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:afc2343f5a219f353ff4b402fd6632494 inherit pub_methods_class_objective_colour"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objective_colour.html#afc2343f5a219f353ff4b402fd6632494">GetHashCode</a> ()</td></tr>
 <tr class="memdesc:afc2343f5a219f353ff4b402fd6632494 inherit pub_methods_class_objective_colour"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override of GetHashCode to provide correct hash for Dictionary.  <br /></td></tr>
 <tr class="separator:afc2343f5a219f353ff4b402fd6632494 inherit pub_methods_class_objective_colour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_objective_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_objective_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_objective_base.html">ObjectiveBase</a></td></tr>
+<tr class="memitem:a3c82ae5e6093fe50f49f6ac173c70fb7 inherit pro_attribs_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="a3c82ae5e6093fe50f49f6ac173c70fb7" name="a3c82ae5e6093fe50f49f6ac173c70fb7"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_friendlyString</b></td></tr>
+<tr class="memdesc:a3c82ae5e6093fe50f49f6ac173c70fb7 inherit pro_attribs_class_objective_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">The friendly string of the action. Must be in the format "... &lt;COLOUR&gt; &lt;OBJECT&gt; &lt;CONDITION&gt;". <br /></td></tr>
+<tr class="separator:a3c82ae5e6093fe50f49f6ac173c70fb7 inherit pro_attribs_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20546d70d80723d074e1df500423a9d inherit pro_attribs_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="ab20546d70d80723d074e1df500423a9d" name="ab20546d70d80723d074e1df500423a9d"></a>
+uint&#160;</td><td class="memItemRight" valign="bottom"><b>_points</b></td></tr>
+<tr class="separator:ab20546d70d80723d074e1df500423a9d inherit pro_attribs_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_objective_colour"><td colspan="2" onclick="javascript:toggleInherit('properties_class_objective_colour')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_objective_colour.html">ObjectiveColour</a></td></tr>
-<tr class="memitem:a3174e74301b74e3771ff907a64b76474 inherit properties_class_objective_colour"><td class="memItemLeft" align="right" valign="top"><a id="a3174e74301b74e3771ff907a64b76474" name="a3174e74301b74e3771ff907a64b76474"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>FriendlyString</b><code> [get]</code></td></tr>
-<tr class="separator:a3174e74301b74e3771ff907a64b76474 inherit properties_class_objective_colour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac192814a3e320e9b7f08b2e2db227a4c inherit properties_class_objective_colour"><td class="memItemLeft" align="right" valign="top"><a id="ac192814a3e320e9b7f08b2e2db227a4c" name="ac192814a3e320e9b7f08b2e2db227a4c"></a>
 Color&#160;</td><td class="memItemRight" valign="bottom"><b>Colour</b><code> [get]</code></td></tr>
 <tr class="separator:ac192814a3e320e9b7f08b2e2db227a4c inherit properties_class_objective_colour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_objective_base"><td colspan="2" onclick="javascript:toggleInherit('properties_class_objective_base')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_objective_base.html">ObjectiveBase</a></td></tr>
+<tr class="memitem:af388eae4f57c462f1723e95bfc4cfe3d inherit properties_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="af388eae4f57c462f1723e95bfc4cfe3d" name="af388eae4f57c462f1723e95bfc4cfe3d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>FriendlyString</b><code> [get]</code></td></tr>
+<tr class="separator:af388eae4f57c462f1723e95bfc4cfe3d inherit properties_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb7ea49e943f1d66f444fe8261949d16 inherit properties_class_objective_base"><td class="memItemLeft" align="right" valign="top"><a id="abb7ea49e943f1d66f444fe8261949d16" name="abb7ea49e943f1d66f444fe8261949d16"></a>
+uint&#160;</td><td class="memItemRight" valign="bottom"><b>Points</b><code> [get]</code></td></tr>
+<tr class="separator:abb7ea49e943f1d66f444fe8261949d16 inherit properties_class_objective_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

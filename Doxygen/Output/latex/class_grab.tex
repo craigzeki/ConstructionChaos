@@ -2,8 +2,7 @@
 \label{class_grab}\index{Grab@{Grab}}
 
 
-Inheritance diagram for Grab\+:
-\nopagebreak
+Inheritance diagram for Grab\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,14 +11,34 @@ Inheritance diagram for Grab\+:
 \end{figure}
 
 
-Collaboration diagram for Grab\+:
-\nopagebreak
+Collaboration diagram for Grab\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_grab__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_grab_afeaec60f6dabdc741283c50e9941c043}\label{class_grab_afeaec60f6dabdc741283c50e9941c043}} 
+bool {\bfseries Release} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}\label{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}} 
+ulong {\bfseries Client\+Id}
+\item 
+\mbox{\Hypertarget{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}\label{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}} 
+\mbox{\hyperlink{class_objective_action_reporter}{Objective\+Action\+Reporter}} {\bfseries Objective\+Action\+Reporter}
+\item 
+\mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
+\mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
+\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_aa20102c2e3c74be6bd44d84503a5d663}\label{class_ragdoll_aa20102c2e3c74be6bd44d84503a5d663}} 
+\mbox{\hyperlink{class_stick_movement}{Stick\+Movement}} {\bfseries Stick\+Movement}
+\begin{DoxyCompactList}\small\item\em A reference to the top level movement controller -\/ used to initiate collapse from other body parts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,6 +47,22 @@ override void \mbox{\hyperlink{class_grab_a7ac3f8564c38efcdbbfa16b0c08f643a}{Awa
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_ragdoll_a110adc2ea8abf45aed55ed08aca51e4d}{Awake}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_grab_a4ff0ed5612525ce7df28a219c4e266af}{Grabbed\+Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_grab_a36ea2cbf110ba290fbf18fafb744af24}{Ready\+To\+Grab}} = false\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_grab_aaf4577d5aa6284f137619faa61b3bf26}{Is\+Holding\+Ledge}} = false\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_grab_a73ca1e4738515c1dba50809334a62442}{Hand\+Type}} \{ {\bfseries LEFT}
+, {\bfseries RIGHT}
+ \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -41,11 +76,17 @@ void \mbox{\hyperlink{class_grab_a52a6fc4d04910799f6c020e4f3fa2fc6}{On\+Collisio
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_grab_ac589b91355e3dc69f349391df448a63d}\label{class_grab_ac589b91355e3dc69f349391df448a63d}} 
+\mbox{\hyperlink{class_grab_a73ca1e4738515c1dba50809334a62442}{Hand\+Type}} {\bfseries \+\_\+hand\+Type}
+\begin{DoxyCompactList}\small\item\em Which hand is this script attached to. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_grab_addff130e22279fab7b9a42df16abd5a2}\label{class_grab_addff130e22279fab7b9a42df16abd5a2}} 
 Layer\+Mask {\bfseries \+\_\+grabable\+Layer\+Mask}
 \item 
-\mbox{\Hypertarget{class_grab_a3891f99019c4d147b75e5678c3d9eb3b}\label{class_grab_a3891f99019c4d147b75e5678c3d9eb3b}} 
-bool {\bfseries \+\_\+hold} = false
+\mbox{\Hypertarget{class_grab_af906bfafaf8a1df20d7b8ddcdea994bc}\label{class_grab_af906bfafaf8a1df20d7b8ddcdea994bc}} 
+Layer\+Mask {\bfseries \+\_\+object\+Layer\+Mask}
+\item 
+\mbox{\Hypertarget{class_grab_a2db7a6ad542b0b4781b7be8df8e6a8f0}\label{class_grab_a2db7a6ad542b0b4781b7be8df8e6a8f0}} 
+int {\bfseries \+\_\+platform\+Ignore\+Grab\+Layer\+Mask}
 \item 
 \mbox{\Hypertarget{class_grab_ae3315aab5d8a5e2d6c0ffb5140bbfe86}\label{class_grab_ae3315aab5d8a5e2d6c0ffb5140bbfe86}} 
 Fixed\+Joint2D {\bfseries \+\_\+joint}
@@ -54,20 +95,10 @@ Fixed\+Joint2D {\bfseries \+\_\+joint}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_ragdoll_a386206900b13d3727f54d3df33dcfd17}{Reset\+Local\+Position}} ()
+\item 
 void \mbox{\hyperlink{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}{On\+Collapse}} ((bool collapse, bool break\+Apart) collapse\+Info)
 \begin{DoxyCompactList}\small\item\em Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}\label{class_ragdoll_ae120b5caa1f4e32e2df5d94659660e47}} 
-ulong {\bfseries Client\+Id}
-\item 
-\mbox{\Hypertarget{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}\label{class_ragdoll_ac345af1e15c222b4abcb47090001eac5}} 
-\mbox{\hyperlink{class_objective_action_reporter}{Objective\+Action\+Reporter}} {\bfseries Objective\+Action\+Reporter}
-\item 
-\mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
-\mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
-\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,6 +108,23 @@ bool {\bfseries \+\_\+is\+Active} = true
 \mbox{\Hypertarget{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}\label{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}} 
 bool {\bfseries \+\_\+is\+Broken} = false
 \begin{DoxyCompactList}\small\item\em Is the ragdoll \textquotesingle{}broken\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_grab_a73ca1e4738515c1dba50809334a62442}\label{class_grab_a73ca1e4738515c1dba50809334a62442}} 
+\index{Grab@{Grab}!HandType@{HandType}}
+\index{HandType@{HandType}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{HandType}{HandType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_grab_a73ca1e4738515c1dba50809334a62442}{Grab.\+Hand\+Type}}\hspace{0.3cm}{\ttfamily [private]}}
+
+$<$sumamry$>$ Enum for which hand is being used 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ LEFT,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ RIGHT}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -92,9 +140,9 @@ Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00014\ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//do\ nothing\ -\/\ but\ prevents\ Ragdoll.Awake\ from\ running,\ which\ in\ turn\ prevents\ grab\ collider\ from\ detatching\ during\ break\ apart.}}
-\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//do\ nothing\ -\/\ but\ prevents\ Ragdoll.Awake\ from\ running,\ which\ in\ turn\ prevents\ grab\ collider\ from\ detatching\ during\ break\ apart.}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_grab_aad0076598a42cdb150793c9827d016ce}\label{class_grab_aad0076598a42cdb150793c9827d016ce}} 
@@ -105,10 +153,10 @@ Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ HandleGrab(\mbox{\hyperlink{class_character_input_handler}{CharacterInputHandler}}.CharacterInputData);}
-\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ HandleGrab(\mbox{\hyperlink{class_character_input_handler}{CharacterInputHandler}}.CharacterInputData);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_grab_aaa64eb2e4693d85af8635fbe399e4561}\label{class_grab_aaa64eb2e4693d85af8635fbe399e4561}} 
@@ -119,21 +167,26 @@ Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ is\ trying\ to\ grab,\ and\ is\ allowed\ to}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((characterInputData.\mbox{\hyperlink{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}{IsGrabbingLeft}}\ ||\ characterInputData.\mbox{\hyperlink{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}{IsGrabbingRight}})\ \&\&\ \mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}})}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ hold\ to\ true}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \_hold\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ has\ let\ go,\ destroy\ the\ joint\ between\ player\ and\ item}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_hold\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\_joint);}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \_joint\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ is\ trying\ to\ grab,\ and\ is\ allowed\ to}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}})\ \&\&\ (!Release)\ \&\&\ ((characterInputData.\mbox{\hyperlink{struct_character_input_data_a0e68be5a93f2006ca579dd2487d6a5e5}{IsGrabbingLeft}}\ \&\&\ \mbox{\hyperlink{class_grab_ac589b91355e3dc69f349391df448a63d}{\_handType}}\ ==\ \mbox{\hyperlink{class_grab_a73ca1e4738515c1dba50809334a62442}{HandType}}.LEFT)\ ||\ (characterInputData.\mbox{\hyperlink{struct_character_input_data_ad69c05a5f6630ddaf36721fdbd79f308}{IsGrabbingRight}}\ \&\&\ \mbox{\hyperlink{class_grab_ac589b91355e3dc69f349391df448a63d}{\_handType}}\ ==\ \mbox{\hyperlink{class_grab_a73ca1e4738515c1dba50809334a62442}{HandType}}.RIGHT)))}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ hold\ to\ true}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ ReadyToGrab\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Player\ has\ let\ go,\ destroy\ the\ joint\ between\ player\ and\ item}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ ReadyToGrab\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ IsHoldingLedge\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_joint\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_joint.attachedRigidbody.gameObject.layer\ ==\ \_platformIgnoreGrabLayerMask)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint.attachedRigidbody.gameObject.layer\ =\ \_objectLayerMask;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\_joint);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_joint\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ Release\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_grab_a52a6fc4d04910799f6c020e4f3fa2fc6}\label{class_grab_a52a6fc4d04910799f6c020e4f3fa2fc6}} 
@@ -144,27 +197,75 @@ Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00042\ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}})\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Not\ active\ or\ collapsed}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((1\ <<\ collision.gameObject.layer)\ !=\ \_grabableLayerMask)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Item\ is\ not\ on\ the\ grabable\ layer}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_hold\ \&\&\ \_joint\ ==\ \textcolor{keyword}{null})\ \textcolor{comment}{//\ Allowed\ to\ grab\ something\ and\ not\ already\ holding\ anything}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ colliding\ objects\ rigidbody\ and\ create\ a\ joint\ between\ us\ and\ it}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody2D\ rb\ =\ collision.transform.GetComponent<Rigidbody2D>();}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rb\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint\ =\ collision.gameObject.AddComponent(typeof(FixedJoint2D))\ as\ FixedJoint2D;}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint.connectedBody\ =\ GetComponent<Rigidbody2D>();}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ rigidbody\ found\ so\ can't\ create\ a\ joint}}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Could\ try\ and\ create\ a\ rigidbody\ first\ and\ then\ a\ joint}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Or\ could\ implement\ another\ method\ of\ grabing\ which\ doesn't\ use\ physics}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ now....\ do\ nothing}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Only\ the\ server\ can\ grab}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}})\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Not\ active\ or\ collapsed}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (((1\ <<\ collision.gameObject.layer)\ \&\ \_grabableLayerMask)\ ==\ 0)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Item\ is\ not\ on\ the\ grabable\ layer}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReadyToGrab\ \&\&\ \_joint\ ==\ \textcolor{keyword}{null})\ \textcolor{comment}{//\ Allowed\ to\ grab\ something\ and\ not\ already\ holding\ anything}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ colliding\ objects\ rigidbody\ and\ create\ a\ joint\ between\ us\ and\ it}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ Rigidbody2D\ rb\ =\ collision.transform.GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rb\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint\ =\ collision.gameObject.AddComponent(typeof(FixedJoint2D))\ as\ FixedJoint2D;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_joint.connectedBody\ =\ GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Ledge"{}})\ IsHoldingLedge\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.layer\ ==\ LayerMask.NameToLayer(\textcolor{stringliteral}{"{}Grabable"{}}))}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_objectLayerMask\ =\ collision.gameObject.layer;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collision.gameObject.layer\ =\ \_platformIgnoreGrabLayerMask;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ rigidbody\ found\ so\ can't\ create\ a\ joint}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Could\ try\ and\ create\ a\ rigidbody\ first\ and\ then\ a\ joint}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Or\ could\ implement\ another\ method\ of\ grabing\ which\ doesn't\ use\ physics}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ now....\ do\ nothing}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_grab_a4ff0ed5612525ce7df28a219c4e266af}\label{class_grab_a4ff0ed5612525ce7df28a219c4e266af}} 
+\index{Grab@{Grab}!GrabbedObject@{GrabbedObject}}
+\index{GrabbedObject@{GrabbedObject}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{GrabbedObject}{GrabbedObject}}
+{\footnotesize\ttfamily Game\+Object Grab.\+Grabbed\+Object\hspace{0.3cm}{\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_joint\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_joint.connectedBody.gameObject;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_grab_aaf4577d5aa6284f137619faa61b3bf26}\label{class_grab_aaf4577d5aa6284f137619faa61b3bf26}} 
+\index{Grab@{Grab}!IsHoldingLedge@{IsHoldingLedge}}
+\index{IsHoldingLedge@{IsHoldingLedge}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{IsHoldingLedge}{IsHoldingLedge}}
+{\footnotesize\ttfamily bool Grab.\+Is\+Holding\+Ledge = false\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{false};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_grab_a36ea2cbf110ba290fbf18fafb744af24}\label{class_grab_a36ea2cbf110ba290fbf18fafb744af24}} 
+\index{Grab@{Grab}!ReadyToGrab@{ReadyToGrab}}
+\index{ReadyToGrab@{ReadyToGrab}!Grab@{Grab}}
+\doxysubsubsection{\texorpdfstring{ReadyToGrab}{ReadyToGrab}}
+{\footnotesize\ttfamily bool Grab.\+Ready\+To\+Grab = false\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{false};}
 
 \end{DoxyCode}

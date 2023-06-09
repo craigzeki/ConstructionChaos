@@ -1,0 +1,41 @@
+\hypertarget{class_arrow_icon_rotator}{}\doxysection{Arrow\+Icon\+Rotator Class Reference}
+\label{class_arrow_icon_rotator}\index{ArrowIconRotator@{ArrowIconRotator}}
+
+
+Inheritance diagram for Arrow\+Icon\+Rotator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_arrow_icon_rotator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arrow\+Icon\+Rotator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_arrow_icon_rotator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_icon_rotator_a3c875441331cc5ecf5f3d25424d818f5}{Update}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arrow_icon_rotator_a3c875441331cc5ecf5f3d25424d818f5}\label{class_arrow_icon_rotator_a3c875441331cc5ecf5f3d25424d818f5}} 
+\index{ArrowIconRotator@{ArrowIconRotator}!Update@{Update}}
+\index{Update@{Update}!ArrowIconRotator@{ArrowIconRotator}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Arrow\+Icon\+Rotator.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ transform.localRotation\ =\ Quaternion.Euler(0,\ 0,\ -\/transform.parent.localRotation.eulerAngles.z);}
+\DoxyCodeLine{00011\ \ \ \ \ \}}
+
+\end{DoxyCode}

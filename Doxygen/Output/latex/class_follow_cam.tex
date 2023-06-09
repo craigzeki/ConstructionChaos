@@ -2,8 +2,7 @@
 \label{class_follow_cam}\index{FollowCam@{FollowCam}}
 
 
-Inheritance diagram for Follow\+Cam\+:
-\nopagebreak
+Inheritance diagram for Follow\+Cam\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Follow\+Cam\+:
 \end{figure}
 
 
-Collaboration diagram for Follow\+Cam\+:
-\nopagebreak
+Collaboration diagram for Follow\+Cam\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,11 +22,16 @@ Collaboration diagram for Follow\+Cam\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_follow_cam_a99b7d8941425cada06bb63bd8fb9876f}{Set\+Follow\+Target}} (Transform target)
+\item 
+void \mbox{\hyperlink{class_follow_cam_af793216932d9f2ca9eeaf504c1d9ad2d}{Set\+Confiner}} (Collider2D collider)
 \end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_follow_cam}{Follow\+Cam}} \mbox{\hyperlink{class_follow_cam_a1ddecaffdf865e3ebd3d370e3a410950}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_follow_cam_a2e1a0de4bf9377db5244df83c6e1345c}\label{class_follow_cam_a2e1a0de4bf9377db5244df83c6e1345c}} 
+Camera {\bfseries Cam}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -38,8 +41,14 @@ void \mbox{\hyperlink{class_follow_cam_a634c6b3ca5ec26eb6677733221d2a716}{Awake}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_follow_cam_ac244a6b1018a34770171710826359d2d}\label{class_follow_cam_ac244a6b1018a34770171710826359d2d}} 
-Cinemachine\+Virtual\+Camera {\bfseries vcam}
+\mbox{\Hypertarget{class_follow_cam_af2eefd2b5dcddf69793c2c9ad3a834e3}\label{class_follow_cam_af2eefd2b5dcddf69793c2c9ad3a834e3}} 
+Cinemachine\+Virtual\+Camera {\bfseries \+\_\+vcam}
+\item 
+\mbox{\Hypertarget{class_follow_cam_aa494573af113c5a7519a977f3571b2fc}\label{class_follow_cam_aa494573af113c5a7519a977f3571b2fc}} 
+Cinemachine\+Confiner2D {\bfseries \+\_\+confiner}
+\item 
+\mbox{\Hypertarget{class_follow_cam_aa3a567fcef1de82d58e47ecb75f87f07}\label{class_follow_cam_aa3a567fcef1de82d58e47ecb75f87f07}} 
+Camera {\bfseries \+\_\+cam}
 \end{DoxyCompactItemize}
 
 
@@ -52,9 +61,22 @@ Cinemachine\+Virtual\+Camera {\bfseries vcam}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00013\ \ \ \ \ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_follow_cam_af793216932d9f2ca9eeaf504c1d9ad2d}\label{class_follow_cam_af793216932d9f2ca9eeaf504c1d9ad2d}} 
+\index{FollowCam@{FollowCam}!SetConfiner@{SetConfiner}}
+\index{SetConfiner@{SetConfiner}!FollowCam@{FollowCam}}
+\doxysubsubsection{\texorpdfstring{SetConfiner()}{SetConfiner()}}
+{\footnotesize\ttfamily void Follow\+Cam.\+Set\+Confiner (\begin{DoxyParamCaption}\item[{Collider2D}]{collider }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_confiner.m\_BoundingShape2D\ =\ collider;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_follow_cam_a99b7d8941425cada06bb63bd8fb9876f}\label{class_follow_cam_a99b7d8941425cada06bb63bd8fb9876f}} 
@@ -65,9 +87,9 @@ Cinemachine\+Virtual\+Camera {\bfseries vcam}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00018\ \ \ \ \ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ vcam.Follow\ =\ target;}
-\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_vcam.Follow\ =\ target;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
 
 \end{DoxyCode}
 

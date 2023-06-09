@@ -1,0 +1,338 @@
+\hypertarget{class_game_u_i_manager}{}\doxysection{Game\+UIManager Class Reference}
+\label{class_game_u_i_manager}\index{GameUIManager@{GameUIManager}}
+
+
+Inheritance diagram for Game\+UIManager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_game_u_i_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+UIManager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_game_u_i_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_ac6f56c6b5a5435bef49af5f1bdd8c686}{Set\+Objective\+Text}} (string objective\+String)
+\begin{DoxyCompactList}\small\item\em Updates the objective UI text to display the current objective. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_u_i_manager_a5977f1967dfa75c27b3fd2bd54de9f55}{Update\+Timer\+UI}} (uint seconds)
+\begin{DoxyCompactList}\small\item\em Updates the timer UI text to display the remaining time for this round. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_u_i_manager_ace2930fd390c700012e7af5dbd5ac41c}{Update\+Group\+Objective\+Countdown}} (string seconds)
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_a87321cc7e5f02994491293f248a48b15}{Cancel\+Group\+Objective\+Countdown}} ()
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_aebe76bd65cd26827706507c3ee96f687}{Hide\+Group\+Objective\+Countdown}} ()
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_aa46701126a673b90f5d97eadcec2bc82}{Show\+Group\+Objective\+Countdown}} ()
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_ab77832b3c2402ed2d7ea448c80376a4b}{Setup\+Group\+Objective\+UI}} (List$<$ string $>$ objective\+Requirements)
+\begin{DoxyCompactList}\small\item\em Creates a prefab for each of the provided requirements for the group objective. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_u_i_manager_abe7f2ab477792d1a66c57556abab8364}{Update\+Group\+Objective\+Requirement}} (int index, int new\+Value, bool is\+Complete=false)
+\begin{DoxyCompactList}\small\item\em Updates an individual requirement for the group objective to be either complete or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_u_i_manager_a4b16377f0d30d60dbb94181c0fb00b4f}{Setup\+Streak\+Bar}} (List$<$ float $>$ percentages, List$<$ Color $>$ colours)
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_a6d938733b362259f2491dd253c4bd2d4}{Update\+Streak\+Bar}} (float current\+Multiplier, float current\+Percentage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_aa9924e34fefd10991bcf4431bbf173d9}\label{class_game_u_i_manager_aa9924e34fefd10991bcf4431bbf173d9}} 
+static \mbox{\hyperlink{class_game_u_i_manager}{Game\+UIManager}} {\bfseries Instance}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_aec389ae9dcf51deaf91f82908d977528}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_game_u_i_manager_a3d5f37d3ffc5f938b326b6e611195d30}{Spawn\+Group\+Objective\+Countdown}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a7ce9576d19717c0dfe9dc4eea83032f8}\label{class_game_u_i_manager_a7ce9576d19717c0dfe9dc4eea83032f8}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+timer\+Text}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a733f308fa10be227f30587b2520eada8}\label{class_game_u_i_manager_a733f308fa10be227f30587b2520eada8}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+objective\+Text}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_af73ad44add1a09254fa932136d7a2354}\label{class_game_u_i_manager_af73ad44add1a09254fa932136d7a2354}} 
+Game\+Object {\bfseries \+\_\+group\+Objective\+Requirements\+Parent}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a64daea171c9acfa5ce46f7779ff3f708}\label{class_game_u_i_manager_a64daea171c9acfa5ce46f7779ff3f708}} 
+Game\+Object {\bfseries \+\_\+group\+Objective\+Requirement\+Prefab}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a8b44fa99b6b20f32da7973353710daa1}\label{class_game_u_i_manager_a8b44fa99b6b20f32da7973353710daa1}} 
+Game\+Object {\bfseries \+\_\+group\+Objective\+Countdown\+Prefab}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a82caf324456e8300744deb7ed80d997c}\label{class_game_u_i_manager_a82caf324456e8300744deb7ed80d997c}} 
+Sprite {\bfseries \+\_\+objective\+Requirement\+Done\+Sprite}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a490de6be0a3cdd342328a00d99eee549}\label{class_game_u_i_manager_a490de6be0a3cdd342328a00d99eee549}} 
+Sprite {\bfseries \+\_\+objective\+Requirement\+Not\+Done\+Sprite}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_ae058c68ef5b686b1898daf8a85e8fe5d}\label{class_game_u_i_manager_ae058c68ef5b686b1898daf8a85e8fe5d}} 
+Image {\bfseries \+\_\+streak\+Bar\+Image}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_ac932daf41bf4801cbae56e94de389fcc}\label{class_game_u_i_manager_ac932daf41bf4801cbae56e94de389fcc}} 
+Game\+Object {\bfseries \+\_\+streak\+Bar\+Colour\+Part\+Prefab}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a3c269ab05272f5bbbb0d868434dc182f}\label{class_game_u_i_manager_a3c269ab05272f5bbbb0d868434dc182f}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+streak\+Text}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_aad98082df35405ce04134741b550b61b}\label{class_game_u_i_manager_aad98082df35405ce04134741b550b61b}} 
+Game\+Object {\bfseries Countdown\+Object}
+\item 
+\mbox{\Hypertarget{class_game_u_i_manager_a05d6395103780b3369255851b86bd9ef}\label{class_game_u_i_manager_a05d6395103780b3369255851b86bd9ef}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+group\+Objective\+Countdown\+Text}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_u_i_manager_aec389ae9dcf51deaf91f82908d977528}\label{class_game_u_i_manager_aec389ae9dcf51deaf91f82908d977528}} 
+\index{GameUIManager@{GameUIManager}!Awake@{Awake}}
+\index{Awake@{Awake}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_a87321cc7e5f02994491293f248a48b15}\label{class_game_u_i_manager_a87321cc7e5f02994491293f248a48b15}} 
+\index{GameUIManager@{GameUIManager}!CancelGroupObjectiveCountdown@{CancelGroupObjectiveCountdown}}
+\index{CancelGroupObjectiveCountdown@{CancelGroupObjectiveCountdown}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{CancelGroupObjectiveCountdown()}{CancelGroupObjectiveCountdown()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Cancel\+Group\+Objective\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Destroy(CountdownObject);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ CountdownObject\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_groupObjectiveCountdownText\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_aebe76bd65cd26827706507c3ee96f687}\label{class_game_u_i_manager_aebe76bd65cd26827706507c3ee96f687}} 
+\index{GameUIManager@{GameUIManager}!HideGroupObjectiveCountdown@{HideGroupObjectiveCountdown}}
+\index{HideGroupObjectiveCountdown@{HideGroupObjectiveCountdown}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{HideGroupObjectiveCountdown()}{HideGroupObjectiveCountdown()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Hide\+Group\+Objective\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CountdownObject\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ CountdownObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_ac6f56c6b5a5435bef49af5f1bdd8c686}\label{class_game_u_i_manager_ac6f56c6b5a5435bef49af5f1bdd8c686}} 
+\index{GameUIManager@{GameUIManager}!SetObjectiveText@{SetObjectiveText}}
+\index{SetObjectiveText@{SetObjectiveText}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{SetObjectiveText()}{SetObjectiveText()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Set\+Objective\+Text (\begin{DoxyParamCaption}\item[{string}]{objective\+String }\end{DoxyParamCaption})}
+
+
+
+Updates the objective UI text to display the current objective. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective\+String} & The string to display\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \_objectiveText.text\ =\ objectiveString;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_ab77832b3c2402ed2d7ea448c80376a4b}\label{class_game_u_i_manager_ab77832b3c2402ed2d7ea448c80376a4b}} 
+\index{GameUIManager@{GameUIManager}!SetupGroupObjectiveUI@{SetupGroupObjectiveUI}}
+\index{SetupGroupObjectiveUI@{SetupGroupObjectiveUI}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{SetupGroupObjectiveUI()}{SetupGroupObjectiveUI()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Setup\+Group\+Objective\+UI (\begin{DoxyParamCaption}\item[{List$<$ string $>$}]{objective\+Requirements }\end{DoxyParamCaption})}
+
+
+
+Creates a prefab for each of the provided requirements for the group objective. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective\+Requirements} & The list of strings for the requirements to display\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ the\ current\ requirements}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ child\ \textcolor{keywordflow}{in}\ \_groupObjectiveRequirementsParent.transform)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(child.gameObject);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ requirement\ \textcolor{keywordflow}{in}\ objectiveRequirements)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ requirementObject\ =\ Instantiate(\_groupObjectiveRequirementPrefab,\ \_groupObjectiveRequirementsParent.transform);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ requirementObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text\ =\ \textcolor{stringliteral}{"{}0/"{}}\ +\ requirement;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_a4b16377f0d30d60dbb94181c0fb00b4f}\label{class_game_u_i_manager_a4b16377f0d30d60dbb94181c0fb00b4f}} 
+\index{GameUIManager@{GameUIManager}!SetupStreakBar@{SetupStreakBar}}
+\index{SetupStreakBar@{SetupStreakBar}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{SetupStreakBar()}{SetupStreakBar()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Setup\+Streak\+Bar (\begin{DoxyParamCaption}\item[{List$<$ float $>$}]{percentages,  }\item[{List$<$ Color $>$}]{colours }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalPercentage\ =\ 1f;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ percentages.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ colourPart\ =\ Instantiate(\_streakBarColourPartPrefab,\ \_streakBarImage.transform);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ Image\ colourPartImage\ =\ colourPart.GetComponent<Image>();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ colourPartImage.color\ =\ colours[i];}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ colourPartImage.fillAmount\ =\ totalPercentage;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ totalPercentage\ =\ Mathf.Clamp01(totalPercentage\ -\/\ percentages[i]);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_aa46701126a673b90f5d97eadcec2bc82}\label{class_game_u_i_manager_aa46701126a673b90f5d97eadcec2bc82}} 
+\index{GameUIManager@{GameUIManager}!ShowGroupObjectiveCountdown@{ShowGroupObjectiveCountdown}}
+\index{ShowGroupObjectiveCountdown@{ShowGroupObjectiveCountdown}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{ShowGroupObjectiveCountdown()}{ShowGroupObjectiveCountdown()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Show\+Group\+Objective\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CountdownObject\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ CountdownObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_a3d5f37d3ffc5f938b326b6e611195d30}\label{class_game_u_i_manager_a3d5f37d3ffc5f938b326b6e611195d30}} 
+\index{GameUIManager@{GameUIManager}!SpawnGroupObjectiveCountdown@{SpawnGroupObjectiveCountdown}}
+\index{SpawnGroupObjectiveCountdown@{SpawnGroupObjectiveCountdown}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{SpawnGroupObjectiveCountdown()}{SpawnGroupObjectiveCountdown()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Spawn\+Group\+Objective\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ CountdownObject\ =\ Instantiate(\_groupObjectiveCountdownPrefab,\ \_groupObjectiveRequirementsParent.transform);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \_groupObjectiveCountdownText\ =\ CountdownObject.GetComponent<TextMeshProUGUI>();}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_ace2930fd390c700012e7af5dbd5ac41c}\label{class_game_u_i_manager_ace2930fd390c700012e7af5dbd5ac41c}} 
+\index{GameUIManager@{GameUIManager}!UpdateGroupObjectiveCountdown@{UpdateGroupObjectiveCountdown}}
+\index{UpdateGroupObjectiveCountdown@{UpdateGroupObjectiveCountdown}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{UpdateGroupObjectiveCountdown()}{UpdateGroupObjectiveCountdown()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Update\+Group\+Objective\+Countdown (\begin{DoxyParamCaption}\item[{string}]{seconds }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CountdownObject\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ SpawnGroupObjectiveCountdown();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \_groupObjectiveCountdownText.text\ =\ \$\textcolor{stringliteral}{"{}Countdown:\ \{seconds\}"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_abe7f2ab477792d1a66c57556abab8364}\label{class_game_u_i_manager_abe7f2ab477792d1a66c57556abab8364}} 
+\index{GameUIManager@{GameUIManager}!UpdateGroupObjectiveRequirement@{UpdateGroupObjectiveRequirement}}
+\index{UpdateGroupObjectiveRequirement@{UpdateGroupObjectiveRequirement}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{UpdateGroupObjectiveRequirement()}{UpdateGroupObjectiveRequirement()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Update\+Group\+Objective\+Requirement (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{new\+Value,  }\item[{bool}]{is\+Complete = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Updates an individual requirement for the group objective to be either complete or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requirement to update\\
+\hline
+{\em is\+Complete} & Whether the requirement is complete or not\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ Transform\ requirementTransform\ =\ \_groupObjectiveRequirementsParent.transform.GetChild(index);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ requirementTransform.GetChild(0).GetComponent<Image>().sprite\ =\ isComplete\ ?\ \_objectiveRequirementDoneSprite\ :\ \_objectiveRequirementNotDoneSprite;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ requirementText\ =\ requirementTransform.GetChild(1).GetComponent<TextMeshProUGUI>().text;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ slashIndex\ =\ requirementText.IndexOf(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ requirementText\ =\ newValue\ +\ requirementText.Substring(slashIndex);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ requirementTransform.GetChild(1).GetComponent<TextMeshProUGUI>().text\ =\ requirementText;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_a6d938733b362259f2491dd253c4bd2d4}\label{class_game_u_i_manager_a6d938733b362259f2491dd253c4bd2d4}} 
+\index{GameUIManager@{GameUIManager}!UpdateStreakBar@{UpdateStreakBar}}
+\index{UpdateStreakBar@{UpdateStreakBar}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{UpdateStreakBar()}{UpdateStreakBar()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Update\+Streak\+Bar (\begin{DoxyParamCaption}\item[{float}]{current\+Multiplier,  }\item[{float}]{current\+Percentage }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ multiplierString\ =\ currentMultiplier.ToString(\textcolor{stringliteral}{"{}0.0"{}});}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \_streakText.text\ =\ \$\textcolor{stringliteral}{"{}\{multiplierString\}x"{}};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ LeanTween.cancel(\_streakBarImage.gameObject);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ LeanTween.value(\_streakBarImage.gameObject,\ \_streakBarImage.fillAmount,\ currentPercentage,\ 0.1f).setEase(LeanTweenType.easeOutCubic).setOnUpdate((\textcolor{keywordtype}{float}\ val)\ =>}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \_streakBarImage.fillAmount\ =\ val;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_u_i_manager_a5977f1967dfa75c27b3fd2bd54de9f55}\label{class_game_u_i_manager_a5977f1967dfa75c27b3fd2bd54de9f55}} 
+\index{GameUIManager@{GameUIManager}!UpdateTimerUI@{UpdateTimerUI}}
+\index{UpdateTimerUI@{UpdateTimerUI}!GameUIManager@{GameUIManager}}
+\doxysubsubsection{\texorpdfstring{UpdateTimerUI()}{UpdateTimerUI()}}
+{\footnotesize\ttfamily void Game\+UIManager.\+Update\+Timer\+UI (\begin{DoxyParamCaption}\item[{uint}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Updates the timer UI text to display the remaining time for this round. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & The number of seconds remaining\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minutes\ =\ Mathf.Floor(seconds\ /\ 60).ToString(\textcolor{stringliteral}{"{}00"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ secondsString\ =\ (seconds\ \%\ 60).ToString(\textcolor{stringliteral}{"{}00"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \_timerText.text\ =\ minutes\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ secondsString;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}

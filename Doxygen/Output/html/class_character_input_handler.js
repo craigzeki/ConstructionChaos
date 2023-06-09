@@ -6,6 +6,7 @@ var class_character_input_handler =
       [ "MENU", "class_character_input_handler.html#ae81e60add6deed99b67faa3a96946713a3ed53fbeb1eab0443561b68ca0c0b5cf", null ],
       [ "NUM_OF_ACTIONMAPS", "class_character_input_handler.html#ae81e60add6deed99b67faa3a96946713a10f3053e2148ce50e29ef0b4fee7b689", null ]
     ] ],
+    [ "CalculateArmRotation", "class_character_input_handler.html#afb5e28347a96726a6b94e756f45c1a05", null ],
     [ "SetCollapse", "class_character_input_handler.html#adffb4b8f08ca33cbb896a8952fd9e3b4", null ],
     [ "SetJump", "class_character_input_handler.html#a9cc4b779c96446505439df1250c2b7d8", null ],
     [ "SetLeftGrabButton", "class_character_input_handler.html#a8fd3710e3402d70b687f355186c1a920", null ],

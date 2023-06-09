@@ -1,0 +1,50 @@
+\hypertarget{class_network_identifier}{}\doxysection{Network\+Identifier Class Reference}
+\label{class_network_identifier}\index{NetworkIdentifier@{NetworkIdentifier}}
+
+
+Inheritance diagram for Network\+Identifier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_network_identifier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Network\+Identifier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_network_identifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_network_identifier_a425117e862ce384aa4345ce3e9530fb4}{On\+Network\+Spawn}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_network_identifier_a6e124b36fb25ce032a4804b07316f73c}\label{class_network_identifier_a6e124b36fb25ce032a4804b07316f73c}} 
+Network\+Variable$<$ uint $>$ {\bfseries Network\+Id} = new Network\+Variable$<$uint$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_network_identifier_a425117e862ce384aa4345ce3e9530fb4}\label{class_network_identifier_a425117e862ce384aa4345ce3e9530fb4}} 
+\index{NetworkIdentifier@{NetworkIdentifier}!OnNetworkSpawn@{OnNetworkSpawn}}
+\index{OnNetworkSpawn@{OnNetworkSpawn}!NetworkIdentifier@{NetworkIdentifier}}
+\doxysubsubsection{\texorpdfstring{OnNetworkSpawn()}{OnNetworkSpawn()}}
+{\footnotesize\ttfamily override void Network\+Identifier.\+On\+Network\+Spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkId.Value\ =\ (uint)Random.Range(0,\ 100000);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}

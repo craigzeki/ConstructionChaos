@@ -7,18 +7,16 @@ Automatically spaces the end platforms to match the size of the middle one.
 
 
 
-Inheritance diagram for Platform\+Arranger\+:
-\nopagebreak
+Inheritance diagram for Platform\+Arranger\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=169pt]{class_platform_arranger__inherit__graph}
+\includegraphics[width=199pt]{class_platform_arranger__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Platform\+Arranger\+:
-\nopagebreak
+Collaboration diagram for Platform\+Arranger\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,16 +26,16 @@ Collaboration diagram for Platform\+Arranger\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_platform_arranger_ae27939afd4a53d8c899da94ad89fbccf}{Update\+End\+Positions}} ()
+virtual void \mbox{\hyperlink{class_platform_arranger_af86952bb683ccb743c091b46f454e7e5}{Update\+End\+Positions}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
+\doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_platform_arranger_ad89295e64cb37eda984cf5593d1fb0ba}{Awake}} ()
+virtual void \mbox{\hyperlink{class_platform_arranger_a37a18dbd878a74b0de912327f35dc111}{Awake}} ()
 \item 
-void \mbox{\hyperlink{class_platform_arranger_aa12807886395d3637010020c7396c9d7}{On\+Draw\+Gizmos}} ()
+virtual void \mbox{\hyperlink{class_platform_arranger_a0a6fd8459bc92f5dee962d774ccba9a1}{On\+Draw\+Gizmos}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}\label{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}} 
@@ -64,74 +62,71 @@ Box\+Collider2D {\bfseries \+\_\+end\+RCollider}
 Automatically spaces the end platforms to match the size of the middle one. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_platform_arranger_ad89295e64cb37eda984cf5593d1fb0ba}\label{class_platform_arranger_ad89295e64cb37eda984cf5593d1fb0ba}} 
+\mbox{\Hypertarget{class_platform_arranger_a37a18dbd878a74b0de912327f35dc111}\label{class_platform_arranger_a37a18dbd878a74b0de912327f35dc111}} 
 \index{PlatformArranger@{PlatformArranger}!Awake@{Awake}}
 \index{Awake@{Awake}!PlatformArranger@{PlatformArranger}}
 \doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
-{\footnotesize\ttfamily void Platform\+Arranger.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily virtual void Platform\+Arranger.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00039\ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_ab3576ee4b87283bf8718474aaf8549c2}{\_platformEndL}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_afb7d9a6def1d7fb8212f814b7902c0ea}{\_platformEndR}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}\ =\ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.GetComponent<BoxCollider2D>();}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a1702db8eb823e54cf2ba584266408fea}{\_endRCollider}}\ =\ \mbox{\hyperlink{class_platform_arranger_afb7d9a6def1d7fb8212f814b7902c0ea}{\_platformEndR}}.GetComponent<BoxCollider2D>();}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a58df849646768c31ecf38575c2dda664}{\_endLCollider}}\ =\ \mbox{\hyperlink{class_platform_arranger_ab3576ee4b87283bf8718474aaf8549c2}{\_platformEndL}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_ab3576ee4b87283bf8718474aaf8549c2}{\_platformEndL}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_afb7d9a6def1d7fb8212f814b7902c0ea}{\_platformEndR}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ UpdateEndPositions();}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}\ =\ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a1702db8eb823e54cf2ba584266408fea}{\_endRCollider}}\ =\ \mbox{\hyperlink{class_platform_arranger_afb7d9a6def1d7fb8212f814b7902c0ea}{\_platformEndR}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a58df849646768c31ecf38575c2dda664}{\_endLCollider}}\ =\ \mbox{\hyperlink{class_platform_arranger_ab3576ee4b87283bf8718474aaf8549c2}{\_platformEndL}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ UpdateEndPositions();}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_platform_arranger_aa12807886395d3637010020c7396c9d7}\label{class_platform_arranger_aa12807886395d3637010020c7396c9d7}} 
+\mbox{\Hypertarget{class_platform_arranger_a0a6fd8459bc92f5dee962d774ccba9a1}\label{class_platform_arranger_a0a6fd8459bc92f5dee962d774ccba9a1}} 
 \index{PlatformArranger@{PlatformArranger}!OnDrawGizmos@{OnDrawGizmos}}
 \index{OnDrawGizmos@{OnDrawGizmos}!PlatformArranger@{PlatformArranger}}
 \doxysubsubsection{\texorpdfstring{OnDrawGizmos()}{OnDrawGizmos()}}
-{\footnotesize\ttfamily void Platform\+Arranger.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily virtual void Platform\+Arranger.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \ \ \ \ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.IsPlaying(\textcolor{keyword}{this}))\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}DrawGizmo"{}});}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Awake();}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.IsPlaying(\textcolor{keyword}{this}))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}DrawGizmo"{});}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Awake();}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_platform_arranger_ae27939afd4a53d8c899da94ad89fbccf}\label{class_platform_arranger_ae27939afd4a53d8c899da94ad89fbccf}} 
+\mbox{\Hypertarget{class_platform_arranger_af86952bb683ccb743c091b46f454e7e5}\label{class_platform_arranger_af86952bb683ccb743c091b46f454e7e5}} 
 \index{PlatformArranger@{PlatformArranger}!UpdateEndPositions@{UpdateEndPositions}}
 \index{UpdateEndPositions@{UpdateEndPositions}!PlatformArranger@{PlatformArranger}}
 \doxysubsubsection{\texorpdfstring{UpdateEndPositions()}{UpdateEndPositions()}}
-{\footnotesize\ttfamily void Platform\+Arranger.\+Update\+End\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily virtual void Platform\+Arranger.\+Update\+End\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_a58df849646768c31ecf38575c2dda664}{\_endLCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ midXLeft\ =\ \mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}.bounds.extents.x;}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_platformEndL.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.x\ -\/\ midXLeft\ -\/\ \mbox{\hyperlink{class_platform_arranger_a58df849646768c31ecf38575c2dda664}{\_endLCollider}}.bounds.extents.x,}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.y,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.z}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_a1702db8eb823e54cf2ba584266408fea}{\_endRCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ midXRight\ =\ \mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}.bounds.extents.x;}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \_platformEndR.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.x\ +\ midXRight\ +\ \mbox{\hyperlink{class_platform_arranger_a1702db8eb823e54cf2ba584266408fea}{\_endRCollider}}.bounds.extents.x,}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.y,}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.z}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_a58df849646768c31ecf38575c2dda664}{\_endLCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ midXLeft\ =\ \mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}.bounds.extents.x;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_platformEndL.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.x\ -\/\ midXLeft\ -\/\ \mbox{\hyperlink{class_platform_arranger_a58df849646768c31ecf38575c2dda664}{\_endLCollider}}.bounds.extents.x,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.y,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.z}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_platform_arranger_a1702db8eb823e54cf2ba584266408fea}{\_endRCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ midXRight\ =\ \mbox{\hyperlink{class_platform_arranger_ae09272a9c34c871d37d15b194daa8fa3}{\_midCollider}}.bounds.extents.x;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \_platformEndR.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.x\ +\ midXRight\ +\ \mbox{\hyperlink{class_platform_arranger_a1702db8eb823e54cf2ba584266408fea}{\_endRCollider}}.bounds.extents.x,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.y,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_arranger_a48c6a39f6225faf6dcd3083f0a94beaf}{\_platformMid}}.transform.localPosition.z}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
 
 \end{DoxyCode}

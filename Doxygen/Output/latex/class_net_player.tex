@@ -7,8 +7,7 @@ A class which contains all networking methods for the player.
 
 
 
-Inheritance diagram for Net\+Player\+:
-\nopagebreak
+Inheritance diagram for Net\+Player\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for Net\+Player\+:
 \end{figure}
 
 
-Collaboration diagram for Net\+Player\+:
-\nopagebreak
+Collaboration diagram for Net\+Player\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,18 +28,43 @@ Collaboration diagram for Net\+Player\+:
 \item 
 override void \mbox{\hyperlink{class_net_player_a2d8ca73cc7214b7326d774e990427604}{On\+Network\+Spawn}} ()
 \item 
+override void \mbox{\hyperlink{class_net_player_a075282f7296a6a914221bcb5ef98d548}{On\+Network\+Despawn}} ()
+\item 
+override void \mbox{\hyperlink{class_net_player_ad4d97177a94261ca587eefe9963d1651}{On\+Destroy}} ()
+\item 
 void \mbox{\hyperlink{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}{Set\+Objective\+String\+Client\+Rpc}} (string new\+Objective\+String, Client\+Rpc\+Params client\+Rpc\+Params=default)
-\begin{DoxyCompactList}\small\item\em Receive a new objective from the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} and set this locally on the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Receive a new objective from the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} and set this locally on the client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_net_player_a9a8b098fc155cdb8f7e0f20ff92486ab}{Set\+Player\+Name}} (Fixed\+String32\+Bytes previous, Fixed\+String32\+Bytes current)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_net_player_ab9898615772d4e2ad883d407db02ccec}\label{class_net_player_ab9898615772d4e2ad883d407db02ccec}} 
+Network\+Variable$<$ int $>$ {\bfseries Player\+Color\+Index} = new Network\+Variable$<$int$>$()
+\item 
+\mbox{\Hypertarget{class_net_player_a9d5245ee434e44d82ada3d8aa3a2559f}\label{class_net_player_a9d5245ee434e44d82ada3d8aa3a2559f}} 
+Network\+Variable$<$ Fixed\+String32\+Bytes $>$ {\bfseries Local\+Player\+Name} = new Network\+Variable$<$Fixed\+String32\+Bytes$>$()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_net_player_a334d4c41478111db34a6a924563448a9}{On\+Disable}} ()
+\item 
 void \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{Network\+Manager\+\_\+\+On\+Client\+Connected\+Callback}} (ulong obj)
-\begin{DoxyCompactList}\small\item\em Callback which is called by the Client on the Server (automagically) once the Client has fully spawned and connected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Callback which is called by the Client on the Server (automagically) once the Client has fully spawned and connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_net_player_a125c82d9895428ca2793ce0b1d808dee}{Set\+Player\+Colour}} (int previous, int current)
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_net_player_ae33e7c00d1dce355549da42320690bc2}\label{class_net_player_ae33e7c00d1dce355549da42320690bc2}} 
 string {\bfseries \+\_\+objective\+String} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{class_net_player_ac51f66b54e7f05f735674fc26a0fb2dc}\label{class_net_player_ac51f66b54e7f05f735674fc26a0fb2dc}} 
+List$<$ Sprite\+Renderer $>$ {\bfseries \+\_\+parts\+To\+Colour} = new List$<$Sprite\+Renderer$>$()
+\item 
+\mbox{\Hypertarget{class_net_player_afd0c48de19b86343c3ac92996aa037c1}\label{class_net_player_afd0c48de19b86343c3ac92996aa037c1}} 
+Color {\bfseries \+\_\+player\+Colour} = Color.\+white
 \end{DoxyCompactItemize}
 
 
@@ -66,22 +89,91 @@ Callback which is called by the Client on the Server (automagically) once the Cl
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00038\ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Register\ with\ the\ Game\ Manager}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a666bee91a62b4662a8ef635f43a9c06b}{RegisterNewPlayer}}(OwnerClientId,\ \textcolor{keyword}{this});}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ the\ ownerClientId\ to\ some\ objects\ which\ need\ it\ (to\ report\ to\ the\ objective\ system)}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ List<Ragdoll>\ ragdollObjects\ =\ GetComponentsInChildren<Ragdoll>().ToList<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_action_reporter}{ObjectiveActionReporter}}\ objectiveActionReporter\ =\ GetComponentInChildren<ObjectiveActionReporter>();}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll\ \textcolor{keywordflow}{in}\ ragdollObjects)}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ClientId\ =\ OwnerClientId;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ObjectiveActionReporter\ =\ objectiveActionReporter;}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Register\ with\ the\ Game\ Manager}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a666bee91a62b4662a8ef635f43a9c06b}{RegisterNewPlayer}}(OwnerClientId,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(OwnerClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ SetPlayerColour(0,playerData.ColourIndex);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ the\ ownerClientId\ to\ some\ objects\ which\ need\ it\ (to\ report\ to\ the\ objective\ system)}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ List<Ragdoll>\ ragdollObjects\ =\ GetComponentsInChildren<Ragdoll>().ToList<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_action_reporter}{ObjectiveActionReporter}}\ objectiveActionReporter\ =\ GetComponentInChildren<ObjectiveActionReporter>();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll\ \textcolor{keywordflow}{in}\ ragdollObjects)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ClientId\ =\ OwnerClientId;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ObjectiveActionReporter\ =\ objectiveActionReporter;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager\ !=\ \textcolor{keyword}{null})\ NetworkManager.OnClientConnectedCallback\ -\/=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_ad4d97177a94261ca587eefe9963d1651}\label{class_net_player_ad4d97177a94261ca587eefe9963d1651}} 
+\index{NetPlayer@{NetPlayer}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily override void Net\+Player.\+On\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ base.OnDestroy();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager\ !=\ \textcolor{keyword}{null})\ NetworkManager.OnClientConnectedCallback\ -\/=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_a334d4c41478111db34a6a924563448a9}\label{class_net_player_a334d4c41478111db34a6a924563448a9}} 
+\index{NetPlayer@{NetPlayer}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Net\+Player.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager\ !=\ \textcolor{keyword}{null})\ NetworkManager.OnClientConnectedCallback\ -\/=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_a075282f7296a6a914221bcb5ef98d548}\label{class_net_player_a075282f7296a6a914221bcb5ef98d548}} 
+\index{NetPlayer@{NetPlayer}!OnNetworkDespawn@{OnNetworkDespawn}}
+\index{OnNetworkDespawn@{OnNetworkDespawn}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{OnNetworkDespawn()}{OnNetworkDespawn()}}
+{\footnotesize\ttfamily override void Net\+Player.\+On\+Network\+Despawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ base.OnNetworkDespawn();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ LocalPlayerName.OnValueChanged\ -\/=\ SetPlayerName;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance?.\mbox{\hyperlink{class_game_manager_aefe5c9931f7a88ec7b5a73d0f41a27d1}{UnRegisterPlayer}}(OwnerClientId);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager\ !=\ \textcolor{keyword}{null})\ NetworkManager.OnClientConnectedCallback\ -\/=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerColorIndex.OnValueChanged\ -\/=\ SetPlayerColour;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_net_player_a2d8ca73cc7214b7326d774e990427604}\label{class_net_player_a2d8ca73cc7214b7326d774e990427604}} 
@@ -92,21 +184,43 @@ Callback which is called by the Client on the Server (automagically) once the Cl
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00017\ \ \ \ \ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ base.OnNetworkSpawn();}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsLocalPlayer)}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ camera\ to\ follow\ the\ player's\ head}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_follow_cam}{FollowCam}}.Instance.SetFollowTarget(transform.GetChild(0));}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.OnClientConnectedCallback\ +=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_networkObjectiveString.Value\ =\ \_objectiveString;}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ base.OnNetworkSpawn();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsLocalPlayer)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ camera\ to\ follow\ the\ player's\ head}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_follow_cam}{FollowCam}}.Instance.SetFollowTarget(transform.GetChild(0));}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ GameManager.Instance.LocalPlayer\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ to\ an\ empty\ spawn\ point}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spawn_manager}{SpawnManager}}.Instance.SpawnPlayer(gameObject);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkManager.OnClientConnectedCallback\ +=\ \mbox{\hyperlink{class_net_player_ad06a911e06dbaf5296460485336ada77}{NetworkManager\_OnClientConnectedCallback}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_networkObjectiveString.Value\ =\ \_objectiveString;}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LocalPlayerName.OnValueChanged\ +=\ SetPlayerName;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ PlayerColorIndex.OnValueChanged\ +=\ SetPlayerColour;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ SetPlayerColour(0,\ PlayerColorIndex.Value);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}\label{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}} 
@@ -126,8 +240,40 @@ Receive a new objective from the \mbox{\hyperlink{class_objective_manager}{Objec
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00061\ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_objectiveString\ =\ newObjectiveString\ !=\ \textcolor{keyword}{null}\ ?\ newObjectiveString\ :\ \textcolor{stringliteral}{"{}No\ Objective"{}};}
-\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \_objectiveString\ =\ newObjectiveString\ !=\ \textcolor{keyword}{null}\ ?\ newObjectiveString\ :\ \textcolor{stringliteral}{"{}No\ Objective"{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.\mbox{\hyperlink{class_game_u_i_manager_ac6f56c6b5a5435bef49af5f1bdd8c686}{SetObjectiveText}}(\_objectiveString);}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_a125c82d9895428ca2793ce0b1d808dee}\label{class_net_player_a125c82d9895428ca2793ce0b1d808dee}} 
+\index{NetPlayer@{NetPlayer}!SetPlayerColour@{SetPlayerColour}}
+\index{SetPlayerColour@{SetPlayerColour}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{SetPlayerColour()}{SetPlayerColour()}}
+{\footnotesize\ttfamily void Net\+Player.\+Set\+Player\+Colour (\begin{DoxyParamCaption}\item[{int}]{previous,  }\item[{int}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \_playerColour\ =\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.GetPlayerColour(current);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(SpriteRenderer\ spriteRenderer\ \textcolor{keywordflow}{in}\ \_partsToColour)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ spriteRenderer.color\ =\ \_playerColour;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_net_player_a9a8b098fc155cdb8f7e0f20ff92486ab}\label{class_net_player_a9a8b098fc155cdb8f7e0f20ff92486ab}} 
+\index{NetPlayer@{NetPlayer}!SetPlayerName@{SetPlayerName}}
+\index{SetPlayerName@{SetPlayerName}!NetPlayer@{NetPlayer}}
+\doxysubsubsection{\texorpdfstring{SetPlayerName()}{SetPlayerName()}}
+{\footnotesize\ttfamily void Net\+Player.\+Set\+Player\+Name (\begin{DoxyParamCaption}\item[{Fixed\+String32\+Bytes}]{previous,  }\item[{Fixed\+String32\+Bytes}]{current }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}SetPlayerName:\ "{}}\ +\ current.ToString());}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.SetPlayerNameText(current.ToString());}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
 
 \end{DoxyCode}

@@ -7,22 +7,20 @@ An object that can be used in an objective.
 
 
 
-Inheritance diagram for Objective\+Object\+:
-\nopagebreak
+Inheritance diagram for Objective\+Object\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_objective_object__inherit__graph}
+\includegraphics[width=331pt]{class_objective_object__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Objective\+Object\+:
-\nopagebreak
+Collaboration diagram for Objective\+Object\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_objective_object__coll__graph}
+\includegraphics[width=331pt]{class_objective_object__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -37,27 +35,40 @@ override int \mbox{\hyperlink{class_objective_object_ab7bf4ac4297e2b3b2e803c0404
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_object_a4e888b69ff8f5b5751a37dcdc510c45b}\label{class_objective_object_a4e888b69ff8f5b5751a37dcdc510c45b}} 
-string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
 \mbox{\Hypertarget{class_objective_object_a22a9bc50c79ad393955ce9a59116e818}\label{class_objective_object_a22a9bc50c79ad393955ce9a59116e818}} 
 List$<$ \mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} $>$ {\bfseries Possible\+Colours}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 \mbox{\Hypertarget{class_objective_object_ac7fd1fce648b839d6434c64b1ddec8e8}\label{class_objective_object_ac7fd1fce648b839d6434c64b1ddec8e8}} 
 List$<$ \mbox{\hyperlink{class_objective_action}{Objective\+Action}} $>$ {\bfseries Possible\+Actions}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{class_objective_base}{Objective\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_base_af388eae4f57c462f1723e95bfc4cfe3d}\label{class_objective_base_af388eae4f57c462f1723e95bfc4cfe3d}} 
+string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_objective_base_abb7ea49e943f1d66f444fe8261949d16}\label{class_objective_base_abb7ea49e943f1d66f444fe8261949d16}} 
+uint {\bfseries Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_object_a48cd35d9f871643c2436e372507ada88}\label{class_objective_object_a48cd35d9f871643c2436e372507ada88}} 
-string {\bfseries friendly\+String}
-\begin{DoxyCompactList}\small\item\em The friendly string of the object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_object_ad530a6293fac6994c62c6606682f7001}\label{class_objective_object_ad530a6293fac6994c62c6606682f7001}} 
 List$<$ \mbox{\hyperlink{class_objective_colour}{Objective\+Colour}} $>$ {\bfseries possible\+Colours} = new List$<$\mbox{\hyperlink{class_objective_colour}{Objective\+Colour}}$>$()
 \begin{DoxyCompactList}\small\item\em A list of all the possible colours that this object can be. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}\label{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}} 
 List$<$ \mbox{\hyperlink{class_objective_action}{Objective\+Action}} $>$ {\bfseries possible\+Actions} = new List$<$\mbox{\hyperlink{class_objective_action}{Objective\+Action}}$>$()
 \begin{DoxyCompactList}\small\item\em A list of all the possible actions that can be performed on this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_objective_base}{Objective\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}\label{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}} 
+string {\bfseries \+\_\+friendly\+String}
+\begin{DoxyCompactList}\small\item\em The friendly string of the action. Must be in the format \char`\"{}... $<$\+COLOUR$>$ $<$\+OBJECT$>$ $<$\+CONDITION$>$\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_base_ab20546d70d80723d074e1df500423a9d}\label{class_objective_base_ab20546d70d80723d074e1df500423a9d}} 
+uint {\bfseries \+\_\+points}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -84,12 +95,12 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}((\mbox{\hyperlink{class_objective_object}{ObjectiveObject}})other);}
-\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}((\mbox{\hyperlink{class_objective_object}{ObjectiveObject}})other);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}\label{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}} 
@@ -112,13 +123,15 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00041\ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_object_a48cd35d9f871643c2436e372507ada88}{friendlyString}}.Equals(other.\mbox{\hyperlink{class_objective_object_a48cd35d9f871643c2436e372507ada88}{friendlyString}}))\ \&\&}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Enumerable.SequenceEqual(\mbox{\hyperlink{class_objective_object_ad530a6293fac6994c62c6606682f7001}{possibleColours}}.OrderBy(i\ =>\ i.FriendlyString),\ other.\mbox{\hyperlink{class_objective_object_ad530a6293fac6994c62c6606682f7001}{possibleColours}}.OrderBy(i\ =>\ i.FriendlyString))\ \&\&}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Enumerable.SequenceEqual(\mbox{\hyperlink{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}{possibleActions}}.OrderBy(i\ =>\ i.FriendlyString),\ other.\mbox{\hyperlink{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}{possibleActions}}.OrderBy(i\ =>\ i.FriendlyString))}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}.Equals(other.\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}))\ \&\&}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_points\ ==\ other.\_points\ \&\&}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Enumerable.SequenceEqual(\mbox{\hyperlink{class_objective_object_ad530a6293fac6994c62c6606682f7001}{possibleColours}}.OrderBy(i\ =>\ i.FriendlyString),\ other.\mbox{\hyperlink{class_objective_object_ad530a6293fac6994c62c6606682f7001}{possibleColours}}.OrderBy(i\ =>\ i.FriendlyString))\ \&\&}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Enumerable.SequenceEqual(\mbox{\hyperlink{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}{possibleActions}}.OrderBy(i\ =>\ i.FriendlyString),\ other.\mbox{\hyperlink{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}{possibleActions}}.OrderBy(i\ =>\ i.FriendlyString))}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_object_ab7bf4ac4297e2b3b2e803c0404eef788}\label{class_objective_object_ab7bf4ac4297e2b3b2e803c0404eef788}} 
@@ -139,22 +152,23 @@ Override of Get\+Hash\+Code to provide correct hash for Dictionary.
 \href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
  \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ unchecked}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_object_a48cd35d9f871643c2436e372507ada88}{friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_object_a48cd35d9f871643c2436e372507ada88}{friendlyString}}.GetHashCode()\ :\ 0);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_colour}{ObjectiveColour}}\ objectiveColour\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_object_ad530a6293fac6994c62c6606682f7001}{possibleColours}})}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_points.GetHashCode());}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_colour}{ObjectiveColour}}\ objectiveColour\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_object_ad530a6293fac6994c62c6606682f7001}{possibleColours}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ objectiveColour.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_action}{ObjectiveAction}}\ objectiveAction\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}{possibleActions}})}
 \DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ objectiveColour.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode*23)\ +\ objectiveAction.\mbox{\hyperlink{class_objective_action_a6bbc3880e6ccf5dd84e5e35290ae482f}{GetHashCode}}();}
 \DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_action}{ObjectiveAction}}\ objectiveAction\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_objective_object_a734513587ce0aa4e57ef54c3a28b7d7f}{possibleActions}})}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode*23)\ +\ objectiveAction.\mbox{\hyperlink{class_objective_action_a6bbc3880e6ccf5dd84e5e35290ae482f}{GetHashCode}}();}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
 
 \end{DoxyCode}

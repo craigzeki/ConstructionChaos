@@ -1,0 +1,9 @@
+<map id="ObjectiveBase" name="ObjectiveBase">
+<area shape="rect" id="node1" title=" " alt="" coords="217,79,322,104"/>
+<area shape="rect" id="node3" href="$class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="5,152,117,177"/>
+<area shape="rect" id="node4" href="$class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="141,152,253,177"/>
+<area shape="rect" id="node6" href="$class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="278,152,407,177"/>
+<area shape="rect" id="node7" href="$class_objective_object.html" title="An object that can be used in an objective." alt="" coords="431,152,545,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="210,5,329,31"/>
+<area shape="rect" id="node5" href="$class_zone_colour.html" title=" " alt="" coords="154,225,241,251"/>
+</map>

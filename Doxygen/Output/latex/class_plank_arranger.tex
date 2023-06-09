@@ -1,0 +1,144 @@
+\hypertarget{class_plank_arranger}{}\doxysection{Plank\+Arranger Class Reference}
+\label{class_plank_arranger}\index{PlankArranger@{PlankArranger}}
+
+
+Automatically spaces the end platforms to match the size of the middle one.  
+
+
+
+
+Inheritance diagram for Plank\+Arranger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_plank_arranger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plank\+Arranger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_plank_arranger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_plank_arranger_a4b3b6c138e602c6d61049a068b1d2a06}{Update\+End\+Positions}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_plank_arranger_a8227dd5b8e50a45a1ce3d8043abda6a1}{Awake}} ()
+\item 
+virtual void \mbox{\hyperlink{class_plank_arranger_a6e08db645b2b7113c02d6894ae5eac68}{On\+Draw\+Gizmos}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}\label{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}} 
+Game\+Object {\bfseries \+\_\+platform\+Mid}
+\begin{DoxyCompactList}\small\item\em The middle platform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plank_arranger_abf91d677990ef286ecde6446b7d4980b}\label{class_plank_arranger_abf91d677990ef286ecde6446b7d4980b}} 
+Game\+Object {\bfseries \+\_\+platform\+EndL}
+\begin{DoxyCompactList}\small\item\em The left end platform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plank_arranger_a0544e8b1c4c5f245ce05604f6a78c701}\label{class_plank_arranger_a0544e8b1c4c5f245ce05604f6a78c701}} 
+Game\+Object {\bfseries \+\_\+platform\+EndR}
+\begin{DoxyCompactList}\small\item\em The right end platform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}\label{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}} 
+Box\+Collider2D {\bfseries \+\_\+mid\+Collider}
+\begin{DoxyCompactList}\small\item\em The middle platform\textquotesingle{}s box collider, used to calculate the bounds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plank_arranger_a5f4b83189d5c8a2e2beed889d41c6956}\label{class_plank_arranger_a5f4b83189d5c8a2e2beed889d41c6956}} 
+Box\+Collider2D {\bfseries \+\_\+end\+LCollider}
+\begin{DoxyCompactList}\small\item\em The left end platform\textquotesingle{}s platform\textquotesingle{}s box collider, used to calculate the bounds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plank_arranger_a9d1a883b2f817d325cc9b5aa056a4615}\label{class_plank_arranger_a9d1a883b2f817d325cc9b5aa056a4615}} 
+Box\+Collider2D {\bfseries \+\_\+end\+RCollider}
+\begin{DoxyCompactList}\small\item\em The right end platform\textquotesingle{}s box collider, used to calculate the bounds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_plank_arranger_aeffa5d3c4729e8b837864781fe2a2b30}\label{class_plank_arranger_aeffa5d3c4729e8b837864781fe2a2b30}} 
+Box\+Collider2D {\bfseries \+\_\+main\+Collider}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Automatically spaces the end platforms to match the size of the middle one. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plank_arranger_a8227dd5b8e50a45a1ce3d8043abda6a1}\label{class_plank_arranger_a8227dd5b8e50a45a1ce3d8043abda6a1}} 
+\index{PlankArranger@{PlankArranger}!Awake@{Awake}}
+\index{Awake@{Awake}!PlankArranger@{PlankArranger}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily virtual void Plank\+Arranger.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_plank_arranger_abf91d677990ef286ecde6446b7d4980b}{\_platformEndL}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_plank_arranger_a0544e8b1c4c5f245ce05604f6a78c701}{\_platformEndR}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}{\_midCollider}}\ =\ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a9d1a883b2f817d325cc9b5aa056a4615}{\_endRCollider}}\ =\ \mbox{\hyperlink{class_plank_arranger_a0544e8b1c4c5f245ce05604f6a78c701}{\_platformEndR}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a5f4b83189d5c8a2e2beed889d41c6956}{\_endLCollider}}\ =\ \mbox{\hyperlink{class_plank_arranger_abf91d677990ef286ecde6446b7d4980b}{\_platformEndL}}.GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \_mainCollider\ =\ GetComponent<BoxCollider2D>();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ UpdateEndPositions();}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plank_arranger_a6e08db645b2b7113c02d6894ae5eac68}\label{class_plank_arranger_a6e08db645b2b7113c02d6894ae5eac68}} 
+\index{PlankArranger@{PlankArranger}!OnDrawGizmos@{OnDrawGizmos}}
+\index{OnDrawGizmos@{OnDrawGizmos}!PlankArranger@{PlankArranger}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily virtual void Plank\+Arranger.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Application.IsPlaying(\textcolor{keyword}{this}))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}DrawGizmo"{});}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Awake();}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plank_arranger_a4b3b6c138e602c6d61049a068b1d2a06}\label{class_plank_arranger_a4b3b6c138e602c6d61049a068b1d2a06}} 
+\index{PlankArranger@{PlankArranger}!UpdateEndPositions@{UpdateEndPositions}}
+\index{UpdateEndPositions@{UpdateEndPositions}!PlankArranger@{PlankArranger}}
+\doxysubsubsection{\texorpdfstring{UpdateEndPositions()}{UpdateEndPositions()}}
+{\footnotesize\ttfamily virtual void Plank\+Arranger.\+Update\+End\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ Vector3\ orignalRotation\ =\ transform.rotation.eulerAngles;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ transform.rotation\ =\ Quaternion.Euler(0,\ 0,\ 0);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}{\_midCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_plank_arranger_a5f4b83189d5c8a2e2beed889d41c6956}{\_endLCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ midXLeft\ =\ \mbox{\hyperlink{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}{\_midCollider}}.bounds.extents.x;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_platformEndL.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.transform.localPosition.x\ -\/\ midXLeft\ -\/\ \mbox{\hyperlink{class_plank_arranger_a5f4b83189d5c8a2e2beed889d41c6956}{\_endLCollider}}.bounds.extents.x,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.transform.localPosition.y,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.transform.localPosition.z}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_plank_arranger_a9d1a883b2f817d325cc9b5aa056a4615}{\_endRCollider}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ midXRight\ =\ \mbox{\hyperlink{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}{\_midCollider}}.bounds.extents.x;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_platformEndR.transform.localPosition\ =\ \textcolor{keyword}{new}\ Vector3}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.transform.localPosition.x\ +\ midXRight\ +\ \mbox{\hyperlink{class_plank_arranger_a9d1a883b2f817d325cc9b5aa056a4615}{\_endRCollider}}.bounds.extents.x,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.transform.localPosition.y,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_plank_arranger_a4d5dd3a7693fcdef1cde4e50ae1a015e}{\_platformMid}}.transform.localPosition.z}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_mainCollider.offset=\ Vector3.zero;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_mainCollider.size\ =\ new\ Vector2(((\_midCollider.size.x\ *\ \_platformMid.transform.localScale.x)\ +\ (\_endLCollider.size.x\ *\ \_platformEndL.transform.localScale.x)\ +\ (\_endRCollider.size.x\ *\ \_platformEndR.transform.localScale.x)),\ \_midCollider.size.y\ *\ \_platformMid.transform.localScale.y);}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \_mainCollider.size\ =\ \textcolor{keyword}{new}\ Vector2((\mbox{\hyperlink{class_plank_arranger_a5f4b83189d5c8a2e2beed889d41c6956}{\_endLCollider}}.bounds.extents.x\ *\ 2)\ +\ (\mbox{\hyperlink{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}{\_midCollider}}.bounds.extents.x\ *\ 2)\ +\ (\mbox{\hyperlink{class_plank_arranger_a9d1a883b2f817d325cc9b5aa056a4615}{\_endRCollider}}.bounds.extents.x\ *\ 2),\ (\mbox{\hyperlink{class_plank_arranger_af6bea7ac70771b9ae92e46a44166e32f}{\_midCollider}}.bounds.extents.y\ *\ 2));}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ transform.rotation\ =\ Quaternion.Euler(orignalRotation);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}

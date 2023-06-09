@@ -2,65 +2,115 @@
 \label{class_goal_zone}\index{GoalZone@{GoalZone}}
 
 
-Inheritance diagram for Goal\+Zone\+:
-\nopagebreak
+Inheritance diagram for Goal\+Zone\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{class_goal_zone__inherit__graph}
+\includegraphics[width=294pt]{class_goal_zone__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Goal\+Zone\+:
-\nopagebreak
+Collaboration diagram for Goal\+Zone\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{class_goal_zone__coll__graph}
+\includegraphics[width=294pt]{class_goal_zone__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ String $>$ \mbox{\hyperlink{class_goal_zone_a8b1b9f735530f06669689b0a1c613db1}{Goal\+Strings}} = new List$<$String$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{class_zone}{Zone}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}\label{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}} 
+string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_zone_acc155893511742b6bade38deef0096a5}\label{class_zone_acc155893511742b6bade38deef0096a5}} 
+uint {\bfseries Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_zone_a03032d486487f85182ec0d9c7877892b}\label{class_zone_a03032d486487f85182ec0d9c7877892b}} 
+ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_zone_a88f13775ddb89cf2ff20fb736351333c}\label{class_zone_a88f13775ddb89cf2ff20fb736351333c}} 
+bool {\bfseries Is\+On\+Ground}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_goal_zone_a921b8a8055344b879d6ce5e28a5a4c92}{Awake}} ()
 \item 
+void \mbox{\hyperlink{class_goal_zone_acfc63c9d17708573b742e0f32472a1ca}{Start}} ()
+\item 
 void \mbox{\hyperlink{class_goal_zone_a690d76288499d14ef15dc232498f1a46}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\item 
+bool \mbox{\hyperlink{class_goal_zone_acd8784c972bc53b0e88d19dde52b8620}{All\+Goal\+Requirements\+Met}} ()
+\item 
+\mbox{\hyperlink{class_goal_requirement}{Goal\+Requirement}} \mbox{\hyperlink{class_goal_zone_ab0fb2302944321a1a80447a9e1d698fd}{Get\+Goal\+Requirement}} (\mbox{\hyperlink{class_objective_object}{Objective\+Object}} objective\+Object)
 \item 
 void \mbox{\hyperlink{class_goal_zone_ab92171b5d16537c55fdcb9de90e5d17a}{On\+Trigger\+Exit2D}} (Collider2D collision)
 \item 
-void \mbox{\hyperlink{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}{Check\+Win\+Condition}} ()
-\begin{DoxyCompactList}\small\item\em Checks to see if all win conditions are met\+:~\newline
- \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_goal_zone_af17e8099e44521b03513c80fe6a0e03d}{Update\+Group\+Objective\+Requirement\+Client\+Rpc}} (int index, int new\+Value, bool is\+Complete, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_goal_zone_a369b7fecf3a6595d3c4d105df4998564}{Do\+Countdown\+Client\+Rpc}} (Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_goal_zone_a665ad35bd4df48665a8e657ea09c082e}{Cancel\+Countdown\+Client\+Rpc}} (Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
 IEnumerator \mbox{\hyperlink{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}{Do\+Countdown}} ()
 \begin{DoxyCompactList}\small\item\em Runs the countdown and triggers the win condition if countdown completes~\newline
- {\itshape Start as a coroutine} \end{DoxyCompactList}\end{DoxyCompactItemize}
+ {\itshape Start as a coroutine} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_goal_zone_ab091f7bf85f1c349f813b1e14e87f203}{On\+Draw\+Gizmos}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_goal_zone_a03ef1104cd33e5ebf1d0a5e7f0a0f626}\label{class_goal_zone_a03ef1104cd33e5ebf1d0a5e7f0a0f626}} 
-Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+crates\+Text}
+\mbox{\Hypertarget{class_goal_zone_a3ddeb3a109c3b600f3e95e38f60421e0}\label{class_goal_zone_a3ddeb3a109c3b600f3e95e38f60421e0}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+goal\+Zone\+Text}
 \item 
 \mbox{\Hypertarget{class_goal_zone_aa238711e1ed7655c5ed42423965bf5dd}\label{class_goal_zone_aa238711e1ed7655c5ed42423965bf5dd}} 
 Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+countdown\+Text}
 \item 
-\mbox{\Hypertarget{class_goal_zone_aec3a6680bbc439e084a35766836b3252}\label{class_goal_zone_aec3a6680bbc439e084a35766836b3252}} 
-uint {\bfseries \+\_\+num\+Of\+Crates\+Required} = 3
-\item 
 \mbox{\Hypertarget{class_goal_zone_a2ee88dec5b5169330bb69b4b0c8069f5}\label{class_goal_zone_a2ee88dec5b5169330bb69b4b0c8069f5}} 
 uint {\bfseries \+\_\+countdown\+Timer\+Start} = 3
 \item 
-\mbox{\Hypertarget{class_goal_zone_a1e11726e8df6e6da87283fff1102b4bd}\label{class_goal_zone_a1e11726e8df6e6da87283fff1102b4bd}} 
-uint {\bfseries \+\_\+num\+Of\+Crates} = 0
+\mbox{\Hypertarget{class_goal_zone_a132c80b5ea6cc64fa9e17be0f6423435}\label{class_goal_zone_a132c80b5ea6cc64fa9e17be0f6423435}} 
+TMP\+\_\+\+Sprite\+Asset {\bfseries \+\_\+sprite\+Asset}
+\item 
+\mbox{\Hypertarget{class_goal_zone_a4d45106bb1bf11c3d478b54bbfc68330}\label{class_goal_zone_a4d45106bb1bf11c3d478b54bbfc68330}} 
+List$<$ \mbox{\hyperlink{class_goal_requirement}{Goal\+Requirement}} $>$ {\bfseries \+\_\+goal\+Requirements} = new List$<$\mbox{\hyperlink{class_goal_requirement}{Goal\+Requirement}}$>$()
+\item 
+\mbox{\Hypertarget{class_goal_zone_a9ebc668d8509763778f4b72834ca61e9}\label{class_goal_zone_a9ebc668d8509763778f4b72834ca61e9}} 
+Game\+Object {\bfseries \+\_\+goal\+Sprite}
+\item 
+\mbox{\Hypertarget{class_goal_zone_ac3961b41945967a439bd8b70f693383b}\label{class_goal_zone_ac3961b41945967a439bd8b70f693383b}} 
+Game\+Object {\bfseries \+\_\+goal\+Canvas}
+\item 
+\mbox{\Hypertarget{class_goal_zone_a0d23d5ea7a996586f0b40c0b9481fc0e}\label{class_goal_zone_a0d23d5ea7a996586f0b40c0b9481fc0e}} 
+Game\+Object {\bfseries \+\_\+countdown\+Canvas}
 \item 
 \mbox{\Hypertarget{class_goal_zone_a4ca55d6d78f153a52ceb7ac5cfa7d595}\label{class_goal_zone_a4ca55d6d78f153a52ceb7ac5cfa7d595}} 
 int {\bfseries \+\_\+countdown\+Timer} = 0
 \item 
 \mbox{\Hypertarget{class_goal_zone_aad3f17112c5367691ca390c0177d985d}\label{class_goal_zone_aad3f17112c5367691ca390c0177d985d}} 
-Coroutine {\bfseries \+\_\+countdown\+Coroutine}
+Coroutine {\bfseries \+\_\+countdown\+Coroutine} = null
 \item 
 \mbox{\Hypertarget{class_goal_zone_a4e5cc983059d7a980626d4c9b767f771}\label{class_goal_zone_a4e5cc983059d7a980626d4c9b767f771}} 
 bool {\bfseries \+\_\+win} = false
+\item 
+\mbox{\Hypertarget{class_goal_zone_ae142b9dbaf2bcd7a4f60070600409139}\label{class_goal_zone_ae142b9dbaf2bcd7a4f60070600409139}} 
+Rect\+Transform {\bfseries \+\_\+countdown\+Text\+Rect\+Transform}
+\item 
+\mbox{\Hypertarget{class_goal_zone_a8db69e0613c7cc1865b13cb523fab88b}\label{class_goal_zone_a8db69e0613c7cc1865b13cb523fab88b}} 
+Vector3 {\bfseries \+\_\+target\+Scale} = Vector3.\+zero
+\item 
+\mbox{\Hypertarget{class_goal_zone_a1a6a6d05e51de567dcea480a849354d5}\label{class_goal_zone_a1a6a6d05e51de567dcea480a849354d5}} 
+Vector3 {\bfseries \+\_\+start\+Scale} = Vector3.\+zero
+\item 
+\mbox{\Hypertarget{class_goal_zone_af4a90ab28030f2ac1057263805c264a7}\label{class_goal_zone_af4a90ab28030f2ac1057263805c264a7}} 
+Dictionary$<$ \mbox{\hyperlink{class_objective_object}{Objective\+Object}}, int $>$ {\bfseries scene\+Objects} = new Dictionary$<$\mbox{\hyperlink{class_objective_object}{Objective\+Object}}, int$>$()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_zone}{Zone}}}
@@ -81,18 +131,29 @@ override bool \mbox{\hyperlink{class_zone_a24843f534acbdae9b199d48e1c09c6cf}{Equ
 \begin{DoxyCompactList}\small\item\em Override of Equals to provide correct equivalence check. \end{DoxyCompactList}\item 
 override int \mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{Get\+Hash\+Code}} ()
 \begin{DoxyCompactList}\small\item\em Override of Get\+Hash\+Code to provide correct hash for Dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{class_zone}{Zone}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}\label{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}} 
-string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
-\mbox{\Hypertarget{class_zone_a03032d486487f85182ec0d9c7877892b}\label{class_zone_a03032d486487f85182ec0d9c7877892b}} 
-ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_goal_zone_acd8784c972bc53b0e88d19dde52b8620}\label{class_goal_zone_acd8784c972bc53b0e88d19dde52b8620}} 
+\index{GoalZone@{GoalZone}!AllGoalRequirementsMet@{AllGoalRequirementsMet}}
+\index{AllGoalRequirementsMet@{AllGoalRequirementsMet}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{AllGoalRequirementsMet()}{AllGoalRequirementsMet()}}
+{\footnotesize\ttfamily bool Goal\+Zone.\+All\+Goal\+Requirements\+Met (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ goalRequirement\ \textcolor{keywordflow}{in}\ \_goalRequirements)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ a\ single\ goal\ is\ not\ met,\ exit\ early\ with\ false}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!goalRequirement.RequirementMet())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ we\ got\ all\ the\ way\ through,\ all\ goals\ are\ met}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_goal_zone_a921b8a8055344b879d6ce5e28a5a4c92}\label{class_goal_zone_a921b8a8055344b879d6ce5e28a5a4c92}} 
 \index{GoalZone@{GoalZone}!Awake@{Awake}}
 \index{Awake@{Awake}!GoalZone@{GoalZone}}
@@ -101,52 +162,70 @@ ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ goal\ countdown\ timer\ and\ set\ it\ to\ its\ value\ reeady\ for\ countdown}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ the\ crate\ counter}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cratesText\ !=\ \textcolor{keyword}{null})\ \_cratesText.text\ =\ \_numOfCrates.ToString(\textcolor{stringliteral}{"{}00"{}})\ +\ \textcolor{stringliteral}{"{}\ of\ "{}}\ +\ \_numOfCratesRequired.ToString(\textcolor{stringliteral}{"{}00"{}});}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ goal\ countdown\ timer\ and\ set\ it\ to\ its\ value\ reeady\ for\ countdown}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCanvas\ !=\ \textcolor{keyword}{null})\ \_countdownTextRectTransform\ =\ \_countdownCanvas.GetComponent<RectTransform>();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \_targetScale\ =\ \_countdownTextRectTransform\ !=\ \textcolor{keyword}{null}\ ?\ \_countdownTextRectTransform.localScale\ :\ Vector3.zero;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \_countdownTextRectTransform.localScale\ =\ \_startScale;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ List<ObjectiveObjectInstance>\ sceneObjectiveObjectInstances\ =\ FindObjectsOfType<ObjectiveObjectInstance>().ToList<\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}>();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Build\ a\ database\ of\ number\ of\ objects\ in\ the\ scene}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveInstance\ \textcolor{keywordflow}{in}\ sceneObjectiveObjectInstances)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!sceneObjects.TryAdd(objectiveInstance.ObjectiveObject,\ 1))}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sceneObjects[objectiveInstance.ObjectiveObject]++;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ any\ requirement\ is\ set\ to\ use\ percentages,\ calculate\ these\ now\ using\ the\ database}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ goalRequirement\ \textcolor{keywordflow}{in}\ \_goalRequirements)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(goalRequirement.UseQtyAsPercentageInScene)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ goalRequirement.CalculatePercentBasedQty(sceneObjects[goalRequirement.RequiredObject]);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Build\ the\ goal\ string}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ requirement\ \textcolor{keywordflow}{in}\ \_goalRequirements)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ String\ goalString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ goalString\ +=\ (requirement.UseQtyAsPercentageInScene\ ?\ requirement.PercentBasedQty.ToString()\ :\ requirement.QuantityRequired.ToString());}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ goalString\ +=\ \textcolor{stringliteral}{"{}\ "{}}\ +\ requirement.RequiredObject.FriendlyString;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ goalString\ =\ goalString.Replace(\textcolor{stringliteral}{"{}</style>"{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ goalString\ +=\ (requirement.UseQtyAsPercentageInScene\ ?\ (requirement.PercentBasedQty\ >\ 1\ ?\ \textcolor{stringliteral}{"{}s"{}}\ :\ \textcolor{stringliteral}{"{}"{}})\ :\ (requirement.QuantityRequired\ >\ 1\ ?\ \textcolor{stringliteral}{"{}s"{}}\ :\ \textcolor{stringliteral}{"{}"{}}));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ goalString\ +=\ \textcolor{stringliteral}{"{}</style>"{}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ GoalStrings.Add(goalString);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}\label{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}} 
-\index{GoalZone@{GoalZone}!CheckWinCondition@{CheckWinCondition}}
-\index{CheckWinCondition@{CheckWinCondition}!GoalZone@{GoalZone}}
-\doxysubsubsection{\texorpdfstring{CheckWinCondition()}{CheckWinCondition()}}
-{\footnotesize\ttfamily void Goal\+Zone.\+Check\+Win\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_goal_zone_a665ad35bd4df48665a8e657ea09c082e}\label{class_goal_zone_a665ad35bd4df48665a8e657ea09c082e}} 
+\index{GoalZone@{GoalZone}!CancelCountdownClientRpc@{CancelCountdownClientRpc}}
+\index{CancelCountdownClientRpc@{CancelCountdownClientRpc}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{CancelCountdownClientRpc()}{CancelCountdownClientRpc()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+Cancel\+Countdown\+Client\+Rpc (\begin{DoxyParamCaption}\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
-
-Checks to see if all win conditions are met\+:~\newline
- 
-
-
-\begin{DoxyEnumerate}
-\item Required number of crates present in the area~\newline
-
-\item Countdown timer has reached zero 
-\end{DoxyEnumerate}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00059\ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_win)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//already\ won\ -\/\ don't\ bother}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_cratesText\ !=\ \textcolor{keyword}{null})\ \_cratesText.text\ =\ \_numOfCrates.ToString(\textcolor{stringliteral}{"{}00"{}})\ +\ \textcolor{stringliteral}{"{}\ of\ "{}}\ +\ \_numOfCratesRequired.ToString(\textcolor{stringliteral}{"{}00"{}});\ \textcolor{comment}{//update\ the\ crates\ UI\ text}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_numOfCrates\ >=\ \_numOfCratesRequired)}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//total\ number\ of\ crates\ criteria\ met}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//start\ the\ countdown\ timer}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_countdownCoroutine);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ StartCoroutine(\mbox{\hyperlink{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}{DoCountdown}}());}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//not\ enough\ crates\ yet,\ stop\ countdown\ if\ it\ was\ previously\ running\ (crate\ has\ been\ removed)}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_countdownCoroutine);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hide\ the\ countdown\ timer}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!IsServer)}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_countdownCoroutine);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.CancelGroupObjectiveCountdown();}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00228\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}\label{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}} 
@@ -165,22 +244,107 @@ Runs the countdown and triggers the win condition if countdown completes~\newlin
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00084\ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\_countdownTimer\ >\ -\/1)}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \_countdownTimer.ToString();}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTimer-\/-\/;}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \textcolor{stringliteral}{"{}WIN"{}};}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \_win\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \_countdownTimer\ =\ (int)\_countdownTimerStart;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\_countdownTimer\ >\ 0)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \_countdownTimer.ToString();}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.UpdateGroupObjectiveCountdown(\_countdownTimer.ToString());}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTextRectTransform.LeanScale(\_targetScale,\ 0.75f).setEaseOutBounce().setOnComplete(()\ =>\ \{\ \_countdownTextRectTransform.localScale\ =\ \_startScale;\ \});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTimer-\/-\/;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_spriteAsset\ !=\ \textcolor{keyword}{null})\ \&\&\ (\_spriteAsset.spriteCharacterTable.Count\ >\ 0))}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.spriteAsset\ =\ \_spriteAsset;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ spriteString\ =\ \textcolor{keyword}{new}(\textcolor{stringliteral}{"{}<sprite="{}}\ +\ UnityEngine.Random.Range((\textcolor{keywordtype}{int})0,\ (\textcolor{keywordtype}{int})\_spriteAsset.spriteCharacterTable.Count).ToString()\ +\ \textcolor{stringliteral}{"{}>"{}});}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ spriteString;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \_countdownTimer.ToString();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \_countdownTextRectTransform.LeanScale(\_targetScale\ *\ 5f,\ 0.75f).setEaseOutBounce().setOnComplete(()\ =>\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTextRectTransform.localScale\ =\ \_startScale;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}.Instance.IncrementGameScores();}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.RoundWon();}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_goalZoneText\ !=\ \textcolor{keyword}{null})\ \_goalZoneText.text\ =\ \textcolor{stringliteral}{"{}GOAL\ MET!"{}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \_win\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00276\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_a369b7fecf3a6595d3c4d105df4998564}\label{class_goal_zone_a369b7fecf3a6595d3c4d105df4998564}} 
+\index{GoalZone@{GoalZone}!DoCountdownClientRpc@{DoCountdownClientRpc}}
+\index{DoCountdownClientRpc@{DoCountdownClientRpc}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{DoCountdownClientRpc()}{DoCountdownClientRpc()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+Do\+Countdown\+Client\+Rpc (\begin{DoxyParamCaption}\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!IsServer)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ ==\ \textcolor{keyword}{null})\ \_countdownCoroutine\ =\ StartCoroutine(\mbox{\hyperlink{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}{DoCountdown}}());}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_ab0fb2302944321a1a80447a9e1d698fd}\label{class_goal_zone_ab0fb2302944321a1a80447a9e1d698fd}} 
+\index{GoalZone@{GoalZone}!GetGoalRequirement@{GetGoalRequirement}}
+\index{GetGoalRequirement@{GetGoalRequirement}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{GetGoalRequirement()}{GetGoalRequirement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_goal_requirement}{Goal\+Requirement}} Goal\+Zone.\+Get\+Goal\+Requirement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_objective_object}{Objective\+Object}}}]{objective\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ goalRequirement\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ requirement\ \textcolor{keywordflow}{in}\ \_goalRequirements)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(requirement.RequiredObject.\mbox{\hyperlink{class_objective_object_a3b48ac11ba75b0138bed8fa6477eef1d}{Equals}}(objectiveObject))}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ goalRequirement\ =\ requirement;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ goalRequirement;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_ab091f7bf85f1c349f813b1e14e87f203}\label{class_goal_zone_ab091f7bf85f1c349f813b1e14e87f203}} 
+\index{GoalZone@{GoalZone}!OnDrawGizmos@{OnDrawGizmos}}
+\index{OnDrawGizmos@{OnDrawGizmos}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00279\ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ xScale\ =\ \_goalSprite.transform.localScale.x;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yScale\ =\ \_goalSprite.transform.localScale.y;}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ GetComponent<BoxCollider2D>().size\ =\ \textcolor{keyword}{new}\ Vector2(xScale,\ yScale);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \_goalCanvas.GetComponent<RectTransform>().sizeDelta\ =\ \textcolor{keyword}{new}\ Vector2(xScale,\ yScale);}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \_countdownCanvas.GetComponent<RectTransform>().sizeDelta\ =\ \textcolor{keyword}{new}\ Vector2(xScale,\ yScale\ *\ (4f\ /\ 5f));}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \_goalZoneText.GetComponent<RectTransform>().sizeDelta\ =\ \textcolor{keyword}{new}\ Vector2(0,\ yScale\ *\ (1f/5f));}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \_countdownText.GetComponent<RectTransform>().sizeDelta\ =\ \textcolor{keyword}{new}\ Vector2(0,\ yScale\ *\ (4f/5f));}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_goal_zone_a690d76288499d14ef15dc232498f1a46}\label{class_goal_zone_a690d76288499d14ef15dc232498f1a46}} 
@@ -191,14 +355,49 @@ Runs the countdown and triggers the win condition if countdown completes~\newlin
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ crate\ has\ entered\ the\ area,\ increment\ the\ number\ of\ crates\ for\ the\ UI\ to\ update\ and\ check\ if\ the\ win\ conditions\ are\ met}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Crate"{}})}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_numOfCrates++;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}{CheckWinCondition}}();}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ already\ met\ all\ condtions\ do\ nothing}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_win)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ object\ entering\ the\ zone\ is\ one\ required}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.TryGetComponent<\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}>(out\ \mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance))}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Object\ has\ an\ objectiveObjectInstance\ (and\ thus\ an\ ObjectiveObject)}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ its\ Goal\ Requirement}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ goalRequirement\ =\ GetGoalRequirement(objectiveObjectInstance.ObjectiveObject);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (goalRequirement\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Increment\ the\ number\ of\ objects\ in\ the\ zone}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ goalRequirement.QuantityInZone++;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ requirement\ is\ met,\ maybe\ this\ was\ the\ last\ to\ be\ met,\ do\ a\ full\ check}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (goalRequirement.RequirementMet())}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inform\ the\ UI\ /\ Game\ Manager\ that\ the\ single\ objective\ is\ met}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UpdateGroupObjectiveRequirementClientRpc(\_goalRequirements.IndexOf(goalRequirement),\ (\textcolor{keywordtype}{int})goalRequirement.QuantityInZone,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (AllGoalRequirementsMet())}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ countdown}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_countdownCoroutine\ ==\ \textcolor{keyword}{null})\ \&\&\ (\_win\ ==\ \textcolor{keyword}{false}))}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ StartCoroutine(\mbox{\hyperlink{class_goal_zone_a71cc3a4fc98a5a3a52b02a10f937190c}{DoCountdown}}());}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ the\ countdown\ on\ clients}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DoCountdownClientRpc();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UpdateGroupObjectiveRequirementClientRpc(\_goalRequirements.IndexOf(goalRequirement),\ (\textcolor{keywordtype}{int})goalRequirement.QuantityInZone,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00125\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_goal_zone_ab92171b5d16537c55fdcb9de90e5d17a}\label{class_goal_zone_ab92171b5d16537c55fdcb9de90e5d17a}} 
@@ -209,15 +408,88 @@ Runs the countdown and triggers the win condition if countdown completes~\newlin
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00041\ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.tag\ ==\ \textcolor{stringliteral}{"{}Crate"{}})}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//a\ crate\ has\ been\ removed\ from\ the\ area,\ reduce\ the\ number\ of\ crates}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \_numOfCrates-\/-\/;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//update\ the\ UI\ and\ check\ the\ win\ conditions}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_zone_a7d95befe60f3b356c500d0b674d5e280}{CheckWinCondition}}();}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Already\ met\ all\ conditions\ -\/\ do\ nothing}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_win)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ an\ object\ from\ the\ zone\ if\ it\ is\ one\ required}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collision.gameObject.TryGetComponent<\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}>(out\ \mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance))}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Object\ has\ an\ objectiveObjectInstance\ (and\ thus\ an\ ObjectiveObject)}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ its\ Goal\ Requirement}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_goal_requirement}{GoalRequirement}}\ goalRequirement\ =\ GetGoalRequirement(objectiveObjectInstance.ObjectiveObject);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (goalRequirement\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decrement\ the\ number\ of\ objects\ in\ the\ zone}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ goalRequirement.QuantityInZone-\/-\/;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ requirement\ is\ no\ longer\ met,\ cancel\ the\ countdown}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!goalRequirement.RequirementMet())}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inform\ the\ UI\ /\ Game\ Manager\ that\ the\ single\ objective\ is\ no\ longer\ met}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UpdateGroupObjectiveRequirementClientRpc(\_goalRequirements.IndexOf(goalRequirement),\ (\textcolor{keywordtype}{int})goalRequirement.QuantityInZone,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cancel\ countdown}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_countdownCoroutine);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cancel\ the\ countdown\ on\ clients}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CancelCountdownClientRpc();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UpdateGroupObjectiveRequirementClientRpc(\_goalRequirements.IndexOf(goalRequirement),\ (\textcolor{keywordtype}{int})goalRequirement.QuantityInZone,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_acfc63c9d17708573b742e0f32472a1ca}\label{class_goal_zone_acfc63c9d17708573b742e0f32472a1ca}} 
+\index{GoalZone@{GoalZone}!Start@{Start}}
+\index{Start@{Start}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tell\ the\ Game\ UI\ the\ goal\ strings}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.\mbox{\hyperlink{class_game_u_i_manager_ab77832b3c2402ed2d7ea448c80376a4b}{SetupGroupObjectiveUI}}(GoalStrings);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_manager}{ArrowManager}}.Instance.AddArrowWithText(transform,\ \textcolor{stringliteral}{"{}Goal\ Zone"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_zone_af17e8099e44521b03513c80fe6a0e03d}\label{class_goal_zone_af17e8099e44521b03513c80fe6a0e03d}} 
+\index{GoalZone@{GoalZone}!UpdateGroupObjectiveRequirementClientRpc@{UpdateGroupObjectiveRequirementClientRpc}}
+\index{UpdateGroupObjectiveRequirementClientRpc@{UpdateGroupObjectiveRequirementClientRpc}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{UpdateGroupObjectiveRequirementClientRpc()}{UpdateGroupObjectiveRequirementClientRpc()}}
+{\footnotesize\ttfamily void Goal\+Zone.\+Update\+Group\+Objective\+Requirement\+Client\+Rpc (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{new\+Value,  }\item[{bool}]{is\+Complete,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.\mbox{\hyperlink{class_game_u_i_manager_abe7f2ab477792d1a66c57556abab8364}{UpdateGroupObjectiveRequirement}}(index,\ newValue,\ isComplete);}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_goal_zone_a8b1b9f735530f06669689b0a1c613db1}\label{class_goal_zone_a8b1b9f735530f06669689b0a1c613db1}} 
+\index{GoalZone@{GoalZone}!GoalStrings@{GoalStrings}}
+\index{GoalStrings@{GoalStrings}!GoalZone@{GoalZone}}
+\doxysubsubsection{\texorpdfstring{GoalStrings}{GoalStrings}}
+{\footnotesize\ttfamily List$<$String$>$ Goal\+Zone.\+Goal\+Strings = new List$<$String$>$()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ List<String>();}
 
 \end{DoxyCode}

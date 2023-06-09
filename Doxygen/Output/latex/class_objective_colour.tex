@@ -7,8 +7,7 @@ A colour that an objective object can be.
 
 
 
-Inheritance diagram for Objective\+Colour\+:
-\nopagebreak
+Inheritance diagram for Objective\+Colour\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for Objective\+Colour\+:
 \end{figure}
 
 
-Collaboration diagram for Objective\+Colour\+:
-\nopagebreak
+Collaboration diagram for Objective\+Colour\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,11 +35,17 @@ override int \mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_colour_a3174e74301b74e3771ff907a64b76474}\label{class_objective_colour_a3174e74301b74e3771ff907a64b76474}} 
-string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
 \mbox{\Hypertarget{class_objective_colour_ac192814a3e320e9b7f08b2e2db227a4c}\label{class_objective_colour_ac192814a3e320e9b7f08b2e2db227a4c}} 
 Color {\bfseries Colour}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{class_objective_base}{Objective\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_base_af388eae4f57c462f1723e95bfc4cfe3d}\label{class_objective_base_af388eae4f57c462f1723e95bfc4cfe3d}} 
+string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_objective_base_abb7ea49e943f1d66f444fe8261949d16}\label{class_objective_base_abb7ea49e943f1d66f444fe8261949d16}} 
+uint {\bfseries Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -51,12 +55,19 @@ void INetwork\+Serializable. \mbox{\hyperlink{class_objective_colour_a49ab28a9dc
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}\label{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}} 
-string {\bfseries friendly\+String}
-\begin{DoxyCompactList}\small\item\em The friendly string of the colour. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}\label{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}} 
 Color {\bfseries colour}
 \begin{DoxyCompactList}\small\item\em The actual colour of the colour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_objective_base}{Objective\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}\label{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}} 
+string {\bfseries \+\_\+friendly\+String}
+\begin{DoxyCompactList}\small\item\em The friendly string of the action. Must be in the format \char`\"{}... $<$\+COLOUR$>$ $<$\+OBJECT$>$ $<$\+CONDITION$>$\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_base_ab20546d70d80723d074e1df500423a9d}\label{class_objective_base_ab20546d70d80723d074e1df500423a9d}} 
+uint {\bfseries \+\_\+points}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -83,12 +94,12 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00049\ \ \ \ \ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}((\mbox{\hyperlink{class_objective_colour}{ObjectiveColour}})other);}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}((\mbox{\hyperlink{class_objective_colour}{ObjectiveColour}})other);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}\label{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}} 
@@ -111,14 +122,15 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00034\ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}{friendlyString}}.Equals(other.\mbox{\hyperlink{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}{friendlyString}}))\ \&\&}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}.Equals(other.\mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}))}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}.Equals(other.\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}))\ \&\&}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ (\_points\ ==\ other.\_points)\ \&\&}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}.Equals(other.\mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}))}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}\label{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}} 
@@ -139,16 +151,17 @@ Override of Get\+Hash\+Code to provide correct hash for Dictionary.
 \href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
  \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00066\ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ unchecked}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}{friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}{friendlyString}}.GetHashCode()\ :\ 0);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}.GetHashCode()\ :\ 0);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ \_points.GetHashCode();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_colour_a49ab28a9dcb80d13492b15263c96e875}\label{class_objective_colour_a49ab28a9dcb80d13492b15263c96e875}} 
@@ -159,9 +172,9 @@ Override of Get\+Hash\+Code to provide correct hash for Dictionary.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{class_objective_colour_adf566aff771b1855a4382dd8d9f7fe9d}{friendlyString}});}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}});}
-\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{class_objective_colour_a016ca801852b1a0a2c3ee540d8b3f619}{colour}});}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
 
 \end{DoxyCode}

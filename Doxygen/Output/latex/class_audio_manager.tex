@@ -1,0 +1,144 @@
+\hypertarget{class_audio_manager}{}\doxysection{Audio\+Manager Class Reference}
+\label{class_audio_manager}\index{AudioManager@{AudioManager}}
+
+
+Inheritance diagram for Audio\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_audio_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_audio_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_audio_manager_a631d7d42b921bcbd82bd1baec2ec3ea7}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_audio_manager_ae32840e7c55d8f7d599f4d9ab27ebf60}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_audio_manager_af4d24366278e40ae11840ccfa403d643}{Reset\+Audio\+Clip\+Indexes}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_audio_manager_a05a39fbdff3c46c3412eb9e4a8431dab}{Background\+Music\+Loop}} ()
+\item 
+void \mbox{\hyperlink{class_audio_manager_acab9231a3311c7d81d5ac605662d1200}{Mute\+Toggle}} (bool is\+On)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_audio_manager_ac3b02c7111932d5078a2d68c6b06c1bd}\label{class_audio_manager_ac3b02c7111932d5078a2d68c6b06c1bd}} 
+List$<$ Audio\+Clip $>$ {\bfseries \+\_\+audio\+Clips} = new List$<$Audio\+Clip$>$()
+\item 
+\mbox{\Hypertarget{class_audio_manager_a11eebd8dc7791cafa759d2466c3a8e69}\label{class_audio_manager_a11eebd8dc7791cafa759d2466c3a8e69}} 
+Audio\+Source {\bfseries \+\_\+audio\+Source}
+\item 
+\mbox{\Hypertarget{class_audio_manager_a229b26d2a64e9f9da5436c2114a58eb4}\label{class_audio_manager_a229b26d2a64e9f9da5436c2114a58eb4}} 
+Toggle {\bfseries \+\_\+mute\+Toggle}
+\item 
+\mbox{\Hypertarget{class_audio_manager_a372a53cc59c121c98252fec439a5d72c}\label{class_audio_manager_a372a53cc59c121c98252fec439a5d72c}} 
+List$<$ int $>$ {\bfseries \+\_\+audio\+Clip\+Indexes} = new List$<$int$>$()
+\item 
+\mbox{\Hypertarget{class_audio_manager_a737d0dc59fe5ac5a7098784b1d4151eb}\label{class_audio_manager_a737d0dc59fe5ac5a7098784b1d4151eb}} 
+int {\bfseries \+\_\+previous\+Clip\+Index} = -\/1
+\item 
+\mbox{\Hypertarget{class_audio_manager_a3079ac8de3707393215b3fb8190bc5f7}\label{class_audio_manager_a3079ac8de3707393215b3fb8190bc5f7}} 
+int {\bfseries \+\_\+previous\+Previous\+Clip\+Index} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_audio_manager_a631d7d42b921bcbd82bd1baec2ec3ea7}\label{class_audio_manager_a631d7d42b921bcbd82bd1baec2ec3ea7}} 
+\index{AudioManager@{AudioManager}!Awake@{Awake}}
+\index{Awake@{Awake}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_audioSource\ ==\ \textcolor{keyword}{null})\ \_audioSource\ =\ GetComponent<AudioSource>();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ResetAudioClipIndexes();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ StartCoroutine(BackgroundMusicLoop());}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_muteToggle\ !=\ \textcolor{keyword}{null})\ \_muteToggle.onValueChanged.AddListener(MuteToggle);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_audio_manager_a05a39fbdff3c46c3412eb9e4a8431dab}\label{class_audio_manager_a05a39fbdff3c46c3412eb9e4a8431dab}} 
+\index{AudioManager@{AudioManager}!BackgroundMusicLoop@{BackgroundMusicLoop}}
+\index{BackgroundMusicLoop@{BackgroundMusicLoop}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{BackgroundMusicLoop()}{BackgroundMusicLoop()}}
+{\footnotesize\ttfamily IEnumerator Audio\+Manager.\+Background\+Music\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_audioClipIndexes.Count\ ==\ 0)\ ResetAudioClipIndexes();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ Random.Range(0,\ \_audioClipIndexes.Count);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (index\ ==\ \_previousClipIndex\ ||\ index\ ==\ \_previousPreviousClipIndex)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ Random.Range(0,\ \_audioClipIndexes.Count);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \_previousPreviousClipIndex\ =\ \_previousClipIndex;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \_previousClipIndex\ =\ index;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \_audioSource.Stop();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \_audioSource.clip\ =\ \_audioClips[\_audioClipIndexes[index]];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \_audioSource.Play();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \_audioClipIndexes.RemoveAt(index);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_audioSource.clip.length);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_audio_manager_acab9231a3311c7d81d5ac605662d1200}\label{class_audio_manager_acab9231a3311c7d81d5ac605662d1200}} 
+\index{AudioManager@{AudioManager}!MuteToggle@{MuteToggle}}
+\index{MuteToggle@{MuteToggle}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{MuteToggle()}{MuteToggle()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Mute\+Toggle (\begin{DoxyParamCaption}\item[{bool}]{is\+On }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_audioSource.mute\ =\ isOn;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_audio_manager_ae32840e7c55d8f7d599f4d9ab27ebf60}\label{class_audio_manager_ae32840e7c55d8f7d599f4d9ab27ebf60}} 
+\index{AudioManager@{AudioManager}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_muteToggle\ !=\ \textcolor{keyword}{null})\ \_muteToggle.onValueChanged.RemoveListener(MuteToggle);}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_audio_manager_af4d24366278e40ae11840ccfa403d643}\label{class_audio_manager_af4d24366278e40ae11840ccfa403d643}} 
+\index{AudioManager@{AudioManager}!ResetAudioClipIndexes@{ResetAudioClipIndexes}}
+\index{ResetAudioClipIndexes@{ResetAudioClipIndexes}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{ResetAudioClipIndexes()}{ResetAudioClipIndexes()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Reset\+Audio\+Clip\+Indexes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \_audioClipIndexes.Clear();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_audioClipIndexes\ =\ Enumerable.Range(0,\ \_audioClips.Count).ToList();}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}

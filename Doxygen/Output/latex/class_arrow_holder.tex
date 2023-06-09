@@ -1,0 +1,84 @@
+\hypertarget{class_arrow_holder}{}\doxysection{Arrow\+Holder Class Reference}
+\label{class_arrow_holder}\index{ArrowHolder@{ArrowHolder}}
+
+
+Inheritance diagram for Arrow\+Holder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_arrow_holder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arrow\+Holder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_arrow_holder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_arrow_holder_a465b30d224f98c5ccb41ed940eaa41a6}{On\+Network\+Spawn}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_holder_a7042eb65bfe38335ffd85afd3df6f61f}\label{class_arrow_holder_a7042eb65bfe38335ffd85afd3df6f61f}} 
+static \mbox{\hyperlink{class_arrow_holder}{Arrow\+Holder}} {\bfseries Instance}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_holder_a05dae3003c64022a47fa6fbd07195883}\label{class_arrow_holder_a05dae3003c64022a47fa6fbd07195883}} 
+Transform {\bfseries Player\+Trunk}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_holder_a3eb82c40cc0c0e5053c1b9f3be9e8e86}{Awake}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_holder_aab21ea6bd086b6cf688f2ffe20f5297e}\label{class_arrow_holder_aab21ea6bd086b6cf688f2ffe20f5297e}} 
+Transform {\bfseries \+\_\+player\+Trunk}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arrow_holder_a3eb82c40cc0c0e5053c1b9f3be9e8e86}\label{class_arrow_holder_a3eb82c40cc0c0e5053c1b9f3be9e8e86}} 
+\index{ArrowHolder@{ArrowHolder}!Awake@{Awake}}
+\index{Awake@{Awake}!ArrowHolder@{ArrowHolder}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Arrow\+Holder.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ xScale\ =\ 1\ /\ transform.parent.lossyScale.x;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yScale\ =\ 1\ /\ transform.parent.lossyScale.y;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ transform.lossyScale.Set(xScale,\ yScale,\ 1);}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arrow_holder_a465b30d224f98c5ccb41ed940eaa41a6}\label{class_arrow_holder_a465b30d224f98c5ccb41ed940eaa41a6}} 
+\index{ArrowHolder@{ArrowHolder}!OnNetworkSpawn@{OnNetworkSpawn}}
+\index{OnNetworkSpawn@{OnNetworkSpawn}!ArrowHolder@{ArrowHolder}}
+\doxysubsubsection{\texorpdfstring{OnNetworkSpawn()}{OnNetworkSpawn()}}
+{\footnotesize\ttfamily override void Arrow\+Holder.\+On\+Network\+Spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ base.OnNetworkSpawn();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsLocalPlayer)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}

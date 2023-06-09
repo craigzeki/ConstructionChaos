@@ -1,0 +1,7 @@
+<map id="ArrowData" name="ArrowData">
+<area shape="rect" id="node1" title=" " alt="" coords="55,168,137,193"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,144,105"/>
+<area shape="rect" id="node3" href="$class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="168,80,219,105"/>
+<area shape="rect" id="node4" title=" " alt="" coords="53,5,179,31"/>
+<area shape="rect" id="node5" title=" " alt="" coords="203,5,338,31"/>
+</map>

@@ -1,0 +1,154 @@
+\hypertarget{class_super_game_manager}{}\doxysection{Super\+Game\+Manager Class Reference}
+\label{class_super_game_manager}\index{SuperGameManager@{SuperGameManager}}
+
+
+Inheritance diagram for Super\+Game\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_super_game_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Super\+Game\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_super_game_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_super_game_manager_a6abedb67ac0c52eb644e17951134a0e5}{Reload\+Entire\+Game}} (bool splash\+Screen=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_super_game_manager}{Super\+Game\+Manager}} \mbox{\hyperlink{class_super_game_manager_a24fe30aedaf85c71c54aab51415a0492}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_super_game_manager_aa26cde023502e3ccf8179dd55457164c}{Start}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_super_game_manager_a83cb3b419121441453f031e88b87835e}{Recreate\+Network\+Objects}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_super_game_manager_a8c5bdf1988d8896bc55b86be4c042c76}\label{class_super_game_manager_a8c5bdf1988d8896bc55b86be4c042c76}} 
+List$<$ Game\+Object $>$ {\bfseries \+\_\+scene\+Network\+Object\+Prefabs} = new List$<$Game\+Object$>$()
+\item 
+\mbox{\Hypertarget{class_super_game_manager_a91349b3cffcefcd0e3989d8348b800b8}\label{class_super_game_manager_a91349b3cffcefcd0e3989d8348b800b8}} 
+List$<$ Game\+Object $>$ {\bfseries \+\_\+scene\+Network\+Objects} = new List$<$Game\+Object$>$()
+\item 
+\mbox{\Hypertarget{class_super_game_manager_a70b22f6a0922cac8454817b86e517d7b}\label{class_super_game_manager_a70b22f6a0922cac8454817b86e517d7b}} 
+float {\bfseries \+\_\+loading\+Screen\+Min\+Time} = 2.\+0f
+\item 
+\mbox{\Hypertarget{class_super_game_manager_a2d6947aef38b6aa0109432e244f2fcd3}\label{class_super_game_manager_a2d6947aef38b6aa0109432e244f2fcd3}} 
+Coroutine {\bfseries \+\_\+coroutine}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_super_game_manager_ae8de69c29171993d738d380c585b8c57}\label{class_super_game_manager_ae8de69c29171993d738d380c585b8c57}} 
+static \mbox{\hyperlink{class_super_game_manager}{Super\+Game\+Manager}} {\bfseries \+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_super_game_manager_a83cb3b419121441453f031e88b87835e}\label{class_super_game_manager_a83cb3b419121441453f031e88b87835e}} 
+\index{SuperGameManager@{SuperGameManager}!RecreateNetworkObjects@{RecreateNetworkObjects}}
+\index{RecreateNetworkObjects@{RecreateNetworkObjects}!SuperGameManager@{SuperGameManager}}
+\doxysubsubsection{\texorpdfstring{RecreateNetworkObjects()}{RecreateNetworkObjects()}}
+{\footnotesize\ttfamily IEnumerator Super\+Game\+Manager.\+Recreate\+Network\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (GameObject\ obj\ \textcolor{keywordflow}{in}\ \_sceneNetworkObjects)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ !=\ \textcolor{keyword}{null})\ Destroy(obj);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForEndOfFrame();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_sceneNetworkObjects.Clear();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForEndOfFrame();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (GameObject\ obj\ \textcolor{keywordflow}{in}\ \_sceneNetworkObjectPrefabs)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(obj\ !=\ \textcolor{keyword}{null})\ \_sceneNetworkObjects.Add(Instantiate(obj));}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForEndOfFrame();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_loadingScreenMinTime);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleAllCanvasesOff(\textcolor{keyword}{true});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}SuperGameManager:\ Menu\ Canvas\ =\ true"{});}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.MainMenuCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.StartGameManager();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_super_game_manager_a6abedb67ac0c52eb644e17951134a0e5}\label{class_super_game_manager_a6abedb67ac0c52eb644e17951134a0e5}} 
+\index{SuperGameManager@{SuperGameManager}!ReloadEntireGame@{ReloadEntireGame}}
+\index{ReloadEntireGame@{ReloadEntireGame}!SuperGameManager@{SuperGameManager}}
+\doxysubsubsection{\texorpdfstring{ReloadEntireGame()}{ReloadEntireGame()}}
+{\footnotesize\ttfamily void Super\+Game\+Manager.\+Reload\+Entire\+Game (\begin{DoxyParamCaption}\item[{bool}]{splash\+Screen = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_coroutine\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleAllCanvasesOff(\textcolor{keyword}{true});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (splashScreen)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.SplashScreenCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LoadingCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \_coroutine\ =\ StartCoroutine(RecreateNetworkObjects());}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_super_game_manager_aa26cde023502e3ccf8179dd55457164c}\label{class_super_game_manager_aa26cde023502e3ccf8179dd55457164c}} 
+\index{SuperGameManager@{SuperGameManager}!Start@{Start}}
+\index{Start@{Start}!SuperGameManager@{SuperGameManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Super\+Game\+Manager.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ ReloadEntireGame(\textcolor{keyword}{true});}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_super_game_manager_a24fe30aedaf85c71c54aab51415a0492}\label{class_super_game_manager_a24fe30aedaf85c71c54aab51415a0492}} 
+\index{SuperGameManager@{SuperGameManager}!Instance@{Instance}}
+\index{Instance@{Instance}!SuperGameManager@{SuperGameManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_super_game_manager}{Super\+Game\+Manager}} Super\+Game\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \_instance\ ==\ \textcolor{keyword}{null}\ )\ \_instance\ =\ FindObjectOfType<SuperGameManager>();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}

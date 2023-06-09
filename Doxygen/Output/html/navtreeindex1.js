@@ -1,0 +1,27 @@
+var NAVTREEINDEX1 =
+{
+"classes.html":[1,1],
+"functions.html":[1,3,0],
+"functions_enum.html":[1,3,3],
+"functions_func.html":[1,3,1],
+"functions_prop.html":[1,3,4],
+"functions_vars.html":[1,3,2],
+"hierarchy.html":[1,2],
+"index.html":[],
+"namespace_zeksters_lab.html":[0,0,0],
+"namespace_zeksters_lab_1_1_helpers.html":[0,0,0,0],
+"namespaces.html":[0,0],
+"pages.html":[],
+"struct_arms_movement_data.html":[1,0,7],
+"struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2":[1,0,7,2],
+"struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827":[1,0,7,0],
+"struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142":[1,0,7,1],
+"struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5":[1,0,7,3],
+"struct_character_input_data.html":[1,0,16],
+"struct_character_input_data.html#a0e68be5a93f2006ca579dd2487d6a5e5":[1,0,16,0],
+"struct_character_input_data.html#a2df8e170322366799f463049c1503300":[1,0,16,2],
+"struct_character_input_data.html#a5d375c26c82543e6b7549d381b35d3e3":[1,0,16,4],
+"struct_character_input_data.html#a61444ad8dc71e41e62e33034361ee614":[1,0,16,3],
+"struct_character_input_data.html#ad69c05a5f6630ddaf36721fdbd79f308":[1,0,16,1],
+"struct_leaderboard_u_i_manager_1_1_network_leaderboard_data.html":[1,0,32,0]
+};

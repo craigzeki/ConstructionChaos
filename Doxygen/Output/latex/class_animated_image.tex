@@ -1,0 +1,109 @@
+\hypertarget{class_animated_image}{}\doxysection{Animated\+Image Class Reference}
+\label{class_animated_image}\index{AnimatedImage@{AnimatedImage}}
+
+
+Inheritance diagram for Animated\+Image\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_animated_image__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Animated\+Image\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_animated_image__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_animated_image_a8f628afcdba14fa43ae34abf0255fca0}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_animated_image_a1d814e4ff90d92ba6547a538534e8747}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_animated_image_a7567a997a68964f2685fb12ce9b7b940}{On\+Disable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_animated_image_aa5698723e9201eadd09ad6595b727247}{Play\+Gif}} (float time\+Between\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_animated_image_a6fefae2964237215433b78f411792a46}\label{class_animated_image_a6fefae2964237215433b78f411792a46}} 
+Sprite\mbox{[}$\,$\mbox{]} {\bfseries \+\_\+frames}
+\item 
+\mbox{\Hypertarget{class_animated_image_a5f236d9f369cb27d21edf79bf5c5e799}\label{class_animated_image_a5f236d9f369cb27d21edf79bf5c5e799}} 
+int {\bfseries \+\_\+frames\+Per\+Second}
+\item 
+\mbox{\Hypertarget{class_animated_image_a0ddfe1aaa2edef549b55cf09a09c582a}\label{class_animated_image_a0ddfe1aaa2edef549b55cf09a09c582a}} 
+Image {\bfseries \+\_\+image}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_animated_image_a8f628afcdba14fa43ae34abf0255fca0}\label{class_animated_image_a8f628afcdba14fa43ae34abf0255fca0}} 
+\index{AnimatedImage@{AnimatedImage}!Awake@{Awake}}
+\index{Awake@{Awake}!AnimatedImage@{AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Animated\+Image.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_image\ ==\ \textcolor{keyword}{null})\ \_image\ =\ GetComponent<Image>();}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_animated_image_a7567a997a68964f2685fb12ce9b7b940}\label{class_animated_image_a7567a997a68964f2685fb12ce9b7b940}} 
+\index{AnimatedImage@{AnimatedImage}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!AnimatedImage@{AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Animated\+Image.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_animated_image_a1d814e4ff90d92ba6547a538534e8747}\label{class_animated_image_a1d814e4ff90d92ba6547a538534e8747}} 
+\index{AnimatedImage@{AnimatedImage}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!AnimatedImage@{AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Animated\+Image.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_image\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ StartCoroutine(PlayGif(1f\ /\ \_framesPerSecond));}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_animated_image_aa5698723e9201eadd09ad6595b727247}\label{class_animated_image_aa5698723e9201eadd09ad6595b727247}} 
+\index{AnimatedImage@{AnimatedImage}!PlayGif@{PlayGif}}
+\index{PlayGif@{PlayGif}!AnimatedImage@{AnimatedImage}}
+\doxysubsubsection{\texorpdfstring{PlayGif()}{PlayGif()}}
+{\footnotesize\ttfamily IEnumerator Animated\+Image.\+Play\+Gif (\begin{DoxyParamCaption}\item[{float}]{time\+Between\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_frames.Count()\ ==\ 0)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \_image.sprite\ =\ \_frames[index];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(timeBetweenFrames);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ >=\ \_frames.Count())\ index\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}

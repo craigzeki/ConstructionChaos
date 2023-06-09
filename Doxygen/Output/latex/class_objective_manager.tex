@@ -20,12 +20,11 @@ Inheritance diagram for Objective\+Manager\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Objective\+Manager\+:
-\nopagebreak
+Collaboration diagram for Objective\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{class_objective_manager__coll__graph}
+\includegraphics[width=230pt]{class_objective_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -58,6 +57,15 @@ void \mbox{\hyperlink{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_objective_manager_af1dbac40c315aec407915c19b4920f9b}\label{class_objective_manager_af1dbac40c315aec407915c19b4920f9b}} 
+Dictionary$<$ \mbox{\hyperlink{class_objective_object_instance}{Objective\+Object\+Instance}}, int $>$ {\bfseries Objective\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_objective_manager_af872427c1889752da9e87bb1607c0d8b}\label{class_objective_manager_af872427c1889752da9e87bb1607c0d8b}} 
+Dictionary$<$ Zone.\+ZONE, List$<$ \mbox{\hyperlink{class_zone}{Zone}} $>$ $>$ {\bfseries Possible\+Zones}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_objective_manager_acb92aee167814dec336264b623c1c88c}\label{class_objective_manager_acb92aee167814dec336264b623c1c88c}} 
+string {\bfseries Any\+Colour\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 static \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} \mbox{\hyperlink{class_objective_manager_a41f816982cf51e6d7ebf962f77e44bc2}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
@@ -75,7 +83,7 @@ void \mbox{\hyperlink{class_objective_manager_a009c801b8ac08e51e649d1f2c4714b14}
 \begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Disconnect event. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_objective_manager_a1652acec1f6b135d923619bc929bdebe}{On\+Player\+Reconnect}} (object sender, \mbox{\hyperlink{class_player_reconnect_data}{Player\+Reconnect\+Data}} player\+Reconnect\+Data)
 \begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On\+Player\+Reconnect event. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}{On\+Scene\+Loaded}} (object sender, Event\+Args e)
+void \mbox{\hyperlink{class_objective_manager_a41a5f1cffa3b115ef4d22339cdf807a9}{On\+Round\+Loaded}} (object sender, Event\+Args e)
 \begin{DoxyCompactList}\small\item\em Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends On\+Scene\+Loaded event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -90,19 +98,22 @@ List$<$ \mbox{\hyperlink{class_objective}{Objective}} $>$ {\bfseries \+\_\+possi
 \mbox{\Hypertarget{class_objective_manager_a722a4a5300f7373feebde579e16350c3}\label{class_objective_manager_a722a4a5300f7373feebde579e16350c3}} 
 Dictionary$<$ Zone.\+ZONE, List$<$ \mbox{\hyperlink{class_zone}{Zone}} $>$ $>$ {\bfseries \+\_\+possible\+Zones} = new Dictionary$<$Zone.\+ZONE, List$<$\mbox{\hyperlink{class_zone}{Zone}}$>$$>$()
 \begin{DoxyCompactList}\small\item\em List of all possible zones based on what is present in the scene. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}\label{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}} 
-Dictionary$<$ \mbox{\hyperlink{class_objective}{Objective}}, ulong $>$ {\bfseries \+\_\+player\+Objectives} = new Dictionary$<$\mbox{\hyperlink{class_objective}{Objective}}, ulong$>$()
-\begin{DoxyCompactList}\small\item\em A dictionary which is hashed based on the objective -\/ this allows very performant lookup of the assigned Client\+ID~\newline
- during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_manager_ad11d6a6cee267b8520815cdefc5e7ec4}\label{class_objective_manager_ad11d6a6cee267b8520815cdefc5e7ec4}} 
+Dictionary$<$ Zone.\+ZONE, List$<$ \mbox{\hyperlink{class_zone}{Zone}} $>$ $>$ {\bfseries \+\_\+possible\+Ground\+Zones} = new Dictionary$<$Zone.\+ZONE, List$<$\mbox{\hyperlink{class_zone}{Zone}}$>$$>$()
+\item 
 \mbox{\Hypertarget{class_objective_manager_af6e9c14ad90215d4f74aab58639d17fc}\label{class_objective_manager_af6e9c14ad90215d4f74aab58639d17fc}} 
 string {\bfseries \+\_\+inverse\+String} = \char`\"{}Don\textquotesingle{}t \char`\"{}
-\item 
+\begin{DoxyCompactList}\small\item\em A dictionary which is hashed based on the objective -\/ this allows very performant lookup of the assigned Client\+ID~\newline
+ during gameplay. When an action / condition is performed, a new objective can be created, hashed and used to lookup the ID. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_manager_a01a80df5ca83b47db193d3fc2bbd886c}\label{class_objective_manager_a01a80df5ca83b47db193d3fc2bbd886c}} 
 string {\bfseries \+\_\+any\+Action\+String} = \char`\"{}Do anything with\char`\"{}
 \item 
-\mbox{\Hypertarget{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}\label{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}} 
-int {\bfseries \+\_\+next\+Available\+Objective} = 0
-\begin{DoxyCompactList}\small\item\em Keeps track of the position in the \+\_\+possible\+Objectives list for the next one which hasn\textquotesingle{}t been used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_objective_manager_a52dabb2e262062fa266fdd9217e69987}\label{class_objective_manager_a52dabb2e262062fa266fdd9217e69987}} 
+string {\bfseries \+\_\+any\+Colour\+String} = \char`\"{}$<$style=\textbackslash{}\char`\"{}Colour\textbackslash{}\char`\"{}$>$any coloured$<$/style$>$\char`\"{}
+\item 
+\mbox{\Hypertarget{class_objective_manager_ace6c2ef2d793665921a07f81cb52d12a}\label{class_objective_manager_ace6c2ef2d793665921a07f81cb52d12a}} 
+string {\bfseries \+\_\+orange\+String} = \char`\"{}$<$style=\textbackslash{}\char`\"{}Colour\textbackslash{}\char`\"{}$>$orange$<$/style$>$\char`\"{}
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -140,23 +151,45 @@ True if successful, False if out of objectives or client\+Id not found in Player
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00121\ \ \ \ \ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}\ <\ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Count)}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Add(\mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}[\mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}],\ clientId);}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}[\mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}];}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}++;}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData.NextObjectiveIndex\ <\ playerData.PossibleObjectives.Count)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_playerObjectives.Add(\_possibleObjectives[playerData.NextObjectiveIndex],\ clientId);}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ playerData.PossibleObjectives[playerData.NextObjectiveIndex];}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.NextObjectiveIndex++;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ uint\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.Where(x\ =>\ x.Key.ObjectiveObject\ ==\ playerData.Objective.Object\ \&\&\ x.Key.ObjectiveColour\ ==\ playerData.Objective.Colour).FirstOrDefault().Key.GetComponent<\mbox{\hyperlink{class_network_identifier}{NetworkIdentifier}}>().NetworkId.Value;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ArrowData\ arrowData\ =\ new\ ArrowData}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//id,}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//playerData.Objective.Zone.ZoneType,}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(FixedString64Bytes)playerData.Objective.Zone.FriendlyString,}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//playerData.Objective.Colour.Colour,}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//false}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//);}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_data}{ArrowData}}\ arrowData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_arrow_data}{ArrowData}}();}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ arrowData.ObjectToFollowId\ =\ id;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ arrowData.ZoneType\ =\ playerData.Objective.Zone\ ==\ \textcolor{keyword}{null}\ ?\ Zone.ZONE.NO\_ZONE\ :\ playerData.Objective.Zone.ZoneType;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ arrowData.ZoneName\ =\ playerData.Objective.Zone\ ==\ \textcolor{keyword}{null}\ ?\ \textcolor{keyword}{new}\ FixedString64Bytes(\textcolor{stringliteral}{"{}"{}})\ :\ (FixedString64Bytes)playerData.\mbox{\hyperlink{class_objective}{Objective}}.\mbox{\hyperlink{class_zone}{Zone}}.FriendlyString;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ arrowData.Colour\ =\ playerData.Objective.Colour.Colour;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ arrowData.IsGoalArrow\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_manager}{ArrowManager}}.Instance.SetUpObjectiveArrowsServerSide(arrowData,\ playerData.ClientRpcParams);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}.Instance.DecreaseStreakClientRpc(playerData.Objective.GetPoints(),\ playerData.ClientRpcParams);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_aba091a8852240edf5798fbc092825144}\label{class_objective_manager_aba091a8852240edf5798fbc092825144}} 
@@ -167,9 +200,9 @@ True if successful, False if out of objectives or client\+Id not found in Player
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00060\ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ UnityEngine.Random.InitState((\textcolor{keywordtype}{int})DateTime.Now.Ticks);}
-\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ UnityEngine.Random.InitState((\textcolor{keywordtype}{int})DateTime.Now.Ticks);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}\label{class_objective_manager_a5b5ef3531ff4a4b4e1d975a82bd986d7}} 
@@ -192,32 +225,48 @@ The objective as a string
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00248\ \ \ \ \ \{}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ String.Empty;}
-\DoxyCodeLine{00250\ }
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ \textcolor{keywordtype}{string}.Empty;}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ str\ =\ objective.Action.FriendlyString;}
-\DoxyCodeLine{00253\ }
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ action\ is\ "{}Do\ anything\ with"{}\ then\ we\ don't\ need\ to\ add\ the\ colour,\ object\ or\ condition}}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ !=\ \_anyActionString)}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<COLOUR>"{}},\ objective.Colour.FriendlyString);}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<OBJECT>"{}},\ objective.Object.FriendlyString);}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<CONDITION>"{}},\ objective.Condition.FriendlyString);}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Condition.RequiresObjectToBeInZone)}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<ZONE>"{}},\ objective.Zone.FriendlyString);}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Inverse)}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prepend\ the\ inverse\ string\ and\ force\ first\ letter\ of\ original\ string\ to\ be\ lower\ case}}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ \_inverseString\ +\ \textcolor{keywordtype}{char}.ToLower(str[0])\ +\ str[1..];}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00271\ }
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
-\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ String.Empty;}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ str\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ str\ =\ objective.Action.FriendlyString;}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ action\ is\ "{}Do\ anything\ with"{}\ then\ we\ don't\ need\ to\ add\ the\ colour,\ object\ or\ condition}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ !=\ \_anyActionString)}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective.Colour.FriendlyString\ ==\ \_anyColourString)}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<COLOUR>"{}},\ objective.Colour.FriendlyString);}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ hex\ value\ of\ the\ colour}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ hexValue\ =\ ColorUtility.ToHtmlStringRGB(objective.Colour.Colour);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ colour\ name\ from\ the\ friendly\ string\ (without\ the\ "{}a"{}\ at\ the\ start)}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ colourString\ =\ objective.Colour.FriendlyString.Split(\textcolor{charliteral}{'\ '})[1];}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ a\ =\ colourString\ ==\ \_orangeString\ ?\ \textcolor{stringliteral}{"{}an"{}}\ :\ \textcolor{stringliteral}{"{}a"{}};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Replace\ the\ <COLOUR>\ tag\ with\ the\ colour\ name\ in\ the\ correct\ colour}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<COLOUR>"{}},\ \$\textcolor{stringliteral}{"{}\{a\}\ <color=\#\{hexValue\}>\{colourString\}</color>"{}});}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<OBJECT>"{}},\ objective.Object.FriendlyString);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<CONDITION>"{}},\ objective.Condition.FriendlyString);}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ str.Replace(\textcolor{stringliteral}{"{}<ZONE>"{}},\ objective.Zone.FriendlyString);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(objective.Inverse)}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prepend\ the\ inverse\ string\ and\ force\ first\ letter\ of\ original\ string\ to\ be\ lower\ case}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ \mbox{\hyperlink{class_objective_manager_af6e9c14ad90215d4f74aab58639d17fc}{\_inverseString}}\ +\ \textcolor{keywordtype}{char}.ToLower(str[0])\ +\ str[1..];}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a4ec5975b52dfcd6d4f33ec5aac40aff7}\label{class_objective_manager_a4ec5975b52dfcd6d4f33ec5aac40aff7}} 
@@ -228,11 +277,11 @@ The objective as a string
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ GameManager.Instance.OnPlayerSpawned\ -\/=\ \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{OnPlayerSpawned}};}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ GameManager.Instance.OnSceneLoaded\ -\/=\ \mbox{\hyperlink{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}{OnSceneLoaded}};}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ GameManager.Instance.OnPlayerSpawned\ -\/=\ \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{OnPlayerSpawned}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ GameManager.Instance.OnSceneLoaded\ -\/=\ \mbox{\hyperlink{class_objective_manager_a41a5f1cffa3b115ef4d22339cdf807a9}{OnRoundLoaded}};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a0655506a561db8a757844e099b89f520}\label{class_objective_manager_a0655506a561db8a757844e099b89f520}} 
@@ -243,11 +292,11 @@ The objective as a string
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00065\ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ GameManager.Instance.OnPlayerSpawned\ +=\ \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{OnPlayerSpawned}};}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ GameManager.Instance.OnSceneLoaded\ +=\ \mbox{\hyperlink{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}{OnSceneLoaded}};}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ GameManager.Instance.OnPlayerSpawned\ +=\ \mbox{\hyperlink{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}{OnPlayerSpawned}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ GameManager.Instance.OnSceneLoaded\ +=\ \mbox{\hyperlink{class_objective_manager_a41a5f1cffa3b115ef4d22339cdf807a9}{OnRoundLoaded}};}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a009c801b8ac08e51e649d1f2c4714b14}\label{class_objective_manager_a009c801b8ac08e51e649d1f2c4714b14}} 
@@ -269,9 +318,9 @@ Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00292\ \ \ \ \ \{}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}{RemovePlayer}}(clientId);}
-\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}{RemovePlayer}}(clientId);}
+\DoxyCodeLine{00386\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a1652acec1f6b135d923619bc929bdebe}\label{class_objective_manager_a1652acec1f6b135d923619bc929bdebe}} 
@@ -293,9 +342,9 @@ Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00302\ \ \ \ \ \{}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a00505f6e1b68931dd95c095570706733}{ReconnectPlayer}}(playerReconnectData.CurrentClientID);}
-\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a00505f6e1b68931dd95c095570706733}{ReconnectPlayer}}(playerReconnectData.CurrentClientID);}
+\DoxyCodeLine{00396\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}\label{class_objective_manager_a86ab4b7937e9b578a0d87bd538e855c6}} 
@@ -317,16 +366,24 @@ Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends the On
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00281\ \ \ \ \ \{}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
-\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00365\ \ \ \ \ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Setup\ player\ settings}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.NextObjectiveIndex\ =\ 0;}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Shuffle();}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.PossibleObjectives\ =\ \textcolor{keyword}{new}(\mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}});}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}\label{class_objective_manager_abe8cedc57759aba9b98a4f9f74a49d32}} 
-\index{ObjectiveManager@{ObjectiveManager}!OnSceneLoaded@{OnSceneLoaded}}
-\index{OnSceneLoaded@{OnSceneLoaded}!ObjectiveManager@{ObjectiveManager}}
-\doxysubsubsection{\texorpdfstring{OnSceneLoaded()}{OnSceneLoaded()}}
-{\footnotesize\ttfamily void Objective\+Manager.\+On\+Scene\+Loaded (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_objective_manager_a41a5f1cffa3b115ef4d22339cdf807a9}\label{class_objective_manager_a41a5f1cffa3b115ef4d22339cdf807a9}} 
+\index{ObjectiveManager@{ObjectiveManager}!OnRoundLoaded@{OnRoundLoaded}}
+\index{OnRoundLoaded@{OnRoundLoaded}!ObjectiveManager@{ObjectiveManager}}
+\doxysubsubsection{\texorpdfstring{OnRoundLoaded()}{OnRoundLoaded()}}
+{\footnotesize\ttfamily void Objective\+Manager.\+On\+Round\+Loaded (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -341,16 +398,20 @@ Triggered when \mbox{\hyperlink{class_game_manager}{Game\+Manager}} sends On\+Sc
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00312\ \ \ \ \ \{}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ each\ players\ objective}}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Keys)}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00321\ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ load\ objectives\ for\ actual\ rounds.}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.CurrentState\ !=\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ everything\ as\ new\ scene\ has\ loaded}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}{ResetObjectiveManager}}();}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ each\ players\ objective}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (ulong\ clientId\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Keys)}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a00505f6e1b68931dd95c095570706733}\label{class_objective_manager_a00505f6e1b68931dd95c095570706733}} 
@@ -379,23 +440,23 @@ True if successful, False if not successful
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00166\ \ \ \ \ \{}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(currentClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ netPlayerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ an\ old\ objective\ does\ not\ exist,\ create\ one.\ If\ it\ does,\ remap\ it.\ }}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (netPlayerData.Objective\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(currentClientId);}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Add(netPlayerData.Objective,\ currentClientId);}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString,\ netPlayerData.ClientRpcParams);}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(currentClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ netPlayerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ an\ old\ objective\ does\ not\ exist,\ create\ one.\ If\ it\ does,\ remap\ it.\ }}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (netPlayerData.Objective\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(currentClientId);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{comment}{//else}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \_playerObjectives.Add(netPlayerData.Objective,\ currentClientId);}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ netPlayerData.NetPlayer?.SetObjectiveStringClientRpc(netPlayerData.Objective?.ObjectiveString,\ netPlayerData.ClientRpcParams);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}\label{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}} 
@@ -416,38 +477,57 @@ Registers the objective\+Object\+Instance with the \mbox{\hyperlink{class_object
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00190\ \ \ \ \ \{}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.TryAdd(objectiveObjectInstance,\ 1))}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ objectiveObjectInstance\ already\ exists\ -\/\ add\ to\ the\ qty}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}[objectiveObjectInstance]++;}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ time\ adding\ this\ object\ type\ -\/\ create\ all\ possible\ objectives}}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_action}{ObjectiveAction}}\ action\ \textcolor{keywordflow}{in}\ objectiveObjectInstance.ObjectiveObject.PossibleActions)}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition\ \textcolor{keywordflow}{in}\ action.PossibleConditions)}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zone}{Zone}}\ zone\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition.RequiresObjectToBeInZone)}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Condition\ requires\ a\ zone,\ try\ and\ get\ a\ random\ one\ from\ the\ list\ stored\ in\ the\ dictionary}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.TryGetValue(condition.RequiredZone,\ out\ List<Zone>\ zones))}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(zones.Count\ >\ 0)\ zone\ =\ zones[UnityEngine.Random.Range((int)0,\ zones.Count)];}}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zone}{Zone}}\ possibleZone\ \textcolor{keywordflow}{in}\ zones)}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ newObjective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ objectiveObjectInstance.ObjectiveColour,\ objectiveObjectInstance.ObjectiveObject,\ condition,\ possibleZone,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Add(newObjective);}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.TryAdd(objectiveObjectInstance,\ 1))}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ objectiveObjectInstance\ already\ exists\ -\/\ add\ to\ the\ qty}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}[objectiveObjectInstance]++;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ time\ adding\ this\ object\ type\ -\/\ create\ all\ possible\ objectives}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_action}{ObjectiveAction}}\ action\ \textcolor{keywordflow}{in}\ objectiveObjectInstance.ObjectiveObject.PossibleActions)}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition\ \textcolor{keywordflow}{in}\ action.PossibleConditions)}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition.RequiresObjectToBeInZone)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(condition.RequireZoneToBeOnGround)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ condition\ requires\ ground\ zone}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_possibleGroundZones.TryGetValue(condition.RequiredZone,\ out\ List<Zone>\ zones))}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_zone}{Zone}}\ possibleZone\ \textcolor{keywordflow}{in}\ zones)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ newObjective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ objectiveObjectInstance.ObjectiveColour,\ objectiveObjectInstance.ObjectiveObject,\ condition,\ possibleZone,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Add(newObjective);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Condition\ requires\ any\ zone}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.TryGetValue(condition.RequiredZone,\ out\ List<Zone>\ zones))}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_zone}{Zone}}\ possibleZone\ \textcolor{keywordflow}{in}\ zones)}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ newObjective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ objectiveObjectInstance.ObjectiveColour,\ objectiveObjectInstance.ObjectiveObject,\ condition,\ possibleZone,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Add(newObjective);}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ newObjective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective}{Objective}}(action,\ objectiveObjectInstance.ObjectiveColour,\ objectiveObjectInstance.ObjectiveObject,\ condition,\ \textcolor{keyword}{null},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Add(newObjective);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}\label{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}} 
@@ -467,19 +547,33 @@ Registers a zone into the possible\+Zones dictionary, only if unique.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00228\ \ \ \ \ \{}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.TryGetValue(zone.ZoneType,\ out\ List<Zone>\ zones))}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!zones.Contains(zone))\ zones.Add(zone);}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ List<Zone>\ newZones\ =\ \textcolor{keyword}{new}\ List<Zone>();}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ newZones.Add(zone);}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.Add(zone.ZoneType,\ newZones);}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.TryGetValue(zone.ZoneType,\ out\ List<Zone>\ zones))}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!zones.Contains(zone))\ zones.Add(zone);}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ List<Zone>\ newZones\ =\ \textcolor{keyword}{new}\ List<Zone>();}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ newZones.Add(zone);}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.Add(zone.ZoneType,\ newZones);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone.IsOnGround)}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_possibleGroundZones.TryGetValue(zone.ZoneType,\ out\ List<Zone>\ groundZones))}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!groundZones.Contains(zone))\ groundZones.Add(zone);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Zone>\ newZones\ =\ \textcolor{keyword}{new}\ List<Zone>();}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newZones.Add(zone);}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_possibleGroundZones.Add(zone.ZoneType,\ newZones);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}\label{class_objective_manager_a290b41e8a4237ee6f51bdc61b2c760df}} 
@@ -501,15 +595,17 @@ To be called if a player disconnects intentionally.~\newline
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00146\ \ \ \ \ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ objectivePlayerData))}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objectivePlayerData.Objective\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Remove(objectivePlayerData.Objective);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ objectivePlayerData))}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ objectivePlayerData.Objective\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ objectivePlayerData.NextObjectiveIndex\ =\ 0;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (objectivePlayerData.Objective\ !=\ null)}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \_playerObjectives.Remove(objectivePlayerData.Objective);}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}\label{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}} 
@@ -531,26 +627,43 @@ Interface to allow objects to report objective actions occuring and have them ch
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00329\ \ \ \ \ \{}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ objective\ is\ one\ that\ is\ assigned\ to\ a\ player}}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.TryGetValue(objectiveOccured,\ out\ ulong\ clientId))}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ matching\ objective's\ assigned\ player\ is\ the\ same\ as\ the\ one\ performing\ the\ action}}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerClientId\ !=\ clientId)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00335\ }
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ objective\ that\ occured\ matches\ one\ of\ that\ is\ assigned\ to\ a\ player}}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ increment\ player\ score,\ below\ is\ temporary\ for\ testing}}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[playerClientId].Score\ +=\ 100;}
-\DoxyCodeLine{00339\ }
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ this\ objective\ from\ the\ player\ list}}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_ab53e2f60c4ce08cc3ca3a2f68564273d}{\_playerObjectives}}.Remove(objectiveOccured);}
-\DoxyCodeLine{00342\ }
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ a\ new\ objective}}
-\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(clientId);}
-\DoxyCodeLine{00345\ }
-\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].NetPlayer.SetObjectiveStringClientRpc(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective?.ObjectiveString,\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ClientRpcParams);}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00348\ \ \ \ \ \}}
+\DoxyCodeLine{00425\ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ players\ current\ objective}}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(playerClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(playerData.Objective.Equals(objectiveOccured))}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ objective\ that\ occured\ matches\ one\ of\ that\ is\ assigned\ to\ a\ player}}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}.Instance.AddPlayerScore(playerData,\ objectiveOccured.GetPoints());}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_manager}{ArrowManager}}.Instance.StopUpdatingArrowsServerSide(playerData.ClientRpcParams);}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ a\ new\ objective}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1251be92e8837460174e21319ba03401}{AssignPlayerObjective}}(playerClientId);}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerData.NetPlayer.SetObjectiveStringClientRpc(playerData.Objective?.ObjectiveString,\ playerData.ClientRpcParams);}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !\ OLD\ METHOD}}
+\DoxyCodeLine{00445\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \textcolor{comment}{//if(\_playerObjectives.TryGetValue(objectiveOccured,\ out\ ulong\ clientId))}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ //\ Check\ if\ the\ matching\ objective's\ assigned\ player\ is\ the\ same\ as\ the\ one\ performing\ the\ action}}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ if\ (playerClientId\ !=\ clientId)\ return;}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ //\ The\ objective\ that\ occured\ matches\ one\ of\ that\ is\ assigned\ to\ a\ player}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ //\ TODO\ increment\ player\ score,\ below\ is\ temporary\ for\ testing}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ GameManager.Instance.PlayerData[playerClientId].Score\ +=\ 100;}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ //\ Remove\ this\ objective\ from\ the\ player\ list}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \_playerObjectives.Remove(objectiveOccured);}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ //\ Assign\ a\ new\ objective}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ AssignPlayerObjective(clientId);}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ GameManager.Instance.PlayerData[clientId].NetPlayer.SetObjectiveStringClientRpc(GameManager.Instance.PlayerData[clientId].Objective?.ObjectiveString,\ GameManager.Instance.PlayerData[clientId].ClientRpcParams);}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00462\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}\label{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}} 
@@ -565,37 +678,47 @@ Resets the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} to sta
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00082\ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.Clear();}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Clear();}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.Clear();}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ the\ player\ data\ specific\ to\ a\ round}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(ulong\ clientId\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Keys)}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].Objective\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ Add\ any\ other\ objective\ related\ params\ that\ need\ clearing\ -\/\ objectives\ cleared\ this\ round?\ etc.}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ zones\ in\ the\ scene}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ List<Zone>\ zones\ =\ FindObjectsOfType<Zone>().ToList();}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zone}{Zone}}\ zone\ \textcolor{keywordflow}{in}\ zones)}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}{RegisterZone}}(zone);}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ objectives\ in\ the\ scene}}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ List<ObjectiveObjectInstance>\ objectiveObjectInstances\ =\ FindObjectsOfType<ObjectiveObjectInstance>().ToList();}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance\ \textcolor{keywordflow}{in}\ objectiveObjectInstances)}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}{RegisterObject}}(objectiveObjectInstance);}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shuffle\ the\ possible\ objectives}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Shuffle();}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ next\ available\ objective\ counter}}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a8fc821e2ad773f49937f18fc461662df}{\_nextAvailableObjective}}\ =\ 0;}
-\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a24fcce2a0e3ed05e0d594b2feeace100}{\_objectiveObjects}}.Clear();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Clear();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a722a4a5300f7373feebde579e16350c3}{\_possibleZones}}.Clear();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_playerObjectives.Clear();}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//foreach(ulong\ clientId\ in\ GameManager.Instance.PlayerData.Keys)}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ GameManager.Instance.PlayerData[clientId].Objective\ =\ null;}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ GameManager.Instance.PlayerData[clientId].NextObjectiveIndex\ =\ 0;}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ //\ TODO:\ Add\ any\ other\ objective\ related\ params\ that\ need\ clearing\ -\/\ objectives\ cleared\ this\ round?\ etc.}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ zones\ in\ the\ scene}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ List<Zone>\ zones\ =\ FindObjectsOfType<Zone>().ToList();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zone}{Zone}}\ zone\ \textcolor{keywordflow}{in}\ zones)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a76a7fea8589bd79af92b8e7ac88cda9d}{RegisterZone}}(zone);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ all\ the\ objectives\ in\ the\ scene}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ List<ObjectiveObjectInstance>\ objectiveObjectInstances\ =\ FindObjectsOfType<ObjectiveObjectInstance>().ToList();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_objective_object_instance}{ObjectiveObjectInstance}}\ objectiveObjectInstance\ \textcolor{keywordflow}{in}\ objectiveObjectInstances)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!objectiveObjectInstance.ExcludeFromObjectiveManager)\ \mbox{\hyperlink{class_objective_manager_a1a3bdfd34cc63246f362db68b653aa20}{RegisterObject}}(objectiveObjectInstance);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ the\ player\ data\ specific\ to\ a\ round}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Values)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.Objective\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.NextObjectiveIndex\ =\ 0;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.PossibleObjectives.Clear();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shuffle\ the\ possible\ objectives}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}}.Shuffle();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ a\ copy\ for\ this\ player}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.PossibleObjectives\ =\ \textcolor{keyword}{new}(\mbox{\hyperlink{class_objective_manager_a65027ae111883976e9a022f86d3175f2}{\_possibleObjectives}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -609,12 +732,12 @@ Resets the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}} to sta
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<ObjectiveManager>();}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<ObjectiveManager>();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
 
 \end{DoxyCode}

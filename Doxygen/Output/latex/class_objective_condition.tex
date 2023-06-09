@@ -7,18 +7,16 @@ A condition that an objective action can have.
 
 
 
-Inheritance diagram for Objective\+Condition\+:
-\nopagebreak
+Inheritance diagram for Objective\+Condition\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{class_objective_condition__inherit__graph}
+\includegraphics[width=343pt]{class_objective_condition__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Objective\+Condition\+:
-\nopagebreak
+Collaboration diagram for Objective\+Condition\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,9 +35,6 @@ override int \mbox{\hyperlink{class_objective_condition_a19d0adaf0122e695e64e126
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_condition_af520b494f48f9206cd524625a8316624}\label{class_objective_condition_af520b494f48f9206cd524625a8316624}} 
-string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
 \mbox{\Hypertarget{class_objective_condition_a24bd29f3a642e9524e6d2e05b1f20d22}\label{class_objective_condition_a24bd29f3a642e9524e6d2e05b1f20d22}} 
 bool {\bfseries During\+Countdown}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
@@ -49,15 +44,24 @@ bool {\bfseries Requires\+Object\+To\+Be\+In\+Zone}\hspace{0.3cm}{\ttfamily  \mb
 \mbox{\Hypertarget{class_objective_condition_a2bd0e0451891c4ae8a8ce7e6f24d1bb3}\label{class_objective_condition_a2bd0e0451891c4ae8a8ce7e6f24d1bb3}} 
 Zone.\+ZONE {\bfseries Required\+Zone}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
+\mbox{\Hypertarget{class_objective_condition_a445f750c7cefb6d78f662fba84a55b8f}\label{class_objective_condition_a445f750c7cefb6d78f662fba84a55b8f}} 
+bool {\bfseries Require\+Zone\+To\+Be\+On\+Ground}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 \mbox{\Hypertarget{class_objective_condition_a3bafc7b2fac5e48f0d07631b728b5863}\label{class_objective_condition_a3bafc7b2fac5e48f0d07631b728b5863}} 
 \mbox{\hyperlink{class_zone_colour}{Zone\+Colour}} {\bfseries Required\+Zone\+Colour}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties inherited from \mbox{\hyperlink{class_objective_base}{Objective\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_base_af388eae4f57c462f1723e95bfc4cfe3d}\label{class_objective_base_af388eae4f57c462f1723e95bfc4cfe3d}} 
+string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_objective_base_abb7ea49e943f1d66f444fe8261949d16}\label{class_objective_base_abb7ea49e943f1d66f444fe8261949d16}} 
+uint {\bfseries Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_objective_condition_abad435f58b4eec24f34003bf8e4e3f91}\label{class_objective_condition_abad435f58b4eec24f34003bf8e4e3f91}} 
-string {\bfseries \+\_\+friendly\+String}
-\begin{DoxyCompactList}\small\item\em The friendly string of the condition. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_objective_condition_a63153ac27da55e0ed66ab428373aebac}\label{class_objective_condition_a63153ac27da55e0ed66ab428373aebac}} 
 bool {\bfseries \+\_\+during\+Countdown} = false
 \item 
@@ -67,8 +71,21 @@ bool {\bfseries \+\_\+requires\+Object\+To\+Be\+In\+Zone} = false
 \mbox{\Hypertarget{class_objective_condition_ab15350a1cad8b4a582e962afaf92b552}\label{class_objective_condition_ab15350a1cad8b4a582e962afaf92b552}} 
 Zone.\+ZONE {\bfseries \+\_\+required\+Zone} = Zone.\+ZONE.\+NO\+\_\+\+ZONE
 \item 
+\mbox{\Hypertarget{class_objective_condition_af0430193d5d9d13f902fd0edf6d05e8e}\label{class_objective_condition_af0430193d5d9d13f902fd0edf6d05e8e}} 
+bool {\bfseries \+\_\+requires\+Zone\+To\+Be\+On\+Ground} = false
+\item 
 \mbox{\Hypertarget{class_objective_condition_a6491bb6e9031e100c33e6476752b62da}\label{class_objective_condition_a6491bb6e9031e100c33e6476752b62da}} 
 \mbox{\hyperlink{class_zone_colour}{Zone\+Colour}} {\bfseries \+\_\+required\+Zone\+Colour}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_objective_base}{Objective\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}\label{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}} 
+string {\bfseries \+\_\+friendly\+String}
+\begin{DoxyCompactList}\small\item\em The friendly string of the action. Must be in the format \char`\"{}... $<$\+COLOUR$>$ $<$\+OBJECT$>$ $<$\+CONDITION$>$\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_base_ab20546d70d80723d074e1df500423a9d}\label{class_objective_base_ab20546d70d80723d074e1df500423a9d}} 
+uint {\bfseries \+\_\+points}
 \end{DoxyCompactItemize}
 
 
@@ -124,14 +141,16 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00046\ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (ReferenceEquals(this,\ other))\ return\ true;}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_condition_abad435f58b4eec24f34003bf8e4e3f91}{\_friendlyString}}.Equals(other.FriendlyString))\ \&\&}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_duringCountdown\ ==\ other.DuringCountdown)\ \&\&}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_requiresObjectToBeInZone\ ==\ other.RequiresObjectToBeInZone)\ \&\&}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_requiredZone\ ==\ other.RequiredZone)\ \&\&}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (ReferenceEquals(this,\ other))\ return\ true;}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}.Equals(other.FriendlyString))\ \&\&}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_points\ ==\ other.\_points)\ \&\&}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_duringCountdown\ ==\ other.DuringCountdown)\ \&\&}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_requiresObjectToBeInZone\ ==\ other.RequiresObjectToBeInZone)\ \&\&}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_requiredZone\ ==\ other.RequiredZone)\ \&\&}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_requiresZoneToBeOnGround\ ==\ other.RequireZoneToBeOnGround)\ \&\&}
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_requiredZoneColour\ !=\ \textcolor{keyword}{null}\ ?\ \_requiredZoneColour.\mbox{\hyperlink{class_objective_colour_aea4f231d41b36362dcab90b64f025ac1}{Equals}}(other.RequiredZoneColour)\ :\ other.RequiredZoneColour\ ==\ \textcolor{keyword}{null})}
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
@@ -161,13 +180,15 @@ Override of Get\+Hash\+Code to provide correct hash for Dictionary.
 \DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ unchecked}
 \DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_condition_abad435f58b4eec24f34003bf8e4e3f91}{\_friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_condition_abad435f58b4eec24f34003bf8e4e3f91}{\_friendlyString}}.GetHashCode()\ :\ 0);}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_duringCountdown.GetHashCode());}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiresObjectToBeInZone.GetHashCode());}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiredZone.\mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{GetHashCode}}());}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiredZoneColour\ !=\ \textcolor{keyword}{null}\ ?\ \_requiredZoneColour.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}()\ :\ 0);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_objective_base_a3c82ae5e6093fe50f49f6ac173c70fb7}{\_friendlyString}}.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_points.GetHashCode());}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_duringCountdown.GetHashCode());}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiresObjectToBeInZone.GetHashCode());}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiredZone.\mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{GetHashCode}}());}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiresZoneToBeOnGround.GetHashCode());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_requiredZoneColour\ !=\ \textcolor{keyword}{null}\ ?\ \_requiredZoneColour.\mbox{\hyperlink{class_objective_colour_afc2343f5a219f353ff4b402fd6632494}{GetHashCode}}()\ :\ 0);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
 
 \end{DoxyCode}

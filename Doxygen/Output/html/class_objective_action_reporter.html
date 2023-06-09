@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: ObjectiveActionReporter Class Reference</title>
+<title>Construction Chaos: ObjectiveActionReporter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -112,26 +112,26 @@ Collaboration diagram for ObjectiveActionReporter:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_objective_action_reporter__coll__graph.png" border="0" usemap="#a_objective_action_reporter_coll__map" alt="Collaboration graph"/></div>
 <map name="a_objective_action_reporter_coll__map" id="a_objective_action_reporter_coll__map">
-<area shape="rect" title=" " alt="" coords="1504,23,1665,48"/>
-<area shape="rect" title=" " alt="" coords="840,5,965,31"/>
-<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="1095,48,1173,73"/>
-<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1283,48,1389,73"/>
-<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1097,257,1171,283"/>
-<area shape="rect" title=" " alt="" coords="823,401,983,427"/>
-<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="265,433,377,459"/>
-<area shape="rect" title=" " alt="" coords="45,231,164,256"/>
-<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="265,148,377,173"/>
-<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="264,265,377,291"/>
-<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="838,207,967,232"/>
-<area shape="rect" title=" " alt="" coords="6,433,203,459"/>
-<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="501,164,588,189"/>
-<area shape="rect" title=" " alt="" coords="6,148,203,173"/>
-<area shape="rect" title=" " alt="" coords="35,99,174,124"/>
-<area shape="rect" title=" " alt="" coords="5,315,204,340"/>
-<area shape="rect" title=" " alt="" coords="437,115,652,140"/>
-<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="519,332,570,357"/>
-<area shape="rect" title=" " alt="" coords="265,371,376,396"/>
-<area shape="rect" title=" " alt="" coords="253,321,388,347"/>
+<area shape="rect" title=" " alt="" coords="1664,18,1825,43"/>
+<area shape="rect" title=" " alt="" coords="426,43,551,69"/>
+<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="866,43,945,69"/>
+<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="687,211,738,237"/>
+<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1443,43,1549,69"/>
+<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1263,213,1337,238"/>
+<area shape="rect" title=" " alt="" coords="991,469,1151,494"/>
+<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="433,111,545,137"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="220,293,325,318"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="433,383,545,409"/>
+<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="432,162,545,187"/>
+<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="1006,283,1135,309"/>
+<area shape="rect" title=" " alt="" coords="5,293,124,318"/>
+<area shape="rect" title=" " alt="" coords="174,111,371,137"/>
+<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="669,367,756,393"/>
+<area shape="rect" title=" " alt="" coords="174,383,371,409"/>
+<area shape="rect" title=" " alt="" coords="203,433,342,458"/>
+<area shape="rect" title=" " alt="" coords="173,162,372,187"/>
+<area shape="rect" title=" " alt="" coords="605,266,820,291"/>
+<area shape="rect" title=" " alt="" coords="421,211,556,237"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -166,6 +166,9 @@ TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><b>_countdown
 <tr class="memitem:a92148be94287270042c2d231174a3f12"><td class="memItemLeft" align="right" valign="top"><a id="a92148be94287270042c2d231174a3f12" name="a92148be94287270042c2d231174a3f12"></a>
 uint&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveRequiredTime</b></td></tr>
 <tr class="separator:a92148be94287270042c2d231174a3f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5743330e307afaf02a25856405e00624"><td class="memItemLeft" align="right" valign="top"><a id="a5743330e307afaf02a25856405e00624" name="a5743330e307afaf02a25856405e00624"></a>
+TMP_SpriteAsset&#160;</td><td class="memItemRight" valign="bottom"><b>_spriteAsset</b></td></tr>
+<tr class="separator:a5743330e307afaf02a25856405e00624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498e7dbc2aba74252f4ae5f796853c80"><td class="memItemLeft" align="right" valign="top"><a id="a498e7dbc2aba74252f4ae5f796853c80" name="a498e7dbc2aba74252f4ae5f796853c80"></a>
 Vector3&#160;</td><td class="memItemRight" valign="bottom"><b>_targetScale</b> = Vector3.zero</td></tr>
 <tr class="separator:a498e7dbc2aba74252f4ae5f796853c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,13 +205,13 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_coroutine</b> =
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">if</span> (_canvasRectTransform == <span class="keyword">null</span>) _canvasRectTransform = GetComponentInChildren&lt;Canvas&gt;(<span class="keyword">true</span>).gameObject.GetComponent&lt;RectTransform&gt;();</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (_countdownText == <span class="keyword">null</span>) _countdownText = _canvasRectTransform.gameObject.GetComponentInChildren&lt;TextMeshProUGUI&gt;(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   23</span>        _targetScale = _canvasRectTransform != <span class="keyword">null</span> ? _canvasRectTransform.localScale : Vector3.zero;</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>        _canvasRectTransform.localScale = Vector3.zero;</div>
-<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span> (_canvasRectTransform == <span class="keyword">null</span>) _canvasRectTransform = GetComponentInChildren&lt;Canvas&gt;(<span class="keyword">true</span>).gameObject.GetComponent&lt;RectTransform&gt;();</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (_countdownText == <span class="keyword">null</span>) _countdownText = _canvasRectTransform.gameObject.GetComponentInChildren&lt;TextMeshProUGUI&gt;(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   25</span>        _targetScale = _canvasRectTransform != <span class="keyword">null</span> ? _canvasRectTransform.localScale : Vector3.zero;</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>        _canvasRectTransform.localScale = Vector3.zero;</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,33 +240,33 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_coroutine</b> =
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  131</span>    {</div>
-<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">if</span>(IsServer)</div>
-<div class="line"><span class="lineno">  133</span>        {</div>
-<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">if</span> (_coroutine == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out playerData)) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">if</span> (!objective.<a class="code hl_function" href="class_objective.html#aa5e5f371dc343010a73d19a8b33d9c53">Equals</a>(playerData.Objective)) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>            <span class="comment">// Objective macthes the players - stop the countdown</span></div>
-<div class="line"><span class="lineno">  142</span>            Debug.Log(<span class="stringliteral">&quot;CancelActionObjective&quot;</span>);</div>
-<div class="line"><span class="lineno">  143</span>            StopCoroutine(_coroutine);</div>
-<div class="line"><span class="lineno">  144</span>            CancelObjectiveTimerClientRpc(playerData.ClientRpcParams);</div>
-<div class="line"><span class="lineno">  145</span>            _coroutine = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  146</span>            <span class="comment">//_canvasRectTransform.gameObject.SetActive(false);</span></div>
-<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">if</span>(IsOwner)</div>
-<div class="line"><span class="lineno">  148</span>            {</div>
-<div class="line"><span class="lineno">  149</span>                _canvasRectTransform.localScale = Vector3.zero;</div>
-<div class="line"><span class="lineno">  150</span>            }</div>
-<div class="line"><span class="lineno">  151</span>            </div>
-<div class="line"><span class="lineno">  152</span>        }</div>
-<div class="line"><span class="lineno">  153</span>        </div>
-<div class="line"><span class="lineno">  154</span>    }</div>
-<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:14</div></div>
-<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:36</div></div>
-<div class="ttc" id="aclass_objective_html_aa5e5f371dc343010a73d19a8b33d9c53"><div class="ttname"><a href="class_objective.html#aa5e5f371dc343010a73d19a8b33d9c53">Objective.Equals</a></div><div class="ttdeci">bool Equals(Objective other)</div><div class="ttdoc">Specific Equals opperation for Objective.</div><div class="ttdef"><b>Definition:</b> Objective.cs:96</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">if</span>(IsServer)</div>
+<div class="line"><span class="lineno">  146</span>        {</div>
+<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">if</span> (_coroutine == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out playerData)) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">if</span> (!objective.<a class="code hl_function" href="class_objective.html#aa5e5f371dc343010a73d19a8b33d9c53">Equals</a>(playerData.Objective)) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>            <span class="comment">// Objective macthes the players - stop the countdown</span></div>
+<div class="line"><span class="lineno">  155</span>            Debug.Log(<span class="stringliteral">&quot;CancelActionObjective&quot;</span>);</div>
+<div class="line"><span class="lineno">  156</span>            StopCoroutine(_coroutine);</div>
+<div class="line"><span class="lineno">  157</span>            CancelObjectiveTimerClientRpc(playerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  158</span>            _coroutine = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  159</span>            <span class="comment">//_canvasRectTransform.gameObject.SetActive(false);</span></div>
+<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">if</span>(IsOwner)</div>
+<div class="line"><span class="lineno">  161</span>            {</div>
+<div class="line"><span class="lineno">  162</span>                _canvasRectTransform.localScale = Vector3.zero;</div>
+<div class="line"><span class="lineno">  163</span>            }</div>
+<div class="line"><span class="lineno">  164</span>            </div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span>        </div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:16</div></div>
+<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:51</div></div>
+<div class="ttc" id="aclass_objective_html_aa5e5f371dc343010a73d19a8b33d9c53"><div class="ttname"><a href="class_objective.html#aa5e5f371dc343010a73d19a8b33d9c53">Objective.Equals</a></div><div class="ttdeci">bool Equals(Objective other)</div><div class="ttdoc">Specific Equals opperation for Objective.</div><div class="ttdef"><b>Definition:</b> Objective.cs:113</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -290,14 +293,14 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_coroutine</b> =
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
-<div class="line"><span class="lineno">   73</span>        Debug.Log(<span class="stringliteral">&quot;CancelObjectiveTimerClientRpc Called - clientId: &quot;</span> + OwnerClientId);</div>
-<div class="line"><span class="lineno">   74</span>        Debug.Log(<span class="stringliteral">&quot;CancelActionObjective&quot;</span>);</div>
-<div class="line"><span class="lineno">   75</span>        StopCoroutine(_coroutine);</div>
-<div class="line"><span class="lineno">   76</span>        _coroutine = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   77</span>        <span class="comment">//_canvasRectTransform.gameObject.SetActive(false);</span></div>
-<div class="line"><span class="lineno">   78</span>        _canvasRectTransform.localScale = Vector3.zero;</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        Debug.Log(<span class="stringliteral">&quot;CancelObjectiveTimerClientRpc Called - clientId: &quot;</span> + OwnerClientId);</div>
+<div class="line"><span class="lineno">   76</span>        Debug.Log(<span class="stringliteral">&quot;CancelActionObjective&quot;</span>);</div>
+<div class="line"><span class="lineno">   77</span>        StopCoroutine(_coroutine);</div>
+<div class="line"><span class="lineno">   78</span>        _coroutine = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   79</span>        <span class="comment">//_canvasRectTransform.gameObject.SetActive(false);</span></div>
+<div class="line"><span class="lineno">   80</span>        _canvasRectTransform.localScale = Vector3.zero;</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,32 +340,32 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_coroutine</b> =
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if objective matches / False otherwise</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (_coroutine != <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (IsServer)</div>
-<div class="line"><span class="lineno">   41</span>        {</div>
-<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">if</span> (!objective.<a class="code hl_function" href="class_objective.html#aa5e5f371dc343010a73d19a8b33d9c53">Equals</a>(playerData.Objective)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (objective == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (_coroutine != <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (IsServer)</div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">if</span>(!IsOwner)</div>
-<div class="line"><span class="lineno">   47</span>            {</div>
-<div class="line"><span class="lineno">   48</span>                Debug.Log(<span class="stringliteral">&quot;Sending StartObjectiveTimer Request to ClientId: &quot;</span> + clientId.ToString());</div>
-<div class="line"><span class="lineno">   49</span>                <span class="comment">// Objective macthes the players - start the required time countdown</span></div>
-<div class="line"><span class="lineno">   50</span>                StartObjectiveTimerClientRpc(playerData.Objective.Action.RequiredPerformanceTime, <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ClientRpcParams);</div>
-<div class="line"><span class="lineno">   51</span>            }</div>
-<div class="line"><span class="lineno">   52</span>            </div>
-<div class="line"><span class="lineno">   53</span>            </div>
-<div class="line"><span class="lineno">   54</span>                Debug.Log(<span class="stringliteral">&quot;Starting StartObjectiveTimer on the Server&quot;</span>);</div>
-<div class="line"><span class="lineno">   55</span>                _coroutine = StartCoroutine(StartObjectiveTimer(playerData.Objective.Action.RequiredPerformanceTime));</div>
-<div class="line"><span class="lineno">   56</span>            </div>
-<div class="line"><span class="lineno">   57</span>            </div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">if</span> (!objective.<a class="code hl_function" href="class_objective.html#aa5e5f371dc343010a73d19a8b33d9c53">Equals</a>(playerData.Objective)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span>(!IsOwner)</div>
+<div class="line"><span class="lineno">   49</span>            {</div>
+<div class="line"><span class="lineno">   50</span>                Debug.Log(<span class="stringliteral">&quot;Sending StartObjectiveTimer Request to ClientId: &quot;</span> + clientId.ToString());</div>
+<div class="line"><span class="lineno">   51</span>                <span class="comment">// Objective macthes the players - start the required time countdown</span></div>
+<div class="line"><span class="lineno">   52</span>                StartObjectiveTimerClientRpc(playerData.Objective.Action.RequiredPerformanceTime, <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ClientRpcParams);</div>
+<div class="line"><span class="lineno">   53</span>            }</div>
+<div class="line"><span class="lineno">   54</span>            </div>
+<div class="line"><span class="lineno">   55</span>            </div>
+<div class="line"><span class="lineno">   56</span>                Debug.Log(<span class="stringliteral">&quot;Starting StartObjectiveTimer on the Server&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>                _coroutine = StartCoroutine(StartObjectiveTimer(playerData.Objective.Action.RequiredPerformanceTime));</div>
+<div class="line"><span class="lineno">   58</span>            </div>
+<div class="line"><span class="lineno">   59</span>            </div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -389,55 +392,66 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_coroutine</b> =
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   82</span>    {</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span>(IsServer)</div>
-<div class="line"><span class="lineno">   84</span>        {</div>
-<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">if</span> (playerData == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">if</span> (playerData.Objective == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">if</span> (playerData.Objective.Action == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   88</span>        }</div>
-<div class="line"><span class="lineno">   89</span>        </div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span>(IsOwner)</div>
-<div class="line"><span class="lineno">   91</span>        {</div>
-<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">if</span> (_canvasRectTransform == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (_countdownText == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>            <span class="comment">//_canvasRectTransform.gameObject.SetActive(true);</span></div>
-<div class="line"><span class="lineno">   96</span>            _canvasRectTransform.localScale = _startScale;</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-<div class="line"><span class="lineno">   98</span>        </div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">while</span> (duration &gt;= 1 )</div>
-<div class="line"><span class="lineno">  101</span>        {</div>
-<div class="line"><span class="lineno">  102</span>            Debug.Log(<span class="stringliteral">&quot;Duration: &quot;</span> + duration.ToString());</div>
-<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">if</span>(IsOwner)</div>
-<div class="line"><span class="lineno">  104</span>            {</div>
-<div class="line"><span class="lineno">  105</span>                _countdownText.text = duration.ToString();</div>
-<div class="line"><span class="lineno">  106</span>                _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() =&gt; { _canvasRectTransform.localScale = _startScale; });</div>
-<div class="line"><span class="lineno">  107</span>            }</div>
-<div class="line"><span class="lineno">  108</span>            </div>
-<div class="line"><span class="lineno">  109</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(1);</div>
-<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">if</span>(duration &gt; 0) duration--;</div>
-<div class="line"><span class="lineno">  111</span>        }</div>
-<div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span>(IsOwner)</div>
-<div class="line"><span class="lineno">  114</span>        {</div>
-<div class="line"><span class="lineno">  115</span>            _countdownText.text = duration.ToString();</div>
-<div class="line"><span class="lineno">  116</span>            _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() =&gt; { _canvasRectTransform.localScale = Vector3.zero; });</div>
-<div class="line"><span class="lineno">  117</span>        }</div>
-<div class="line"><span class="lineno">  118</span>        </div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span>(IsServer)</div>
-<div class="line"><span class="lineno">  121</span>        {</div>
-<div class="line"><span class="lineno">  122</span>            Debug.Log(<span class="stringliteral">&quot;Report Objective Complete to ObjectiveManager&quot;</span>);</div>
-<div class="line"><span class="lineno">  123</span>            <a class="code hl_class" href="class_objective_manager.html">ObjectiveManager</a>.Instance.<a class="code hl_function" href="class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b">ReportObjectiveAction</a>(playerData.Objective, playerData.ClientId);</div>
-<div class="line"><span class="lineno">  124</span>        }</div>
-<div class="line"><span class="lineno">  125</span>        </div>
-<div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>        _coroutine = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  128</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html"><div class="ttname"><a href="class_objective_manager.html">ObjectiveManager</a></div><div class="ttdoc">Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:17</div></div>
-<div class="ttc" id="aclass_objective_manager_html_af84b0e292f39382cbeb22acca677ab9b"><div class="ttname"><a href="class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b">ObjectiveManager.ReportObjectiveAction</a></div><div class="ttdeci">void ReportObjectiveAction(Objective objectiveOccured, ulong playerClientId)</div><div class="ttdoc">Interface to allow objects to report objective actions occuring and have them checked.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:328</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span>(IsServer)</div>
+<div class="line"><span class="lineno">   86</span>        {</div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">if</span> (playerData == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> (playerData.Objective == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> (playerData.Objective.Action == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>        </div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span>(IsOwner)</div>
+<div class="line"><span class="lineno">   93</span>        {</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> (_canvasRectTransform == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> (_countdownText == <span class="keyword">null</span>) yield <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>            <span class="comment">//_canvasRectTransform.gameObject.SetActive(true);</span></div>
+<div class="line"><span class="lineno">   98</span>            _canvasRectTransform.localScale = _startScale;</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>        </div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">while</span> (duration &gt;= 1 )</div>
+<div class="line"><span class="lineno">  103</span>        {</div>
+<div class="line"><span class="lineno">  104</span>            Debug.Log(<span class="stringliteral">&quot;Duration: &quot;</span> + duration.ToString());</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span>(IsOwner)</div>
+<div class="line"><span class="lineno">  106</span>            {</div>
+<div class="line"><span class="lineno">  107</span>                _countdownText.text = duration.ToString();</div>
+<div class="line"><span class="lineno">  108</span>                _canvasRectTransform.LeanScale(_targetScale, 0.75f).setEaseOutBounce().setOnComplete(() =&gt; { _canvasRectTransform.localScale = _startScale; });</div>
+<div class="line"><span class="lineno">  109</span>            }</div>
+<div class="line"><span class="lineno">  110</span>            </div>
+<div class="line"><span class="lineno">  111</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(1);</div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span>(duration &gt; 0) duration--;</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span>(IsOwner)</div>
+<div class="line"><span class="lineno">  116</span>        {</div>
+<div class="line"><span class="lineno">  117</span>            <span class="comment">// Get a random smiley face</span></div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span>((_spriteAsset != <span class="keyword">null</span>) &amp;&amp; (_spriteAsset.spriteCharacterTable.Count &gt; 0))</div>
+<div class="line"><span class="lineno">  119</span>            {</div>
+<div class="line"><span class="lineno">  120</span>                _countdownText.spriteAsset = _spriteAsset;</div>
+<div class="line"><span class="lineno">  121</span>                <span class="keywordtype">string</span> spriteString = <span class="keyword">new</span> (<span class="stringliteral">&quot;&lt;sprite=&quot;</span> + UnityEngine.Random.Range((<span class="keywordtype">int</span>)0, (<span class="keywordtype">int</span>)_spriteAsset.spriteCharacterTable.Count).ToString() + <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>                _countdownText.text = spriteString;</div>
+<div class="line"><span class="lineno">  123</span>            }</div>
+<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  125</span>            {</div>
+<div class="line"><span class="lineno">  126</span>                _countdownText.text = duration.ToString();</div>
+<div class="line"><span class="lineno">  127</span>            }</div>
+<div class="line"><span class="lineno">  128</span>            </div>
+<div class="line"><span class="lineno">  129</span>            _canvasRectTransform.LeanScale(_targetScale * 1.5f, 2f).setEaseOutBounce().setOnComplete(() =&gt; { _canvasRectTransform.localScale = Vector3.zero; });</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+<div class="line"><span class="lineno">  131</span>        </div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span>(IsServer)</div>
+<div class="line"><span class="lineno">  134</span>        {</div>
+<div class="line"><span class="lineno">  135</span>            Debug.Log(<span class="stringliteral">&quot;Report Objective Complete to ObjectiveManager&quot;</span>);</div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_class" href="class_objective_manager.html">ObjectiveManager</a>.Instance.<a class="code hl_function" href="class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b">ReportObjectiveAction</a>(playerData.Objective, playerData.ClientId);</div>
+<div class="line"><span class="lineno">  137</span>        }</div>
+<div class="line"><span class="lineno">  138</span>        </div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>        _coroutine = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="ttc" id="aclass_objective_manager_html"><div class="ttname"><a href="class_objective_manager.html">ObjectiveManager</a></div><div class="ttdoc">Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:16</div></div>
+<div class="ttc" id="aclass_objective_manager_html_af84b0e292f39382cbeb22acca677ab9b"><div class="ttname"><a href="class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b">ObjectiveManager.ReportObjectiveAction</a></div><div class="ttdeci">void ReportObjectiveAction(Objective objectiveOccured, ulong playerClientId)</div><div class="ttdoc">Interface to allow objects to report objective actions occuring and have them checked.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:424</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -474,10 +488,10 @@ Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_coroutine</b> =
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
-<div class="line"><span class="lineno">   66</span>        Debug.Log(<span class="stringliteral">&quot;StartObjectiveTimerClientRpc Called - clientId: &quot;</span> + OwnerClientId);</div>
-<div class="line"><span class="lineno">   67</span>        _coroutine = StartCoroutine(StartObjectiveTimer(duration));</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>        Debug.Log(<span class="stringliteral">&quot;StartObjectiveTimerClientRpc Called - clientId: &quot;</span> + OwnerClientId);</div>
+<div class="line"><span class="lineno">   69</span>        _coroutine = StartCoroutine(StartObjectiveTimer(duration));</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

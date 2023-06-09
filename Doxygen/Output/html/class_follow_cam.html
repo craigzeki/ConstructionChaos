@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: FollowCam Class Reference</title>
+<title>Construction Chaos: FollowCam Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -122,11 +122,16 @@ Collaboration diagram for FollowCam:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a99b7d8941425cada06bb63bd8fb9876f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_follow_cam.html#a99b7d8941425cada06bb63bd8fb9876f">SetFollowTarget</a> (Transform target)</td></tr>
 <tr class="separator:a99b7d8941425cada06bb63bd8fb9876f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af793216932d9f2ca9eeaf504c1d9ad2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_follow_cam.html#af793216932d9f2ca9eeaf504c1d9ad2d">SetConfiner</a> (Collider2D collider)</td></tr>
+<tr class="separator:af793216932d9f2ca9eeaf504c1d9ad2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a1ddecaffdf865e3ebd3d370e3a410950"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_follow_cam.html">FollowCam</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_follow_cam.html#a1ddecaffdf865e3ebd3d370e3a410950">Instance</a><code> [get, private set]</code></td></tr>
 <tr class="separator:a1ddecaffdf865e3ebd3d370e3a410950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1a0de4bf9377db5244df83c6e1345c"><td class="memItemLeft" align="right" valign="top"><a id="a2e1a0de4bf9377db5244df83c6e1345c" name="a2e1a0de4bf9377db5244df83c6e1345c"></a>
+Camera&#160;</td><td class="memItemRight" valign="bottom"><b>Cam</b><code> [get]</code></td></tr>
+<tr class="separator:a2e1a0de4bf9377db5244df83c6e1345c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -135,9 +140,15 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ac244a6b1018a34770171710826359d2d"><td class="memItemLeft" align="right" valign="top"><a id="ac244a6b1018a34770171710826359d2d" name="ac244a6b1018a34770171710826359d2d"></a>
-CinemachineVirtualCamera&#160;</td><td class="memItemRight" valign="bottom"><b>vcam</b></td></tr>
-<tr class="separator:ac244a6b1018a34770171710826359d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2eefd2b5dcddf69793c2c9ad3a834e3"><td class="memItemLeft" align="right" valign="top"><a id="af2eefd2b5dcddf69793c2c9ad3a834e3" name="af2eefd2b5dcddf69793c2c9ad3a834e3"></a>
+CinemachineVirtualCamera&#160;</td><td class="memItemRight" valign="bottom"><b>_vcam</b></td></tr>
+<tr class="separator:af2eefd2b5dcddf69793c2c9ad3a834e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa494573af113c5a7519a977f3571b2fc"><td class="memItemLeft" align="right" valign="top"><a id="aa494573af113c5a7519a977f3571b2fc" name="aa494573af113c5a7519a977f3571b2fc"></a>
+CinemachineConfiner2D&#160;</td><td class="memItemRight" valign="bottom"><b>_confiner</b></td></tr>
+<tr class="separator:aa494573af113c5a7519a977f3571b2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a567fcef1de82d58e47ecb75f87f07"><td class="memItemLeft" align="right" valign="top"><a id="aa3a567fcef1de82d58e47ecb75f87f07" name="aa3a567fcef1de82d58e47ecb75f87f07"></a>
+Camera&#160;</td><td class="memItemRight" valign="bottom"><b>_cam</b></td></tr>
+<tr class="separator:aa3a567fcef1de82d58e47ecb75f87f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a634c6b3ca5ec26eb6677733221d2a716" name="a634c6b3ca5ec26eb6677733221d2a716"></a>
@@ -162,9 +173,30 @@ CinemachineVirtualCamera&#160;</td><td class="memItemRight" valign="bottom"><b>v
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   13</span>    {</div>
-<div class="line"><span class="lineno">   14</span>        Instance = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   15</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
+<div class="line"><span class="lineno">   18</span>        Instance = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af793216932d9f2ca9eeaf504c1d9ad2d" name="af793216932d9f2ca9eeaf504c1d9ad2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af793216932d9f2ca9eeaf504c1d9ad2d">&#9670;&#160;</a></span>SetConfiner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FollowCam.SetConfiner </td>
+          <td>(</td>
+          <td class="paramtype">Collider2D&#160;</td>
+          <td class="paramname"><em>collider</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        _confiner.m_BoundingShape2D = collider;</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -183,9 +215,9 @@ CinemachineVirtualCamera&#160;</td><td class="memItemRight" valign="bottom"><b>v
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
-<div class="line"><span class="lineno">   19</span>        vcam.Follow = target;</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        _vcam.Follow = target;</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

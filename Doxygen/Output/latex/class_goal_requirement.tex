@@ -1,0 +1,67 @@
+\hypertarget{class_goal_requirement}{}\doxysection{Goal\+Requirement Class Reference}
+\label{class_goal_requirement}\index{GoalRequirement@{GoalRequirement}}
+
+
+Collaboration diagram for Goal\+Requirement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_goal_requirement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_goal_requirement_ac80d7ae6c289e3f1b8dbd5b3ead973b7}{Requirement\+Met}} ()
+\item 
+void \mbox{\hyperlink{class_goal_requirement_aa6df72f7ca67ba33d01e7a9dffecb784}{Calculate\+Percent\+Based\+Qty}} (int total\+In\+Scene)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_goal_requirement_ab320ec1cbdc5235f14e7b34c4b8188a3}\label{class_goal_requirement_ab320ec1cbdc5235f14e7b34c4b8188a3}} 
+\mbox{\hyperlink{class_objective_object}{Objective\+Object}} {\bfseries Required\+Object}
+\item 
+\mbox{\Hypertarget{class_goal_requirement_aeed7066b4a141eb0d47051adc9d1eb40}\label{class_goal_requirement_aeed7066b4a141eb0d47051adc9d1eb40}} 
+uint {\bfseries Quantity\+Required} = 0
+\item 
+\mbox{\Hypertarget{class_goal_requirement_a6587b690c73aa030abf7a7ca04173576}\label{class_goal_requirement_a6587b690c73aa030abf7a7ca04173576}} 
+uint {\bfseries Quantity\+In\+Zone} = 0
+\item 
+\mbox{\Hypertarget{class_goal_requirement_a0708181ee51f91bc9608902875b3329a}\label{class_goal_requirement_a0708181ee51f91bc9608902875b3329a}} 
+bool {\bfseries Use\+Qty\+As\+Percentage\+In\+Scene} = false
+\item 
+\mbox{\Hypertarget{class_goal_requirement_a26331c580193997dbaae251329975e10}\label{class_goal_requirement_a26331c580193997dbaae251329975e10}} 
+uint {\bfseries Percent\+Based\+Qty} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_goal_requirement_aa6df72f7ca67ba33d01e7a9dffecb784}\label{class_goal_requirement_aa6df72f7ca67ba33d01e7a9dffecb784}} 
+\index{GoalRequirement@{GoalRequirement}!CalculatePercentBasedQty@{CalculatePercentBasedQty}}
+\index{CalculatePercentBasedQty@{CalculatePercentBasedQty}!GoalRequirement@{GoalRequirement}}
+\doxysubsubsection{\texorpdfstring{CalculatePercentBasedQty()}{CalculatePercentBasedQty()}}
+{\footnotesize\ttfamily void Goal\+Requirement.\+Calculate\+Percent\+Based\+Qty (\begin{DoxyParamCaption}\item[{int}]{total\+In\+Scene }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ QuantityRequired\ =\ (uint)Mathf.Clamp((\textcolor{keywordtype}{int})QuantityRequired,\ (int)0,\ (\textcolor{keywordtype}{int})100);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ percentage\ =\ (float)QuantityRequired\ /\ (\textcolor{keywordtype}{float})100f;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ PercentBasedQty\ =\ (uint)Mathf.CeilToInt(percentage\ *\ totalInScene);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_goal_requirement_ac80d7ae6c289e3f1b8dbd5b3ead973b7}\label{class_goal_requirement_ac80d7ae6c289e3f1b8dbd5b3ead973b7}} 
+\index{GoalRequirement@{GoalRequirement}!RequirementMet@{RequirementMet}}
+\index{RequirementMet@{RequirementMet}!GoalRequirement@{GoalRequirement}}
+\doxysubsubsection{\texorpdfstring{RequirementMet()}{RequirementMet()}}
+{\footnotesize\ttfamily bool Goal\+Requirement.\+Requirement\+Met (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ UseQtyAsPercentageInScene\ ?\ QuantityInZone\ >=\ PercentBasedQty\ :\ QuantityInZone\ >=\ QuantityRequired;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}

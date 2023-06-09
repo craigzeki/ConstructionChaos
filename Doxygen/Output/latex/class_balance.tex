@@ -7,8 +7,7 @@ Keeps the body part balanced by rotating it towards the target rotation.
 
 
 
-Inheritance diagram for Balance\+:
-\nopagebreak
+Inheritance diagram for Balance\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for Balance\+:
 \end{figure}
 
 
-Collaboration diagram for Balance\+:
-\nopagebreak
+Collaboration diagram for Balance\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -45,7 +43,10 @@ ulong {\bfseries Client\+Id}
 \item 
 \mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
 \mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
-\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_aa20102c2e3c74be6bd44d84503a5d663}\label{class_ragdoll_aa20102c2e3c74be6bd44d84503a5d663}} 
+\mbox{\hyperlink{class_stick_movement}{Stick\+Movement}} {\bfseries Stick\+Movement}
+\begin{DoxyCompactList}\small\item\em A reference to the top level movement controller -\/ used to initiate collapse from other body parts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,6 +74,8 @@ Rigidbody2D {\bfseries \+\_\+rb}
 \doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragdoll_a386206900b13d3727f54d3df33dcfd17}{Reset\+Local\+Position}} ()
 \item 
 void \mbox{\hyperlink{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}{On\+Collapse}} ((bool collapse, bool break\+Apart) collapse\+Info)
 \begin{DoxyCompactList}\small\item\em Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -120,12 +123,12 @@ Reimplemented from \mbox{\hyperlink{class_ragdoll}{Ragdoll}}.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00024\ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsOwner)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (!IsOwner)\ return;}}
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ HandleBalance();}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ HandleBalanceServerRpc();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//else}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//HandleBalanceServerRpc();}}
 \DoxyCodeLine{00031\ \ \ \ \ \}}
 
 \end{DoxyCode}

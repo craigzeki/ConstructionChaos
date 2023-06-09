@@ -1,0 +1,60 @@
+\hypertarget{class_scrollable_image}{}\doxysection{Scrollable\+Image Class Reference}
+\label{class_scrollable_image}\index{ScrollableImage@{ScrollableImage}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scrollable_image_ae1754c33b96ebadb1cb0746f3320e511}{Set\+Initial\+Rect\+Data}} (float height2\+Width\+Ratio)
+\item 
+void \mbox{\hyperlink{class_scrollable_image_a06081ceb9edd46a0f64de7d614311a26}{Do\+Image\+Scroll\+Fixed\+Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scrollable_image_a32c0049f4af9b6390f10ec08a39340f9}\label{class_scrollable_image_a32c0049f4af9b6390f10ec08a39340f9}} 
+Raw\+Image {\bfseries Raw\+Image}
+\item 
+\mbox{\Hypertarget{class_scrollable_image_a851d42ba02ad31c1a34e397d2918b241}\label{class_scrollable_image_a851d42ba02ad31c1a34e397d2918b241}} 
+float {\bfseries Width\+Qty}
+\item 
+\mbox{\Hypertarget{class_scrollable_image_a4a5ab387de4079264641d18f52d80bf5}\label{class_scrollable_image_a4a5ab387de4079264641d18f52d80bf5}} 
+Vector2 {\bfseries Scroll\+Rate}
+\item 
+\mbox{\Hypertarget{class_scrollable_image_ab36a6455a6a125c0067438663dfbe006}\label{class_scrollable_image_ab36a6455a6a125c0067438663dfbe006}} 
+Rect {\bfseries Rect\+Data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scrollable_image_a06081ceb9edd46a0f64de7d614311a26}\label{class_scrollable_image_a06081ceb9edd46a0f64de7d614311a26}} 
+\index{ScrollableImage@{ScrollableImage}!DoImageScrollFixedUpdate@{DoImageScrollFixedUpdate}}
+\index{DoImageScrollFixedUpdate@{DoImageScrollFixedUpdate}!ScrollableImage@{ScrollableImage}}
+\doxysubsubsection{\texorpdfstring{DoImageScrollFixedUpdate()}{DoImageScrollFixedUpdate()}}
+{\footnotesize\ttfamily void Scrollable\+Image.\+Do\+Image\+Scroll\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RawImage\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RectData\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ RectData.position\ +=\ (ScrollRate\ *\ Time.fixedDeltaTime);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ RawImage.uvRect\ =\ RectData;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrollable_image_ae1754c33b96ebadb1cb0746f3320e511}\label{class_scrollable_image_ae1754c33b96ebadb1cb0746f3320e511}} 
+\index{ScrollableImage@{ScrollableImage}!SetInitialRectData@{SetInitialRectData}}
+\index{SetInitialRectData@{SetInitialRectData}!ScrollableImage@{ScrollableImage}}
+\doxysubsubsection{\texorpdfstring{SetInitialRectData()}{SetInitialRectData()}}
+{\footnotesize\ttfamily void Scrollable\+Image.\+Set\+Initial\+Rect\+Data (\begin{DoxyParamCaption}\item[{float}]{height2\+Width\+Ratio }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RawImage\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ RectData\ =\ \textcolor{keyword}{new}\ Rect(ScrollRate.x,\ ScrollRate.y,\ WidthQty,\ WidthQty\ *\ height2WidthRatio);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ RawImage.uvRect\ =\ RectData;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}

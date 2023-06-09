@@ -1,19 +1,15 @@
 var searchData=
 [
-  ['scenenames_0',['SceneNames',['../class_scene_names.html',1,'']]],
-  ['scenepersist_1',['ScenePersist',['../class_scene_persist.html',1,'']]],
-  ['serverinputhandler_2',['ServerInputHandler',['../class_server_input_handler.html',1,'']]],
-  ['setcollapse_3',['SetCollapse',['../class_character_input_handler.html#adffb4b8f08ca33cbb896a8952fd9e3b4',1,'CharacterInputHandler']]],
-  ['setjump_4',['SetJump',['../class_character_input_handler.html#a9cc4b779c96446505439df1250c2b7d8',1,'CharacterInputHandler']]],
-  ['setleftgrabbutton_5',['SetLeftGrabButton',['../class_character_input_handler.html#a8fd3710e3402d70b687f355186c1a920',1,'CharacterInputHandler']]],
-  ['setmenubuttonpressed_6',['SetMenuButtonPressed',['../class_character_input_handler.html#a01e366860c217a76e9b05ed1ea9e38f0',1,'CharacterInputHandler']]],
-  ['setmousemovearms_7',['SetMouseMoveArms',['../class_character_input_handler.html#ab9e17780d7a7a6ff19b1907aaec4dfd4',1,'CharacterInputHandler']]],
-  ['setmoveplayer_8',['SetMovePlayer',['../class_character_input_handler.html#a654275d52249e74661150d96ce80c963',1,'CharacterInputHandler']]],
-  ['setobjectivestringclientrpc_9',['SetObjectiveStringClientRpc',['../class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd',1,'NetPlayer']]],
-  ['setrightgrabbutton_10',['SetRightGrabButton',['../class_character_input_handler.html#a89bb786f902a9ea60e2bffd506718487',1,'CharacterInputHandler']]],
-  ['setroomcode_11',['SetRoomCode',['../class_menu_u_i_manager.html#a842e85a3fc7661b4bda5f0b963bf94ca',1,'MenuUIManager']]],
-  ['setstickmovearms_12',['SetStickMoveArms',['../class_character_input_handler.html#af8a4515e69aee4ead10954fdf7e4998a',1,'CharacterInputHandler']]],
-  ['startnetwork_13',['StartNetwork',['../class_connection_handler.html#ac625bf2ba4c2f8e04e7bcabffefb89bd',1,'ConnectionHandler']]],
-  ['stickmovement_14',['StickMovement',['../class_stick_movement.html',1,'']]],
-  ['switchactionmap_15',['SwitchActionMap',['../class_character_input_handler.html#a10f78d8ebcea23940e210c3e476a8a13',1,'CharacterInputHandler']]]
+  ['ragdoll_0',['Ragdoll',['../class_ragdoll.html',1,'']]],
+  ['raisedplatformarranger_1',['RaisedPlatformArranger',['../class_raised_platform_arranger.html',1,'']]],
+  ['reconnectplayer_2',['ReconnectPlayer',['../class_objective_manager.html#a00505f6e1b68931dd95c095570706733',1,'ObjectiveManager']]],
+  ['registernewplayer_3',['RegisterNewPlayer',['../class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b',1,'GameManager']]],
+  ['registerobject_4',['RegisterObject',['../class_objective_manager.html#a1a3bdfd34cc63246f362db68b653aa20',1,'ObjectiveManager']]],
+  ['registerzone_5',['RegisterZone',['../class_objective_manager.html#a76a7fea8589bd79af92b8e7ac88cda9d',1,'ObjectiveManager']]],
+  ['removeplayer_6',['RemovePlayer',['../class_server_input_handler.html#a3f8aa90711afd3e68cb998cfe6fd2a9a',1,'ServerInputHandler.RemovePlayer()'],['../class_objective_manager.html#a290b41e8a4237ee6f51bdc61b2c760df',1,'ObjectiveManager.RemovePlayer(ulong clientId)']]],
+  ['reportobjectiveaction_7',['ReportObjectiveAction',['../class_objective_manager.html#af84b0e292f39382cbeb22acca677ab9b',1,'ObjectiveManager']]],
+  ['reregisterplayer_8',['ReRegisterPlayer',['../class_game_manager.html#a9da9fba4b3db9b478e8977c9c08d79b8',1,'GameManager']]],
+  ['resetobjectivemanager_9',['ResetObjectiveManager',['../class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3',1,'ObjectiveManager']]],
+  ['round_10',['Round',['../class_round.html',1,'']]],
+  ['roundconfiner_11',['RoundConfiner',['../class_round_confiner.html',1,'']]]
 ];

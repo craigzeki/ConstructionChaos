@@ -7,8 +7,7 @@ Base class for all \mbox{\hyperlink{class_ragdoll}{Ragdoll}} behaviour.
 
 
 
-Inheritance diagram for Ragdoll\+:
-\nopagebreak
+Inheritance diagram for Ragdoll\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for Ragdoll\+:
 \end{figure}
 
 
-Collaboration diagram for Ragdoll\+:
-\nopagebreak
+Collaboration diagram for Ragdoll\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,6 +25,8 @@ Collaboration diagram for Ragdoll\+:
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragdoll_a386206900b13d3727f54d3df33dcfd17}{Reset\+Local\+Position}} ()
 \item 
 void \mbox{\hyperlink{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}{On\+Collapse}} ((bool collapse, bool break\+Apart) collapse\+Info)
 \begin{DoxyCompactList}\small\item\em Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -41,7 +41,10 @@ ulong {\bfseries Client\+Id}
 \item 
 \mbox{\Hypertarget{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}\label{class_ragdoll_acaaa2340a31b2cab040df748984d90dd}} 
 \mbox{\hyperlink{class_character_input_handler}{Character\+Input\+Handler}} {\bfseries Character\+Input\+Handler}
-\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A reference to this characters input handler, usually found on the parent of the player character prefab. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_aa20102c2e3c74be6bd44d84503a5d663}\label{class_ragdoll_aa20102c2e3c74be6bd44d84503a5d663}} 
+\mbox{\hyperlink{class_stick_movement}{Stick\+Movement}} {\bfseries Stick\+Movement}
+\begin{DoxyCompactList}\small\item\em A reference to the top level movement controller -\/ used to initiate collapse from other body parts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -74,6 +77,9 @@ Quaternion {\bfseries \+\_\+initial\+Rotation}
 \mbox{\Hypertarget{class_ragdoll_a2c2a578a2c3860da0c5cb072ae3ef2e4}\label{class_ragdoll_a2c2a578a2c3860da0c5cb072ae3ef2e4}} 
 Vector3 {\bfseries \+\_\+origin\+Local\+Position}
 \begin{DoxyCompactList}\small\item\em Used to store the correct (original) local position of the body part. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ragdoll_a2b243db1bb8ea451633fe05eb896e8e4}\label{class_ragdoll_a2b243db1bb8ea451633fe05eb896e8e4}} 
+Vector3 {\bfseries \+\_\+initial\+Local\+Position}
+\begin{DoxyCompactList}\small\item\em Used to store the initial local position -\/ needed to reset player to centre of parent before moving during spawn. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_ragdoll_a0d117138c2f50150762b1b158b70715a}\label{class_ragdoll_a0d117138c2f50150762b1b158b70715a}} 
 float {\bfseries \+\_\+rejoin\+Anchor\+Distance\+Threshold} = 0.\+005f
 \begin{DoxyCompactList}\small\item\em Used to detect when the body part has returned to its original position. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -91,11 +97,12 @@ Base class for all \mbox{\hyperlink{class_ragdoll}{Ragdoll}} behaviour.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a2c2a578a2c3860da0c5cb072ae3ef2e4}{\_originLocalPosition}}\ =\ transform.position;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a739b0028aaa3a2cd0d42ba4ea3aef987}{\_hingeJoint}}\ =\ GetComponent<HingeJoint2D>();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a29f73dbb34f22a17bb976a6ea49683a3}{\_initialRotation}}\ =\ transform.rotation;}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a2c2a578a2c3860da0c5cb072ae3ef2e4}{\_originLocalPosition}}\ =\ transform.position;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a739b0028aaa3a2cd0d42ba4ea3aef987}{\_hingeJoint}}\ =\ GetComponent<HingeJoint2D>();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a29f73dbb34f22a17bb976a6ea49683a3}{\_initialRotation}}\ =\ transform.rotation;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_a2b243db1bb8ea451633fe05eb896e8e4}{\_initialLocalPosition}}\ =\ transform.localPosition;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}\label{class_ragdoll_a9c609d3fa00d9066e88237f21f598fc8}} 
@@ -117,28 +124,41 @@ Receives a broadcast message indicating the player has collapsed and sets the in
 
 Call using Broadcast\+Message
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00067\ \ \ \ \ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Original\ collapse}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}}\ =\ !collapseInfo.collapse;}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragdoll_a739b0028aaa3a2cd0d42ba4ea3aef987}{\_hingeJoint}}\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collapseInfo.breakApart)}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disconnect\ joints\ and\ store\ previous\ connected\ rigidbody}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_hingeJoint.enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}{\_isBroken}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}{\_isBroken}}\ \&\&\ !collapseInfo.collapse)}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reconnect\ joints}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_ragdoll_afb75c98fefedebe7ae85c8f47c8753c6}{WaitAndSetRotation}}());}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \_hingeJoint.enabled\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}{\_isBroken}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Original\ collapse}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_acbe21edc246bbc1a07f9d7ad3aef7ed0}{\_isActive}}\ =\ !collapseInfo.collapse;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragdoll_a739b0028aaa3a2cd0d42ba4ea3aef987}{\_hingeJoint}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collapseInfo.breakApart)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Disconnect\ joints\ and\ store\ previous\ connected\ rigidbody}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_hingeJoint.enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}{\_isBroken}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}{\_isBroken}}\ \&\&\ !collapseInfo.collapse)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reconnect\ joints}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_ragdoll_afb75c98fefedebe7ae85c8f47c8753c6}{WaitAndSetRotation}}());}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \_hingeJoint.enabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragdoll_aa9d2d6547a221a337ae4e8ef24790021}{\_isBroken}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ragdoll_a386206900b13d3727f54d3df33dcfd17}\label{class_ragdoll_a386206900b13d3727f54d3df33dcfd17}} 
+\index{Ragdoll@{Ragdoll}!ResetLocalPosition@{ResetLocalPosition}}
+\index{ResetLocalPosition@{ResetLocalPosition}!Ragdoll@{Ragdoll}}
+\doxysubsubsection{\texorpdfstring{ResetLocalPosition()}{ResetLocalPosition()}}
+{\footnotesize\ttfamily void Ragdoll.\+Reset\+Local\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ transform.localPosition\ =\ \mbox{\hyperlink{class_ragdoll_a2b243db1bb8ea451633fe05eb896e8e4}{\_initialLocalPosition}};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_ragdoll_afb75c98fefedebe7ae85c8f47c8753c6}\label{class_ragdoll_afb75c98fefedebe7ae85c8f47c8753c6}} 
@@ -157,10 +177,10 @@ Waits until the body part has moved back to its intended position, and then sets
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00096\ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ Vector2.Distance(transform.localPosition,\ \mbox{\hyperlink{class_ragdoll_a2c2a578a2c3860da0c5cb072ae3ef2e4}{\_originLocalPosition}})\ <\ \mbox{\hyperlink{class_ragdoll_a0d117138c2f50150762b1b158b70715a}{\_rejoinAnchorDistanceThreshold}});}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ transform.rotation\ =\ \mbox{\hyperlink{class_ragdoll_a29f73dbb34f22a17bb976a6ea49683a3}{\_initialRotation}};}
-\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitUntil(()\ =>\ Vector2.Distance(transform.localPosition,\ \mbox{\hyperlink{class_ragdoll_a2c2a578a2c3860da0c5cb072ae3ef2e4}{\_originLocalPosition}})\ <\ \mbox{\hyperlink{class_ragdoll_a0d117138c2f50150762b1b158b70715a}{\_rejoinAnchorDistanceThreshold}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ transform.rotation\ =\ \mbox{\hyperlink{class_ragdoll_a29f73dbb34f22a17bb976a6ea49683a3}{\_initialRotation}};}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
 
 \end{DoxyCode}

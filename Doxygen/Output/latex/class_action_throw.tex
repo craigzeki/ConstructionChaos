@@ -1,0 +1,172 @@
+\hypertarget{class_action_throw}{}\doxysection{Action\+Throw Class Reference}
+\label{class_action_throw}\index{ActionThrow@{ActionThrow}}
+
+
+Class to detect when an object has been grabbed by a player and report this to the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}.  
+
+
+
+
+Inheritance diagram for Action\+Throw\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_action_throw__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Throw\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_action_throw__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_action_throw_af3e1400d201d31c8671812dec514976a}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_action_throw_a08842d9a81dc459c6c391f7367463bc0}{On\+Collision\+Enter2D}} (Collision2D collision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_action_throw_a06f03c462a99aea3fdbf0850706542fa}\label{class_action_throw_a06f03c462a99aea3fdbf0850706542fa}} 
+Dictionary$<$ ulong, \mbox{\hyperlink{class_ragdoll}{Ragdoll}} $>$ {\bfseries \+\_\+current\+Holders} = new Dictionary$<$ulong, \mbox{\hyperlink{class_ragdoll}{Ragdoll}}$>$()
+\item 
+\mbox{\Hypertarget{class_action_throw_aef507a4ea80fd381556861210140dbd9}\label{class_action_throw_aef507a4ea80fd381556861210140dbd9}} 
+List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} initial\+Condition, \mbox{\hyperlink{class_zone}{Zone}} initial\+Zone)$>$ {\bfseries \+\_\+prev\+Conditions} = new List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} initial\+Condition, \mbox{\hyperlink{class_zone}{Zone}} initial\+Zone)$>$()
+\item 
+\mbox{\Hypertarget{class_action_throw_ad4357440c037323ba32d96e4dbed02ba}\label{class_action_throw_ad4357440c037323ba32d96e4dbed02ba}} 
+\mbox{\hyperlink{class_ragdoll}{Ragdoll}} {\bfseries \+\_\+prev\+Holder}
+\item 
+\mbox{\Hypertarget{class_action_throw_acaa2d235bb220de5bf01ff2f68f4560d}\label{class_action_throw_acaa2d235bb220de5bf01ff2f68f4560d}} 
+bool {\bfseries \+\_\+thrown} = false
+\item 
+\mbox{\Hypertarget{class_action_throw_a576b2926177ff8047a779d1874398419}\label{class_action_throw_a576b2926177ff8047a779d1874398419}} 
+List$<$ Fixed\+Joint2D $>$ {\bfseries current\+Fixed\+Joint2\+Ds} = new List$<$Fixed\+Joint2D$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_objective_action_behaviour}{Objective\+Action\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}\label{class_objective_action_behaviour_a406607a8fab9a1763f4476cb0910fdf0}} 
+List$<$ \mbox{\hyperlink{class_objective_condition}{Objective\+Condition}} $>$ {\bfseries Conditions} = new List$<$\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}$>$()
+\begin{DoxyCompactList}\small\item\em Required list of conditions for this \mbox{\hyperlink{class_objective}{Objective}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}\label{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}} 
+\mbox{\hyperlink{class_objective}{Objective}} {\bfseries Objective}
+\begin{DoxyCompactList}\small\item\em An instance of \mbox{\hyperlink{class_objective}{Objective}} used to construct a possible objective that was achieved~\newline
+ This is passed to the Obejctive\+Manager for checking. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_objective_action_behaviour}{Objective\+Action\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+List$<$(\mbox{\hyperlink{class_objective_condition}{Objective\+Condition}}, \mbox{\hyperlink{class_zone}{Zone}})$>$ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{Get\+Active\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Provide a list of all conditions which are currently being met by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to detect when an object has been grabbed by a player and report this to the \mbox{\hyperlink{class_objective_manager}{Objective\+Manager}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_action_throw_a08842d9a81dc459c6c391f7367463bc0}\label{class_action_throw_a08842d9a81dc459c6c391f7367463bc0}} 
+\index{ActionThrow@{ActionThrow}!OnCollisionEnter2D@{OnCollisionEnter2D}}
+\index{OnCollisionEnter2D@{OnCollisionEnter2D}!ActionThrow@{ActionThrow}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter2D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Action\+Throw.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//LayerMask\ layerMask\ =\ (LayerMask.NameToLayer("{}Ground"{})\ |\ LayerMask.NameToLayer("{}Player"{}));}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ LayerMask\ layerMask\ =\ (1\ <<\ LayerMask.NameToLayer(\textcolor{stringliteral}{"{}Ground"{}}));}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ colliding\ with\ the\ ground\ or\ player\ will\ cancel\ the\ throw}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (((1\ <<\ collision.gameObject.layer)\ \&\ layerMask.value)\ !=\ 0)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ collided\ with\ player\ or\ ground\ -\/\ cancel}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \_thrown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \_prevHolder\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_action_throw_af3e1400d201d31c8671812dec514976a}\label{class_action_throw_af3e1400d201d31c8671812dec514976a}} 
+\index{ActionThrow@{ActionThrow}!Update@{Update}}
+\index{Update@{Update}!ActionThrow@{ActionThrow}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Action\+Throw.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ List<(\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}},\ \mbox{\hyperlink{class_zone}{Zone}})>\ activeConditions\ =\ \mbox{\hyperlink{class_objective_action_behaviour_ad71a751946994a609e00eca555d04d35}{GetActiveConditions}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_currentHolders.Clear();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//get\ a\ list\ of\ the\ connected\ joints\ (players)}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ currentFixedJoint2Ds\ =\ GetComponents<FixedJoint2D>().ToList<FixedJoint2D>();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ Dictionary\ of\ unique\ players\ holding\ (ignoring\ if\ held\ in\ 2\ hands)}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(FixedJoint2D\ fj\ \textcolor{keywordflow}{in}\ currentFixedJoint2Ds)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fj.connectedBody.gameObject.TryGetComponent<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>(out\ \mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll))}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentHolders.TryAdd(ragdoll.ClientId,\ ragdoll);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_thrown)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_currentHolders.Count\ >\ 0)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ someone\ has\ grabbed\ it!}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_thrown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevConditions.Clear();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevHolder\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ list\ is\ >\ 1\ -\/\ break\ early\ as\ can\ only\ be\ thrown\ if\ only\ one\ person\ holding}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentHolders.Count\ >\ 1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentHolders.Count\ ==\ 1)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Keep\ track\ of\ being\ held}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevHolder\ =\ \_currentHolders.ElementAt(0).Value;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ for\ conditions\ to\ be\ met}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ ((\mbox{\hyperlink{class_objective_condition}{ObjectiveCondition}}\ condition,\ \mbox{\hyperlink{class_zone}{Zone}}\ zone)\ in\ activeConditions)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ this\ condition}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (condition.RequiresObjectToBeInZone\ \&\&\ \_prevConditions.Contains((condition,\ zone)))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ objective\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_objective_action_behaviour_a8951ed0a3eb0c775793860a81ec2cca2}{Objective}}(\mbox{\hyperlink{class_objective}{Objective}}.Action,\ \mbox{\hyperlink{class_objective}{Objective}}.Colour,\ \mbox{\hyperlink{class_objective}{Objective}}.Object,\ condition,\ zone,\ \mbox{\hyperlink{class_objective}{Objective}}.Inverse);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_prevHolder.ObjectiveActionReporter.\mbox{\hyperlink{class_objective_action_reporter_a262a9c8593f70749201619eab9cbfa6d}{CheckAndStartActionObjective}}(objective,\ \_prevHolder.ClientId))}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Objective\ reported\ -\/\ reset}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevHolder\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_thrown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevConditions.Clear();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \_prevConditions\ =\ \textcolor{keyword}{new}(activeConditions);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ list\ is\ >\ 1\ -\/\ break\ early\ as\ can\ only\ be\ thrown\ if\ only\ one\ person\ holding}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentHolders.Count\ >\ 1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentHolders.Count\ ==\ 1)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Keep\ track\ of\ being\ held}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevHolder\ =\ \_currentHolders.ElementAt(0).Value;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_prevHolder\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we've\ been\ thrown}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_thrown\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_prevConditions\ =\ \textcolor{keyword}{new}(activeConditions);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}

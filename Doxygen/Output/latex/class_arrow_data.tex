@@ -1,0 +1,68 @@
+\hypertarget{class_arrow_data}{}\doxysection{Arrow\+Data Class Reference}
+\label{class_arrow_data}\index{ArrowData@{ArrowData}}
+
+
+Inheritance diagram for Arrow\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_arrow_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arrow\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_arrow_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_arrow_data_a4b9b9844e417e494802fa283bee09aff}{Network\+Serialize$<$ T $>$}} (Buffer\+Serializer$<$ T $>$ serializer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_data_aba4076b51e7f47573e99efd0e399d37f}\label{class_arrow_data_aba4076b51e7f47573e99efd0e399d37f}} 
+uint {\bfseries Object\+To\+Follow\+Id}
+\item 
+\mbox{\Hypertarget{class_arrow_data_ad8e5756d192a8530cfc16a15eb4d16e7}\label{class_arrow_data_ad8e5756d192a8530cfc16a15eb4d16e7}} 
+Zone.\+ZONE {\bfseries Zone\+Type}
+\item 
+\mbox{\Hypertarget{class_arrow_data_a329da11e9d859d5cba3e9041f8d6a38c}\label{class_arrow_data_a329da11e9d859d5cba3e9041f8d6a38c}} 
+Fixed\+String64\+Bytes {\bfseries Zone\+Name}
+\item 
+\mbox{\Hypertarget{class_arrow_data_acd4fb30c83c55262dd23ca979a2b4080}\label{class_arrow_data_acd4fb30c83c55262dd23ca979a2b4080}} 
+Color {\bfseries Colour}
+\begin{DoxyCompactList}\small\item\em This may need to be changed to Fixed\+String128\+Bytes or just keep zone names short. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_arrow_data_ada27d0a3ed18267b4bdd3887e9744692}\label{class_arrow_data_ada27d0a3ed18267b4bdd3887e9744692}} 
+bool {\bfseries Is\+Goal\+Arrow}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arrow_data_a4b9b9844e417e494802fa283bee09aff}\label{class_arrow_data_a4b9b9844e417e494802fa283bee09aff}} 
+\index{ArrowData@{ArrowData}!NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}}
+\index{NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}!ArrowData@{ArrowData}}
+\doxysubsubsection{\texorpdfstring{NetworkSerialize$<$ T $>$()}{NetworkSerialize< T >()}}
+{\footnotesize\ttfamily void Arrow\+Data.\+Network\+Serialize$<$ T $>$ (\begin{DoxyParamCaption}\item[{Buffer\+Serializer$<$ T $>$}]{serializer }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em IReader\+Writer}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ IReaderWriter}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ ObjectToFollowId);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ ZoneType);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ ZoneName);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ \mbox{\hyperlink{class_arrow_data_acd4fb30c83c55262dd23ca979a2b4080}{Colour}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ IsGoalArrow);}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,224 @@
+\hypertarget{class_spawn_manager}{}\doxysection{Spawn\+Manager Class Reference}
+\label{class_spawn_manager}\index{SpawnManager@{SpawnManager}}
+
+
+Inheritance diagram for Spawn\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_spawn_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spawn\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_spawn_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_spawn_manager_a88a383582b3be9184c3e3c7482b40029}{Reload\+Spawn\+Points}} ()
+\item 
+void \mbox{\hyperlink{class_spawn_manager_a00a821e208cc747cb8e8080371d05542}{Reset\+Spawn\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_spawn_manager_a40e16928dc97ab20890d938602cc7e49}{Spawn\+Player}} (Game\+Object player)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_spawn_manager}{Spawn\+Manager}} \mbox{\hyperlink{class_spawn_manager_a4c5cb9acf06690c8dd0459ad9fdd7e33}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_spawn_manager_a588a820493a3ba692729b24d11dc598f}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_spawn_manager_ad579c28b3900bd302ffaee598b1b7bfd}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_spawn_manager_ac1ee66843d558e2a78aec5055758db75}{On\+Game\+Manager\+State\+Change}} (object sender, \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{Game\+Manager.\+GAMESTATE}} state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_manager_aac93ccff997bd456e954a392a1b689e1}\label{class_spawn_manager_aac93ccff997bd456e954a392a1b689e1}} 
+Layer\+Mask {\bfseries \+\_\+layers\+To\+Check} = new Layer\+Mask()
+\item 
+\mbox{\Hypertarget{class_spawn_manager_af9c4d942231591724b20aded3d70ce95}\label{class_spawn_manager_af9c4d942231591724b20aded3d70ce95}} 
+List$<$ \mbox{\hyperlink{class_spawn_point}{Spawn\+Point}} $>$ {\bfseries \+\_\+spawn\+Points} = new List$<$\mbox{\hyperlink{class_spawn_point}{Spawn\+Point}}$>$()
+\item 
+\mbox{\Hypertarget{class_spawn_manager_a60d648e5ff4f480f8b5caa94e604afbe}\label{class_spawn_manager_a60d648e5ff4f480f8b5caa94e604afbe}} 
+int {\bfseries \+\_\+current\+Spawn\+Point} = 0
+\item 
+\mbox{\Hypertarget{class_spawn_manager_a4c11214c540f149073d59a9ace6d9d62}\label{class_spawn_manager_a4c11214c540f149073d59a9ace6d9d62}} 
+bool {\bfseries \+\_\+ready} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_manager_a52c49c63e0f422071f0e9a28af245998}\label{class_spawn_manager_a52c49c63e0f422071f0e9a28af245998}} 
+const float {\bfseries MAX\+\_\+\+WAIT\+\_\+\+TIME} = 0.\+5f
+\item 
+\mbox{\Hypertarget{class_spawn_manager_a3497063dd6b2c07314e5c0a38217d65b}\label{class_spawn_manager_a3497063dd6b2c07314e5c0a38217d65b}} 
+static \mbox{\hyperlink{class_spawn_manager}{Spawn\+Manager}} {\bfseries \+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spawn_manager_ad579c28b3900bd302ffaee598b1b7bfd}\label{class_spawn_manager_ad579c28b3900bd302ffaee598b1b7bfd}} 
+\index{SpawnManager@{SpawnManager}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ GameManager.Instance.OnGameStateChanged\ -\/=\ OnGameManagerStateChange;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_spawn_manager_a588a820493a3ba692729b24d11dc598f}\label{class_spawn_manager_a588a820493a3ba692729b24d11dc598f}} 
+\index{SpawnManager@{SpawnManager}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ GameManager.Instance.OnGameStateChanged\ +=\ OnGameManagerStateChange;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_spawn_manager_ac1ee66843d558e2a78aec5055758db75}\label{class_spawn_manager_ac1ee66843d558e2a78aec5055758db75}} 
+\index{SpawnManager@{SpawnManager}!OnGameManagerStateChange@{OnGameManagerStateChange}}
+\index{OnGameManagerStateChange@{OnGameManagerStateChange}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{OnGameManagerStateChange()}{OnGameManagerStateChange()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+On\+Game\+Manager\+State\+Change (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{Game\+Manager\+::\+GAMESTATE}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((state\ ==\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY)\ ||}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ (state\ ==\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND))}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ ResetSpawnManager();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_spawn_manager_a88a383582b3be9184c3e3c7482b40029}\label{class_spawn_manager_a88a383582b3be9184c3e3c7482b40029}} 
+\index{SpawnManager@{SpawnManager}!ReloadSpawnPoints@{ReloadSpawnPoints}}
+\index{ReloadSpawnPoints@{ReloadSpawnPoints}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{ReloadSpawnPoints()}{ReloadSpawnPoints()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+Reload\+Spawn\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Reloading\ Spawn\ Points"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_spawnPoints.Clear();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_spawnPoints\ =\ FindObjectsOfType<SpawnPoint>().ToList<\mbox{\hyperlink{class_spawn_point}{SpawnPoint}}>();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \_spawnPoints.Shuffle();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_currentSpawnPoint\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_ready\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_spawn_manager_a00a821e208cc747cb8e8080371d05542}\label{class_spawn_manager_a00a821e208cc747cb8e8080371d05542}} 
+\index{SpawnManager@{SpawnManager}!ResetSpawnManager@{ResetSpawnManager}}
+\index{ResetSpawnManager@{ResetSpawnManager}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{ResetSpawnManager()}{ResetSpawnManager()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+Reset\+Spawn\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Resetting\ Spawn\ Manager"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_spawnPoints.Clear();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_currentSpawnPoint\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_ready\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_spawn_manager_a40e16928dc97ab20890d938602cc7e49}\label{class_spawn_manager_a40e16928dc97ab20890d938602cc7e49}} 
+\index{SpawnManager@{SpawnManager}!SpawnPlayer@{SpawnPlayer}}
+\index{SpawnPlayer@{SpawnPlayer}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{SpawnPlayer()}{SpawnPlayer()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+Spawn\+Player (\begin{DoxyParamCaption}\item[{Game\+Object}]{player }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Spawning\ Player:\ "{}}\ +\ player.GetComponent<NetworkObject>().OwnerClientId);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_ready)\ ReloadSpawnPoints();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_spawnPoints\ count:\ "{}}\ +\ \_spawnPoints.Count);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_spawnPoints.Count\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ There\ should\ always\ be\ at\ least\ 1\ spawn\ point\ open\ as\ even\ with\ 5\ players\ loaded,\ they\ can't\ cover\ all\ 6\ spawn\ points}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_spawnPoints.Count;\ i++)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \_currentSpawnPoint\ \%=\ \_spawnPoints.Count;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_currentSpawnPoint:\ "{}}\ +\ \_currentSpawnPoint\ +\ \textcolor{stringliteral}{"{}\ -\/\ Spawn\ point:\ "{}}\ +\ \_spawnPoints[\_currentSpawnPoint].gameObject.name);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_spawnPoints[\_currentSpawnPoint].SpawnPointIsClear(\_layersToCheck))}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Spawn\ point\ is\ clear"{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Player\ position\ before:\ "{}}\ +\ player.transform.position.ToString());}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//foreach(NetworkTransform\ transform\ in\ player.GetComponentsInChildren<NetworkTransform>())}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ transform.Interpolate\ =\ false;}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ player.transform.position\ =\ \_spawnPoints[\_currentSpawnPoint].gameObject.transform.position;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll\ \textcolor{keywordflow}{in}\ player.GetComponentsInChildren<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>())}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ragdoll.TryGetComponent<Rigidbody2D>(out\ Rigidbody2D\ rb))}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb.velocity\ =\ Vector2.zero;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb.angularVelocity\ =\ 0f;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}\_spawnPoint\ position:\ "{}}\ +\ \_spawnPoints[\_currentSpawnPoint].gameObject.transform.position.ToString());}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Player\ position\ before:\ "{}}\ +\ player.transform.position.ToString());}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentSpawnPoint++;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Spawn\ point\ is\ NOT\ clear"{}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentSpawnPoint++;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_spawn_manager_a4c5cb9acf06690c8dd0459ad9fdd7e33}\label{class_spawn_manager_a4c5cb9acf06690c8dd0459ad9fdd7e33}} 
+\index{SpawnManager@{SpawnManager}!Instance@{Instance}}
+\index{Instance@{Instance}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spawn_manager}{Spawn\+Manager}} Spawn\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<SpawnManager>();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}

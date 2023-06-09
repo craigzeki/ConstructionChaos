@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: Arms Class Reference</title>
+<title>Construction Chaos: Arms Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('class_arms.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_arms-members.html">List of all members</a>  </div>
@@ -112,39 +113,45 @@ Collaboration diagram for Arms:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_arms__coll__graph.png" border="0" usemap="#a_arms_coll__map" alt="Collaboration graph"/></div>
 <map name="a_arms_coll__map" id="a_arms_coll__map">
-<area shape="rect" title=" " alt="" coords="2235,541,2288,567"/>
-<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="2120,541,2185,567"/>
-<area shape="rect" title=" " alt="" coords="964,520,1089,545"/>
-<area shape="rect" href="class_objective_action_reporter.html" title=" " alt="" coords="1767,475,1928,500"/>
-<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="1255,491,1333,516"/>
-<area shape="rect" href="class_character_input_handler.html" title="This class must be attached to each instance of the player &#160;It handles the input from the player and ..." alt="" coords="1219,592,1369,617"/>
-<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1479,475,1585,500"/>
-<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1257,289,1331,315"/>
-<area shape="rect" title=" " alt="" coords="947,401,1107,427"/>
-<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="267,37,379,63"/>
-<area shape="rect" title=" " alt="" coords="45,129,164,155"/>
-<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="267,269,379,295"/>
-<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="266,88,379,113"/>
-<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="962,217,1091,243"/>
-<area shape="rect" title=" " alt="" coords="6,5,203,31"/>
-<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="625,189,712,215"/>
-<area shape="rect" title=" " alt="" coords="6,269,203,295"/>
-<area shape="rect" title=" " alt="" coords="35,469,174,495"/>
-<area shape="rect" href="struct_character_input_data.html" title=" " alt="" coords="602,520,735,545"/>
-<area shape="rect" href="struct_arms_movement_data.html" title="Container for Arms Movement Input Data." alt="" coords="253,469,392,495"/>
-<area shape="rect" title=" " alt="" coords="5,72,204,97"/>
-<area shape="rect" title=" " alt="" coords="561,239,776,264"/>
-<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="643,292,694,317"/>
-<area shape="rect" title=" " alt="" coords="267,319,378,344"/>
-<area shape="rect" title=" " alt="" coords="255,220,390,245"/>
+<area shape="rect" title=" " alt="" coords="2588,537,2641,563"/>
+<area shape="rect" href="class_ragdoll.html" title="Base class for all Ragdoll behaviour." alt="" coords="2168,539,2233,564"/>
+<area shape="rect" href="class_stick_movement.html" title=" " alt="" coords="2375,541,2485,567"/>
+<area shape="rect" href="class_grab.html" title=" " alt="" coords="2405,596,2455,621"/>
+<area shape="rect" title=" " alt="" coords="428,488,553,513"/>
+<area shape="rect" href="class_objective_action_reporter.html" title=" " alt="" coords="1815,488,1976,513"/>
+<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="990,488,1069,513"/>
+<area shape="rect" href="class_zone.html" title="This class represents an interactible zone on the map." alt="" coords="811,285,862,311"/>
+<area shape="rect" href="class_character_input_handler.html" title="This class must be attached to each instance of the player &#160;It handles the input from the player and ..." alt="" coords="1119,591,1270,616"/>
+<area shape="rect" href="class_net_player_data.html" title="Class to store objective data related to a player." alt="" coords="1580,488,1687,513"/>
+<area shape="rect" href="class_objective.html" title="Container for storing objective information." alt="" coords="1387,275,1461,300"/>
+<area shape="rect" title=" " alt="" coords="1115,387,1275,412"/>
+<area shape="rect" href="class_objective_action.html" title="An action that can be performed on an objective object." alt="" coords="435,335,547,360"/>
+<area shape="rect" href="class_objective_base.html" title=" " alt="" coords="220,109,325,135"/>
+<area shape="rect" href="class_objective_colour.html" title="A colour that an objective object can be." alt="" coords="435,201,547,227"/>
+<area shape="rect" href="class_objective_object.html" title="An object that can be used in an objective." alt="" coords="434,21,547,47"/>
+<area shape="rect" href="class_objective_condition.html" title="A condition that an objective action can have." alt="" coords="1130,161,1259,187"/>
+<area shape="rect" title=" " alt="" coords="5,109,124,135"/>
+<area shape="rect" title=" " alt="" coords="174,335,371,360"/>
+<area shape="rect" href="class_zone_colour.html" title=" " alt="" coords="793,172,880,197"/>
+<area shape="rect" title=" " alt="" coords="174,201,371,227"/>
+<area shape="rect" title=" " alt="" coords="203,617,342,643"/>
+<area shape="rect" href="struct_character_input_data.html" title=" " alt="" coords="770,640,903,665"/>
+<area shape="rect" href="struct_arms_movement_data.html" title="Container for Arms Movement Input Data." alt="" coords="421,617,560,643"/>
+<area shape="rect" title=" " alt="" coords="173,5,372,31"/>
+<area shape="rect" title=" " alt="" coords="729,123,944,148"/>
+<area shape="rect" title=" " alt="" coords="423,285,558,311"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a94d801e043d0cd50284e0c347930f60d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arms.html#a94d801e043d0cd50284e0c347930f60d">Awake</a> ()</td></tr>
+<tr class="separator:a94d801e043d0cd50284e0c347930f60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110adc2ea8abf45aed55ed08aca51e4d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a110adc2ea8abf45aed55ed08aca51e4d">Awake</a> ()</td></tr>
+<tr class="separator:a110adc2ea8abf45aed55ed08aca51e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:acddeac7d44a2ff98da45295f02020cf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arms.html#acddeac7d44a2ff98da45295f02020cf9">CalculateArmRotation</a> (<a class="el" href="struct_character_input_data.html">CharacterInputData</a> characterInputData)</td></tr>
-<tr class="memdesc:acddeac7d44a2ff98da45295f02020cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the arm rotation value based on which controller is active.  <br /></td></tr>
-<tr class="separator:acddeac7d44a2ff98da45295f02020cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad91df96db381884f530a4da750250f85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arms.html#ad91df96db381884f530a4da750250f85">FixedUpdate</a> ()</td></tr>
 <tr class="separator:ad91df96db381884f530a4da750250f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57cffd2e3d68629934e2fe157b877257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arms.html#a57cffd2e3d68629934e2fe157b877257">HandleArms</a> (<a class="el" href="struct_character_input_data.html">CharacterInputData</a> characterInputData)</td></tr>
@@ -158,19 +165,33 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>_speed</b> = 300f</t
 <tr class="memitem:a14003c966c9e1f13c6905770413e461d"><td class="memItemLeft" align="right" valign="top"><a id="a14003c966c9e1f13c6905770413e461d" name="a14003c966c9e1f13c6905770413e461d"></a>
 Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><b>_rb</b></td></tr>
 <tr class="separator:a14003c966c9e1f13c6905770413e461d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecea81d1d0c727708d736286263dfdc6"><td class="memItemLeft" align="right" valign="top"><a id="aecea81d1d0c727708d736286263dfdc6" name="aecea81d1d0c727708d736286263dfdc6"></a>
-Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>_screenOrigin</b> = new Vector2(Screen.width / 2, Screen.height / 2)</td></tr>
-<tr class="separator:aecea81d1d0c727708d736286263dfdc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bf2b8abd8fc8a213701a1a44e547105"><td class="memItemLeft" align="right" valign="top"><a id="a9bf2b8abd8fc8a213701a1a44e547105" name="a9bf2b8abd8fc8a213701a1a44e547105"></a>
-Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>_delta</b> = Vector2.zero</td></tr>
-<tr class="separator:a9bf2b8abd8fc8a213701a1a44e547105"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41e8383d7891c43560b6f0e4fca826a"><td class="memItemLeft" align="right" valign="top"><a id="af41e8383d7891c43560b6f0e4fca826a" name="af41e8383d7891c43560b6f0e4fca826a"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>_rotationZ</b> = 0f</td></tr>
-<tr class="separator:af41e8383d7891c43560b6f0e4fca826a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5434b6823b900b3e403e794d96e54de"><td class="memItemLeft" align="right" valign="top"><a id="ab5434b6823b900b3e403e794d96e54de" name="ab5434b6823b900b3e403e794d96e54de"></a>
+Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><b>_connectedRb</b></td></tr>
+<tr class="separator:ab5434b6823b900b3e403e794d96e54de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0088e47b05c9a536e6e04535e3afe0b"><td class="memItemLeft" align="right" valign="top"><a id="aa0088e47b05c9a536e6e04535e3afe0b" name="aa0088e47b05c9a536e6e04535e3afe0b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_releaseThreshold</b> = 0.2f</td></tr>
+<tr class="separator:aa0088e47b05c9a536e6e04535e3afe0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaaedb73a0fc03e408c1e6e9d5f23c39"><td class="memItemLeft" align="right" valign="top"><a id="acaaedb73a0fc03e408c1e6e9d5f23c39" name="acaaedb73a0fc03e408c1e6e9d5f23c39"></a>
+HingeJoint2D&#160;</td><td class="memItemRight" valign="bottom"><b>_hingeJoint2d</b></td></tr>
+<tr class="separator:acaaedb73a0fc03e408c1e6e9d5f23c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5474c0bdb688e5c70d9cab6bd2cb22c"><td class="memItemLeft" align="right" valign="top"><a id="ad5474c0bdb688e5c70d9cab6bd2cb22c" name="ad5474c0bdb688e5c70d9cab6bd2cb22c"></a>
+Vector3&#160;</td><td class="memItemRight" valign="bottom"><b>_connectedPosition</b></td></tr>
+<tr class="separator:ad5474c0bdb688e5c70d9cab6bd2cb22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4af651eb80a4a6d8c156c57f13b38f"><td class="memItemLeft" align="right" valign="top"><a id="add4af651eb80a4a6d8c156c57f13b38f" name="add4af651eb80a4a6d8c156c57f13b38f"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_initialConnectionDistance</b></td></tr>
+<tr class="separator:add4af651eb80a4a6d8c156c57f13b38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4451669ea970230622f5802a4770a9"><td class="memItemLeft" align="right" valign="top"><a id="a8d4451669ea970230622f5802a4770a9" name="a8d4451669ea970230622f5802a4770a9"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_currentConnectionDistance</b></td></tr>
+<tr class="separator:a8d4451669ea970230622f5802a4770a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3781d1182a0617f00e194a6485dccf71"><td class="memItemLeft" align="right" valign="top"><a id="a3781d1182a0617f00e194a6485dccf71" name="a3781d1182a0617f00e194a6485dccf71"></a>
+<a class="el" href="class_grab.html">Grab</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_grabber</b></td></tr>
+<tr class="separator:a3781d1182a0617f00e194a6485dccf71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
+<tr class="memitem:a386206900b13d3727f54d3df33dcfd17 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a386206900b13d3727f54d3df33dcfd17">ResetLocalPosition</a> ()</td></tr>
+<tr class="separator:a386206900b13d3727f54d3df33dcfd17 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a9c609d3fa00d9066e88237f21f598fc8">OnCollapse</a> ((bool collapse, bool breakApart) collapseInfo)</td></tr>
 <tr class="memdesc:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a broadcast message indicating the player has collapsed and sets the internal state accordingly.  <br /></td></tr>
 <tr class="separator:a9c609d3fa00d9066e88237f21f598fc8 inherit pub_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,9 +206,10 @@ ulong&#160;</td><td class="memItemRight" valign="bottom"><b>ClientId</b></td></t
 <a class="el" href="class_character_input_handler.html">CharacterInputHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CharacterInputHandler</b></td></tr>
 <tr class="memdesc:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to this characters input handler, usually found on the parent of the player character prefab. <br /></td></tr>
 <tr class="separator:acaaa2340a31b2cab040df748984d90dd inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
-<tr class="memitem:a110adc2ea8abf45aed55ed08aca51e4d inherit pro_methods_class_ragdoll"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ragdoll.html#a110adc2ea8abf45aed55ed08aca51e4d">Awake</a> ()</td></tr>
-<tr class="separator:a110adc2ea8abf45aed55ed08aca51e4d inherit pro_methods_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20102c2e3c74be6bd44d84503a5d663 inherit pub_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="aa20102c2e3c74be6bd44d84503a5d663" name="aa20102c2e3c74be6bd44d84503a5d663"></a>
+<a class="el" href="class_stick_movement.html">StickMovement</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StickMovement</b></td></tr>
+<tr class="memdesc:aa20102c2e3c74be6bd44d84503a5d663 inherit pub_attribs_class_ragdoll"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to the top level movement controller - used to initiate collapse from other body parts. <br /></td></tr>
+<tr class="separator:aa20102c2e3c74be6bd44d84503a5d663 inherit pub_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_ragdoll"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_ragdoll')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_ragdoll.html">Ragdoll</a></td></tr>
 <tr class="memitem:acbe21edc246bbc1a07f9d7ad3aef7ed0 inherit pro_attribs_class_ragdoll"><td class="memItemLeft" align="right" valign="top"><a id="acbe21edc246bbc1a07f9d7ad3aef7ed0" name="acbe21edc246bbc1a07f9d7ad3aef7ed0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isActive</b> = true</td></tr>
@@ -199,8 +221,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
 <tr class="separator:aa9d2d6547a221a337ae4e8ef24790021 inherit pro_attribs_class_ragdoll"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acddeac7d44a2ff98da45295f02020cf9" name="acddeac7d44a2ff98da45295f02020cf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acddeac7d44a2ff98da45295f02020cf9">&#9670;&#160;</a></span>CalculateArmRotation()</h2>
+<a id="a94d801e043d0cd50284e0c347930f60d" name="a94d801e043d0cd50284e0c347930f60d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d801e043d0cd50284e0c347930f60d">&#9670;&#160;</a></span>Awake()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,36 +231,28 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Arms.CalculateArmRotation </td>
+          <td class="memname">override void Arms.Awake </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_character_input_data.html">CharacterInputData</a>&#160;</td>
-          <td class="paramname"><em>characterInputData</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Calculates the arm rotation value based on which controller is active. </p>
-<p>This only works because the player is always in the center of the screen</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span>(characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a>)</div>
-<div class="line"><span class="lineno">   25</span>        {</div>
-<div class="line"><span class="lineno">   27</span>            _delta = characterInputData.ArmsMovementData.ArmsControllerInput - _screenOrigin;</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>            _rotationZ = Mathf.Atan2(_delta.x, -_delta.y) * Mathf.Rad2Deg;</div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   32</span>        {</div>
-<div class="line"><span class="lineno">   33</span>            _rotationZ = Mathf.Atan2(characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsControllerInput</a>.x, -characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsControllerInput</a>.y) * Mathf.Rad2Deg;</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="ttc" id="astruct_arms_movement_data_html_aa7f49438ef107ac9810ddc7e8f240142"><div class="ttname"><a href="struct_arms_movement_data.html#aa7f49438ef107ac9810ddc7e8f240142">ArmsMovementData.ArmsControllerInput</a></div><div class="ttdeci">Vector2 ArmsControllerInput</div><div class="ttdoc">Action Map: Gameplay  2D array representing horizontal and vertical axis for arms movement.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:16</div></div>
-<div class="ttc" id="astruct_arms_movement_data_html_ac4061c8419d2894ac58b937f5d1e92b5"><div class="ttname"><a href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">ArmsMovementData.IsMouseController</a></div><div class="ttdeci">bool IsMouseController</div><div class="ttdoc">Action Map: Gameplay  Boolean flag indicating if last input was from a mouse controller.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:22</div></div>
+<p>Reimplemented from <a class="el" href="class_ragdoll.html">Ragdoll</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        base.Awake();</div>
+<div class="line"><span class="lineno">   26</span>        _hingeJoint2d = GetComponent&lt;HingeJoint2D&gt;();</div>
+<div class="line"><span class="lineno">   27</span>        _connectedRb = _hingeJoint2d.connectedBody;</div>
+<div class="line"><span class="lineno">   28</span>        _connectedPosition = _connectedRb.gameObject.transform.localPosition;</div>
+<div class="line"><span class="lineno">   29</span>        _initialConnectionDistance = Vector3.Distance(transform.localPosition, _connectedPosition);</div>
+<div class="line"><span class="lineno">   30</span>        _grabber = GetComponentInChildren&lt;Grab&gt;();</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -264,13 +278,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>        <span class="comment">// Not active / collapsed</span></div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_ragdoll.html#acbe21edc246bbc1a07f9d7ad3aef7ed0">_isActive</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (IsServer)</div>
-<div class="line"><span class="lineno">   43</span>            HandleArms(<a class="code hl_class" href="class_character_input_handler.html">CharacterInputHandler</a>.CharacterInputData);</div>
-<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        <span class="comment">// Not active / collapsed</span></div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_ragdoll.html#acbe21edc246bbc1a07f9d7ad3aef7ed0">_isActive</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (IsServer)</div>
+<div class="line"><span class="lineno">   39</span>            HandleArms(<a class="code hl_class" href="class_character_input_handler.html">CharacterInputHandler</a>.CharacterInputData);</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
 <div class="ttc" id="aclass_character_input_handler_html"><div class="ttname"><a href="class_character_input_handler.html">CharacterInputHandler</a></div><div class="ttdoc">This class must be attached to each instance of the player  It handles the input from the player and ...</div><div class="ttdef"><b>Definition:</b> CharacterInputHandler.cs:14</div></div>
 <div class="ttc" id="aclass_ragdoll_html_acbe21edc246bbc1a07f9d7ad3aef7ed0"><div class="ttname"><a href="class_ragdoll.html#acbe21edc246bbc1a07f9d7ad3aef7ed0">Ragdoll._isActive</a></div><div class="ttdeci">bool _isActive</div><div class="ttdoc">Is the ragdoll 'active' - if not, it is collapsed.</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:27</div></div>
 </div><!-- fragment -->
@@ -299,23 +313,39 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBroken</b> = false
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   47</span>    {</div>
-<div class="line"><span class="lineno">   48</span>        <a class="code hl_function" href="class_arms.html#acddeac7d44a2ff98da45295f02020cf9">CalculateArmRotation</a>(characterInputData);</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>        <span class="comment">// If player is trying to grab and is a mouse controller</span></div>
-<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">if</span>((characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a0e68be5a93f2006ca579dd2487d6a5e5">IsGrabbingLeft</a> || characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#ad69c05a5f6630ddaf36721fdbd79f308">IsGrabbingRight</a>) &amp;&amp; characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a>)</div>
-<div class="line"><span class="lineno">   52</span>        {</div>
-<div class="line"><span class="lineno">   53</span>            <span class="comment">// Move the amrs</span></div>
-<div class="line"><span class="lineno">   54</span>            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a> &amp;&amp; !characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsStickReleased</a>)</div>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">// If player is trying to grab and is a mouse controller</span></div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span>((characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#a0e68be5a93f2006ca579dd2487d6a5e5">IsGrabbingLeft</a> || characterInputData.<a class="code hl_variable" href="struct_character_input_data.html#ad69c05a5f6630ddaf36721fdbd79f308">IsGrabbingRight</a>) &amp;&amp; characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a>)</div>
+<div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>            <span class="comment">// Move the amrs</span></div>
+<div class="line"><span class="lineno">   48</span>            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827">ArmRotation</a>, _speed * Time.fixedDeltaTime));</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">IsMouseController</a> &amp;&amp; !characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsStickReleased</a>)</div>
+<div class="line"><span class="lineno">   51</span>        {</div>
+<div class="line"><span class="lineno">   52</span>            <span class="comment">// Player is trying to move arms using gamepad, move the arms (no reliance on grab to move</span></div>
+<div class="line"><span class="lineno">   53</span>            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, characterInputData.ArmsMovementData.<a class="code hl_variable" href="struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827">ArmRotation</a>, _speed * Time.fixedDeltaTime));</div>
+<div class="line"><span class="lineno">   54</span>        }</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span>(_grabber != <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">   57</span>        {</div>
-<div class="line"><span class="lineno">   58</span>            <span class="comment">// Player is trying to move arms using gamepad, move the arms (no reliance on grab to move</span></div>
-<div class="line"><span class="lineno">   59</span>            _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, _rotationZ, _speed * Time.fixedDeltaTime));</div>
-<div class="line"><span class="lineno">   60</span>        }</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="ttc" id="aclass_arms_html_acddeac7d44a2ff98da45295f02020cf9"><div class="ttname"><a href="class_arms.html#acddeac7d44a2ff98da45295f02020cf9">Arms.CalculateArmRotation</a></div><div class="ttdeci">void CalculateArmRotation(CharacterInputData characterInputData)</div><div class="ttdoc">Calculates the arm rotation value based on which controller is active.</div><div class="ttdef"><b>Definition:</b> Arms.cs:22</div></div>
-<div class="ttc" id="astruct_arms_movement_data_html_a06f5f4b0ceec504d825c835530a876e2"><div class="ttname"><a href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsMovementData.ArmsStickReleased</a></div><div class="ttdeci">bool ArmsStickReleased</div><div class="ttdoc">Action Map: Gameplay  True if the gamepad stick controlling the arms centred.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:28</div></div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span>(_grabber.ReadyToGrab)</div>
+<div class="line"><span class="lineno">   59</span>            {</div>
+<div class="line"><span class="lineno">   60</span>                _connectedPosition = _connectedRb.gameObject.transform.localPosition;</div>
+<div class="line"><span class="lineno">   61</span>                _currentConnectionDistance = Vector3.Distance(transform.localPosition, _connectedPosition);</div>
+<div class="line"><span class="lineno">   62</span>                <span class="comment">//Debug.Log(&quot;Distance: &quot; + Mathf.Abs(_currentConnectionDistance - _initialConnectionDistance).ToString(&quot;##.###&quot;));</span></div>
+<div class="line"><span class="lineno">   63</span>                <span class="keywordflow">if</span> (Mathf.Abs(_currentConnectionDistance - _initialConnectionDistance) &gt; _releaseThreshold)</div>
+<div class="line"><span class="lineno">   64</span>                {</div>
+<div class="line"><span class="lineno">   65</span>                    _grabber.Release = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   66</span>                }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>            }</div>
+<div class="line"><span class="lineno">   69</span>            </div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span>        </div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="ttc" id="astruct_arms_movement_data_html_a06f5f4b0ceec504d825c835530a876e2"><div class="ttname"><a href="struct_arms_movement_data.html#a06f5f4b0ceec504d825c835530a876e2">ArmsMovementData.ArmsStickReleased</a></div><div class="ttdeci">bool ArmsStickReleased</div><div class="ttdoc">Action Map: Gameplay  True if the gamepad stick controlling the arms centred.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:34</div></div>
+<div class="ttc" id="astruct_arms_movement_data_html_aa4d55807632b8cea27a98b31084fa827"><div class="ttname"><a href="struct_arms_movement_data.html#aa4d55807632b8cea27a98b31084fa827">ArmsMovementData.ArmRotation</a></div><div class="ttdeci">float ArmRotation</div><div class="ttdoc">Action Map: Gameplay  Float representing the rotation of the arms.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:22</div></div>
+<div class="ttc" id="astruct_arms_movement_data_html_ac4061c8419d2894ac58b937f5d1e92b5"><div class="ttname"><a href="struct_arms_movement_data.html#ac4061c8419d2894ac58b937f5d1e92b5">ArmsMovementData.IsMouseController</a></div><div class="ttdeci">bool IsMouseController</div><div class="ttdoc">Action Map: Gameplay  Boolean flag indicating if last input was from a mouse controller.</div><div class="ttdef"><b>Definition:</b> ArmsMovementData.cs:28</div></div>
 <div class="ttc" id="astruct_character_input_data_html_a0e68be5a93f2006ca579dd2487d6a5e5"><div class="ttname"><a href="struct_character_input_data.html#a0e68be5a93f2006ca579dd2487d6a5e5">CharacterInputData.IsGrabbingLeft</a></div><div class="ttdeci">bool IsGrabbingLeft</div><div class="ttdoc">Action Map: Gameplay  True if left hand grab button is pressed.</div><div class="ttdef"><b>Definition:</b> CharacterInputData.cs:33</div></div>
 <div class="ttc" id="astruct_character_input_data_html_ad69c05a5f6630ddaf36721fdbd79f308"><div class="ttname"><a href="struct_character_input_data.html#ad69c05a5f6630ddaf36721fdbd79f308">CharacterInputData.IsGrabbingRight</a></div><div class="ttdeci">bool IsGrabbingRight</div><div class="ttdoc">Action Map: Gameplay  True of the right hand grab button is pressed.</div><div class="ttdef"><b>Definition:</b> CharacterInputData.cs:39</div></div>
 </div><!-- fragment -->

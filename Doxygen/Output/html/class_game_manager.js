@@ -12,7 +12,11 @@ var class_game_manager =
       [ "DISCONNECTED", "class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9ca99c8ce56e7ab246445d3b134724428f3", null ],
       [ "NUM_OF_STATES", "class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9ca7cc283d54ea2e34e84ddfed22b314999", null ]
     ] ],
-    [ "DoStateTransition", "class_game_manager.html#aba8fcd12c3fd18eb629e6d3d332bcd3c", null ],
+    [ "DoStateCyclicActions", "class_game_manager.html#a15c2000b78542d31b75b5bf5809d725b", null ],
+    [ "DoStateTransition", "class_game_manager.html#a295e9bc8ea994669f347160a7807d26e", null ],
+    [ "LoadNextRound", "class_game_manager.html#a9fe8649ea7a5c92543ffb26499e4b9ba", null ],
+    [ "LoadRound", "class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9", null ],
+    [ "LoadRoundButton", "class_game_manager.html#a30e7706ad5f0370005c909e29e8239ad", null ],
     [ "RegisterNewPlayer", "class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b", null ],
     [ "ReRegisterPlayer", "class_game_manager.html#a9da9fba4b3db9b478e8977c9c08d79b8", null ],
     [ "UnRegisterPlayer", "class_game_manager.html#aefe5c9931f7a88ec7b5a73d0f41a27d1", null ],

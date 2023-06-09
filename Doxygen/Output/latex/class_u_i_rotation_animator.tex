@@ -1,0 +1,89 @@
+\hypertarget{class_u_i_rotation_animator}{}\doxysection{UIRotation\+Animator Class Reference}
+\label{class_u_i_rotation_animator}\index{UIRotationAnimator@{UIRotationAnimator}}
+
+
+Inheritance diagram for UIRotation\+Animator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_u_i_rotation_animator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UIRotation\+Animator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_u_i_rotation_animator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_i_rotation_animator_ac1fb1b27f0a92e47a9fa3b016959b8d4}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_u_i_rotation_animator_a1eafdb2a40f22d24ecc69fa2fa61b84c}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_u_i_rotation_animator_ae28d72750dd009aec14be07615ec230d}{Animate\+Loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_i_rotation_animator_a96a8efe0feadcedcc0009ad03e14a5a6}\label{class_u_i_rotation_animator_a96a8efe0feadcedcc0009ad03e14a5a6}} 
+float {\bfseries \+\_\+min\+Angle} = 0f
+\item 
+\mbox{\Hypertarget{class_u_i_rotation_animator_a709966b1d1c2289b3261340b11743d6a}\label{class_u_i_rotation_animator_a709966b1d1c2289b3261340b11743d6a}} 
+float {\bfseries \+\_\+max\+Angle} = 360f
+\item 
+\mbox{\Hypertarget{class_u_i_rotation_animator_acc3d3c42cf56a2175759a865a15b69fc}\label{class_u_i_rotation_animator_acc3d3c42cf56a2175759a865a15b69fc}} 
+float {\bfseries \+\_\+rotation\+Speed} = 1f
+\item 
+\mbox{\Hypertarget{class_u_i_rotation_animator_ad4828c0d581f14fea5f74ce6b00c9f4d}\label{class_u_i_rotation_animator_ad4828c0d581f14fea5f74ce6b00c9f4d}} 
+bool {\bfseries \+\_\+rotate\+Clockwise} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_i_rotation_animator_ae28d72750dd009aec14be07615ec230d}\label{class_u_i_rotation_animator_ae28d72750dd009aec14be07615ec230d}} 
+\index{UIRotationAnimator@{UIRotationAnimator}!AnimateLoop@{AnimateLoop}}
+\index{AnimateLoop@{AnimateLoop}!UIRotationAnimator@{UIRotationAnimator}}
+\doxysubsubsection{\texorpdfstring{AnimateLoop()}{AnimateLoop()}}
+{\footnotesize\ttfamily void UIRotation\+Animator.\+Animate\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ LeanTween.rotateZ(gameObject,\ \_rotateClockwise\ ?\ \_maxAngle\ :\ \_minAngle,\ \_rotationSpeed).setEaseInOutSine().setOnComplete(AnimateLoop);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_rotateClockwise\ =\ !\_rotateClockwise;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_rotation_animator_a1eafdb2a40f22d24ecc69fa2fa61b84c}\label{class_u_i_rotation_animator_a1eafdb2a40f22d24ecc69fa2fa61b84c}} 
+\index{UIRotationAnimator@{UIRotationAnimator}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!UIRotationAnimator@{UIRotationAnimator}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void UIRotation\+Animator.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ LeanTween.cancel(gameObject);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_rotation_animator_ac1fb1b27f0a92e47a9fa3b016959b8d4}\label{class_u_i_rotation_animator_ac1fb1b27f0a92e47a9fa3b016959b8d4}} 
+\index{UIRotationAnimator@{UIRotationAnimator}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!UIRotationAnimator@{UIRotationAnimator}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void UIRotation\+Animator.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ transform.localRotation\ =\ Quaternion.Euler(0,\ 0,\ 0);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \_rotateClockwise\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ AnimateLoop();}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}

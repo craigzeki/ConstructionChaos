@@ -7,8 +7,7 @@ Class to store objective data related to a player.
 
 
 
-Collaboration diagram for Net\+Player\+Data\+:
-\nopagebreak
+Collaboration diagram for Net\+Player\+Data\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,8 +38,26 @@ Client\+Rpc\+Params {\bfseries Client\+Rpc\+Params} = default
 \mbox{\Hypertarget{class_net_player_data_aa04ebd8166dd85cd13104d42bbd704b1}\label{class_net_player_data_aa04ebd8166dd85cd13104d42bbd704b1}} 
 ulong {\bfseries Client\+Id}
 \item 
-\mbox{\Hypertarget{class_net_player_data_a64717c125b4b5df16c5c5ba4f25897b6}\label{class_net_player_data_a64717c125b4b5df16c5c5ba4f25897b6}} 
-uint {\bfseries Score} = 0
+\mbox{\Hypertarget{class_net_player_data_a060c68f4ff445c868446a2e832c25356}\label{class_net_player_data_a060c68f4ff445c868446a2e832c25356}} 
+uint {\bfseries Round\+Score} = 0
+\item 
+\mbox{\Hypertarget{class_net_player_data_a560b94d77faf1d352d9f0956ad996542}\label{class_net_player_data_a560b94d77faf1d352d9f0956ad996542}} 
+uint {\bfseries Game\+Score} = 0
+\item 
+\mbox{\Hypertarget{class_net_player_data_a61b310eed03d5127a5de7c8834689608}\label{class_net_player_data_a61b310eed03d5127a5de7c8834689608}} 
+int {\bfseries Colour\+Index} = 0
+\item 
+\mbox{\Hypertarget{class_net_player_data_ad1e02798ff2838b2f9a7d429b18812e8}\label{class_net_player_data_ad1e02798ff2838b2f9a7d429b18812e8}} 
+int {\bfseries Next\+Objective\+Index} = 0
+\item 
+\mbox{\Hypertarget{class_net_player_data_a48f38f301effdd92b35f69010bb4cf08}\label{class_net_player_data_a48f38f301effdd92b35f69010bb4cf08}} 
+List$<$ \mbox{\hyperlink{class_objective}{Objective}} $>$ {\bfseries Possible\+Objectives} = new List$<$\mbox{\hyperlink{class_objective}{Objective}}$>$()
+\item 
+\mbox{\Hypertarget{class_net_player_data_ad1fac865541fd2e9d6a956e6aba3ce2f}\label{class_net_player_data_ad1fac865541fd2e9d6a956e6aba3ce2f}} 
+string {\bfseries Player\+Name} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{class_net_player_data_abd903ad2c2181aaeccb3746cfd21e4cd}\label{class_net_player_data_abd903ad2c2181aaeccb3746cfd21e4cd}} 
+bool {\bfseries Default\+Name\+Used} = true
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -61,11 +78,18 @@ Class to store objective data related to a player.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player}{NetPlayer}}\ =\ netPlayer;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ ClientId\ =\ clientId;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ CreateRpcParams(clientId);}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player}{NetPlayer}}\ =\ netPlayer;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ ClientId\ =\ clientId;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ CreateRpcParams(clientId);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ RoundScore\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ColourIndex\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ NextObjectiveIndex\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ PossibleObjectives.Clear();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ PlayerName\ =\ \textcolor{stringliteral}{"{}Player\ "{}}\ +\ (clientId\ +\ 1).ToString();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ DefaultNameUsed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_net_player_data_a3cae3d987bc2335bc9b17596b5a496f7}\label{class_net_player_data_a3cae3d987bc2335bc9b17596b5a496f7}} 
@@ -76,12 +100,18 @@ Class to store objective data related to a player.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00029\ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player}{NetPlayer}}\ =\ netPlayer;}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ =\ objective;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ClientId\ =\ clientId;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ CreateRpcParams(clientId);}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player}{NetPlayer}}\ =\ netPlayer;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective}{Objective}}\ =\ objective;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ClientId\ =\ clientId;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ CreateRpcParams(clientId);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ RoundScore\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ ColourIndex\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ NextObjectiveIndex\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ PossibleObjectives.Clear();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ PlayerName\ =\ \textcolor{stringliteral}{"{}Player\ "{}}\ +\ (clientId\ +\ 1).ToString();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ DefaultNameUsed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -95,15 +125,15 @@ Class to store objective data related to a player.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ ClientRpcParams\ =\ \textcolor{keyword}{new}\ ClientRpcParams}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ Send\ =\ \textcolor{keyword}{new}\ ClientRpcSendParams}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TargetClientIds\ =\ \textcolor{keyword}{new}\ ulong[]\ \{\ clientId\ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ ClientRpcParams\ =\ \textcolor{keyword}{new}\ ClientRpcParams}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ Send\ =\ \textcolor{keyword}{new}\ ClientRpcSendParams}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TargetClientIds\ =\ \textcolor{keyword}{new}\ ulong[]\ \{\ clientId\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_net_player_data_a8fe5135af6b0463b7beab38c6b31be76}\label{class_net_player_data_a8fe5135af6b0463b7beab38c6b31be76}} 
@@ -114,11 +144,11 @@ Class to store objective data related to a player.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ ClientRpcParams.Send\ =\ \textcolor{keyword}{new}\ ClientRpcSendParams}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ TargetClientIds\ =\ \textcolor{keyword}{new}\ ulong[]\ \{\ clientId\ \}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ ClientRpcParams.Send\ =\ \textcolor{keyword}{new}\ ClientRpcSendParams}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ TargetClientIds\ =\ \textcolor{keyword}{new}\ ulong[]\ \{\ clientId\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
 
 \end{DoxyCode}

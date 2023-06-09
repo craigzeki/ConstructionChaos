@@ -7,22 +7,20 @@ This class represents an interactible zone on the map.
 
 
 
-Inheritance diagram for Zone\+:
-\nopagebreak
+Inheritance diagram for Zone\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{class_zone__inherit__graph}
+\includegraphics[width=294pt]{class_zone__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Zone\+:
-\nopagebreak
+Collaboration diagram for Zone\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{class_zone__coll__graph}
+\includegraphics[width=294pt]{class_zone__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -49,8 +47,14 @@ override int \mbox{\hyperlink{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}{Get\
 \mbox{\Hypertarget{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}\label{class_zone_ab2b75009c73a5f5c8797c27500a1a6d6}} 
 string {\bfseries Friendly\+String}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
+\mbox{\Hypertarget{class_zone_acc155893511742b6bade38deef0096a5}\label{class_zone_acc155893511742b6bade38deef0096a5}} 
+uint {\bfseries Points}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 \mbox{\Hypertarget{class_zone_a03032d486487f85182ec0d9c7877892b}\label{class_zone_a03032d486487f85182ec0d9c7877892b}} 
 ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_zone_a88f13775ddb89cf2ff20fb736351333c}\label{class_zone_a88f13775ddb89cf2ff20fb736351333c}} 
+bool {\bfseries Is\+On\+Ground}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -58,9 +62,15 @@ ZONE {\bfseries Zone\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \mbox{\Hypertarget{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}\label{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}} 
 string {\bfseries \+\_\+friendly\+String} = \char`\"{}\char`\"{}
 \begin{DoxyCompactList}\small\item\em The friendly string which is used to construct the objective string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_zone_a1a746d0935a55432f0a64c42ad9c6ba5}\label{class_zone_a1a746d0935a55432f0a64c42ad9c6ba5}} 
+uint {\bfseries \+\_\+points}
+\item 
 \mbox{\Hypertarget{class_zone_a97e52bc33f234c1725ab84543bc8f619}\label{class_zone_a97e52bc33f234c1725ab84543bc8f619}} 
 ZONE {\bfseries \+\_\+zone\+Type} = ZONE.\+GOAL\+\_\+\+ZONE
-\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_zone}{Zone}} type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_zone}{Zone}} type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_zone_affb24ed973e9c2ef44eab882a09d708c}\label{class_zone_affb24ed973e9c2ef44eab882a09d708c}} 
+bool {\bfseries \+\_\+is\+On\+Ground} = false
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -75,12 +85,12 @@ This class represents an interactible zone on the map.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ NO\_ZONE\ =\ 0,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ GOAL\_ZONE,}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ LOCATION\_ZONE,}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ NUM\_OF\_ZONES}
-\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ NO\_ZONE\ =\ 0,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ GOAL\_ZONE,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ LOCATION\_ZONE,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ NUM\_OF\_ZONES}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -106,12 +116,12 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052\ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_zone_a51609732cbcc3e053defb5adf2226243}{Equals}}((\mbox{\hyperlink{class_zone}{Zone}})other);}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.GetType()\ !=\ \textcolor{keyword}{this}.GetType())\ \textcolor{keywordflow}{return}\ base.Equals(other);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Equals((\mbox{\hyperlink{class_zone}{Zone}})other);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_zone_a51609732cbcc3e053defb5adf2226243}\label{class_zone_a51609732cbcc3e053defb5adf2226243}} 
@@ -134,13 +144,15 @@ True of False (Equal or Not Equal)
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00038\ \ \ \ \ \{}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}{\_friendlyString}}.Equals(other.FriendlyString))\ \&\&}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{class_zone_a97e52bc33f234c1725ab84543bc8f619}{\_zoneType}}\ ==\ other.ZoneType)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_friendlyString.Equals(other.FriendlyString))\ \&\&}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_points\ ==\ other.Points)\ \&\&}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_zoneType\ ==\ other.ZoneType)\ \&\&}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_isOnGround\ ==\ other.IsOnGround)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}\label{class_zone_a07b9dfa4370afb3ddafd85b1c385b5da}} 
@@ -161,16 +173,17 @@ Override of Get\+Hash\+Code to provide correct hash for Dictionary.
 \href{https://stackoverflow.com/questions/3613102/why-use-a-prime-number-in-hashcode}{\texttt{ https\+://stackoverflow.\+com/questions/3613102/why-\/use-\/a-\/prime-\/number-\/in-\/hashcode}}~\newline
  \href{https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-overriding-gethashcode}{\texttt{ https\+://stackoverflow.\+com/questions/263400/what-\/is-\/the-\/best-\/algorithm-\/for-\/overriding-\/gethashcode}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00069\ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ unchecked}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\mbox{\hyperlink{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}{\_friendlyString}}\ !=\ \textcolor{keyword}{null}\ ?\ \mbox{\hyperlink{class_zone_ab94da9bd25d4fe99a3c232f6cdb44344}{\_friendlyString}}.GetHashCode()\ :\ 0);}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 32)\ +\ \mbox{\hyperlink{class_zone_a97e52bc33f234c1725ab84543bc8f619}{\_zoneType}}.GetHashCode();}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//unchecked\ allows\ overflows\ to\ occur\ and\ be\ truncated\ without\ throwing\ an\ exception}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ unchecked}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ hashCode\ =\ 17;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_friendlyString\ !=\ \textcolor{keyword}{null}\ ?\ \_friendlyString.GetHashCode()\ :\ 0);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 23)\ +\ (\_points.GetHashCode());}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 32)\ +\ \_zoneType.GetHashCode();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ hashCode\ =\ (hashCode\ *\ 32)\ +\ \_isOnGround.GetHashCode();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hashCode;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
 
 \end{DoxyCode}

@@ -15,19 +15,59 @@ Collaboration diagram for Menu\+UIManager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=225pt]{class_menu_u_i_manager__coll__graph}
+\includegraphics[width=224pt]{class_menu_u_i_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}{Set\+Room\+Code}} (string room\+Code)
-\begin{DoxyCompactList}\small\item\em Changes the title text to show the room code to the host. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Changes the title text to show the room code to the host. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a934f4b8c9efdb71385538a2ff509bb83}{Toggle\+All\+Canvases\+Off}} (bool except\+Scrolling\+Bg=false)
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_af31797c448b16e7a7f2cef2a5173e270}{Toggle\+Canvas}} (Game\+Object canvas\+Obj, bool toggle)
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a8e497beb024ab69197873d7226fe75a3}{Set\+Network\+Error\+Text}} (string text)
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_aa67a83cf48919a883bc46c4e34b87acd}{Append\+Network\+Error\+Text}} (string text)
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_acfeb8890ee77e80df9a920a27e04ec8a}{Set\+Player\+Name\+Text}} (string name)
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_adfcfa2066682cf55a37bee843d7e7bc2}{Set\+No\+Of\+Players\+Text}} (string no\+Of\+Players)
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a8eafefb8fccb5307b54f41a7a36600e1}{Load\+Next\+Round}} ()
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a31c1470c9dc508dc882c3516f3a7bfd8}{Load\+Menu}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_menu_u_i_manager_adbdb04b0fbd1d145cd22afcd4794644e}\label{class_menu_u_i_manager_adbdb04b0fbd1d145cd22afcd4794644e}} 
 static \mbox{\hyperlink{class_menu_u_i_manager}{Menu\+UIManager}} {\bfseries Instance}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_ac0a01889d7eec9c1168d4dcfe2db82a9}\label{class_menu_u_i_manager_ac0a01889d7eec9c1168d4dcfe2db82a9}} 
+Game\+Object {\bfseries Main\+Menu\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a396fd6cb6dde39248f2353ff7ae03efb}\label{class_menu_u_i_manager_a396fd6cb6dde39248f2353ff7ae03efb}} 
+Game\+Object {\bfseries Loading\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_abe1d009a82125a895cc8548ffbf721ad}\label{class_menu_u_i_manager_abe1d009a82125a895cc8548ffbf721ad}} 
+Game\+Object {\bfseries Lobby\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_ab677920a9053affb3a3f25b43c79b317}\label{class_menu_u_i_manager_ab677920a9053affb3a3f25b43c79b317}} 
+Game\+Object {\bfseries Game\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_aa67bfc441a02f3253cc99308eec15af9}\label{class_menu_u_i_manager_aa67bfc441a02f3253cc99308eec15af9}} 
+Game\+Object {\bfseries Disconnected\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a87e0177cbda1a1d72b02fcfbd5916559}\label{class_menu_u_i_manager_a87e0177cbda1a1d72b02fcfbd5916559}} 
+Game\+Object {\bfseries Splash\+Screen\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a453767d4a6ab8ab4ac9d3945d0635682}\label{class_menu_u_i_manager_a453767d4a6ab8ab4ac9d3945d0635682}} 
+Game\+Object {\bfseries Scrolling\+Bg\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -38,18 +78,66 @@ void \mbox{\hyperlink{class_menu_u_i_manager_ad0abf825ac112cf14db5b755405e64d4}{
 \item 
 void \mbox{\hyperlink{class_menu_u_i_manager_a519a8d8ddcce4ea04b0523e64570927a}{On\+Disable}} ()
 \item 
-void \mbox{\hyperlink{class_menu_u_i_manager_a7d68021f5c01426277ee24ade9ddf358}{Host\+Button}} ()
+async void \mbox{\hyperlink{class_menu_u_i_manager_abbafa64d2763794e126141b68f2254da}{Host\+Button}} ()
 \begin{DoxyCompactList}\small\item\em Starts hosting the game. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_menu_u_i_manager_a41f8a78f67dc3122a57197e4b3535228}{Join\+Button}} ()
+async void \mbox{\hyperlink{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}{Join\+Button}} ()
 \begin{DoxyCompactList}\small\item\em Opens the join menu or joins the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_ad140206cb889ddb5212631b34ac599d6}{Join\+Button}} (string text)
+\begin{DoxyCompactList}\small\item\em An overload of the Join\+Button method that allows the join button to be called by pressing enter in the input field. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}{Back\+Button}} ()
 \begin{DoxyCompactList}\small\item\em Closes the join menu. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_menu_u_i_manager_adf0adb16783b08a68bffc9f3e2e5ee69}{Unsuccessful\+Connection}} ()
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a682b207aada7501b655fb66d579d053f}{Successful\+Connection}} ()
+\item 
 void \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{Animate\+Element}} (Game\+Object game\+Object, bool animate\+In, bool disable\+After=true)
 \begin{DoxyCompactList}\small\item\em Animates the given Game\+Object in or out, and optionally disables it after the animation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}{Update\+Toggle}} (bool toggle\+Val)
-\begin{DoxyCompactList}\small\item\em Updates the local boolean when the toggle is changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the local boolean when the toggle is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a80e26c6045bc90ddbdf56157829705de}{Enable\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_ad75765fd6ef715cc45bb7709a91993d7}{Enable\+Lobby}} ()
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a8099c29348278a8fe7079cbedd1e596f}{Controls\+Button}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_menu_u_i_manager_aa90e58c576e1bbbdde9a3bc1e54571f8}{Controls\+Button\+Coroutine}} ()
+\item 
+void \mbox{\hyperlink{class_menu_u_i_manager_a3e52d9b58fdb744a5c8c354c716d1b4a}{Credits\+Button}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_menu_u_i_manager_a24e0d688c6e0103d933f6a2ad7bcd195}{Credits\+Button\+Coroutine}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a398eeb9e433a08ebdb569610714af90d}\label{class_menu_u_i_manager_a398eeb9e433a08ebdb569610714af90d}} 
+Game\+Object {\bfseries \+\_\+main\+Menu\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a41b2491818701ef9670d9dec7fc2c20c}\label{class_menu_u_i_manager_a41b2491818701ef9670d9dec7fc2c20c}} 
+Game\+Object {\bfseries \+\_\+loading\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a8becc4b99b03b10427c5c24c97ef2102}\label{class_menu_u_i_manager_a8becc4b99b03b10427c5c24c97ef2102}} 
+Game\+Object {\bfseries \+\_\+lobby\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a74ea7f88bf12ad66e21eb3e47a54a6b3}\label{class_menu_u_i_manager_a74ea7f88bf12ad66e21eb3e47a54a6b3}} 
+Game\+Object {\bfseries \+\_\+game\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a09383f992df826e24d7587d3288eba89}\label{class_menu_u_i_manager_a09383f992df826e24d7587d3288eba89}} 
+Game\+Object {\bfseries \+\_\+disconnected\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a326bcfe63972a9e9fac830b15547b4a7}\label{class_menu_u_i_manager_a326bcfe63972a9e9fac830b15547b4a7}} 
+Game\+Object {\bfseries \+\_\+splash\+Screen\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a33336f7f0b49ac435adcd8f7a76219c5}\label{class_menu_u_i_manager_a33336f7f0b49ac435adcd8f7a76219c5}} 
+Game\+Object {\bfseries \+\_\+scrolling\+Bg\+Canvas}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_ae032de2ad2171d3c77d9349e0dc73f73}\label{class_menu_u_i_manager_ae032de2ad2171d3c77d9349e0dc73f73}} 
+Game\+Object {\bfseries \+\_\+title\+Image}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a9e29eed578eba9b52b71bd603b051bd9}\label{class_menu_u_i_manager_a9e29eed578eba9b52b71bd603b051bd9}} 
+Game\+Object {\bfseries \+\_\+controls\+Images\+Parent}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_ad8269fb07a311375ebc64fb2cc1e3809}\label{class_menu_u_i_manager_ad8269fb07a311375ebc64fb2cc1e3809}} 
+Game\+Object {\bfseries \+\_\+credits\+Parent}
 \item 
 \mbox{\Hypertarget{class_menu_u_i_manager_a740cc8eb104279519a12f8575509b76b}\label{class_menu_u_i_manager_a740cc8eb104279519a12f8575509b76b}} 
 Button {\bfseries \+\_\+host\+Button}
@@ -60,14 +148,44 @@ Button {\bfseries \+\_\+join\+Button}
 \mbox{\Hypertarget{class_menu_u_i_manager_aa3e4be7682443c8833bda35fea16f7c7}\label{class_menu_u_i_manager_aa3e4be7682443c8833bda35fea16f7c7}} 
 Button {\bfseries \+\_\+back\+Button}
 \item 
-\mbox{\Hypertarget{class_menu_u_i_manager_af75bea4f681d8090e3ee376ac01aa3cf}\label{class_menu_u_i_manager_af75bea4f681d8090e3ee376ac01aa3cf}} 
-Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+title\+Text}
+\mbox{\Hypertarget{class_menu_u_i_manager_a5c925121358c5205d9548ac3282bb262}\label{class_menu_u_i_manager_a5c925121358c5205d9548ac3282bb262}} 
+Button {\bfseries \+\_\+start\+Button}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_ae47265c2dae4c647962550dc999f0463}\label{class_menu_u_i_manager_ae47265c2dae4c647962550dc999f0463}} 
+Button {\bfseries \+\_\+controls\+Button}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a06575505b6d48fe83610575b39e9ff66}\label{class_menu_u_i_manager_a06575505b6d48fe83610575b39e9ff66}} 
+Button {\bfseries \+\_\+credits\+Button}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a052d83cd8bd486a0f19fc2db9a951e7d}\label{class_menu_u_i_manager_a052d83cd8bd486a0f19fc2db9a951e7d}} 
+Button {\bfseries \+\_\+quit\+Button}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a2733605f926b7c6f5dc8fd80f032fb28}\label{class_menu_u_i_manager_a2733605f926b7c6f5dc8fd80f032fb28}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+room\+Code\+Text}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a5559ebb9513c0affb0c54fab4c65bfd4}\label{class_menu_u_i_manager_a5559ebb9513c0affb0c54fab4c65bfd4}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+error\+Text}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a547df24416abe442dcebcece02ba6097}\label{class_menu_u_i_manager_a547df24416abe442dcebcece02ba6097}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+disconnected\+Text}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_af679dde7b7ab5e7020fe1922c6331767}\label{class_menu_u_i_manager_af679dde7b7ab5e7020fe1922c6331767}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+player\+Name\+Text}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_aabca0079bb7c8a9eebcfd0ecde1447bc}\label{class_menu_u_i_manager_aabca0079bb7c8a9eebcfd0ecde1447bc}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+no\+Of\+Players\+Text}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_af4b62ced5f8b2e7a71917e489ccdeafe}\label{class_menu_u_i_manager_af4b62ced5f8b2e7a71917e489ccdeafe}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+waiting\+Text}
 \item 
 \mbox{\Hypertarget{class_menu_u_i_manager_af253da466d2ecd9afb5d45ad52c12597}\label{class_menu_u_i_manager_af253da466d2ecd9afb5d45ad52c12597}} 
 TMP\+\_\+\+Input\+Field {\bfseries \+\_\+room\+Code\+Input}
 \item 
 \mbox{\Hypertarget{class_menu_u_i_manager_acbff59ba8bdc28ec99d0dc66cea1ff02}\label{class_menu_u_i_manager_acbff59ba8bdc28ec99d0dc66cea1ff02}} 
 Toggle {\bfseries \+\_\+local\+Toggle}
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a191addfd7a96a3daca2ab89c901e7661}\label{class_menu_u_i_manager_a191addfd7a96a3daca2ab89c901e7661}} 
+Toggle {\bfseries \+\_\+mute\+Toggle}
 \item 
 \mbox{\Hypertarget{class_menu_u_i_manager_a1b0e67663ad11790abef3339f3ff6632}\label{class_menu_u_i_manager_a1b0e67663ad11790abef3339f3ff6632}} 
 bool {\bfseries \+\_\+local} = false
@@ -77,6 +195,18 @@ float {\bfseries \+\_\+animation\+Time} = 0.\+5f
 \item 
 \mbox{\Hypertarget{class_menu_u_i_manager_a6439cf7618e43f0e16cb46b1bad45798}\label{class_menu_u_i_manager_a6439cf7618e43f0e16cb46b1bad45798}} 
 bool {\bfseries \+\_\+join\+Menu\+Open} = false
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a878d86cd4cf1b834a51ad20a24e7f382}\label{class_menu_u_i_manager_a878d86cd4cf1b834a51ad20a24e7f382}} 
+bool {\bfseries \+\_\+controls\+Menu\+Open} = false
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a84aa2ae988aca2d0ed9924ae1e350cb2}\label{class_menu_u_i_manager_a84aa2ae988aca2d0ed9924ae1e350cb2}} 
+bool {\bfseries \+\_\+credits\+Menu\+Open} = false
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_a977121571effb36c3ab9d2b88a56c627}\label{class_menu_u_i_manager_a977121571effb36c3ab9d2b88a56c627}} 
+Coroutine {\bfseries \+\_\+controls\+Coroutine} = null
+\item 
+\mbox{\Hypertarget{class_menu_u_i_manager_ab3fad4e8ed87dbb4faf39c425d7c88b9}\label{class_menu_u_i_manager_ab3fad4e8ed87dbb4faf39c425d7c88b9}} 
+Coroutine {\bfseries \+\_\+credits\+Coroutine} = null
 \end{DoxyCompactItemize}
 
 
@@ -102,21 +232,34 @@ Animates the given Game\+Object in or out, and optionally disables it after the 
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00158\ \ \ \ \ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!gameObject.activeSelf\ \&\&\ !animateIn)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (gameObject.activeSelf\ \&\&\ animateIn)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateIn)\ disableAfter\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ gameObject.transform.localScale\ =\ animateIn\ ?\ Vector3.zero\ :\ Vector3.one;}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{true});}
-\DoxyCodeLine{00166\ }
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ LeanTween.scale(gameObject,\ animateIn\ ?\ Vector3.one\ :\ Vector3.zero,\ \_animationTime).setEase(animateIn\ ?\ LeanTweenType.easeOutBack\ :\ LeanTweenType.easeInBack).setOnComplete(()\ =>}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (disableAfter)}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!gameObject.activeSelf\ \&\&\ !animateIn)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (gameObject.activeSelf\ \&\&\ animateIn)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animateIn)\ disableAfter\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ gameObject.transform.localScale\ =\ animateIn\ ?\ Vector3.zero\ :\ Vector3.one;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ LeanTween.scale(gameObject,\ animateIn\ ?\ Vector3.one\ :\ Vector3.zero,\ \_animationTime).setEase(animateIn\ ?\ LeanTweenType.easeOutBack\ :\ LeanTweenType.easeInBack).setOnComplete(()\ =>}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (disableAfter)}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_aa67a83cf48919a883bc46c4e34b87acd}\label{class_menu_u_i_manager_aa67a83cf48919a883bc46c4e34b87acd}} 
+\index{MenuUIManager@{MenuUIManager}!AppendNetworkErrorText@{AppendNetworkErrorText}}
+\index{AppendNetworkErrorText@{AppendNetworkErrorText}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{AppendNetworkErrorText()}{AppendNetworkErrorText()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Append\+Network\+Error\+Text (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00310\ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \_disconnectedText.text\ +=\ text;}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_menu_u_i_manager_ac4f7870a3c170ffaee1ee0f3cc6b5567}\label{class_menu_u_i_manager_ac4f7870a3c170ffaee1ee0f3cc6b5567}} 
@@ -127,12 +270,12 @@ Animates the given Game\+Object in or out, and optionally disables it after the 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}\label{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}} 
@@ -147,27 +290,228 @@ Closes the join menu.
 
 Called by pressing the back button
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00136\ \ \ \ \ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_backButton.gameObject))}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ room\ code\ input}}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ host\ and\ join\ buttons}}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ join\ menu\ open\ flag}}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_backButton.gameObject))}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ room\ code\ input}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ back\ button}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ host\ and\ join\ buttons}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ join\ menu\ open\ flag}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_menu_u_i_manager_a7d68021f5c01426277ee24ade9ddf358}\label{class_menu_u_i_manager_a7d68021f5c01426277ee24ade9ddf358}} 
+\mbox{\Hypertarget{class_menu_u_i_manager_a8099c29348278a8fe7079cbedd1e596f}\label{class_menu_u_i_manager_a8099c29348278a8fe7079cbedd1e596f}} 
+\index{MenuUIManager@{MenuUIManager}!ControlsButton@{ControlsButton}}
+\index{ControlsButton@{ControlsButton}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{ControlsButton()}{ControlsButton()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Controls\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00372\ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_controlsCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_controlsCoroutine);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \_controlsCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \_controlsCoroutine\ =\ StartCoroutine(ControlsButtonCoroutine());}
+\DoxyCodeLine{00379\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_aa90e58c576e1bbbdde9a3bc1e54571f8}\label{class_menu_u_i_manager_aa90e58c576e1bbbdde9a3bc1e54571f8}} 
+\index{MenuUIManager@{MenuUIManager}!ControlsButtonCoroutine@{ControlsButtonCoroutine}}
+\index{ControlsButtonCoroutine@{ControlsButtonCoroutine}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{ControlsButtonCoroutine()}{ControlsButtonCoroutine()}}
+{\footnotesize\ttfamily IEnumerator Menu\+UIManager.\+Controls\+Button\+Coroutine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00382\ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \_controlsMenuOpen\ =\ !\_controlsMenuOpen;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \_creditsMenuOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_controlsMenuOpen)}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ controls\ menu}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_controlsImagesParent,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_animationTime);}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ host\ and\ join\ buttons}}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ mute\ and\ local\ toggles}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_muteToggle.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ host\ and\ join\ buttons}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ mute\ and\ local\ toggles}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_muteToggle.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ back\ button}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ room\ code\ input}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ credits\ menu}}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_creditsParent,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_animationTime);}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ controls\ menu}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_controlsImagesParent,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00425\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a3e52d9b58fdb744a5c8c354c716d1b4a}\label{class_menu_u_i_manager_a3e52d9b58fdb744a5c8c354c716d1b4a}} 
+\index{MenuUIManager@{MenuUIManager}!CreditsButton@{CreditsButton}}
+\index{CreditsButton@{CreditsButton}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{CreditsButton()}{CreditsButton()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Credits\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00428\ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_creditsCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_creditsCoroutine);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \_creditsCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \_creditsCoroutine\ =\ StartCoroutine(CreditsButtonCoroutine());}
+\DoxyCodeLine{00435\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a24e0d688c6e0103d933f6a2ad7bcd195}\label{class_menu_u_i_manager_a24e0d688c6e0103d933f6a2ad7bcd195}} 
+\index{MenuUIManager@{MenuUIManager}!CreditsButtonCoroutine@{CreditsButtonCoroutine}}
+\index{CreditsButtonCoroutine@{CreditsButtonCoroutine}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{CreditsButtonCoroutine()}{CreditsButtonCoroutine()}}
+{\footnotesize\ttfamily IEnumerator Menu\+UIManager.\+Credits\+Button\+Coroutine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00438\ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \_creditsMenuOpen\ =\ !\_creditsMenuOpen;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \_controlsMenuOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_creditsMenuOpen)}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ controls\ menu}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_creditsParent,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_animationTime);}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ host\ and\ join\ buttons}}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ mute\ and\ local\ toggles}}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_muteToggle.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ host\ and\ join\ buttons}}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ mute\ and\ local\ toggles}}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_muteToggle.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ back\ button}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ room\ code\ input}}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ controls\ menu}}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_controlsImagesParent,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_animationTime);}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ controls\ menu}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_creditsParent,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_ad75765fd6ef715cc45bb7709a91993d7}\label{class_menu_u_i_manager_ad75765fd6ef715cc45bb7709a91993d7}} 
+\index{MenuUIManager@{MenuUIManager}!EnableLobby@{EnableLobby}}
+\index{EnableLobby@{EnableLobby}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{EnableLobby()}{EnableLobby()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Enable\+Lobby (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00355\ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(NetworkManager.Singleton\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \_startButton.gameObject.SetActive(NetworkManager.Singleton.IsHost);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \_waitingText.gameObject.SetActive(!NetworkManager.Singleton.IsHost);}
+\DoxyCodeLine{00359\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a80e26c6045bc90ddbdf56157829705de}\label{class_menu_u_i_manager_a80e26c6045bc90ddbdf56157829705de}} 
+\index{MenuUIManager@{MenuUIManager}!EnableMenu@{EnableMenu}}
+\index{EnableMenu@{EnableMenu}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{EnableMenu()}{EnableMenu()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Enable\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00325\ \ \ \ \ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \_roomCodeInput.text\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ host\ and\ join\ buttons}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ quit,\ controls\ and\ credits\ button}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_quitButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_controlsButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_creditsButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ local\ toggle}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ mute\ toggle}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_muteToggle.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ title\ images}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_titleImage,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ room\ code\ input}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ back\ button}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_abbafa64d2763794e126141b68f2254da}\label{class_menu_u_i_manager_abbafa64d2763794e126141b68f2254da}} 
 \index{MenuUIManager@{MenuUIManager}!HostButton@{HostButton}}
 \index{HostButton@{HostButton}!MenuUIManager@{MenuUIManager}}
 \doxysubsubsection{\texorpdfstring{HostButton()}{HostButton()}}
-{\footnotesize\ttfamily void Menu\+UIManager.\+Host\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily async void Menu\+UIManager.\+Host\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -175,26 +519,30 @@ Starts hosting the game.
 
 Called by pressing the host button
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_hostButton.gameObject))}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ everything\ out\ except\ the\ title\ text}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ hosting\ the\ game}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.\mbox{\hyperlink{class_connection_handler_ab17bd06b8b4e045de1dde01ab6807335}{HostGame}}(\_local);}
-\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_hostButton.gameObject))}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ ToggleCanvas(\_mainMenuCanvas.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ ToggleCanvas(\_loadingCanvas.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ connectionSuccessful\ =\ await\ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.\mbox{\hyperlink{class_connection_handler_add0d7af1a66979a85d072201a4a14adc}{HostGame}}(\_local);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (connectionSuccessful)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ SuccessfulConnection();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(UnsuccessfulConnection());}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_menu_u_i_manager_a41f8a78f67dc3122a57197e4b3535228}\label{class_menu_u_i_manager_a41f8a78f67dc3122a57197e4b3535228}} 
+\mbox{\Hypertarget{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}\label{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}} 
 \index{MenuUIManager@{MenuUIManager}!JoinButton@{JoinButton}}
 \index{JoinButton@{JoinButton}!MenuUIManager@{MenuUIManager}}
-\doxysubsubsection{\texorpdfstring{JoinButton()}{JoinButton()}}
-{\footnotesize\ttfamily void Menu\+UIManager.\+Join\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{\texorpdfstring{JoinButton()}{JoinButton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async void Menu\+UIManager.\+Join\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -202,39 +550,88 @@ Opens the join menu or joins the game.
 
 Called by pressing the join button
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00097\ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_joinButton.gameObject))}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_backButton.gameObject))}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_joinMenuOpen)}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ everything\ out}}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_titleText.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ The\ UI\ will\ need\ to\ be\ updated\ if\ the\ room\ code\ is\ invalid}}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Join\ the\ game}}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.\mbox{\hyperlink{class_connection_handler_ad80fdb9284b085c6b0d1aac5555104c8}{JoinGame}}(\_roomCodeInput.text,\ \_local);}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ host\ button}}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ room\ code\ input\ and\ the\ back\ button}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_joinButton.gameObject))}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_backButton.gameObject))}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_joinMenuOpen)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ ToggleCanvas(\_mainMenuCanvas.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ ToggleCanvas(\_loadingCanvas.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ connectionSuccessful\ =\ await\ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.\mbox{\hyperlink{class_connection_handler_a094679c6b71fca10c6878f5c49babcc3}{JoinGame}}(\_roomCodeInput.text,\ \_local);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (connectionSuccessful)}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SuccessfulConnection();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(UnsuccessfulConnection());}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \_joinMenuOpen\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ out\ the\ host\ button}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ in\ the\ room\ code\ input\ and\ the\ back\ button}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_ad140206cb889ddb5212631b34ac599d6}\label{class_menu_u_i_manager_ad140206cb889ddb5212631b34ac599d6}} 
+\index{MenuUIManager@{MenuUIManager}!JoinButton@{JoinButton}}
+\index{JoinButton@{JoinButton}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{JoinButton()}{JoinButton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Join\+Button (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+An overload of the Join\+Button method that allows the join button to be called by pressing enter in the input field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text in the input field\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}{JoinButton}}();}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a31c1470c9dc508dc882c3516f3a7bfd8}\label{class_menu_u_i_manager_a31c1470c9dc508dc882c3516f3a7bfd8}} 
+\index{MenuUIManager@{MenuUIManager}!LoadMenu@{LoadMenu}}
+\index{LoadMenu@{LoadMenu}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{LoadMenu()}{LoadMenu()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Load\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00367\ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.LoadMenu();}
+\DoxyCodeLine{00369\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a8eafefb8fccb5307b54f41a7a36600e1}\label{class_menu_u_i_manager_a8eafefb8fccb5307b54f41a7a36600e1}} 
+\index{MenuUIManager@{MenuUIManager}!LoadNextRound@{LoadNextRound}}
+\index{LoadNextRound@{LoadNextRound}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{LoadNextRound()}{LoadNextRound()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Load\+Next\+Round (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00362\ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a9fe8649ea7a5c92543ffb26499e4b9ba}{LoadNextRound}}();}
+\DoxyCodeLine{00364\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_menu_u_i_manager_a519a8d8ddcce4ea04b0523e64570927a}\label{class_menu_u_i_manager_a519a8d8ddcce4ea04b0523e64570927a}} 
@@ -245,18 +642,59 @@ Called by pressing the join button
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ listeners\ from\ the\ buttons}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_hostButton.onClick.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_a7d68021f5c01426277ee24ade9ddf358}{HostButton}});}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \_joinButton.onClick.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_a41f8a78f67dc3122a57197e4b3535228}{JoinButton}});}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_backButton.onClick.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}{BackButton}});}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ listener\ from\ the\ input\ field}}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_roomCodeInput.onValidateInput\ -\/=\ delegate\ (\textcolor{keywordtype}{string}\ input,\ \textcolor{keywordtype}{int}\ charIndex,\ \textcolor{keywordtype}{char}\ addedChar)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{char}.ToUpper(addedChar);\ \};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ listener\ from\ the\ toggle}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_localToggle.onValueChanged.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}{UpdateToggle}});}
-\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ listeners\ from\ the\ buttons}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_hostButton.onClick.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_abbafa64d2763794e126141b68f2254da}{HostButton}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_joinButton.onClick.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}{JoinButton}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \_backButton.onClick.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}{BackButton}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_controlsButton.onClick.RemoveListener(ControlsButton);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \_creditsButton.onClick.RemoveListener(CreditsButton);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ listener\ from\ the\ input\ field}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \_roomCodeInput.onValidateInput\ -\/=\ delegate\ (\textcolor{keywordtype}{string}\ input,\ \textcolor{keywordtype}{int}\ charIndex,\ \textcolor{keywordtype}{char}\ addedChar)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{char}.ToUpper(addedChar);\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ the\ listener\ from\ the\ toggle}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_localToggle.onValueChanged.RemoveListener(\mbox{\hyperlink{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}{UpdateToggle}});}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a8e497beb024ab69197873d7226fe75a3}\label{class_menu_u_i_manager_a8e497beb024ab69197873d7226fe75a3}} 
+\index{MenuUIManager@{MenuUIManager}!SetNetworkErrorText@{SetNetworkErrorText}}
+\index{SetNetworkErrorText@{SetNetworkErrorText}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{SetNetworkErrorText()}{SetNetworkErrorText()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Set\+Network\+Error\+Text (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00305\ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \_disconnectedText.text\ =\ text;}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_adfcfa2066682cf55a37bee843d7e7bc2}\label{class_menu_u_i_manager_adfcfa2066682cf55a37bee843d7e7bc2}} 
+\index{MenuUIManager@{MenuUIManager}!SetNoOfPlayersText@{SetNoOfPlayersText}}
+\index{SetNoOfPlayersText@{SetNoOfPlayersText}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{SetNoOfPlayersText()}{SetNoOfPlayersText()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Set\+No\+Of\+Players\+Text (\begin{DoxyParamCaption}\item[{string}]{no\+Of\+Players }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00320\ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \_noOfPlayersText.text\ =\ \$\textcolor{stringliteral}{"{}No.\ of\ Players:\ \{noOfPlayers\}"{}};}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_acfeb8890ee77e80df9a920a27e04ec8a}\label{class_menu_u_i_manager_acfeb8890ee77e80df9a920a27e04ec8a}} 
+\index{MenuUIManager@{MenuUIManager}!SetPlayerNameText@{SetPlayerNameText}}
+\index{SetPlayerNameText@{SetPlayerNameText}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{SetPlayerNameText()}{SetPlayerNameText()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Set\+Player\+Name\+Text (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315\ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \_playerNameText.text\ =\ \textcolor{stringliteral}{"{}You\ are:\ "{}}\ +\ name;}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}\label{class_menu_u_i_manager_a842e85a3fc7661b4bda5f0b963bf94ca}} 
@@ -276,9 +714,11 @@ Changes the title text to show the room code to the host.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00069\ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \_titleText.text\ =\ \textcolor{stringliteral}{"{}Room\ Code:\ "{}}\ +\ roomCode;}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \_roomCodeText.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \_roomCodeText.text\ =\ \textcolor{stringliteral}{"{}Room\ Code:\ "{}}\ +\ roomCode;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeText.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_menu_u_i_manager_ad0abf825ac112cf14db5b755405e64d4}\label{class_menu_u_i_manager_ad0abf825ac112cf14db5b755405e64d4}} 
@@ -289,18 +729,132 @@ Changes the title text to show the room code to the host.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ listeners\ to\ the\ buttons}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \_hostButton.onClick.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_a7d68021f5c01426277ee24ade9ddf358}{HostButton}});}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \_joinButton.onClick.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_a41f8a78f67dc3122a57197e4b3535228}{JoinButton}});}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \_backButton.onClick.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}{BackButton}});}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ listener\ to\ the\ input\ field\ to\ make\ sure\ the\ input\ is\ always\ uppercase}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \_roomCodeInput.onValidateInput\ +=\ delegate\ (\textcolor{keywordtype}{string}\ input,\ \textcolor{keywordtype}{int}\ charIndex,\ \textcolor{keywordtype}{char}\ addedChar)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{char}.ToUpper(addedChar);\ \};}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ listener\ to\ the\ toggle\ to\ update\ the\ local\ boolean}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \_localToggle.onValueChanged.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}{UpdateToggle}});}
-\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ listeners\ to\ the\ buttons}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_hostButton.onClick.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_abbafa64d2763794e126141b68f2254da}{HostButton}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_joinButton.onClick.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}{JoinButton}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \_backButton.onClick.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_abfe8029198e976442569de964e2d4a41}{BackButton}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \_controlsButton.onClick.AddListener(ControlsButton);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_creditsButton.onClick.AddListener(CreditsButton);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ listener\ to\ the\ input\ field\ to\ make\ sure\ the\ input\ is\ always\ uppercase}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_roomCodeInput.onValidateInput\ +=\ delegate\ (\textcolor{keywordtype}{string}\ input,\ \textcolor{keywordtype}{int}\ charIndex,\ \textcolor{keywordtype}{char}\ addedChar)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{char}.ToUpper(addedChar);\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \_roomCodeInput.onEndEdit.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_a97b5500d57ee0bd40111f3197328bf10}{JoinButton}});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ listener\ to\ the\ toggle\ to\ update\ the\ local\ boolean}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_localToggle.onValueChanged.AddListener(\mbox{\hyperlink{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}{UpdateToggle}});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a682b207aada7501b655fb66d579d053f}\label{class_menu_u_i_manager_a682b207aada7501b655fb66d579d053f}} 
+\index{MenuUIManager@{MenuUIManager}!SuccessfulConnection@{SuccessfulConnection}}
+\index{SuccessfulConnection@{SuccessfulConnection}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{SuccessfulConnection()}{SuccessfulConnection()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Successful\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Animate\ everything\ out}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_titleImage,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_errorText.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_hostButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_joinButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_backButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_quitButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_controlsButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_creditsButton.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_controlsImagesParent,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_localToggle.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_muteToggle.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_roomCodeInput.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.LoadLobby();}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ ToggleCanvas(\_mainMenuCanvas.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00221\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_a934f4b8c9efdb71385538a2ff509bb83}\label{class_menu_u_i_manager_a934f4b8c9efdb71385538a2ff509bb83}} 
+\index{MenuUIManager@{MenuUIManager}!ToggleAllCanvasesOff@{ToggleAllCanvasesOff}}
+\index{ToggleAllCanvasesOff@{ToggleAllCanvasesOff}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{ToggleAllCanvasesOff()}{ToggleAllCanvasesOff()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Toggle\+All\+Canvases\+Off (\begin{DoxyParamCaption}\item[{bool}]{except\+Scrolling\+Bg = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ ToggleCanvas(\_mainMenuCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ ToggleCanvas(\_loadingCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ ToggleCanvas(\_lobbyCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ ToggleCanvas(\_gameCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ ToggleCanvas(\_disconnectedCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ ToggleCanvas(\_splashScreenCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!exceptScrollingBg)\ ToggleCanvas(\_scrollingBgCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ ToggleCanvas(\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.LeaderboardCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_af31797c448b16e7a7f2cef2a5173e270}\label{class_menu_u_i_manager_af31797c448b16e7a7f2cef2a5173e270}} 
+\index{MenuUIManager@{MenuUIManager}!ToggleCanvas@{ToggleCanvas}}
+\index{ToggleCanvas@{ToggleCanvas}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{ToggleCanvas()}{ToggleCanvas()}}
+{\footnotesize\ttfamily void Menu\+UIManager.\+Toggle\+Canvas (\begin{DoxyParamCaption}\item[{Game\+Object}]{canvas\+Obj,  }\item[{bool}]{toggle }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00261\ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ canvasObj.SetActive(toggle);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((toggle\ ==\ \textcolor{keyword}{true})\ \&\&\ ((canvasObj\ ==\ \_splashScreenCanvas)\ ||}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (canvasObj\ ==\ \_loadingCanvas)\ ||}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (canvasObj\ ==\ \_disconnectedCanvas)\ ||}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (canvasObj\ ==\ \_mainMenuCanvas)\ ||}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (canvasObj\ ==\ \mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance?.LeaderboardCanvas)))}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ ToggleCanvas(\_scrollingBgCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}((toggle\ ==\ \textcolor{keyword}{true})\ \&\&\ ((canvasObj\ ==\ \_lobbyCanvas)\ ||}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (canvasObj\ ==\ \_gameCanvas)))}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ ToggleCanvas(\_scrollingBgCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (canvasObj\ ==\ \_mainMenuCanvas.gameObject\ \&\&\ toggle)}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ EnableMenu();}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (canvasObj\ ==\ \_lobbyCanvas.gameObject\ \&\&\ toggle)}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ EnableLobby();}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (canvasObj\ ==\ \mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.LeaderboardCanvas)}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NetworkManager.Singleton.IsServer)}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.GetPlayerData();}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_menu_u_i_manager_adf0adb16783b08a68bffc9f3e2e5ee69}\label{class_menu_u_i_manager_adf0adb16783b08a68bffc9f3e2e5ee69}} 
+\index{MenuUIManager@{MenuUIManager}!UnsuccessfulConnection@{UnsuccessfulConnection}}
+\index{UnsuccessfulConnection@{UnsuccessfulConnection}!MenuUIManager@{MenuUIManager}}
+\doxysubsubsection{\texorpdfstring{UnsuccessfulConnection()}{UnsuccessfulConnection()}}
+{\footnotesize\ttfamily IEnumerator Menu\+UIManager.\+Unsuccessful\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ ToggleCanvas(\_loadingCanvas.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ ToggleCanvas(\_mainMenuCanvas.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ LeanTween.cancel(\_errorText.gameObject);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_errorText.gameObject,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(2f);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager_a5bd13a9fd93f377511391f1c7a9c3d9c}{AnimateElement}}(\_errorText.gameObject,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}\label{class_menu_u_i_manager_a6bc62d095290db914bb16a25bfc8e19f}} 
@@ -320,8 +874,8 @@ Updates the local boolean when the toggle is changed.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00179\ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \_local\ =\ toggleVal;}
-\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \_local\ =\ toggleVal;}
+\DoxyCodeLine{00302\ \ \ \ \ \}}
 
 \end{DoxyCode}

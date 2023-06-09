@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: NetPlayer Class Reference</title>
+<title>Construction Chaos: NetPlayer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('class_net_player.html',''); initResiza
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_net_player-members.html">List of all members</a>  </div>
@@ -124,21 +125,46 @@ Collaboration diagram for NetPlayer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2d8ca73cc7214b7326d774e990427604"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#a2d8ca73cc7214b7326d774e990427604">OnNetworkSpawn</a> ()</td></tr>
 <tr class="separator:a2d8ca73cc7214b7326d774e990427604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075282f7296a6a914221bcb5ef98d548"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#a075282f7296a6a914221bcb5ef98d548">OnNetworkDespawn</a> ()</td></tr>
+<tr class="separator:a075282f7296a6a914221bcb5ef98d548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d97177a94261ca587eefe9963d1651"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#ad4d97177a94261ca587eefe9963d1651">OnDestroy</a> ()</td></tr>
+<tr class="separator:ad4d97177a94261ca587eefe9963d1651"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a430d71b5d9ecdf768ff4e28e920891cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">SetObjectiveStringClientRpc</a> (string newObjectiveString, ClientRpcParams clientRpcParams=default)</td></tr>
 <tr class="memdesc:a430d71b5d9ecdf768ff4e28e920891cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a new objective from the <a class="el" href="class_objective_manager.html" title="Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...">ObjectiveManager</a> and set this locally on the client.  <br /></td></tr>
 <tr class="separator:a430d71b5d9ecdf768ff4e28e920891cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8b098fc155cdb8f7e0f20ff92486ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#a9a8b098fc155cdb8f7e0f20ff92486ab">SetPlayerName</a> (FixedString32Bytes previous, FixedString32Bytes current)</td></tr>
+<tr class="separator:a9a8b098fc155cdb8f7e0f20ff92486ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ab9898615772d4e2ad883d407db02ccec"><td class="memItemLeft" align="right" valign="top"><a id="ab9898615772d4e2ad883d407db02ccec" name="ab9898615772d4e2ad883d407db02ccec"></a>
+NetworkVariable&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerColorIndex</b> = new NetworkVariable&lt;int&gt;()</td></tr>
+<tr class="separator:ab9898615772d4e2ad883d407db02ccec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5245ee434e44d82ada3d8aa3a2559f"><td class="memItemLeft" align="right" valign="top"><a id="a9d5245ee434e44d82ada3d8aa3a2559f" name="a9d5245ee434e44d82ada3d8aa3a2559f"></a>
+NetworkVariable&lt; FixedString32Bytes &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LocalPlayerName</b> = new NetworkVariable&lt;FixedString32Bytes&gt;()</td></tr>
+<tr class="separator:a9d5245ee434e44d82ada3d8aa3a2559f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a334d4c41478111db34a6a924563448a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#a334d4c41478111db34a6a924563448a9">OnDisable</a> ()</td></tr>
+<tr class="separator:a334d4c41478111db34a6a924563448a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad06a911e06dbaf5296460485336ada77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a> (ulong obj)</td></tr>
 <tr class="memdesc:ad06a911e06dbaf5296460485336ada77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback which is called by the Client on the Server (automagically) once the Client has fully spawned and connected.  <br /></td></tr>
 <tr class="separator:ad06a911e06dbaf5296460485336ada77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125c82d9895428ca2793ce0b1d808dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_player.html#a125c82d9895428ca2793ce0b1d808dee">SetPlayerColour</a> (int previous, int current)</td></tr>
+<tr class="separator:a125c82d9895428ca2793ce0b1d808dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae33e7c00d1dce355549da42320690bc2"><td class="memItemLeft" align="right" valign="top"><a id="ae33e7c00d1dce355549da42320690bc2" name="ae33e7c00d1dce355549da42320690bc2"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveString</b> = &quot;&quot;</td></tr>
 <tr class="separator:ae33e7c00d1dce355549da42320690bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51f66b54e7f05f735674fc26a0fb2dc"><td class="memItemLeft" align="right" valign="top"><a id="ac51f66b54e7f05f735674fc26a0fb2dc" name="ac51f66b54e7f05f735674fc26a0fb2dc"></a>
+List&lt; SpriteRenderer &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_partsToColour</b> = new List&lt;SpriteRenderer&gt;()</td></tr>
+<tr class="separator:ac51f66b54e7f05f735674fc26a0fb2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0c48de19b86343c3ac92996aa037c1"><td class="memItemLeft" align="right" valign="top"><a id="afd0c48de19b86343c3ac92996aa037c1" name="afd0c48de19b86343c3ac92996aa037c1"></a>
+Color&#160;</td><td class="memItemRight" valign="bottom"><b>_playerColour</b> = Color.white</td></tr>
+<tr class="separator:afd0c48de19b86343c3ac92996aa037c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class which contains all networking methods for the player. </p>
@@ -174,26 +200,128 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveString</b
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>        <span class="comment">// Register with the Game Manager</span></div>
-<div class="line"><span class="lineno">   40</span>        <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_function" href="class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b">RegisterNewPlayer</a>(OwnerClientId, <span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>        <span class="comment">// Send the ownerClientId to some objects which need it (to report to the objective system)</span></div>
-<div class="line"><span class="lineno">   43</span>        List&lt;Ragdoll&gt; ragdollObjects = GetComponentsInChildren&lt;Ragdoll&gt;().ToList&lt;<a class="code hl_class" href="class_ragdoll.html">Ragdoll</a>&gt;();</div>
-<div class="line"><span class="lineno">   44</span>        <a class="code hl_class" href="class_objective_action_reporter.html">ObjectiveActionReporter</a> objectiveActionReporter = GetComponentInChildren&lt;ObjectiveActionReporter&gt;();</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_ragdoll.html">Ragdoll</a> ragdoll <span class="keywordflow">in</span> ragdollObjects)</div>
-<div class="line"><span class="lineno">   46</span>        {</div>
-<div class="line"><span class="lineno">   47</span>            ragdoll.ClientId = OwnerClientId;</div>
-<div class="line"><span class="lineno">   48</span>            ragdoll.ObjectiveActionReporter = objectiveActionReporter;</div>
-<div class="line"><span class="lineno">   49</span>        }</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>        </div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:14</div></div>
-<div class="ttc" id="aclass_game_manager_html_a666bee91a62b4662a8ef635f43a9c06b"><div class="ttname"><a href="class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b">GameManager.RegisterNewPlayer</a></div><div class="ttdeci">bool RegisterNewPlayer(ulong clientId, NetPlayer netPlayer)</div><div class="ttdoc">Called once a player has spawned.  Adds the player to the PlayerData dictionary.  Informs subscribers...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:74</div></div>
-<div class="ttc" id="aclass_objective_action_reporter_html"><div class="ttname"><a href="class_objective_action_reporter.html">ObjectiveActionReporter</a></div><div class="ttdef"><b>Definition:</b> ObjectiveActionReporter.cs:9</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>    {</div>
+<div class="line"><span class="lineno">  105</span>        </div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// Register with the Game Manager</span></div>
+<div class="line"><span class="lineno">  107</span>        <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_function" href="class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b">RegisterNewPlayer</a>(OwnerClientId, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  108</span>        </div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span>(<a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(OwnerClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData))</div>
+<div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            SetPlayerColour(0,playerData.ColourIndex);</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>        <span class="comment">// Send the ownerClientId to some objects which need it (to report to the objective system)</span></div>
+<div class="line"><span class="lineno">  115</span>        List&lt;Ragdoll&gt; ragdollObjects = GetComponentsInChildren&lt;Ragdoll&gt;().ToList&lt;<a class="code hl_class" href="class_ragdoll.html">Ragdoll</a>&gt;();</div>
+<div class="line"><span class="lineno">  116</span>        <a class="code hl_class" href="class_objective_action_reporter.html">ObjectiveActionReporter</a> objectiveActionReporter = GetComponentInChildren&lt;ObjectiveActionReporter&gt;();</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_ragdoll.html">Ragdoll</a> ragdoll <span class="keywordflow">in</span> ragdollObjects)</div>
+<div class="line"><span class="lineno">  118</span>        {</div>
+<div class="line"><span class="lineno">  119</span>            ragdoll.ClientId = OwnerClientId;</div>
+<div class="line"><span class="lineno">  120</span>            ragdoll.ObjectiveActionReporter = objectiveActionReporter;</div>
+<div class="line"><span class="lineno">  121</span>        }</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span> (NetworkManager != <span class="keyword">null</span>) NetworkManager.OnClientConnectedCallback -= <a class="code hl_function" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a>;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">The Game Manager.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:16</div></div>
+<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:51</div></div>
+<div class="ttc" id="aclass_game_manager_html_a666bee91a62b4662a8ef635f43a9c06b"><div class="ttname"><a href="class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b">GameManager.RegisterNewPlayer</a></div><div class="ttdeci">bool RegisterNewPlayer(ulong clientId, NetPlayer netPlayer)</div><div class="ttdoc">Called once a player has spawned.  Adds the player to the PlayerData dictionary.  Informs subscribers...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:136</div></div>
+<div class="ttc" id="aclass_net_player_data_html"><div class="ttname"><a href="class_net_player_data.html">NetPlayerData</a></div><div class="ttdoc">Class to store objective data related to a player.</div><div class="ttdef"><b>Definition:</b> NetPlayerData.cs:12</div></div>
+<div class="ttc" id="aclass_net_player_html_ad06a911e06dbaf5296460485336ada77"><div class="ttname"><a href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetPlayer.NetworkManager_OnClientConnectedCallback</a></div><div class="ttdeci">void NetworkManager_OnClientConnectedCallback(ulong obj)</div><div class="ttdoc">Callback which is called by the Client on the Server (automagically) once the Client has fully spawne...</div><div class="ttdef"><b>Definition:</b> NetPlayer.cs:103</div></div>
+<div class="ttc" id="aclass_objective_action_reporter_html"><div class="ttname"><a href="class_objective_action_reporter.html">ObjectiveActionReporter</a></div><div class="ttdef"><b>Definition:</b> ObjectiveActionReporter.cs:10</div></div>
 <div class="ttc" id="aclass_ragdoll_html"><div class="ttname"><a href="class_ragdoll.html">Ragdoll</a></div><div class="ttdoc">Base class for all Ragdoll behaviour.</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:12</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad4d97177a94261ca587eefe9963d1651" name="ad4d97177a94261ca587eefe9963d1651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d97177a94261ca587eefe9963d1651">&#9670;&#160;</a></span>OnDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void NetPlayer.OnDestroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>        base.OnDestroy();</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span>(IsServer)</div>
+<div class="line"><span class="lineno">   93</span>        {</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> (NetworkManager != <span class="keyword">null</span>) NetworkManager.OnClientConnectedCallback -= <a class="code hl_function" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a>;</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+<div class="line"><span class="lineno">   96</span>        </div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a334d4c41478111db34a6a924563448a9" name="a334d4c41478111db34a6a924563448a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334d4c41478111db34a6a924563448a9">&#9670;&#160;</a></span>OnDisable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetPlayer.OnDisable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span>(IsServer)</div>
+<div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> (NetworkManager != <span class="keyword">null</span>) NetworkManager.OnClientConnectedCallback -= <a class="code hl_function" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a>;</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+<div class="line"><span class="lineno">   86</span>        </div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a075282f7296a6a914221bcb5ef98d548" name="a075282f7296a6a914221bcb5ef98d548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075282f7296a6a914221bcb5ef98d548">&#9670;&#160;</a></span>OnNetworkDespawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void NetPlayer.OnNetworkDespawn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        base.OnNetworkDespawn();</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span>(IsOwner)</div>
+<div class="line"><span class="lineno">   64</span>        {</div>
+<div class="line"><span class="lineno">   65</span>            </div>
+<div class="line"><span class="lineno">   66</span>            LocalPlayerName.OnValueChanged -= SetPlayerName;</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+<div class="line"><span class="lineno">   68</span>        </div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">if</span>(IsServer)</div>
+<div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance?.<a class="code hl_function" href="class_game_manager.html#aefe5c9931f7a88ec7b5a73d0f41a27d1">UnRegisterPlayer</a>(OwnerClientId);</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (NetworkManager != <span class="keyword">null</span>) NetworkManager.OnClientConnectedCallback -= <a class="code hl_function" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a>;</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   75</span>        {</div>
+<div class="line"><span class="lineno">   76</span>            PlayerColorIndex.OnValueChanged -= SetPlayerColour;</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html_aefe5c9931f7a88ec7b5a73d0f41a27d1"><div class="ttname"><a href="class_game_manager.html#aefe5c9931f7a88ec7b5a73d0f41a27d1">GameManager.UnRegisterPlayer</a></div><div class="ttdeci">bool UnRegisterPlayer(ulong clientId)</div><div class="ttdoc">To be called if a player disconnects intentionally.  Removes the player from the PlayerData dictionar...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:177</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,23 +339,45 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveString</b
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
-<div class="line"><span class="lineno">   18</span>        base.OnNetworkSpawn();</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (IsLocalPlayer)</div>
-<div class="line"><span class="lineno">   21</span>        {</div>
-<div class="line"><span class="lineno">   22</span>            <span class="comment">// Set the camera to follow the player&#39;s head</span></div>
-<div class="line"><span class="lineno">   23</span>            <a class="code hl_class" href="class_follow_cam.html">FollowCam</a>.Instance.SetFollowTarget(transform.GetChild(0));</div>
-<div class="line"><span class="lineno">   24</span>        }</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (IsServer)</div>
-<div class="line"><span class="lineno">   27</span>        {</div>
-<div class="line"><span class="lineno">   28</span>            NetworkManager.OnClientConnectedCallback += <a class="code hl_function" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a>;</div>
-<div class="line"><span class="lineno">   29</span>            <span class="comment">//_networkObjectiveString.Value = _objectiveString;</span></div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        base.OnNetworkSpawn();</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>        </div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (IsLocalPlayer)</div>
+<div class="line"><span class="lineno">   28</span>        {</div>
+<div class="line"><span class="lineno">   29</span>            <span class="comment">// Set the camera to follow the player&#39;s head</span></div>
+<div class="line"><span class="lineno">   30</span>            <a class="code hl_class" href="class_follow_cam.html">FollowCam</a>.Instance.SetFollowTarget(transform.GetChild(0));</div>
+<div class="line"><span class="lineno">   31</span>            GameManager.Instance.LocalPlayer = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (IsServer)</div>
+<div class="line"><span class="lineno">   35</span>        {</div>
+<div class="line"><span class="lineno">   36</span>            <span class="comment">// Move to an empty spawn point</span></div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_class" href="class_spawn_manager.html">SpawnManager</a>.Instance.SpawnPlayer(gameObject);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>            NetworkManager.OnClientConnectedCallback += <a class="code hl_function" href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetworkManager_OnClientConnectedCallback</a>;</div>
+<div class="line"><span class="lineno">   40</span>            <span class="comment">//_networkObjectiveString.Value = _objectiveString;</span></div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">if</span>(IsOwner)</div>
+<div class="line"><span class="lineno">   45</span>            {</div>
+<div class="line"><span class="lineno">   46</span>                LocalPlayerName.OnValueChanged += SetPlayerName;</div>
+<div class="line"><span class="lineno">   47</span>            }</div>
+<div class="line"><span class="lineno">   48</span>            </div>
+<div class="line"><span class="lineno">   49</span>            PlayerColorIndex.OnValueChanged += SetPlayerColour;</div>
+<div class="line"><span class="lineno">   50</span>            SetPlayerColour(0, PlayerColorIndex.Value);</div>
+<div class="line"><span class="lineno">   51</span>        }</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>            </div>
+<div class="line"><span class="lineno">   54</span>        </div>
+<div class="line"><span class="lineno">   55</span>        </div>
+<div class="line"><span class="lineno">   56</span>        </div>
+<div class="line"><span class="lineno">   57</span>        </div>
+<div class="line"><span class="lineno">   58</span>    }</div>
 <div class="ttc" id="aclass_follow_cam_html"><div class="ttname"><a href="class_follow_cam.html">FollowCam</a></div><div class="ttdef"><b>Definition:</b> FollowCam.cs:7</div></div>
-<div class="ttc" id="aclass_net_player_html_ad06a911e06dbaf5296460485336ada77"><div class="ttname"><a href="class_net_player.html#ad06a911e06dbaf5296460485336ada77">NetPlayer.NetworkManager_OnClientConnectedCallback</a></div><div class="ttdeci">void NetworkManager_OnClientConnectedCallback(ulong obj)</div><div class="ttdoc">Callback which is called by the Client on the Server (automagically) once the Client has fully spawne...</div><div class="ttdef"><b>Definition:</b> NetPlayer.cs:37</div></div>
+<div class="ttc" id="aclass_spawn_manager_html"><div class="ttname"><a href="class_spawn_manager.html">SpawnManager</a></div><div class="ttdef"><b>Definition:</b> SpawnManager.cs:12</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -264,9 +414,88 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>_objectiveString</b
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        _objectiveString = newObjectiveString != <span class="keyword">null</span> ? newObjectiveString : <span class="stringliteral">&quot;No Objective&quot;</span>;</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>    {</div>
+<div class="line"><span class="lineno">  134</span>        _objectiveString = newObjectiveString != <span class="keyword">null</span> ? newObjectiveString : <span class="stringliteral">&quot;No Objective&quot;</span>;</div>
+<div class="line"><span class="lineno">  135</span>        <a class="code hl_class" href="class_game_u_i_manager.html">GameUIManager</a>.Instance.<a class="code hl_function" href="class_game_u_i_manager.html#ac6f56c6b5a5435bef49af5f1bdd8c686">SetObjectiveText</a>(_objectiveString);</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="ttc" id="aclass_game_u_i_manager_html"><div class="ttname"><a href="class_game_u_i_manager.html">GameUIManager</a></div><div class="ttdef"><b>Definition:</b> GameUIManager.cs:8</div></div>
+<div class="ttc" id="aclass_game_u_i_manager_html_ac6f56c6b5a5435bef49af5f1bdd8c686"><div class="ttname"><a href="class_game_u_i_manager.html#ac6f56c6b5a5435bef49af5f1bdd8c686">GameUIManager.SetObjectiveText</a></div><div class="ttdeci">void SetObjectiveText(string objectiveString)</div><div class="ttdoc">Updates the objective UI text to display the current objective.</div><div class="ttdef"><b>Definition:</b> GameUIManager.cs:38</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a125c82d9895428ca2793ce0b1d808dee" name="a125c82d9895428ca2793ce0b1d808dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125c82d9895428ca2793ce0b1d808dee">&#9670;&#160;</a></span>SetPlayerColour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetPlayer.SetPlayerColour </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>previous</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>        _playerColour = <a class="code hl_class" href="class_game_manager.html">GameManager</a>.Instance.GetPlayerColour(current);</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">foreach</span>(SpriteRenderer spriteRenderer <span class="keywordflow">in</span> _partsToColour)</div>
+<div class="line"><span class="lineno">  142</span>        {</div>
+<div class="line"><span class="lineno">  143</span>            spriteRenderer.color = _playerColour;</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9a8b098fc155cdb8f7e0f20ff92486ab" name="a9a8b098fc155cdb8f7e0f20ff92486ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8b098fc155cdb8f7e0f20ff92486ab">&#9670;&#160;</a></span>SetPlayerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetPlayer.SetPlayerName </td>
+          <td>(</td>
+          <td class="paramtype">FixedString32Bytes&#160;</td>
+          <td class="paramname"><em>previous</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FixedString32Bytes&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  148</span>    {</div>
+<div class="line"><span class="lineno">  149</span>        Debug.Log(<span class="stringliteral">&quot;SetPlayerName: &quot;</span> + current.ToString());</div>
+<div class="line"><span class="lineno">  150</span>        <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.SetPlayerNameText(current.ToString());</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="ttc" id="aclass_menu_u_i_manager_html"><div class="ttname"><a href="class_menu_u_i_manager.html">MenuUIManager</a></div><div class="ttdef"><b>Definition:</b> MenuUIManager.cs:9</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,0 +1,51 @@
+\hypertarget{class_cloud}{}\doxysection{Cloud Class Reference}
+\label{class_cloud}\index{Cloud@{Cloud}}
+
+
+Inheritance diagram for Cloud\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_cloud__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cloud\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_cloud__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cloud_abb2be59adc1245c7aa070fd431610aaf}\label{class_cloud_abb2be59adc1245c7aa070fd431610aaf}} 
+float {\bfseries Speed}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cloud_ac3370b0848c0d7e65e019a8544be9789}{Update}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cloud_ac3370b0848c0d7e65e019a8544be9789}\label{class_cloud_ac3370b0848c0d7e65e019a8544be9789}} 
+\index{Cloud@{Cloud}!Update@{Update}}
+\index{Update@{Update}!Cloud@{Cloud}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Cloud.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ Vector3\ newPosition;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ newPosition\ =\ transform.position;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ newPosition.x\ +=\ (Speed\ *\ Time.deltaTime);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ transform.position\ =\ newPosition;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,139 @@
+\hypertarget{class_moving_platform}{}\doxysection{Moving\+Platform Class Reference}
+\label{class_moving_platform}\index{MovingPlatform@{MovingPlatform}}
+
+
+Inheritance diagram for Moving\+Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_moving_platform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Moving\+Platform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_moving_platform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Movement\+Type} \{ {\bfseries LOOP}
+, {\bfseries PING\+\_\+\+PONG}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_moving_platform_a645657413d199e29f2cf0e68659bb666}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_moving_platform_a1c7544e821cc4b4fa6fb415ab91a69e5}{Movement\+Loop}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_moving_platform_a19272da44dc4361b3bfeb67c64e79d3e}{Wait}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_moving_platform_ac506246414b03f4f35d462f324c18ffc}\label{class_moving_platform_ac506246414b03f4f35d462f324c18ffc}} 
+Game\+Object {\bfseries \+\_\+platform}
+\item 
+\mbox{\Hypertarget{class_moving_platform_a874ea19bcd8957d4411508b58b7d5487}\label{class_moving_platform_a874ea19bcd8957d4411508b58b7d5487}} 
+List$<$ Transform $>$ {\bfseries \+\_\+waypoints} = new List$<$Transform$>$()
+\item 
+\mbox{\Hypertarget{class_moving_platform_ade60bf87ded4660eca3b556756de074f}\label{class_moving_platform_ade60bf87ded4660eca3b556756de074f}} 
+Movement\+Type {\bfseries \+\_\+movement\+Type}
+\item 
+\mbox{\Hypertarget{class_moving_platform_a602633053f98106f026b1c747a376dee}\label{class_moving_platform_a602633053f98106f026b1c747a376dee}} 
+float {\bfseries \+\_\+speed} = 1f
+\item 
+\mbox{\Hypertarget{class_moving_platform_af1a2156a73b89603147dc4009679c738}\label{class_moving_platform_af1a2156a73b89603147dc4009679c738}} 
+float {\bfseries \+\_\+wait\+Time} = 1f
+\item 
+\mbox{\Hypertarget{class_moving_platform_a70f5762e6fab3fcd1234383dbe837057}\label{class_moving_platform_a70f5762e6fab3fcd1234383dbe837057}} 
+int {\bfseries \+\_\+current\+Waypoint\+Index} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_moving_platform_afaa3cd7235efcdb41fe2f1d81466ed19}\label{class_moving_platform_afaa3cd7235efcdb41fe2f1d81466ed19}} 
+\index{MovingPlatform@{MovingPlatform}!MovementType@{MovementType}}
+\index{MovementType@{MovementType}!MovingPlatform@{MovingPlatform}}
+\doxysubsubsection{\texorpdfstring{MovementType}{MovementType}}
+{\footnotesize\ttfamily enum Moving\+Platform.\+Movement\+Type}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ LOOP,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ PING\_PONG}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_moving_platform_a1c7544e821cc4b4fa6fb415ab91a69e5}\label{class_moving_platform_a1c7544e821cc4b4fa6fb415ab91a69e5}} 
+\index{MovingPlatform@{MovingPlatform}!MovementLoop@{MovementLoop}}
+\index{MovementLoop@{MovementLoop}!MovingPlatform@{MovingPlatform}}
+\doxysubsubsection{\texorpdfstring{MovementLoop()}{MovementLoop()}}
+{\footnotesize\ttfamily void Moving\+Platform.\+Movement\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distance\ =\ Vector2.Distance(\_platform.transform.position,\ \_waypoints[\_currentWaypointIndex].position);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ moveTime\ =\ distance\ /\ \_speed;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ LeanTween.move(\_platform,\ \_waypoints[\_currentWaypointIndex].position,\ moveTime).setOnComplete(()\ =>}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \_currentWaypointIndex++;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentWaypointIndex\ >=\ \_waypoints.Count)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentWaypointIndex\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reverse\ the\ list\ if\ ping\ pong}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (\_movementType\ ==\ MovementType.PING\_PONG)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_waypoints.Reverse();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Wait());}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_moving_platform_a645657413d199e29f2cf0e68659bb666}\label{class_moving_platform_a645657413d199e29f2cf0e68659bb666}} 
+\index{MovingPlatform@{MovingPlatform}!Start@{Start}}
+\index{Start@{Start}!MovingPlatform@{MovingPlatform}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Moving\+Platform.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_waypoints.Count\ ==\ 0)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}No\ waypoints\ set\ for\ moving\ platform"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_platform.transform.position\ =\ \_waypoints[\_currentWaypointIndex].position;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ MovementLoop();}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_moving_platform_a19272da44dc4361b3bfeb67c64e79d3e}\label{class_moving_platform_a19272da44dc4361b3bfeb67c64e79d3e}} 
+\index{MovingPlatform@{MovingPlatform}!Wait@{Wait}}
+\index{Wait@{Wait}!MovingPlatform@{MovingPlatform}}
+\doxysubsubsection{\texorpdfstring{Wait()}{Wait()}}
+{\footnotesize\ttfamily IEnumerator Moving\+Platform.\+Wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_waitTime);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ MovementLoop();}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}

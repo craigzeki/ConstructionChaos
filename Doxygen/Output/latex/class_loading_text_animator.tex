@@ -1,0 +1,138 @@
+\hypertarget{class_loading_text_animator}{}\doxysection{Loading\+Text\+Animator Class Reference}
+\label{class_loading_text_animator}\index{LoadingTextAnimator@{LoadingTextAnimator}}
+
+
+Inheritance diagram for Loading\+Text\+Animator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_loading_text_animator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Loading\+Text\+Animator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_loading_text_animator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_loading_text_animator_a00ce9f45c61171d22c7c12c337cfd6f8}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_loading_text_animator_af572c8c6cf7c7f859b1fcadf80eea43d}{On\+Disable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_loading_text_animator_acb34029d707e39ed2a8cf0047461294d}{Animate\+Loop}} ()
+\item 
+void \mbox{\hyperlink{class_loading_text_animator_ab86692e4f69cf0bfdf4a3ff0a1f37cc4}{Show\+Dot}} ()
+\item 
+void \mbox{\hyperlink{class_loading_text_animator_a1beb4433c5441fdf091282db27ab16a3}{Hide\+All\+Dots}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_loading_text_animator_aeaf58db28ef803a96bfe8468675531f5}\label{class_loading_text_animator_aeaf58db28ef803a96bfe8468675531f5}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+loading\+Text}
+\item 
+\mbox{\Hypertarget{class_loading_text_animator_af786b5288961653b7d035e430fafd936}\label{class_loading_text_animator_af786b5288961653b7d035e430fafd936}} 
+float {\bfseries \+\_\+wait\+Time} = 0.\+5f
+\item 
+\mbox{\Hypertarget{class_loading_text_animator_a7158f7305f8b895ad6aff70f1757e656}\label{class_loading_text_animator_a7158f7305f8b895ad6aff70f1757e656}} 
+string {\bfseries \+\_\+original\+Text}
+\item 
+\mbox{\Hypertarget{class_loading_text_animator_ab34834a6b773aa4de1c98263546507fc}\label{class_loading_text_animator_ab34834a6b773aa4de1c98263546507fc}} 
+int {\bfseries \+\_\+dots\+Index} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_loading_text_animator_acb34029d707e39ed2a8cf0047461294d}\label{class_loading_text_animator_acb34029d707e39ed2a8cf0047461294d}} 
+\index{LoadingTextAnimator@{LoadingTextAnimator}!AnimateLoop@{AnimateLoop}}
+\index{AnimateLoop@{AnimateLoop}!LoadingTextAnimator@{LoadingTextAnimator}}
+\doxysubsubsection{\texorpdfstring{AnimateLoop()}{AnimateLoop()}}
+{\footnotesize\ttfamily IEnumerator Loading\+Text\+Animator.\+Animate\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ ShowDot();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_dotsIndex++;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_waitTime);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_dotsIndex\ >\ 2)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \_dotsIndex\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ HideAllDots();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_waitTime);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ StartCoroutine(AnimateLoop());}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_loading_text_animator_a1beb4433c5441fdf091282db27ab16a3}\label{class_loading_text_animator_a1beb4433c5441fdf091282db27ab16a3}} 
+\index{LoadingTextAnimator@{LoadingTextAnimator}!HideAllDots@{HideAllDots}}
+\index{HideAllDots@{HideAllDots}!LoadingTextAnimator@{LoadingTextAnimator}}
+\doxysubsubsection{\texorpdfstring{HideAllDots()}{HideAllDots()}}
+{\footnotesize\ttfamily void Loading\+Text\+Animator.\+Hide\+All\+Dots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_loadingText.text\ =\ \_loadingText.text.Replace(\textcolor{stringliteral}{"{}<\#FFFFFF>"{}},\ \textcolor{stringliteral}{"{}<\#FFFFFF00>"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_loading_text_animator_af572c8c6cf7c7f859b1fcadf80eea43d}\label{class_loading_text_animator_af572c8c6cf7c7f859b1fcadf80eea43d}} 
+\index{LoadingTextAnimator@{LoadingTextAnimator}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!LoadingTextAnimator@{LoadingTextAnimator}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Loading\+Text\+Animator.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_loadingText.text\ =\ \_originalText;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_loading_text_animator_a00ce9f45c61171d22c7c12c337cfd6f8}\label{class_loading_text_animator_a00ce9f45c61171d22c7c12c337cfd6f8}} 
+\index{LoadingTextAnimator@{LoadingTextAnimator}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!LoadingTextAnimator@{LoadingTextAnimator}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Loading\+Text\+Animator.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_loadingText\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \_loadingText\ =\ GetComponent<TextMeshProUGUI>();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_originalText\ =\ \_loadingText.text;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ StartCoroutine(AnimateLoop());}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_loading_text_animator_ab86692e4f69cf0bfdf4a3ff0a1f37cc4}\label{class_loading_text_animator_ab86692e4f69cf0bfdf4a3ff0a1f37cc4}} 
+\index{LoadingTextAnimator@{LoadingTextAnimator}!ShowDot@{ShowDot}}
+\index{ShowDot@{ShowDot}!LoadingTextAnimator@{LoadingTextAnimator}}
+\doxysubsubsection{\texorpdfstring{ShowDot()}{ShowDot()}}
+{\footnotesize\ttfamily void Loading\+Text\+Animator.\+Show\+Dot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ first\ instance\ of\ "{}00"{}\ in\ the\ text}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \_loadingText.text.IndexOf(\textcolor{stringliteral}{"{}00"{}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ "{}00"{}\ from\ the\ text}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_loadingText.text\ =\ \_loadingText.text.Remove(index,\ 2);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}

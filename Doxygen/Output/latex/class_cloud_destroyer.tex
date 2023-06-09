@@ -1,0 +1,50 @@
+\hypertarget{class_cloud_destroyer}{}\doxysection{Cloud\+Destroyer Class Reference}
+\label{class_cloud_destroyer}\index{CloudDestroyer@{CloudDestroyer}}
+
+
+Inheritance diagram for Cloud\+Destroyer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_cloud_destroyer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cloud\+Destroyer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_cloud_destroyer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cloud_destroyer_ab31497b5a1d0889b3fb6e3d586d0fa60}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cloud_destroyer_a51ecafe0b82d4f297b44ef96eebddd6c}\label{class_cloud_destroyer_a51ecafe0b82d4f297b44ef96eebddd6c}} 
+Layer\+Mask {\bfseries \+\_\+cloud\+Layers}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cloud_destroyer_ab31497b5a1d0889b3fb6e3d586d0fa60}\label{class_cloud_destroyer_ab31497b5a1d0889b3fb6e3d586d0fa60}} 
+\index{CloudDestroyer@{CloudDestroyer}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!CloudDestroyer@{CloudDestroyer}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily void Cloud\+Destroyer.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(((1\ <<\ collision.gameObject.layer)\ \&\ \_cloudLayers)\ >\ 0)}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(collision.gameObject);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RagTest: GameManager Class Reference</title>
+<title>Construction Chaos: GameManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">RagTest<span id="projectnumber">&#160;v1</span>
+   <div id="projectname">Construction Chaos<span id="projectnumber">&#160;v1.0.4</span>
    </div>
-   <div id="projectbrief">Testing a bunch of stuff for multiplayer group project</div>
+   <div id="projectbrief">A 2D multiplayer game with chaotic gameplay and ragdoll physics</div>
   </td>
  </tr>
  </tbody>
@@ -111,8 +111,8 @@ Inheritance diagram for GameManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_manager__inherit__graph.png" border="0" usemap="#a_game_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_game_manager_inherit__map" id="a_game_manager_inherit__map">
-<area shape="rect" title="The Game Manager." alt="" coords="7,79,114,104"/>
-<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" title="The Game Manager." alt="" coords="15,79,121,104"/>
+<area shape="rect" title=" " alt="" coords="5,5,131,31"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -120,8 +120,10 @@ Collaboration diagram for GameManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_manager__coll__graph.png" border="0" usemap="#a_game_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_game_manager_coll__map" id="a_game_manager_coll__map">
-<area shape="rect" title="The Game Manager." alt="" coords="7,80,114,105"/>
-<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" title="The Game Manager." alt="" coords="69,168,176,193"/>
+<area shape="rect" title=" " alt="" coords="5,5,131,31"/>
+<area shape="rect" href="class_net_player.html" title="A class which contains all networking methods for the player." alt="" coords="90,80,169,105"/>
+<area shape="rect" title=" " alt="" coords="199,80,254,105"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -147,6 +149,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae45eb6cdc6362df9f059f7df4c6ee5b5"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ae45eb6cdc6362df9f059f7df4c6ee5b5">OnNetworkSpawn</a> ()</td></tr>
+<tr class="separator:ae45eb6cdc6362df9f059f7df4c6ee5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a971ffdb10c2868d3a7878d5d7fe1521b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a971ffdb10c2868d3a7878d5d7fe1521b">OnNetworkDespawn</a> ()</td></tr>
+<tr class="separator:a971ffdb10c2868d3a7878d5d7fe1521b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca441b40c69cd898e49652f2a423243d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aca441b40c69cd898e49652f2a423243d">StartGameManager</a> ()</td></tr>
+<tr class="separator:aca441b40c69cd898e49652f2a423243d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666bee91a62b4662a8ef635f43a9c06b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a666bee91a62b4662a8ef635f43a9c06b">RegisterNewPlayer</a> (ulong clientId, <a class="el" href="class_net_player.html">NetPlayer</a> netPlayer)</td></tr>
 <tr class="memdesc:a666bee91a62b4662a8ef635f43a9c06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once a player has spawned.<br  />
  Adds the player to the PlayerData dictionary.<br  />
@@ -164,10 +172,28 @@ Public Member Functions</h2></td></tr>
  The player's previous <a class="el" href="class_objective.html" title="Container for storing objective information.">Objective</a> will be retained, if not a new one will be created <br  />
   <br /></td></tr>
 <tr class="separator:a9da9fba4b3db9b478e8977c9c08d79b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a019106c0b8a218c0e64ff85995c87b47"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a019106c0b8a218c0e64ff85995c87b47">GetPlayerColour</a> (int colourIndex)</td></tr>
+<tr class="separator:a019106c0b8a218c0e64ff85995c87b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27e3cf5daa708abfb245b9b5aa8eea97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a27e3cf5daa708abfb245b9b5aa8eea97">LoadLobby</a> ()</td></tr>
 <tr class="separator:a27e3cf5daa708abfb245b9b5aa8eea97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a608a0d437e46461ab266a3fb37f33480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a608a0d437e46461ab266a3fb37f33480">LobbyLoaded</a> ()</td></tr>
-<tr class="separator:a608a0d437e46461ab266a3fb37f33480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e7706ad5f0370005c909e29e8239ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a30e7706ad5f0370005c909e29e8239ad">LoadRoundButton</a> ()</td></tr>
+<tr class="memdesc:a30e7706ad5f0370005c909e29e8239ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only to be called by the Editor script for <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a>.  <br /></td></tr>
+<tr class="separator:a30e7706ad5f0370005c909e29e8239ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fe8649ea7a5c92543ffb26499e4b9ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a9fe8649ea7a5c92543ffb26499e4b9ba">LoadNextRound</a> ()</td></tr>
+<tr class="memdesc:a9fe8649ea7a5c92543ffb26499e4b9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function allows UI to move on from Leaderboard.  <br /></td></tr>
+<tr class="separator:a9fe8649ea7a5c92543ffb26499e4b9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376313d2c35e3db7daa657a8bce20720"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a376313d2c35e3db7daa657a8bce20720">LoadMenu</a> ()</td></tr>
+<tr class="separator:a376313d2c35e3db7daa657a8bce20720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817bdaadb02d5457647eca159a4f1c7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a817bdaadb02d5457647eca159a4f1c7e">ClientDisconnected</a> (string reason)</td></tr>
+<tr class="separator:a817bdaadb02d5457647eca159a4f1c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41cb5c1140548ac62157c1d0e34826b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ae41cb5c1140548ac62157c1d0e34826b">ClientConnected</a> ()</td></tr>
+<tr class="separator:ae41cb5c1140548ac62157c1d0e34826b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad688b1022ffc32968bc7b50ce0615c83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ad688b1022ffc32968bc7b50ce0615c83">LeaderboardReady</a> ()</td></tr>
+<tr class="separator:ad688b1022ffc32968bc7b50ce0615c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba8e349f48fd97fd7dfd27d8644a21f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#acba8e349f48fd97fd7dfd27d8644a21f">RoundWon</a> ()</td></tr>
+<tr class="separator:acba8e349f48fd97fd7dfd27d8644a21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49c422e296594212f24f19bbd3ae52d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#af49c422e296594212f24f19bbd3ae52d">QuitApp</a> ()</td></tr>
+<tr class="separator:af49c422e296594212f24f19bbd3ae52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -175,13 +201,29 @@ Public Attributes</h2></td></tr>
 Dictionary&lt; ulong, <a class="el" href="class_net_player_data.html">NetPlayerData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerData</b> = new Dictionary&lt;ulong, <a class="el" href="class_net_player_data.html">NetPlayerData</a>&gt;()</td></tr>
 <tr class="memdesc:a16139daa0d77269425514837fea78fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dictionary which stores the connected players and their associated ObjectivePlayerData, which includes their current objective. <br /></td></tr>
 <tr class="separator:a16139daa0d77269425514837fea78fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccfb9a6c497e24651c13b1083b29d80"><td class="memItemLeft" align="right" valign="top"><a id="a4ccfb9a6c497e24651c13b1083b29d80" name="a4ccfb9a6c497e24651c13b1083b29d80"></a>
+<a class="el" href="class_net_player.html">NetPlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LocalPlayer</b></td></tr>
+<tr class="separator:a4ccfb9a6c497e24651c13b1083b29d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d9eb9753c6f636653cf0f44a5f6acc"><td class="memItemLeft" align="right" valign="top"><a id="a18d9eb9753c6f636653cf0f44a5f6acc" name="a18d9eb9753c6f636653cf0f44a5f6acc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>TrueIsServer</b> = false</td></tr>
+<tr class="separator:a18d9eb9753c6f636653cf0f44a5f6acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:aae0e713d1f4b05e65dddd1e2d3f549f1"><td class="memItemLeft" align="right" valign="top"><a id="aae0e713d1f4b05e65dddd1e2d3f549f1" name="aae0e713d1f4b05e65dddd1e2d3f549f1"></a>
+LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>GroundLayers</b><code> [get]</code></td></tr>
+<tr class="separator:aae0e713d1f4b05e65dddd1e2d3f549f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a518e4821314a308bd2994324b734a"><td class="memItemLeft" align="right" valign="top"><a id="a17a518e4821314a308bd2994324b734a" name="a17a518e4821314a308bd2994324b734a"></a>
+List&lt; Color &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerColours</b><code> [get]</code></td></tr>
+<tr class="separator:a17a518e4821314a308bd2994324b734a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e717f4fb0f378b969f4457de81f23e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ad3e717f4fb0f378b969f4457de81f23e">Instance</a><code> [get]</code></td></tr>
 <tr class="separator:ad3e717f4fb0f378b969f4457de81f23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d0f2d1db5315d47d9ebf70081ebf8da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a7d0f2d1db5315d47d9ebf70081ebf8da">CurrentState</a><code> [get]</code></td></tr>
 <tr class="separator:a7d0f2d1db5315d47d9ebf70081ebf8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747670cf4d58ca3b92414c048ebb44ef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a747670cf4d58ca3b92414c048ebb44ef">NetworkFixedDeltaTime</a><code> [get]</code></td></tr>
+<tr class="separator:a747670cf4d58ca3b92414c048ebb44ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b2b206995618f4ef98d4a2d633cd82b"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a8b2b206995618f4ef98d4a2d633cd82b">NetworkFixedDeltaTimeItterations</a><code> [get]</code></td></tr>
+<tr class="separator:a8b2b206995618f4ef98d4a2d633cd82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
@@ -205,25 +247,122 @@ EventHandler&#160;</td><td class="memItemRight" valign="bottom"><b>OnSceneLoaded
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a2959177ee51ac31badbf8b1bc8f7f637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a2959177ee51ac31badbf8b1bc8f7f637">Awake</a> ()</td></tr>
 <tr class="separator:a2959177ee51ac31badbf8b1bc8f7f637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44c79b205dec16bfe650e21259860c5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a44c79b205dec16bfe650e21259860c5b">Update</a> ()</td></tr>
+<tr class="separator:a44c79b205dec16bfe650e21259860c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173ac1816888ec3a6cf5c9b43059c24a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a173ac1816888ec3a6cf5c9b43059c24a">SetPlayerColour</a> (<a class="el" href="class_net_player_data.html">NetPlayerData</a> playerData)</td></tr>
+<tr class="separator:a173ac1816888ec3a6cf5c9b43059c24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15c2000b78542d31b75b5bf5809d725b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a15c2000b78542d31b75b5bf5809d725b">DoStateCyclicActions</a> ()</td></tr>
+<tr class="memdesc:a15c2000b78542d31b75b5bf5809d725b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the state's cyclic actions<br  />
+ Called every Update()  <br /></td></tr>
+<tr class="separator:a15c2000b78542d31b75b5bf5809d725b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27970da85972232bc54a58fe6d329897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a27970da85972232bc54a58fe6d329897">DoEntryTransition</a> (<a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a> state)</td></tr>
 <tr class="separator:a27970da85972232bc54a58fe6d329897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2800c785fd8e1a8b1aa449227a0ccd31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a2800c785fd8e1a8b1aa449227a0ccd31">DoExitTransition</a> (<a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a> state)</td></tr>
 <tr class="separator:a2800c785fd8e1a8b1aa449227a0ccd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba8fcd12c3fd18eb629e6d3d332bcd3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aba8fcd12c3fd18eb629e6d3d332bcd3c">DoStateTransition</a> (<a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a> newState)</td></tr>
-<tr class="memdesc:aba8fcd12c3fd18eb629e6d3d332bcd3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a state machine transition if transition is allowed.  <br /></td></tr>
-<tr class="separator:aba8fcd12c3fd18eb629e6d3d332bcd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295e9bc8ea994669f347160a7807d26e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a> (<a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a> newState)</td></tr>
+<tr class="memdesc:a295e9bc8ea994669f347160a7807d26e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a state machine transition if transition is allowed.  <br /></td></tr>
+<tr class="separator:a295e9bc8ea994669f347160a7807d26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be7db336fe11b508ba865794d54ae5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a7be7db336fe11b508ba865794d54ae5c">RoundLoaded</a> ()</td></tr>
+<tr class="separator:a7be7db336fe11b508ba865794d54ae5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad805df7f8223e65ad1c71411b21aff87"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ad805df7f8223e65ad1c71411b21aff87">LoadRound</a> (GameObject roundToLoad, float minWaitDuration)</td></tr>
+<tr class="separator:ad805df7f8223e65ad1c71411b21aff87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb426f807aa74b19e00764f3a7963d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">LoadRound</a> ()</td></tr>
+<tr class="memdesc:a8eb426f807aa74b19e00764f3a7963d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function allows <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> to move on the round.  <br /></td></tr>
+<tr class="separator:a8eb426f807aa74b19e00764f3a7963d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48088ede03845f96805cc695ffeca1ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a48088ede03845f96805cc695ffeca1ad">MovePlayersToSpawnPoints</a> ()</td></tr>
+<tr class="separator:a48088ede03845f96805cc695ffeca1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc1a3f649932f2cc16a034c144f9913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a7dc1a3f649932f2cc16a034c144f9913">SendPlayerObjectiveStrings</a> ()</td></tr>
+<tr class="separator:a7dc1a3f649932f2cc16a034c144f9913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc35f36420ae6020869cfd97fda99ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#accc35f36420ae6020869cfd97fda99ff">SetStateClientRpc</a> (<a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GameManager.GAMESTATE</a> state, ClientRpcParams clientRpcParams=default)</td></tr>
+<tr class="separator:accc35f36420ae6020869cfd97fda99ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228e11e9c6e0b2579da6ae71c042b26d"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a228e11e9c6e0b2579da6ae71c042b26d">RoundTimer</a> (uint durationInSeconds)</td></tr>
+<tr class="separator:a228e11e9c6e0b2579da6ae71c042b26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af296e5e3f844fda25598f918b4c2478b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#af296e5e3f844fda25598f918b4c2478b">GetPlayerName</a> (ulong clientId)</td></tr>
+<tr class="separator:af296e5e3f844fda25598f918b4c2478b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb66f604363f3bd64f047cb8661e2e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a2eb66f604363f3bd64f047cb8661e2e4">ReAddPlayerName</a> (ulong clientId)</td></tr>
+<tr class="separator:a2eb66f604363f3bd64f047cb8661e2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5ea2e4d0fa3a91109350c974d563df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a7b5ea2e4d0fa3a91109350c974d563df">SetNoOfPlayersTextClientRpc</a> (int noOfPlayers, ClientRpcParams clientRpcParams=default)</td></tr>
+<tr class="separator:a7b5ea2e4d0fa3a91109350c974d563df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea38cab5e032b8ea25e5440c9dd4182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a6ea38cab5e032b8ea25e5440c9dd4182">EscapeButtonPressed</a> (InputAction.CallbackContext value)</td></tr>
+<tr class="separator:a6ea38cab5e032b8ea25e5440c9dd4182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a4a1d7daf6461c279b11d1c92ca743e63"><td class="memItemLeft" align="right" valign="top"><a id="a4a1d7daf6461c279b11d1c92ca743e63" name="a4a1d7daf6461c279b11d1c92ca743e63"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_networkFixedDeltaTime</b> = 0.02f</td></tr>
+<tr class="separator:a4a1d7daf6461c279b11d1c92ca743e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0ac34048f81be0335e540109e4b23e"><td class="memItemLeft" align="right" valign="top"><a id="adf0ac34048f81be0335e540109e4b23e" name="adf0ac34048f81be0335e540109e4b23e"></a>
+uint&#160;</td><td class="memItemRight" valign="bottom"><b>_networkFixedDeltaTimeItterations</b></td></tr>
+<tr class="separator:adf0ac34048f81be0335e540109e4b23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1f3c959f6d4b09a77c74826a407fb6"><td class="memItemLeft" align="right" valign="top"><a id="afd1f3c959f6d4b09a77c74826a407fb6" name="afd1f3c959f6d4b09a77c74826a407fb6"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_minLoadScreenTime</b> = 2f</td></tr>
+<tr class="separator:afd1f3c959f6d4b09a77c74826a407fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c2fd43a096069cd5aa5488173cd0c98"><td class="memItemLeft" align="right" valign="top"><a id="a9c2fd43a096069cd5aa5488173cd0c98" name="a9c2fd43a096069cd5aa5488173cd0c98"></a>
+LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>_groundLayers</b> = new LayerMask()</td></tr>
+<tr class="separator:a9c2fd43a096069cd5aa5488173cd0c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f8afc00fd4d9cb12cdea9b3babe1bb"><td class="memItemLeft" align="right" valign="top"><a id="a66f8afc00fd4d9cb12cdea9b3babe1bb" name="a66f8afc00fd4d9cb12cdea9b3babe1bb"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>_lobbyPrefab</b></td></tr>
+<tr class="separator:a66f8afc00fd4d9cb12cdea9b3babe1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5cd9264c1f6b27bb105365229735511"><td class="memItemLeft" align="right" valign="top"><a id="af5cd9264c1f6b27bb105365229735511" name="af5cd9264c1f6b27bb105365229735511"></a>
+List&lt; <a class="el" href="class_round.html">Round</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_rounds</b> = new List&lt;<a class="el" href="class_round.html">Round</a>&gt;()</td></tr>
+<tr class="separator:af5cd9264c1f6b27bb105365229735511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a642d1e33d7f0dd7da96e964ff2702609"><td class="memItemLeft" align="right" valign="top"><a id="a642d1e33d7f0dd7da96e964ff2702609" name="a642d1e33d7f0dd7da96e964ff2702609"></a>
+List&lt; Color &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_playerColours</b> = new List&lt;Color&gt;()</td></tr>
+<tr class="separator:a642d1e33d7f0dd7da96e964ff2702609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a68f1ab9d49aa70c271fca695135a69"><td class="memItemLeft" align="right" valign="top"><a id="a6a68f1ab9d49aa70c271fca695135a69" name="a6a68f1ab9d49aa70c271fca695135a69"></a>
+List&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_playerColourIndexes</b> = new List&lt;int&gt;()</td></tr>
+<tr class="separator:a6a68f1ab9d49aa70c271fca695135a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab215a754518958eec2536b9b604eda50"><td class="memItemLeft" align="right" valign="top"><a id="ab215a754518958eec2536b9b604eda50" name="ab215a754518958eec2536b9b604eda50"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_playerNames</b> = new List&lt;string&gt;()</td></tr>
+<tr class="separator:ab215a754518958eec2536b9b604eda50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b34f7998c2eb305959e9abf61051cb7"><td class="memItemLeft" align="right" valign="top"><a id="a4b34f7998c2eb305959e9abf61051cb7" name="a4b34f7998c2eb305959e9abf61051cb7"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_remainingNames</b> = new List&lt;string&gt;()</td></tr>
+<tr class="separator:a4b34f7998c2eb305959e9abf61051cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d4bdb0db53e75e129fd37b74722792e"><td class="memItemLeft" align="right" valign="top"><a id="a0d4bdb0db53e75e129fd37b74722792e" name="a0d4bdb0db53e75e129fd37b74722792e"></a>
 <a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_currentState</b> = GAMESTATE.START</td></tr>
 <tr class="separator:a0d4bdb0db53e75e129fd37b74722792e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e602f36775a9e3758e5653712577bef"><td class="memItemLeft" align="right" valign="top"><a id="a0e602f36775a9e3758e5653712577bef" name="a0e602f36775a9e3758e5653712577bef"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_loadingTimerComplete</b> = false</td></tr>
+<tr class="separator:a0e602f36775a9e3758e5653712577bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a9c1d7d49cd868ddb5ab2858be74ba"><td class="memItemLeft" align="right" valign="top"><a id="aa1a9c1d7d49cd868ddb5ab2858be74ba" name="aa1a9c1d7d49cd868ddb5ab2858be74ba"></a>
+List&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_roundOrder</b> = new List&lt;int&gt;()</td></tr>
+<tr class="separator:aa1a9c1d7d49cd868ddb5ab2858be74ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08e25447fd9bb0bf6df6275fcfe10011"><td class="memItemLeft" align="right" valign="top"><a id="a08e25447fd9bb0bf6df6275fcfe10011" name="a08e25447fd9bb0bf6df6275fcfe10011"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_roundIndex</b> = 0</td></tr>
+<tr class="separator:a08e25447fd9bb0bf6df6275fcfe10011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7553d1f75d7922b87a2efcbba333f591"><td class="memItemLeft" align="right" valign="top"><a id="a7553d1f75d7922b87a2efcbba333f591" name="a7553d1f75d7922b87a2efcbba333f591"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_nextRound</b> = 0</td></tr>
+<tr class="separator:a7553d1f75d7922b87a2efcbba333f591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7847206d0d7b50149b515ae3035634ba"><td class="memItemLeft" align="right" valign="top"><a id="a7847206d0d7b50149b515ae3035634ba" name="a7847206d0d7b50149b515ae3035634ba"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>_currentRound</b></td></tr>
+<tr class="separator:a7847206d0d7b50149b515ae3035634ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a859fd30d79998a1291b15c1b154a768c"><td class="memItemLeft" align="right" valign="top"><a id="a859fd30d79998a1291b15c1b154a768c" name="a859fd30d79998a1291b15c1b154a768c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_roundTimerRunning</b> = false</td></tr>
+<tr class="separator:a859fd30d79998a1291b15c1b154a768c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a00d27c12663c996d96233889093c4d"><td class="memItemLeft" align="right" valign="top"><a id="a4a00d27c12663c996d96233889093c4d" name="a4a00d27c12663c996d96233889093c4d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_roundWon</b> = false</td></tr>
+<tr class="separator:a4a00d27c12663c996d96233889093c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262c14b3b4f56d4cf2169f515a78ec48"><td class="memItemLeft" align="right" valign="top"><a id="a262c14b3b4f56d4cf2169f515a78ec48" name="a262c14b3b4f56d4cf2169f515a78ec48"></a>
+Coroutine&#160;</td><td class="memItemRight" valign="bottom"><b>_roundTimerCoroutine</b></td></tr>
+<tr class="separator:a262c14b3b4f56d4cf2169f515a78ec48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d35e5fc4ea3ea7fe43f8fc4c428cc58"><td class="memItemLeft" align="right" valign="top"><a id="a8d35e5fc4ea3ea7fe43f8fc4c428cc58" name="a8d35e5fc4ea3ea7fe43f8fc4c428cc58"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_clientConnected</b> = false</td></tr>
+<tr class="separator:a8d35e5fc4ea3ea7fe43f8fc4c428cc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2590a2dc82e9c3f2b32fa9d315737ac0"><td class="memItemLeft" align="right" valign="top"><a id="a2590a2dc82e9c3f2b32fa9d315737ac0" name="a2590a2dc82e9c3f2b32fa9d315737ac0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_leaderboardReady</b> = false</td></tr>
+<tr class="separator:a2590a2dc82e9c3f2b32fa9d315737ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69286a95462ffbcbf27c329342657085"><td class="memItemLeft" align="right" valign="top"><a id="a69286a95462ffbcbf27c329342657085" name="a69286a95462ffbcbf27c329342657085"></a>
+Controls&#160;</td><td class="memItemRight" valign="bottom"><b>_controls</b></td></tr>
+<tr class="separator:a69286a95462ffbcbf27c329342657085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a8cac45bedf02622598c5a723a18f21a4"><td class="memItemLeft" align="right" valign="top"><a id="a8cac45bedf02622598c5a723a18f21a4" name="a8cac45bedf02622598c5a723a18f21a4"></a>
 static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_instance</b></td></tr>
 <tr class="separator:a8cac45bedf02622598c5a723a18f21a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57377ad5ec0391dbdfc7c3be870c1462"><td class="memItemLeft" align="right" valign="top"><a id="a57377ad5ec0391dbdfc7c3be870c1462" name="a57377ad5ec0391dbdfc7c3be870c1462"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>NETWORK_ERROR_TEXT</b> = &quot;Oh No!\nA network error occurred!&quot;</td></tr>
+<tr class="separator:a57377ad5ec0391dbdfc7c3be870c1462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The Game Manager. </p>
@@ -241,19 +380,19 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
 </div><div class="memdoc">
 
 <p>Possible game states. </p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        START = 0,</div>
-<div class="line"><span class="lineno">   21</span>        MENU,</div>
-<div class="line"><span class="lineno">   22</span>        LOADING_LOBBY,</div>
-<div class="line"><span class="lineno">   23</span>        PLAYING_LOBBY,</div>
-<div class="line"><span class="lineno">   24</span>        LOADING_ROUND,</div>
-<div class="line"><span class="lineno">   25</span>        PLAYING_ROUND,</div>
-<div class="line"><span class="lineno">   26</span>        MIDPOINT_LEADERBOARD,</div>
-<div class="line"><span class="lineno">   27</span>        FINAL_LEADERBOARD,</div>
-<div class="line"><span class="lineno">   28</span>        DISCONNECTED,</div>
-<div class="line"><span class="lineno">   29</span>        <span class="comment">//Add new states above this line</span></div>
-<div class="line"><span class="lineno">   30</span>        NUM_OF_STATES</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        START = 0,</div>
+<div class="line"><span class="lineno">   23</span>        MENU,</div>
+<div class="line"><span class="lineno">   24</span>        LOADING_LOBBY,</div>
+<div class="line"><span class="lineno">   25</span>        PLAYING_LOBBY,</div>
+<div class="line"><span class="lineno">   26</span>        LOADING_ROUND,</div>
+<div class="line"><span class="lineno">   27</span>        PLAYING_ROUND,</div>
+<div class="line"><span class="lineno">   28</span>        MIDPOINT_LEADERBOARD,</div>
+<div class="line"><span class="lineno">   29</span>        FINAL_LEADERBOARD,</div>
+<div class="line"><span class="lineno">   30</span>        DISCONNECTED,</div>
+<div class="line"><span class="lineno">   31</span>        <span class="comment">//Add new states above this line</span></div>
+<div class="line"><span class="lineno">   32</span>        NUM_OF_STATES</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -280,11 +419,67 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   62</span>    {</div>
-<div class="line"><span class="lineno">   63</span>        <a class="code hl_function" href="class_game_manager.html#aba8fcd12c3fd18eb629e6d3d332bcd3c">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU);</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="ttc" id="aclass_game_manager_html_ab27ff4979f87ebcdce6fb311425d0e9c"><div class="ttname"><a href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GameManager.GAMESTATE</a></div><div class="ttdeci">GAMESTATE</div><div class="ttdoc">Possible game states.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:19</div></div>
-<div class="ttc" id="aclass_game_manager_html_aba8fcd12c3fd18eb629e6d3d332bcd3c"><div class="ttname"><a href="class_game_manager.html#aba8fcd12c3fd18eb629e6d3d332bcd3c">GameManager.DoStateTransition</a></div><div class="ttdeci">void DoStateTransition(GAMESTATE newState)</div><div class="ttdoc">Performs a state machine transition if transition is allowed.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:207</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>        _networkFixedDeltaTimeItterations = (uint)Math.Round(_networkFixedDeltaTime / Time.fixedDeltaTime, MidpointRounding.AwayFromZero);</div>
+<div class="line"><span class="lineno">   98</span>        _controls = <span class="keyword">new</span> Controls();</div>
+<div class="line"><span class="lineno">   99</span>        _controls.Gameplay.Enable();</div>
+<div class="line"><span class="lineno">  100</span>        _controls.Gameplay.Escape.performed += EscapeButtonPressed;</div>
+<div class="line"><span class="lineno">  101</span>        _controls.Gameplay.Escape.canceled += EscapeButtonPressed;</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>        _currentState = <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html_ab27ff4979f87ebcdce6fb311425d0e9c"><div class="ttname"><a href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GameManager.GAMESTATE</a></div><div class="ttdeci">GAMESTATE</div><div class="ttdoc">Possible game states.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:21</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae41cb5c1140548ac62157c1d0e34826b" name="ae41cb5c1140548ac62157c1d0e34826b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41cb5c1140548ac62157c1d0e34826b">&#9670;&#160;</a></span>ClientConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.ClientConnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  629</span>    {</div>
+<div class="line"><span class="lineno">  630</span>        _clientConnected = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  631</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a817bdaadb02d5457647eca159a4f1c7e" name="a817bdaadb02d5457647eca159a4f1c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817bdaadb02d5457647eca159a4f1c7e">&#9670;&#160;</a></span>ClientDisconnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.ClientDisconnected </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>reason</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  616</span>    {</div>
+<div class="line"><span class="lineno">  617</span>        <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.SetNetworkErrorText(NETWORK_ERROR_TEXT);</div>
+<div class="line"><span class="lineno">  618</span> </div>
+<div class="line"><span class="lineno">  619</span>        <span class="keywordflow">if</span> (reason != <span class="keywordtype">string</span>.Empty)</div>
+<div class="line"><span class="lineno">  620</span>        {</div>
+<div class="line"><span class="lineno">  621</span>            <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.AppendNetworkErrorText(<span class="stringliteral">&quot;\n&quot;</span> + reason);</div>
+<div class="line"><span class="lineno">  622</span>        }</div>
+<div class="line"><span class="lineno">  623</span> </div>
+<div class="line"><span class="lineno">  624</span>        </div>
+<div class="line"><span class="lineno">  625</span>        <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED);</div>
+<div class="line"><span class="lineno">  626</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html_a295e9bc8ea994669f347160a7807d26e"><div class="ttname"><a href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">GameManager.DoStateTransition</a></div><div class="ttdeci">bool DoStateTransition(GAMESTATE newState)</div><div class="ttdoc">Performs a state machine transition if transition is allowed.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:466</div></div>
+<div class="ttc" id="aclass_menu_u_i_manager_html"><div class="ttname"><a href="class_menu_u_i_manager.html">MenuUIManager</a></div><div class="ttdef"><b>Definition:</b> MenuUIManager.cs:9</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,46 +506,92 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  137</span>    {</div>
-<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">switch</span> (state)</div>
-<div class="line"><span class="lineno">  139</span>        {</div>
-<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
-<div class="line"><span class="lineno">  141</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
-<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
-<div class="line"><span class="lineno">  145</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  146</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
-<div class="line"><span class="lineno">  147</span>                <span class="comment">// TODO move the below to Playing_Round once some rounds are implemented</span></div>
-<div class="line"><span class="lineno">  148</span>                <span class="comment">// Now that scene has loaded, inform the player of their objective</span></div>
-<div class="line"><span class="lineno">  149</span>                <span class="comment">// First reset the objective manager so that it will gather all zones / objects</span></div>
-<div class="line"><span class="lineno">  150</span>                <span class="comment">// Need to consider doing this in the loading screen so that there is no hang to the player</span></div>
-<div class="line"><span class="lineno">  151</span>                </div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>                <span class="keywordflow">foreach</span>(<a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> netPlayerData <span class="keywordflow">in</span> <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Values)</div>
-<div class="line"><span class="lineno">  154</span>                {</div>
-<div class="line"><span class="lineno">  155</span>                    <span class="comment">//setup clientRpc params to only send to specific client</span></div>
-<div class="line"><span class="lineno">  156</span>                    netPlayerData.NetPlayer?.<a class="code hl_function" href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">SetObjectiveStringClientRpc</a>(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);</div>
-<div class="line"><span class="lineno">  157</span>                }</div>
-<div class="line"><span class="lineno">  158</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
-<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  161</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
-<div class="line"><span class="lineno">  162</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
-<div class="line"><span class="lineno">  164</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  165</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
-<div class="line"><span class="lineno">  166</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
-<div class="line"><span class="lineno">  168</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
-<div class="line"><span class="lineno">  170</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  171</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  172</span>        }</div>
-<div class="line"><span class="lineno">  173</span>    }</div>
-<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:36</div></div>
-<div class="ttc" id="aclass_net_player_data_html"><div class="ttname"><a href="class_net_player_data.html">NetPlayerData</a></div><div class="ttdoc">Class to store objective data related to a player.</div><div class="ttdef"><b>Definition:</b> NetPlayerData.cs:13</div></div>
-<div class="ttc" id="aclass_net_player_html_a430d71b5d9ecdf768ff4e28e920891cd"><div class="ttname"><a href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">NetPlayer.SetObjectiveStringClientRpc</a></div><div class="ttdeci">void SetObjectiveStringClientRpc(string newObjectiveString, ClientRpcParams clientRpcParams=default)</div><div class="ttdoc">Receive a new objective from the ObjectiveManager and set this locally on the client.</div><div class="ttdef"><b>Definition:</b> NetPlayer.cs:60</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>    {</div>
+<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">switch</span> (state)</div>
+<div class="line"><span class="lineno">  316</span>        {</div>
+<div class="line"><span class="lineno">  317</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
+<div class="line"><span class="lineno">  318</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  319</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
+<div class="line"><span class="lineno">  320</span>                </div>
+<div class="line"><span class="lineno">  321</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START)</div>
+<div class="line"><span class="lineno">  322</span>                {</div>
+<div class="line"><span class="lineno">  323</span>                    <a class="code hl_class" href="class_super_game_manager.html">SuperGameManager</a>.Instance.ReloadEntireGame();</div>
+<div class="line"><span class="lineno">  324</span>                    <span class="comment">//try</span></div>
+<div class="line"><span class="lineno">  325</span>                    <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">  326</span>                    <span class="comment">//    NetworkObject.Despawn(false);</span></div>
+<div class="line"><span class="lineno">  327</span>                    <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">  328</span>                    <span class="comment">//catch (NullReferenceException)</span></div>
+<div class="line"><span class="lineno">  329</span>                    <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">  330</span>                    <span class="comment">//    // Do nothing</span></div>
+<div class="line"><span class="lineno">  331</span>                    <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">  332</span>                }</div>
+<div class="line"><span class="lineno">  333</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  334</span>                {</div>
+<div class="line"><span class="lineno">  335</span>                    <span class="comment">//Debug.Log(&quot;MenuEntry: Menu Canvas = true&quot;);</span></div>
+<div class="line"><span class="lineno">  336</span>                    <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance?.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.MainMenuCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  337</span>                    _clientConnected = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  338</span> </div>
+<div class="line"><span class="lineno">  339</span>                    <span class="comment">// Reset players</span></div>
+<div class="line"><span class="lineno">  340</span>                    <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Clear();</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>                    <span class="comment">// reload all colours</span></div>
+<div class="line"><span class="lineno">  343</span>                    _playerColourIndexes.Clear();</div>
+<div class="line"><span class="lineno">  344</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _playerColours.Count; i++)</div>
+<div class="line"><span class="lineno">  345</span>                    {</div>
+<div class="line"><span class="lineno">  346</span>                        _playerColourIndexes.Add(i);</div>
+<div class="line"><span class="lineno">  347</span>                    }</div>
+<div class="line"><span class="lineno">  348</span> </div>
+<div class="line"><span class="lineno">  349</span>                    _remainingNames.Clear();</div>
+<div class="line"><span class="lineno">  350</span>                    _remainingNames = <span class="keyword">new</span>(_playerNames);</div>
+<div class="line"><span class="lineno">  351</span>                }</div>
+<div class="line"><span class="lineno">  352</span>                </div>
+<div class="line"><span class="lineno">  353</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  354</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
+<div class="line"><span class="lineno">  355</span>                StartCoroutine(<a class="code hl_function" href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">LoadRound</a>(_lobbyPrefab, _minLoadScreenTime));</div>
+<div class="line"><span class="lineno">  356</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  357</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
+<div class="line"><span class="lineno">  358</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.LobbyCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  359</span>                <span class="comment">// Now that scene has loaded, move players to spawn points</span></div>
+<div class="line"><span class="lineno">  360</span>                MovePlayersToSpawnPoints();</div>
+<div class="line"><span class="lineno">  361</span>                <span class="comment">// Now that scene has loaded, inform the player of their objective</span></div>
+<div class="line"><span class="lineno">  362</span>                SendPlayerObjectiveStrings();</div>
+<div class="line"><span class="lineno">  363</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  364</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
+<div class="line"><span class="lineno">  365</span>                StartCoroutine(<a class="code hl_function" href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">LoadRound</a>(_rounds[_roundIndex].RoundPrefab, _minLoadScreenTime));</div>
+<div class="line"><span class="lineno">  366</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  367</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
+<div class="line"><span class="lineno">  368</span>                _roundWon = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  369</span>                <span class="comment">// Now that scene has loaded, move players to spawn points</span></div>
+<div class="line"><span class="lineno">  370</span>                MovePlayersToSpawnPoints();</div>
+<div class="line"><span class="lineno">  371</span>                <span class="comment">// Now that scene has loaded, inform the player of their objective</span></div>
+<div class="line"><span class="lineno">  372</span>                SendPlayerObjectiveStrings();</div>
+<div class="line"><span class="lineno">  373</span>                <span class="comment">// Reset the round timer</span></div>
+<div class="line"><span class="lineno">  374</span>                <span class="keywordflow">if</span>(_roundTimerCoroutine != <span class="keyword">null</span>) StopCoroutine(_roundTimerCoroutine);</div>
+<div class="line"><span class="lineno">  375</span>                _roundTimerCoroutine = StartCoroutine(RoundTimer(_rounds[_roundIndex].RoundDurationSeconds));</div>
+<div class="line"><span class="lineno">  376</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.GameCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  377</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  378</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  379</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_leaderboard_u_i_manager.html">LeaderboardUIManager</a>.Instance.LeaderboardCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  380</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  381</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  382</span>                LeaderboardUIManager.Instance.FinalLeaderboard = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  383</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_leaderboard_u_i_manager.html">LeaderboardUIManager</a>.Instance.LeaderboardCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  384</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  385</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
+<div class="line"><span class="lineno">  386</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.DisconnectedCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  387</span>                <span class="comment">// Shutdowmn the network manager so it can be used again</span></div>
+<div class="line"><span class="lineno">  388</span>                <a class="code hl_class" href="class_connection_handler.html">ConnectionHandler</a>.Instance.Shutdown();</div>
+<div class="line"><span class="lineno">  389</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  390</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
+<div class="line"><span class="lineno">  391</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  392</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  393</span>        }</div>
+<div class="line"><span class="lineno">  394</span>    }</div>
+<div class="ttc" id="aclass_connection_handler_html"><div class="ttname"><a href="class_connection_handler.html">ConnectionHandler</a></div><div class="ttdef"><b>Definition:</b> ConnectionHandler.cs:18</div></div>
+<div class="ttc" id="aclass_game_manager_html_a16139daa0d77269425514837fea78fa8"><div class="ttname"><a href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">GameManager.PlayerData</a></div><div class="ttdeci">Dictionary&lt; ulong, NetPlayerData &gt; PlayerData</div><div class="ttdoc">Dictionary which stores the connected players and their associated ObjectivePlayerData,...</div><div class="ttdef"><b>Definition:</b> GameManager.cs:51</div></div>
+<div class="ttc" id="aclass_game_manager_html_a8eb426f807aa74b19e00764f3a7963d9"><div class="ttname"><a href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">GameManager.LoadRound</a></div><div class="ttdeci">void LoadRound()</div><div class="ttdoc">Function allows GameManager to move on the round.</div><div class="ttdef"><b>Definition:</b> GameManager.cs:636</div></div>
+<div class="ttc" id="aclass_leaderboard_u_i_manager_html"><div class="ttname"><a href="class_leaderboard_u_i_manager.html">LeaderboardUIManager</a></div><div class="ttdef"><b>Definition:</b> LeaderboardUIManager.cs:10</div></div>
+<div class="ttc" id="aclass_super_game_manager_html"><div class="ttname"><a href="class_super_game_manager.html">SuperGameManager</a></div><div class="ttdef"><b>Definition:</b> SuperGameManager.cs:6</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -377,37 +618,76 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  176</span>    {</div>
-<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">switch</span> (state)</div>
-<div class="line"><span class="lineno">  178</span>        {</div>
-<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
-<div class="line"><span class="lineno">  180</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
-<div class="line"><span class="lineno">  182</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
-<div class="line"><span class="lineno">  184</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
-<div class="line"><span class="lineno">  186</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
-<div class="line"><span class="lineno">  188</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  189</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
-<div class="line"><span class="lineno">  190</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
-<div class="line"><span class="lineno">  192</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
-<div class="line"><span class="lineno">  194</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
-<div class="line"><span class="lineno">  196</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
-<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  199</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  200</span>        }</div>
-<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>    {</div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">switch</span> (state)</div>
+<div class="line"><span class="lineno">  399</span>        {</div>
+<div class="line"><span class="lineno">  400</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
+<div class="line"><span class="lineno">  401</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  402</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
+<div class="line"><span class="lineno">  403</span>                <span class="keywordflow">if</span>(TrueIsServer)</div>
+<div class="line"><span class="lineno">  404</span>                {</div>
+<div class="line"><span class="lineno">  405</span>                    <span class="comment">// ! Do not change PlayerData here, as the host has already loaded in</span></div>
+<div class="line"><span class="lineno">  406</span>                    <span class="comment">// ! Instead change it in Menu Entry Transition</span></div>
+<div class="line"><span class="lineno">  407</span>                    _roundOrder.Clear();</div>
+<div class="line"><span class="lineno">  408</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _rounds.Count; i++)</div>
+<div class="line"><span class="lineno">  409</span>                    {</div>
+<div class="line"><span class="lineno">  410</span>                        _roundOrder.Add(i);</div>
+<div class="line"><span class="lineno">  411</span>                    }</div>
+<div class="line"><span class="lineno">  412</span>                    _roundOrder.Shuffle();</div>
+<div class="line"><span class="lineno">  413</span> </div>
+<div class="line"><span class="lineno">  414</span>                    _nextRound = 0;</div>
+<div class="line"><span class="lineno">  415</span>                    _roundIndex = _roundOrder[_nextRound];</div>
+<div class="line"><span class="lineno">  416</span>                    </div>
+<div class="line"><span class="lineno">  417</span>                }</div>
+<div class="line"><span class="lineno">  418</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  419</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
+<div class="line"><span class="lineno">  420</span>                Debug.Log(<span class="stringliteral">&quot;LoadingLobbyExit: Menu Canvas = false&quot;</span>);</div>
+<div class="line"><span class="lineno">  421</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.LoadingCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  422</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  423</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
+<div class="line"><span class="lineno">  424</span>                <span class="keywordflow">if</span> (TrueIsServer)</div>
+<div class="line"><span class="lineno">  425</span>                {</div>
+<div class="line"><span class="lineno">  426</span>                    Destroy(_currentRound);</div>
+<div class="line"><span class="lineno">  427</span>                }</div>
+<div class="line"><span class="lineno">  428</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.LobbyCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  429</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  430</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
+<div class="line"><span class="lineno">  431</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.LoadingCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  432</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  433</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
+<div class="line"><span class="lineno">  434</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.GameCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  435</span>                <a class="code hl_class" href="class_arrow_manager.html">ArrowManager</a>.Instance.RemoveAllArrows();</div>
+<div class="line"><span class="lineno">  436</span>                <a class="code hl_class" href="class_arrow_manager.html">ArrowManager</a>.Instance.ClearAllLists();</div>
+<div class="line"><span class="lineno">  437</span>                <span class="keywordflow">if</span> (TrueIsServer)</div>
+<div class="line"><span class="lineno">  438</span>                {</div>
+<div class="line"><span class="lineno">  439</span>                    Destroy(_currentRound);</div>
+<div class="line"><span class="lineno">  440</span>                }</div>
+<div class="line"><span class="lineno">  441</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  442</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  443</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_leaderboard_u_i_manager.html">LeaderboardUIManager</a>.Instance.LeaderboardCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  444</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  445</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  446</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_leaderboard_u_i_manager.html">LeaderboardUIManager</a>.Instance.LeaderboardCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  447</span>                LeaderboardUIManager.Instance.FinalLeaderboard = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  448</span>                <span class="keywordflow">if</span> (TrueIsServer)</div>
+<div class="line"><span class="lineno">  449</span>                {</div>
+<div class="line"><span class="lineno">  450</span>                    <a class="code hl_class" href="class_connection_handler.html">ConnectionHandler</a>.Instance.Shutdown();</div>
+<div class="line"><span class="lineno">  451</span>                }</div>
+<div class="line"><span class="lineno">  452</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  453</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
+<div class="line"><span class="lineno">  454</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.DisconnectedCanvas, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  455</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  456</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
+<div class="line"><span class="lineno">  457</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  458</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  459</span>        }</div>
+<div class="line"><span class="lineno">  460</span>    }</div>
+<div class="ttc" id="aclass_arrow_manager_html"><div class="ttname"><a href="class_arrow_manager.html">ArrowManager</a></div><div class="ttdef"><b>Definition:</b> ArrowManager.cs:8</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aba8fcd12c3fd18eb629e6d3d332bcd3c" name="aba8fcd12c3fd18eb629e6d3d332bcd3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba8fcd12c3fd18eb629e6d3d332bcd3c">&#9670;&#160;</a></span>DoStateTransition()</h2>
+<a id="a15c2000b78542d31b75b5bf5809d725b" name="a15c2000b78542d31b75b5bf5809d725b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c2000b78542d31b75b5bf5809d725b">&#9670;&#160;</a></span>DoStateCyclicActions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +696,96 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameManager.DoStateTransition </td>
+          <td class="memname">void GameManager.DoStateCyclicActions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the state's cyclic actions<br  />
+ Called every Update() </p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>    {</div>
+<div class="line"><span class="lineno">  252</span>        <span class="keywordflow">switch</span> (_currentState)</div>
+<div class="line"><span class="lineno">  253</span>        {</div>
+<div class="line"><span class="lineno">  254</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
+<div class="line"><span class="lineno">  255</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
+<div class="line"><span class="lineno">  257</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  258</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>                <span class="keywordflow">if</span> (_loadingTimerComplete &amp;&amp; _clientConnected)</div>
+<div class="line"><span class="lineno">  261</span>                {</div>
+<div class="line"><span class="lineno">  262</span>                    _loadingTimerComplete = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  263</span>                    RoundLoaded();</div>
+<div class="line"><span class="lineno">  264</span>                    <span class="comment">// Do the state transition</span></div>
+<div class="line"><span class="lineno">  265</span>                    <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY);</div>
+<div class="line"><span class="lineno">  266</span>                }</div>
+<div class="line"><span class="lineno">  267</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
+<div class="line"><span class="lineno">  269</span>                </div>
+<div class="line"><span class="lineno">  270</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
+<div class="line"><span class="lineno">  272</span>                <span class="keywordflow">if</span> (_loadingTimerComplete)</div>
+<div class="line"><span class="lineno">  273</span>                {</div>
+<div class="line"><span class="lineno">  274</span>                    _loadingTimerComplete = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  275</span>                    RoundLoaded();</div>
+<div class="line"><span class="lineno">  276</span>                    <span class="comment">// Do the state transition</span></div>
+<div class="line"><span class="lineno">  277</span>                    <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND);</div>
+<div class="line"><span class="lineno">  278</span>                }</div>
+<div class="line"><span class="lineno">  279</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  280</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
+<div class="line"><span class="lineno">  281</span>                <span class="keywordflow">if</span>(!_roundTimerRunning || _roundWon)</div>
+<div class="line"><span class="lineno">  282</span>                {</div>
+<div class="line"><span class="lineno">  283</span>                    <span class="comment">// Round timer has expired - load the leaderboard if configured</span></div>
+<div class="line"><span class="lineno">  284</span>                    <span class="keywordflow">if</span> (_rounds[_roundIndex].ShowLeaderBoardAfterRound &amp;&amp; (_nextRound &lt; _roundOrder.Count))</div>
+<div class="line"><span class="lineno">  285</span>                    {</div>
+<div class="line"><span class="lineno">  286</span>                        <span class="comment">// If not the last round, and configured, show the Leaderboard</span></div>
+<div class="line"><span class="lineno">  287</span>                        <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD);</div>
+<div class="line"><span class="lineno">  288</span>                    }</div>
+<div class="line"><span class="lineno">  289</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  290</span>                    {</div>
+<div class="line"><span class="lineno">  291</span>                        <span class="comment">// Move to next round (also handles move to final leaderboard)</span></div>
+<div class="line"><span class="lineno">  292</span>                        <a class="code hl_function" href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">LoadRound</a>();</div>
+<div class="line"><span class="lineno">  293</span>                    }</div>
+<div class="line"><span class="lineno">  294</span>                }</div>
+<div class="line"><span class="lineno">  295</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  297</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  298</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  299</span>                <span class="keywordflow">if</span> (_leaderboardReady &amp;&amp; !TrueIsServer)</div>
+<div class="line"><span class="lineno">  300</span>                {</div>
+<div class="line"><span class="lineno">  301</span>                    <a class="code hl_class" href="class_connection_handler.html">ConnectionHandler</a>.Instance.Shutdown();</div>
+<div class="line"><span class="lineno">  302</span>                    _leaderboardReady = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  303</span>                }</div>
+<div class="line"><span class="lineno">  304</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  305</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
+<div class="line"><span class="lineno">  306</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  307</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
+<div class="line"><span class="lineno">  308</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  309</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  310</span>        }</div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a295e9bc8ea994669f347160a7807d26e" name="a295e9bc8ea994669f347160a7807d26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295e9bc8ea994669f347160a7807d26e">&#9670;&#160;</a></span>DoStateTransition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager.DoStateTransition </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>&#160;</td>
           <td class="paramname"><em>newState</em></td><td>)</td>
@@ -437,59 +806,179 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  208</span>    {</div>
-<div class="line"><span class="lineno">  209</span>        <span class="comment">// check if state is different</span></div>
-<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">if</span> (newState == _currentState) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>        <span class="comment">// check each transition&#39;s guard clauses</span></div>
-<div class="line"><span class="lineno">  213</span>        <span class="keywordflow">switch</span> (newState)</div>
-<div class="line"><span class="lineno">  214</span>        {</div>
-<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
-<div class="line"><span class="lineno">  216</span>                <span class="comment">// Not valid to come here (initial state only)</span></div>
-<div class="line"><span class="lineno">  217</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
-<div class="line"><span class="lineno">  219</span>                <span class="comment">// Do not come here from Loading Lobby or Loading Round</span></div>
-<div class="line"><span class="lineno">  220</span>                <span class="keywordflow">if</span> ((_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY) || (_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND)) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  221</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
-<div class="line"><span class="lineno">  223</span>                <span class="comment">// only come here from Menu</span></div>
-<div class="line"><span class="lineno">  224</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  225</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
-<div class="line"><span class="lineno">  227</span>                <span class="comment">// only come here from Loading Lobby</span></div>
-<div class="line"><span class="lineno">  228</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  229</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
-<div class="line"><span class="lineno">  231</span>                <span class="comment">// only come here from Playing Lobby</span></div>
-<div class="line"><span class="lineno">  232</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  233</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
-<div class="line"><span class="lineno">  235</span>                <span class="comment">// only come here from Loading Round</span></div>
-<div class="line"><span class="lineno">  236</span>                <span class="keywordflow">if</span>(_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  237</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  238</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
-<div class="line"><span class="lineno">  239</span>                <span class="comment">// only come here from Playing Round</span></div>
-<div class="line"><span class="lineno">  240</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  241</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  242</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
-<div class="line"><span class="lineno">  243</span>                <span class="comment">// only come here from Playing Round</span></div>
-<div class="line"><span class="lineno">  244</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  245</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
-<div class="line"><span class="lineno">  247</span>                <span class="comment">// do not come here from Menu or Start</span></div>
-<div class="line"><span class="lineno">  248</span>                <span class="keywordflow">if</span> ((_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START) || (_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU)) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  249</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
-<div class="line"><span class="lineno">  251</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  252</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  253</span>        }</div>
-<div class="line"><span class="lineno">  254</span> </div>
-<div class="line"><span class="lineno">  255</span>        <span class="comment">// do the transition</span></div>
-<div class="line"><span class="lineno">  256</span>        DoExitTransition(_currentState);</div>
-<div class="line"><span class="lineno">  257</span>        DoEntryTransition(newState);</div>
-<div class="line"><span class="lineno">  258</span>        _currentState = newState;</div>
-<div class="line"><span class="lineno">  259</span>        OnGameStateChanged?.Invoke(<span class="keyword">this</span>, _currentState);</div>
-<div class="line"><span class="lineno">  260</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  467</span>    {</div>
+<div class="line"><span class="lineno">  468</span>        <span class="comment">// check if state is different</span></div>
+<div class="line"><span class="lineno">  469</span>        <span class="keywordflow">if</span> (newState == _currentState) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  470</span> </div>
+<div class="line"><span class="lineno">  471</span>        <span class="comment">// check each transition&#39;s guard clauses</span></div>
+<div class="line"><span class="lineno">  472</span>        <span class="keywordflow">switch</span> (newState)</div>
+<div class="line"><span class="lineno">  473</span>        {</div>
+<div class="line"><span class="lineno">  474</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START:</div>
+<div class="line"><span class="lineno">  475</span>                <span class="comment">// Not valid to come here (initial state only)</span></div>
+<div class="line"><span class="lineno">  476</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  477</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU:</div>
+<div class="line"><span class="lineno">  478</span>                <span class="comment">// Do not come here from Menu!</span></div>
+<div class="line"><span class="lineno">  479</span>                <span class="keywordflow">if</span> (_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  480</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  481</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY:</div>
+<div class="line"><span class="lineno">  482</span>                <span class="comment">// only come here from Menu</span></div>
+<div class="line"><span class="lineno">  483</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  484</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  485</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY:</div>
+<div class="line"><span class="lineno">  486</span>                <span class="comment">// only come here from Loading Lobby</span></div>
+<div class="line"><span class="lineno">  487</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  488</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  489</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND:</div>
+<div class="line"><span class="lineno">  490</span>                <span class="comment">// only come here from Playing Lobby or Mid Point Leaderboard</span></div>
+<div class="line"><span class="lineno">  491</span>                <span class="keywordflow">if</span> ((_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY) &amp;&amp; (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) &amp;&amp; (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  492</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  493</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND:</div>
+<div class="line"><span class="lineno">  494</span>                <span class="comment">// only come here from Loading Round</span></div>
+<div class="line"><span class="lineno">  495</span>                <span class="keywordflow">if</span>(_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  496</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  497</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  498</span>                <span class="comment">// only come here from Playing Round</span></div>
+<div class="line"><span class="lineno">  499</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  500</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  501</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD:</div>
+<div class="line"><span class="lineno">  502</span>                <span class="comment">// only come here from Playing Round</span></div>
+<div class="line"><span class="lineno">  503</span>                <span class="keywordflow">if</span> (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  504</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  505</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED:</div>
+<div class="line"><span class="lineno">  506</span>                <span class="comment">// do not come here from Start</span></div>
+<div class="line"><span class="lineno">  507</span>                <span class="keywordflow">if</span> (_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  508</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  509</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.NUM_OF_STATES:</div>
+<div class="line"><span class="lineno">  510</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  511</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  512</span>        }</div>
+<div class="line"><span class="lineno">  513</span> </div>
+<div class="line"><span class="lineno">  514</span>        <span class="comment">// do the transition</span></div>
+<div class="line"><span class="lineno">  515</span>        DoExitTransition(_currentState);</div>
+<div class="line"><span class="lineno">  516</span>        DoEntryTransition(newState);</div>
+<div class="line"><span class="lineno">  517</span>        _currentState = newState;</div>
+<div class="line"><span class="lineno">  518</span> </div>
+<div class="line"><span class="lineno">  519</span>        <span class="keywordflow">if</span>(TrueIsServer)</div>
+<div class="line"><span class="lineno">  520</span>        {</div>
+<div class="line"><span class="lineno">  521</span>            OnGameStateChanged?.Invoke(<span class="keyword">this</span>, _currentState);</div>
+<div class="line"><span class="lineno">  522</span>            <span class="comment">// inform all clients</span></div>
+<div class="line"><span class="lineno">  523</span>            Debug.Log(<span class="stringliteral">&quot;Sending state change to Clients&quot;</span>);</div>
+<div class="line"><span class="lineno">  524</span>            SetStateClientRpc(_currentState);</div>
+<div class="line"><span class="lineno">  525</span> </div>
+<div class="line"><span class="lineno">  526</span>        }</div>
+<div class="line"><span class="lineno">  527</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  528</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6ea38cab5e032b8ea25e5440c9dd4182" name="a6ea38cab5e032b8ea25e5440c9dd4182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea38cab5e032b8ea25e5440c9dd4182">&#9670;&#160;</a></span>EscapeButtonPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.EscapeButtonPressed </td>
+          <td>(</td>
+          <td class="paramtype">InputAction::CallbackContext&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  766</span>    {</div>
+<div class="line"><span class="lineno">  767</span>        <span class="keywordflow">if</span>(value.ReadValueAsButton())</div>
+<div class="line"><span class="lineno">  768</span>        {</div>
+<div class="line"><span class="lineno">  769</span>            LoadMenu();</div>
+<div class="line"><span class="lineno">  770</span>        }</div>
+<div class="line"><span class="lineno">  771</span>        </div>
+<div class="line"><span class="lineno">  772</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a019106c0b8a218c0e64ff85995c87b47" name="a019106c0b8a218c0e64ff85995c87b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a019106c0b8a218c0e64ff85995c87b47">&#9670;&#160;</a></span>GetPlayerColour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color GameManager.GetPlayerColour </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colourIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  242</span>    {</div>
+<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">return</span> colourIndex &lt; _playerColours.Count ? _playerColours[colourIndex] : Color.white;</div>
+<div class="line"><span class="lineno">  244</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af296e5e3f844fda25598f918b4c2478b" name="af296e5e3f844fda25598f918b4c2478b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af296e5e3f844fda25598f918b4c2478b">&#9670;&#160;</a></span>GetPlayerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GameManager.GetPlayerName </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>clientId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  730</span>    {</div>
+<div class="line"><span class="lineno">  731</span>        <span class="keywordflow">if</span>(_remainingNames == <span class="keyword">null</span>) <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].PlayerName;</div>
+<div class="line"><span class="lineno">  732</span>        <span class="keywordflow">if</span>(_remainingNames.Count &lt;= 0) <span class="keywordflow">return</span> <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].PlayerName;</div>
+<div class="line"><span class="lineno">  733</span> </div>
+<div class="line"><span class="lineno">  734</span>        <span class="keywordtype">int</span> index = UnityEngine.Random.Range((<span class="keywordtype">int</span>)0, (<span class="keywordtype">int</span>)_remainingNames.Count);</div>
+<div class="line"><span class="lineno">  735</span>        <span class="keywordtype">string</span> playerName = _remainingNames[index];</div>
+<div class="line"><span class="lineno">  736</span>        _remainingNames.RemoveAt(index);</div>
+<div class="line"><span class="lineno">  737</span>        <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].PlayerName = playerName;</div>
+<div class="line"><span class="lineno">  738</span>        <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].DefaultNameUsed = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  739</span>        <span class="keywordflow">return</span> playerName;</div>
+<div class="line"><span class="lineno">  740</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad688b1022ffc32968bc7b50ce0615c83" name="ad688b1022ffc32968bc7b50ce0615c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad688b1022ffc32968bc7b50ce0615c83">&#9670;&#160;</a></span>LeaderboardReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.LeaderboardReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  725</span>    {</div>
+<div class="line"><span class="lineno">  726</span>        _leaderboardReady = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  727</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -507,33 +996,340 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  263</span>    {</div>
-<div class="line"><span class="lineno">  264</span>        <a class="code hl_function" href="class_game_manager.html#aba8fcd12c3fd18eb629e6d3d332bcd3c">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY);</div>
-<div class="line"><span class="lineno">  265</span>    }    </div>
+<div class="fragment"><div class="line"><span class="lineno">  531</span>    {</div>
+<div class="line"><span class="lineno">  532</span>        <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_LOBBY);</div>
+<div class="line"><span class="lineno">  533</span>    }    </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a608a0d437e46461ab266a3fb37f33480" name="a608a0d437e46461ab266a3fb37f33480"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a608a0d437e46461ab266a3fb37f33480">&#9670;&#160;</a></span>LobbyLoaded()</h2>
+<a id="a376313d2c35e3db7daa657a8bce20720" name="a376313d2c35e3db7daa657a8bce20720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a376313d2c35e3db7daa657a8bce20720">&#9670;&#160;</a></span>LoadMenu()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void GameManager.LobbyLoaded </td>
+          <td class="memname">void GameManager.LoadMenu </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  268</span>    {</div>
-<div class="line"><span class="lineno">  269</span>        <a class="code hl_class" href="class_objective_manager.html">ObjectiveManager</a>.Instance.<a class="code hl_function" href="class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3">ResetObjectiveManager</a>();</div>
-<div class="line"><span class="lineno">  270</span>        OnSceneLoaded?.Invoke(<span class="keyword">this</span>, EventArgs.Empty);</div>
-<div class="line"><span class="lineno">  271</span>        <a class="code hl_function" href="class_game_manager.html#aba8fcd12c3fd18eb629e6d3d332bcd3c">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY);</div>
-<div class="line"><span class="lineno">  272</span>    }</div>
-<div class="ttc" id="aclass_objective_manager_html"><div class="ttname"><a href="class_objective_manager.html">ObjectiveManager</a></div><div class="ttdoc">Runs server side only.  Creates random objectives and assigns them to players.  Provides an event dri...</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:17</div></div>
-<div class="ttc" id="aclass_objective_manager_html_ab7e37a8bff711016bb30f872aef5c5c3"><div class="ttname"><a href="class_objective_manager.html#ab7e37a8bff711016bb30f872aef5c5c3">ObjectiveManager.ResetObjectiveManager</a></div><div class="ttdeci">void ResetObjectiveManager()</div><div class="ttdoc">Resets the ObjectiveManager to start a new round.</div><div class="ttdef"><b>Definition:</b> ObjectiveManager.cs:81</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  603</span>    {</div>
+<div class="line"><span class="lineno">  604</span>        <span class="keywordflow">if</span> (CurrentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU)</div>
+<div class="line"><span class="lineno">  605</span>        {</div>
+<div class="line"><span class="lineno">  606</span>            QuitApp();</div>
+<div class="line"><span class="lineno">  607</span>        }</div>
+<div class="line"><span class="lineno">  608</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  609</span>        {</div>
+<div class="line"><span class="lineno">  610</span>            <a class="code hl_class" href="class_connection_handler.html">ConnectionHandler</a>.Instance.Shutdown();</div>
+<div class="line"><span class="lineno">  611</span>            <a class="code hl_class" href="class_super_game_manager.html">SuperGameManager</a>.Instance.ReloadEntireGame();</div>
+<div class="line"><span class="lineno">  612</span>        }</div>
+<div class="line"><span class="lineno">  613</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9fe8649ea7a5c92543ffb26499e4b9ba" name="a9fe8649ea7a5c92543ffb26499e4b9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe8649ea7a5c92543ffb26499e4b9ba">&#9670;&#160;</a></span>LoadNextRound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.LoadNextRound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function allows UI to move on from Leaderboard. </p>
+<div class="fragment"><div class="line"><span class="lineno">  590</span>    {</div>
+<div class="line"><span class="lineno">  591</span>        <span class="keywordflow">if</span> (!TrueIsServer) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  592</span>        <span class="keywordflow">if</span> ((_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD) || (_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY))</div>
+<div class="line"><span class="lineno">  593</span>        {</div>
+<div class="line"><span class="lineno">  594</span>            <a class="code hl_function" href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">LoadRound</a>();</div>
+<div class="line"><span class="lineno">  595</span>        }</div>
+<div class="line"><span class="lineno">  596</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD)</div>
+<div class="line"><span class="lineno">  597</span>        {</div>
+<div class="line"><span class="lineno">  598</span>            <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU);</div>
+<div class="line"><span class="lineno">  599</span>        }</div>
+<div class="line"><span class="lineno">  600</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8eb426f807aa74b19e00764f3a7963d9" name="a8eb426f807aa74b19e00764f3a7963d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb426f807aa74b19e00764f3a7963d9">&#9670;&#160;</a></span>LoadRound() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.LoadRound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function allows <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a> to move on the round. </p>
+<div class="fragment"><div class="line"><span class="lineno">  637</span>    {</div>
+<div class="line"><span class="lineno">  638</span>        <span class="keywordflow">if</span> ((_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) &amp;&amp; (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY) &amp;&amp; (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD)) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  639</span> </div>
+<div class="line"><span class="lineno">  640</span>        <span class="keywordflow">if</span> (!TrueIsServer) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  641</span> </div>
+<div class="line"><span class="lineno">  642</span>        <span class="keywordflow">if</span> (_nextRound &gt;= _roundOrder.Count)</div>
+<div class="line"><span class="lineno">  643</span>        {</div>
+<div class="line"><span class="lineno">  644</span>            <span class="comment">// No more rounds to play, load high score page</span></div>
+<div class="line"><span class="lineno">  645</span>            <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.FINAL_LEADERBOARD);</div>
+<div class="line"><span class="lineno">  646</span>        }</div>
+<div class="line"><span class="lineno">  647</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  648</span>        {</div>
+<div class="line"><span class="lineno">  649</span>            _roundIndex = _roundOrder[_nextRound];</div>
+<div class="line"><span class="lineno">  650</span>            _nextRound++;</div>
+<div class="line"><span class="lineno">  651</span>            <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.LOADING_ROUND);</div>
+<div class="line"><span class="lineno">  652</span>        }</div>
+<div class="line"><span class="lineno">  653</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad805df7f8223e65ad1c71411b21aff87" name="ad805df7f8223e65ad1c71411b21aff87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad805df7f8223e65ad1c71411b21aff87">&#9670;&#160;</a></span>LoadRound() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator GameManager.LoadRound </td>
+          <td>(</td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>roundToLoad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>minWaitDuration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  546</span>    {</div>
+<div class="line"><span class="lineno">  547</span>        _loadingTimerComplete = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  548</span>        <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.ToggleCanvas(<a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.LoadingCanvas, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  549</span>        <span class="keywordflow">if</span>(TrueIsServer)</div>
+<div class="line"><span class="lineno">  550</span>        {</div>
+<div class="line"><span class="lineno">  551</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForEndOfFrame();</div>
+<div class="line"><span class="lineno">  552</span>            <a class="code hl_class" href="class_spawn_manager.html">SpawnManager</a>.Instance.ResetSpawnManager();</div>
+<div class="line"><span class="lineno">  553</span>            <span class="keywordflow">if</span> (roundToLoad != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  554</span>            {</div>
+<div class="line"><span class="lineno">  555</span>                _currentRound = Instantiate(roundToLoad);</div>
+<div class="line"><span class="lineno">  556</span>                _currentRound.GetComponent&lt;NetworkObject&gt;().Spawn();</div>
+<div class="line"><span class="lineno">  557</span>            }</div>
+<div class="line"><span class="lineno">  558</span>            </div>
+<div class="line"><span class="lineno">  559</span>            <a class="code hl_class" href="class_spawn_manager.html">SpawnManager</a>.Instance.ReloadSpawnPoints();</div>
+<div class="line"><span class="lineno">  560</span>        }</div>
+<div class="line"><span class="lineno">  561</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(minWaitDuration);</div>
+<div class="line"><span class="lineno">  562</span>        _loadingTimerComplete = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  563</span>    }</div>
+<div class="ttc" id="aclass_spawn_manager_html"><div class="ttname"><a href="class_spawn_manager.html">SpawnManager</a></div><div class="ttdef"><b>Definition:</b> SpawnManager.cs:12</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a30e7706ad5f0370005c909e29e8239ad" name="a30e7706ad5f0370005c909e29e8239ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e7706ad5f0370005c909e29e8239ad">&#9670;&#160;</a></span>LoadRoundButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.LoadRoundButton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Only to be called by the Editor script for <a class="el" href="class_game_manager.html" title="The Game Manager.">GameManager</a>. </p>
+<div class="fragment"><div class="line"><span class="lineno">  569</span>    {</div>
+<div class="line"><span class="lineno">  570</span>        <span class="keywordflow">if</span> (!TrueIsServer) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  571</span> </div>
+<div class="line"><span class="lineno">  572</span>        <span class="keywordflow">if</span>((_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) &amp;&amp; (_currentState != <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_LOBBY)) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  573</span>        <span class="keywordflow">if</span> ((_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) &amp;&amp; _rounds[_roundIndex].ShowLeaderBoardAfterRound &amp;&amp; (_nextRound &lt; _roundOrder.Count))</div>
+<div class="line"><span class="lineno">  574</span>        {</div>
+<div class="line"><span class="lineno">  575</span>            <span class="comment">// If not the last round, and configured, show the Leaderboard</span></div>
+<div class="line"><span class="lineno">  576</span>            <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MIDPOINT_LEADERBOARD);</div>
+<div class="line"><span class="lineno">  577</span>        }</div>
+<div class="line"><span class="lineno">  578</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  579</span>        {</div>
+<div class="line"><span class="lineno">  580</span>            <span class="comment">// Move to next round (also handles move to final leaderboard)</span></div>
+<div class="line"><span class="lineno">  581</span>            <a class="code hl_function" href="class_game_manager.html#a8eb426f807aa74b19e00764f3a7963d9">LoadRound</a>();</div>
+<div class="line"><span class="lineno">  582</span>        }</div>
+<div class="line"><span class="lineno">  583</span>        </div>
+<div class="line"><span class="lineno">  584</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a48088ede03845f96805cc695ffeca1ad" name="a48088ede03845f96805cc695ffeca1ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48088ede03845f96805cc695ffeca1ad">&#9670;&#160;</a></span>MovePlayersToSpawnPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.MovePlayersToSpawnPoints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  656</span>    {</div>
+<div class="line"><span class="lineno">  657</span>        <span class="keywordflow">if</span>(TrueIsServer)</div>
+<div class="line"><span class="lineno">  658</span>        {</div>
+<div class="line"><span class="lineno">  659</span>            <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> netPlayerData <span class="keywordflow">in</span> <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Values)</div>
+<div class="line"><span class="lineno">  660</span>            {</div>
+<div class="line"><span class="lineno">  661</span>                <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_ragdoll.html">Ragdoll</a> ragdoll <span class="keywordflow">in</span> netPlayerData.NetPlayer.gameObject.GetComponentsInChildren&lt;<a class="code hl_class" href="class_ragdoll.html">Ragdoll</a>&gt;())</div>
+<div class="line"><span class="lineno">  662</span>                {</div>
+<div class="line"><span class="lineno">  663</span>                    ragdoll.ResetLocalPosition();</div>
+<div class="line"><span class="lineno">  664</span>                }</div>
+<div class="line"><span class="lineno">  665</span>                <a class="code hl_class" href="class_spawn_manager.html">SpawnManager</a>.Instance.SpawnPlayer(netPlayerData.NetPlayer.gameObject);</div>
+<div class="line"><span class="lineno">  666</span>                </div>
+<div class="line"><span class="lineno">  667</span>            }</div>
+<div class="line"><span class="lineno">  668</span>        }</div>
+<div class="line"><span class="lineno">  669</span> </div>
+<div class="line"><span class="lineno">  670</span>        <span class="keywordflow">if</span>(LocalPlayer != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  671</span>        {</div>
+<div class="line"><span class="lineno">  672</span>            Camera.main.transform.position = FollowCam.Instance.gameObject.transform.position = LocalPlayer.gameObject.transform.position;</div>
+<div class="line"><span class="lineno">  673</span>        }</div>
+<div class="line"><span class="lineno">  674</span>    }</div>
+<div class="ttc" id="aclass_net_player_data_html"><div class="ttname"><a href="class_net_player_data.html">NetPlayerData</a></div><div class="ttdoc">Class to store objective data related to a player.</div><div class="ttdef"><b>Definition:</b> NetPlayerData.cs:12</div></div>
+<div class="ttc" id="aclass_ragdoll_html"><div class="ttname"><a href="class_ragdoll.html">Ragdoll</a></div><div class="ttdoc">Base class for all Ragdoll behaviour.</div><div class="ttdef"><b>Definition:</b> Ragdoll.cs:12</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a971ffdb10c2868d3a7878d5d7fe1521b" name="a971ffdb10c2868d3a7878d5d7fe1521b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a971ffdb10c2868d3a7878d5d7fe1521b">&#9670;&#160;</a></span>OnNetworkDespawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void GameManager.OnNetworkDespawn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>        TrueIsServer = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  115</span>        base.OnNetworkDespawn();</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae45eb6cdc6362df9f059f7df4c6ee5b5" name="ae45eb6cdc6362df9f059f7df4c6ee5b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45eb6cdc6362df9f059f7df4c6ee5b5">&#9670;&#160;</a></span>OnNetworkSpawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void GameManager.OnNetworkSpawn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>        TrueIsServer = IsServer;</div>
+<div class="line"><span class="lineno">  109</span>        base.OnNetworkSpawn();</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af49c422e296594212f24f19bbd3ae52d" name="af49c422e296594212f24f19bbd3ae52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49c422e296594212f24f19bbd3ae52d">&#9670;&#160;</a></span>QuitApp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.QuitApp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  760</span>    {</div>
+<div class="line"><span class="lineno">  761</span>        <a class="code hl_class" href="class_connection_handler.html">ConnectionHandler</a>.Instance.Shutdown();</div>
+<div class="line"><span class="lineno">  762</span>        Application.Quit();</div>
+<div class="line"><span class="lineno">  763</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2eb66f604363f3bd64f047cb8661e2e4" name="a2eb66f604363f3bd64f047cb8661e2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb66f604363f3bd64f047cb8661e2e4">&#9670;&#160;</a></span>ReAddPlayerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.ReAddPlayerName </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>clientId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  743</span>    {</div>
+<div class="line"><span class="lineno">  744</span>        <span class="keywordflow">if</span> (_remainingNames == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  745</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].DefaultNameUsed) _remainingNames.Add(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].PlayerName);</div>
+<div class="line"><span class="lineno">  746</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -574,21 +1370,40 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>    {</div>
-<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">if</span> (netPlayer == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>        <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> objectivePlayerData = <span class="keyword">new</span> <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a>(clientId, netPlayer);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryAdd(clientId, objectivePlayerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>        OnPlayerSpawned?.Invoke(<span class="keyword">this</span>, clientId);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>        <span class="comment">// send the objective - will be null for the host (joins as the scene is loading - but will be updated when the scene loads in)</span></div>
-<div class="line"><span class="lineno">   85</span>        netPlayer.<a class="code hl_function" href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">SetObjectiveStringClientRpc</a>(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].<a class="code hl_class" href="class_objective.html">Objective</a>?.ObjectiveString, <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ClientRpcParams);</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="ttc" id="aclass_objective_html"><div class="ttname"><a href="class_objective.html">Objective</a></div><div class="ttdoc">Container for storing objective information.</div><div class="ttdef"><b>Definition:</b> Objective.cs:11</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>    {</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">if</span>(TrueIsServer)</div>
+<div class="line"><span class="lineno">  139</span>        {</div>
+<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">if</span> (netPlayer == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>            <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> objectivePlayerData = <span class="keyword">new</span> <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a>(clientId, netPlayer);</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryAdd(clientId, objectivePlayerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>            SetPlayerColour(objectivePlayerData);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>            OnPlayerSpawned?.Invoke(<span class="keyword">this</span>, clientId);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>            <span class="comment">// send the objective - will be null for the host (joins as the scene is loading - but will be updated when the scene loads in)</span></div>
+<div class="line"><span class="lineno">  151</span>            netPlayer.<a class="code hl_function" href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">SetObjectiveStringClientRpc</a>(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].<a class="code hl_class" href="class_objective.html">Objective</a>?.ObjectiveString, <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ClientRpcParams);</div>
+<div class="line"><span class="lineno">  152</span>            <span class="comment">// send the player colour</span></div>
+<div class="line"><span class="lineno">  153</span>            <span class="comment">//netPlayer.SetPlayerColourClientRpc(PlayerData[clientId].ColourIndex, PlayerData[clientId].ClientRpcParams);</span></div>
+<div class="line"><span class="lineno">  154</span>            netPlayer.PlayerColorIndex.Value = <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].ColourIndex;</div>
+<div class="line"><span class="lineno">  155</span>            netPlayer.LocalPlayerName.Value = GetPlayerName(clientId);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span> (clientId == NetworkManager.Singleton.LocalClientId)</div>
+<div class="line"><span class="lineno">  158</span>            {</div>
+<div class="line"><span class="lineno">  159</span>                <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.SetPlayerNameText(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>[clientId].PlayerName);</div>
+<div class="line"><span class="lineno">  160</span>            }</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>            SetNoOfPlayersTextClientRpc(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Count);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="ttc" id="aclass_net_player_html_a430d71b5d9ecdf768ff4e28e920891cd"><div class="ttname"><a href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">NetPlayer.SetObjectiveStringClientRpc</a></div><div class="ttdeci">void SetObjectiveStringClientRpc(string newObjectiveString, ClientRpcParams clientRpcParams=default)</div><div class="ttdoc">Receive a new objective from the ObjectiveManager and set this locally on the client.</div><div class="ttdef"><b>Definition:</b> NetPlayer.cs:132</div></div>
+<div class="ttc" id="aclass_objective_html"><div class="ttname"><a href="class_objective.html">Objective</a></div><div class="ttdoc">Container for storing objective information.</div><div class="ttdef"><b>Definition:</b> Objective.cs:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -638,23 +1453,303 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if successful, False if not sucessful</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Remove(previousClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData))</div>
-<div class="line"><span class="lineno">  121</span>        {</div>
-<div class="line"><span class="lineno">  122</span>            playerData.UpdateRpcParams(currentClientId);</div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryAdd(currentClientId, playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  124</span>        }</div>
-<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  126</span>        {</div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryAdd(currentClientId, <span class="keyword">new</span> <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a>(currentClientId, netPlayer))) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  128</span>        }</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>        <span class="comment">//inform all that care so that they can also perform reconnection actions / remappings</span></div>
-<div class="line"><span class="lineno">  131</span>        OnPlayerReconnect?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> <a class="code hl_class" href="class_player_reconnect_data.html">PlayerReconnectData</a>(previousClientId, currentClientId));</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>    {</div>
+<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Remove(previousClientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData))</div>
+<div class="line"><span class="lineno">  211</span>        {</div>
+<div class="line"><span class="lineno">  212</span>            playerData.UpdateRpcParams(currentClientId);</div>
+<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryAdd(currentClientId, playerData)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  216</span>        {</div>
+<div class="line"><span class="lineno">  217</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryAdd(currentClientId, <span class="keyword">new</span> <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a>(currentClientId, netPlayer))) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  218</span>        }</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>        <span class="comment">//inform all that care so that they can also perform reconnection actions / remappings</span></div>
+<div class="line"><span class="lineno">  221</span>        OnPlayerReconnect?.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> <a class="code hl_class" href="class_player_reconnect_data.html">PlayerReconnectData</a>(previousClientId, currentClientId));</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  224</span>    }</div>
 <div class="ttc" id="aclass_player_reconnect_data_html"><div class="ttname"><a href="class_player_reconnect_data.html">PlayerReconnectData</a></div><div class="ttdoc">Class to store reconnection data to send to event subscribers.</div><div class="ttdef"><b>Definition:</b> PlayerReconnectData.cs:5</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7be7db336fe11b508ba865794d54ae5c" name="a7be7db336fe11b508ba865794d54ae5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be7db336fe11b508ba865794d54ae5c">&#9670;&#160;</a></span>RoundLoaded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.RoundLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  536</span>    {</div>
+<div class="line"><span class="lineno">  537</span>        <span class="keywordflow">if</span> (TrueIsServer)</div>
+<div class="line"><span class="lineno">  538</span>        {</div>
+<div class="line"><span class="lineno">  539</span>            <span class="comment">// Let everyone know the scene was loaded</span></div>
+<div class="line"><span class="lineno">  540</span>            OnSceneLoaded?.Invoke(<span class="keyword">this</span>, EventArgs.Empty);</div>
+<div class="line"><span class="lineno">  541</span>        }</div>
+<div class="line"><span class="lineno">  542</span>        <span class="comment">// State transition is controlled in DoStateCyclicActions to allow for min time to be accounted for also</span></div>
+<div class="line"><span class="lineno">  543</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a228e11e9c6e0b2579da6ae71c042b26d" name="a228e11e9c6e0b2579da6ae71c042b26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228e11e9c6e0b2579da6ae71c042b26d">&#9670;&#160;</a></span>RoundTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator GameManager.RoundTimer </td>
+          <td>(</td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>durationInSeconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  711</span>    {</div>
+<div class="line"><span class="lineno">  712</span>        <a class="code hl_class" href="class_game_u_i_manager.html">GameUIManager</a>.Instance.<a class="code hl_function" href="class_game_u_i_manager.html#a5977f1967dfa75c27b3fd2bd54de9f55">UpdateTimerUI</a>(durationInSeconds);</div>
+<div class="line"><span class="lineno">  713</span>        _roundTimerRunning = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  714</span>        <span class="keywordflow">while</span>(durationInSeconds &gt; 0)</div>
+<div class="line"><span class="lineno">  715</span>        {</div>
+<div class="line"><span class="lineno">  716</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(1);</div>
+<div class="line"><span class="lineno">  717</span>            durationInSeconds--;</div>
+<div class="line"><span class="lineno">  718</span>            <a class="code hl_class" href="class_game_u_i_manager.html">GameUIManager</a>.Instance.<a class="code hl_function" href="class_game_u_i_manager.html#a5977f1967dfa75c27b3fd2bd54de9f55">UpdateTimerUI</a>(durationInSeconds);</div>
+<div class="line"><span class="lineno">  719</span>        }</div>
+<div class="line"><span class="lineno">  720</span>        _roundTimerRunning = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  721</span>        _roundTimerCoroutine = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  722</span>    }</div>
+<div class="ttc" id="aclass_game_u_i_manager_html"><div class="ttname"><a href="class_game_u_i_manager.html">GameUIManager</a></div><div class="ttdef"><b>Definition:</b> GameUIManager.cs:8</div></div>
+<div class="ttc" id="aclass_game_u_i_manager_html_a5977f1967dfa75c27b3fd2bd54de9f55"><div class="ttname"><a href="class_game_u_i_manager.html#a5977f1967dfa75c27b3fd2bd54de9f55">GameUIManager.UpdateTimerUI</a></div><div class="ttdeci">void UpdateTimerUI(uint seconds)</div><div class="ttdoc">Updates the timer UI text to display the remaining time for this round.</div><div class="ttdef"><b>Definition:</b> GameUIManager.cs:47</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acba8e349f48fd97fd7dfd27d8644a21f" name="acba8e349f48fd97fd7dfd27d8644a21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba8e349f48fd97fd7dfd27d8644a21f">&#9670;&#160;</a></span>RoundWon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.RoundWon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  755</span>    {</div>
+<div class="line"><span class="lineno">  756</span>        <span class="keywordflow">if</span>(_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.PLAYING_ROUND) _roundWon = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  757</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7dc1a3f649932f2cc16a034c144f9913" name="a7dc1a3f649932f2cc16a034c144f9913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc1a3f649932f2cc16a034c144f9913">&#9670;&#160;</a></span>SendPlayerObjectiveStrings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.SendPlayerObjectiveStrings </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  678</span>    {</div>
+<div class="line"><span class="lineno">  679</span>        <span class="keywordflow">if</span> (TrueIsServer)</div>
+<div class="line"><span class="lineno">  680</span>        {</div>
+<div class="line"><span class="lineno">  681</span>            <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> netPlayerData <span class="keywordflow">in</span> <a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Values)</div>
+<div class="line"><span class="lineno">  682</span>            {</div>
+<div class="line"><span class="lineno">  683</span>                <span class="comment">//setup clientRpc params to only send to specific client</span></div>
+<div class="line"><span class="lineno">  684</span>                netPlayerData.NetPlayer?.<a class="code hl_function" href="class_net_player.html#a430d71b5d9ecdf768ff4e28e920891cd">SetObjectiveStringClientRpc</a>(netPlayerData.Objective?.ObjectiveString, netPlayerData.ClientRpcParams);</div>
+<div class="line"><span class="lineno">  685</span>            }</div>
+<div class="line"><span class="lineno">  686</span>        }</div>
+<div class="line"><span class="lineno">  687</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7b5ea2e4d0fa3a91109350c974d563df" name="a7b5ea2e4d0fa3a91109350c974d563df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5ea2e4d0fa3a91109350c974d563df">&#9670;&#160;</a></span>SetNoOfPlayersTextClientRpc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.SetNoOfPlayersTextClientRpc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>noOfPlayers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ClientRpcParams&#160;</td>
+          <td class="paramname"><em>clientRpcParams</em> = <code>default</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  750</span>    {</div>
+<div class="line"><span class="lineno">  751</span>        <a class="code hl_class" href="class_menu_u_i_manager.html">MenuUIManager</a>.Instance.SetNoOfPlayersText(noOfPlayers.ToString());</div>
+<div class="line"><span class="lineno">  752</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a173ac1816888ec3a6cf5c9b43059c24a" name="a173ac1816888ec3a6cf5c9b43059c24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173ac1816888ec3a6cf5c9b43059c24a">&#9670;&#160;</a></span>SetPlayerColour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.SetPlayerColour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_net_player_data.html">NetPlayerData</a>&#160;</td>
+          <td class="paramname"><em>playerData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  227</span>    {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordflow">if</span> (_playerColourIndexes.Count &lt;= 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">if</span> (playerData == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  230</span>        playerData.ColourIndex = _playerColourIndexes[0];</div>
+<div class="line"><span class="lineno">  231</span>        _playerColourIndexes.RemoveAt(0);</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>        <span class="comment">// Old method</span></div>
+<div class="line"><span class="lineno">  234</span>        <span class="comment">//if (_playerColourIndex &gt;= _playerColours.Count) return;</span></div>
+<div class="line"><span class="lineno">  235</span>        <span class="comment">//if (playerData == null) return;</span></div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>        <span class="comment">//playerData.ColourIndex = _playerColourIndex;</span></div>
+<div class="line"><span class="lineno">  238</span>        <span class="comment">//_playerColourIndex++;</span></div>
+<div class="line"><span class="lineno">  239</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="accc35f36420ae6020869cfd97fda99ff" name="accc35f36420ae6020869cfd97fda99ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc35f36420ae6020869cfd97fda99ff">&#9670;&#160;</a></span>SetStateClientRpc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.SetStateClientRpc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GameManager::GAMESTATE</a>&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ClientRpcParams&#160;</td>
+          <td class="paramname"><em>clientRpcParams</em> = <code>default</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  691</span>    {</div>
+<div class="line"><span class="lineno">  692</span>        Debug.Log(<span class="stringliteral">&quot;Received request to change state to: &quot;</span> + state.ToString());</div>
+<div class="line"><span class="lineno">  693</span>        <span class="keywordflow">if</span>(!TrueIsServer)</div>
+<div class="line"><span class="lineno">  694</span>        {</div>
+<div class="line"><span class="lineno">  695</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(state))</div>
+<div class="line"><span class="lineno">  696</span>            {</div>
+<div class="line"><span class="lineno">  697</span>                <span class="comment">// Synchronization error between Client and Server GameManager - disconnect client</span></div>
+<div class="line"><span class="lineno">  698</span>                <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.DISCONNECTED);</div>
+<div class="line"><span class="lineno">  699</span>                <span class="comment">// TODO Error screen in the dicconnected state</span></div>
+<div class="line"><span class="lineno">  700</span>                Debug.Log(<span class="stringliteral">&quot;ERROR: Game Managers are not synchronized&quot;</span>);</div>
+<div class="line"><span class="lineno">  701</span>            }</div>
+<div class="line"><span class="lineno">  702</span>        }</div>
+<div class="line"><span class="lineno">  703</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  704</span>        {</div>
+<div class="line"><span class="lineno">  705</span>            Debug.Log(<span class="stringliteral">&quot;Ignored state change as we are the server&quot;</span>);</div>
+<div class="line"><span class="lineno">  706</span>        }</div>
+<div class="line"><span class="lineno">  707</span>        </div>
+<div class="line"><span class="lineno">  708</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aca441b40c69cd898e49652f2a423243d" name="aca441b40c69cd898e49652f2a423243d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca441b40c69cd898e49652f2a423243d">&#9670;&#160;</a></span>StartGameManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.StartGameManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span>(_currentState == <a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.START) <a class="code hl_function" href="class_game_manager.html#a295e9bc8ea994669f347160a7807d26e">DoStateTransition</a>(<a class="code hl_enumeration" href="class_game_manager.html#ab27ff4979f87ebcdce6fb311425d0e9c">GAMESTATE</a>.MENU);</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -684,15 +1779,54 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
-<div class="line"><span class="lineno">   99</span>        <span class="comment">//inform all that care so that they can also perform tidy up actions</span></div>
-<div class="line"><span class="lineno">  100</span>        OnPlayerDisconnect?.Invoke(<span class="keyword">this</span>, clientId);</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Remove(clientId)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>    {</div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">//inform all that care so that they can also perform tidy up actions</span></div>
+<div class="line"><span class="lineno">  180</span>        OnPlayerDisconnect?.Invoke(<span class="keyword">this</span>, clientId);</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.TryGetValue(clientId, out <a class="code hl_class" href="class_net_player_data.html">NetPlayerData</a> playerData))</div>
+<div class="line"><span class="lineno">  183</span>        {</div>
+<div class="line"><span class="lineno">  184</span>            <span class="comment">// Add the colour index back to the stack</span></div>
+<div class="line"><span class="lineno">  185</span>            _playerColourIndexes.Add(playerData.ColourIndex);</div>
+<div class="line"><span class="lineno">  186</span>            <span class="comment">// If we have a unique name stored, restore this to the list</span></div>
+<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">if</span> (!playerData.DefaultNameUsed) ReAddPlayerName(clientId);</div>
+<div class="line"><span class="lineno">  188</span>        }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Remove(clientId)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>        SetNoOfPlayersTextClientRpc(<a class="code hl_variable" href="class_game_manager.html#a16139daa0d77269425514837fea78fa8">PlayerData</a>.Count);</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a44c79b205dec16bfe650e21259860c5b" name="a44c79b205dec16bfe650e21259860c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c79b205dec16bfe650e21259860c5b">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_function" href="class_game_manager.html#a15c2000b78542d31b75b5bf5809d725b">DoStateCyclicActions</a>();</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="ttc" id="aclass_game_manager_html_a15c2000b78542d31b75b5bf5809d725b"><div class="ttname"><a href="class_game_manager.html#a15c2000b78542d31b75b5bf5809d725b">GameManager.DoStateCyclicActions</a></div><div class="ttdeci">void DoStateCyclicActions()</div><div class="ttdoc">Perform the state's cyclic actions  Called every Update()</div><div class="ttdef"><b>Definition:</b> GameManager.cs:250</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -716,7 +1850,7 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keyword">get</span> =&gt; _currentState; }</div>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{ <span class="keyword">get</span> =&gt; _currentState; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -739,13 +1873,59 @@ static <a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><t
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   53</span>        {</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">if</span>(_instance == <span class="keyword">null</span>) _instance = FindObjectOfType&lt;GameManager&gt;();</div>
-<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">return</span> _instance;</div>
-<div class="line"><span class="lineno">   56</span>        }</div>
-<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span>(_instance == <span class="keyword">null</span>) _instance = FindObjectOfType&lt;GameManager&gt;();</div>
+<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">return</span> _instance;</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a747670cf4d58ca3b92414c048ebb44ef" name="a747670cf4d58ca3b92414c048ebb44ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a747670cf4d58ca3b92414c048ebb44ef">&#9670;&#160;</a></span>NetworkFixedDeltaTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameManager.NetworkFixedDeltaTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{ <span class="keyword">get</span> =&gt; _networkFixedDeltaTime; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8b2b206995618f4ef98d4a2d633cd82b" name="a8b2b206995618f4ef98d4a2d633cd82b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b2b206995618f4ef98d4a2d633cd82b">&#9670;&#160;</a></span>NetworkFixedDeltaTimeItterations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint GameManager.NetworkFixedDeltaTimeItterations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{ <span class="keyword">get</span> =&gt; _networkFixedDeltaTimeItterations; }</div>
 </div><!-- fragment -->
 </div>
 </div>

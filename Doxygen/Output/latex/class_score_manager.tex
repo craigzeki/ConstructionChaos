@@ -1,0 +1,250 @@
+\hypertarget{class_score_manager}{}\doxysection{Score\+Manager Class Reference}
+\label{class_score_manager}\index{ScoreManager@{ScoreManager}}
+
+
+Inheritance diagram for Score\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_score_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Score\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_score_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_score_manager_a23c0ffab8fecc1dec75df5558b3148d4}{Add\+Player\+Score}} (\mbox{\hyperlink{class_net_player_data}{Net\+Player\+Data}} player\+Data, uint score)
+\item 
+void \mbox{\hyperlink{class_score_manager_a6c070d4c14c6c0505f1f09207bfa6375}{Decrease\+Streak\+Client\+Rpc}} (uint objective\+Difficulty, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_score_manager_aa2772be2223223bd35a5ab963132c5ab}{Decrease\+Streak}} (uint objective\+Difficulty)
+\item 
+void \mbox{\hyperlink{class_score_manager_a1c181c3a0d66ce6e117489a1ed00e607}{Increment\+Game\+Scores}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_score_manager}{Score\+Manager}} \mbox{\hyperlink{class_score_manager_a91a49c836847ce4842166bbc3473a092}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_score_manager_a2d8e7dd8928c4fa7feb1a020971b69ac}{Start}} ()
+\item 
+float \mbox{\hyperlink{class_score_manager_a3b862b8c92c49c7df764694a49a15c2a}{Calculate\+Current\+Multiplier}} ()
+\item 
+void \mbox{\hyperlink{class_score_manager_ae67cc202a1bc85cfb8d8533ce033ea8c}{Increase\+Streak\+Client\+Rpc}} (uint objective\+Difficulty, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_score_manager_a493d98d82306dec1cebf2299babd1a49}{Increase\+Streak}} (uint objective\+Difficulty)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_score_manager_aeefab3340edfcbb7f9a7b0c5e23c626c}\label{class_score_manager_aeefab3340edfcbb7f9a7b0c5e23c626c}} 
+List$<$ float $>$ {\bfseries \+\_\+streak\+Multipliers}
+\item 
+\mbox{\Hypertarget{class_score_manager_ad65e497603e8a950cbf99ff8a264a3eb}\label{class_score_manager_ad65e497603e8a950cbf99ff8a264a3eb}} 
+List$<$ float $>$ {\bfseries \+\_\+streak\+Percentages}
+\item 
+\mbox{\Hypertarget{class_score_manager_a12838367cc1fe5f6e8b54a389e1bf6a6}\label{class_score_manager_a12838367cc1fe5f6e8b54a389e1bf6a6}} 
+List$<$ Color $>$ {\bfseries \+\_\+streak\+Colours}
+\item 
+\mbox{\Hypertarget{class_score_manager_a62174c8d5b68642874a95abd6b29d1da}\label{class_score_manager_a62174c8d5b68642874a95abd6b29d1da}} 
+float {\bfseries \+\_\+current\+Multiplier} = 1f
+\item 
+\mbox{\Hypertarget{class_score_manager_acfccac8c08a06ef01be2574f9db715b4}\label{class_score_manager_acfccac8c08a06ef01be2574f9db715b4}} 
+float {\bfseries \+\_\+current\+Percentage} = 0f
+\item 
+\mbox{\Hypertarget{class_score_manager_a58a1f6af89d72679af6d9e39cf804cf9}\label{class_score_manager_a58a1f6af89d72679af6d9e39cf804cf9}} 
+float {\bfseries \+\_\+streak\+Increase\+Animation\+Time} = 0.\+1f
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_score_manager_a7392652708b151d8a00133b530d07ddc}\label{class_score_manager_a7392652708b151d8a00133b530d07ddc}} 
+static \mbox{\hyperlink{class_score_manager}{Score\+Manager}} {\bfseries \+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_score_manager_a23c0ffab8fecc1dec75df5558b3148d4}\label{class_score_manager_a23c0ffab8fecc1dec75df5558b3148d4}} 
+\index{ScoreManager@{ScoreManager}!AddPlayerScore@{AddPlayerScore}}
+\index{AddPlayerScore@{AddPlayerScore}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{AddPlayerScore()}{AddPlayerScore()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Add\+Player\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_net_player_data}{Net\+Player\+Data}}}]{player\+Data,  }\item[{uint}]{score }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ uint\ objectiveDifficulty\ =\ score;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_currentMultiplier\ =\ CalculateCurrentMultiplier();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ score\ *=\ (uint)\_currentMultiplier;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ playerData.RoundScore\ +=\ score;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ IncreaseStreakClientRpc(objectiveDifficulty,\ playerData.ClientRpcParams);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Objective\ Difficulty:\ "{}}\ +\ objectiveDifficulty);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Current\ Multiplier:\ "{}}\ +\ \_currentMultiplier);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Obj\ Points:\ "{}}\ +\ score);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Total\ Points:\ "{}}\ +\ playerData.RoundScore);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_a3b862b8c92c49c7df764694a49a15c2a}\label{class_score_manager_a3b862b8c92c49c7df764694a49a15c2a}} 
+\index{ScoreManager@{ScoreManager}!CalculateCurrentMultiplier@{CalculateCurrentMultiplier}}
+\index{CalculateCurrentMultiplier@{CalculateCurrentMultiplier}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{CalculateCurrentMultiplier()}{CalculateCurrentMultiplier()}}
+{\footnotesize\ttfamily float Score\+Manager.\+Calculate\+Current\+Multiplier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalPercentage\ =\ 1f;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \_streakPercentages.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ totalPercentage\ -\/=\ \_streakPercentages[i];}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentPercentage\ >=\ totalPercentage)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ current\ multiplier\ is\ the\ first\ one,\ return\ the\ current\ value\ plus\ 1}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ topVal\ =\ i\ ==\ \_streakPercentages.Count\ -\/\ 1\ ?\ \_streakMultipliers[i]\ +\ 1f\ :\ \_streakMultipliers[i\ +\ 1];}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ float\ value\ between\ \_multipliers[i]\ and\ \_multipliers[i\ +\ 1]\ based\ on\ the\ \_currentPercentage}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ multiplierValue\ =\ Mathf.Lerp(\_streakMultipliers[i],\ topVal,\ (\_currentPercentage\ -\/\ totalPercentage)\ /\ \_streakPercentages[i])\ -\/\ 1f;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ multiplierValue\ =\ Mathf.Round(multiplierValue\ *\ 10f)\ /\ 10f;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Mathf.Max(multiplierValue,\ 1f);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1f;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_aa2772be2223223bd35a5ab963132c5ab}\label{class_score_manager_aa2772be2223223bd35a5ab963132c5ab}} 
+\index{ScoreManager@{ScoreManager}!DecreaseStreak@{DecreaseStreak}}
+\index{DecreaseStreak@{DecreaseStreak}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{DecreaseStreak()}{DecreaseStreak()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Decrease\+Streak (\begin{DoxyParamCaption}\item[{uint}]{objective\+Difficulty }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TIME\ =\ DISTANCE\ /\ SPEED}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ animationTime\ =\ \_currentPercentage\ /\ (objectiveDifficulty\ /\ 3200f);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Decrease\ Streak:\ "{}}\ +\ \_currentPercentage\ +\ \textcolor{stringliteral}{"{}\ in\ "{}}\ +\ animationTime\ +\ \textcolor{stringliteral}{"{}\ seconds"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wait\ until\ all\ other\ LeanTweens\ have\ finished}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ LeanTween.value(gameObject,\ \_currentPercentage,\ 0f,\ animationTime).setOnUpdate((\textcolor{keywordtype}{float}\ value)\ =>}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \_currentPercentage\ =\ value;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \_currentMultiplier\ =\ CalculateCurrentMultiplier();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.UpdateStreakBar(\_currentMultiplier,\ \_currentPercentage);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_a6c070d4c14c6c0505f1f09207bfa6375}\label{class_score_manager_a6c070d4c14c6c0505f1f09207bfa6375}} 
+\index{ScoreManager@{ScoreManager}!DecreaseStreakClientRpc@{DecreaseStreakClientRpc}}
+\index{DecreaseStreakClientRpc@{DecreaseStreakClientRpc}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{DecreaseStreakClientRpc()}{DecreaseStreakClientRpc()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Decrease\+Streak\+Client\+Rpc (\begin{DoxyParamCaption}\item[{uint}]{objective\+Difficulty,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ DecreaseStreak(objectiveDifficulty);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_a493d98d82306dec1cebf2299babd1a49}\label{class_score_manager_a493d98d82306dec1cebf2299babd1a49}} 
+\index{ScoreManager@{ScoreManager}!IncreaseStreak@{IncreaseStreak}}
+\index{IncreaseStreak@{IncreaseStreak}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{IncreaseStreak()}{IncreaseStreak()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Increase\+Streak (\begin{DoxyParamCaption}\item[{uint}]{objective\+Difficulty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Increase\ the\ streak\ bar\ based\ on\ the\ difficulty\ of\ the\ objective}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \_currentPercentage\ =\ Mathf.Clamp01((objectiveDifficulty\ /\ 200f)\ +\ \_currentPercentage);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \_currentMultiplier\ =\ CalculateCurrentMultiplier();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ LeanTween.cancel(gameObject);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.UpdateStreakBar(\_currentMultiplier,\ \_currentPercentage);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Increase\ Streak:\ "{}}\ +\ \_currentPercentage);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_ae67cc202a1bc85cfb8d8533ce033ea8c}\label{class_score_manager_ae67cc202a1bc85cfb8d8533ce033ea8c}} 
+\index{ScoreManager@{ScoreManager}!IncreaseStreakClientRpc@{IncreaseStreakClientRpc}}
+\index{IncreaseStreakClientRpc@{IncreaseStreakClientRpc}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{IncreaseStreakClientRpc()}{IncreaseStreakClientRpc()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Increase\+Streak\+Client\+Rpc (\begin{DoxyParamCaption}\item[{uint}]{objective\+Difficulty,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ IncreaseStreak(objectiveDifficulty);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_a1c181c3a0d66ce6e117489a1ed00e607}\label{class_score_manager_a1c181c3a0d66ce6e117489a1ed00e607}} 
+\index{ScoreManager@{ScoreManager}!IncrementGameScores@{IncrementGameScores}}
+\index{IncrementGameScores@{IncrementGameScores}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{IncrementGameScores()}{IncrementGameScores()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Increment\+Game\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Values)}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.GameScore\ +=\ playerData.RoundScore;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_score_manager_a2d8e7dd8928c4fa7feb1a020971b69ac}\label{class_score_manager_a2d8e7dd8928c4fa7feb1a020971b69ac}} 
+\index{ScoreManager@{ScoreManager}!Start@{Start}}
+\index{Start@{Start}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Score\+Manager.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance?.SetupStreakBar(\_streakPercentages,\ \_streakColours);}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_score_manager_a91a49c836847ce4842166bbc3473a092}\label{class_score_manager_a91a49c836847ce4842166bbc3473a092}} 
+\index{ScoreManager@{ScoreManager}!Instance@{Instance}}
+\index{Instance@{Instance}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_score_manager}{Score\+Manager}} Score\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<ScoreManager>();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "RagTest", "index.html", [
+  [ "Construction Chaos", "index.html", [
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -45,7 +45,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"classes.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -7,22 +7,20 @@ The Game Manager.
 
 
 
-Inheritance diagram for Game\+Manager\+:
-\nopagebreak
+Inheritance diagram for Game\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_game_manager__inherit__graph}
+\includegraphics[width=174pt]{class_game_manager__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Game\+Manager\+:
-\nopagebreak
+Collaboration diagram for Game\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=226pt]{class_game_manager__coll__graph}
+\includegraphics[width=279pt]{class_game_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -46,6 +44,12 @@ enum \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAME
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+override void \mbox{\hyperlink{class_game_manager_ae45eb6cdc6362df9f059f7df4c6ee5b5}{On\+Network\+Spawn}} ()
+\item 
+override void \mbox{\hyperlink{class_game_manager_a971ffdb10c2868d3a7878d5d7fe1521b}{On\+Network\+Despawn}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_aca441b40c69cd898e49652f2a423243d}{Start\+Game\+Manager}} ()
+\item 
 bool \mbox{\hyperlink{class_game_manager_a666bee91a62b4662a8ef635f43a9c06b}{Register\+New\+Player}} (ulong client\+Id, \mbox{\hyperlink{class_net_player}{Net\+Player}} net\+Player)
 \begin{DoxyCompactList}\small\item\em Called once a player has spawned.~\newline
  Adds the player to the Player\+Data dictionary.~\newline
@@ -60,22 +64,54 @@ bool \mbox{\hyperlink{class_game_manager_a9da9fba4b3db9b478e8977c9c08d79b8}{Re\+
  If the player\textquotesingle{}s old client\+ID is recognized, it will be replaced with the new one.~\newline
  The player\textquotesingle{}s previous \mbox{\hyperlink{class_objective}{Objective}} will be retained, if not a new one will be created ~\newline
  \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{class_game_manager_a019106c0b8a218c0e64ff85995c87b47}{Get\+Player\+Colour}} (int colour\+Index)
+\item 
 void \mbox{\hyperlink{class_game_manager_a27e3cf5daa708abfb245b9b5aa8eea97}{Load\+Lobby}} ()
 \item 
-void \mbox{\hyperlink{class_game_manager_a608a0d437e46461ab266a3fb37f33480}{Lobby\+Loaded}} ()
+void \mbox{\hyperlink{class_game_manager_a30e7706ad5f0370005c909e29e8239ad}{Load\+Round\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Only to be called by the Editor script for \mbox{\hyperlink{class_game_manager}{Game\+Manager}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_manager_a9fe8649ea7a5c92543ffb26499e4b9ba}{Load\+Next\+Round}} ()
+\begin{DoxyCompactList}\small\item\em Function allows UI to move on from Leaderboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_manager_a376313d2c35e3db7daa657a8bce20720}{Load\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a817bdaadb02d5457647eca159a4f1c7e}{Client\+Disconnected}} (string reason)
+\item 
+void \mbox{\hyperlink{class_game_manager_ae41cb5c1140548ac62157c1d0e34826b}{Client\+Connected}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_ad688b1022ffc32968bc7b50ce0615c83}{Leaderboard\+Ready}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_acba8e349f48fd97fd7dfd27d8644a21f}{Round\+Won}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_af49c422e296594212f24f19bbd3ae52d}{Quit\+App}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_game_manager_a16139daa0d77269425514837fea78fa8}\label{class_game_manager_a16139daa0d77269425514837fea78fa8}} 
 Dictionary$<$ ulong, \mbox{\hyperlink{class_net_player_data}{Net\+Player\+Data}} $>$ {\bfseries Player\+Data} = new Dictionary$<$ulong, \mbox{\hyperlink{class_net_player_data}{Net\+Player\+Data}}$>$()
-\begin{DoxyCompactList}\small\item\em Dictionary which stores the connected players and their associated Objective\+Player\+Data, which includes their current objective. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Dictionary which stores the connected players and their associated Objective\+Player\+Data, which includes their current objective. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_manager_a4ccfb9a6c497e24651c13b1083b29d80}\label{class_game_manager_a4ccfb9a6c497e24651c13b1083b29d80}} 
+\mbox{\hyperlink{class_net_player}{Net\+Player}} {\bfseries Local\+Player}
+\item 
+\mbox{\Hypertarget{class_game_manager_a18d9eb9753c6f636653cf0f44a5f6acc}\label{class_game_manager_a18d9eb9753c6f636653cf0f44a5f6acc}} 
+bool {\bfseries True\+Is\+Server} = false
+\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_aae0e713d1f4b05e65dddd1e2d3f549f1}\label{class_game_manager_aae0e713d1f4b05e65dddd1e2d3f549f1}} 
+Layer\+Mask {\bfseries Ground\+Layers}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_game_manager_a17a518e4821314a308bd2994324b734a}\label{class_game_manager_a17a518e4821314a308bd2994324b734a}} 
+List$<$ Color $>$ {\bfseries Player\+Colours}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 static \mbox{\hyperlink{class_game_manager}{Game\+Manager}} \mbox{\hyperlink{class_game_manager_ad3e717f4fb0f378b969f4457de81f23e}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}} \mbox{\hyperlink{class_game_manager_a7d0f2d1db5315d47d9ebf70081ebf8da}{Current\+State}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_game_manager_a747670cf4d58ca3b92414c048ebb44ef}{Network\+Fixed\+Delta\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+uint \mbox{\hyperlink{class_game_manager_a8b2b206995618f4ef98d4a2d633cd82b}{Network\+Fixed\+Delta\+Time\+Itterations}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Events}
 \begin{DoxyCompactItemize}
@@ -100,23 +136,118 @@ Event\+Handler {\bfseries On\+Scene\+Loaded}
 \item 
 void \mbox{\hyperlink{class_game_manager_a2959177ee51ac31badbf8b1bc8f7f637}{Awake}} ()
 \item 
+void \mbox{\hyperlink{class_game_manager_a44c79b205dec16bfe650e21259860c5b}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a173ac1816888ec3a6cf5c9b43059c24a}{Set\+Player\+Colour}} (\mbox{\hyperlink{class_net_player_data}{Net\+Player\+Data}} player\+Data)
+\item 
+void \mbox{\hyperlink{class_game_manager_a15c2000b78542d31b75b5bf5809d725b}{Do\+State\+Cyclic\+Actions}} ()
+\begin{DoxyCompactList}\small\item\em Perform the state\textquotesingle{}s cyclic actions~\newline
+ Called every Update() \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_manager_a27970da85972232bc54a58fe6d329897}{Do\+Entry\+Transition}} (\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}} state)
 \item 
 void \mbox{\hyperlink{class_game_manager_a2800c785fd8e1a8b1aa449227a0ccd31}{Do\+Exit\+Transition}} (\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}} state)
 \item 
-void \mbox{\hyperlink{class_game_manager_aba8fcd12c3fd18eb629e6d3d332bcd3c}{Do\+State\+Transition}} (\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}} new\+State)
-\begin{DoxyCompactList}\small\item\em Performs a state machine transition if transition is allowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{Do\+State\+Transition}} (\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}} new\+State)
+\begin{DoxyCompactList}\small\item\em Performs a state machine transition if transition is allowed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_manager_a7be7db336fe11b508ba865794d54ae5c}{Round\+Loaded}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_game_manager_ad805df7f8223e65ad1c71411b21aff87}{Load\+Round}} (Game\+Object round\+To\+Load, float min\+Wait\+Duration)
+\item 
+void \mbox{\hyperlink{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}{Load\+Round}} ()
+\begin{DoxyCompactList}\small\item\em Function allows \mbox{\hyperlink{class_game_manager}{Game\+Manager}} to move on the round. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_manager_a48088ede03845f96805cc695ffeca1ad}{Move\+Players\+To\+Spawn\+Points}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a7dc1a3f649932f2cc16a034c144f9913}{Send\+Player\+Objective\+Strings}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_accc35f36420ae6020869cfd97fda99ff}{Set\+State\+Client\+Rpc}} (\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{Game\+Manager.\+GAMESTATE}} state, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+IEnumerator \mbox{\hyperlink{class_game_manager_a228e11e9c6e0b2579da6ae71c042b26d}{Round\+Timer}} (uint duration\+In\+Seconds)
+\item 
+string \mbox{\hyperlink{class_game_manager_af296e5e3f844fda25598f918b4c2478b}{Get\+Player\+Name}} (ulong client\+Id)
+\item 
+void \mbox{\hyperlink{class_game_manager_a2eb66f604363f3bd64f047cb8661e2e4}{Re\+Add\+Player\+Name}} (ulong client\+Id)
+\item 
+void \mbox{\hyperlink{class_game_manager_a7b5ea2e4d0fa3a91109350c974d563df}{Set\+No\+Of\+Players\+Text\+Client\+Rpc}} (int no\+Of\+Players, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_game_manager_a6ea38cab5e032b8ea25e5440c9dd4182}{Escape\+Button\+Pressed}} (Input\+Action.\+Callback\+Context value)
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_game_manager_a4a1d7daf6461c279b11d1c92ca743e63}\label{class_game_manager_a4a1d7daf6461c279b11d1c92ca743e63}} 
+float {\bfseries \+\_\+network\+Fixed\+Delta\+Time} = 0.\+02f
+\item 
+\mbox{\Hypertarget{class_game_manager_adf0ac34048f81be0335e540109e4b23e}\label{class_game_manager_adf0ac34048f81be0335e540109e4b23e}} 
+uint {\bfseries \+\_\+network\+Fixed\+Delta\+Time\+Itterations}
+\item 
+\mbox{\Hypertarget{class_game_manager_afd1f3c959f6d4b09a77c74826a407fb6}\label{class_game_manager_afd1f3c959f6d4b09a77c74826a407fb6}} 
+float {\bfseries \+\_\+min\+Load\+Screen\+Time} = 2f
+\item 
+\mbox{\Hypertarget{class_game_manager_a9c2fd43a096069cd5aa5488173cd0c98}\label{class_game_manager_a9c2fd43a096069cd5aa5488173cd0c98}} 
+Layer\+Mask {\bfseries \+\_\+ground\+Layers} = new Layer\+Mask()
+\item 
+\mbox{\Hypertarget{class_game_manager_a66f8afc00fd4d9cb12cdea9b3babe1bb}\label{class_game_manager_a66f8afc00fd4d9cb12cdea9b3babe1bb}} 
+Game\+Object {\bfseries \+\_\+lobby\+Prefab}
+\item 
+\mbox{\Hypertarget{class_game_manager_af5cd9264c1f6b27bb105365229735511}\label{class_game_manager_af5cd9264c1f6b27bb105365229735511}} 
+List$<$ \mbox{\hyperlink{class_round}{Round}} $>$ {\bfseries \+\_\+rounds} = new List$<$\mbox{\hyperlink{class_round}{Round}}$>$()
+\item 
+\mbox{\Hypertarget{class_game_manager_a642d1e33d7f0dd7da96e964ff2702609}\label{class_game_manager_a642d1e33d7f0dd7da96e964ff2702609}} 
+List$<$ Color $>$ {\bfseries \+\_\+player\+Colours} = new List$<$Color$>$()
+\item 
+\mbox{\Hypertarget{class_game_manager_a6a68f1ab9d49aa70c271fca695135a69}\label{class_game_manager_a6a68f1ab9d49aa70c271fca695135a69}} 
+List$<$ int $>$ {\bfseries \+\_\+player\+Colour\+Indexes} = new List$<$int$>$()
+\item 
+\mbox{\Hypertarget{class_game_manager_ab215a754518958eec2536b9b604eda50}\label{class_game_manager_ab215a754518958eec2536b9b604eda50}} 
+List$<$ String $>$ {\bfseries \+\_\+player\+Names} = new List$<$string$>$()
+\item 
+\mbox{\Hypertarget{class_game_manager_a4b34f7998c2eb305959e9abf61051cb7}\label{class_game_manager_a4b34f7998c2eb305959e9abf61051cb7}} 
+List$<$ String $>$ {\bfseries \+\_\+remaining\+Names} = new List$<$string$>$()
+\item 
 \mbox{\Hypertarget{class_game_manager_a0d4bdb0db53e75e129fd37b74722792e}\label{class_game_manager_a0d4bdb0db53e75e129fd37b74722792e}} 
 \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}} {\bfseries \+\_\+current\+State} = GAMESTATE.\+START
+\item 
+\mbox{\Hypertarget{class_game_manager_a0e602f36775a9e3758e5653712577bef}\label{class_game_manager_a0e602f36775a9e3758e5653712577bef}} 
+bool {\bfseries \+\_\+loading\+Timer\+Complete} = false
+\item 
+\mbox{\Hypertarget{class_game_manager_aa1a9c1d7d49cd868ddb5ab2858be74ba}\label{class_game_manager_aa1a9c1d7d49cd868ddb5ab2858be74ba}} 
+List$<$ int $>$ {\bfseries \+\_\+round\+Order} = new List$<$int$>$()
+\item 
+\mbox{\Hypertarget{class_game_manager_a08e25447fd9bb0bf6df6275fcfe10011}\label{class_game_manager_a08e25447fd9bb0bf6df6275fcfe10011}} 
+int {\bfseries \+\_\+round\+Index} = 0
+\item 
+\mbox{\Hypertarget{class_game_manager_a7553d1f75d7922b87a2efcbba333f591}\label{class_game_manager_a7553d1f75d7922b87a2efcbba333f591}} 
+int {\bfseries \+\_\+next\+Round} = 0
+\item 
+\mbox{\Hypertarget{class_game_manager_a7847206d0d7b50149b515ae3035634ba}\label{class_game_manager_a7847206d0d7b50149b515ae3035634ba}} 
+Game\+Object {\bfseries \+\_\+current\+Round}
+\item 
+\mbox{\Hypertarget{class_game_manager_a859fd30d79998a1291b15c1b154a768c}\label{class_game_manager_a859fd30d79998a1291b15c1b154a768c}} 
+bool {\bfseries \+\_\+round\+Timer\+Running} = false
+\item 
+\mbox{\Hypertarget{class_game_manager_a4a00d27c12663c996d96233889093c4d}\label{class_game_manager_a4a00d27c12663c996d96233889093c4d}} 
+bool {\bfseries \+\_\+round\+Won} = false
+\item 
+\mbox{\Hypertarget{class_game_manager_a262c14b3b4f56d4cf2169f515a78ec48}\label{class_game_manager_a262c14b3b4f56d4cf2169f515a78ec48}} 
+Coroutine {\bfseries \+\_\+round\+Timer\+Coroutine}
+\item 
+\mbox{\Hypertarget{class_game_manager_a8d35e5fc4ea3ea7fe43f8fc4c428cc58}\label{class_game_manager_a8d35e5fc4ea3ea7fe43f8fc4c428cc58}} 
+bool {\bfseries \+\_\+client\+Connected} = false
+\item 
+\mbox{\Hypertarget{class_game_manager_a2590a2dc82e9c3f2b32fa9d315737ac0}\label{class_game_manager_a2590a2dc82e9c3f2b32fa9d315737ac0}} 
+bool {\bfseries \+\_\+leaderboard\+Ready} = false
+\item 
+\mbox{\Hypertarget{class_game_manager_a69286a95462ffbcbf27c329342657085}\label{class_game_manager_a69286a95462ffbcbf27c329342657085}} 
+Controls {\bfseries \+\_\+controls}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_game_manager_a8cac45bedf02622598c5a723a18f21a4}\label{class_game_manager_a8cac45bedf02622598c5a723a18f21a4}} 
 static \mbox{\hyperlink{class_game_manager}{Game\+Manager}} {\bfseries \+\_\+instance}
+\item 
+\mbox{\Hypertarget{class_game_manager_a57377ad5ec0391dbdfc7c3be870c1462}\label{class_game_manager_a57377ad5ec0391dbdfc7c3be870c1462}} 
+const string {\bfseries NETWORK\+\_\+\+ERROR\+\_\+\+TEXT} = \char`\"{}Oh No!\textbackslash{}nA network error occurred!\char`\"{}
 \end{DoxyCompactItemize}
 
 
@@ -136,19 +267,19 @@ Possible game states.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ START\ =\ 0,}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ MENU,}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ LOADING\_LOBBY,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ PLAYING\_LOBBY,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ LOADING\_ROUND,}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ PLAYING\_ROUND,}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ MIDPOINT\_LEADERBOARD,}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ FINAL\_LEADERBOARD,}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ DISCONNECTED,}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Add\ new\ states\ above\ this\ line}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ NUM\_OF\_STATES}
-\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ START\ =\ 0,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ MENU,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ LOADING\_LOBBY,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ PLAYING\_LOBBY,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ LOADING\_ROUND,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ PLAYING\_ROUND,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ MIDPOINT\_LEADERBOARD,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ FINAL\_LEADERBOARD,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ DISCONNECTED,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Add\ new\ states\ above\ this\ line}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ NUM\_OF\_STATES}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -162,9 +293,49 @@ Possible game states.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062\ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_aba8fcd12c3fd18eb629e6d3d332bcd3c}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU);}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \_networkFixedDeltaTimeItterations\ =\ (uint)Math.Round(\_networkFixedDeltaTime\ /\ Time.fixedDeltaTime,\ MidpointRounding.AwayFromZero);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \_controls\ =\ \textcolor{keyword}{new}\ Controls();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Enable();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Escape.performed\ +=\ EscapeButtonPressed;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_controls.Gameplay.Escape.canceled\ +=\ EscapeButtonPressed;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \_currentState\ =\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START;}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_ae41cb5c1140548ac62157c1d0e34826b}\label{class_game_manager_ae41cb5c1140548ac62157c1d0e34826b}} 
+\index{GameManager@{GameManager}!ClientConnected@{ClientConnected}}
+\index{ClientConnected@{ClientConnected}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{ClientConnected()}{ClientConnected()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Client\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00629\ \ \ \ \ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \_clientConnected\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00631\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a817bdaadb02d5457647eca159a4f1c7e}\label{class_game_manager_a817bdaadb02d5457647eca159a4f1c7e}} 
+\index{GameManager@{GameManager}!ClientDisconnected@{ClientDisconnected}}
+\index{ClientDisconnected@{ClientDisconnected}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{ClientDisconnected()}{ClientDisconnected()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Client\+Disconnected (\begin{DoxyParamCaption}\item[{string}]{reason }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00616\ \ \ \ \ \{}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.SetNetworkErrorText(NETWORK\_ERROR\_TEXT);}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reason\ !=\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.AppendNetworkErrorText(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ reason);}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED);}
+\DoxyCodeLine{00626\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_a27970da85972232bc54a58fe6d329897}\label{class_game_manager_a27970da85972232bc54a58fe6d329897}} 
@@ -175,43 +346,87 @@ Possible game states.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00137\ \ \ \ \ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ move\ the\ below\ to\ Playing\_Round\ once\ some\ rounds\ are\ implemented}}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ that\ scene\ has\ loaded,\ inform\ the\ player\ of\ their\ objective}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ reset\ the\ objective\ manager\ so\ that\ it\ will\ gather\ all\ zones\ /\ objects}}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Need\ to\ consider\ doing\ this\ in\ the\ loading\ screen\ so\ that\ there\ is\ no\ hang\ to\ the\ player}}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ netPlayerData\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Values)}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//setup\ clientRpc\ params\ to\ only\ send\ to\ specific\ client}}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ netPlayerData.NetPlayer?.\mbox{\hyperlink{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}{SetObjectiveStringClientRpc}}(netPlayerData.Objective?.ObjectiveString,\ netPlayerData.ClientRpcParams);}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START)}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_super_game_manager}{SuperGameManager}}.Instance.ReloadEntireGame();}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//try}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ NetworkObject.Despawn(false);}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//catch\ (NullReferenceException)}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ //\ Do\ nothing}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug.Log("{}MenuEntry:\ Menu\ Canvas\ =\ true"{});}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance?.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.MainMenuCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_clientConnected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ players}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Clear();}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reload\ all\ colours}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_playerColourIndexes.Clear();}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_playerColours.Count;\ i++)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_playerColourIndexes.Add(i);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_remainingNames.Clear();}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_remainingNames\ =\ \textcolor{keyword}{new}(\_playerNames);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}{LoadRound}}(\_lobbyPrefab,\ \_minLoadScreenTime));}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LobbyCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ that\ scene\ has\ loaded,\ move\ players\ to\ spawn\ points}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MovePlayersToSpawnPoints();}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ that\ scene\ has\ loaded,\ inform\ the\ player\ of\ their\ objective}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SendPlayerObjectiveStrings();}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(\mbox{\hyperlink{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}{LoadRound}}(\_rounds[\_roundIndex].RoundPrefab,\ \_minLoadScreenTime));}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_roundWon\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ that\ scene\ has\ loaded,\ move\ players\ to\ spawn\ points}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MovePlayersToSpawnPoints();}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ that\ scene\ has\ loaded,\ inform\ the\ player\ of\ their\ objective}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SendPlayerObjectiveStrings();}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ round\ timer}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_roundTimerCoroutine\ !=\ \textcolor{keyword}{null})\ StopCoroutine(\_roundTimerCoroutine);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_roundTimerCoroutine\ =\ StartCoroutine(RoundTimer(\_rounds[\_roundIndex].RoundDurationSeconds));}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.GameCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.LeaderboardCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LeaderboardUIManager.Instance.FinalLeaderboard\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.LeaderboardCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.DisconnectedCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shutdowmn\ the\ network\ manager\ so\ it\ can\ be\ used\ again}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.Shutdown();}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00394\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_a2800c785fd8e1a8b1aa449227a0ccd31}\label{class_game_manager_a2800c785fd8e1a8b1aa449227a0ccd31}} 
@@ -222,39 +437,153 @@ Possible game states.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00176\ \ \ \ \ \{}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(TrueIsServer)}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !\ Do\ not\ change\ PlayerData\ here,\ as\ the\ host\ has\ already\ loaded\ in}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !\ Instead\ change\ it\ in\ Menu\ Entry\ Transition}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_roundOrder.Clear();}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_rounds.Count;\ i++)}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_roundOrder.Add(i);}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_roundOrder.Shuffle();}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_nextRound\ =\ 0;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_roundIndex\ =\ \_roundOrder[\_nextRound];}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}LoadingLobbyExit:\ Menu\ Canvas\ =\ false"{}});}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LoadingCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TrueIsServer)}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\_currentRound);}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LobbyCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LoadingCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.GameCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_manager}{ArrowManager}}.Instance.RemoveAllArrows();}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arrow_manager}{ArrowManager}}.Instance.ClearAllLists();}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TrueIsServer)}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(\_currentRound);}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.LeaderboardCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_leaderboard_u_i_manager}{LeaderboardUIManager}}.Instance.LeaderboardCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LeaderboardUIManager.Instance.FinalLeaderboard\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TrueIsServer)}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.Shutdown();}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.DisconnectedCanvas,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00460\ \ \ \ \ \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_game_manager_aba8fcd12c3fd18eb629e6d3d332bcd3c}\label{class_game_manager_aba8fcd12c3fd18eb629e6d3d332bcd3c}} 
+\mbox{\Hypertarget{class_game_manager_a15c2000b78542d31b75b5bf5809d725b}\label{class_game_manager_a15c2000b78542d31b75b5bf5809d725b}} 
+\index{GameManager@{GameManager}!DoStateCyclicActions@{DoStateCyclicActions}}
+\index{DoStateCyclicActions@{DoStateCyclicActions}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{DoStateCyclicActions()}{DoStateCyclicActions()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Do\+State\+Cyclic\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Perform the state\textquotesingle{}s cyclic actions~\newline
+ Called every Update() 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00251\ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\_currentState)}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_loadingTimerComplete\ \&\&\ \_clientConnected)}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_loadingTimerComplete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RoundLoaded();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ the\ state\ transition}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY);}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_loadingTimerComplete)}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_loadingTimerComplete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RoundLoaded();}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ the\ state\ transition}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\_roundTimerRunning\ ||\ \_roundWon)}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Round\ timer\ has\ expired\ -\/\ load\ the\ leaderboard\ if\ configured}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_rounds[\_roundIndex].ShowLeaderBoardAfterRound\ \&\&\ (\_nextRound\ <\ \_roundOrder.Count))}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ not\ the\ last\ round,\ and\ configured,\ show\ the\ Leaderboard}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD);}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ to\ next\ round\ (also\ handles\ move\ to\ final\ leaderboard)}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}{LoadRound}}();}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_leaderboardReady\ \&\&\ !TrueIsServer)}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.Shutdown();}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_leaderboardReady\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a295e9bc8ea994669f347160a7807d26e}\label{class_game_manager_a295e9bc8ea994669f347160a7807d26e}} 
 \index{GameManager@{GameManager}!DoStateTransition@{DoStateTransition}}
 \index{DoStateTransition@{DoStateTransition}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{DoStateTransition()}{DoStateTransition()}}
-{\footnotesize\ttfamily void Game\+Manager.\+Do\+State\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool Game\+Manager.\+Do\+State\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -267,59 +596,132 @@ Performs a state machine transition if transition is allowed.
 \end{DoxyParams}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00208\ \ \ \ \ \{}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ state\ is\ different}}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newState\ ==\ \_currentState)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00211\ }
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ each\ transition's\ guard\ clauses}}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (newState)}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ valid\ to\ come\ here\ (initial\ state\ only)}}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ not\ come\ here\ from\ Loading\ Lobby\ or\ Loading\ Round}}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY)\ ||\ (\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND))\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Menu}}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Loading\ Lobby}}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Playing\ Lobby}}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Loading\ Round}}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Playing\ Round}}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Playing\ Round}}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ not\ come\ here\ from\ Menu\ or\ Start}}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START)\ ||\ (\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU))\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00254\ }
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ the\ transition}}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ DoExitTransition(\_currentState);}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ DoEntryTransition(newState);}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \_currentState\ =\ newState;}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ OnGameStateChanged?.Invoke(\textcolor{keyword}{this},\ \_currentState);}
-\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00467\ \ \ \ \ \{}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ state\ is\ different}}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newState\ ==\ \_currentState)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ each\ transition's\ guard\ clauses}}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (newState)}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START:}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ valid\ to\ come\ here\ (initial\ state\ only)}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU:}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ not\ come\ here\ from\ Menu!}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY:}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Menu}}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY:}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Loading\ Lobby}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND:}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Playing\ Lobby\ or\ Mid\ Point\ Leaderboard}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY)\ \&\&\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \&\&\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND:}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Loading\ Round}}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD:}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Playing\ Round}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD:}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ only\ come\ here\ from\ Playing\ Round}}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED:}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ not\ come\ here\ from\ Start}}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.NUM\_OF\_STATES:}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ the\ transition}}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ DoExitTransition(\_currentState);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ DoEntryTransition(newState);}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \_currentState\ =\ newState;}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(TrueIsServer)}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ OnGameStateChanged?.Invoke(\textcolor{keyword}{this},\ \_currentState);}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ inform\ all\ clients}}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Sending\ state\ change\ to\ Clients"{}});}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ SetStateClientRpc(\_currentState);}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00528\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a6ea38cab5e032b8ea25e5440c9dd4182}\label{class_game_manager_a6ea38cab5e032b8ea25e5440c9dd4182}} 
+\index{GameManager@{GameManager}!EscapeButtonPressed@{EscapeButtonPressed}}
+\index{EscapeButtonPressed@{EscapeButtonPressed}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{EscapeButtonPressed()}{EscapeButtonPressed()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Escape\+Button\+Pressed (\begin{DoxyParamCaption}\item[{Input\+Action\+::\+Callback\+Context}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00766\ \ \ \ \ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(value.ReadValueAsButton())}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ LoadMenu();}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00772\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a019106c0b8a218c0e64ff85995c87b47}\label{class_game_manager_a019106c0b8a218c0e64ff85995c87b47}} 
+\index{GameManager@{GameManager}!GetPlayerColour@{GetPlayerColour}}
+\index{GetPlayerColour@{GetPlayerColour}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GetPlayerColour()}{GetPlayerColour()}}
+{\footnotesize\ttfamily Color Game\+Manager.\+Get\+Player\+Colour (\begin{DoxyParamCaption}\item[{int}]{colour\+Index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00242\ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colourIndex\ <\ \_playerColours.Count\ ?\ \_playerColours[colourIndex]\ :\ Color.white;}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_af296e5e3f844fda25598f918b4c2478b}\label{class_game_manager_af296e5e3f844fda25598f918b4c2478b}} 
+\index{GameManager@{GameManager}!GetPlayerName@{GetPlayerName}}
+\index{GetPlayerName@{GetPlayerName}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GetPlayerName()}{GetPlayerName()}}
+{\footnotesize\ttfamily string Game\+Manager.\+Get\+Player\+Name (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00730\ \ \ \ \ \{}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_remainingNames\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].PlayerName;}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_remainingNames.Count\ <=\ 0)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].PlayerName;}
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ UnityEngine.Random.Range((\textcolor{keywordtype}{int})0,\ (\textcolor{keywordtype}{int})\_remainingNames.Count);}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ playerName\ =\ \_remainingNames[index];}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \_remainingNames.RemoveAt(index);}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].PlayerName\ =\ playerName;}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].DefaultNameUsed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playerName;}
+\DoxyCodeLine{00740\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_ad688b1022ffc32968bc7b50ce0615c83}\label{class_game_manager_ad688b1022ffc32968bc7b50ce0615c83}} 
+\index{GameManager@{GameManager}!LeaderboardReady@{LeaderboardReady}}
+\index{LeaderboardReady@{LeaderboardReady}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{LeaderboardReady()}{LeaderboardReady()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Leaderboard\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00725\ \ \ \ \ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \_leaderboardReady\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00727\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_a27e3cf5daa708abfb245b9b5aa8eea97}\label{class_game_manager_a27e3cf5daa708abfb245b9b5aa8eea97}} 
@@ -330,24 +732,229 @@ Performs a state machine transition if transition is allowed.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00263\ \ \ \ \ \{}
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_aba8fcd12c3fd18eb629e6d3d332bcd3c}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY);}
-\DoxyCodeLine{00265\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{00531\ \ \ \ \ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_LOBBY);}
+\DoxyCodeLine{00533\ \ \ \ \ \}\ \ \ \ }
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_game_manager_a608a0d437e46461ab266a3fb37f33480}\label{class_game_manager_a608a0d437e46461ab266a3fb37f33480}} 
-\index{GameManager@{GameManager}!LobbyLoaded@{LobbyLoaded}}
-\index{LobbyLoaded@{LobbyLoaded}!GameManager@{GameManager}}
-\doxysubsubsection{\texorpdfstring{LobbyLoaded()}{LobbyLoaded()}}
-{\footnotesize\ttfamily void Game\+Manager.\+Lobby\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_game_manager_a376313d2c35e3db7daa657a8bce20720}\label{class_game_manager_a376313d2c35e3db7daa657a8bce20720}} 
+\index{GameManager@{GameManager}!LoadMenu@{LoadMenu}}
+\index{LoadMenu@{LoadMenu}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{LoadMenu()}{LoadMenu()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Load\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00268\ \ \ \ \ \{}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_ab7e37a8bff711016bb30f872aef5c5c3}{ResetObjectiveManager}}();}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ OnSceneLoaded?.Invoke(\textcolor{keyword}{this},\ EventArgs.Empty);}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_aba8fcd12c3fd18eb629e6d3d332bcd3c}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY);}
-\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00603\ \ \ \ \ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CurrentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU)}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ QuitApp();}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.Shutdown();}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_super_game_manager}{SuperGameManager}}.Instance.ReloadEntireGame();}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00613\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a9fe8649ea7a5c92543ffb26499e4b9ba}\label{class_game_manager_a9fe8649ea7a5c92543ffb26499e4b9ba}} 
+\index{GameManager@{GameManager}!LoadNextRound@{LoadNextRound}}
+\index{LoadNextRound@{LoadNextRound}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{LoadNextRound()}{LoadNextRound()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Load\+Next\+Round (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function allows UI to move on from Leaderboard. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00590\ \ \ \ \ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!TrueIsServer)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD)\ ||\ (\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY))}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}{LoadRound}}();}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD)}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU);}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00600\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}\label{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}} 
+\index{GameManager@{GameManager}!LoadRound@{LoadRound}}
+\index{LoadRound@{LoadRound}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{LoadRound()}{LoadRound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Game\+Manager.\+Load\+Round (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Function allows \mbox{\hyperlink{class_game_manager}{Game\+Manager}} to move on the round. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00637\ \ \ \ \ \{}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \&\&\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY)\ \&\&\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00639\ }
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!TrueIsServer)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_nextRound\ >=\ \_roundOrder.Count)}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ more\ rounds\ to\ play,\ load\ high\ score\ page}}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.FINAL\_LEADERBOARD);}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \_roundIndex\ =\ \_roundOrder[\_nextRound];}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \_nextRound++;}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.LOADING\_ROUND);}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00653\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_ad805df7f8223e65ad1c71411b21aff87}\label{class_game_manager_ad805df7f8223e65ad1c71411b21aff87}} 
+\index{GameManager@{GameManager}!LoadRound@{LoadRound}}
+\index{LoadRound@{LoadRound}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{LoadRound()}{LoadRound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IEnumerator Game\+Manager.\+Load\+Round (\begin{DoxyParamCaption}\item[{Game\+Object}]{round\+To\+Load,  }\item[{float}]{min\+Wait\+Duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00546\ \ \ \ \ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \_loadingTimerComplete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.ToggleCanvas(\mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LoadingCanvas,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(TrueIsServer)}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForEndOfFrame();}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spawn_manager}{SpawnManager}}.Instance.ResetSpawnManager();}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (roundToLoad\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentRound\ =\ Instantiate(roundToLoad);}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentRound.GetComponent<NetworkObject>().Spawn();}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spawn_manager}{SpawnManager}}.Instance.ReloadSpawnPoints();}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(minWaitDuration);}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \_loadingTimerComplete\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00563\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a30e7706ad5f0370005c909e29e8239ad}\label{class_game_manager_a30e7706ad5f0370005c909e29e8239ad}} 
+\index{GameManager@{GameManager}!LoadRoundButton@{LoadRoundButton}}
+\index{LoadRoundButton@{LoadRoundButton}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{LoadRoundButton()}{LoadRoundButton()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Load\+Round\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Only to be called by the Editor script for \mbox{\hyperlink{class_game_manager}{Game\+Manager}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00569\ \ \ \ \ \{}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!TrueIsServer)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \&\&\ (\_currentState\ !=\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_LOBBY))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \&\&\ \_rounds[\_roundIndex].ShowLeaderBoardAfterRound\ \&\&\ (\_nextRound\ <\ \_roundOrder.Count))}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ not\ the\ last\ round,\ and\ configured,\ show\ the\ Leaderboard}}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MIDPOINT\_LEADERBOARD);}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ to\ next\ round\ (also\ handles\ move\ to\ final\ leaderboard)}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a8eb426f807aa74b19e00764f3a7963d9}{LoadRound}}();}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00584\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a48088ede03845f96805cc695ffeca1ad}\label{class_game_manager_a48088ede03845f96805cc695ffeca1ad}} 
+\index{GameManager@{GameManager}!MovePlayersToSpawnPoints@{MovePlayersToSpawnPoints}}
+\index{MovePlayersToSpawnPoints@{MovePlayersToSpawnPoints}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{MovePlayersToSpawnPoints()}{MovePlayersToSpawnPoints()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Move\+Players\+To\+Spawn\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00656\ \ \ \ \ \{}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(TrueIsServer)}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ netPlayerData\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Values)}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_ragdoll}{Ragdoll}}\ ragdoll\ \textcolor{keywordflow}{in}\ netPlayerData.NetPlayer.gameObject.GetComponentsInChildren<\mbox{\hyperlink{class_ragdoll}{Ragdoll}}>())}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ragdoll.ResetLocalPosition();}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_spawn_manager}{SpawnManager}}.Instance.SpawnPlayer(netPlayerData.NetPlayer.gameObject);}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(LocalPlayer\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ Camera.main.transform.position\ =\ FollowCam.Instance.gameObject.transform.position\ =\ LocalPlayer.gameObject.transform.position;}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00674\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a971ffdb10c2868d3a7878d5d7fe1521b}\label{class_game_manager_a971ffdb10c2868d3a7878d5d7fe1521b}} 
+\index{GameManager@{GameManager}!OnNetworkDespawn@{OnNetworkDespawn}}
+\index{OnNetworkDespawn@{OnNetworkDespawn}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{OnNetworkDespawn()}{OnNetworkDespawn()}}
+{\footnotesize\ttfamily override void Game\+Manager.\+On\+Network\+Despawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ TrueIsServer\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ base.OnNetworkDespawn();}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_ae45eb6cdc6362df9f059f7df4c6ee5b5}\label{class_game_manager_ae45eb6cdc6362df9f059f7df4c6ee5b5}} 
+\index{GameManager@{GameManager}!OnNetworkSpawn@{OnNetworkSpawn}}
+\index{OnNetworkSpawn@{OnNetworkSpawn}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{OnNetworkSpawn()}{OnNetworkSpawn()}}
+{\footnotesize\ttfamily override void Game\+Manager.\+On\+Network\+Spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ TrueIsServer\ =\ IsServer;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ base.OnNetworkSpawn();}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_af49c422e296594212f24f19bbd3ae52d}\label{class_game_manager_af49c422e296594212f24f19bbd3ae52d}} 
+\index{GameManager@{GameManager}!QuitApp@{QuitApp}}
+\index{QuitApp@{QuitApp}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{QuitApp()}{QuitApp()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Quit\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00760\ \ \ \ \ \{}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connection_handler}{ConnectionHandler}}.Instance.Shutdown();}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ Application.Quit();}
+\DoxyCodeLine{00763\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a2eb66f604363f3bd64f047cb8661e2e4}\label{class_game_manager_a2eb66f604363f3bd64f047cb8661e2e4}} 
+\index{GameManager@{GameManager}!ReAddPlayerName@{ReAddPlayerName}}
+\index{ReAddPlayerName@{ReAddPlayerName}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{ReAddPlayerName()}{ReAddPlayerName()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Re\+Add\+Player\+Name (\begin{DoxyParamCaption}\item[{ulong}]{client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00743\ \ \ \ \ \{}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_remainingNames\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].DefaultNameUsed)\ \_remainingNames.Add(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].PlayerName);}
+\DoxyCodeLine{00746\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_a666bee91a62b4662a8ef635f43a9c06b}\label{class_game_manager_a666bee91a62b4662a8ef635f43a9c06b}} 
@@ -374,20 +981,38 @@ Called once a player has spawned.~\newline
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00075\ \ \ \ \ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (netPlayer\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ objectivePlayerData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}(clientId,\ netPlayer);}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryAdd(clientId,\ objectivePlayerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ OnPlayerSpawned?.Invoke(\textcolor{keyword}{this},\ clientId);}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ send\ the\ objective\ -\/\ will\ be\ null\ for\ the\ host\ (joins\ as\ the\ scene\ is\ loading\ -\/\ but\ will\ be\ updated\ when\ the\ scene\ loads\ in)}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ netPlayer.\mbox{\hyperlink{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}{SetObjectiveStringClientRpc}}(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].\mbox{\hyperlink{class_objective}{Objective}}?.ObjectiveString,\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ClientRpcParams);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(TrueIsServer)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (netPlayer\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ objectivePlayerData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}(clientId,\ netPlayer);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryAdd(clientId,\ objectivePlayerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ SetPlayerColour(objectivePlayerData);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ OnPlayerSpawned?.Invoke(\textcolor{keyword}{this},\ clientId);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ send\ the\ objective\ -\/\ will\ be\ null\ for\ the\ host\ (joins\ as\ the\ scene\ is\ loading\ -\/\ but\ will\ be\ updated\ when\ the\ scene\ loads\ in)}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ netPlayer.\mbox{\hyperlink{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}{SetObjectiveStringClientRpc}}(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].\mbox{\hyperlink{class_objective}{Objective}}?.ObjectiveString,\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ClientRpcParams);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ send\ the\ player\ colour}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//netPlayer.SetPlayerColourClientRpc(PlayerData[clientId].ColourIndex,\ PlayerData[clientId].ClientRpcParams);}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ netPlayer.PlayerColorIndex.Value\ =\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ColourIndex;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ netPlayer.LocalPlayerName.Value\ =\ GetPlayerName(clientId);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clientId\ ==\ NetworkManager.Singleton.LocalClientId)}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.SetPlayerNameText(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].PlayerName);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ SetNoOfPlayersTextClientRpc(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Count);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_a9da9fba4b3db9b478e8977c9c08d79b8}\label{class_game_manager_a9da9fba4b3db9b478e8977c9c08d79b8}} 
@@ -418,22 +1043,172 @@ True if successful, False if not sucessful
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00119\ \ \ \ \ \{}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Remove(previousClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.UpdateRpcParams(currentClientId);}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryAdd(currentClientId,\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryAdd(currentClientId,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}(currentClientId,\ netPlayer)))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//inform\ all\ that\ care\ so\ that\ they\ can\ also\ perform\ reconnection\ actions\ /\ remappings}}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ OnPlayerReconnect?.Invoke(\textcolor{keyword}{this},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_player_reconnect_data}{PlayerReconnectData}}(previousClientId,\ currentClientId));}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Remove(previousClientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ playerData.UpdateRpcParams(currentClientId);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryAdd(currentClientId,\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryAdd(currentClientId,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}(currentClientId,\ netPlayer)))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{comment}{//inform\ all\ that\ care\ so\ that\ they\ can\ also\ perform\ reconnection\ actions\ /\ remappings}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ OnPlayerReconnect?.Invoke(\textcolor{keyword}{this},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_player_reconnect_data}{PlayerReconnectData}}(previousClientId,\ currentClientId));}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a7be7db336fe11b508ba865794d54ae5c}\label{class_game_manager_a7be7db336fe11b508ba865794d54ae5c}} 
+\index{GameManager@{GameManager}!RoundLoaded@{RoundLoaded}}
+\index{RoundLoaded@{RoundLoaded}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{RoundLoaded()}{RoundLoaded()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Round\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00536\ \ \ \ \ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TrueIsServer)}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Let\ everyone\ know\ the\ scene\ was\ loaded}}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ OnSceneLoaded?.Invoke(\textcolor{keyword}{this},\ EventArgs.Empty);}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ State\ transition\ is\ controlled\ in\ DoStateCyclicActions\ to\ allow\ for\ min\ time\ to\ be\ accounted\ for\ also}}
+\DoxyCodeLine{00543\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a228e11e9c6e0b2579da6ae71c042b26d}\label{class_game_manager_a228e11e9c6e0b2579da6ae71c042b26d}} 
+\index{GameManager@{GameManager}!RoundTimer@{RoundTimer}}
+\index{RoundTimer@{RoundTimer}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{RoundTimer()}{RoundTimer()}}
+{\footnotesize\ttfamily IEnumerator Game\+Manager.\+Round\+Timer (\begin{DoxyParamCaption}\item[{uint}]{duration\+In\+Seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00711\ \ \ \ \ \{}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.\mbox{\hyperlink{class_game_u_i_manager_a5977f1967dfa75c27b3fd2bd54de9f55}{UpdateTimerUI}}(durationInSeconds);}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \_roundTimerRunning\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(durationInSeconds\ >\ 0)}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ durationInSeconds-\/-\/;}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_u_i_manager}{GameUIManager}}.Instance.\mbox{\hyperlink{class_game_u_i_manager_a5977f1967dfa75c27b3fd2bd54de9f55}{UpdateTimerUI}}(durationInSeconds);}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \_roundTimerRunning\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \_roundTimerCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00722\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_acba8e349f48fd97fd7dfd27d8644a21f}\label{class_game_manager_acba8e349f48fd97fd7dfd27d8644a21f}} 
+\index{GameManager@{GameManager}!RoundWon@{RoundWon}}
+\index{RoundWon@{RoundWon}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{RoundWon()}{RoundWon()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Round\+Won (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00755\ \ \ \ \ \{}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.PLAYING\_ROUND)\ \_roundWon\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00757\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a7dc1a3f649932f2cc16a034c144f9913}\label{class_game_manager_a7dc1a3f649932f2cc16a034c144f9913}} 
+\index{GameManager@{GameManager}!SendPlayerObjectiveStrings@{SendPlayerObjectiveStrings}}
+\index{SendPlayerObjectiveStrings@{SendPlayerObjectiveStrings}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{SendPlayerObjectiveStrings()}{SendPlayerObjectiveStrings()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Send\+Player\+Objective\+Strings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00678\ \ \ \ \ \{}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TrueIsServer)}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ netPlayerData\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Values)}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//setup\ clientRpc\ params\ to\ only\ send\ to\ specific\ client}}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ netPlayerData.NetPlayer?.\mbox{\hyperlink{class_net_player_a430d71b5d9ecdf768ff4e28e920891cd}{SetObjectiveStringClientRpc}}(netPlayerData.Objective?.ObjectiveString,\ netPlayerData.ClientRpcParams);}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00687\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a7b5ea2e4d0fa3a91109350c974d563df}\label{class_game_manager_a7b5ea2e4d0fa3a91109350c974d563df}} 
+\index{GameManager@{GameManager}!SetNoOfPlayersTextClientRpc@{SetNoOfPlayersTextClientRpc}}
+\index{SetNoOfPlayersTextClientRpc@{SetNoOfPlayersTextClientRpc}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{SetNoOfPlayersTextClientRpc()}{SetNoOfPlayersTextClientRpc()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Set\+No\+Of\+Players\+Text\+Client\+Rpc (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Players,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00750\ \ \ \ \ \{}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.SetNoOfPlayersText(noOfPlayers.ToString());}
+\DoxyCodeLine{00752\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a173ac1816888ec3a6cf5c9b43059c24a}\label{class_game_manager_a173ac1816888ec3a6cf5c9b43059c24a}} 
+\index{GameManager@{GameManager}!SetPlayerColour@{SetPlayerColour}}
+\index{SetPlayerColour@{SetPlayerColour}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{SetPlayerColour()}{SetPlayerColour()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Set\+Player\+Colour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_net_player_data}{Net\+Player\+Data}}}]{player\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227\ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_playerColourIndexes.Count\ <=\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ playerData.ColourIndex\ =\ \_playerColourIndexes[0];}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \_playerColourIndexes.RemoveAt(0);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Old\ method}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (\_playerColourIndex\ >=\ \_playerColours.Count)\ return;}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (playerData\ ==\ null)\ return;}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{comment}{//playerData.ColourIndex\ =\ \_playerColourIndex;}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_playerColourIndex++;}}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_accc35f36420ae6020869cfd97fda99ff}\label{class_game_manager_accc35f36420ae6020869cfd97fda99ff}} 
+\index{GameManager@{GameManager}!SetStateClientRpc@{SetStateClientRpc}}
+\index{SetStateClientRpc@{SetStateClientRpc}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{SetStateClientRpc()}{SetStateClientRpc()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Set\+State\+Client\+Rpc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{Game\+Manager\+::\+GAMESTATE}}}]{state,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00691\ \ \ \ \ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Received\ request\ to\ change\ state\ to:\ "{}}\ +\ state.ToString());}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!TrueIsServer)}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(state))}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Synchronization\ error\ between\ Client\ and\ Server\ GameManager\ -\/\ disconnect\ client}}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.DISCONNECTED);}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ Error\ screen\ in\ the\ dicconnected\ state}}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}ERROR:\ Game\ Managers\ are\ not\ synchronized"{}});}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Ignored\ state\ change\ as\ we\ are\ the\ server"{}});}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00708\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_aca441b40c69cd898e49652f2a423243d}\label{class_game_manager_aca441b40c69cd898e49652f2a423243d}} 
+\index{GameManager@{GameManager}!StartGameManager@{StartGameManager}}
+\index{StartGameManager@{StartGameManager}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{StartGameManager()}{StartGameManager()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Start\+Game\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_currentState\ ==\ \mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.START)\ \mbox{\hyperlink{class_game_manager_a295e9bc8ea994669f347160a7807d26e}{DoStateTransition}}(\mbox{\hyperlink{class_game_manager_ab27ff4979f87ebcdce6fb311425d0e9c}{GAMESTATE}}.MENU);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_aefe5c9931f7a88ec7b5a73d0f41a27d1}\label{class_game_manager_aefe5c9931f7a88ec7b5a73d0f41a27d1}} 
@@ -458,15 +1233,38 @@ To be called if a player disconnects intentionally.~\newline
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//inform\ all\ that\ care\ so\ that\ they\ can\ also\ perform\ tidy\ up\ actions}}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ OnPlayerDisconnect?.Invoke(\textcolor{keyword}{this},\ clientId);}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Remove(clientId))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//inform\ all\ that\ care\ so\ that\ they\ can\ also\ perform\ tidy\ up\ actions}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ OnPlayerDisconnect?.Invoke(\textcolor{keyword}{this},\ clientId);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ \mbox{\hyperlink{class_net_player_data}{NetPlayerData}}\ playerData))}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ colour\ index\ back\ to\ the\ stack}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \_playerColourIndexes.Add(playerData.ColourIndex);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ we\ have\ a\ unique\ name\ stored,\ restore\ this\ to\ the\ list}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!playerData.DefaultNameUsed)\ ReAddPlayerName(clientId);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Remove(clientId))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ SetNoOfPlayersTextClientRpc(\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.Count);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a44c79b205dec16bfe650e21259860c5b}\label{class_game_manager_a44c79b205dec16bfe650e21259860c5b}} 
+\index{GameManager@{GameManager}!Update@{Update}}
+\index{Update@{Update}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager_a15c2000b78542d31b75b5bf5809d725b}{DoStateCyclicActions}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -480,7 +1278,7 @@ To be called if a player disconnects intentionally.~\newline
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00059\ \{\ \textcolor{keyword}{get}\ =>\ \_currentState;\ \}}
+\DoxyCodeLine{00089\ \{\ \textcolor{keyword}{get}\ =>\ \_currentState;\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_game_manager_ad3e717f4fb0f378b969f4457de81f23e}\label{class_game_manager_ad3e717f4fb0f378b969f4457de81f23e}} 
@@ -491,12 +1289,34 @@ To be called if a player disconnects intentionally.~\newline
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<GameManager>();}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_instance\ ==\ \textcolor{keyword}{null})\ \_instance\ =\ FindObjectOfType<GameManager>();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_instance;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a747670cf4d58ca3b92414c048ebb44ef}\label{class_game_manager_a747670cf4d58ca3b92414c048ebb44ef}} 
+\index{GameManager@{GameManager}!NetworkFixedDeltaTime@{NetworkFixedDeltaTime}}
+\index{NetworkFixedDeltaTime@{NetworkFixedDeltaTime}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{NetworkFixedDeltaTime}{NetworkFixedDeltaTime}}
+{\footnotesize\ttfamily float Game\+Manager.\+Network\+Fixed\+Delta\+Time\hspace{0.3cm}{\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{\ \textcolor{keyword}{get}\ =>\ \_networkFixedDeltaTime;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_manager_a8b2b206995618f4ef98d4a2d633cd82b}\label{class_game_manager_a8b2b206995618f4ef98d4a2d633cd82b}} 
+\index{GameManager@{GameManager}!NetworkFixedDeltaTimeItterations@{NetworkFixedDeltaTimeItterations}}
+\index{NetworkFixedDeltaTimeItterations@{NetworkFixedDeltaTimeItterations}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{NetworkFixedDeltaTimeItterations}{NetworkFixedDeltaTimeItterations}}
+{\footnotesize\ttfamily uint Game\+Manager.\+Network\+Fixed\+Delta\+Time\+Itterations\hspace{0.3cm}{\ttfamily [get]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{\ \textcolor{keyword}{get}\ =>\ \_networkFixedDeltaTimeItterations;\ \}}
 
 \end{DoxyCode}

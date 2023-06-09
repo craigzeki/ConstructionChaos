@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['objective_0',['Objective',['../class_objective_action_behaviour.html#a8951ed0a3eb0c775793860a81ec2cca2',1,'ObjectiveActionBehaviour']]],
-  ['objectiveobject_1',['objectiveObject',['../class_objective_object_instance.html#abb93682f5fb2d0947686bb93f49517e6',1,'ObjectiveObjectInstance']]]
+  ['playerdata_0',['PlayerData',['../class_game_manager.html#a16139daa0d77269425514837fea78fa8',1,'GameManager']]],
+  ['possibleactions_1',['possibleActions',['../class_objective_object.html#a734513587ce0aa4e57ef54c3a28b7d7f',1,'ObjectiveObject']]],
+  ['possiblecolours_2',['possibleColours',['../class_objective_object.html#ad530a6293fac6994c62c6606682f7001',1,'ObjectiveObject']]]
 ];

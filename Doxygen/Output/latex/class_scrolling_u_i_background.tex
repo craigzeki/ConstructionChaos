@@ -1,0 +1,339 @@
+\hypertarget{class_scrolling_u_i_background}{}\doxysection{Scrolling\+UIBackground Class Reference}
+\label{class_scrolling_u_i_background}\index{ScrollingUIBackground@{ScrollingUIBackground}}
+
+
+Inheritance diagram for Scrolling\+UIBackground\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_scrolling_u_i_background__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scrolling\+UIBackground\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_scrolling_u_i_background__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_a63c6c98188b5661a6441897710e025c0}{Start\+Automatic\+Switching}} (float automatic\+Switch\+Time, bool automatic\+Is\+Random)
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_ac3200bb9f8b82af072acac337db96024}{Switch\+Image}} (int index, bool random=false, float fade\+Time=DEFAULT\+\_\+\+FADE\+\_\+\+TIME, bool cancel\+Automatic=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_a65dda2eb862a950b13438054fded6866}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_aff0462a95ae4d05a5307cf808055c5b0}{Start}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_scrolling_u_i_background_a54f69edbe255d0c4a1f0113a0cb372c9}{Do\+Automatic\+Switching}} ()
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_af6ee084d4cccaa2d431710f4ebae06b2}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_afe8b4eafcd0e3e5596b7a993a95e233a}{On\+Disable}} ()
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_a1f13ae9857c0d73f61a7c506e267bab0}{Fade\+Out\+In}} (int index, float fade\+Time)
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_a3b60a6d636bbe896bff28ff0e041c765}{Fade\+In}} (int index, float fade\+Time)
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_a1bd7d3407b4124f53d40f5e6258db4ae}{Check\+Final\+Superceded}} ()
+\item 
+void \mbox{\hyperlink{class_scrolling_u_i_background_a000a3b713a6f45d977fd61e55bfdd5ff}{Fixed\+Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_ad27a9947e27b7692acb34daff2236841}\label{class_scrolling_u_i_background_ad27a9947e27b7692acb34daff2236841}} 
+List$<$ \mbox{\hyperlink{class_scrollable_image}{Scrollable\+Image}} $>$ {\bfseries \+\_\+images}
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_aab1a76e30b51a3250584eee60bc83161}\label{class_scrolling_u_i_background_aab1a76e30b51a3250584eee60bc83161}} 
+Canvas\+Group {\bfseries \+\_\+bg\+Images\+Canvas\+Group}
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_a3955d74211e2ad8b32be8f0a2bc51284}\label{class_scrolling_u_i_background_a3955d74211e2ad8b32be8f0a2bc51284}} 
+int {\bfseries \+\_\+start\+Image} = 0
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_aa546f5cf972b20cb6bf7cfec54601924}\label{class_scrolling_u_i_background_aa546f5cf972b20cb6bf7cfec54601924}} 
+bool {\bfseries \+\_\+automatic\+Switching} = false
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_a6f6ada85642391ec5ab43bc6259914b7}\label{class_scrolling_u_i_background_a6f6ada85642391ec5ab43bc6259914b7}} 
+float {\bfseries \+\_\+automatic\+Switch\+Time} = 20f
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_ac974c40dae5e55e5018052d7c636ffd7}\label{class_scrolling_u_i_background_ac974c40dae5e55e5018052d7c636ffd7}} 
+bool {\bfseries \+\_\+automatic\+Is\+Random} = false
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_a360072c3821c836e1470edcd8e5ac661}\label{class_scrolling_u_i_background_a360072c3821c836e1470edcd8e5ac661}} 
+int {\bfseries \+\_\+current\+Index} = 0
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_acfe33ef63fcd56cc224eca59cc6bce02}\label{class_scrolling_u_i_background_acfe33ef63fcd56cc224eca59cc6bce02}} 
+int {\bfseries \+\_\+superceded\+Index} = 0
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_ade44e1593d7fdf01d17cd03322340752}\label{class_scrolling_u_i_background_ade44e1593d7fdf01d17cd03322340752}} 
+float {\bfseries \+\_\+superceded\+Fade\+Time} = DEFAULT\+\_\+\+FADE\+\_\+\+TIME
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_af2e2ad1c89f491a458424814ae4d97fd}\label{class_scrolling_u_i_background_af2e2ad1c89f491a458424814ae4d97fd}} 
+bool {\bfseries \+\_\+is\+Superceded} = false
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_ac96bf4700d0b965f9f05dc0ef15547a2}\label{class_scrolling_u_i_background_ac96bf4700d0b965f9f05dc0ef15547a2}} 
+Coroutine {\bfseries \+\_\+automatic\+Coroutine}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scrolling_u_i_background_abe7a547cb6e107a668523500a5c93d17}\label{class_scrolling_u_i_background_abe7a547cb6e107a668523500a5c93d17}} 
+const float {\bfseries DEFAULT\+\_\+\+FADE\+\_\+\+TIME} = 0.\+75f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a65dda2eb862a950b13438054fded6866}\label{class_scrolling_u_i_background_a65dda2eb862a950b13438054fded6866}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!Awake@{Awake}}
+\index{Awake@{Awake}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Screen.width\ <=\ 0)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ divide\ by\ 0\ error\ check}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ratio\ =\ (float)Screen.height\ /\ (\textcolor{keywordtype}{float})Screen.width;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ setup\ images\ to\ tile\ the\ same\ and\ preserve\ aspect\ ratio\ and\ set\ all\ to\ false}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_scrollable_image}{ScrollableImage}}\ image\ \textcolor{keywordflow}{in}\ \_images)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ image?.SetInitialRectData(ratio);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ image?.RawImage.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a1bd7d3407b4124f53d40f5e6258db4ae}\label{class_scrolling_u_i_background_a1bd7d3407b4124f53d40f5e6258db4ae}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!CheckFinalSuperceded@{CheckFinalSuperceded}}
+\index{CheckFinalSuperceded@{CheckFinalSuperceded}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{CheckFinalSuperceded()}{CheckFinalSuperceded()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Check\+Final\+Superceded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_isSuperceded)}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ FadeOutIn(\_supercededIndex,\ \_supercededFadeTime);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \_isSuperceded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a54f69edbe255d0c4a1f0113a0cb372c9}\label{class_scrolling_u_i_background_a54f69edbe255d0c4a1f0113a0cb372c9}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!DoAutomaticSwitching@{DoAutomaticSwitching}}
+\index{DoAutomaticSwitching@{DoAutomaticSwitching}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{DoAutomaticSwitching()}{DoAutomaticSwitching()}}
+{\footnotesize\ttfamily IEnumerator Scrolling\+UIBackground.\+Do\+Automatic\+Switching (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ index\ so\ that\ we\ can\ start\ from\ a\ mid-\/point\ in\ the\ list}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \_startImage;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ SwitchImage(index,\ \textcolor{keyword}{false},\ DEFAULT\_FADE\_TIME,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ index;\ i\ <\ \_images.Count;\ i++)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(\_automaticSwitchTime);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SwitchImage(i,\ \_automaticIsRandom,\ DEFAULT\_FADE\_TIME,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a3b60a6d636bbe896bff28ff0e041c765}\label{class_scrolling_u_i_background_a3b60a6d636bbe896bff28ff0e041c765}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!FadeIn@{FadeIn}}
+\index{FadeIn@{FadeIn}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{FadeIn()}{FadeIn()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Fade\+In (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{float}]{fade\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151\ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_isSuperceded)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ \_supercededIndex;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ fadeTime\ =\ \_supercededFadeTime;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \_isSuperceded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \_images[\_currentIndex].RawImage?.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \_images[index].RawImage?.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \_currentIndex\ =\ index;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \_bgImagesCanvasGroup.LeanAlpha(1,\ fadeTime).setEaseInOutQuad().setOnComplete(()\ =>\ \{\ \});}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a1f13ae9857c0d73f61a7c506e267bab0}\label{class_scrolling_u_i_background_a1f13ae9857c0d73f61a7c506e267bab0}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!FadeOutIn@{FadeOutIn}}
+\index{FadeOutIn@{FadeOutIn}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{FadeOutIn()}{FadeOutIn()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Fade\+Out\+In (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{float}]{fade\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_images[\_currentIndex].RawImage?.gameObject.activeSelf\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ FadeIn(index,\ fadeTime);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \_bgImagesCanvasGroup.LeanAlpha(0,\ fadeTime).setEaseInOutQuad().setOnComplete(()\ =>\ \{\ FadeIn(index,\ fadeTime);\ \});}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a000a3b713a6f45d977fd61e55bfdd5ff}\label{class_scrolling_u_i_background_a000a3b713a6f45d977fd61e55bfdd5ff}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_scrollable_image}{ScrollableImage}}\ image\ \textcolor{keywordflow}{in}\ \_images)}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ image?.DoImageScrollFixedUpdate();}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_afe8b4eafcd0e3e5596b7a993a95e233a}\label{class_scrolling_u_i_background_afe8b4eafcd0e3e5596b7a993a95e233a}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_automaticCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_automaticCoroutine);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_af6ee084d4cccaa2d431710f4ebae06b2}\label{class_scrolling_u_i_background_af6ee084d4cccaa2d431710f4ebae06b2}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Start();}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_aff0462a95ae4d05a5307cf808055c5b0}\label{class_scrolling_u_i_background_aff0462a95ae4d05a5307cf808055c5b0}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!Start@{Start}}
+\index{Start@{Start}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_automaticSwitching)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticCoroutine\ =\ StartCoroutine(DoAutomaticSwitching());}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ to\ first\ image}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \_currentIndex\ =\ \_startImage;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ SwitchImage(\_startImage,\ \textcolor{keyword}{false},\ DEFAULT\_FADE\_TIME,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_a63c6c98188b5661a6441897710e025c0}\label{class_scrolling_u_i_background_a63c6c98188b5661a6441897710e025c0}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!StartAutomaticSwitching@{StartAutomaticSwitching}}
+\index{StartAutomaticSwitching@{StartAutomaticSwitching}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{StartAutomaticSwitching()}{StartAutomaticSwitching()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Start\+Automatic\+Switching (\begin{DoxyParamCaption}\item[{float}]{automatic\+Switch\+Time,  }\item[{bool}]{automatic\+Is\+Random }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_automaticCoroutine\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticSwitching\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticIsRandom\ =\ automaticIsRandom;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticSwitchTime\ =\ automaticSwitchTime;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticCoroutine\ =\ StartCoroutine(DoAutomaticSwitching());}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_scrolling_u_i_background_ac3200bb9f8b82af072acac337db96024}\label{class_scrolling_u_i_background_ac3200bb9f8b82af072acac337db96024}} 
+\index{ScrollingUIBackground@{ScrollingUIBackground}!SwitchImage@{SwitchImage}}
+\index{SwitchImage@{SwitchImage}!ScrollingUIBackground@{ScrollingUIBackground}}
+\doxysubsubsection{\texorpdfstring{SwitchImage()}{SwitchImage()}}
+{\footnotesize\ttfamily void Scrolling\+UIBackground.\+Switch\+Image (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{bool}]{random = {\ttfamily false},  }\item[{float}]{fade\+Time = {\ttfamily DEFAULT\+\_\+FADE\+\_\+TIME},  }\item[{bool}]{cancel\+Automatic = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_bgImagesCanvasGroup\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (random)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newIndex\ =\ Random.Range((\textcolor{keywordtype}{int})0,\ (\textcolor{keywordtype}{int})\_images.Count);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (newIndex\ ==\ index)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newIndex\ =\ Random.Range((\textcolor{keywordtype}{int})0,\ (\textcolor{keywordtype}{int})\_images.Count);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ newIndex;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(index\ >=\ \_images.Count)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cancelAutomatic)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticSwitching\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_automaticCoroutine\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_automaticCoroutine);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_automaticCoroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LeanTween.isTweening(\_bgImagesCanvasGroup.gameObject))}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ are\ already\ switching\ image,\ either\ switch\ the\ index\ at\ the\ point\ of\ faded\ out,\ or\ start\ a\ new\ fade\ once\ this\ one\ is\ complete}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \_isSuperceded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \_supercededFadeTime\ =\ fadeTime;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \_supercededIndex\ =\ index;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ FadeOutIn(index,\ fadeTime);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+
+\end{DoxyCode}

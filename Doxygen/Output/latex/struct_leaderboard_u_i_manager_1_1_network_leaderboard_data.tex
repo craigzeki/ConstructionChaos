@@ -1,0 +1,60 @@
+\hypertarget{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data}{}\doxysection{Leaderboard\+UIManager.\+Network\+Leaderboard\+Data Struct Reference}
+\label{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data}\index{LeaderboardUIManager.NetworkLeaderboardData@{LeaderboardUIManager.NetworkLeaderboardData}}
+
+
+Inheritance diagram for Leaderboard\+UIManager.\+Network\+Leaderboard\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Leaderboard\+UIManager.\+Network\+Leaderboard\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_abfa80b4cf6e3d205095d810ae4859917}{Network\+Serialize$<$ T $>$}} (Buffer\+Serializer$<$ T $>$ serializer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_a625c4d2a275e8988f5c02a0c1414158a}\label{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_a625c4d2a275e8988f5c02a0c1414158a}} 
+string {\bfseries Colour}
+\item 
+\mbox{\Hypertarget{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_abb2eb91c0efc4d87bc8e7ed38cda12d6}\label{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_abb2eb91c0efc4d87bc8e7ed38cda12d6}} 
+string {\bfseries Player\+Name}
+\item 
+\mbox{\Hypertarget{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_a1532acd7c70b05061365ae4fbf2413c2}\label{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_a1532acd7c70b05061365ae4fbf2413c2}} 
+uint {\bfseries Score}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_abfa80b4cf6e3d205095d810ae4859917}\label{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data_abfa80b4cf6e3d205095d810ae4859917}} 
+\index{LeaderboardUIManager.NetworkLeaderboardData@{LeaderboardUIManager.NetworkLeaderboardData}!NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}}
+\index{NetworkSerialize$<$ T $>$@{NetworkSerialize$<$ T $>$}!LeaderboardUIManager.NetworkLeaderboardData@{LeaderboardUIManager.NetworkLeaderboardData}}
+\doxysubsubsection{\texorpdfstring{NetworkSerialize$<$ T $>$()}{NetworkSerialize< T >()}}
+{\footnotesize\ttfamily void Leaderboard\+UIManager.\+Network\+Leaderboard\+Data.\+Network\+Serialize$<$ T $>$ (\begin{DoxyParamCaption}\item[{Buffer\+Serializer$<$ T $>$}]{serializer }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em IReader\+Writer}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ IReaderWriter}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ Colour);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ PlayerName);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ serializer.SerializeValue(ref\ Score);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

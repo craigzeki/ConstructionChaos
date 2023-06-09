@@ -2,8 +2,7 @@
 \label{class_objective_action_reporter}\index{ObjectiveActionReporter@{ObjectiveActionReporter}}
 
 
-Inheritance diagram for Objective\+Action\+Reporter\+:
-\nopagebreak
+Inheritance diagram for Objective\+Action\+Reporter\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Objective\+Action\+Reporter\+:
 \end{figure}
 
 
-Collaboration diagram for Objective\+Action\+Reporter\+:
-\nopagebreak
+Collaboration diagram for Objective\+Action\+Reporter\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -51,6 +49,9 @@ Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+countdown\+Text}
 \mbox{\Hypertarget{class_objective_action_reporter_a92148be94287270042c2d231174a3f12}\label{class_objective_action_reporter_a92148be94287270042c2d231174a3f12}} 
 uint {\bfseries \+\_\+objective\+Required\+Time}
 \item 
+\mbox{\Hypertarget{class_objective_action_reporter_a5743330e307afaf02a25856405e00624}\label{class_objective_action_reporter_a5743330e307afaf02a25856405e00624}} 
+TMP\+\_\+\+Sprite\+Asset {\bfseries \+\_\+sprite\+Asset}
+\item 
 \mbox{\Hypertarget{class_objective_action_reporter_a498e7dbc2aba74252f4ae5f796853c80}\label{class_objective_action_reporter_a498e7dbc2aba74252f4ae5f796853c80}} 
 Vector3 {\bfseries \+\_\+target\+Scale} = Vector3.\+zero
 \item 
@@ -74,13 +75,13 @@ Coroutine {\bfseries \+\_\+coroutine} = null
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_canvasRectTransform\ ==\ \textcolor{keyword}{null})\ \_canvasRectTransform\ =\ GetComponentInChildren<Canvas>(\textcolor{keyword}{true}).gameObject.GetComponent<RectTransform>();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownText\ ==\ \textcolor{keyword}{null})\ \_countdownText\ =\ \_canvasRectTransform.gameObject.GetComponentInChildren<TextMeshProUGUI>(\textcolor{keyword}{true});}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_targetScale\ =\ \_canvasRectTransform\ !=\ \textcolor{keyword}{null}\ ?\ \_canvasRectTransform.localScale\ :\ Vector3.zero;}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ Vector3.zero;}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_canvasRectTransform\ ==\ \textcolor{keyword}{null})\ \_canvasRectTransform\ =\ GetComponentInChildren<Canvas>(\textcolor{keyword}{true}).gameObject.GetComponent<RectTransform>();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownText\ ==\ \textcolor{keyword}{null})\ \_countdownText\ =\ \_canvasRectTransform.gameObject.GetComponentInChildren<TextMeshProUGUI>(\textcolor{keyword}{true});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_targetScale\ =\ \_canvasRectTransform\ !=\ \textcolor{keyword}{null}\ ?\ \_canvasRectTransform.localScale\ :\ Vector3.zero;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ Vector3.zero;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_action_reporter_aa00b2710658de708301195b735df9c90}\label{class_objective_action_reporter_aa00b2710658de708301195b735df9c90}} 
@@ -91,30 +92,30 @@ Coroutine {\bfseries \+\_\+coroutine} = null
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00131\ \ \ \ \ \{}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_coroutine\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ playerData))\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!objective.\mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}(playerData.Objective))\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Objective\ macthes\ the\ players\ -\/\ stop\ the\ countdown}}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CancelActionObjective"{}});}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_coroutine);}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ CancelObjectiveTimerClientRpc(playerData.ClientRpcParams);}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_canvasRectTransform.gameObject.SetActive(false);}}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ Vector3.zero;}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_coroutine\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ playerData))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!objective.\mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}(playerData.Objective))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Objective\ macthes\ the\ players\ -\/\ stop\ the\ countdown}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CancelActionObjective"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ StopCoroutine(\_coroutine);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ CancelObjectiveTimerClientRpc(playerData.ClientRpcParams);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_canvasRectTransform.gameObject.SetActive(false);}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ Vector3.zero;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_action_reporter_a7b5edcda99a25562d3e9024263093030}\label{class_objective_action_reporter_a7b5edcda99a25562d3e9024263093030}} 
@@ -125,14 +126,14 @@ Coroutine {\bfseries \+\_\+coroutine} = null
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CancelObjectiveTimerClientRpc\ Called\ -\/\ clientId:\ "{}}\ +\ OwnerClientId);}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CancelActionObjective"{}});}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ StopCoroutine(\_coroutine);}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_canvasRectTransform.gameObject.SetActive(false);}}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ Vector3.zero;}
-\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CancelObjectiveTimerClientRpc\ Called\ -\/\ clientId:\ "{}}\ +\ OwnerClientId);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}CancelActionObjective"{}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ StopCoroutine(\_coroutine);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_canvasRectTransform.gameObject.SetActive(false);}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ Vector3.zero;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_action_reporter_a262a9c8593f70749201619eab9cbfa6d}\label{class_objective_action_reporter_a262a9c8593f70749201619eab9cbfa6d}} 
@@ -158,32 +159,32 @@ True if objective matches / False otherwise
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_coroutine\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!objective.\mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}(playerData.Objective))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objective\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_coroutine\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsServer)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}.TryGetValue(clientId,\ out\ playerData))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!IsOwner)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Sending\ StartObjectiveTimer\ Request\ to\ ClientId:\ "{}}\ +\ clientId.ToString());}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Objective\ macthes\ the\ players\ -\/\ start\ the\ required\ time\ countdown}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartObjectiveTimerClientRpc(playerData.Objective.Action.RequiredPerformanceTime,\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ClientRpcParams);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Starting\ StartObjectiveTimer\ on\ the\ Server"{}});}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_coroutine\ =\ StartCoroutine(StartObjectiveTimer(playerData.Objective.Action.RequiredPerformanceTime));}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!objective.\mbox{\hyperlink{class_objective_aa5e5f371dc343010a73d19a8b33d9c53}{Equals}}(playerData.Objective))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!IsOwner)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Sending\ StartObjectiveTimer\ Request\ to\ ClientId:\ "{}}\ +\ clientId.ToString());}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Objective\ macthes\ the\ players\ -\/\ start\ the\ required\ time\ countdown}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartObjectiveTimerClientRpc(playerData.Objective.Action.RequiredPerformanceTime,\ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a16139daa0d77269425514837fea78fa8}{PlayerData}}[clientId].ClientRpcParams);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Starting\ StartObjectiveTimer\ on\ the\ Server"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_coroutine\ =\ StartCoroutine(StartObjectiveTimer(playerData.Objective.Action.RequiredPerformanceTime));}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_action_reporter_a9e00074e34ed9beda58703cb22a25c74}\label{class_objective_action_reporter_a9e00074e34ed9beda58703cb22a25c74}} 
@@ -194,53 +195,64 @@ True if objective matches / False otherwise
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00082\ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData.Objective\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData.Objective.Action\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_canvasRectTransform\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownText\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_canvasRectTransform.gameObject.SetActive(true);}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ \_startScale;}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (duration\ >=\ 1\ )}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Duration:\ "{}}\ +\ duration.ToString());}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ duration.ToString();}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.LeanScale(\_targetScale,\ 0.75f).setEaseOutBounce().setOnComplete(()\ =>\ \{\ \_canvasRectTransform.localScale\ =\ \_startScale;\ \});}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(duration\ >\ 0)\ duration-\/-\/;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ duration.ToString();}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.LeanScale(\_targetScale,\ 0.75f).setEaseOutBounce().setOnComplete(()\ =>\ \{\ \_canvasRectTransform.localScale\ =\ Vector3.zero;\ \});}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Report\ Objective\ Complete\ to\ ObjectiveManager"{}});}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}{ReportObjectiveAction}}(playerData.Objective,\ playerData.ClientId);}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData.Objective\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerData.Objective.Action\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_canvasRectTransform\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_countdownText\ ==\ \textcolor{keyword}{null})\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_canvasRectTransform.gameObject.SetActive(true);}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.localScale\ =\ \_startScale;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (duration\ >=\ 1\ )}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Duration:\ "{}}\ +\ duration.ToString());}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ duration.ToString();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.LeanScale(\_targetScale,\ 0.75f).setEaseOutBounce().setOnComplete(()\ =>\ \{\ \_canvasRectTransform.localScale\ =\ \_startScale;\ \});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(duration\ >\ 0)\ duration-\/-\/;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsOwner)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ a\ random\ smiley\ face}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\_spriteAsset\ !=\ \textcolor{keyword}{null})\ \&\&\ (\_spriteAsset.spriteCharacterTable.Count\ >\ 0))}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.spriteAsset\ =\ \_spriteAsset;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ spriteString\ =\ \textcolor{keyword}{new}\ (\textcolor{stringliteral}{"{}<sprite="{}}\ +\ UnityEngine.Random.Range((\textcolor{keywordtype}{int})0,\ (\textcolor{keywordtype}{int})\_spriteAsset.spriteCharacterTable.Count).ToString()\ +\ \textcolor{stringliteral}{"{}>"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ spriteString;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ duration.ToString();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \_canvasRectTransform.LeanScale(\_targetScale\ *\ 1.5f,\ 2f).setEaseOutBounce().setOnComplete(()\ =>\ \{\ \_canvasRectTransform.localScale\ =\ Vector3.zero;\ \});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(IsServer)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Report\ Objective\ Complete\ to\ ObjectiveManager"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_objective_manager}{ObjectiveManager}}.Instance.\mbox{\hyperlink{class_objective_manager_af84b0e292f39382cbeb22acca677ab9b}{ReportObjectiveAction}}(playerData.Objective,\ playerData.ClientId);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \_coroutine\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_objective_action_reporter_a6059016d4d6f08f5555d63eb0d4d48b2}\label{class_objective_action_reporter_a6059016d4d6f08f5555d63eb0d4d48b2}} 
@@ -251,9 +263,9 @@ True if objective matches / False otherwise
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00065\ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}StartObjectiveTimerClientRpc\ Called\ -\/\ clientId:\ "{}}\ +\ OwnerClientId);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \_coroutine\ =\ StartCoroutine(StartObjectiveTimer(duration));}
-\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}StartObjectiveTimerClientRpc\ Called\ -\/\ clientId:\ "{}}\ +\ OwnerClientId);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_coroutine\ =\ StartCoroutine(StartObjectiveTimer(duration));}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}

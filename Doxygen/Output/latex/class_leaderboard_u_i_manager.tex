@@ -1,0 +1,205 @@
+\hypertarget{class_leaderboard_u_i_manager}{}\doxysection{Leaderboard\+UIManager Class Reference}
+\label{class_leaderboard_u_i_manager}\index{LeaderboardUIManager@{LeaderboardUIManager}}
+
+
+Inheritance diagram for Leaderboard\+UIManager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_leaderboard_u_i_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Leaderboard\+UIManager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_leaderboard_u_i_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data}{Network\+Leaderboard\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_leaderboard_u_i_manager_a3ef1bd124973e0157add22b6fac9a788}{Get\+Player\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_leaderboard_u_i_manager_a2591f6b3b16b72f5262323867d2113da}{Update\+Leaderboard\+UIClient\+Rpc}} (\mbox{\hyperlink{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data}{Network\+Leaderboard\+Data}}\mbox{[}$\,$\mbox{]} player\+Data, bool final\+Leaderboard, Client\+Rpc\+Params client\+Rpc\+Params=default)
+\item 
+void \mbox{\hyperlink{class_leaderboard_u_i_manager_a4d30f3c6dc92868c07756db66b1a6848}{Load\+Menu}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_aa02466c372ac6c2b3763f0634803afd3}\label{class_leaderboard_u_i_manager_aa02466c372ac6c2b3763f0634803afd3}} 
+bool {\bfseries Final\+Leaderboard} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a5e162a689c4b4e8c881272f2a5d6385a}\label{class_leaderboard_u_i_manager_a5e162a689c4b4e8c881272f2a5d6385a}} 
+static \mbox{\hyperlink{class_leaderboard_u_i_manager}{Leaderboard\+UIManager}} {\bfseries Instance}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a0c2058044813e52289d9ab34a9410503}\label{class_leaderboard_u_i_manager_a0c2058044813e52289d9ab34a9410503}} 
+Game\+Object {\bfseries Leaderboard\+Canvas}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_leaderboard_u_i_manager_a0bb0044a5c1f579b732f29471747b458}{Awake}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_leaderboard_u_i_manager_a562e252b68ec5a1b2116cf5c2a53737b}{Countdown}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a085c1d14983e9f94ca60b5722f9e0f0a}\label{class_leaderboard_u_i_manager_a085c1d14983e9f94ca60b5722f9e0f0a}} 
+Game\+Object {\bfseries \+\_\+leaderboard\+Canvas}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a20034cbf60dd1b4995e47677d9b57e25}\label{class_leaderboard_u_i_manager_a20034cbf60dd1b4995e47677d9b57e25}} 
+Game\+Object {\bfseries \+\_\+leaderboard\+Panel}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_aa8ffa49e00a9f560ad747f2bd2b4abf8}\label{class_leaderboard_u_i_manager_aa8ffa49e00a9f560ad747f2bd2b4abf8}} 
+Game\+Object {\bfseries \+\_\+leaderboard\+Entry\+Prefab}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_acfd4f10e2688c2aa9fb263832ff0128b}\label{class_leaderboard_u_i_manager_acfd4f10e2688c2aa9fb263832ff0128b}} 
+Text\+Mesh\+Pro\+UGUI {\bfseries \+\_\+countdown\+Text}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_ae19a16e36dc83c114c3093c66752cc56}\label{class_leaderboard_u_i_manager_ae19a16e36dc83c114c3093c66752cc56}} 
+Button {\bfseries \+\_\+main\+Menu\+Button}
+\item 
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a99049cec633dc844a891d3a72aa5c72b}\label{class_leaderboard_u_i_manager_a99049cec633dc844a891d3a72aa5c72b}} 
+float {\bfseries \+\_\+countdown\+Time} = 15f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a0bb0044a5c1f579b732f29471747b458}\label{class_leaderboard_u_i_manager_a0bb0044a5c1f579b732f29471747b458}} 
+\index{LeaderboardUIManager@{LeaderboardUIManager}!Awake@{Awake}}
+\index{Awake@{Awake}!LeaderboardUIManager@{LeaderboardUIManager}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Leaderboard\+UIManager.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Instance\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a562e252b68ec5a1b2116cf5c2a53737b}\label{class_leaderboard_u_i_manager_a562e252b68ec5a1b2116cf5c2a53737b}} 
+\index{LeaderboardUIManager@{LeaderboardUIManager}!Countdown@{Countdown}}
+\index{Countdown@{Countdown}!LeaderboardUIManager@{LeaderboardUIManager}}
+\doxysubsubsection{\texorpdfstring{Countdown()}{Countdown()}}
+{\footnotesize\ttfamily IEnumerator Leaderboard\+UIManager.\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\_countdownTime\ >\ 0)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \textcolor{stringliteral}{"{}Next\ Round\ in\ "{}}\ +\ \_countdownTime.ToString();}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownTime-\/-\/;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \_countdownText.text\ =\ \textcolor{stringliteral}{"{}GO!"{}};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ WaitForSeconds(1f);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.\mbox{\hyperlink{class_game_manager_a9fe8649ea7a5c92543ffb26499e4b9ba}{LoadNextRound}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a3ef1bd124973e0157add22b6fac9a788}\label{class_leaderboard_u_i_manager_a3ef1bd124973e0157add22b6fac9a788}} 
+\index{LeaderboardUIManager@{LeaderboardUIManager}!GetPlayerData@{GetPlayerData}}
+\index{GetPlayerData@{GetPlayerData}!LeaderboardUIManager@{LeaderboardUIManager}}
+\doxysubsubsection{\texorpdfstring{GetPlayerData()}{GetPlayerData()}}
+{\footnotesize\ttfamily void Leaderboard\+UIManager.\+Get\+Player\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsServer)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ List<NetPlayerData>\ playerData\ =\ GameManager.Instance.PlayerData.Values}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ .OrderByDescending(x\ =>\ x.GameScore)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ .ToList();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ NetworkLeaderboardData[]\ playerDataStrings\ =\ \textcolor{keyword}{new}\ NetworkLeaderboardData[playerData.Count];}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ playerData.Count;\ i++)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Colour\ =\ ColorUtility.ToHtmlStringRGB(\mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.PlayerColours[playerData[i].ColourIndex]);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ playerDataStrings[i]\ =\ \textcolor{keyword}{new}\ NetworkLeaderboardData}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Colour\ =\ Colour,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PlayerName\ =\ playerData[i].PlayerName,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Score\ =\ playerData[i].GameScore}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ UpdateLeaderboardUIClientRpc(playerDataStrings,\ FinalLeaderboard);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a4d30f3c6dc92868c07756db66b1a6848}\label{class_leaderboard_u_i_manager_a4d30f3c6dc92868c07756db66b1a6848}} 
+\index{LeaderboardUIManager@{LeaderboardUIManager}!LoadMenu@{LoadMenu}}
+\index{LoadMenu@{LoadMenu}!LeaderboardUIManager@{LeaderboardUIManager}}
+\doxysubsubsection{\texorpdfstring{LoadMenu()}{LoadMenu()}}
+{\footnotesize\ttfamily void Leaderboard\+UIManager.\+Load\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_u_i_manager}{MenuUIManager}}.Instance.LoadMenu();}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_leaderboard_u_i_manager_a2591f6b3b16b72f5262323867d2113da}\label{class_leaderboard_u_i_manager_a2591f6b3b16b72f5262323867d2113da}} 
+\index{LeaderboardUIManager@{LeaderboardUIManager}!UpdateLeaderboardUIClientRpc@{UpdateLeaderboardUIClientRpc}}
+\index{UpdateLeaderboardUIClientRpc@{UpdateLeaderboardUIClientRpc}!LeaderboardUIManager@{LeaderboardUIManager}}
+\doxysubsubsection{\texorpdfstring{UpdateLeaderboardUIClientRpc()}{UpdateLeaderboardUIClientRpc()}}
+{\footnotesize\ttfamily void Leaderboard\+UIManager.\+Update\+Leaderboard\+UIClient\+Rpc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_leaderboard_u_i_manager_1_1_network_leaderboard_data}{Network\+Leaderboard\+Data}}\mbox{[}$\,$\mbox{]}}]{player\+Data,  }\item[{bool}]{final\+Leaderboard,  }\item[{Client\+Rpc\+Params}]{client\+Rpc\+Params = {\ttfamily default} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_mainMenuButton.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Transform\ child\ \textcolor{keywordflow}{in}\ \_leaderboardPanel.transform)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(child.gameObject);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (NetworkLeaderboardData\ data\ \textcolor{keywordflow}{in}\ playerData)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ entry\ =\ Instantiate(\_leaderboardEntryPrefab,\ \_leaderboardPanel.transform);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ entry.transform.GetChild(0).GetComponent<Image>().color\ =\ ColorUtility.TryParseHtmlString(\textcolor{stringliteral}{"{}\#"{}}\ +\ data.Colour,\ out\ Color\ colour)\ ?\ colour\ :\ Color.white;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ entry.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text\ =\ data.PlayerName;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ entry.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text\ =\ data.Score.ToString();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.Instance.LeaderboardReady();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (finalLeaderboard)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \_mainMenuButton.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \_countdownText.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(Countdown());}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+
+\end{DoxyCode}

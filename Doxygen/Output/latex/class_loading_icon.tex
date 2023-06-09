@@ -1,0 +1,75 @@
+\hypertarget{class_loading_icon}{}\doxysection{Loading\+Icon Class Reference}
+\label{class_loading_icon}\index{LoadingIcon@{LoadingIcon}}
+
+
+Inheritance diagram for Loading\+Icon\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_loading_icon__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Loading\+Icon\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_loading_icon__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_loading_icon_a84824b477ec8bc97ddef6eea6d0fcf5e}{On\+Enable}} ()
+\item 
+void \mbox{\hyperlink{class_loading_icon_a1a7e70a78860ea87c4dd2c73bd587659}{On\+Disable}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_loading_icon_aa6f3e419b0d35c044390e9ea78ee872b}{Rotate}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_loading_icon_a1a7e70a78860ea87c4dd2c73bd587659}\label{class_loading_icon_a1a7e70a78860ea87c4dd2c73bd587659}} 
+\index{LoadingIcon@{LoadingIcon}!OnDisable@{OnDisable}}
+\index{OnDisable@{OnDisable}!LoadingIcon@{LoadingIcon}}
+\doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
+{\footnotesize\ttfamily void Loading\+Icon.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ StopAllCoroutines();}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_loading_icon_a84824b477ec8bc97ddef6eea6d0fcf5e}\label{class_loading_icon_a84824b477ec8bc97ddef6eea6d0fcf5e}} 
+\index{LoadingIcon@{LoadingIcon}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!LoadingIcon@{LoadingIcon}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily void Loading\+Icon.\+On\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ StartCoroutine(Rotate());}
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_loading_icon_aa6f3e419b0d35c044390e9ea78ee872b}\label{class_loading_icon_aa6f3e419b0d35c044390e9ea78ee872b}} 
+\index{LoadingIcon@{LoadingIcon}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!LoadingIcon@{LoadingIcon}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily IEnumerator Loading\+Icon.\+Rotate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ transform.Rotate(0,\ 0,\ -\/360\ *\ Time.deltaTime);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
